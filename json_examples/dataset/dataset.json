@@ -1,0 +1,5 @@
+{
+    "name": "dataset 1",
+    "description": "this is a model SDP dataset",
+    "assay": "RNA-seq"
+}
