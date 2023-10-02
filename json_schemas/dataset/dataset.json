@@ -3,7 +3,7 @@
     "$id": "https://raw.githubusercontent.com/UMiamiCancerCenter/sdp-metadata-schema/main/json_schemas/dataset/dataset.json",
     "title": "SDP Dataset",
     "description": "This document records the details of the SDP dataset metadata content",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "type": "object",
     "properties": {
       "name": {
@@ -27,4 +27,4 @@
       "description",
       "assay"
     ]
-  }
+}
