@@ -1,0 +1,56 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "https://raw.githubusercontent.com/UMiamiCancerCenter/sdp-metadata-schema/main/json_schemas/dataset/dataset.json",
+    "title": "SDP Sample RNA-seq",
+    "description": "This document records the details of the SDP dataset metadata content",
+    "version": "0.0.2",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Name"
+      },
+      "description": {
+        "type": "string",
+        "title": "Description"
+      },
+      "datasetId": {
+        "type": "string",
+        "title": "Foreign key to dataset"
+      },
+      "subject": {
+        "type": "object",
+        "title": "Subject in the sample",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "type": {
+            "type": "string",
+            "title": "Subject Type",
+            "enum": ["organism","cell line","soil sample","waste water"]
+          },
+          "subjectId": {
+            "type": "string",
+            "title": "Subject Type",
+            "enum": ["organism","cell line","soil sample","waste water"]
+          }
+        }
+      },
+      "perturbations": {
+        "type": "array",
+        "items": "object",
+        "title": "list of perturbations"
+      }
+    },
+    "required": [
+      "name",
+      "description",
+      "assay"
+    ]
+}
