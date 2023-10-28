@@ -1,32 +1,32 @@
 {
-    "$schema": "https://json-schema.org/draft/2019-09/schema",
-    "$id": "https://raw.githubusercontent.com/UMiamiCancerCenter/sdp-metadata-schema/main/json_schemas/dataset/dataset.json",
-    "title": "SDP Dataset",
-    "description": "This document records the details of the SDP dataset metadata content",
-    "version": "0.0.2",
-    "type": "object",
-    "properties": {
-      "name": {
-        "type": "string",
-        "title": "Name"
-      },
-      "description": {
-        "type": "string",
-        "title": "Description"
-      },
-      "assay": {
-        "title": "Readout Assay",
-        "description": "Supported readout assays: RNA-seq, scRNA-seq.",
-        "type": "string",
-        "enum": [
-            "RNA-seq",
-            "scRNA-seq"
-        ]
-      }
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://raw.githubusercontent.com/UMiamiCancerCenter/sdp-metadata-schema/main/json_schemas/dataset/dataset.json",
+  "title": "SDP Dataset",
+  "description": "This document records the details of the SDP dataset metadata content",
+  "version": "0.0.2",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name"
     },
-    "required": [
-      "name",
-      "description",
-      "assay"
-    ]
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "assay": {
+      "title": "Readout Assay",
+      "description": "Supported readout assays: RNA-seq, scRNA-seq.",
+      "type": "string",
+      "enum": [
+        "RNA-seq",
+        "scRNA-seq"
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "description",
+    "assay"
+  ]
 }
