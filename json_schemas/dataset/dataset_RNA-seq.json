@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://raw.githubusercontent.com/UMiamiCancerCenter/sdp-metadata-schema/main/json_schemas/dataset/dataset.json",
+  "title": "SDP RNA-seq Dataset",
+  "description": "This document records the details of the SDP dataset metadata content. Additional records for RNA-seq",
+  "version": "0.0.2",
+  "type": "object",
+  "properties": {
+    "experimentalSubject": {
+      "title": "Experimental Subject Roles",
+      "description": "Supported: Model System, Biospecimen, Target.",
+      "type": "string",
+      "enum": [
+        "Model System", 
+        "Biospecimen",
+        "Target"
+      ]
+    },
+    "experimentalSubject": "object",
+      "properties": {
+        "street_address": {
+          "type": "string"
+        },
+        "country": {
+          "default": "United States of America",
+          "enum": ["United States of America", "Canada", "Netherlands"]
+          
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "experimentalSubject": { "const": "Model System" } },
+            "required": ["experimentalSubject"]
+          },
+          "then": {
+            "properties": { "modelSystem": { "enum": ["Cell Line", "iPSC", "Primary Cell", "Differentiated Cells, Tissue"] } }
+          }
+        }
+      ]
+  },
+  "required": [
+    "name",
+    "description",
+    "assay"
+  ]
+}
