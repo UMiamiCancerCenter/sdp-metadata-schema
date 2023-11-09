@@ -6,26 +6,36 @@
   "version": "0.0.2",
   "type": "object",
   "properties": {
-    "experimentalSubject": {
-      "title": "Experimental Subject Roles",
-      "description": "Supported: Model System, Biospecimen, Target.",
+        "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "assay": {
+      "title": "Readout Assay",
+      "description": "Supported readout assays: RNA-seq, scRNA-seq.",
       "type": "string",
       "enum": [
-        "Model System", 
-        "Biospecimen",
-        "Target"
+        "RNA-seq",
+        "scRNA-seq"
       ]
     },
-    "experimentalSubject": "object",
+    "content": {
+      "type":"object",
       "properties": {
-        "street_address": {
-          "type": "string"
-        },
-        "country": {
-          "default": "United States of America",
-          "enum": ["United States of America", "Canada", "Netherlands"]
-          
-        }
+            "experimentalSubject": {
+              "title": "Experimental Subject Roles",
+              "description": "Supported: Model System, Biospecimen, Target.",
+              "type": "string",
+              "enum": [
+                "Model System", 
+                "Biospecimen",
+                "Target"
+              ]
+    },
       },
       "allOf": [
         {
@@ -34,10 +44,34 @@
             "required": ["experimentalSubject"]
           },
           "then": {
-            "properties": { "modelSystem": { "enum": ["Cell Line", "iPSC", "Primary Cell", "Differentiated Cells, Tissue"] } }
+            "properties": { "modelSystem": { "enum": ["Cell Line", "iPSC", "Primary Cell", "Differentiated Cells, Tissue"] } },
+            "required": [
+              "modelSystem"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": { "experimentalSubject": { "const": "Biospecimen" } },
+            "required": ["experimentalSubject"]
+          },
+          "then": {
+            "properties": { "specimen": { "enum": ["Biopsy", "Tissue"] } },
+            "required": [
+              "specimen"
+            ]
           }
         }
       ]
+    },
+    "contentSchema": {
+      "type": "string",
+      "title": "content schema uri"
+    },
+    "contentVersion": {
+      "type": "string",
+      "title": "content version semantic notation"
+    }
   },
   "required": [
     "name",
