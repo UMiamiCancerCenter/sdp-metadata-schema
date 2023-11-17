@@ -1,6 +1,5 @@
 {
     "$schema": "https://json-schema.org/draft/2019-09/schema",
-    "$id": "https://raw.githubusercontent.com/UMiamiCancerCenter/sdp-metadata-schema/main/json_schemas/document/document.json",
     "title": "SDP Document",
     "description": "This document records the details of the SDP document.",
     "version": "0.0.2",

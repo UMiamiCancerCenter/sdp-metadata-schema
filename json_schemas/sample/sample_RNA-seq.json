@@ -1,6 +1,5 @@
 {
     "$schema": "https://json-schema.org/draft/2019-09/schema",
-    "$id": "https://raw.githubusercontent.com/UMiamiCancerCenter/sdp-metadata-schema/main/json_schemas/dataset/dataset.json",
     "title": "SDP Dataset",
     "description": "This document records the details of the SDP dataset metadata content",
     "version": "0.0.2",
