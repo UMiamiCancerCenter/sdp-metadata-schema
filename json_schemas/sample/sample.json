@@ -61,7 +61,7 @@
       "title": "List of Perturbations",
       "items": {
         "type": "object",
-        "minLength": 1,
+        "minLength": "1",
         "properties": {
           "name": {
             "type": "string",
