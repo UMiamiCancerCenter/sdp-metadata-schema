@@ -1,25 +1,86 @@
 {
-    "$schema": "https://json-schema.org/draft/2019-09/schema",
-    "title": "SDP Sample",
-    "description": "This document records the details of the SDP sample metadata content",
-    "version": "0.0.2",
-    "type": "object",
-    "properties": {
-      "name": {
-        "type": "string",
-        "title": "Name"
-      },
-      "description": {
-        "type": "string",
-        "title": "Description"
-      },
-      "datasetId": {
-        "type": "string",
-        "title": "Foreign key to dataset"
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "SDP Sample",
+  "description": "This document records the details of the SDP sample metadata content",
+  "version": "0.0.2",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "subject": {
+      "type": "object",
+      "title": "Subject in the sample",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Name"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        },
+        "type": {
+          "type": "string",
+          "title": "Subject Type",
+          "enum": [
+            "organism",
+            "cell line",
+            "soil sample",
+            "waste water"
+          ]
+        }
       }
     },
-    "required": [
-      "name",
-      "description"
-    ]
+    "protocol": {
+      "type": "object",
+      "title": "Protocol used in the sample",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Protocol Name"
+        },
+        "description": {
+          "type": "string",
+          "title": "Protocol Description"
+        },
+        "protocolExtId": {
+          "type": "string",
+          "format": "uri",
+          "title": "Protocol External URI Identifier"
+        }
+      }
+    },
+    "perturbations": {
+      "type": "array",
+      "title": "list of perturbations",
+      "items": {
+        "type": "object",
+        "minLength": 1,
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Perturbation Name"
+          },
+          "description": {
+            "type": "string",
+            "title": "Perturbation Description"
+          },
+          "type": {
+            "type": "string",
+            "title": "Perturbation Type"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "name",
+    "description"
+  ]
 }
