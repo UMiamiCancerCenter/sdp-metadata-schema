@@ -58,7 +58,7 @@
     },
     "perturbations": {
       "type": "array",
-      "title": "list of perturbations",
+      "title": "List of Perturbations",
       "items": {
         "type": "object",
         "minLength": 1,
