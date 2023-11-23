@@ -1,121 +1,219 @@
 {
-  "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "title": "SDP Sample",
-  "description": "This document records the details of the SDP sample metadata content",
-  "version": "0.0.2",
-  "type": "object",
-  "properties": {
-    "name": {
-      "type": "string",
-      "title": "Name"
-    },
-    "description": {
-      "type": "string",
-      "title": "Description"
-    },
-    "subject": {
-      "type": "object",
-      "title": "Subject in the sample",
-      "required": [
-        "type"
-      ],
-      "properties": {
-        "type": {
-          "type": "string",
-          "title": "Subject Type",
-          "enum": [
-            "organism",
-            "cell line",
-            "soil sample",
-            "waste water",
-            "other"
-          ]
-        },
-        "name": {
-          "type": "string",
-          "title": "Name"
-        },
-        "organismName": {
-          "type": "string",
-          "title": "Organism Name",
-          "graphRestriction": {
-            "ontologies": [
-                "obo:duo"
-            ],
-            "classes": [
-                "DUO:0000017"
-            ],
-            "includeSelf": false,
-            "queryFields": [
-                "obo_id",
-                "label"
-            ]
-        }
-        },
-        "cellLineName": {
-          "type": "string",
-          "title": "Cell Line Name"
-        },
-        "soilSample": {
-          "type": "string",
-          "title": "Soil Sample Name"
-        },
-        "wasteWater": {
-          "type": "string",
-          "title": "Waste Water Name"
-        },
-        "description": {
-          "type": "string",
-          "title": "Description"
-        }
-      }
-    },
-    "protocol": {
-      "type": "object",
-      "title": "Protocol used in the sample",
-      "properties": {
-        "name": {
-          "type": "string",
-          "title": "Protocol Name"
-        },
-        "description": {
-          "type": "string",
-          "title": "Protocol Description"
-        },
-        "protocolExtId": {
-          "type": "string",
-          "format": "uri",
-          "title": "Protocol External URI Identifier"
-        }
-      }
-    },
-    "perturbations": {
-      "type": "array",
-      "title": "List of Perturbations",
-      "items": {
+  "schema": {
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "title": "SDP Sample",
+    "description": "This document records the details of the SDP sample metadata content",
+    "version": "0.0.2",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Name"
+      },
+      "description": {
+        "type": "string",
+        "title": "Description"
+      },
+      "subject": {
         "type": "object",
+        "title": "Subject in the sample",
         "required": [
           "type"
         ],
         "properties": {
           "type": {
             "type": "string",
-            "title": "Perturbation Type"
+            "title": "Subject Type",
+            "enum": [
+              "organism",
+              "cell line",
+              "soil sample",
+              "waste water",
+              "other"
+            ]
           },
           "name": {
             "type": "string",
-            "title": "Perturbation Name"
+            "title": "Name"
+          },
+          "organismName": {
+            "type": "string",
+            "title": "Organism Name",
+            "graphRestriction": {
+              "ontologies": [
+                  "obo:duo"
+              ],
+              "classes": [
+                  "DUO:0000017"
+              ],
+              "includeSelf": false,
+              "queryFields": [
+                  "obo_id",
+                  "label"
+              ]
+          }
+          },
+          "cellLineName": {
+            "type": "string",
+            "title": "Cell Line Name"
+          },
+          "soilSample": {
+            "type": "string",
+            "title": "Soil Sample Name"
+          },
+          "wasteWater": {
+            "type": "string",
+            "title": "Waste Water Name"
           },
           "description": {
             "type": "string",
-            "title": "Perturbation Description"
+            "title": "Description"
+          }
+        }
+      },
+      "protocol": {
+        "type": "object",
+        "title": "Protocol used in the sample",
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Protocol Name"
+          },
+          "description": {
+            "type": "string",
+            "title": "Protocol Description"
+          },
+          "protocolExtId": {
+            "type": "string",
+            "format": "uri",
+            "title": "Protocol External URI Identifier"
+          }
+        }
+      },
+      "perturbations": {
+        "type": "array",
+        "title": "List of Perturbations",
+        "items": {
+          "type": "object",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "title": "Perturbation Type"
+            },
+            "name": {
+              "type": "string",
+              "title": "Perturbation Name"
+            },
+            "description": {
+              "type": "string",
+              "title": "Perturbation Description"
+            }
           }
         }
       }
-    }
+    },
+    "required": [
+      "name",
+      "description"
+    ]
   },
-  "required": [
-    "name",
-    "description"
-  ]
+  "uiSchema": {
+    "type": "VerticalLayout",
+    "elements": [
+      {
+        "type": "Control",
+        "scope": "#/properties/name"
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/description"
+      },
+      {
+        "type": "HorizontalLayout",
+        "elements": [
+          {
+            "type": "Group",
+            "label": "Subject in the sample",
+            "scope": "#/properties/subject",
+            "elements": [
+              {
+                "type": "Control",
+                "scope": "#/properties/subject/properties/type"
+              },
+              {
+                "type": "Control",
+                "scope": "#/properties/subject/properties/name",
+                "rule": {
+                  "effect": "SHOW",
+                  "condition": {
+                    "scope": "#/properties/subject/properties/type",
+                    "schema": { "enum": ["other"] }
+                  }
+                }
+              },
+              {
+                "type": "Control",
+                "scope": "#/properties/subject/properties/organismName",
+                "rule": {
+                  "effect": "SHOW",
+                  "condition": {
+                    "scope": "#/properties/subject/properties/type",
+                    "schema": { "enum": ["organism"] }
+                  }
+                }
+              },
+              {
+                "type": "Control",
+                "scope": "#/properties/subject/properties/cellLineName",
+                "rule": {
+                  "effect": "SHOW",
+                  "condition": {
+                    "scope": "#/properties/subject/properties/type",
+                    "schema": { "enum": ["cell line"] }
+                  }
+                }
+              },
+              {
+                "type": "Control",
+                "scope": "#/properties/subject/properties/soilSample",
+                "rule": {
+                  "effect": "SHOW",
+                  "condition": {
+                    "scope": "#/properties/subject/properties/type",
+                    "schema": { "enum": ["soil sample"] }
+                  }
+                }
+              },
+              {
+                "type": "Control",
+                "scope": "#/properties/subject/properties/wasteWater",
+                "rule": {
+                  "effect": "SHOW",
+                  "condition": {
+                    "scope": "#/properties/subject/properties/type",
+                    "schema": { "enum": ["waste water"] }
+                  }
+                }
+              },
+              {
+                "type": "Control",
+                "scope": "#/properties/subject/properties/description"
+              }
+            ]
+          },
+          {
+            "type": "Control",
+            "scope": "#/properties/protocol"
+          }
+        ]
+      },
+      {
+        "type": "Control",
+        "scope": "#/properties/perturbations"
+      }
+    ]
+  }
 }
