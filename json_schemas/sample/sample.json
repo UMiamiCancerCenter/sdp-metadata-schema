@@ -31,6 +31,10 @@
             "other"
           ]
         },
+        "name": {
+          "type": "string",
+          "title": "Name"
+        },
         "organismName": {
           "type": "string",
           "title": "Organism Name",
@@ -48,9 +52,17 @@
             ]
         }
         },
-        "name": {
+        "cellLineName": {
           "type": "string",
-          "title": "Name"
+          "title": "Cell Line Name"
+        },
+        "soilSample": {
+          "type": "string",
+          "title": "Soil Sample Name"
+        },
+        "wasteWater": {
+          "type": "string",
+          "title": "Waste Water Name"
         },
         "description": {
           "type": "string",
