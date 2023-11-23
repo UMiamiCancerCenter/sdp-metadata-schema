@@ -118,7 +118,12 @@
     "required": [
       "name",
       "description"
-    ]
+    ],
+    "errorMessage": {
+      "type": "should be an object",
+      "required": "should have property foo",
+      "additionalProperties": "should not have properties other than foo"
+    }
   },
   "uiSchema": {
     "type": "VerticalLayout",
