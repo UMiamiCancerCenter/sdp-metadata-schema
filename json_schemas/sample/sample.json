@@ -150,7 +150,7 @@
                   "effect": "SHOW",
                   "condition": {
                     "scope": "#/properties/subject/properties/type",
-                    "schema": { "enum": ["other"] }
+                    "schema": { "enum": ["", "other"] }
                   }
                 }
               },
