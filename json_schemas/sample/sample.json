@@ -150,7 +150,7 @@
                   "effect": "SHOW",
                   "condition": {
                     "scope": "#/properties/subject/properties/type",
-                    "schema": { "enum": [null, "other"] }
+                    "schema": { "not": { "enum": ["organism", "cell line", "soil sample", "waste water"] } }
                   }
                 }
               },
