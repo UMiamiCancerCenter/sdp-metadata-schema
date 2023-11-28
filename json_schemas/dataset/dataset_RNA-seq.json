@@ -1,4 +1,5 @@
 {
+  "schema": {
   "$schema": "https://json-schema.org/draft/2019-09/schema",
   "title": "SDP RNA-seq Dataset",
   "description": "This document records the details of the SDP dataset metadata content. Additional records for RNA-seq",
@@ -77,4 +78,5 @@
     "description",
     "assay"
   ]
+}
 }
