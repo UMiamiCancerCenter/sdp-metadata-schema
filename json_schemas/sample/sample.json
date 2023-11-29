@@ -16,15 +16,10 @@
     "subject": {
       "type": "object",
       "title": "Subject in the sample",
+      "required": [
+        "type"
+      ],
       "properties": {
-        "name": {
-          "type": "string",
-          "title": "Name"
-        },
-        "description": {
-          "type": "string",
-          "title": "Description"
-        },
         "type": {
           "type": "string",
           "title": "Subject Type",
@@ -32,8 +27,46 @@
             "organism",
             "cell line",
             "soil sample",
-            "waste water"
+            "waste water",
+            "other"
           ]
+        },
+        "name": {
+          "type": "string",
+          "title": "Name"
+        },
+        "organismName": {
+          "type": "string",
+          "title": "Organism Name",
+          "graphRestriction": {
+            "ontologies": [
+                "obo:duo"
+            ],
+            "classes": [
+                "DUO:0000017"
+            ],
+            "includeSelf": false,
+            "queryFields": [
+                "obo_id",
+                "label"
+            ]
+        }
+        },
+        "cellLineName": {
+          "type": "string",
+          "title": "Cell Line Name"
+        },
+        "soilSample": {
+          "type": "string",
+          "title": "Soil Sample Name"
+        },
+        "wasteWater": {
+          "type": "string",
+          "title": "Waste Water Name"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
         }
       }
     },
@@ -61,8 +94,14 @@
       "title": "List of Perturbations",
       "items": {
         "type": "object",
-        "minLength": 1,
+        "required": [
+          "type"
+        ],
         "properties": {
+          "type": {
+            "type": "string",
+            "title": "Perturbation Type"
+          },
           "name": {
             "type": "string",
             "title": "Perturbation Name"
@@ -70,10 +109,6 @@
           "description": {
             "type": "string",
             "title": "Perturbation Description"
-          },
-          "type": {
-            "type": "string",
-            "title": "Perturbation Type"
           }
         }
       }
