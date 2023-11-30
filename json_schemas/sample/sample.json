@@ -24,11 +24,11 @@
           "type": "string",
           "title": "Subject Type",
           "enum": [
-            "organism",
             "cell line",
-            "soil sample",
-            "waste water",
-            "other"
+            "iPSC",
+            "primary cells",
+            "differentiated cells",
+            "tissue"
           ]
         },
         "name": {
