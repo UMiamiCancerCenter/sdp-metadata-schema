@@ -54,7 +54,21 @@
         },
         "cellLineName": {
           "type": "string",
-          "title": "Cell Line Name"
+          "title": "Cell Line Name",
+          "graphRestriction": {
+            "ontologies": [
+                "obo:clo",
+                "obo:cl"
+            ],
+            "classes": [
+                "CL:0000000"
+            ],
+            "includeSelf": false,
+            "queryFields": [
+                "obo_id",
+                "label"
+            ]
+        }
         },
         "soilSample": {
           "type": "string",
