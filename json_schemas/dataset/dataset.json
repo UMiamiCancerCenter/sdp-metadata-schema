@@ -38,21 +38,6 @@
           "Target"
         ]
       }
-    },
-    "perturbationType": {
-      "type": "array",
-      "minItems": 1,
-      "description": "Type of perturbation introduced by the gene expression alteration assay.",
-      "title": "Perturbation type(s)",
-      "items": {
-        "type": "string",
-        "minLength": 1
-      },
-      "examples": [
-        "drug perturbations",
-        "irreversible gene knockout",
-        "reversible gene knockdown"
-      ]
     }
   },
   "required": [
