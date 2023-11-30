@@ -19,7 +19,8 @@
       "type": "string",
       "enum": [
         "RNA-seq",
-        "scRNA-seq"
+        "scRNA-seq",
+        "L1000"
       ]
     },
     "experimentalSubject": {
