@@ -18,9 +18,11 @@
       "description": "Supported readout assays: RNA-seq, scRNA-seq.",
       "type": "string",
       "enum": [
-        "RNA-seq",
+        "Bulk RNA-seq",
         "scRNA-seq",
-        "L1000"
+        "L1000",
+        "ATAC-seq",
+        "qPCR"
       ]
     },
     "experimentalSubject": {
