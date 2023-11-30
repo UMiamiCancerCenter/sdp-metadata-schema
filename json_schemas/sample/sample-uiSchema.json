@@ -10,7 +10,7 @@
       "scope": "#/properties/description"
     },
     {
-      "type": "HorizontalLayout",
+      "type": "VerticalLayout",
       "elements": [
         {
           "type": "Group",
