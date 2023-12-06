@@ -15,36 +15,35 @@
     },
     "subject": {
       "type": "object",
-      "title": "Experimental subject",
+      "title": "Subject in the sample",
       "required": [
         "type"
       ],
       "properties": {
         "type": {
           "type": "string",
-          "title": "Model System",
+          "title": "Subject Type",
           "enum": [
+            "organism",
             "cell line",
-            "iPSC",
-            "primary cells",
-            "differentiated cells",
-            "tissue"
+            "soil sample",
+            "waste water",
+            "other"
           ]
         },
         "name": {
           "type": "string",
           "title": "Name"
         },
-        "cellLineName": {
+        "organismName": {
           "type": "string",
-          "title": "Cell Line Name",
+          "title": "Organism Name",
           "graphRestriction": {
             "ontologies": [
-                "obo:clo",
-                "obo:cl"
+                "obo:duo"
             ],
             "classes": [
-                "CL:0000000"
+                "DUO:0000017"
             ],
             "includeSelf": false,
             "queryFields": [
@@ -52,6 +51,18 @@
                 "label"
             ]
         }
+        },
+        "cellLineName": {
+          "type": "string",
+          "title": "Cell Line Name"
+        },
+        "soilSample": {
+          "type": "string",
+          "title": "Soil Sample Name"
+        },
+        "wasteWater": {
+          "type": "string",
+          "title": "Waste Water Name"
         },
         "description": {
           "type": "string",
@@ -78,9 +89,9 @@
         }
       }
     },
-    "perturbation": {
+    "perturbations": {
       "type": "array",
-      "title": "Perturbation",
+      "title": "List of Perturbations",
       "items": {
         "type": "object",
         "required": [
@@ -89,15 +100,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "title": "Perturbagen",
-            "enum": [
-              "small molecule",
-              "antibody",
-              "protein",
-              "RNAi"
-              "CRISPR",
-              "infectious agent"
-            ]
+            "title": "Perturbation Type"
           },
           "name": {
             "type": "string",
