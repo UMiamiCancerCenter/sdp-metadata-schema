@@ -15,14 +15,14 @@
     },
     "subject": {
       "type": "object",
-      "title": "Subject in the sample",
+      "title": "Experimental subject",
       "required": [
         "type"
       ],
       "properties": {
         "type": {
           "type": "string",
-          "title": "Subject Type",
+          "title": "Model System",
           "enum": [
             "cell line",
             "iPSC",
@@ -34,23 +34,6 @@
         "name": {
           "type": "string",
           "title": "Name"
-        },
-        "organismName": {
-          "type": "string",
-          "title": "Organism Name",
-          "graphRestriction": {
-            "ontologies": [
-                "obo:duo"
-            ],
-            "classes": [
-                "DUO:0000017"
-            ],
-            "includeSelf": false,
-            "queryFields": [
-                "obo_id",
-                "label"
-            ]
-        }
         },
         "cellLineName": {
           "type": "string",
@@ -70,42 +53,34 @@
             ]
         }
         },
-        "soilSample": {
-          "type": "string",
-          "title": "Soil Sample Name"
-        },
-        "wasteWater": {
-          "type": "string",
-          "title": "Waste Water Name"
-        },
         "description": {
           "type": "string",
           "title": "Description"
         }
       }
     },
-    "protocol": {
-      "type": "object",
-      "title": "Protocol used in the sample",
-      "properties": {
-        "name": {
-          "type": "string",
-          "title": "Protocol Name"
-        },
-        "description": {
-          "type": "string",
-          "title": "Protocol Description"
-        },
-        "protocolExtId": {
-          "type": "string",
-          "format": "uri",
-          "title": "Protocol External URI Identifier"
-        }
-      }
-    },
-    "perturbations": {
+    // "protocol": {
+    //   "type": "object",
+    //   "title": "Protocol used in the sample",
+    //   "properties": {
+    //     "name": {
+    //       "type": "string",
+    //       "title": "Protocol Name"
+    //     },
+    //     "description": {
+    //       "type": "string",
+    //       "title": "Protocol Description"
+    //     },
+    //     "protocolExtId": {
+    //       "type": "string",
+    //       "format": "uri",
+    //       "title": "Protocol External URI Identifier"
+    //     }
+    //   }
+    // },
+    "perturbation": {
       "type": "array",
-      "title": "List of Perturbations",
+      "title": "Perturbation",
       "items": {
         "type": "object",
         "required": [
@@ -114,7 +89,15 @@
         "properties": {
           "type": {
             "type": "string",
-            "title": "Perturbation Type"
+            "title": "Perturbagen"
+            "enum": [
+              "small molecule",
+              "antibody",
+              "protein",
+              "RNAi"
+              "CRISPR",
+              "infectious agent"
+            ]
           },
           "name": {
             "type": "string",

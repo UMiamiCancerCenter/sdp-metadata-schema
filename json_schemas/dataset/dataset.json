@@ -15,7 +15,7 @@
     },
     "assay": {
       "title": "Readout Assay",
-      "description": "Supported readout assays: RNA-seq, scRNA-seq.",
+      "description": "Supported readout assays: Bulk RNA-seq, scRNA-seq, L1000, ATAC-seq, qPCR",
       "type": "string",
       "enum": [
         "Bulk RNA-seq",
@@ -28,10 +28,10 @@
     "experimentalSubject": {
       "type": "array",
       "minItems": 1,
-      "description": "Model organ system(s) being studied or modelled in this study.",
+      "description": "Biological system(s) being studied or modelled in the samples of this dataset.",
       "title": "Experimental subject(s)",
       "items": {
-        "description": "Model organ system being studied or modelled in this dataset. Supported: Model System, Biospecimen, Target.",
+        "description": "Biological system(s) being studied or modelled in the samples of this dataset. Supported: Model System, Biospecimen, Target.",
         "title": "Model system",
         "type": "string",
         "minLength": 1,
