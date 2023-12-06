@@ -59,25 +59,25 @@
         }
       }
     },
-    // "protocol": {
-    //   "type": "object",
-    //   "title": "Protocol used in the sample",
-    //   "properties": {
-    //     "name": {
-    //       "type": "string",
-    //       "title": "Protocol Name"
-    //     },
-    //     "description": {
-    //       "type": "string",
-    //       "title": "Protocol Description"
-    //     },
-    //     "protocolExtId": {
-    //       "type": "string",
-    //       "format": "uri",
-    //       "title": "Protocol External URI Identifier"
-    //     }
-    //   }
-    // },
+    "protocol": {
+      "type": "object",
+      "title": "Protocol used in the sample",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Protocol Name"
+        },
+        "description": {
+          "type": "string",
+          "title": "Protocol Description"
+        },
+        "protocolExtId": {
+          "type": "string",
+          "format": "uri",
+          "title": "Protocol External URI Identifier"
+        }
+      }
+    },
     "perturbation": {
       "type": "array",
       "title": "Perturbation",
@@ -89,7 +89,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "title": "Perturbagen"
+            "title": "Perturbagen",
             "enum": [
               "small molecule",
               "antibody",
