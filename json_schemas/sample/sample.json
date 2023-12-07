@@ -15,7 +15,7 @@
     },
     "subject": {
       "type": "object",
-      "title": "Subject in the sample",
+      "title": "Experimental Subject",
       "required": [
         "type"
       ],
@@ -72,7 +72,7 @@
     },
     "perturbations": {
       "type": "array",
-      "title": "List of Perturbations",
+      "title": "Perturbations",
       "items": {
         "type": "object",
         "required": [
@@ -84,7 +84,7 @@
             "title": "Perturbagen Type",
             "enum": [
               "small molecule",
-              "CRISPR",
+              "CRISPR knockout",
               "RNAi",
               "antibody",
               "protein",
