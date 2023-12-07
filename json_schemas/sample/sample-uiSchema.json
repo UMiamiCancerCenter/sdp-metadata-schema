@@ -14,7 +14,7 @@
       "elements": [
         {
           "type": "Group",
-          "label": "Subject in the sample",
+          "label": "Experimental Subject",
           "scope": "#/properties/subject",
           "elements": [
             {
