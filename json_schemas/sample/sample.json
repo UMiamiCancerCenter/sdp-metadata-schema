@@ -70,25 +70,6 @@
         }
       }
     },
-    "protocol": {
-      "type": "object",
-      "title": "Protocol used in the sample",
-      "properties": {
-        "name": {
-          "type": "string",
-          "title": "Protocol Name"
-        },
-        "description": {
-          "type": "string",
-          "title": "Protocol Description"
-        },
-        "protocolExtId": {
-          "type": "string",
-          "format": "uri",
-          "title": "Protocol External URI Identifier"
-        }
-      }
-    },
     "perturbations": {
       "type": "array",
       "title": "List of Perturbations",
@@ -102,7 +83,12 @@
             "type": "string",
             "title": "Perturbagen Type",
             "enum": [
-              "small molecule"
+              "small molecule",
+              "CRISPR",
+              "RNAi",
+              "antibody",
+              "protein",
+              "infectious agent"
             ]
           },
           "name": {
