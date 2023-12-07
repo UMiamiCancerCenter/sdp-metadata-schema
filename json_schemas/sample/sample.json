@@ -100,15 +100,22 @@
         "properties": {
           "type": {
             "type": "string",
-            "title": "Perturbation Type"
+            "title": "Perturbagen Type",
+            "enum": [
+              "small molecule"
+            ]
           },
           "name": {
             "type": "string",
-            "title": "Perturbation Name"
+            "title": "Perturbagen Name"
           },
-          "description": {
+          "concentration": {
             "type": "string",
-            "title": "Perturbation Description"
+            "title": "Concentration"
+          },
+          "duration": {
+            "type": "string",
+            "title": "Duration"
           }
         }
       }

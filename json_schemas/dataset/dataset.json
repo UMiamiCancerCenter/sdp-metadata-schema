@@ -15,9 +15,10 @@
     },
     "assay": {
       "title": "Readout Assay",
-      "description": "Supported readout assays: Bulk RNA-seq, scRNA-seq, L1000, ATAC-seq, qPCR",
+      "description": "Supported readout assays: DNA-seq, Bulk RNA-seq, scRNA-seq, L1000, ATAC-seq, qPCR",
       "type": "string",
       "enum": [
+        "DNA-seq",
         "Bulk RNA-seq",
         "scRNA-seq",
         "L1000",
