@@ -81,10 +81,6 @@
               "scope": "#/properties/subject/properties/description"
             }
           ]
-        },
-        {
-          "type": "Control",
-          "scope": "#/properties/protocol"
         }
       ]
     },
