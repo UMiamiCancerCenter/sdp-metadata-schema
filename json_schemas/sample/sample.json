@@ -20,7 +20,8 @@
         "type"
       ],
       "properties": {
-        "role": {
+        "type": {
+          "description": "Biological system(s) being studied or modelled in the samples of this dataset. Supported: Model System, Biospecimen, Target.",
           "title": "Subject Role",
           "type": "string",
           "minLength": 1,
@@ -30,9 +31,16 @@
             "Target"
           ]
         },
-        "type":{
+        "type2": {
           "type": "string",
-          "title": "Subject Type"
+          "title": "Subject Type",
+          "enum": [
+            "cell line",
+            "primary cells",
+            "iPSC",
+            "differentiated cells",
+            "Tissue"
+          ]
         },
         "name": {
           "type": "string",
@@ -53,9 +61,8 @@
                 "obo_id",
                 "label"
             ]
-          }
         }
-      },
+        },
         "cellLineName": {
           "type": "string",
           "title": "Cell Line Name"
@@ -67,25 +74,12 @@
         "wasteWater": {
           "type": "string",
           "title": "Waste Water Name"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
         }
-      },
-      "if":{
-        "properties": {
-          "role":{"const": "Model System"}
-        }
-      },
-      "then":{
-        "properties":{
-            "type":{
-            "enum": [
-              "cell line",
-              "primary cells",
-              "iPSC",
-              "differentiated cells",
-              "Tissue"
-            ]
-          }
-        }
+      }
     },
     "perturbations": {
       "type": "array",
