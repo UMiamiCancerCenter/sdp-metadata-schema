@@ -21,17 +21,6 @@
       ],
       "properties": {
         "type": {
-          "description": "Biological system(s) being studied or modelled in the samples of this dataset. Supported: Model System, Biospecimen, Target.",
-          "title": "Subject Role",
-          "type": "string",
-          "minLength": 1,
-          "enum": [
-            "Model System", 
-            "Biospecimen",
-            "Target"
-          ]
-        },
-        "type2": {
           "type": "string",
           "title": "Subject Type",
           "enum": [
