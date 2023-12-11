@@ -53,8 +53,9 @@
                 "obo_id",
                 "label"
             ]
+          }
         }
-        },
+      },
         "cellLineName": {
           "type": "string",
           "title": "Cell Line Name"
