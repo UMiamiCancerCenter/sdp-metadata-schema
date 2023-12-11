@@ -20,7 +20,7 @@
         "type"
       ],
       "properties": {
-        "type": {
+        "role": {
           "title": "Subject Role",
           "type": "string",
           "minLength": 1,
@@ -30,16 +30,9 @@
             "Target"
           ]
         },
-        "type2": {
+        "type":{
           "type": "string",
-          "title": "Subject Type",
-          "enum": [
-            "cell line",
-            "primary cells",
-            "iPSC",
-            "differentiated cells",
-            "Tissue"
-          ]
+          "title": "Subject Type"
         },
         "name": {
           "type": "string",
@@ -78,7 +71,24 @@
           "type": "string",
           "title": "Description"
         }
-      }
+      },
+      "if":{
+        "properties": {
+          "role":{"const": "Model System"}
+        }
+      },
+      "then":{
+        "properties":{
+            "type":{
+            "enum": [
+              "cell line",
+              "primary cells",
+              "iPSC",
+              "differentiated cells",
+              "Tissue"
+            ]
+          }
+        }
     },
     "perturbations": {
       "type": "array",
