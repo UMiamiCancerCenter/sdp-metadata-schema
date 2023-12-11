@@ -67,10 +67,6 @@
         "wasteWater": {
           "type": "string",
           "title": "Waste Water Name"
-        },
-        "description": {
-          "type": "string",
-          "title": "Description"
         }
       },
       "if":{
