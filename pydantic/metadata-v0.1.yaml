@@ -1,0 +1,23 @@
+version: 0.1
+comment: experimenting with format
+graph:
+  - ["dataset", "Bulk RNA-seq"]
+  - ["dataset", "scRNA-seq"]
+  - ["dataset", "DNA-seq"]
+  - ["dataset", "L1000"]
+  - ["dataset", "sample"]
+  - ["sample", "experimental sample"]
+  - ["experimental sample", "perturbation"]
+  - ["perturbation", "experimental subject"]
+  - ["perturbation", "reagent"]
+  - ["reagent", "perturbagen"]
+  - ["reagent", "extracellular matrix"]
+  - ["experimental subject", "model system"]
+  - ["experimental subject", "biospecimen"]
+  - ["experimental subject", "target"]
+  - ["model system", "cell line"]
+  - ["model system", "iPSC"]
+  - ["model system", "differentiated cells"]
+forms:
+  cell line: {"name": str}
+  iPSC: {"name": int}

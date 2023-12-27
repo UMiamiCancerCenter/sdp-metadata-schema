@@ -1,0 +1,115 @@
+{
+  "$defs": {
+    "English": {
+      "description": "will have three required fields ",
+      "properties": {
+        "language": {
+          "const": "en",
+          "title": "Language"
+        },
+        "one": {
+          "title": "One",
+          "type": "integer"
+        },
+        "two": {
+          "title": "Two",
+          "type": "integer"
+        },
+        "three": {
+          "title": "Three",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "language",
+        "one",
+        "two",
+        "three"
+      ],
+      "title": "English",
+      "type": "object"
+    },
+    "German": {
+      "description": "will have one field, with three options",
+      "properties": {
+        "language": {
+          "const": "de",
+          "title": "Language"
+        },
+        "numbers": {
+          "title": "Numbers"
+        }
+      },
+      "required": [
+        "language",
+        "numbers"
+      ],
+      "title": "German",
+      "type": "object"
+    },
+    "Japanese": {
+      "description": "will have four fields ",
+      "properties": {
+        "language": {
+          "const": "jp",
+          "title": "Language"
+        },
+        "ichi": {
+          "title": "Ichi",
+          "type": "integer"
+        },
+        "ni": {
+          "title": "Ni",
+          "type": "integer"
+        },
+        "san": {
+          "title": "San",
+          "type": "integer"
+        },
+        "shi": {
+          "title": "Shi",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "language",
+        "ichi",
+        "ni",
+        "san",
+        "shi"
+      ],
+      "title": "Japanese",
+      "type": "object"
+    }
+  },
+  "description": "Dialog can have one language",
+  "properties": {
+    "language": {
+      "discriminator": {
+        "mapping": {
+          "de": "#/$defs/German",
+          "en": "#/$defs/English",
+          "jp": "#/$defs/Japanese"
+        },
+        "propertyName": "language"
+      },
+      "oneOf": [
+        {
+          "$ref": "#/$defs/English"
+        },
+        {
+          "$ref": "#/$defs/German"
+        },
+        {
+          "$ref": "#/$defs/Japanese"
+        }
+      ],
+      "title": "Language"
+    }
+  },
+  "required": [
+    "language"
+  ],
+  "title": "Dialog",
+  "type": "object"
+}
