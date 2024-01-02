@@ -1,7 +1,6 @@
 {
   "$defs": {
     "Biospecimen": {
-      "description": "will have one field, with three options",
       "properties": {
         "type": {
           "anyOf": [
@@ -74,7 +73,6 @@
       "type": "object"
     },
     "ModelSystem": {
-      "description": "will have four fields ",
       "properties": {
         "type": {
           "anyOf": [
@@ -94,10 +92,12 @@
               "$ref": "#/$defs/Tissue"
             }
           ],
-          "default": null,
           "title": "Type"
         }
       },
+      "required": [
+        "type"
+      ],
       "title": "ModelSystem",
       "type": "object"
     },
@@ -141,7 +141,6 @@
       "type": "object"
     },
     "Target": {
-      "description": "not sure how to get numbering on the others. Not important",
       "properties": {
         "type": {
           "anyOf": [

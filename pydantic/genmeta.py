@@ -2,59 +2,97 @@
 """ an example with branching choices """
 
 import json
-from typing import Literal, Union
+from typing import Literal, Union, List, Optional
 from enum import Enum
 
+# import streamlit as st
 from pydantic import BaseModel, Field
+# import streamlit_pydantic as sp
 
 from pydantic.config import ConfigDict
 
+class SmallMolecule(BaseModel):
+    
+    Name: str
+    Duration: str
+    Concentration: str
+
+class CRISPR(BaseModel):
+    
+    Name: str
+    Duration: str
+    Concentration: str
+
+class RNAi(BaseModel):
+    
+    Name: str
+    Duration: str
+    Concentration: str
+
+class Antibody(BaseModel):
+    
+    Name: str
+    Duration: str
+    Concentration: str
+
+class ProteinP(BaseModel):
+    
+    Name: str
+    Duration: str
+    Concentration: str
+
+class InfectiousAgent(BaseModel):
+    
+    Name: str
+    Duration: str
+    Concentration: str
+
 class EpigeneticModification(BaseModel):
     
-    SampleName: str
+    Name: str
 
 class Protein(BaseModel):
     
-    SampleName: str
+    Name: str
 
 class Transcript(BaseModel):
     
-    SampleName: str
+    Name: str
 
 class Gene(BaseModel):
     
-    SampleName: str
+    Name: str
 
 class Tissue(BaseModel):
     
-    SampleName: str
+    Name: str
 
 class PrimaryCells(BaseModel):
     
-    SampleName: str
+    Name: str
 
 class DifferentiatedCells(BaseModel):
     
-    SampleName: str
+    Name: str
 
 class iPSC(BaseModel):
     
-    SampleName: str
+    Name: str
 
 class CellLine(BaseModel):
     
-    SampleName: str
+    Name: str
 
 class Wastewater(BaseModel):
     
-    SampleName: str
+    Name: str
 
 class PatientSample(BaseModel):
     
-    SampleName: str
+    Name: str
 
 class Target(BaseModel):
-    """ not sure how to get numbering on the others. Not important"""
+    
     type: Union[
             Gene,
             Transcript,
@@ -82,20 +120,34 @@ class ModelSystem(BaseModel):
             ]
 
 
-class ExperimentalSubject(BaseModel):
-    """ Dialog can have one role"""
-
-    role: Union[
+class Sample(BaseModel):
+    
+    SampleName: str
+    Description: str
+    ExperimentalSubject: Union[
             ModelSystem,
             Biospecimen,
             Target
-            ] 
-
+            ]
+    Perturbation: List[Union[
+        SmallMolecule,
+        CRISPR,
+        RNAi,
+        Antibody,
+        ProteinP,
+        InfectiousAgent
+    ] 
+        ]
+                 
 
 def example():
     """ run this to see the schema dumped """
     with open ("genmeta_schema.json", "w") as ft:
-        print(json.dumps(ExperimentalSubject.model_json_schema(), indent=2), 
+        print(json.dumps(Sample.model_json_schema(), indent=2), 
               file = ft)
 
 example()
+
+# data = sp.pydantic_form(key="my_form", model=ExperimentalSubject)
+# if data:
+#     st.json(data.json())

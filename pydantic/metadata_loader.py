@@ -19,7 +19,9 @@ def main():
         print(G)
         root = list(nx.topological_sort(G))[0]
         tree_model = build_tree(root, G, forms)
-        print(json.dumps(tree_model.model_json_schema(), indent=2))
+        with open ("metadata_graph_model.json", "w") as ft:
+            print(json.dumps(tree_model.model_json_schema(), indent=2), 
+                  file = ft)
         # pos = nx.spring_layout(G)
         # pos = nx.nx_agraph.graphviz_layout(G, prog="dot", args="")
         pos = graphviz_layout(G, prog="dot")

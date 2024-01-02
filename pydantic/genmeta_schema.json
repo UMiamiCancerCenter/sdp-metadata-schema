@@ -1,5 +1,28 @@
 {
   "$defs": {
+    "Antibody": {
+      "properties": {
+        "Name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "Duration": {
+          "title": "Duration",
+          "type": "string"
+        },
+        "Concentration": {
+          "title": "Concentration",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Name",
+        "Duration",
+        "Concentration"
+      ],
+      "title": "Antibody",
+      "type": "object"
+    },
     "Biospecimen": {
       "properties": {
         "type": {
@@ -20,56 +43,102 @@
       "title": "Biospecimen",
       "type": "object"
     },
-    "CellLine": {
+    "CRISPR": {
       "properties": {
-        "SampleName": {
-          "title": "Samplename",
+        "Name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "Duration": {
+          "title": "Duration",
+          "type": "string"
+        },
+        "Concentration": {
+          "title": "Concentration",
           "type": "string"
         }
       },
       "required": [
-        "SampleName"
+        "Name",
+        "Duration",
+        "Concentration"
+      ],
+      "title": "CRISPR",
+      "type": "object"
+    },
+    "CellLine": {
+      "properties": {
+        "Name": {
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Name"
       ],
       "title": "CellLine",
       "type": "object"
     },
     "DifferentiatedCells": {
       "properties": {
-        "SampleName": {
-          "title": "Samplename",
+        "Name": {
+          "title": "Name",
           "type": "string"
         }
       },
       "required": [
-        "SampleName"
+        "Name"
       ],
       "title": "DifferentiatedCells",
       "type": "object"
     },
     "EpigeneticModification": {
       "properties": {
-        "SampleName": {
-          "title": "Samplename",
+        "Name": {
+          "title": "Name",
           "type": "string"
         }
       },
       "required": [
-        "SampleName"
+        "Name"
       ],
       "title": "EpigeneticModification",
       "type": "object"
     },
     "Gene": {
       "properties": {
-        "SampleName": {
-          "title": "Samplename",
+        "Name": {
+          "title": "Name",
           "type": "string"
         }
       },
       "required": [
-        "SampleName"
+        "Name"
       ],
       "title": "Gene",
+      "type": "object"
+    },
+    "InfectiousAgent": {
+      "properties": {
+        "Name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "Duration": {
+          "title": "Duration",
+          "type": "string"
+        },
+        "Concentration": {
+          "title": "Concentration",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Name",
+        "Duration",
+        "Concentration"
+      ],
+      "title": "InfectiousAgent",
       "type": "object"
     },
     "ModelSystem": {
@@ -103,45 +172,113 @@
     },
     "PatientSample": {
       "properties": {
-        "SampleName": {
-          "title": "Samplename",
+        "Name": {
+          "title": "Name",
           "type": "string"
         }
       },
       "required": [
-        "SampleName"
+        "Name"
       ],
       "title": "PatientSample",
       "type": "object"
     },
     "PrimaryCells": {
       "properties": {
-        "SampleName": {
-          "title": "Samplename",
+        "Name": {
+          "title": "Name",
           "type": "string"
         }
       },
       "required": [
-        "SampleName"
+        "Name"
       ],
       "title": "PrimaryCells",
       "type": "object"
     },
     "Protein": {
       "properties": {
-        "SampleName": {
-          "title": "Samplename",
+        "Name": {
+          "title": "Name",
           "type": "string"
         }
       },
       "required": [
-        "SampleName"
+        "Name"
       ],
       "title": "Protein",
       "type": "object"
     },
+    "ProteinP": {
+      "properties": {
+        "Name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "Duration": {
+          "title": "Duration",
+          "type": "string"
+        },
+        "Concentration": {
+          "title": "Concentration",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Name",
+        "Duration",
+        "Concentration"
+      ],
+      "title": "ProteinP",
+      "type": "object"
+    },
+    "RNAi": {
+      "properties": {
+        "Name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "Duration": {
+          "title": "Duration",
+          "type": "string"
+        },
+        "Concentration": {
+          "title": "Concentration",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Name",
+        "Duration",
+        "Concentration"
+      ],
+      "title": "RNAi",
+      "type": "object"
+    },
+    "SmallMolecule": {
+      "properties": {
+        "Name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "Duration": {
+          "title": "Duration",
+          "type": "string"
+        },
+        "Concentration": {
+          "title": "Concentration",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Name",
+        "Duration",
+        "Concentration"
+      ],
+      "title": "SmallMolecule",
+      "type": "object"
+    },
     "Target": {
-      "description": "not sure how to get numbering on the others. Not important",
       "properties": {
         "type": {
           "anyOf": [
@@ -169,60 +306,67 @@
     },
     "Tissue": {
       "properties": {
-        "SampleName": {
-          "title": "Samplename",
+        "Name": {
+          "title": "Name",
           "type": "string"
         }
       },
       "required": [
-        "SampleName"
+        "Name"
       ],
       "title": "Tissue",
       "type": "object"
     },
     "Transcript": {
       "properties": {
-        "SampleName": {
-          "title": "Samplename",
+        "Name": {
+          "title": "Name",
           "type": "string"
         }
       },
       "required": [
-        "SampleName"
+        "Name"
       ],
       "title": "Transcript",
       "type": "object"
     },
     "Wastewater": {
       "properties": {
-        "SampleName": {
-          "title": "Samplename",
+        "Name": {
+          "title": "Name",
           "type": "string"
         }
       },
       "required": [
-        "SampleName"
+        "Name"
       ],
       "title": "Wastewater",
       "type": "object"
     },
     "iPSC": {
       "properties": {
-        "SampleName": {
-          "title": "Samplename",
+        "Name": {
+          "title": "Name",
           "type": "string"
         }
       },
       "required": [
-        "SampleName"
+        "Name"
       ],
       "title": "iPSC",
       "type": "object"
     }
   },
-  "description": "Dialog can have one role",
   "properties": {
-    "role": {
+    "SampleName": {
+      "title": "Samplename",
+      "type": "string"
+    },
+    "Description": {
+      "title": "Description",
+      "type": "string"
+    },
+    "ExperimentalSubject": {
       "anyOf": [
         {
           "$ref": "#/$defs/ModelSystem"
@@ -234,12 +378,41 @@
           "$ref": "#/$defs/Target"
         }
       ],
-      "title": "Role"
+      "title": "Experimentalsubject"
+    },
+    "Perturbation": {
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/SmallMolecule"
+          },
+          {
+            "$ref": "#/$defs/CRISPR"
+          },
+          {
+            "$ref": "#/$defs/RNAi"
+          },
+          {
+            "$ref": "#/$defs/Antibody"
+          },
+          {
+            "$ref": "#/$defs/ProteinP"
+          },
+          {
+            "$ref": "#/$defs/InfectiousAgent"
+          }
+        ]
+      },
+      "title": "Perturbation",
+      "type": "array"
     }
   },
   "required": [
-    "role"
+    "SampleName",
+    "Description",
+    "ExperimentalSubject",
+    "Perturbation"
   ],
-  "title": "ExperimentalSubject",
+  "title": "Sample",
   "type": "object"
 }
