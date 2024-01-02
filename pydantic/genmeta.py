@@ -2,11 +2,11 @@
 """ an example with branching choices """
 
 import json
-from typing import Literal, Union, List, Optional
+from typing import Literal, Union, List, Optional, TypeAlias
 from enum import Enum
 
 # import streamlit as st
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, fields
 # import streamlit_pydantic as sp
 
 from pydantic.config import ConfigDict
@@ -37,6 +37,8 @@ class Antibody(BaseModel):
 
 class ProteinP(BaseModel):
     
+    model_config = ConfigDict(title='Protein')
+
     Name: str
     Duration: str
     Concentration: str

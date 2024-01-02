@@ -229,7 +229,7 @@
         "Duration",
         "Concentration"
       ],
-      "title": "ProteinP",
+      "title": "Protein",
       "type": "object"
     },
     "RNAi": {
