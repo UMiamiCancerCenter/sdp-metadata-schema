@@ -3,7 +3,7 @@
     "Antibody": {
       "properties": {
         "Name": {
-          "title": "Name",
+          "title": "Antibody Name",
           "type": "string"
         },
         "Duration": {
@@ -46,7 +46,7 @@
     "CRISPR": {
       "properties": {
         "Name": {
-          "title": "Name",
+          "title": "Target Gene",
           "type": "string"
         },
         "Duration": {
@@ -69,46 +69,46 @@
     "CellLine": {
       "properties": {
         "Name": {
-          "title": "Name",
+          "title": "Cell Line Name",
           "type": "string"
         }
       },
       "required": [
         "Name"
       ],
-      "title": "CellLine",
+      "title": "Cell Line",
       "type": "object"
     },
     "DifferentiatedCells": {
       "properties": {
         "Name": {
-          "title": "Name",
+          "title": "Cell Type",
           "type": "string"
         }
       },
       "required": [
         "Name"
       ],
-      "title": "DifferentiatedCells",
+      "title": "Differentiated Cells",
       "type": "object"
     },
     "EpigeneticModification": {
       "properties": {
         "Name": {
-          "title": "Name",
+          "title": "Modification Type",
           "type": "string"
         }
       },
       "required": [
         "Name"
       ],
-      "title": "EpigeneticModification",
+      "title": "Epigenetic Modification",
       "type": "object"
     },
     "Gene": {
       "properties": {
         "Name": {
-          "title": "Name",
+          "title": "Gene Name",
           "type": "string"
         }
       },
@@ -121,7 +121,7 @@
     "InfectiousAgent": {
       "properties": {
         "Name": {
-          "title": "Name",
+          "title": "Agent Name",
           "type": "string"
         },
         "Duration": {
@@ -138,7 +138,7 @@
         "Duration",
         "Concentration"
       ],
-      "title": "InfectiousAgent",
+      "title": "Infectious Agent",
       "type": "object"
     },
     "ModelSystem": {
@@ -167,39 +167,39 @@
       "required": [
         "type"
       ],
-      "title": "ModelSystem",
+      "title": "Model System",
       "type": "object"
     },
     "PatientSample": {
       "properties": {
         "Name": {
-          "title": "Name",
+          "title": "Tumor Type",
           "type": "string"
         }
       },
       "required": [
         "Name"
       ],
-      "title": "PatientSample",
+      "title": "Patient Sample",
       "type": "object"
     },
     "PrimaryCells": {
       "properties": {
         "Name": {
-          "title": "Name",
+          "title": "Cell Type",
           "type": "string"
         }
       },
       "required": [
         "Name"
       ],
-      "title": "PrimaryCells",
+      "title": "Primary Cells",
       "type": "object"
     },
     "Protein": {
       "properties": {
         "Name": {
-          "title": "Name",
+          "title": "Protein Name",
           "type": "string"
         }
       },
@@ -212,7 +212,7 @@
     "ProteinP": {
       "properties": {
         "Name": {
-          "title": "Name",
+          "title": "Protein Name",
           "type": "string"
         },
         "Duration": {
@@ -235,7 +235,7 @@
     "RNAi": {
       "properties": {
         "Name": {
-          "title": "Name",
+          "title": "Target Sequence",
           "type": "string"
         },
         "Duration": {
@@ -258,7 +258,7 @@
     "SmallMolecule": {
       "properties": {
         "Name": {
-          "title": "Name",
+          "title": "Small Molecule Name",
           "type": "string"
         },
         "Duration": {
@@ -275,7 +275,7 @@
         "Duration",
         "Concentration"
       ],
-      "title": "SmallMolecule",
+      "title": "Small Molecule",
       "type": "object"
     },
     "Target": {
@@ -307,7 +307,7 @@
     "Tissue": {
       "properties": {
         "Name": {
-          "title": "Name",
+          "title": "Tissue Type",
           "type": "string"
         }
       },
@@ -320,7 +320,7 @@
     "Transcript": {
       "properties": {
         "Name": {
-          "title": "Name",
+          "title": "NCBI Accession Number",
           "type": "string"
         }
       },
@@ -333,7 +333,7 @@
     "Wastewater": {
       "properties": {
         "Name": {
-          "title": "Name",
+          "title": "Sample ID",
           "type": "string"
         }
       },
@@ -346,7 +346,7 @@
     "iPSC": {
       "properties": {
         "Name": {
-          "title": "Name",
+          "title": "iPSC ID",
           "type": "string"
         }
       },
@@ -359,7 +359,7 @@
   },
   "properties": {
     "SampleName": {
-      "title": "Samplename",
+      "title": "Sample Name",
       "type": "string"
     },
     "Description": {
@@ -378,7 +378,7 @@
           "$ref": "#/$defs/Target"
         }
       ],
-      "title": "Experimentalsubject"
+      "title": "Experimental Subject"
     },
     "Perturbation": {
       "items": {
