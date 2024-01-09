@@ -1,0 +1,244 @@
+{
+  "$defs": {
+    "Biospecimen": {
+      "properties": {
+        "type": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/PatientSample"
+            },
+            {
+              "$ref": "#/$defs/Wastewater"
+            }
+          ],
+          "title": "Type"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "title": "Biospecimen",
+      "type": "object"
+    },
+    "CellLine": {
+      "properties": {
+        "SampleName": {
+          "title": "Samplename",
+          "type": "string"
+        }
+      },
+      "required": [
+        "SampleName"
+      ],
+      "title": "CellLine",
+      "type": "object"
+    },
+    "DifferentiatedCells": {
+      "properties": {
+        "SampleName": {
+          "title": "Samplename",
+          "type": "string"
+        }
+      },
+      "required": [
+        "SampleName"
+      ],
+      "title": "DifferentiatedCells",
+      "type": "object"
+    },
+    "EpigeneticModification": {
+      "properties": {
+        "SampleName": {
+          "title": "Samplename",
+          "type": "string"
+        }
+      },
+      "required": [
+        "SampleName"
+      ],
+      "title": "EpigeneticModification",
+      "type": "object"
+    },
+    "Gene": {
+      "properties": {
+        "SampleName": {
+          "title": "Samplename",
+          "type": "string"
+        }
+      },
+      "required": [
+        "SampleName"
+      ],
+      "title": "Gene",
+      "type": "object"
+    },
+    "ModelSystem": {
+      "properties": {
+        "type": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/CellLine"
+            },
+            {
+              "$ref": "#/$defs/iPSC"
+            },
+            {
+              "$ref": "#/$defs/DifferentiatedCells"
+            },
+            {
+              "$ref": "#/$defs/PrimaryCells"
+            },
+            {
+              "$ref": "#/$defs/Tissue"
+            }
+          ],
+          "title": "Type"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "title": "ModelSystem",
+      "type": "object"
+    },
+    "PatientSample": {
+      "properties": {
+        "SampleName": {
+          "title": "Samplename",
+          "type": "string"
+        }
+      },
+      "required": [
+        "SampleName"
+      ],
+      "title": "PatientSample",
+      "type": "object"
+    },
+    "PrimaryCells": {
+      "properties": {
+        "SampleName": {
+          "title": "Samplename",
+          "type": "string"
+        }
+      },
+      "required": [
+        "SampleName"
+      ],
+      "title": "PrimaryCells",
+      "type": "object"
+    },
+    "Protein": {
+      "properties": {
+        "SampleName": {
+          "title": "Samplename",
+          "type": "string"
+        }
+      },
+      "required": [
+        "SampleName"
+      ],
+      "title": "Protein",
+      "type": "object"
+    },
+    "Target": {
+      "properties": {
+        "type": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Gene"
+            },
+            {
+              "$ref": "#/$defs/Transcript"
+            },
+            {
+              "$ref": "#/$defs/Protein"
+            },
+            {
+              "$ref": "#/$defs/EpigeneticModification"
+            }
+          ],
+          "title": "Type"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "title": "Target",
+      "type": "object"
+    },
+    "Tissue": {
+      "properties": {
+        "SampleName": {
+          "title": "Samplename",
+          "type": "string"
+        }
+      },
+      "required": [
+        "SampleName"
+      ],
+      "title": "Tissue",
+      "type": "object"
+    },
+    "Transcript": {
+      "properties": {
+        "SampleName": {
+          "title": "Samplename",
+          "type": "string"
+        }
+      },
+      "required": [
+        "SampleName"
+      ],
+      "title": "Transcript",
+      "type": "object"
+    },
+    "Wastewater": {
+      "properties": {
+        "SampleName": {
+          "title": "Samplename",
+          "type": "string"
+        }
+      },
+      "required": [
+        "SampleName"
+      ],
+      "title": "Wastewater",
+      "type": "object"
+    },
+    "iPSC": {
+      "properties": {
+        "SampleName": {
+          "title": "Samplename",
+          "type": "string"
+        }
+      },
+      "required": [
+        "SampleName"
+      ],
+      "title": "iPSC",
+      "type": "object"
+    }
+  },
+  "description": "Dialog can have one role",
+  "properties": {
+    "role": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ModelSystem"
+        },
+        {
+          "$ref": "#/$defs/Biospecimen"
+        },
+        {
+          "$ref": "#/$defs/Target"
+        }
+      ],
+      "title": "Role"
+    }
+  },
+  "required": [
+    "role"
+  ],
+  "title": "ExperimentalSubject",
+  "type": "object"
+}

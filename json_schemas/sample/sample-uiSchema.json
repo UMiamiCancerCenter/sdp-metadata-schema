@@ -10,11 +10,11 @@
       "scope": "#/properties/description"
     },
     {
-      "type": "HorizontalLayout",
+      "type": "VerticalLayout",
       "elements": [
         {
           "type": "Group",
-          "label": "Subject in the sample",
+          "label": "Experimental Subject",
           "scope": "#/properties/subject",
           "elements": [
             {
@@ -81,10 +81,6 @@
               "scope": "#/properties/subject/properties/description"
             }
           ]
-        },
-        {
-          "type": "Control",
-          "scope": "#/properties/protocol"
         }
       ]
     },
