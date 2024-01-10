@@ -28,10 +28,10 @@
         "type": {
           "anyOf": [
             {
-              "$ref": "#/$defs/PatientSample"
+              "$id": "#/$defs/PatientSample"
             },
             {
-              "$ref": "#/$defs/Wastewater"
+              "$id": "#/$defs/Wastewater"
             }
           ],
           "title": "Type"
@@ -146,19 +146,19 @@
         "type": {
           "anyOf": [
             {
-              "$ref": "#/$defs/CellLine"
+              "$id": "#/$defs/CellLine"
             },
             {
-              "$ref": "#/$defs/iPSC"
+              "$id": "#/$defs/iPSC"
             },
             {
-              "$ref": "#/$defs/DifferentiatedCells"
+              "$id": "#/$defs/DifferentiatedCells"
             },
             {
-              "$ref": "#/$defs/PrimaryCells"
+              "$id": "#/$defs/PrimaryCells"
             },
             {
-              "$ref": "#/$defs/Tissue"
+              "$id": "#/$defs/Tissue"
             }
           ],
           "title": "Type"
@@ -283,16 +283,16 @@
         "type": {
           "anyOf": [
             {
-              "$ref": "#/$defs/Gene"
+              "$id": "#/$defs/Gene"
             },
             {
-              "$ref": "#/$defs/Transcript"
+              "$id": "#/$defs/Transcript"
             },
             {
-              "$ref": "#/$defs/Protein"
+              "$id": "#/$defs/Protein"
             },
             {
-              "$ref": "#/$defs/EpigeneticModification"
+              "$id": "#/$defs/EpigeneticModification"
             }
           ],
           "title": "Type"
@@ -369,13 +369,13 @@
     "ExperimentalSubject": {
       "anyOf": [
         {
-          "$ref": "#/$defs/ModelSystem"
+          "$id": "#/$defs/ModelSystem"
         },
         {
-          "$ref": "#/$defs/Biospecimen"
+          "$id": "#/$defs/Biospecimen"
         },
         {
-          "$ref": "#/$defs/Target"
+          "$id": "#/$defs/Target"
         }
       ],
       "title": "Experimental Subject"
@@ -384,22 +384,22 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "#/$defs/SmallMolecule"
+            "$id": "#/$defs/SmallMolecule"
           },
           {
-            "$ref": "#/$defs/CRISPR"
+            "$id": "#/$defs/CRISPR"
           },
           {
-            "$ref": "#/$defs/RNAi"
+            "$id": "#/$defs/RNAi"
           },
           {
-            "$ref": "#/$defs/Antibody"
+            "$id": "#/$defs/Antibody"
           },
           {
-            "$ref": "#/$defs/ProteinP"
+            "$id": "#/$defs/ProteinP"
           },
           {
-            "$ref": "#/$defs/InfectiousAgent"
+            "$id": "#/$defs/InfectiousAgent"
           }
         ]
       },
