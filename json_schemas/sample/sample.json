@@ -68,6 +68,10 @@
     },
     "CellLine": {
       "properties": {
+        "Class": {
+          "title": "Cell Line",
+          "const": "Cell Line"
+        },
         "Name": {
           "title": "Cell Line Name",
           "type": "string"
