@@ -15,11 +15,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "Name",
-        "Duration",
-        "Concentration"
-      ],
+      "required": ["Name", "Duration", "Concentration"],
       "title": "Antibody",
       "type": "object"
     },
@@ -37,10 +33,8 @@
           "title": "Type"
         }
       },
-      "required": [
-        "type"
-      ],
-      "title": "Biospecimen",
+      "required": ["type"],
+      "title": "",
       "type": "object"
     },
     "CRISPR": {
@@ -58,11 +52,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "Name",
-        "Duration",
-        "Concentration"
-      ],
+      "required": ["Name", "Duration", "Concentration"],
       "title": "CRISPR",
       "type": "object"
     },
@@ -77,10 +67,8 @@
           "type": "string"
         }
       },
-      "required": [
-        "Name"
-      ],
-      "title": "Cell Line",
+      "required": ["Name"],
+      "title": "",
       "type": "object"
     },
     "DifferentiatedCells": {
@@ -90,10 +78,8 @@
           "type": "string"
         }
       },
-      "required": [
-        "Name"
-      ],
-      "title": "Differentiated Cells",
+      "required": ["Name"],
+      "title": "",
       "type": "object"
     },
     "EpigeneticModification": {
@@ -103,9 +89,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "Name"
-      ],
+      "required": ["Name"],
       "title": "Epigenetic Modification",
       "type": "object"
     },
@@ -116,9 +100,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "Name"
-      ],
+      "required": ["Name"],
       "title": "Gene",
       "type": "object"
     },
@@ -137,11 +119,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "Name",
-        "Duration",
-        "Concentration"
-      ],
+      "required": ["Name", "Duration", "Concentration"],
       "title": "Infectious Agent",
       "type": "object"
     },
@@ -150,28 +128,52 @@
         "type": {
           "anyOf": [
             {
-              "$ref": "#/$defs/CellLine"
+              "title": "Cell Line",
+              "properties": {
+                "CellLine": {
+                  "$ref": "#/$defs/CellLine"
+                }
+              }
             },
             {
-              "$ref": "#/$defs/iPSC"
+              "title": "iPSC",
+              "properties": {
+                "iPSC": {
+                  "$ref": "#/$defs/iPSC"
+                }
+              }
             },
             {
-              "$ref": "#/$defs/DifferentiatedCells"
+              "title": "Differentiated Cells",
+              "properties": {
+                "DifferentiatedCells": {
+                  "$ref": "#/$defs/DifferentiatedCells"
+                }
+              }
             },
             {
-              "$ref": "#/$defs/PrimaryCells"
+              "title": "Primary Cells",
+              "properties": {
+                "PrimaryCells": {
+                  "$ref": "#/$defs/PrimaryCells"
+                }
+              }
             },
             {
-              "$ref": "#/$defs/Tissue"
+              "title": "Tissue",
+              "properties": {
+                "Tissue": {
+                  "$ref": "#/$defs/Tissue"
+                }
+              }
             }
           ],
-          "title": "Type"
+          "title": "Type",
+          "type": "object"
         }
       },
-      "required": [
-        "type"
-      ],
-      "title": "Model System",
+      "required": ["type"],
+      "title": "",
       "type": "object"
     },
     "PatientSample": {
@@ -181,9 +183,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "Name"
-      ],
+      "required": ["Name"],
       "title": "Patient Sample",
       "type": "object"
     },
@@ -194,10 +194,8 @@
           "type": "string"
         }
       },
-      "required": [
-        "Name"
-      ],
-      "title": "Primary Cells",
+      "required": ["Name"],
+      "title": "",
       "type": "object"
     },
     "Protein": {
@@ -207,9 +205,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "Name"
-      ],
+      "required": ["Name"],
       "title": "Protein",
       "type": "object"
     },
@@ -228,11 +224,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "Name",
-        "Duration",
-        "Concentration"
-      ],
+      "required": ["Name", "Duration", "Concentration"],
       "title": "Protein",
       "type": "object"
     },
@@ -251,11 +243,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "Name",
-        "Duration",
-        "Concentration"
-      ],
+      "required": ["Name", "Duration", "Concentration"],
       "title": "RNAi",
       "type": "object"
     },
@@ -274,11 +262,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "Name",
-        "Duration",
-        "Concentration"
-      ],
+      "required": ["Name", "Duration", "Concentration"],
       "title": "Small Molecule",
       "type": "object"
     },
@@ -302,10 +286,8 @@
           "title": "Type"
         }
       },
-      "required": [
-        "type"
-      ],
-      "title": "Target",
+      "required": ["type"],
+      "title": "",
       "type": "object"
     },
     "Tissue": {
@@ -315,10 +297,8 @@
           "type": "string"
         }
       },
-      "required": [
-        "Name"
-      ],
-      "title": "Tissue",
+      "required": ["Name"],
+      "title": "",
       "type": "object"
     },
     "Transcript": {
@@ -328,9 +308,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "Name"
-      ],
+      "required": ["Name"],
       "title": "Transcript",
       "type": "object"
     },
@@ -341,9 +319,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "Name"
-      ],
+      "required": ["Name"],
       "title": "Wastewater",
       "type": "object"
     },
@@ -354,10 +330,8 @@
           "type": "string"
         }
       },
-      "required": [
-        "Name"
-      ],
-      "title": "iPSC",
+      "required": ["Name"],
+      "title": "",
       "type": "object"
     }
   },
@@ -373,13 +347,31 @@
     "ExperimentalSubject": {
       "anyOf": [
         {
-          "$ref": "#/$defs/ModelSystem"
+          "title": "Model System",
+          "type": "object",
+          "properties": {
+            "ModelSystem": {
+              "$ref": "#/$defs/ModelSystem"
+            }
+          }
         },
         {
-          "$ref": "#/$defs/Biospecimen"
+          "title": "Biospecimen",
+          "type": "object",
+          "properties": {
+            "Biospecimen": {
+              "$ref": "#/$defs/Biospecimen"
+            }
+          }
         },
         {
-          "$ref": "#/$defs/Target"
+          "title": "Target",
+          "type": "object",
+          "properties": {
+            "Target": {
+              "$ref": "#/$defs/Target"
+            }
+          }
         }
       ],
       "title": "Experimental Subject"
