@@ -24,10 +24,22 @@
         "type": {
           "anyOf": [
             {
-              "$ref": "#/$defs/PatientSample"
+              "title": "Patient Sample",
+              "type": "object",
+              "properties": {
+                "PatientSample": {
+                  "$ref": "#/$defs/PatientSample"
+                }
+              }
             },
             {
-              "$ref": "#/$defs/Wastewater"
+              "title": "Wastewater",
+              "type": "object",
+              "properties": {
+                "Wastewater": {
+                  "$ref": "#/$defs/Wastewater"
+                }
+              }
             }
           ],
           "title": "Type"
@@ -90,7 +102,7 @@
         }
       },
       "required": ["Name"],
-      "title": "Epigenetic Modification",
+      "title": "",
       "type": "object"
     },
     "Gene": {
@@ -101,7 +113,7 @@
         }
       },
       "required": ["Name"],
-      "title": "Gene",
+      "title": "",
       "type": "object"
     },
     "InfectiousAgent": {
@@ -129,6 +141,7 @@
           "anyOf": [
             {
               "title": "Cell Line",
+              "type": "object",
               "properties": {
                 "CellLine": {
                   "$ref": "#/$defs/CellLine"
@@ -137,6 +150,7 @@
             },
             {
               "title": "iPSC",
+              "type": "object",
               "properties": {
                 "iPSC": {
                   "$ref": "#/$defs/iPSC"
@@ -145,6 +159,7 @@
             },
             {
               "title": "Differentiated Cells",
+              "type": "object",
               "properties": {
                 "DifferentiatedCells": {
                   "$ref": "#/$defs/DifferentiatedCells"
@@ -153,6 +168,7 @@
             },
             {
               "title": "Primary Cells",
+              "type": "object",
               "properties": {
                 "PrimaryCells": {
                   "$ref": "#/$defs/PrimaryCells"
@@ -161,6 +177,7 @@
             },
             {
               "title": "Tissue",
+              "type": "object",
               "properties": {
                 "Tissue": {
                   "$ref": "#/$defs/Tissue"
@@ -168,8 +185,7 @@
               }
             }
           ],
-          "title": "Type",
-          "type": "object"
+          "title": "Type"
         }
       },
       "required": ["type"],
@@ -184,7 +200,7 @@
         }
       },
       "required": ["Name"],
-      "title": "Patient Sample",
+      "title": "",
       "type": "object"
     },
     "PrimaryCells": {
@@ -206,7 +222,7 @@
         }
       },
       "required": ["Name"],
-      "title": "Protein",
+      "title": "",
       "type": "object"
     },
     "ProteinP": {
@@ -271,16 +287,40 @@
         "type": {
           "anyOf": [
             {
-              "$ref": "#/$defs/Gene"
+              "title": "Gene",
+              "type": "object",
+              "properties": {
+                "Gene": {
+                  "$ref": "#/$defs/Gene"
+                }
+              }
             },
             {
-              "$ref": "#/$defs/Transcript"
+              "title": "Transcript",
+              "type": "object",
+              "properties": {
+                "Transcript": {
+                  "$ref": "#/$defs/Transcript"
+                }
+              }
             },
             {
-              "$ref": "#/$defs/Protein"
+              "title": "Protein",
+              "type": "object",
+              "properties": {
+                "Protein": {
+                  "$ref": "#/$defs/Protein"
+                }
+              }
             },
             {
-              "$ref": "#/$defs/EpigeneticModification"
+              "title": "Epigenetic Modification",
+              "type": "object",
+              "properties": {
+                "EpigeneticModification": {
+                  "$ref": "#/$defs/EpigeneticModification"
+                }
+              }
             }
           ],
           "title": "Type"
@@ -309,7 +349,7 @@
         }
       },
       "required": ["Name"],
-      "title": "Transcript",
+      "title": "",
       "type": "object"
     },
     "Wastewater": {
@@ -320,7 +360,7 @@
         }
       },
       "required": ["Name"],
-      "title": "Wastewater",
+      "title": "",
       "type": "object"
     },
     "iPSC": {
@@ -374,7 +414,8 @@
           }
         }
       ],
-      "title": "Experimental Subject"
+      "title": "Experimental Subject",
+      "type": "object"
     },
     "Perturbation": {
       "items": {
