@@ -101,7 +101,7 @@ class cellLine(BaseModel):
 
     model_config = ConfigDict(title="Cell Line")
     
-    name: str = Field(title="Cell Line Name")
+    name: str = Field(default="", title="Cell Line Name")
     className: str = Field('Cell Line', frozen=True)
 
 class wastewater(BaseModel):
