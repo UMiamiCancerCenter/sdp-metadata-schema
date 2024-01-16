@@ -102,7 +102,7 @@ class cellLine(BaseModel):
     model_config = ConfigDict(title="Cell Line")
     
     name: str = Field(title="Cell Line Name")
-    className: str = Field(default="Cell Line", frozen=True)
+    className: str = Field('Cell Line', frozen=True)
 
 class wastewater(BaseModel):
     
@@ -116,6 +116,8 @@ class patientSample(BaseModel):
 
 class target(BaseModel):
     
+    model_config = ConfigDict(title="Molecular Target")
+
     type: Union[
             gene,
             transcript,
@@ -126,6 +128,8 @@ class target(BaseModel):
 
 class biospecimen(BaseModel):
     
+    model_config = ConfigDict(title="Biospecimen")
+
     type: Union[
             patientSample,
             wastewater
