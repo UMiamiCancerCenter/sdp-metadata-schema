@@ -51,7 +51,6 @@
         },
         "className": {
           "default": "Cell Line",
-          "format": "hidden",
           "title": "Classname",
           "type": "string"
         }

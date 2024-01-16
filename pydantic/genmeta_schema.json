@@ -49,10 +49,10 @@
           "title": "Cell Line Name",
           "type": "string"
         },
-        "className": {
+        "experimentalSubjectType": {
           "default": "Cell Line",
           "format": "hidden",
-          "title": "Classname",
+          "title": "Experimentalsubjecttype",
           "type": "string"
         }
       },
