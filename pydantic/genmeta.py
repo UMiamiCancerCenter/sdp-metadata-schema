@@ -11,149 +11,155 @@ from pydantic import BaseModel, Field, fields
 
 from pydantic.config import ConfigDict
 
-class SmallMolecule(BaseModel):
+class smallMolecule(BaseModel):
     
     model_config = ConfigDict(title="Small Molecule")
 
-    Name: str = Field(title="Small Molecule Name")
-    Duration: str
-    Concentration: str
+    name: str = Field(title="Small Molecule Name")
+    duration: str
+    concentration: str
 
-class CRISPR(BaseModel):
+class crispr(BaseModel):
     
-    Name: str = Field(title="Target Gene")
-    Duration: str
-    Concentration: str
+    model_config = ConfigDict(title="CRISPR")
 
-class RNAi(BaseModel):
+    name: str = Field(title="Target Gene")
+    duration: str
+    concentration: str
+
+class rnai(BaseModel):
+
+    model_config = ConfigDict(title="RNAi")
     
-    Name: str = Field(title="Target Sequence")
-    Duration: str
-    Concentration: str
+    name: str = Field(title="Target Sequence")
+    duration: str
+    concentration: str
 
-class Antibody(BaseModel):
+class antibody(BaseModel):
     
-    Name: str = Field(title="Antibody Name")
-    Duration: str
-    Concentration: str
+    name: str = Field(title="Antibody Name")
+    duration: str
+    concentration: str
 
-class ProteinP(BaseModel):
+class proteinP(BaseModel):
     
     model_config = ConfigDict(title='Protein')
 
-    Name: str = Field(title="Protein Name")
-    Duration: str
-    Concentration: str
+    name: str = Field(title="Protein Name")
+    duration: str
+    concentration: str
 
-class InfectiousAgent(BaseModel):
+class infectiousAgent(BaseModel):
     
     model_config = ConfigDict(title="Infectious Agent")
 
-    Name: str = Field(title="Agent Name")
-    Duration: str
-    Concentration: str
+    name: str = Field(title="Agent Name")
+    duration: str
+    concentration: str
 
-class EpigeneticModification(BaseModel):
+class epigeneticModification(BaseModel):
 
     model_config = ConfigDict(title="Epigenetic Modification")
     
-    Name: str = Field(title="Modification Type")
+    name: str = Field(title="Modification Type")
 
-class Protein(BaseModel):
+class protein(BaseModel):
     
-    Name: str = Field(title="Protein Name")
+    name: str = Field(title="Protein Name")
 
-class Transcript(BaseModel):
+class transcript(BaseModel):
     
-    Name: str = Field(title="NCBI Accession Number")
+    name: str = Field(title="NCBI Accession Number")
 
-class Gene(BaseModel):
+class gene(BaseModel):
     
-    Name: str = Field(title="Gene Name")
+    name: str = Field(title="Gene Name")
 
-class Tissue(BaseModel):
+class tissue(BaseModel):
     
-    Name: str = Field(title="Tissue Type")
+    name: str = Field(title="Tissue Type")
 
-class PrimaryCells(BaseModel):
+class primaryCells(BaseModel):
 
     model_config = ConfigDict(title="Primary Cells")
     
-    Name: str = Field(title="Cell Type")
+    name: str = Field(title="Cell Type")
 
-class DifferentiatedCells(BaseModel):
+class differentiatedCells(BaseModel):
     
     model_config = ConfigDict(title="Differentiated Cells")
 
-    Name: str = Field(title="Cell Type")
+    name: str = Field(title="Cell Type")
 
-class iPSC(BaseModel):
+class ipsc(BaseModel):
     
-    Name: str = Field(title="iPSC ID")
+    model_config = ConfigDict(title="iPSC")
 
-class CellLine(BaseModel):
+    name: str = Field(title="iPSC ID")
+
+class cellLine(BaseModel):
 
     model_config = ConfigDict(title="Cell Line")
     
-    Name: str = Field(title="Cell Line Name")
+    name: str = Field(title="Cell Line Name")
 
-class Wastewater(BaseModel):
+class wastewater(BaseModel):
     
-    Name: str = Field(title="Sample ID")
+    name: str = Field(title="Sample ID")
 
-class PatientSample(BaseModel):
+class patientSample(BaseModel):
     
     model_config = ConfigDict(title="Patient Sample")
 
-    Name: str = Field(title="Tumor Type")
+    name: str = Field(title="Tumor Type")
 
-class Target(BaseModel):
+class target(BaseModel):
     
     type: Union[
-            Gene,
-            Transcript,
-            Protein,
-            EpigeneticModification
+            gene,
+            transcript,
+            protein,
+            epigeneticModification
             ]
 
 
-class Biospecimen(BaseModel):
+class biospecimen(BaseModel):
     
     type: Union[
-            PatientSample,
-            Wastewater
+            patientSample,
+            wastewater
             ]
 
 
-class ModelSystem(BaseModel):
+class modelSystem(BaseModel):
 
     model_config = ConfigDict(title="Model System")
    
     type: Union[
-            CellLine,
-            iPSC,
-            DifferentiatedCells,
-            PrimaryCells,
-            Tissue
+            cellLine,
+            ipsc,
+            differentiatedCells,
+            primaryCells,
+            tissue
             ]
 
 
-class Sample(BaseModel):
+class sample(BaseModel):
     
-    SampleName: str = Field(title='Sample Name')
-    Description: str
-    ExperimentalSubject: Union[
-            ModelSystem,
-            Biospecimen,
-            Target
+    sampleName: str = Field(title='Sample Name')
+    description: str
+    experimentalSubject: Union[
+            modelSystem,
+            biospecimen,
+            target
             ] = Field(title="Experimental Subject")
-    Perturbation: List[Union[
-        SmallMolecule,
-        CRISPR,
-        RNAi,
-        Antibody,
-        ProteinP,
-        InfectiousAgent
+    perturbation: List[Union[
+        smallMolecule,
+        crispr,
+        rnai,
+        antibody,
+        proteinP,
+        infectiousAgent
     ] 
         ]
                  
@@ -161,7 +167,7 @@ class Sample(BaseModel):
 def example():
     """ run this to see the schema dumped """
     with open ("genmeta_schema.json", "w") as ft:
-        print(json.dumps(Sample.model_json_schema(), indent=2), 
+        print(json.dumps(sample.model_json_schema(), indent=2), 
               file = ft)
 
 example()
