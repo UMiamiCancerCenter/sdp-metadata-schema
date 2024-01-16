@@ -102,7 +102,7 @@ class cellLine(BaseModel):
     model_config = ConfigDict(title="Cell Line")
     
     name: str = Field(title="Cell Line Name")
-    className: str = Field(default='Cell Line', frozen=True)
+    className: str = Field(default='Cell Line', json_schema_extra={"format":"hidden"})
 
 class wastewater(BaseModel):
     
