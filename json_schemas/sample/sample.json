@@ -50,6 +50,7 @@
           "type": "string"
         },
         "className": {
+          "default": "Cell Line",
           "const": "Cell Line",
           "title": "Class Name"
         }
