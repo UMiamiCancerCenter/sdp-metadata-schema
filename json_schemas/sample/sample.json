@@ -52,7 +52,8 @@
         "className": {
           "default": "Cell Line",
           "const": "Cell Line",
-          "title": "Class Name"
+          "title": "Class Name",
+          "type": "string"
         }
       },
       "required": [

@@ -1,4 +1,8 @@
 {
+  "className": {
+    "ui:disabled": true,
+    "ui:widget": "hidden"
+  },
   "type": "VerticalLayout",
   "elements": [
     {
