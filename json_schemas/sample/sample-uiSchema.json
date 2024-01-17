@@ -1,7 +1,8 @@
 {
-  "className": {
-    "ui:disabled": true,
-    "ui:widget": "hidden"
+  "cellLine": {
+    "className": {
+      "ui:widget": "hidden"
+    }
   },
   "type": "VerticalLayout",
   "elements": [
