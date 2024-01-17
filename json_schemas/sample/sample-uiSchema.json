@@ -1,7 +1,9 @@
 {
-  "cellLine": {
-    "className": {
-      "ui:widget": "hidden"
+  "experimentalSubject": {
+    "type": {
+      "className": {
+        "ui:widget": "hidden"
+      }
     }
   },
   "type": "VerticalLayout",
