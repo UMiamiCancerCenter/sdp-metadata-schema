@@ -15,9 +15,9 @@ class smallMolecule(BaseModel):
     
     model_config = ConfigDict(title="Small Molecule")
 
-    name: str = Field(title="Small Molecule Name")
-    duration: str
-    concentration: str
+    name: str = Field(default="JQ1", title="Small Molecule Name")
+    duration: str = Field(default="0 hrs")
+    concentration: str = Field(default="μM")
 
 class crispr(BaseModel):
     
