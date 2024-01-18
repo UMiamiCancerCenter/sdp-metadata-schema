@@ -1,25 +1,25 @@
 {
   "$defs": {
-    "Antibody": {
+    "antibody": {
       "properties": {
-        "Name": {
+        "name": {
           "title": "Antibody Name",
           "type": "string"
         },
-        "Duration": {
+        "duration": {
           "title": "Duration",
           "type": "string"
         },
-        "Concentration": {
+        "concentration": {
           "title": "Concentration",
           "type": "string"
         }
       },
-      "required": ["Name", "Duration", "Concentration"],
+      "required": ["name", "duration", "concentration"],
       "title": "Antibody",
       "type": "object"
     },
-    "Biospecimen": {
+    "biospecimen": {
       "properties": {
         "type": {
           "anyOf": [
@@ -27,8 +27,8 @@
               "title": "Patient Sample",
               "type": "object",
               "properties": {
-                "PatientSample": {
-                  "$ref": "#/$defs/PatientSample"
+                "patientSample": {
+                  "$ref": "#/$defs/patientSample"
                 }
               }
             },
@@ -36,8 +36,8 @@
               "title": "Wastewater",
               "type": "object",
               "properties": {
-                "Wastewater": {
-                  "$ref": "#/$defs/Wastewater"
+                "wastewater": {
+                  "$ref": "#/$defs/wastewater"
                 }
               }
             }
@@ -51,91 +51,91 @@
     },
     "CRISPR": {
       "properties": {
-        "Name": {
+        "name": {
           "title": "Target Gene",
           "type": "string"
         },
-        "Duration": {
+        "duration": {
           "title": "Duration",
           "type": "string"
         },
-        "Concentration": {
+        "concentration": {
           "title": "Concentration",
           "type": "string"
         }
       },
-      "required": ["Name", "Duration", "Concentration"],
+      "required": ["name", "duration", "concentration"],
       "title": "CRISPR",
       "type": "object"
     },
-    "CellLine": {
+    "cellLine": {
       "properties": {
-        "Class": {
+        "class": {
           "title": "Cell Line",
           "const": "Cell Line"
         },
-        "Name": {
+        "name": {
           "title": "Cell Line Name",
           "type": "string"
         }
       },
-      "required": ["Name"],
+      "required": ["name"],
       "title": "",
       "type": "object"
     },
-    "DifferentiatedCells": {
+    "differentiatedCells": {
       "properties": {
-        "Name": {
+        "name": {
           "title": "Cell Type",
           "type": "string"
         }
       },
-      "required": ["Name"],
+      "required": ["name"],
       "title": "",
       "type": "object"
     },
-    "EpigeneticModification": {
+    "epigeneticModification": {
       "properties": {
-        "Name": {
+        "name": {
           "title": "Modification Type",
           "type": "string"
         }
       },
-      "required": ["Name"],
+      "required": ["name"],
       "title": "",
       "type": "object"
     },
-    "Gene": {
+    "gene": {
       "properties": {
-        "Name": {
+        "name": {
           "title": "Gene Name",
           "type": "string"
         }
       },
-      "required": ["Name"],
+      "required": ["name"],
       "title": "",
       "type": "object"
     },
-    "InfectiousAgent": {
+    "infectiousAgent": {
       "properties": {
-        "Name": {
+        "name": {
           "title": "Agent Name",
           "type": "string"
         },
-        "Duration": {
+        "duration": {
           "title": "Duration",
           "type": "string"
         },
-        "Concentration": {
+        "concentration": {
           "title": "Concentration",
           "type": "string"
         }
       },
-      "required": ["Name", "Duration", "Concentration"],
+      "required": ["name", "duration", "concentration"],
       "title": "Infectious Agent",
       "type": "object"
     },
-    "ModelSystem": {
+    "modelSystem": {
       "properties": {
         "type": {
           "anyOf": [
@@ -143,8 +143,8 @@
               "title": "Cell Line",
               "type": "object",
               "properties": {
-                "CellLine": {
-                  "$ref": "#/$defs/CellLine"
+                "cellLine": {
+                  "$ref": "#/$defs/cellLine"
                 }
               }
             },
@@ -161,8 +161,8 @@
               "title": "Differentiated Cells",
               "type": "object",
               "properties": {
-                "DifferentiatedCells": {
-                  "$ref": "#/$defs/DifferentiatedCells"
+                "differentiatedCells": {
+                  "$ref": "#/$defs/differentiatedCells"
                 }
               }
             },
@@ -170,8 +170,8 @@
               "title": "Primary Cells",
               "type": "object",
               "properties": {
-                "PrimaryCells": {
-                  "$ref": "#/$defs/PrimaryCells"
+                "primaryCells": {
+                  "$ref": "#/$defs/primaryCells"
                 }
               }
             },
@@ -179,8 +179,8 @@
               "title": "Tissue",
               "type": "object",
               "properties": {
-                "Tissue": {
-                  "$ref": "#/$defs/Tissue"
+                "tissue": {
+                  "$ref": "#/$defs/tissue"
                 }
               }
             }
@@ -192,97 +192,97 @@
       "title": "",
       "type": "object"
     },
-    "PatientSample": {
+    "patientSample": {
       "properties": {
-        "Name": {
+        "name": {
           "title": "Tumor Type",
           "type": "string"
         }
       },
-      "required": ["Name"],
+      "required": ["name"],
       "title": "",
       "type": "object"
     },
-    "PrimaryCells": {
+    "primaryCells": {
       "properties": {
-        "Name": {
+        "name": {
           "title": "Cell Type",
           "type": "string"
         }
       },
-      "required": ["Name"],
+      "required": ["name"],
       "title": "",
       "type": "object"
     },
-    "Protein": {
+    "protein": {
       "properties": {
-        "Name": {
+        "name": {
           "title": "Protein Name",
           "type": "string"
         }
       },
-      "required": ["Name"],
+      "required": ["name"],
       "title": "",
       "type": "object"
     },
-    "ProteinP": {
+    "proteinP": {
       "properties": {
-        "Name": {
+        "name": {
           "title": "Protein Name",
           "type": "string"
         },
-        "Duration": {
+        "duration": {
           "title": "Duration",
           "type": "string"
         },
-        "Concentration": {
+        "concentration": {
           "title": "Concentration",
           "type": "string"
         }
       },
-      "required": ["Name", "Duration", "Concentration"],
+      "required": ["name", "duration", "concentration"],
       "title": "Protein",
       "type": "object"
     },
     "RNAi": {
       "properties": {
-        "Name": {
+        "name": {
           "title": "Target Sequence",
           "type": "string"
         },
-        "Duration": {
+        "duration": {
           "title": "Duration",
           "type": "string"
         },
-        "Concentration": {
+        "concentration": {
           "title": "Concentration",
           "type": "string"
         }
       },
-      "required": ["Name", "Duration", "Concentration"],
+      "required": ["name", "duration", "concentration"],
       "title": "RNAi",
       "type": "object"
     },
-    "SmallMolecule": {
+    "smallMolecule": {
       "properties": {
-        "Name": {
+        "name": {
           "title": "Small Molecule Name",
           "type": "string"
         },
-        "Duration": {
+        "duration": {
           "title": "Duration",
           "type": "string"
         },
-        "Concentration": {
+        "concentration": {
           "title": "Concentration",
           "type": "string"
         }
       },
-      "required": ["Name", "Duration", "Concentration"],
+      "required": ["name", "duration", "concentration"],
       "title": "Small Molecule",
       "type": "object"
     },
-    "Target": {
+    "target": {
       "properties": {
         "type": {
           "anyOf": [
@@ -290,8 +290,8 @@
               "title": "Gene",
               "type": "object",
               "properties": {
-                "Gene": {
-                  "$ref": "#/$defs/Gene"
+                "gene": {
+                  "$ref": "#/$defs/gene"
                 }
               }
             },
@@ -299,8 +299,8 @@
               "title": "Transcript",
               "type": "object",
               "properties": {
-                "Transcript": {
-                  "$ref": "#/$defs/Transcript"
+                "transcript": {
+                  "$ref": "#/$defs/transcript"
                 }
               }
             },
@@ -308,8 +308,8 @@
               "title": "Protein",
               "type": "object",
               "properties": {
-                "Protein": {
-                  "$ref": "#/$defs/Protein"
+                "protein": {
+                  "$ref": "#/$defs/protein"
                 }
               }
             },
@@ -317,8 +317,8 @@
               "title": "Epigenetic Modification",
               "type": "object",
               "properties": {
-                "EpigeneticModification": {
-                  "$ref": "#/$defs/EpigeneticModification"
+                "epigeneticModification": {
+                  "$ref": "#/$defs/epigeneticModification"
                 }
               }
             }
@@ -330,68 +330,68 @@
       "title": "",
       "type": "object"
     },
-    "Tissue": {
+    "tissue": {
       "properties": {
-        "Name": {
+        "name": {
           "title": "Tissue Type",
           "type": "string"
         }
       },
-      "required": ["Name"],
+      "required": ["name"],
       "title": "",
       "type": "object"
     },
-    "Transcript": {
+    "transcript": {
       "properties": {
-        "Name": {
+        "name": {
           "title": "NCBI Accession Number",
           "type": "string"
         }
       },
-      "required": ["Name"],
+      "required": ["name"],
       "title": "",
       "type": "object"
     },
-    "Wastewater": {
+    "wastewater": {
       "properties": {
-        "Name": {
+        "name": {
           "title": "Sample ID",
           "type": "string"
         }
       },
-      "required": ["Name"],
+      "required": ["name"],
       "title": "",
       "type": "object"
     },
     "iPSC": {
       "properties": {
-        "Name": {
+        "name": {
           "title": "iPSC ID",
           "type": "string"
         }
       },
-      "required": ["Name"],
+      "required": ["name"],
       "title": "",
       "type": "object"
     }
   },
   "properties": {
-    "SampleName": {
+    "sampleName": {
       "title": "Sample Name",
       "type": "string"
     },
-    "Description": {
+    "description": {
       "title": "Description",
       "type": "string"
     },
-    "ExperimentalSubject": {
+    "experimentalSubject": {
       "anyOf": [
         {
           "title": "Model System",
           "type": "object",
           "properties": {
-            "ModelSystem": {
-              "$ref": "#/$defs/ModelSystem"
+            "modelSystem": {
+              "$ref": "#/$defs/modelSystem"
             }
           }
         },
@@ -399,8 +399,8 @@
           "title": "Biospecimen",
           "type": "object",
           "properties": {
-            "Biospecimen": {
-              "$ref": "#/$defs/Biospecimen"
+            "biospecimen": {
+              "$ref": "#/$defs/biospecimen"
             }
           }
         },
@@ -408,8 +408,8 @@
           "title": "Target",
           "type": "object",
           "properties": {
-            "Target": {
-              "$ref": "#/$defs/Target"
+            "target": {
+              "$ref": "#/$defs/target"
             }
           }
         }
@@ -417,11 +417,11 @@
       "title": "Experimental Subject",
       "type": "object"
     },
-    "Perturbation": {
+    "perturbation": {
       "items": {
         "anyOf": [
           {
-            "$ref": "#/$defs/SmallMolecule"
+            "$ref": "#/$defs/smallMolecule"
           },
           {
             "$ref": "#/$defs/CRISPR"
@@ -430,13 +430,13 @@
             "$ref": "#/$defs/RNAi"
           },
           {
-            "$ref": "#/$defs/Antibody"
+            "$ref": "#/$defs/antibody"
           },
           {
-            "$ref": "#/$defs/ProteinP"
+            "$ref": "#/$defs/proteinP"
           },
           {
-            "$ref": "#/$defs/InfectiousAgent"
+            "$ref": "#/$defs/infectiousAgent"
           }
         ]
       },
@@ -445,10 +445,10 @@
     }
   },
   "required": [
-    "SampleName",
-    "Description",
-    "ExperimentalSubject",
-    "Perturbation"
+    "sampleName",
+    "description",
+    "experimentalSubject",
+    "perturbation"
   ],
   "title": "Sample",
   "type": "object"
