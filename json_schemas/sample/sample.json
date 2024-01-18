@@ -46,19 +46,16 @@
     "cellLine": {
       "properties": {
         "name": {
+          "default": "MCF7 cell",
           "title": "Cell Line Name",
           "type": "string"
         },
-        "className": {
+        "experimentalSubjectType": {
           "default": "Cell Line",
-          "const": "Cell Line",
-          "title": "Class Name",
+          "title": "Experimentalsubjecttype",
           "type": "string"
         }
       },
-      "required": [
-        "name"
-      ],
       "title": "Cell Line",
       "type": "object"
     },

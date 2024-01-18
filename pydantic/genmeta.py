@@ -101,7 +101,7 @@ class cellLine(BaseModel):
 
     model_config = ConfigDict(title="Cell Line")
     
-    name: str = Field(title="Cell Line Name")
+    name: str = Field(default = "MCF7 cell", title="Cell Line Name")
     experimentalSubjectType: str = Field(default='Cell Line')
 
 class wastewater(BaseModel):
@@ -146,7 +146,7 @@ class modelSystem(BaseModel):
             differentiatedCells,
             primaryCells,
             tissue
-            ] = Field(default = cellLine)
+            ]
 
 
 class sample(BaseModel):
@@ -157,7 +157,7 @@ class sample(BaseModel):
             modelSystem,
             biospecimen,
             target
-            ] = Field(default = modelSystem, title="Experimental Subject")
+            ] = Field(title="Experimental Subject")
     perturbation: List[Union[
         smallMolecule,
         crispr,
