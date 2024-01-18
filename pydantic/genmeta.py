@@ -146,7 +146,7 @@ class modelSystem(BaseModel):
             differentiatedCells,
             primaryCells,
             tissue
-            ]
+            ] = Field(default = cellLine)
 
 
 class sample(BaseModel):
@@ -157,7 +157,7 @@ class sample(BaseModel):
             modelSystem,
             biospecimen,
             target
-            ] = Field(title="Experimental Subject")
+            ] = Field(default = modelSystem, title="Experimental Subject")
     perturbation: List[Union[
         smallMolecule,
         crispr,
