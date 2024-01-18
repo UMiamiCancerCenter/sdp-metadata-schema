@@ -51,6 +51,7 @@
           "type": "string"
         },
         "experimentalSubjectType": {
+          "const": "Cell Line",
           "default": "Cell Line",
           "title": "Experimentalsubjecttype",
           "type": "string"

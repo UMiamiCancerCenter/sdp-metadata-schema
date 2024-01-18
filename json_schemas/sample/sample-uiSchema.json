@@ -1,7 +1,7 @@
 {
   "experimentalSubject": {
     "type": {
-      "className": {
+      "experimentalSubjectType": {
         "ui:widget": "hidden"
       }
     }
