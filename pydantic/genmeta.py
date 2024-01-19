@@ -149,27 +149,19 @@ class modelSystem(BaseModel):
 
     model_config = ConfigDict(title="Model System")
    
-    type: Union[
-            cellLine,
-            ipsc,
-            differentiatedCells,
-            primaryCells,
-            tissue
-            ]
+    type: modelSystemEnum
 
 
 class sample(BaseModel):
     
     sampleName: str = Field(title='Sample Name')
     description: str
-    experimentalSubject: Enum
-    # experimentalSubject: Union[
-    #         modelSystem,
-    #         biospecimen,
-    #         target
-    #         ] = Field(title="Experimental Subject")
+    experimentalSubject: Union[
+            modelSystem,
+            biospecimen,
+            target
+            ] = Field(title="Experimental Subject")
 
-    if 
     perturbation: List[Union[
         smallMolecule,
         crispr,
