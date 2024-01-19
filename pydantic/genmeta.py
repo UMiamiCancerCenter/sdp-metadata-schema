@@ -11,6 +11,14 @@ from pydantic import BaseModel, Field, fields
 
 from pydantic.config import ConfigDict
 
+class modelSystemEnum(str, Enum):
+    cellLine = "Cell Line",
+    ipsc = "IPSC",
+    differentiatedCells = "Differentiated Cells",
+    primaryCells = "Primary Cells",
+    tissue = "Tissue"
+
+
 class smallMolecule(BaseModel):
     
     model_config = ConfigDict(title="Small Molecule")
@@ -154,11 +162,14 @@ class sample(BaseModel):
     
     sampleName: str = Field(title='Sample Name')
     description: str
-    experimentalSubject: Union[
-            modelSystem,
-            biospecimen,
-            target
-            ] = Field(title="Experimental Subject")
+    experimentalSubject: Enum
+    # experimentalSubject: Union[
+    #         modelSystem,
+    #         biospecimen,
+    #         target
+    #         ] = Field(title="Experimental Subject")
+
+    if 
     perturbation: List[Union[
         smallMolecule,
         crispr,
