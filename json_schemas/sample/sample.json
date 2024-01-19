@@ -43,23 +43,6 @@
       "title": "Biospecimen",
       "type": "object"
     },
-    "cellLine": {
-      "properties": {
-        "name": {
-          "default": "MCF7 cell",
-          "title": "Cell Line Name",
-          "type": "string"
-        },
-        "experimentalSubjectType": {
-          "const": "Cell Line",
-          "default": "Cell Line",
-          "title": "Experimentalsubjecttype",
-          "type": "string"
-        }
-      },
-      "title": "Cell Line",
-      "type": "object"
-    },
     "crispr": {
       "properties": {
         "name": {
@@ -81,19 +64,6 @@
         "concentration"
       ],
       "title": "CRISPR",
-      "type": "object"
-    },
-    "differentiatedCells": {
-      "properties": {
-        "name": {
-          "title": "Cell Type",
-          "type": "string"
-        }
-      },
-      "required": [
-        "name"
-      ],
-      "title": "Differentiated Cells",
       "type": "object"
     },
     "epigeneticModification": {
@@ -145,40 +115,10 @@
       "title": "Infectious Agent",
       "type": "object"
     },
-    "ipsc": {
-      "properties": {
-        "name": {
-          "title": "iPSC ID",
-          "type": "string"
-        }
-      },
-      "required": [
-        "name"
-      ],
-      "title": "iPSC",
-      "type": "object"
-    },
     "modelSystem": {
       "properties": {
         "type": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/cellLine"
-            },
-            {
-              "$ref": "#/$defs/ipsc"
-            },
-            {
-              "$ref": "#/$defs/differentiatedCells"
-            },
-            {
-              "$ref": "#/$defs/primaryCells"
-            },
-            {
-              "$ref": "#/$defs/tissue"
-            }
-          ],
-          "title": "Type"
+          "$ref": "#/$defs/modelSystemEnum"
         }
       },
       "required": [
@@ -186,6 +126,17 @@
       ],
       "title": "Model System",
       "type": "object"
+    },
+    "modelSystemEnum": {
+      "enum": [
+        "Cell Line",
+        "IPSC",
+        "Differentiated Cells",
+        "Primary Cells",
+        "Tissue"
+      ],
+      "title": "modelSystemEnum",
+      "type": "string"
     },
     "patientSample": {
       "properties": {
@@ -198,19 +149,6 @@
         "name"
       ],
       "title": "Patient Sample",
-      "type": "object"
-    },
-    "primaryCells": {
-      "properties": {
-        "name": {
-          "title": "Cell Type",
-          "type": "string"
-        }
-      },
-      "required": [
-        "name"
-      ],
-      "title": "Primary Cells",
       "type": "object"
     },
     "protein": {
@@ -317,19 +255,6 @@
         "type"
       ],
       "title": "Molecular Target",
-      "type": "object"
-    },
-    "tissue": {
-      "properties": {
-        "name": {
-          "title": "Tissue Type",
-          "type": "string"
-        }
-      },
-      "required": [
-        "name"
-      ],
-      "title": "tissue",
       "type": "object"
     },
     "transcript": {
