@@ -6,7 +6,7 @@ from typing import Literal, Union, List, Optional, TypeAlias
 from enum import Enum
 
 # import streamlit as st
-from pydantic import BaseModel, Field, fields
+from pydantic import BaseModel, Field, field_validator, ValidationError
 # import streamlit_pydantic as sp
 
 from pydantic.config import ConfigDict
@@ -110,8 +110,8 @@ class cellLine(BaseModel):
     model_config = ConfigDict(title="Cell Line")
     
     name: str = Field(default = "MCF7 cell", title="Cell Line Name")
-    experimentalSubjectType: str = Field(default="Cell Line", 
-                                         json_schema_extra={"const": "Cell Line"})
+    # experimentalSubjectType: str = Field(default="Cell Line", 
+                                        #  json_schema_extra={"const": "Cell Line"})
 
 class wastewater(BaseModel):
     
@@ -151,6 +151,13 @@ class modelSystem(BaseModel):
    
     type: modelSystemEnum
 
+    @field_validator('type')
+    @classmethod
+    def createCellLineClass(cls, v):
+        if v is modelSystemEnum.cellLine:
+            cellLine1 = cellLine()
+            return cellLine1
+        return v.title()
 
 class sample(BaseModel):
     
