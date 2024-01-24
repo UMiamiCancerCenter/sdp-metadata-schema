@@ -110,8 +110,8 @@ class cellLine(BaseModel):
     model_config = ConfigDict(title="Cell Line")
     
     name: str = Field(default = "MCF7 cell", title="Cell Line Name")
-    # experimentalSubjectType: str = Field(default="Cell Line", 
-                                        #  json_schema_extra={"const": "Cell Line"})
+    experimentalSubjectType: str = Field(default="Cell Line", 
+                                         json_schema_extra={"const": "Cell Line"})
 
 class wastewater(BaseModel):
     
@@ -149,15 +149,13 @@ class modelSystem(BaseModel):
 
     model_config = ConfigDict(title="Model System")
    
-    type: modelSystemEnum
-
-    @field_validator('type')
-    @classmethod
-    def createCellLineClass(cls, v):
-        if v is modelSystemEnum.cellLine:
-            cellLine1 = cellLine()
-            return cellLine1
-        return v.title()
+    type: Union[
+            cellLine,
+            ipsc,
+            primaryCells,
+            differentiatedCells,
+            tissue
+            ]
 
 class sample(BaseModel):
     
