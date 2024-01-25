@@ -33,7 +33,8 @@
             "content": {
               "$ref": "#/$defs/patientSample"
             }
-          }
+          },
+          "required": ["entity", "content"]
         },
         {
           "title": "Wastewater",
@@ -47,11 +48,11 @@
             "content": {
               "$ref": "#/$defs/wastewater"
             }
-          }
+          },
+          "required": ["entity", "content"]
         }
       ],
-      "required": ["entity"],
-      "title": "Biospecimen",
+      "title": "",
       "type": "object"
     },
     "CRISPR": {
@@ -86,8 +87,13 @@
         }
       },
       "required": ["name"],
-      "title": "Cell Line",
-      "type": "object"
+      "title": "",
+      "type": "object",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
     },
     "differentiatedCells": {
       "properties": {
@@ -97,7 +103,7 @@
         }
       },
       "required": ["name"],
-      "title": "Differentiated Cells",
+      "title": "",
       "type": "object"
     },
     "epigeneticModification": {
@@ -108,7 +114,7 @@
         }
       },
       "required": ["name"],
-      "title": "Epigenetic Modification",
+      "title": "",
       "type": "object"
     },
     "gene": {
@@ -119,7 +125,7 @@
         }
       },
       "required": ["name"],
-      "title": "Gene",
+      "title": "",
       "type": "object"
     },
     "infectiousAgent": {
@@ -144,6 +150,11 @@
     "modelSystem": {
       "anyOf": [
         {
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          },
           "title": "Cell Line",
           "type": "object",
           "properties": {
@@ -153,9 +164,15 @@
               "format": "hidden"
             },
             "content": {
+              "ui": {
+                "preview": {
+                  "visible": true
+                }
+              },
               "$ref": "#/$defs/cellLine"
             }
-          }
+          },
+          "required": ["entity", "content"]
         },
         {
           "title": "iPSC",
@@ -169,7 +186,8 @@
             "content": {
               "$ref": "#/$defs/iPSC"
             }
-          }
+          },
+          "required": ["entity", "content"]
         },
         {
           "title": "Differentiated Cells",
@@ -183,7 +201,8 @@
             "content": {
               "$ref": "#/$defs/differentiatedCells"
             }
-          }
+          },
+          "required": ["entity", "content"]
         },
         {
           "title": "Primary Cells",
@@ -197,7 +216,8 @@
             "content": {
               "$ref": "#/$defs/primaryCells"
             }
-          }
+          },
+          "required": ["entity", "content"]
         },
         {
           "title": "Tissue",
@@ -211,12 +231,18 @@
             "content": {
               "$ref": "#/$defs/tissue"
             }
-          }
+          },
+          "required": ["entity", "content"]
         }
       ],
       "required": ["entity", "content"],
-      "title": "Model System",
-      "type": "object"
+      "type": "object",
+      "title": "",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
     },
     "patientSample": {
       "properties": {
@@ -226,7 +252,7 @@
         }
       },
       "required": ["name"],
-      "title": "Patient Sample",
+      "title": "",
       "type": "object"
     },
     "primaryCells": {
@@ -237,7 +263,7 @@
         }
       },
       "required": ["name"],
-      "title": "Primary Cells",
+      "title": "",
       "type": "object"
     },
     "protein": {
@@ -267,7 +293,7 @@
         }
       },
       "required": ["name", "duration", "concentration"],
-      "title": "Protein",
+      "title": "",
       "type": "object"
     },
     "RNAi": {
@@ -322,7 +348,8 @@
             "content": {
               "$ref": "#/$defs/gene"
             }
-          }
+          },
+          "required": ["entity", "content"]
         },
         {
           "title": "Transcript",
@@ -336,7 +363,8 @@
             "content": {
               "$ref": "#/$defs/transcript"
             }
-          }
+          },
+          "required": ["entity", "content"]
         },
         {
           "title": "Protein",
@@ -350,7 +378,8 @@
             "content": {
               "$ref": "#/$defs/protein"
             }
-          }
+          },
+          "required": ["entity", "content"]
         },
         {
           "title": "Epigenetic Modification",
@@ -364,11 +393,12 @@
             "content": {
               "$ref": "#/$defs/epigeneticModification"
             }
-          }
+          },
+          "required": ["entity", "content"]
         }
       ],
       "required": ["entity", "content"],
-      "title": "Target",
+      "title": "",
       "type": "object"
     },
     "tissue": {
@@ -379,7 +409,7 @@
         }
       },
       "required": ["name"],
-      "title": "Tissue",
+      "title": "",
       "type": "object"
     },
     "transcript": {
@@ -390,7 +420,7 @@
         }
       },
       "required": ["name"],
-      "title": "Transcript",
+      "title": "",
       "type": "object"
     },
     "wastewater": {
@@ -401,7 +431,7 @@
         }
       },
       "required": ["name"],
-      "title": "Wastewater",
+      "title": "",
       "type": "object"
     },
     "iPSC": {
@@ -412,7 +442,7 @@
         }
       },
       "required": ["name"],
-      "title": "iPSC",
+      "title": "",
       "type": "object"
     }
   },
@@ -428,6 +458,11 @@
     "experimentalSubject": {
       "anyOf": [
         {
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          },
           "title": "Model System",
           "type": "object",
           "properties": {
@@ -437,11 +472,22 @@
               "format": "hidden"
             },
             "content": {
+              "ui": {
+                "preview": {
+                  "visible": true
+                }
+              },
               "$ref": "#/$defs/modelSystem"
             }
-          }
+          },
+          "required": ["entity", "content"]
         },
         {
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          },
           "title": "Biospecimen",
           "type": "object",
           "properties": {
@@ -451,11 +497,22 @@
               "format": "hidden"
             },
             "content": {
+              "ui": {
+                "preview": {
+                  "visible": true
+                }
+              },
               "$ref": "#/$defs/biospecimen"
             }
-          }
+          },
+          "required": ["entity", "content"]
         },
         {
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          },
           "title": "Target",
           "type": "object",
           "properties": {
@@ -465,13 +522,24 @@
               "format": "hidden"
             },
             "content": {
+              "ui": {
+                "preview": {
+                  "visible": true
+                }
+              },
               "$ref": "#/$defs/target"
             }
-          }
+          },
+          "required": ["entity", "content"]
         }
       ],
       "title": "Experimental Subject",
-      "type": "object"
+      "type": "object",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
     },
     "perturbation": {
       "items": {
@@ -489,7 +557,8 @@
               "content": {
                 "$ref": "#/$defs/smallMolecule"
               }
-            }
+            },
+            "required": ["entity", "content"]
           },
           {
             "title": "CRISPR",
@@ -503,7 +572,8 @@
               "content": {
                 "$ref": "#/$defs/CRISPR"
               }
-            }
+            },
+            "required": ["entity", "content"]
           },
           {
             "title": "RNAi",
@@ -517,7 +587,8 @@
               "content": {
                 "$ref": "#/$defs/RNAi"
               }
-            }
+            },
+            "required": ["entity", "content"]
           },
           {
             "title": "Antibody",
@@ -531,7 +602,8 @@
               "content": {
                 "$ref": "#/$defs/antibody"
               }
-            }
+            },
+            "required": ["entity", "content"]
           },
           {
             "title": "Protein",
@@ -545,7 +617,8 @@
               "content": {
                 "$ref": "#/$defs/proteinP"
               }
-            }
+            },
+            "required": ["entity", "content"]
           },
           {
             "title": "Infectious Agent",
@@ -559,7 +632,8 @@
               "content": {
                 "$ref": "#/$defs/infectiousAgent"
               }
-            }
+            },
+            "required": ["entity", "content"]
           }
         ]
       },
