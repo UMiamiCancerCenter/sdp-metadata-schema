@@ -40,24 +40,23 @@
       "required": [
         "type"
       ],
-      "title": "biospecimen",
+      "title": "Biospecimen",
       "type": "object"
     },
     "cellLine": {
       "properties": {
         "name": {
+          "default": "MCF7 cell",
           "title": "Cell Line Name",
           "type": "string"
         },
-        "className": {
+        "experimentalSubjectType": {
+          "const": "Cell Line",
           "default": "Cell Line",
-          "title": "Classname",
+          "title": "Experimentalsubjecttype",
           "type": "string"
         }
       },
-      "required": [
-        "name"
-      ],
       "title": "Cell Line",
       "type": "object"
     },
@@ -170,10 +169,10 @@
               "$ref": "#/$defs/ipsc"
             },
             {
-              "$ref": "#/$defs/differentiatedCells"
+              "$ref": "#/$defs/primaryCells"
             },
             {
-              "$ref": "#/$defs/primaryCells"
+              "$ref": "#/$defs/differentiatedCells"
             },
             {
               "$ref": "#/$defs/tissue"
@@ -276,23 +275,21 @@
     "smallMolecule": {
       "properties": {
         "name": {
+          "default": "JQ1",
           "title": "Small Molecule Name",
           "type": "string"
         },
         "duration": {
+          "default": "0 hrs",
           "title": "Duration",
           "type": "string"
         },
         "concentration": {
+          "default": "\u03bcM",
           "title": "Concentration",
           "type": "string"
         }
       },
-      "required": [
-        "name",
-        "duration",
-        "concentration"
-      ],
       "title": "Small Molecule",
       "type": "object"
     },
@@ -319,7 +316,7 @@
       "required": [
         "type"
       ],
-      "title": "target",
+      "title": "Molecular Target",
       "type": "object"
     },
     "tissue": {
