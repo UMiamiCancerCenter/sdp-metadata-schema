@@ -20,43 +20,32 @@
       "type": "object"
     },
     "biospecimen": {
-      "properties": {
-        "entity": {
-          "enum": ["patientSample", "wastewater"],
-          "type": "string"
-        },
-        "title": "Type"
-      },
-      "allOf": [
+      "anyOf": [
         {
-          "if": {
-            "properties": {
-              "entity": {
-                "const": "patientSample"
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/$defs/patientSample"
-              }
+          "title": "Patient Sample",
+          "type": "object",
+          "properties": {
+            "entity": {
+              "type": "string",
+              "default": "patientSample",
+              "format": "hidden"
+            },
+            "content": {
+              "$ref": "#/$defs/patientSample"
             }
           }
         },
         {
-          "if": {
-            "properties": {
-              "entity": {
-                "const": "wastewater"
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/$defs/wastewater"
-              }
+          "title": "Wastewater",
+          "type": "object",
+          "properties": {
+            "entity": {
+              "type": "string",
+              "default": "wastewater",
+              "format": "hidden"
+            },
+            "content": {
+              "$ref": "#/$defs/wastewater"
             }
           }
         }
@@ -87,6 +76,11 @@
     "cellLine": {
       "properties": {
         "name": {
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          },
           "title": "Cell Line Name",
           "type": "string"
         }
@@ -148,102 +142,79 @@
       "type": "object"
     },
     "modelSystem": {
-      "properties": {
-        "entity": {
-          "enum": [
-            "cellLine",
-            "iPSC",
-            "differentiatedCells",
-            "primaryCells",
-            "tissue"
-          ],
-          "type": "string"
-        },
-        "title": "Type"
-      },
-      "allOf": [
+      "anyOf": [
         {
-          "if": {
-            "properties": {
-              "entity": {
-                "const": "cellLine"
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/$defs/cellLine"
-              }
+          "title": "Cell Line",
+          "type": "object",
+          "properties": {
+            "entity": {
+              "type": "string",
+              "default": "cellLine",
+              "format": "hidden"
+            },
+            "content": {
+              "$ref": "#/$defs/cellLine"
             }
           }
         },
         {
-          "if": {
-            "properties": {
-              "entity": {
-                "const": "iPSC"
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/$defs/iPSC"
-              }
+          "title": "iPSC",
+          "type": "object",
+          "properties": {
+            "entity": {
+              "type": "string",
+              "default": "iPSC",
+              "format": "hidden"
+            },
+            "content": {
+              "$ref": "#/$defs/iPSC"
             }
           }
         },
         {
-          "if": {
-            "properties": {
-              "entity": {
-                "const": "differentiatedCells"
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/$defs/differentiatedCells"
-              }
+          "title": "Differentiated Cells",
+          "type": "object",
+          "properties": {
+            "entity": {
+              "type": "string",
+              "default": "differentiatedCells",
+              "format": "hidden"
+            },
+            "content": {
+              "$ref": "#/$defs/differentiatedCells"
             }
           }
         },
         {
-          "if": {
-            "properties": {
-              "entity": {
-                "const": "primaryCells"
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/$defs/primaryCells"
-              }
+          "title": "Primary Cells",
+          "type": "object",
+          "properties": {
+            "entity": {
+              "type": "string",
+              "default": "primaryCells",
+              "format": "hidden"
+            },
+            "content": {
+              "$ref": "#/$defs/primaryCells"
             }
           }
         },
         {
-          "if": {
-            "properties": {
-              "entity": {
-                "const": "tissue"
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/$defs/tissue"
-              }
+          "title": "Tissue",
+          "type": "object",
+          "properties": {
+            "entity": {
+              "type": "string",
+              "default": "tissue",
+              "format": "hidden"
+            },
+            "content": {
+              "$ref": "#/$defs/tissue"
             }
           }
         }
       ],
-      "required": ["entity"],
+      "required": ["entity", "content"],
       "title": "Model System",
       "type": "object"
     },
@@ -338,80 +309,65 @@
       "type": "object"
     },
     "target": {
-      "properties": {
-        "entity": {
-          "enum": ["gene", "transcript", "protein", "epigeneticModification"],
-          "type": "string"
-        },
-        "title": "Type"
-      },
-      "allOf": [
+      "anyOf": [
         {
-          "if": {
-            "properties": {
-              "entity": {
-                "const": "gene"
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/$defs/gene"
-              }
+          "title": "Gene",
+          "type": "object",
+          "properties": {
+            "entity": {
+              "type": "string",
+              "default": "gene",
+              "format": "hidden"
+            },
+            "content": {
+              "$ref": "#/$defs/gene"
             }
           }
         },
         {
-          "if": {
-            "properties": {
-              "entity": {
-                "const": "transcript"
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/$defs/transcript"
-              }
+          "title": "Transcript",
+          "type": "object",
+          "properties": {
+            "entity": {
+              "type": "string",
+              "default": "transcript",
+              "format": "hidden"
+            },
+            "content": {
+              "$ref": "#/$defs/transcript"
             }
           }
         },
         {
-          "if": {
-            "properties": {
-              "entity": {
-                "const": "protein"
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/$defs/protein"
-              }
+          "title": "Protein",
+          "type": "object",
+          "properties": {
+            "entity": {
+              "type": "string",
+              "default": "protein",
+              "format": "hidden"
+            },
+            "content": {
+              "$ref": "#/$defs/protein"
             }
           }
         },
         {
-          "if": {
-            "properties": {
-              "entity": {
-                "const": "epigeneticModification"
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/$defs/epigeneticModification"
-              }
+          "title": "Epigenetic Modification",
+          "type": "object",
+          "properties": {
+            "entity": {
+              "type": "string",
+              "default": "epigeneticModification",
+              "format": "hidden"
+            },
+            "content": {
+              "$ref": "#/$defs/epigeneticModification"
             }
           }
         }
       ],
-      "required": ["entity"],
+      "required": ["entity", "content"],
       "title": "Target",
       "type": "object"
     },
@@ -462,67 +418,54 @@
   },
   "properties": {
     "sampleName": {
-      "title": "Sample Name",
-      "type": "string"
+      "type": "string",
+      "title": "Sample Name"
     },
     "description": {
-      "title": "Description",
-      "type": "string"
+      "type": "string",
+      "title": "Description"
     },
     "experimentalSubject": {
-      "properties": {
-        "entity": {
-          "enum": ["modelSystem", "biospecimen", "target"],
-          "type": "string",
-          "default": "modelSystem"
-        }
-      },
-      "allOf": [
+      "anyOf": [
         {
-          "if": {
-            "properties": {
-              "entity": {
-                "const": "modelSystem"
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/$defs/modelSystem"
-              }
+          "title": "Model System",
+          "type": "object",
+          "properties": {
+            "entity": {
+              "type": "string",
+              "default": "modelSystem",
+              "format": "hidden"
+            },
+            "content": {
+              "$ref": "#/$defs/modelSystem"
             }
           }
         },
         {
-          "if": {
-            "properties": {
-              "entity": {
-                "const": "biospecimen"
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/$defs/biospecimen"
-              }
+          "title": "Biospecimen",
+          "type": "object",
+          "properties": {
+            "entity": {
+              "type": "string",
+              "default": "biospecimen",
+              "format": "hidden"
+            },
+            "content": {
+              "$ref": "#/$defs/biospecimen"
             }
           }
         },
         {
-          "if": {
-            "properties": {
-              "entity": {
-                "const": "target"
-              }
-            }
-          },
-          "then": {
-            "properties": {
-              "content": {
-                "$ref": "#/$defs/target"
-              }
+          "title": "Target",
+          "type": "object",
+          "properties": {
+            "entity": {
+              "type": "string",
+              "default": "target",
+              "format": "hidden"
+            },
+            "content": {
+              "$ref": "#/$defs/target"
             }
           }
         }
@@ -533,121 +476,125 @@
     "perturbation": {
       "items": {
         "type": "object",
-        "properties": {
-          "entity": {
-            "enum": [
-              "smallMolecule",
-              "CRISPR",
-              "RNAi",
-              "antibody",
-              "proteinP",
-              "infectiousAgent"
-            ],
-            "type": "string",
-            "default": "modelSystem"
-          }
-        },
-        "allOf": [
+        "anyOf": [
           {
-            "if": {
-              "properties": {
-                "entity": {
-                  "const": "smallMolecule"
-                }
-              }
-            },
-            "then": {
-              "properties": {
-                "content": {
-                  "$ref": "#/$defs/smallMolecule"
-                }
+            "title": "Small Molecule",
+            "type": "object",
+            "properties": {
+              "entity": {
+                "type": "string",
+                "default": "smallMolecule",
+                "format": "hidden"
+              },
+              "content": {
+                "$ref": "#/$defs/smallMolecule"
               }
             }
           },
           {
-            "if": {
-              "properties": {
-                "entity": {
-                  "const": "CRISPR"
-                }
-              }
-            },
-            "then": {
-              "properties": {
-                "content": {
-                  "$ref": "#/$defs/CRISPR"
-                }
+            "title": "CRISPR",
+            "type": "object",
+            "properties": {
+              "entity": {
+                "type": "string",
+                "default": "CRISPR",
+                "format": "hidden"
+              },
+              "content": {
+                "$ref": "#/$defs/CRISPR"
               }
             }
           },
           {
-            "if": {
-              "properties": {
-                "entity": {
-                  "const": "RNAi"
-                }
-              }
-            },
-            "then": {
-              "properties": {
-                "content": {
-                  "$ref": "#/$defs/RNAi"
-                }
+            "title": "RNAi",
+            "type": "object",
+            "properties": {
+              "entity": {
+                "type": "string",
+                "default": "RNAi",
+                "format": "hidden"
+              },
+              "content": {
+                "$ref": "#/$defs/RNAi"
               }
             }
           },
           {
-            "if": {
-              "properties": {
-                "entity": {
-                  "const": "antibody"
-                }
-              }
-            },
-            "then": {
-              "properties": {
-                "content": {
-                  "$ref": "#/$defs/antibody"
-                }
+            "title": "Antibody",
+            "type": "object",
+            "properties": {
+              "entity": {
+                "type": "string",
+                "default": "antibody",
+                "format": "hidden"
+              },
+              "content": {
+                "$ref": "#/$defs/antibody"
               }
             }
           },
           {
-            "if": {
-              "properties": {
-                "entity": {
-                  "const": "proteinP"
-                }
-              }
-            },
-            "then": {
-              "properties": {
-                "content": {
-                  "$ref": "#/$defs/proteinP"
-                }
+            "title": "Protein",
+            "type": "object",
+            "properties": {
+              "entity": {
+                "type": "string",
+                "default": "proteinP",
+                "format": "hidden"
+              },
+              "content": {
+                "$ref": "#/$defs/proteinP"
               }
             }
           },
           {
-            "if": {
-              "properties": {
-                "entity": {
-                  "const": "infectiousAgent"
-                }
-              }
-            },
-            "then": {
-              "properties": {
-                "content": {
-                  "$ref": "#/$defs/infectiousAgent"
-                }
+            "title": "Infectious Agent",
+            "type": "object",
+            "properties": {
+              "entity": {
+                "type": "string",
+                "default": "infectiousAgent",
+                "format": "hidden"
+              },
+              "content": {
+                "$ref": "#/$defs/infectiousAgent"
               }
             }
           }
         ]
       },
       "title": "Perturbation",
-      "type": "array"
+      "type": "array",
+      "ui": {
+        "preview": {
+          "title": "Perturbation:",
+          "visible": true
+        },
+        "datagrid": {
+          "columns": [
+            {
+              "field": "entity",
+              "title": "Entity",
+              "getCellValue": "entity"
+            },
+            {
+              "field": "name",
+              "title": "Name",
+              "getCellValue": "content.name"
+            },
+            {
+              "field": "duration",
+              "title": "Duration",
+              "getCellValue": "content.duration"
+            },
+            {
+              "field": "concentration",
+              "title": "Concentration",
+              "getCellValue": "content.concentration"
+            }
+          ]
+        }
+      }
     }
   },
   "required": [
@@ -657,5 +604,24 @@
     "perturbation"
   ],
   "title": "Sample",
-  "type": "object"
+  "type": "object",
+  "ui": {
+    "preview": {
+      "visible": true
+    },
+    "datagrid": {
+      "columns": [
+        {
+          "field": "sampleName",
+          "title": "Sample Name",
+          "getCellValue": "sampleName"
+        },
+        {
+          "field": "description",
+          "title": "Description",
+          "getCellValue": "description"
+        }
+      ]
+    }
+  }
 }
