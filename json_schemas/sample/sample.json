@@ -20,6 +20,7 @@
             "entity": {
               "type": "string",
               "default": "patientSample",
+              "const": "patientSample",
               "format": "hidden"
             },
             "content": {
@@ -35,6 +36,7 @@
             "entity": {
               "type": "string",
               "default": "wastewater",
+              "const": "wastewater",
               "format": "hidden"
             },
             "content": {
@@ -137,6 +139,7 @@
             "entity": {
               "type": "string",
               "default": "cellLine",
+              "const": "cellLine",
               "format": "hidden"
             },
             "content": {
@@ -157,6 +160,7 @@
             "entity": {
               "type": "string",
               "default": "iPSC",
+              "const": "iPSC",
               "format": "hidden"
             },
             "content": {
@@ -172,6 +176,7 @@
             "entity": {
               "type": "string",
               "default": "differentiatedCells",
+              "const": "differentiatedCells",
               "format": "hidden"
             },
             "content": {
@@ -187,6 +192,7 @@
             "entity": {
               "type": "string",
               "default": "primaryCells",
+              "const": "primaryCells",
               "format": "hidden"
             },
             "content": {
@@ -202,6 +208,7 @@
             "entity": {
               "type": "string",
               "default": "tissue",
+              "const": "tissue",
               "format": "hidden"
             },
             "content": {
@@ -283,7 +290,7 @@
         }
       },
       "required": ["name"],
-      "title": "Small Molecule",
+      "title": "Small Molecule Info",
       "type": "object"
     },
     "target": {
@@ -295,6 +302,7 @@
             "entity": {
               "type": "string",
               "default": "gene",
+              "const": "gene",
               "format": "hidden"
             },
             "content": {
@@ -310,6 +318,7 @@
             "entity": {
               "type": "string",
               "default": "transcript",
+              "const": "transcript",
               "format": "hidden"
             },
             "content": {
@@ -325,6 +334,7 @@
             "entity": {
               "type": "string",
               "default": "protein",
+              "const": "protein",
               "format": "hidden"
             },
             "content": {
@@ -340,6 +350,7 @@
             "entity": {
               "type": "string",
               "default": "epigeneticModification",
+              "const": "epigeneticModification",
               "format": "hidden"
             },
             "content": {
@@ -396,6 +407,22 @@
       "required": ["name"],
       "title": "",
       "type": "object"
+    },
+    "perturbation": {
+      "properties": {
+        "duration": {
+          "title": "Duration",
+          "type": "string",
+          "enum": ["minutes", "hours", "days"],
+          "default": "minutes"
+        },
+        "concentration": {
+          "title": "Concentration",
+          "type": "string",
+          "enum": ["millimolar", "micromolar", "nanomolar"],
+          "default": "millimolar"
+        }
+      }
     }
   },
   "properties": {
@@ -421,6 +448,7 @@
             "entity": {
               "type": "string",
               "default": "modelSystem",
+              "const": "modelSystem",
               "format": "hidden"
             },
             "content": {
@@ -446,6 +474,7 @@
             "entity": {
               "type": "string",
               "default": "biospecimen",
+              "const": "biospecimen",
               "format": "hidden"
             },
             "content": {
@@ -471,6 +500,7 @@
             "entity": {
               "type": "string",
               "default": "target",
+              "const": "target",
               "format": "hidden"
             },
             "content": {
@@ -496,29 +526,28 @@
     "perturbation": {
       "items": {
         "type": "object",
+        "required": ["entity", "content", "duration", "concentration"],
         "anyOf": [
           {
-            "title": "Small Molecule",
+            "title": "Small Molecule Perturbation",
             "type": "object",
             "properties": {
               "entity": {
                 "type": "string",
                 "default": "smallMolecule",
+                "const": "smallMolecule",
                 "format": "hidden"
               },
               "duration": {
-                "title": "Duration",
-                "type": "string"
+                "$ref": "#/$defs/perturbation/properties/duration"
               },
               "concentration": {
-                "title": "Concentration",
-                "type": "string"
+                "$ref": "#/$defs/perturbation/properties/concentration"
               },
               "content": {
                 "$ref": "#/$defs/smallMolecule"
               }
-            },
-            "required": ["entity", "content", "duration", "concentration"]
+            }
           },
           {
             "title": "CRISPR",
@@ -527,21 +556,19 @@
               "entity": {
                 "type": "string",
                 "default": "CRISPR",
+                "const": "CRISPR",
                 "format": "hidden"
               },
               "duration": {
-                "title": "Duration",
-                "type": "string"
+                "$ref": "#/$defs/perturbation/properties/duration"
               },
               "concentration": {
-                "title": "Concentration",
-                "type": "string"
+                "$ref": "#/$defs/perturbation/properties/concentration"
               },
               "content": {
                 "$ref": "#/$defs/CRISPR"
               }
-            },
-            "required": ["entity", "content", "duration", "concentration"]
+            }
           },
           {
             "title": "RNAi",
@@ -550,21 +577,19 @@
               "entity": {
                 "type": "string",
                 "default": "RNAi",
+                "const": "RNAi",
                 "format": "hidden"
               },
               "duration": {
-                "title": "Duration",
-                "type": "string"
+                "$ref": "#/$defs/perturbation/properties/duration"
               },
               "concentration": {
-                "title": "Concentration",
-                "type": "string"
+                "$ref": "#/$defs/perturbation/properties/concentration"
               },
               "content": {
                 "$ref": "#/$defs/RNAi"
               }
-            },
-            "required": ["entity", "content", "duration", "concentration"]
+            }
           },
           {
             "title": "Antibody",
@@ -573,21 +598,19 @@
               "entity": {
                 "type": "string",
                 "default": "antibody",
+                "const": "antibody",
                 "format": "hidden"
               },
               "duration": {
-                "title": "Duration",
-                "type": "string"
+                "$ref": "#/$defs/perturbation/properties/duration"
               },
               "concentration": {
-                "title": "Concentration",
-                "type": "string"
+                "$ref": "#/$defs/perturbation/properties/concentration"
               },
               "content": {
                 "$ref": "#/$defs/antibody"
               }
-            },
-            "required": ["entity", "content", "duration", "concentration"]
+            }
           },
           {
             "title": "Protein",
@@ -596,21 +619,19 @@
               "entity": {
                 "type": "string",
                 "default": "proteinP",
+                "const": "proteinP",
                 "format": "hidden"
               },
               "duration": {
-                "title": "Duration",
-                "type": "string"
+                "$ref": "#/$defs/perturbation/properties/duration"
               },
               "concentration": {
-                "title": "Concentration",
-                "type": "string"
+                "$ref": "#/$defs/perturbation/properties/concentration"
               },
               "content": {
                 "$ref": "#/$defs/proteinP"
               }
-            },
-            "required": ["entity", "content", "duration", "concentration"]
+            }
           },
           {
             "title": "Infectious Agent",
@@ -619,21 +640,19 @@
               "entity": {
                 "type": "string",
                 "default": "infectiousAgent",
+                "const": "infectiousAgent",
                 "format": "hidden"
               },
               "duration": {
-                "title": "Duration",
-                "type": "string"
+                "$ref": "#/$defs/perturbation/properties/duration"
               },
               "concentration": {
-                "title": "Concentration",
-                "type": "string"
+                "$ref": "#/$defs/perturbation/properties/concentration"
               },
               "content": {
                 "$ref": "#/$defs/infectiousAgent"
               }
-            },
-            "required": ["entity", "content", "duration", "concentration"]
+            }
           }
         ]
       },
