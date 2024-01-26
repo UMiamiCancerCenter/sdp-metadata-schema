@@ -23,7 +23,8 @@
         "L1000",
         "ATAC-seq",
         "qPCR"
-      ]
+      ],
+      "default": "DNA-seq"
     },
     "experimentalSubject": {
       "type": "array",
@@ -39,7 +40,8 @@
           "Model System", 
           "Biospecimen",
           "Target"
-        ]
+        ],
+        "default": "Model System"
       }
     }
   },
