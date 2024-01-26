@@ -5,17 +5,9 @@
         "name": {
           "title": "Antibody Name",
           "type": "string"
-        },
-        "duration": {
-          "title": "Duration",
-          "type": "string"
-        },
-        "concentration": {
-          "title": "Concentration",
-          "type": "string"
         }
       },
-      "required": ["name", "duration", "concentration"],
+      "required": ["name"],
       "title": "Antibody",
       "type": "object"
     },
@@ -60,17 +52,9 @@
         "name": {
           "title": "Target Gene",
           "type": "string"
-        },
-        "duration": {
-          "title": "Duration",
-          "type": "string"
-        },
-        "concentration": {
-          "title": "Concentration",
-          "type": "string"
         }
       },
-      "required": ["name", "duration", "concentration"],
+      "required": ["name"],
       "title": "CRISPR",
       "type": "object"
     },
@@ -133,17 +117,9 @@
         "name": {
           "title": "Agent Name",
           "type": "string"
-        },
-        "duration": {
-          "title": "Duration",
-          "type": "string"
-        },
-        "concentration": {
-          "title": "Concentration",
-          "type": "string"
         }
       },
-      "required": ["name", "duration", "concentration"],
+      "required": ["name"],
       "title": "Infectious Agent",
       "type": "object"
     },
@@ -282,17 +258,9 @@
         "name": {
           "title": "Protein Name",
           "type": "string"
-        },
-        "duration": {
-          "title": "Duration",
-          "type": "string"
-        },
-        "concentration": {
-          "title": "Concentration",
-          "type": "string"
         }
       },
-      "required": ["name", "duration", "concentration"],
+      "required": ["name"],
       "title": "",
       "type": "object"
     },
@@ -301,17 +269,9 @@
         "name": {
           "title": "Target Sequence",
           "type": "string"
-        },
-        "duration": {
-          "title": "Duration",
-          "type": "string"
-        },
-        "concentration": {
-          "title": "Concentration",
-          "type": "string"
         }
       },
-      "required": ["name", "duration", "concentration"],
+      "required": ["name"],
       "title": "RNAi",
       "type": "object"
     },
@@ -320,17 +280,9 @@
         "name": {
           "title": "Small Molecule Name",
           "type": "string"
-        },
-        "duration": {
-          "title": "Duration",
-          "type": "string"
-        },
-        "concentration": {
-          "title": "Concentration",
-          "type": "string"
         }
       },
-      "required": ["name", "duration", "concentration"],
+      "required": ["name"],
       "title": "Small Molecule",
       "type": "object"
     },
@@ -554,11 +506,19 @@
                 "default": "smallMolecule",
                 "format": "hidden"
               },
+              "duration": {
+                "title": "Duration",
+                "type": "string"
+              },
+              "concentration": {
+                "title": "Concentration",
+                "type": "string"
+              },
               "content": {
                 "$ref": "#/$defs/smallMolecule"
               }
             },
-            "required": ["entity", "content"]
+            "required": ["entity", "content", "duration", "concentration"]
           },
           {
             "title": "CRISPR",
@@ -569,11 +529,19 @@
                 "default": "CRISPR",
                 "format": "hidden"
               },
+              "duration": {
+                "title": "Duration",
+                "type": "string"
+              },
+              "concentration": {
+                "title": "Concentration",
+                "type": "string"
+              },
               "content": {
                 "$ref": "#/$defs/CRISPR"
               }
             },
-            "required": ["entity", "content"]
+            "required": ["entity", "content", "duration", "concentration"]
           },
           {
             "title": "RNAi",
@@ -584,11 +552,19 @@
                 "default": "RNAi",
                 "format": "hidden"
               },
+              "duration": {
+                "title": "Duration",
+                "type": "string"
+              },
+              "concentration": {
+                "title": "Concentration",
+                "type": "string"
+              },
               "content": {
                 "$ref": "#/$defs/RNAi"
               }
             },
-            "required": ["entity", "content"]
+            "required": ["entity", "content", "duration", "concentration"]
           },
           {
             "title": "Antibody",
@@ -599,11 +575,19 @@
                 "default": "antibody",
                 "format": "hidden"
               },
+              "duration": {
+                "title": "Duration",
+                "type": "string"
+              },
+              "concentration": {
+                "title": "Concentration",
+                "type": "string"
+              },
               "content": {
                 "$ref": "#/$defs/antibody"
               }
             },
-            "required": ["entity", "content"]
+            "required": ["entity", "content", "duration", "concentration"]
           },
           {
             "title": "Protein",
@@ -614,11 +598,19 @@
                 "default": "proteinP",
                 "format": "hidden"
               },
+              "duration": {
+                "title": "Duration",
+                "type": "string"
+              },
+              "concentration": {
+                "title": "Concentration",
+                "type": "string"
+              },
               "content": {
                 "$ref": "#/$defs/proteinP"
               }
             },
-            "required": ["entity", "content"]
+            "required": ["entity", "content", "duration", "concentration"]
           },
           {
             "title": "Infectious Agent",
@@ -629,11 +621,19 @@
                 "default": "infectiousAgent",
                 "format": "hidden"
               },
+              "duration": {
+                "title": "Duration",
+                "type": "string"
+              },
+              "concentration": {
+                "title": "Concentration",
+                "type": "string"
+              },
               "content": {
                 "$ref": "#/$defs/infectiousAgent"
               }
             },
-            "required": ["entity", "content"]
+            "required": ["entity", "content", "duration", "concentration"]
           }
         ]
       },
@@ -659,12 +659,12 @@
             {
               "field": "duration",
               "title": "Duration",
-              "getCellValue": "content.duration"
+              "getCellValue": "duration"
             },
             {
               "field": "concentration",
               "title": "Concentration",
-              "getCellValue": "content.concentration"
+              "getCellValue": "concentration"
             }
           ]
         }
