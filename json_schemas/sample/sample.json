@@ -698,7 +698,6 @@
   ],
   "title": "Sample",
   "type": "object",
-  "additionalProperties": false,
   "ui": {
     "preview": {
       "visible": true
