@@ -50,10 +50,10 @@
           "title": "Cell Line Name",
           "type": "string"
         },
-        "experimentalSubjectType": {
+        "entity": {
           "const": "Cell Line",
           "default": "Cell Line",
-          "title": "Experimentalsubjecttype",
+          "title": "Entity",
           "type": "string"
         }
       },
@@ -160,7 +160,13 @@
     },
     "modelSystem": {
       "properties": {
-        "type": {
+        "entity": {
+          "const": "Model System",
+          "default": "Model System",
+          "title": "Entity",
+          "type": "string"
+        },
+        "content": {
           "anyOf": [
             {
               "$ref": "#/$defs/cellLine"
@@ -178,11 +184,11 @@
               "$ref": "#/$defs/tissue"
             }
           ],
-          "title": "Type"
+          "title": "Content"
         }
       },
       "required": [
-        "type"
+        "content"
       ],
       "title": "Model System",
       "type": "object"

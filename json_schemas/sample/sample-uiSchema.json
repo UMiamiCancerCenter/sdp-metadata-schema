@@ -1,1 +1,9 @@
-{}
+{ 
+  "experimentalSubject": {
+    "type": {
+      "entity": {
+         "ui:widget": "hidden"
+      }
+    }
+  }
+}
