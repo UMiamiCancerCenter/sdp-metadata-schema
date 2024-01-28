@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json-schema.org/draft/2019-09/schema",
   "title": "SDP Dataset",
   "description": "This document records the details of the SDP dataset metadata content",
   "version": "0.0.2",
@@ -24,7 +23,8 @@
         "L1000",
         "ATAC-seq",
         "qPCR"
-      ]
+      ],
+      "default": "DNA-seq"
     },
     "experimentalSubject": {
       "type": "array",
@@ -40,7 +40,8 @@
           "Model System", 
           "Biospecimen",
           "Target"
-        ]
+        ],
+        "default": "Model System"
       }
     }
   },

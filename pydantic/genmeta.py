@@ -11,14 +11,6 @@ from pydantic import BaseModel, Field, field_validator, ValidationError
 
 from pydantic.config import ConfigDict
 
-class modelSystemEnum(str, Enum):
-    cellLine = "Cell Line",
-    ipsc = "IPSC",
-    differentiatedCells = "Differentiated Cells",
-    primaryCells = "Primary Cells",
-    tissue = "Tissue"
-
-
 class smallMolecule(BaseModel):
     
     model_config = ConfigDict(title="Small Molecule")
