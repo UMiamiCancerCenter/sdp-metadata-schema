@@ -20,8 +20,8 @@
             "entity": {
               "type": "string",
               "default": "patientSample",
-              "const": "patientSample",
-              "format": "hidden"
+              "const": "patientSample"
+              
             },
             "content": {
               "$ref": "#/$defs/patientSample"
@@ -36,8 +36,7 @@
             "entity": {
               "type": "string",
               "default": "wastewater",
-              "const": "wastewater",
-              "format": "hidden"
+              "const": "wastewater"
             },
             "content": {
               "$ref": "#/$defs/wastewater"
@@ -139,8 +138,7 @@
             "entity": {
               "type": "string",
               "default": "cellLine",
-              "const": "cellLine",
-              "format": "hidden"
+              "const": "cellLine"
             },
             "content": {
               "ui": {
@@ -160,8 +158,7 @@
             "entity": {
               "type": "string",
               "default": "iPSC",
-              "const": "iPSC",
-              "format": "hidden"
+              "const": "iPSC"
             },
             "content": {
               "$ref": "#/$defs/iPSC"
@@ -176,8 +173,7 @@
             "entity": {
               "type": "string",
               "default": "differentiatedCells",
-              "const": "differentiatedCells",
-              "format": "hidden"
+              "const": "differentiatedCells"
             },
             "content": {
               "$ref": "#/$defs/differentiatedCells"
@@ -192,8 +188,8 @@
             "entity": {
               "type": "string",
               "default": "primaryCells",
-              "const": "primaryCells",
-              "format": "hidden"
+              "const": "primaryCells"
+              
             },
             "content": {
               "$ref": "#/$defs/primaryCells"
@@ -208,8 +204,8 @@
             "entity": {
               "type": "string",
               "default": "tissue",
-              "const": "tissue",
-              "format": "hidden"
+              "const": "tissue"
+              
             },
             "content": {
               "$ref": "#/$defs/tissue"
@@ -302,8 +298,8 @@
             "entity": {
               "type": "string",
               "default": "gene",
-              "const": "gene",
-              "format": "hidden"
+              "const": "gene"
+              
             },
             "content": {
               "$ref": "#/$defs/gene"
@@ -318,8 +314,8 @@
             "entity": {
               "type": "string",
               "default": "transcript",
-              "const": "transcript",
-              "format": "hidden"
+              "const": "transcript"
+              
             },
             "content": {
               "$ref": "#/$defs/transcript"
@@ -334,8 +330,8 @@
             "entity": {
               "type": "string",
               "default": "protein",
-              "const": "protein",
-              "format": "hidden"
+              "const": "protein"
+              
             },
             "content": {
               "$ref": "#/$defs/protein"
@@ -350,8 +346,8 @@
             "entity": {
               "type": "string",
               "default": "epigeneticModification",
-              "const": "epigeneticModification",
-              "format": "hidden"
+              "const": "epigeneticModification"
+              
             },
             "content": {
               "$ref": "#/$defs/epigeneticModification"
@@ -448,8 +444,8 @@
             "entity": {
               "type": "string",
               "default": "modelSystem",
-              "const": "modelSystem",
-              "format": "hidden"
+              "const": "modelSystem"
+              
             },
             "content": {
               "ui": {
@@ -474,8 +470,8 @@
             "entity": {
               "type": "string",
               "default": "biospecimen",
-              "const": "biospecimen",
-              "format": "hidden"
+              "const": "biospecimen"
+              
             },
             "content": {
               "ui": {
@@ -500,8 +496,8 @@
             "entity": {
               "type": "string",
               "default": "target",
-              "const": "target",
-              "format": "hidden"
+              "const": "target"
+              
             },
             "content": {
               "ui": {
@@ -535,8 +531,8 @@
               "entity": {
                 "type": "string",
                 "default": "smallMolecule",
-                "const": "smallMolecule",
-                "format": "hidden"
+                "const": "smallMolecule"
+                
               },
               "duration": {
                 "$ref": "#/$defs/perturbation/properties/duration"
@@ -556,8 +552,8 @@
               "entity": {
                 "type": "string",
                 "default": "CRISPR",
-                "const": "CRISPR",
-                "format": "hidden"
+                "const": "CRISPR"
+                
               },
               "duration": {
                 "$ref": "#/$defs/perturbation/properties/duration"
@@ -577,8 +573,8 @@
               "entity": {
                 "type": "string",
                 "default": "RNAi",
-                "const": "RNAi",
-                "format": "hidden"
+                "const": "RNAi"
+                
               },
               "duration": {
                 "$ref": "#/$defs/perturbation/properties/duration"
@@ -598,8 +594,8 @@
               "entity": {
                 "type": "string",
                 "default": "antibody",
-                "const": "antibody",
-                "format": "hidden"
+                "const": "antibody"
+                
               },
               "duration": {
                 "$ref": "#/$defs/perturbation/properties/duration"
@@ -619,8 +615,8 @@
               "entity": {
                 "type": "string",
                 "default": "proteinP",
-                "const": "proteinP",
-                "format": "hidden"
+                "const": "proteinP"
+                
               },
               "duration": {
                 "$ref": "#/$defs/perturbation/properties/duration"
@@ -640,8 +636,8 @@
               "entity": {
                 "type": "string",
                 "default": "infectiousAgent",
-                "const": "infectiousAgent",
-                "format": "hidden"
+                "const": "infectiousAgent"
+                
               },
               "duration": {
                 "$ref": "#/$defs/perturbation/properties/duration"
