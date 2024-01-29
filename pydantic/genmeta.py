@@ -103,7 +103,8 @@ class cellLine(BaseModel):
     
     name: str = Field(default = "MCF7 cell", title="Cell Line Name")
     entity: str = Field(default="Cell Line", 
-                                         json_schema_extra={"const": "Cell Line"})
+                                         json_schema_extra={"const": "Cell Line",
+                                                            "format": "hidden"})
 
 class wastewater(BaseModel):
     
@@ -141,7 +142,8 @@ class modelSystem(BaseModel):
 
     model_config = ConfigDict(title="Model System")
     entity: str = Field(default="Model System", 
-                                         json_schema_extra={"const": "Model System"})
+                                         json_schema_extra={"const": "Model System",
+                                                            "format": "hidden"})
 
     content: Union[
             cellLine,
