@@ -101,9 +101,8 @@ class cellLine(BaseModel):
 
     model_config = ConfigDict(title="Cell Line")
     
-    name: str = Field(default = "MCF7 cell", title="Cell Line Name")
-    entity: str = Field(default="Cell Line", 
-                                         json_schema_extra={"const": "Cell Line",
+    name: str = Field(title="Cell Line Name")
+    entity: str = Field(default="Cell Line", json_schema_extra={"const": "Cell Line",
                                                             "format": "hidden"})
 
 class wastewater(BaseModel):
