@@ -77,25 +77,37 @@ class gene(BaseModel):
 
 class tissue(BaseModel):
     
+    model_config = ConfigDict(title="Tissue")
+    
     name: str = Field(title="Tissue Type")
+    entity: str = Field(default="Tissue", json_schema_extra={"const": "Tissue",
+                                                            "format": "hidden"})
 
 class primaryCells(BaseModel):
 
     model_config = ConfigDict(title="Primary Cells")
     
     name: str = Field(title="Cell Type")
+    entity: str = Field(default="Primary Cells", 
+                        json_schema_extra={"const": "Primary Cells",
+                                                            "format": "hidden"})
 
 class differentiatedCells(BaseModel):
     
     model_config = ConfigDict(title="Differentiated Cells")
 
     name: str = Field(title="Cell Type")
+    entity: str = Field(default="Differentiated Cells", 
+                        json_schema_extra={"const": "Differentiated Cells",
+                                                            "format": "hidden"})
 
 class ipsc(BaseModel):
     
     model_config = ConfigDict(title="iPSC")
 
     name: str = Field(title="iPSC ID")
+    entity: str = Field(default="iPSC", json_schema_extra={"const": "iPSC",
+                                                            "format": "hidden"})
 
 class cellLine(BaseModel):
 
@@ -107,6 +119,8 @@ class cellLine(BaseModel):
 
 class wastewater(BaseModel):
     
+    model_config = ConfigDict(title="Wastewater")
+
     name: str = Field(title="Sample ID")
 
 class patientSample(BaseModel):
@@ -118,8 +132,11 @@ class patientSample(BaseModel):
 class target(BaseModel):
     
     model_config = ConfigDict(title="Molecular Target")
+    entity: str = Field(default="Molecular Target", 
+                                         json_schema_extra={"const": "Molecular Target",
+                                                            "format": "hidden"})
 
-    type: Union[
+    content: Union[
             gene,
             transcript,
             protein,
@@ -130,12 +147,14 @@ class target(BaseModel):
 class biospecimen(BaseModel):
     
     model_config = ConfigDict(title="Biospecimen")
+    entity: str = Field(default="Biospecimen", json_schema_extra={"const": "Biospecimen",
+                                                            "format": "hidden"})
 
-    type: Union[
+    content: Union[
             patientSample,
             wastewater
             ]
-
+    
 
 class modelSystem(BaseModel):
 
