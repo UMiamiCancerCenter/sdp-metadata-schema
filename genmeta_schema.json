@@ -53,6 +53,7 @@
         "entity": {
           "const": "Cell Line",
           "default": "Cell Line",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         }
@@ -163,6 +164,7 @@
         "entity": {
           "const": "Model System",
           "default": "Model System",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -291,7 +293,7 @@
           "type": "string"
         },
         "concentration": {
-          "default": "\u03bcM",
+          "default": "0 \u03bcM",
           "title": "Concentration",
           "type": "string"
         }

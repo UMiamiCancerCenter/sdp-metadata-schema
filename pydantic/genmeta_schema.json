@@ -46,6 +46,7 @@
     "cellLine": {
       "properties": {
         "name": {
+          "default": "MCF7 cell",
           "title": "Cell Line Name",
           "type": "string"
         },
@@ -57,9 +58,6 @@
           "type": "string"
         }
       },
-      "required": [
-        "name"
-      ],
       "title": "Cell Line",
       "type": "object"
     },
@@ -295,7 +293,7 @@
           "type": "string"
         },
         "concentration": {
-          "default": "\u03bcM",
+          "default": "0 \u03bcM",
           "title": "Concentration",
           "type": "string"
         }

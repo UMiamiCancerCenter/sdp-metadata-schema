@@ -17,7 +17,7 @@ class smallMolecule(BaseModel):
 
     name: str = Field(default="JQ1", title="Small Molecule Name")
     duration: str = Field(default="0 hrs")
-    concentration: str = Field(default="μM")
+    concentration: str = Field(default="0 μM")
 
 class crispr(BaseModel):
     
@@ -101,7 +101,7 @@ class cellLine(BaseModel):
 
     model_config = ConfigDict(title="Cell Line")
     
-    name: str = Field(title="Cell Line Name")
+    name: str = Field(default="MCF7 cell", title="Cell Line Name")
     entity: str = Field(default="Cell Line", json_schema_extra={"const": "Cell Line",
                                                             "format": "hidden"})
 
@@ -169,7 +169,7 @@ class sample(BaseModel):
         antibody,
         proteinP,
         infectiousAgent
-    ] 
+            ] 
         ]
                  
 
