@@ -28,7 +28,6 @@
         "entity": {
           "const": "Biospecimen",
           "default": "Biospecimen",
-          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -53,18 +52,19 @@
     "cellLine": {
       "properties": {
         "name": {
-          "default": "MCF7 cell",
           "title": "Cell Line Name",
           "type": "string"
         },
         "entity": {
           "const": "Cell Line",
           "default": "Cell Line",
-          "format": "hidden",
           "title": "Entity",
           "type": "string"
         }
       },
+      "required": [
+        "name"
+      ],
       "title": "Cell Line",
       "type": "object"
     },
@@ -100,7 +100,6 @@
         "entity": {
           "const": "Differentiated Cells",
           "default": "Differentiated Cells",
-          "format": "hidden",
           "title": "Entity",
           "type": "string"
         }
@@ -116,6 +115,12 @@
         "name": {
           "title": "Modification Type",
           "type": "string"
+        },
+        "entity": {
+          "const": "Epigenetic Modification",
+          "default": "Epigenetic Modification",
+          "title": "Entity",
+          "type": "string"
         }
       },
       "required": [
@@ -129,12 +134,18 @@
         "name": {
           "title": "Gene Name",
           "type": "string"
+        },
+        "entity": {
+          "const": "Gene",
+          "default": "Gene",
+          "title": "Entity",
+          "type": "string"
         }
       },
       "required": [
         "name"
       ],
-      "title": "gene",
+      "title": "Gene",
       "type": "object"
     },
     "infectiousAgent": {
@@ -169,7 +180,6 @@
         "entity": {
           "const": "iPSC",
           "default": "iPSC",
-          "format": "hidden",
           "title": "Entity",
           "type": "string"
         }
@@ -185,7 +195,6 @@
         "entity": {
           "const": "Model System",
           "default": "Model System",
-          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -221,6 +230,12 @@
         "name": {
           "title": "Tumor Type",
           "type": "string"
+        },
+        "entity": {
+          "const": "Patient Sample",
+          "default": "Patient Sample",
+          "title": "Entity",
+          "type": "string"
         }
       },
       "required": [
@@ -238,7 +253,6 @@
         "entity": {
           "const": "Primary Cells",
           "default": "Primary Cells",
-          "format": "hidden",
           "title": "Entity",
           "type": "string"
         }
@@ -254,12 +268,18 @@
         "name": {
           "title": "Protein Name",
           "type": "string"
+        },
+        "entity": {
+          "const": "Protein",
+          "default": "Protein",
+          "title": "Entity",
+          "type": "string"
         }
       },
       "required": [
         "name"
       ],
-      "title": "protein",
+      "title": "Protein",
       "type": "object"
     },
     "proteinP": {
@@ -311,21 +331,23 @@
     "smallMolecule": {
       "properties": {
         "name": {
-          "default": "JQ1",
           "title": "Small Molecule Name",
           "type": "string"
         },
         "duration": {
-          "default": "0 hrs",
           "title": "Duration",
           "type": "string"
         },
         "concentration": {
-          "default": "0 \u03bcM",
           "title": "Concentration",
           "type": "string"
         }
       },
+      "required": [
+        "name",
+        "duration",
+        "concentration"
+      ],
       "title": "Small Molecule",
       "type": "object"
     },
@@ -334,7 +356,6 @@
         "entity": {
           "const": "Molecular Target",
           "default": "Molecular Target",
-          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -371,7 +392,6 @@
         "entity": {
           "const": "Tissue",
           "default": "Tissue",
-          "format": "hidden",
           "title": "Entity",
           "type": "string"
         }
@@ -387,18 +407,30 @@
         "name": {
           "title": "NCBI Accession Number",
           "type": "string"
+        },
+        "entity": {
+          "const": "Transcript",
+          "default": "Transcript",
+          "title": "Entity",
+          "type": "string"
         }
       },
       "required": [
         "name"
       ],
-      "title": "transcript",
+      "title": "Transcript",
       "type": "object"
     },
     "wastewater": {
       "properties": {
         "name": {
           "title": "Sample ID",
+          "type": "string"
+        },
+        "entity": {
+          "const": "Wastewater",
+          "default": "Wastewater",
+          "title": "Entity",
           "type": "string"
         }
       },

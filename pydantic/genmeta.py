@@ -15,9 +15,9 @@ class smallMolecule(BaseModel):
     
     model_config = ConfigDict(title="Small Molecule")
 
-    name: str = Field(default="JQ1", title="Small Molecule Name")
-    duration: str = Field(default="0 hrs")
-    concentration: str = Field(default="0 μM")
+    name: str = Field(title="Small Molecule Name")
+    duration: str
+    concentration: str
 
 class crispr(BaseModel):
     
@@ -62,26 +62,33 @@ class epigeneticModification(BaseModel):
     model_config = ConfigDict(title="Epigenetic Modification")
     
     name: str = Field(title="Modification Type")
+    entity: str = Field(default="Epigenetic Modification", 
+                        json_schema_extra={"const": "Epigenetic Modification"})
 
 class protein(BaseModel):
     
-    name: str = Field(title="Protein Name")
+    model_config = ConfigDict(title="Protein")
 
+    name: str = Field(title="Protein Name")
+    entity: str = Field(default="Protein", json_schema_extra={"const": "Protein"})
 class transcript(BaseModel):
     
-    name: str = Field(title="NCBI Accession Number")
+    model_config = ConfigDict(title="Transcript")
 
+    name: str = Field(title="NCBI Accession Number")
+    entity: str = Field(default="Transcript", json_schema_extra={"const": "Transcript"})
 class gene(BaseModel):
     
-    name: str = Field(title="Gene Name")
+    model_config = ConfigDict(title="Gene")
 
+    name: str = Field(title="Gene Name")
+    entity: str = Field(default="Gene", json_schema_extra={"const": "Gene"})
 class tissue(BaseModel):
     
     model_config = ConfigDict(title="Tissue")
     
     name: str = Field(title="Tissue Type")
-    entity: str = Field(default="Tissue", json_schema_extra={"const": "Tissue",
-                                                            "format": "hidden"})
+    entity: str = Field(default="Tissue", json_schema_extra={"const": "Tissue"})
 
 class primaryCells(BaseModel):
 
@@ -89,8 +96,7 @@ class primaryCells(BaseModel):
     
     name: str = Field(title="Cell Type")
     entity: str = Field(default="Primary Cells", 
-                        json_schema_extra={"const": "Primary Cells",
-                                                            "format": "hidden"})
+                        json_schema_extra={"const": "Primary Cells"})
 
 class differentiatedCells(BaseModel):
     
@@ -98,43 +104,40 @@ class differentiatedCells(BaseModel):
 
     name: str = Field(title="Cell Type")
     entity: str = Field(default="Differentiated Cells", 
-                        json_schema_extra={"const": "Differentiated Cells",
-                                                            "format": "hidden"})
+                        json_schema_extra={"const": "Differentiated Cells"})
 
 class ipsc(BaseModel):
     
     model_config = ConfigDict(title="iPSC")
 
     name: str = Field(title="iPSC ID")
-    entity: str = Field(default="iPSC", json_schema_extra={"const": "iPSC",
-                                                            "format": "hidden"})
+    entity: str = Field(default="iPSC", json_schema_extra={"const": "iPSC"})
 
 class cellLine(BaseModel):
 
     model_config = ConfigDict(title="Cell Line")
     
-    name: str = Field(default="MCF7 cell", title="Cell Line Name")
-    entity: str = Field(default="Cell Line", json_schema_extra={"const": "Cell Line",
-                                                            "format": "hidden"})
+    name: str = Field(title="Cell Line Name")
+    entity: str = Field(default="Cell Line", json_schema_extra={"const": "Cell Line"})
 
 class wastewater(BaseModel):
     
     model_config = ConfigDict(title="Wastewater")
 
     name: str = Field(title="Sample ID")
-
+    entity: str = Field(default="Wastewater", json_schema_extra={"const": "Wastewater"})
 class patientSample(BaseModel):
     
     model_config = ConfigDict(title="Patient Sample")
 
     name: str = Field(title="Tumor Type")
-
+    entity: str = Field(default="Patient Sample", 
+                        json_schema_extra={"const": "Patient Sample"})
 class target(BaseModel):
     
     model_config = ConfigDict(title="Molecular Target")
     entity: str = Field(default="Molecular Target", 
-                                         json_schema_extra={"const": "Molecular Target",
-                                                            "format": "hidden"})
+                                         json_schema_extra={"const": "Molecular Target"})
 
     content: Union[
             gene,
@@ -147,8 +150,7 @@ class target(BaseModel):
 class biospecimen(BaseModel):
     
     model_config = ConfigDict(title="Biospecimen")
-    entity: str = Field(default="Biospecimen", json_schema_extra={"const": "Biospecimen",
-                                                            "format": "hidden"})
+    entity: str = Field(default="Biospecimen", json_schema_extra={"const": "Biospecimen"})
 
     content: Union[
             patientSample,
@@ -160,8 +162,7 @@ class modelSystem(BaseModel):
 
     model_config = ConfigDict(title="Model System")
     entity: str = Field(default="Model System", 
-                                         json_schema_extra={"const": "Model System",
-                                                            "format": "hidden"})
+                                         json_schema_extra={"const": "Model System"})
 
     content: Union[
             cellLine,
