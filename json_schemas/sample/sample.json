@@ -257,7 +257,7 @@
         }
       },
       "required": ["name"],
-      "title": "Protein",
+      "title": "",
       "type": "object"
     },
     "proteinP": {
