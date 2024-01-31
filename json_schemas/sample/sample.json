@@ -409,6 +409,7 @@
       "type": "object"
     },
     "perturbation": {
+      "type": "object",
       "properties": {
         "duration": {
           "title": "Duration",
@@ -709,13 +710,6 @@
       },
       "title": "Perturbation",
       "type": "array",
-      "required": [
-        "entity",
-        "durationUnit",
-        "duration",
-        "concentrationUnit",
-        "concentration"
-      ],
       "ui": {
         "preview": {
           "title": "Perturbation:",
