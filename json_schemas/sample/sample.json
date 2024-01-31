@@ -2,12 +2,12 @@
   "$defs": {
     "antibody": {
       "properties": {
-        "name": {
+        "antibodyName": {
           "title": "Antibody Name",
           "type": "string"
         }
       },
-      "required": ["name"],
+      "required": ["antibodyName"],
       "title": "Antibody",
       "type": "object"
     },
@@ -51,18 +51,18 @@
     },
     "CRISPR": {
       "properties": {
-        "name": {
+        "targetGene": {
           "title": "Target Gene",
           "type": "string"
         }
       },
-      "required": ["name"],
+      "required": ["targetGene"],
       "title": "CRISPR",
       "type": "object"
     },
     "cellLine": {
       "properties": {
-        "name": {
+        "cellLineName": {
           "ui": {
             "preview": {
               "visible": true
@@ -72,7 +72,7 @@
           "type": "string"
         }
       },
-      "required": ["name"],
+      "required": ["cellLineName"],
       "title": "",
       "type": "object",
       "ui": {
@@ -83,45 +83,45 @@
     },
     "differentiatedCells": {
       "properties": {
-        "name": {
+        "differentiatedCellsType": {
           "title": "Cell Type",
           "type": "string"
         }
       },
-      "required": ["name"],
+      "required": ["differentiatedCellsType"],
       "title": "",
       "type": "object"
     },
     "epigeneticModification": {
       "properties": {
-        "name": {
+        "epigeneticModificationType": {
           "title": "Modification Type",
           "type": "string"
         }
       },
-      "required": ["name"],
+      "required": ["epigeneticModificationType"],
       "title": "",
       "type": "object"
     },
     "gene": {
       "properties": {
-        "name": {
+        "geneName": {
           "title": "Gene Name",
           "type": "string"
         }
       },
-      "required": ["name"],
+      "required": ["geneName"],
       "title": "",
       "type": "object"
     },
     "infectiousAgent": {
       "properties": {
-        "name": {
+        "agentName": {
           "title": "Agent Name",
           "type": "string"
         }
       },
-      "required": ["name"],
+      "required": ["agentName"],
       "title": "Infectious Agent",
       "type": "object"
     },
@@ -229,45 +229,45 @@
     },
     "patientSample": {
       "properties": {
-        "name": {
+        "tumorType": {
           "title": "Tumor Type",
           "type": "string"
         }
       },
-      "required": ["name"],
+      "required": ["tumorType"],
       "title": "",
       "type": "object"
     },
     "primaryCells": {
       "properties": {
-        "name": {
+        "primaryCellsType": {
           "title": "Cell Type",
           "type": "string"
         }
       },
-      "required": ["name"],
+      "required": ["primaryCellsType"],
       "title": "",
       "type": "object"
     },
     "protein": {
       "properties": {
-        "name": {
+        "proteinName": {
           "title": "Protein Name",
           "type": "string"
         }
       },
-      "required": ["name"],
+      "required": ["proteinName"],
       "title": "",
       "type": "object"
     },
     "proteinP": {
       "properties": {
-        "name": {
+        "proteinPName": {
           "title": "Protein Name",
           "type": "string"
         }
       },
-      "required": ["name"],
+      "required": ["proteinPName"],
       "title": "",
       "type": "object"
     },
@@ -284,12 +284,12 @@
     },
     "smallMolecule": {
       "properties": {
-        "name": {
+        "smallMoleculeName": {
           "title": "Small Molecule Name",
           "type": "string"
         }
       },
-      "required": ["name"],
+      "required": ["smallMoleculeName"],
       "title": "Small Molecule Info",
       "type": "object"
     },
@@ -366,45 +366,45 @@
     },
     "tissue": {
       "properties": {
-        "name": {
+        "tissueType": {
           "title": "Tissue Type",
           "type": "string"
         }
       },
-      "required": ["name"],
+      "required": ["tissueType"],
       "title": "",
       "type": "object"
     },
     "transcript": {
       "properties": {
-        "name": {
+        "transcriptName": {
           "title": "NCBI Accession Number",
           "type": "string"
         }
       },
-      "required": ["name"],
+      "required": ["transcriptName"],
       "title": "",
       "type": "object"
     },
     "wastewater": {
       "properties": {
-        "name": {
+        "wastewaterSampleId": {
           "title": "Sample ID",
           "type": "string"
         }
       },
-      "required": ["name"],
+      "required": ["wastewaterSampleId"],
       "title": "",
       "type": "object"
     },
     "iPSC": {
       "properties": {
-        "name": {
+        "iPSCId": {
           "title": "iPSC ID",
           "type": "string"
         }
       },
-      "required": ["name"],
+      "required": ["iPSCId"],
       "title": "",
       "type": "object"
     },
@@ -412,12 +412,20 @@
       "properties": {
         "duration": {
           "title": "Duration",
+          "type": "number"
+        },
+        "durationUnit": {
+          "title": "Duration Unit",
           "type": "string",
           "enum": ["minutes", "hours", "days"],
           "default": "minutes"
         },
         "concentration": {
           "title": "Concentration",
+          "type": "number"
+        },
+        "concentrationUnit": {
+          "title": "Concentration Unit",
           "type": "string",
           "enum": ["millimolar", "micromolar", "nanomolar"],
           "default": "millimolar"
@@ -526,7 +534,14 @@
     "perturbation": {
       "items": {
         "type": "object",
-        "required": ["entity", "content", "duration", "concentration"],
+        "required": [
+          "entity",
+          "durationUnit",
+          "duration",
+          "concentrationUnit",
+          "concentration",
+          "content"
+        ],
         "anyOf": [
           {
             "title": "Small Molecule Perturbation",
@@ -538,8 +553,14 @@
                 "const": "smallMolecule",
                 "format": "hidden"
               },
+              "durationUnit": {
+                "$ref": "#/$defs/perturbation/properties/durationUnit"
+              },
               "duration": {
                 "$ref": "#/$defs/perturbation/properties/duration"
+              },
+              "concentrationUnit": {
+                "$ref": "#/$defs/perturbation/properties/concentrationUnit"
               },
               "concentration": {
                 "$ref": "#/$defs/perturbation/properties/concentration"
@@ -559,8 +580,14 @@
                 "const": "CRISPR",
                 "format": "hidden"
               },
+              "durationUnit": {
+                "$ref": "#/$defs/perturbation/properties/durationUnit"
+              },
               "duration": {
                 "$ref": "#/$defs/perturbation/properties/duration"
+              },
+              "concentrationUnit": {
+                "$ref": "#/$defs/perturbation/properties/concentrationUnit"
               },
               "concentration": {
                 "$ref": "#/$defs/perturbation/properties/concentration"
@@ -580,8 +607,14 @@
                 "const": "RNAi",
                 "format": "hidden"
               },
+              "durationUnit": {
+                "$ref": "#/$defs/perturbation/properties/durationUnit"
+              },
               "duration": {
                 "$ref": "#/$defs/perturbation/properties/duration"
+              },
+              "concentrationUnit": {
+                "$ref": "#/$defs/perturbation/properties/concentrationUnit"
               },
               "concentration": {
                 "$ref": "#/$defs/perturbation/properties/concentration"
@@ -601,8 +634,14 @@
                 "const": "antibody",
                 "format": "hidden"
               },
+              "durationUnit": {
+                "$ref": "#/$defs/perturbation/properties/durationUnit"
+              },
               "duration": {
                 "$ref": "#/$defs/perturbation/properties/duration"
+              },
+              "concentrationUnit": {
+                "$ref": "#/$defs/perturbation/properties/concentrationUnit"
               },
               "concentration": {
                 "$ref": "#/$defs/perturbation/properties/concentration"
@@ -622,8 +661,14 @@
                 "const": "proteinP",
                 "format": "hidden"
               },
+              "durationUnit": {
+                "$ref": "#/$defs/perturbation/properties/durationUnit"
+              },
               "duration": {
                 "$ref": "#/$defs/perturbation/properties/duration"
+              },
+              "concentrationUnit": {
+                "$ref": "#/$defs/perturbation/properties/concentrationUnit"
               },
               "concentration": {
                 "$ref": "#/$defs/perturbation/properties/concentration"
@@ -643,8 +688,14 @@
                 "const": "infectiousAgent",
                 "format": "hidden"
               },
+              "durationUnit": {
+                "$ref": "#/$defs/perturbation/properties/durationUnit"
+              },
               "duration": {
                 "$ref": "#/$defs/perturbation/properties/duration"
+              },
+              "concentrationUnit": {
+                "$ref": "#/$defs/perturbation/properties/concentrationUnit"
               },
               "concentration": {
                 "$ref": "#/$defs/perturbation/properties/concentration"
@@ -658,6 +709,13 @@
       },
       "title": "Perturbation",
       "type": "array",
+      "required": [
+        "entity",
+        "durationUnit",
+        "duration",
+        "concentrationUnit",
+        "concentration"
+      ],
       "ui": {
         "preview": {
           "title": "Perturbation:",
