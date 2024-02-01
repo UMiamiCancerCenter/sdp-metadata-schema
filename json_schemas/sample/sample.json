@@ -25,7 +25,13 @@
     },
     "biospecimen": {
       "properties": {
-        "type": {
+        "entity": {
+          "const": "Biospecimen",
+          "default": "Biospecimen",
+          "title": "Entity",
+          "type": "string"
+        },
+        "content": {
           "anyOf": [
             {
               "$ref": "#/$defs/patientSample"
@@ -34,11 +40,11 @@
               "$ref": "#/$defs/wastewater"
             }
           ],
-          "title": "Type"
+          "title": "Content"
         }
       },
       "required": [
-        "type"
+        "content"
       ],
       "title": "Biospecimen",
       "type": "object"
@@ -46,18 +52,19 @@
     "cellLine": {
       "properties": {
         "name": {
-          "default": "MCF7 cell",
           "title": "Cell Line Name",
           "type": "string"
         },
         "entity": {
           "const": "Cell Line",
           "default": "Cell Line",
-          "format": "hidden",
           "title": "Entity",
           "type": "string"
         }
       },
+      "required": [
+        "name"
+      ],
       "title": "Cell Line",
       "type": "object"
     },
@@ -89,6 +96,12 @@
         "name": {
           "title": "Cell Type",
           "type": "string"
+        },
+        "entity": {
+          "const": "Differentiated Cells",
+          "default": "Differentiated Cells",
+          "title": "Entity",
+          "type": "string"
         }
       },
       "required": [
@@ -101,6 +114,12 @@
       "properties": {
         "name": {
           "title": "Modification Type",
+          "type": "string"
+        },
+        "entity": {
+          "const": "Epigenetic Modification",
+          "default": "Epigenetic Modification",
+          "title": "Entity",
           "type": "string"
         }
       },
@@ -115,12 +134,18 @@
         "name": {
           "title": "Gene Name",
           "type": "string"
+        },
+        "entity": {
+          "const": "Gene",
+          "default": "Gene",
+          "title": "Entity",
+          "type": "string"
         }
       },
       "required": [
         "name"
       ],
-      "title": "gene",
+      "title": "Gene",
       "type": "object"
     },
     "infectiousAgent": {
@@ -151,6 +176,12 @@
         "name": {
           "title": "iPSC ID",
           "type": "string"
+        },
+        "entity": {
+          "const": "iPSC",
+          "default": "iPSC",
+          "title": "Entity",
+          "type": "string"
         }
       },
       "required": [
@@ -164,7 +195,6 @@
         "entity": {
           "const": "Model System",
           "default": "Model System",
-          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -200,6 +230,12 @@
         "name": {
           "title": "Tumor Type",
           "type": "string"
+        },
+        "entity": {
+          "const": "Patient Sample",
+          "default": "Patient Sample",
+          "title": "Entity",
+          "type": "string"
         }
       },
       "required": [
@@ -212,6 +248,12 @@
       "properties": {
         "name": {
           "title": "Cell Type",
+          "type": "string"
+        },
+        "entity": {
+          "const": "Primary Cells",
+          "default": "Primary Cells",
+          "title": "Entity",
           "type": "string"
         }
       },
@@ -226,12 +268,18 @@
         "name": {
           "title": "Protein Name",
           "type": "string"
+        },
+        "entity": {
+          "const": "Protein",
+          "default": "Protein",
+          "title": "Entity",
+          "type": "string"
         }
       },
       "required": [
         "name"
       ],
-      "title": "protein",
+      "title": "Protein",
       "type": "object"
     },
     "proteinP": {
@@ -283,27 +331,35 @@
     "smallMolecule": {
       "properties": {
         "name": {
-          "default": "JQ1",
           "title": "Small Molecule Name",
           "type": "string"
         },
         "duration": {
-          "default": "0 hrs",
           "title": "Duration",
           "type": "string"
         },
         "concentration": {
-          "default": "0 \u03bcM",
           "title": "Concentration",
           "type": "string"
         }
       },
+      "required": [
+        "name",
+        "duration",
+        "concentration"
+      ],
       "title": "Small Molecule",
       "type": "object"
     },
     "target": {
       "properties": {
-        "type": {
+        "entity": {
+          "const": "Molecular Target",
+          "default": "Molecular Target",
+          "title": "Entity",
+          "type": "string"
+        },
+        "content": {
           "anyOf": [
             {
               "$ref": "#/$defs/gene"
@@ -318,11 +374,11 @@
               "$ref": "#/$defs/epigeneticModification"
             }
           ],
-          "title": "Type"
+          "title": "Content"
         }
       },
       "required": [
-        "type"
+        "content"
       ],
       "title": "Molecular Target",
       "type": "object"
@@ -332,12 +388,18 @@
         "name": {
           "title": "Tissue Type",
           "type": "string"
+        },
+        "entity": {
+          "const": "Tissue",
+          "default": "Tissue",
+          "title": "Entity",
+          "type": "string"
         }
       },
       "required": [
         "name"
       ],
-      "title": "tissue",
+      "title": "Tissue",
       "type": "object"
     },
     "transcript": {
@@ -345,12 +407,18 @@
         "name": {
           "title": "NCBI Accession Number",
           "type": "string"
+        },
+        "entity": {
+          "const": "Transcript",
+          "default": "Transcript",
+          "title": "Entity",
+          "type": "string"
         }
       },
       "required": [
         "name"
       ],
-      "title": "transcript",
+      "title": "Transcript",
       "type": "object"
     },
     "wastewater": {
@@ -358,12 +426,18 @@
         "name": {
           "title": "Sample ID",
           "type": "string"
+        },
+        "entity": {
+          "const": "Wastewater",
+          "default": "Wastewater",
+          "title": "Entity",
+          "type": "string"
         }
       },
       "required": [
         "name"
       ],
-      "title": "wastewater",
+      "title": "Wastewater",
       "type": "object"
     }
   },
