@@ -51,14 +51,14 @@
     },
     "cellLine": {
       "properties": {
-        "name": {
-          "title": "Cell Line Name",
-          "type": "string"
-        },
         "entity": {
           "const": "Cell Line",
           "default": "Cell Line",
           "title": "Entity",
+          "type": "string"
+        },
+        "name": {
+          "title": "Cell Line Name",
           "type": "string"
         }
       },
