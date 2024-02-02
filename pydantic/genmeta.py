@@ -15,6 +15,8 @@ class smallMolecule(BaseModel):
     
     model_config = ConfigDict(title="Small Molecule")
 
+    entity: str = Field(default="Small Molecule", 
+                                         json_schema_extra={"const": "Small Molecule"})
     name: str = Field(title="Small Molecule Name")
     duration: str
     concentration: str
@@ -23,6 +25,8 @@ class crispr(BaseModel):
     
     model_config = ConfigDict(title="CRISPR")
 
+    entity: str = Field(default="CRISPR", 
+                                         json_schema_extra={"const": "CRISPR"})
     name: str = Field(title="Target Gene")
     duration: str
     concentration: str
@@ -31,12 +35,18 @@ class rnai(BaseModel):
 
     model_config = ConfigDict(title="RNAi")
     
+    entity: str = Field(default="RNAi", 
+                                         json_schema_extra={"const": "RNAi"})
     name: str = Field(title="Target Sequence")
     duration: str
     concentration: str
 
 class antibody(BaseModel):
+
+    model_config = ConfigDict(title="Antibody")
     
+    entity: str = Field(default="Antibody", 
+                                         json_schema_extra={"const": "Antibody"})
     name: str = Field(title="Antibody Name")
     duration: str
     concentration: str
@@ -45,6 +55,8 @@ class proteinP(BaseModel):
     
     model_config = ConfigDict(title='Protein')
 
+    entity: str = Field(default="Protein", 
+                                         json_schema_extra={"const": "Protein"})
     name: str = Field(title="Protein Name")
     duration: str
     concentration: str
@@ -53,6 +65,8 @@ class infectiousAgent(BaseModel):
     
     model_config = ConfigDict(title="Infectious Agent")
 
+    entity: str = Field(default="Infectious Agent", 
+                                         json_schema_extra={"const": "Infectious Agent"})
     name: str = Field(title="Agent Name")
     duration: str
     concentration: str
@@ -61,84 +75,85 @@ class epigeneticModification(BaseModel):
 
     model_config = ConfigDict(title="Epigenetic Modification")
     
-    name: str = Field(title="Modification Type")
     entity: str = Field(default="Epigenetic Modification", 
                         json_schema_extra={"const": "Epigenetic Modification"})
-
+    name: str = Field(title="Modification Type")
+    
 class protein(BaseModel):
     
     model_config = ConfigDict(title="Protein")
 
-    name: str = Field(title="Protein Name")
     entity: str = Field(default="Protein", json_schema_extra={"const": "Protein"})
+    name: str = Field(title="Protein Name")
 class transcript(BaseModel):
     
     model_config = ConfigDict(title="Transcript")
 
-    name: str = Field(title="NCBI Accession Number")
     entity: str = Field(default="Transcript", json_schema_extra={"const": "Transcript"})
+    name: str = Field(title="NCBI Accession Number")
 class gene(BaseModel):
     
     model_config = ConfigDict(title="Gene")
 
-    name: str = Field(title="Gene Name")
     entity: str = Field(default="Gene", json_schema_extra={"const": "Gene"})
+    name: str = Field(title="Gene Name")
 class tissue(BaseModel):
     
     model_config = ConfigDict(title="Tissue")
-    
-    name: str = Field(title="Tissue Type")
+
     entity: str = Field(default="Tissue", json_schema_extra={"const": "Tissue"})
+    name: str = Field(title="Tissue Type")
 
 class primaryCells(BaseModel):
 
     model_config = ConfigDict(title="Primary Cells")
-    
-    name: str = Field(title="Cell Type")
+
     entity: str = Field(default="Primary Cells", 
                         json_schema_extra={"const": "Primary Cells"})
+    name: str = Field(title="Cell Type")
 
 class differentiatedCells(BaseModel):
     
     model_config = ConfigDict(title="Differentiated Cells")
 
-    name: str = Field(title="Cell Type")
     entity: str = Field(default="Differentiated Cells", 
                         json_schema_extra={"const": "Differentiated Cells"})
-
+    name: str = Field(title="Cell Type")
 class ipsc(BaseModel):
     
     model_config = ConfigDict(title="iPSC")
 
-    name: str = Field(title="iPSC ID")
     entity: str = Field(default="iPSC", json_schema_extra={"const": "iPSC"})
+    name: str = Field(title="iPSC ID")
 
 class cellLine(BaseModel):
 
     model_config = ConfigDict(title="Cell Line")
-    
-    name: str = Field(title="Cell Line Name")
+
     entity: str = Field(default="Cell Line", json_schema_extra={"const": "Cell Line"})
+    name: str = Field(title="Cell Line Name")
 
 class wastewater(BaseModel):
     
     model_config = ConfigDict(title="Wastewater")
 
-    name: str = Field(title="Sample ID")
     entity: str = Field(default="Wastewater", json_schema_extra={"const": "Wastewater"})
+    name: str = Field(title="Sample ID")
+
 class patientSample(BaseModel):
     
     model_config = ConfigDict(title="Patient Sample")
 
-    name: str = Field(title="Tumor Type")
     entity: str = Field(default="Patient Sample", 
                         json_schema_extra={"const": "Patient Sample"})
+    name: str = Field(title="Tumor Type")
+   
 class target(BaseModel):
     
     model_config = ConfigDict(title="Molecular Target")
+
     entity: str = Field(default="Molecular Target", 
                                          json_schema_extra={"const": "Molecular Target"})
-
     content: Union[
             gene,
             transcript,
@@ -150,8 +165,8 @@ class target(BaseModel):
 class biospecimen(BaseModel):
     
     model_config = ConfigDict(title="Biospecimen")
-    entity: str = Field(default="Biospecimen", json_schema_extra={"const": "Biospecimen"})
 
+    entity: str = Field(default="Biospecimen", json_schema_extra={"const": "Biospecimen"})
     content: Union[
             patientSample,
             wastewater
@@ -161,9 +176,9 @@ class biospecimen(BaseModel):
 class modelSystem(BaseModel):
 
     model_config = ConfigDict(title="Model System")
+
     entity: str = Field(default="Model System", 
                                          json_schema_extra={"const": "Model System"})
-
     content: Union[
             cellLine,
             ipsc,
@@ -181,7 +196,6 @@ class sample(BaseModel):
             biospecimen,
             target
             ] = Field(title="Experimental Subject")
-
     perturbation: List[Union[
         smallMolecule,
         crispr,

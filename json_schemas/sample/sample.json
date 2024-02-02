@@ -2,6 +2,12 @@
   "$defs": {
     "antibody": {
       "properties": {
+        "entity": {
+          "const": "Antibody",
+          "default": "Antibody",
+          "title": "Entity",
+          "type": "string"
+        },
         "name": {
           "title": "Antibody Name",
           "type": "string"
@@ -20,7 +26,7 @@
         "duration",
         "concentration"
       ],
-      "title": "antibody",
+      "title": "Antibody",
       "type": "object"
     },
     "biospecimen": {
@@ -70,6 +76,12 @@
     },
     "crispr": {
       "properties": {
+        "entity": {
+          "const": "CRISPR",
+          "default": "CRISPR",
+          "title": "Entity",
+          "type": "string"
+        },
         "name": {
           "title": "Target Gene",
           "type": "string"
@@ -93,14 +105,14 @@
     },
     "differentiatedCells": {
       "properties": {
-        "name": {
-          "title": "Cell Type",
-          "type": "string"
-        },
         "entity": {
           "const": "Differentiated Cells",
           "default": "Differentiated Cells",
           "title": "Entity",
+          "type": "string"
+        },
+        "name": {
+          "title": "Cell Type",
           "type": "string"
         }
       },
@@ -112,14 +124,14 @@
     },
     "epigeneticModification": {
       "properties": {
-        "name": {
-          "title": "Modification Type",
-          "type": "string"
-        },
         "entity": {
           "const": "Epigenetic Modification",
           "default": "Epigenetic Modification",
           "title": "Entity",
+          "type": "string"
+        },
+        "name": {
+          "title": "Modification Type",
           "type": "string"
         }
       },
@@ -131,14 +143,14 @@
     },
     "gene": {
       "properties": {
-        "name": {
-          "title": "Gene Name",
-          "type": "string"
-        },
         "entity": {
           "const": "Gene",
           "default": "Gene",
           "title": "Entity",
+          "type": "string"
+        },
+        "name": {
+          "title": "Gene Name",
           "type": "string"
         }
       },
@@ -150,6 +162,12 @@
     },
     "infectiousAgent": {
       "properties": {
+        "entity": {
+          "const": "Infectious Agent",
+          "default": "Infectious Agent",
+          "title": "Entity",
+          "type": "string"
+        },
         "name": {
           "title": "Agent Name",
           "type": "string"
@@ -173,14 +191,14 @@
     },
     "ipsc": {
       "properties": {
-        "name": {
-          "title": "iPSC ID",
-          "type": "string"
-        },
         "entity": {
           "const": "iPSC",
           "default": "iPSC",
           "title": "Entity",
+          "type": "string"
+        },
+        "name": {
+          "title": "iPSC ID",
           "type": "string"
         }
       },
@@ -227,14 +245,14 @@
     },
     "patientSample": {
       "properties": {
-        "name": {
-          "title": "Tumor Type",
-          "type": "string"
-        },
         "entity": {
           "const": "Patient Sample",
           "default": "Patient Sample",
           "title": "Entity",
+          "type": "string"
+        },
+        "name": {
+          "title": "Tumor Type",
           "type": "string"
         }
       },
@@ -246,14 +264,14 @@
     },
     "primaryCells": {
       "properties": {
-        "name": {
-          "title": "Cell Type",
-          "type": "string"
-        },
         "entity": {
           "const": "Primary Cells",
           "default": "Primary Cells",
           "title": "Entity",
+          "type": "string"
+        },
+        "name": {
+          "title": "Cell Type",
           "type": "string"
         }
       },
@@ -265,14 +283,14 @@
     },
     "protein": {
       "properties": {
-        "name": {
-          "title": "Protein Name",
-          "type": "string"
-        },
         "entity": {
           "const": "Protein",
           "default": "Protein",
           "title": "Entity",
+          "type": "string"
+        },
+        "name": {
+          "title": "Protein Name",
           "type": "string"
         }
       },
@@ -284,6 +302,12 @@
     },
     "proteinP": {
       "properties": {
+        "entity": {
+          "const": "Protein",
+          "default": "Protein",
+          "title": "Entity",
+          "type": "string"
+        },
         "name": {
           "title": "Protein Name",
           "type": "string"
@@ -307,6 +331,12 @@
     },
     "rnai": {
       "properties": {
+        "entity": {
+          "const": "RNAi",
+          "default": "RNAi",
+          "title": "Entity",
+          "type": "string"
+        },
         "name": {
           "title": "Target Sequence",
           "type": "string"
@@ -330,6 +360,12 @@
     },
     "smallMolecule": {
       "properties": {
+        "entity": {
+          "const": "Small Molecule",
+          "default": "Small Molecule",
+          "title": "Entity",
+          "type": "string"
+        },
         "name": {
           "title": "Small Molecule Name",
           "type": "string"
@@ -385,14 +421,14 @@
     },
     "tissue": {
       "properties": {
-        "name": {
-          "title": "Tissue Type",
-          "type": "string"
-        },
         "entity": {
           "const": "Tissue",
           "default": "Tissue",
           "title": "Entity",
+          "type": "string"
+        },
+        "name": {
+          "title": "Tissue Type",
           "type": "string"
         }
       },
@@ -404,14 +440,14 @@
     },
     "transcript": {
       "properties": {
-        "name": {
-          "title": "NCBI Accession Number",
-          "type": "string"
-        },
         "entity": {
           "const": "Transcript",
           "default": "Transcript",
           "title": "Entity",
+          "type": "string"
+        },
+        "name": {
+          "title": "NCBI Accession Number",
           "type": "string"
         }
       },
@@ -423,14 +459,14 @@
     },
     "wastewater": {
       "properties": {
-        "name": {
-          "title": "Sample ID",
-          "type": "string"
-        },
         "entity": {
           "const": "Wastewater",
           "default": "Wastewater",
           "title": "Entity",
+          "type": "string"
+        },
+        "name": {
+          "title": "Sample ID",
           "type": "string"
         }
       },
