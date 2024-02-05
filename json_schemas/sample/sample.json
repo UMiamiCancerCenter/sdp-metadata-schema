@@ -518,12 +518,7 @@
           "$ref": "#/$defs/target"
         }
       ],
-      "title": "Experimental System",
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
+      "title": "Experimental System"
     },
     "perturbation": {
       "items": {
@@ -559,5 +554,24 @@
     "perturbation"
   ],
   "title": "Sample",
-  "type": "object"
+  "type": "object",
+  "ui": {
+    "datagrid": {
+      "columns": [
+        {
+          "field": "sampleName",
+          "getCellValue": "sampleName",
+          "title": "Sample Name"
+        },
+        {
+          "field": "description",
+          "getCellValue": "description",
+          "title": "Description"
+        }
+      ]
+    },
+    "preview": {
+      "visible": true
+    }
+  }
 }

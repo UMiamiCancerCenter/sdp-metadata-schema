@@ -206,7 +206,28 @@ class modelSystem(BaseModel):
 
 class sample(BaseModel):
 
-    model_config = ConfigDict(title="Sample")
+    model_config = ConfigDict(title="Sample", 
+                              json_schema_extra={
+                                  "ui": {
+                                    "preview": {
+                                    "visible": True
+                                    },
+                                    "datagrid": {
+                                    "columns": [
+                                        {
+                                        "field": "sampleName",
+                                        "title": "Sample Name",
+                                        "getCellValue": "sampleName"
+                                        },
+                                        {
+                                        "field": "description",
+                                        "title": "Description",
+                                        "getCellValue": "description"
+                                        }
+                                    ]
+                                    }
+                                }
+                              })
     
     sampleName: str = Field(title='Sample Name')
     description: str
@@ -214,9 +235,7 @@ class sample(BaseModel):
             modelSystem,
             biospecimen,
             target
-            ] = Field(title="Experimental System", json_schema_extra={"ui": 
-                                                    {"preview": {"visible": True}}
-                                                            })
+            ] = Field(title="Experimental System")
     perturbation: List[Union[
         smallMolecule,
         crispr,
