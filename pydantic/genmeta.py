@@ -143,25 +143,7 @@ class cellLine(BaseModel):
 
     entity: str = Field(default="Cell Line", json_schema_extra={"const": "Cell Line",
                                                                 "format": "hidden",
-                                                                "ui": {
-                                                                "preview": {
-                                                                "visible": True
-                                                                },
-                                                                "datagrid": {
-                                                                "columns": [
-                                                                    {
-                                                                    "field": "experimentalSystem",
-                                                                    "title": "Experimental System",
-                                                                    "getCellValue": "entity"
-                                                                    },
-                                                                    {
-                                                                    "field": "cellLineTable",
-                                                                    "title": "Cell Line Name",
-                                                                    "getCellValue": "cellLineName"
-                                                                    }
-                                                                ]
-                                                                }
-                                                            }})
+                                                                })
     cellLineName: str = Field(title="Cell Line Name")
 
 class wastewater(BaseModel):
@@ -242,11 +224,16 @@ class sample(BaseModel):
                                         "field": "description",
                                         "title": "Description",
                                         "getCellValue": "description"
+                                        },
+                                        {
+                                        "field": "experimentalSystemColumn",
+                                        "title": "Experimental System",
+                                        "getCellValue": "experimentalSystem.content.name"
                                         }
                                     ]
-                                    }
                                 }
-                              })
+                            }
+                        })
     
     sampleName: str = Field(title='Sample Name')
     description: str

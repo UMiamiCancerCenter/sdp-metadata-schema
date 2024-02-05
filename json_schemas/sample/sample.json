@@ -64,26 +64,7 @@
           "default": "Cell Line",
           "format": "hidden",
           "title": "Entity",
-          "type": "string",
-          "ui": {
-            "datagrid": {
-              "columns": [
-                {
-                  "field": "experimentalSystem",
-                  "getCellValue": "entity",
-                  "title": "Experimental System"
-                },
-                {
-                  "field": "cellLineTable",
-                  "getCellValue": "cellLineName",
-                  "title": "Cell Line Name"
-                }
-              ]
-            },
-            "preview": {
-              "visible": true
-            }
-          }
+          "type": "string"
         },
         "cellLineName": {
           "title": "Cell Line Name",
@@ -586,6 +567,11 @@
           "field": "description",
           "getCellValue": "description",
           "title": "Description"
+        },
+        {
+          "field": "experimentalSystemColumn",
+          "getCellValue": "experimentalSystem.content.name",
+          "title": "Experimental System"
         }
       ]
     },
