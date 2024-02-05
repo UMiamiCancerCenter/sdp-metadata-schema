@@ -518,7 +518,12 @@
           "$ref": "#/$defs/target"
         }
       ],
-      "title": "Experimental System"
+      "title": "Experimental System",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
     },
     "perturbation": {
       "items": {

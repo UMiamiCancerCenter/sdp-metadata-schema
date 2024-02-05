@@ -214,7 +214,9 @@ class sample(BaseModel):
             modelSystem,
             biospecimen,
             target
-            ] = Field(title="Experimental System")
+            ] = Field(title="Experimental System", json_schema_extra={"ui": 
+                                                    {"preview": {"visible": True}}
+                                                            })
     perturbation: List[Union[
         smallMolecule,
         crispr,
