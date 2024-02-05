@@ -5,6 +5,7 @@
         "entity": {
           "const": "Antibody",
           "default": "Antibody",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -34,6 +35,7 @@
         "entity": {
           "const": "Biospecimen",
           "default": "Biospecimen",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -60,6 +62,7 @@
         "entity": {
           "const": "Cell Line",
           "default": "Cell Line",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -79,6 +82,7 @@
         "entity": {
           "const": "CRISPR",
           "default": "CRISPR",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -108,6 +112,7 @@
         "entity": {
           "const": "Differentiated Cells",
           "default": "Differentiated Cells",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -127,6 +132,7 @@
         "entity": {
           "const": "Epigenetic Modification",
           "default": "Epigenetic Modification",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -146,6 +152,7 @@
         "entity": {
           "const": "Gene",
           "default": "Gene",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -165,6 +172,7 @@
         "entity": {
           "const": "Infectious Agent",
           "default": "Infectious Agent",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -194,6 +202,7 @@
         "entity": {
           "const": "iPSC",
           "default": "iPSC",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -213,6 +222,7 @@
         "entity": {
           "const": "Model System",
           "default": "Model System",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -248,6 +258,7 @@
         "entity": {
           "const": "Patient Sample",
           "default": "Patient Sample",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -267,6 +278,7 @@
         "entity": {
           "const": "Primary Cells",
           "default": "Primary Cells",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -286,6 +298,7 @@
         "entity": {
           "const": "Protein",
           "default": "Protein",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -305,6 +318,7 @@
         "entity": {
           "const": "Protein",
           "default": "Protein",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -334,6 +348,7 @@
         "entity": {
           "const": "RNAi",
           "default": "RNAi",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -363,6 +378,7 @@
         "entity": {
           "const": "Small Molecule",
           "default": "Small Molecule",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -392,6 +408,7 @@
         "entity": {
           "const": "Molecular Target",
           "default": "Molecular Target",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -424,6 +441,7 @@
         "entity": {
           "const": "Tissue",
           "default": "Tissue",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -443,6 +461,7 @@
         "entity": {
           "const": "Transcript",
           "default": "Transcript",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -462,6 +481,7 @@
         "entity": {
           "const": "Wastewater",
           "default": "Wastewater",
+          "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
@@ -486,7 +506,7 @@
       "title": "Description",
       "type": "string"
     },
-    "experimentalSubject": {
+    "experimentalSystem": {
       "anyOf": [
         {
           "$ref": "#/$defs/modelSystem"
@@ -498,8 +518,7 @@
           "$ref": "#/$defs/target"
         }
       ],
-      "title": "Experimental Subject",
-      "type": "object"
+      "title": "Experimental System"
     },
     "perturbation": {
       "items": {
@@ -531,9 +550,9 @@
   "required": [
     "sampleName",
     "description",
-    "experimentalSubject",
+    "experimentalSystem",
     "perturbation"
   ],
-  "title": "sample",
+  "title": "Sample",
   "type": "object"
 }
