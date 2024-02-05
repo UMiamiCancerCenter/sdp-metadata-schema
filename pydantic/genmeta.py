@@ -142,7 +142,26 @@ class cellLine(BaseModel):
     model_config = ConfigDict(title="Cell Line")
 
     entity: str = Field(default="Cell Line", json_schema_extra={"const": "Cell Line",
-                                                                "format": "hidden"})
+                                                                "format": "hidden",
+                                                                "ui": {
+                                                                "preview": {
+                                                                "visible": True
+                                                                },
+                                                                "datagrid": {
+                                                                "columns": [
+                                                                    {
+                                                                    "field": "experimentalSystem",
+                                                                    "title": "Experimental System",
+                                                                    "getCellValue": "entity"
+                                                                    },
+                                                                    {
+                                                                    "field": "cellLineTable",
+                                                                    "title": "Cell Line Name",
+                                                                    "getCellValue": "cellLineName"
+                                                                    }
+                                                                ]
+                                                                }
+                                                            }})
     cellLineName: str = Field(title="Cell Line Name")
 
 class wastewater(BaseModel):

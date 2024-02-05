@@ -64,7 +64,26 @@
           "default": "Cell Line",
           "format": "hidden",
           "title": "Entity",
-          "type": "string"
+          "type": "string",
+          "ui": {
+            "datagrid": {
+              "columns": [
+                {
+                  "field": "experimentalSystem",
+                  "getCellValue": "entity",
+                  "title": "Experimental System"
+                },
+                {
+                  "field": "cellLineTable",
+                  "getCellValue": "cellLineName",
+                  "title": "Cell Line Name"
+                }
+              ]
+            },
+            "preview": {
+              "visible": true
+            }
+          }
         },
         "cellLineName": {
           "title": "Cell Line Name",
