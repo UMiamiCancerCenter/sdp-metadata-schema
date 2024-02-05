@@ -9,23 +9,23 @@
           "title": "Entity",
           "type": "string"
         },
-        "name": {
+        "antibodyName": {
           "title": "Antibody Name",
           "type": "string"
         },
-        "duration": {
+        "antibodyDuration": {
           "title": "Duration",
           "type": "string"
         },
-        "concentration": {
+        "antibodyConcentration": {
           "title": "Concentration",
           "type": "string"
         }
       },
       "required": [
-        "name",
-        "duration",
-        "concentration"
+        "antibodyName",
+        "antibodyDuration",
+        "antibodyConcentration"
       ],
       "title": "Antibody",
       "type": "object"
@@ -66,13 +66,13 @@
           "title": "Entity",
           "type": "string"
         },
-        "name": {
+        "cellLineName": {
           "title": "Cell Line Name",
           "type": "string"
         }
       },
       "required": [
-        "name"
+        "cellLineName"
       ],
       "title": "Cell Line",
       "type": "object"
@@ -86,23 +86,23 @@
           "title": "Entity",
           "type": "string"
         },
-        "name": {
+        "crisprName": {
           "title": "Target Gene",
           "type": "string"
         },
-        "duration": {
+        "crisprDuration": {
           "title": "Duration",
           "type": "string"
         },
-        "concentration": {
+        "crisprConcentration": {
           "title": "Concentration",
           "type": "string"
         }
       },
       "required": [
-        "name",
-        "duration",
-        "concentration"
+        "crisprName",
+        "crisprDuration",
+        "crisprConcentration"
       ],
       "title": "CRISPR",
       "type": "object"
@@ -116,13 +116,13 @@
           "title": "Entity",
           "type": "string"
         },
-        "name": {
+        "differentiatedCellsName": {
           "title": "Cell Type",
           "type": "string"
         }
       },
       "required": [
-        "name"
+        "differentiatedCellsName"
       ],
       "title": "Differentiated Cells",
       "type": "object"
@@ -136,13 +136,13 @@
           "title": "Entity",
           "type": "string"
         },
-        "name": {
+        "epigeneticModificationName": {
           "title": "Modification Type",
           "type": "string"
         }
       },
       "required": [
-        "name"
+        "epigeneticModificationName"
       ],
       "title": "Epigenetic Modification",
       "type": "object"
@@ -156,13 +156,13 @@
           "title": "Entity",
           "type": "string"
         },
-        "name": {
+        "geneName": {
           "title": "Gene Name",
           "type": "string"
         }
       },
       "required": [
-        "name"
+        "geneName"
       ],
       "title": "Gene",
       "type": "object"
@@ -176,23 +176,23 @@
           "title": "Entity",
           "type": "string"
         },
-        "name": {
+        "infectiousAgentName": {
           "title": "Agent Name",
           "type": "string"
         },
-        "duration": {
+        "infectiousAgentDuration": {
           "title": "Duration",
           "type": "string"
         },
-        "concentration": {
+        "infectiousAgentConcentration": {
           "title": "Concentration",
           "type": "string"
         }
       },
       "required": [
-        "name",
-        "duration",
-        "concentration"
+        "infectiousAgentName",
+        "infectiousAgentDuration",
+        "infectiousAgentConcentration"
       ],
       "title": "Infectious Agent",
       "type": "object"
@@ -206,13 +206,13 @@
           "title": "Entity",
           "type": "string"
         },
-        "name": {
+        "ipscName": {
           "title": "iPSC ID",
           "type": "string"
         }
       },
       "required": [
-        "name"
+        "ipscName"
       ],
       "title": "iPSC",
       "type": "object"
@@ -262,13 +262,13 @@
           "title": "Entity",
           "type": "string"
         },
-        "name": {
+        "patientSampleName": {
           "title": "Tumor Type",
           "type": "string"
         }
       },
       "required": [
-        "name"
+        "patientSampleName"
       ],
       "title": "Patient Sample",
       "type": "object"
@@ -282,13 +282,13 @@
           "title": "Entity",
           "type": "string"
         },
-        "name": {
+        "primaryCellsName": {
           "title": "Cell Type",
           "type": "string"
         }
       },
       "required": [
-        "name"
+        "primaryCellsName"
       ],
       "title": "Primary Cells",
       "type": "object"
@@ -302,13 +302,13 @@
           "title": "Entity",
           "type": "string"
         },
-        "name": {
+        "proteinName": {
           "title": "Protein Name",
           "type": "string"
         }
       },
       "required": [
-        "name"
+        "proteinName"
       ],
       "title": "Protein",
       "type": "object"
@@ -322,23 +322,23 @@
           "title": "Entity",
           "type": "string"
         },
-        "name": {
+        "proteinPName": {
           "title": "Protein Name",
           "type": "string"
         },
-        "duration": {
+        "proteinPDuration": {
           "title": "Duration",
           "type": "string"
         },
-        "concentration": {
+        "proteinPConcentration": {
           "title": "Concentration",
           "type": "string"
         }
       },
       "required": [
-        "name",
-        "duration",
-        "concentration"
+        "proteinPName",
+        "proteinPDuration",
+        "proteinPConcentration"
       ],
       "title": "Protein",
       "type": "object"
@@ -352,23 +352,23 @@
           "title": "Entity",
           "type": "string"
         },
-        "name": {
+        "rnaiName": {
           "title": "Target Sequence",
           "type": "string"
         },
-        "duration": {
+        "rnaiDuration": {
           "title": "Duration",
           "type": "string"
         },
-        "concentration": {
+        "rnaiConcentration": {
           "title": "Concentration",
           "type": "string"
         }
       },
       "required": [
-        "name",
-        "duration",
-        "concentration"
+        "rnaiName",
+        "rnaiDuration",
+        "rnaiConcentration"
       ],
       "title": "RNAi",
       "type": "object"
@@ -382,23 +382,23 @@
           "title": "Entity",
           "type": "string"
         },
-        "name": {
+        "smallMoleculeName": {
           "title": "Small Molecule Name",
           "type": "string"
         },
-        "duration": {
+        "smallMoleculeDuration": {
           "title": "Duration",
           "type": "string"
         },
-        "concentration": {
+        "smallMoleculeConcentration": {
           "title": "Concentration",
           "type": "string"
         }
       },
       "required": [
-        "name",
-        "duration",
-        "concentration"
+        "smallMoleculeName",
+        "smallMoleculeDuration",
+        "smallMoleculeConcentration"
       ],
       "title": "Small Molecule",
       "type": "object"
@@ -445,13 +445,13 @@
           "title": "Entity",
           "type": "string"
         },
-        "name": {
+        "tissueName": {
           "title": "Tissue Type",
           "type": "string"
         }
       },
       "required": [
-        "name"
+        "tissueName"
       ],
       "title": "Tissue",
       "type": "object"
@@ -465,13 +465,13 @@
           "title": "Entity",
           "type": "string"
         },
-        "name": {
+        "transcriptName": {
           "title": "NCBI Accession Number",
           "type": "string"
         }
       },
       "required": [
-        "name"
+        "transcriptName"
       ],
       "title": "Transcript",
       "type": "object"
@@ -485,13 +485,13 @@
           "title": "Entity",
           "type": "string"
         },
-        "name": {
+        "wastewaterName": {
           "title": "Sample ID",
           "type": "string"
         }
       },
       "required": [
-        "name"
+        "wastewaterName"
       ],
       "title": "Wastewater",
       "type": "object"
