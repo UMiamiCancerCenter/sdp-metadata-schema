@@ -498,7 +498,8 @@
           "$ref": "#/$defs/target"
         }
       ],
-      "title": "Experimental Subject"
+      "title": "Experimental Subject",
+      "type": "object"
     },
     "perturbation": {
       "items": {

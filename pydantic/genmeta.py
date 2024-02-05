@@ -188,14 +188,16 @@ class modelSystem(BaseModel):
             ]
 
 class sample(BaseModel):
+
+    model_config = ConfigDict(title="Sample")
     
     sampleName: str = Field(title='Sample Name')
     description: str
-    experimentalSubject: Union[
+    experimentalSystem: Union[
             modelSystem,
             biospecimen,
             target
-            ] = Field(title="Experimental Subject")
+            ] = Field(title="Experimental System")
     perturbation: List[Union[
         smallMolecule,
         crispr,
