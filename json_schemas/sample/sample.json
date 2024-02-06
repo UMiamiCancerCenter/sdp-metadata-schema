@@ -12,7 +12,7 @@
       "type": "object"
     },
     "biospecimen": {
-      "anyOf": [
+      "oneOf": [
         {
           "title": "Patient Sample",
           "type": "object",
@@ -126,7 +126,7 @@
       "type": "object"
     },
     "modelSystem": {
-      "anyOf": [
+      "oneOf": [
         {
           "ui": {
             "preview": {
@@ -294,7 +294,7 @@
       "type": "object"
     },
     "target": {
-      "anyOf": [
+      "oneOf": [
         {
           "title": "Gene",
           "type": "object",
@@ -444,7 +444,7 @@
       "title": "Description"
     },
     "experimentalSubject": {
-      "anyOf": [
+      "oneOf": [
         {
           "ui": {
             "preview": {
@@ -543,7 +543,7 @@
           "concentration",
           "content"
         ],
-        "anyOf": [
+        "oneOf": [
           {
             "title": "Small Molecule Perturbation",
             "type": "object",
