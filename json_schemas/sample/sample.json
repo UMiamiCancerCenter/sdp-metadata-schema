@@ -236,7 +236,12 @@
       "properties": {
         "tumorType": {
           "title": "Tumor Type",
-          "type": "string"
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
         }
       },
       "required": ["tumorType"],
