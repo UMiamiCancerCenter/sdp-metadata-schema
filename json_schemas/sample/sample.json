@@ -228,6 +228,11 @@
       }
     },
     "patientSample": {
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      },
       "properties": {
         "tumorType": {
           "title": "Tumor Type",
