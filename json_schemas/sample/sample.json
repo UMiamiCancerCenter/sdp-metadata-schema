@@ -24,6 +24,11 @@
               "format": "hidden"
             },
             "content": {
+              "ui": {
+                "preview": {
+                  "visible": true
+                }
+              },
               "$ref": "#/$defs/patientSample"
             }
           },
