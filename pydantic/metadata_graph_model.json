@@ -1,5 +1,44 @@
 {
   "$defs": {
+    "Model_Antibody": {
+      "properties": {
+        "Antibody": {
+          "title": "Antibody",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Antibody"
+      ],
+      "title": "Model Antibody",
+      "type": "object"
+    },
+    "Model_Biochemical": {
+      "properties": {
+        "Biochemical": {
+          "title": "Biochemical",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Biochemical"
+      ],
+      "title": "Model Biochemical",
+      "type": "object"
+    },
+    "Model_Biospecimen": {
+      "properties": {
+        "Biospecimen": {
+          "title": "Biospecimen",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Biospecimen"
+      ],
+      "title": "Model Biospecimen",
+      "type": "object"
+    },
     "Model_Bulk_RNA-seq": {
       "properties": {
         "Bulk RNA-seq": {
@@ -11,6 +50,55 @@
         "Bulk RNA-seq"
       ],
       "title": "Model Bulk RNA-seq",
+      "type": "object"
+    },
+    "Model_CRISPR": {
+      "properties": {
+        "CRISPR": {
+          "title": "Crispr",
+          "type": "string"
+        }
+      },
+      "required": [
+        "CRISPR"
+      ],
+      "title": "Model CRISPR",
+      "type": "object"
+    },
+    "Model_Cell_Line": {
+      "properties": {
+        "Cell Line": {
+          "title": "Cell Line",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Cell Line"
+      ],
+      "title": "Model Cell Line",
+      "type": "object"
+    },
+    "Model_Cellular_Tissue": {
+      "properties": {
+        "children": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Model_Cell_Line"
+            },
+            {
+              "$ref": "#/$defs/Model_iPSC"
+            },
+            {
+              "$ref": "#/$defs/Model_Differentiated_Cells"
+            }
+          ],
+          "title": "Children"
+        }
+      },
+      "required": [
+        "children"
+      ],
+      "title": "Model Cellular/Tissue",
       "type": "object"
     },
     "Model_DNA-seq": {
@@ -26,6 +114,58 @@
       "title": "Model DNA-seq",
       "type": "object"
     },
+    "Model_Differentiated_Cells": {
+      "properties": {
+        "Differentiated Cells": {
+          "title": "Differentiated Cells",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Differentiated Cells"
+      ],
+      "title": "Model Differentiated Cells",
+      "type": "object"
+    },
+    "Model_Experimental_System": {
+      "properties": {
+        "children": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Model_Cellular_Tissue"
+            },
+            {
+              "$ref": "#/$defs/Model_Biospecimen"
+            },
+            {
+              "$ref": "#/$defs/Model_Biochemical"
+            },
+            {
+              "$ref": "#/$defs/Model_Model_Organism"
+            }
+          ],
+          "title": "Children"
+        }
+      },
+      "required": [
+        "children"
+      ],
+      "title": "Model Experimental System",
+      "type": "object"
+    },
+    "Model_Extracellular_Matrix": {
+      "properties": {
+        "Extracellular Matrix": {
+          "title": "Extracellular Matrix",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Extracellular Matrix"
+      ],
+      "title": "Model Extracellular Matrix",
+      "type": "object"
+    },
     "Model_L1000": {
       "properties": {
         "L1000": {
@@ -39,69 +179,34 @@
       "title": "Model L1000",
       "type": "object"
     },
-    "Model_biospecimen": {
+    "Model_Model_Organism": {
       "properties": {
-        "biospecimen": {
-          "title": "Biospecimen",
+        "Model Organism": {
+          "title": "Model Organism",
           "type": "string"
         }
       },
       "required": [
-        "biospecimen"
+        "Model Organism"
       ],
-      "title": "Model biospecimen",
+      "title": "Model Model Organism",
       "type": "object"
     },
-    "Model_cell_line": {
-      "properties": {
-        "name": {
-          "title": "Name",
-          "type": "string"
-        }
-      },
-      "required": [
-        "name"
-      ],
-      "title": "Model cell line",
-      "type": "object"
-    },
-    "Model_differentiated_cells": {
-      "properties": {
-        "differentiated cells": {
-          "title": "Differentiated Cells",
-          "type": "string"
-        }
-      },
-      "required": [
-        "differentiated cells"
-      ],
-      "title": "Model differentiated cells",
-      "type": "object"
-    },
-    "Model_experimental_sample": {
-      "properties": {
-        "children": {
-          "$ref": "#/$defs/Model_perturbation"
-        }
-      },
-      "required": [
-        "children"
-      ],
-      "title": "Model experimental sample",
-      "type": "object"
-    },
-    "Model_experimental_subject": {
+    "Model_Perturbagen": {
       "properties": {
         "children": {
           "anyOf": [
             {
-              "$ref": "#/$defs/Model_model_system"
+              "$ref": "#/$defs/Model_Small_Molecule"
             },
             {
-              "$ref": "#/$defs/Model_biospecimen"
+              "$ref": "#/$defs/Model_CRISPR"
             },
             {
-              "$ref": "#/$defs/Model_target"
+              "$ref": "#/$defs/Model_RNAi"
+            },
+            {
+              "$ref": "#/$defs/Model_Antibody"
             }
           ],
           "title": "Children"
@@ -110,20 +215,99 @@
       "required": [
         "children"
       ],
-      "title": "Model experimental subject",
+      "title": "Model Perturbagen",
       "type": "object"
     },
-    "Model_extracellular_matrix": {
+    "Model_Perturbation": {
       "properties": {
-        "extracellular matrix": {
-          "title": "Extracellular Matrix",
+        "children": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Model_Perturbagen"
+            },
+            {
+              "$ref": "#/$defs/Model_Extracellular_Matrix"
+            }
+          ],
+          "title": "Children"
+        }
+      },
+      "required": [
+        "children"
+      ],
+      "title": "Model Perturbation",
+      "type": "object"
+    },
+    "Model_RNAi": {
+      "properties": {
+        "RNAi": {
+          "title": "Rnai",
           "type": "string"
         }
       },
       "required": [
-        "extracellular matrix"
+        "RNAi"
       ],
-      "title": "Model extracellular matrix",
+      "title": "Model RNAi",
+      "type": "object"
+    },
+    "Model_Readout_Assay": {
+      "properties": {
+        "children": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Model_Bulk_RNA-seq"
+            },
+            {
+              "$ref": "#/$defs/Model_scRNA-seq"
+            },
+            {
+              "$ref": "#/$defs/Model_DNA-seq"
+            },
+            {
+              "$ref": "#/$defs/Model_L1000"
+            }
+          ],
+          "title": "Children"
+        }
+      },
+      "required": [
+        "children"
+      ],
+      "title": "Model Readout Assay",
+      "type": "object"
+    },
+    "Model_Sample": {
+      "properties": {
+        "children": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Model_Experimental_System"
+            },
+            {
+              "$ref": "#/$defs/Model_Perturbation"
+            }
+          ],
+          "title": "Children"
+        }
+      },
+      "required": [
+        "children"
+      ],
+      "title": "Model Sample",
+      "type": "object"
+    },
+    "Model_Small_Molecule": {
+      "properties": {
+        "Small Molecule": {
+          "title": "Small Molecule",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Small Molecule"
+      ],
+      "title": "Model Small Molecule",
       "type": "object"
     },
     "Model_iPSC": {
@@ -139,123 +323,6 @@
       "title": "Model iPSC",
       "type": "object"
     },
-    "Model_model_system": {
-      "properties": {
-        "children": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/Model_cell_line"
-            },
-            {
-              "$ref": "#/$defs/Model_iPSC"
-            },
-            {
-              "$ref": "#/$defs/Model_differentiated_cells"
-            }
-          ],
-          "title": "Children"
-        }
-      },
-      "required": [
-        "children"
-      ],
-      "title": "Model model system",
-      "type": "object"
-    },
-    "Model_perturbagen": {
-      "properties": {
-        "perturbagen": {
-          "title": "Perturbagen",
-          "type": "string"
-        }
-      },
-      "required": [
-        "perturbagen"
-      ],
-      "title": "Model perturbagen",
-      "type": "object"
-    },
-    "Model_perturbation": {
-      "properties": {
-        "children": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/Model_experimental_subject"
-            },
-            {
-              "$ref": "#/$defs/Model_reagent"
-            }
-          ],
-          "title": "Children"
-        }
-      },
-      "required": [
-        "children"
-      ],
-      "title": "Model perturbation",
-      "type": "object"
-    },
-    "Model_readout_assay": {
-      "properties": {
-        "children": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/Model_Bulk_RNA-seq"
-            },
-            {
-              "$ref": "#/$defs/Model_scRNA-seq"
-            },
-            {
-              "$ref": "#/$defs/Model_DNA-seq"
-            },
-            {
-              "$ref": "#/$defs/Model_L1000"
-            },
-            {
-              "$ref": "#/$defs/Model_sample"
-            }
-          ],
-          "title": "Children"
-        }
-      },
-      "required": [
-        "children"
-      ],
-      "title": "Model readout assay",
-      "type": "object"
-    },
-    "Model_reagent": {
-      "properties": {
-        "children": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/Model_perturbagen"
-            },
-            {
-              "$ref": "#/$defs/Model_extracellular_matrix"
-            }
-          ],
-          "title": "Children"
-        }
-      },
-      "required": [
-        "children"
-      ],
-      "title": "Model reagent",
-      "type": "object"
-    },
-    "Model_sample": {
-      "properties": {
-        "children": {
-          "$ref": "#/$defs/Model_experimental_sample"
-        }
-      },
-      "required": [
-        "children"
-      ],
-      "title": "Model sample",
-      "type": "object"
-    },
     "Model_scRNA-seq": {
       "properties": {
         "scRNA-seq": {
@@ -268,29 +335,24 @@
       ],
       "title": "Model scRNA-seq",
       "type": "object"
-    },
-    "Model_target": {
-      "properties": {
-        "target": {
-          "title": "Target",
-          "type": "string"
-        }
-      },
-      "required": [
-        "target"
-      ],
-      "title": "Model target",
-      "type": "object"
     }
   },
   "properties": {
     "children": {
-      "$ref": "#/$defs/Model_readout_assay"
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Model_Readout_Assay"
+        },
+        {
+          "$ref": "#/$defs/Model_Sample"
+        }
+      ],
+      "title": "Children"
     }
   },
   "required": [
     "children"
   ],
-  "title": "Model dataset",
+  "title": "Model Dataset",
   "type": "object"
 }

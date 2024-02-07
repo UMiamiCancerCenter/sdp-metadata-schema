@@ -10,7 +10,7 @@ from networkx.drawing.nx_pydot import graphviz_layout
 from randtree import build_tree
 
 def main():
-    with open ("metadata-v0.1.yaml") as fd:
+    with open ("metadata-v0.2.yaml") as fd:
         struct = yaml.safe_load(fd.read())
         print(struct) 
         graph = struct["graph"]
@@ -26,8 +26,8 @@ def main():
         # pos = nx.nx_agraph.graphviz_layout(G, prog="dot", args="")
         pos = graphviz_layout(G, prog="dot")
 
-        nx.draw_networkx(G, pos)    
-        plt.savefig('genmeta-v0_1.png')
+        nx.draw_networkx(G, pos, font_size=6)    
+        plt.savefig('genmeta-v0_2.png')
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,27 @@
+version: 0.2
+comment: experimenting with format
+graph:
+  - ["Dataset", "Readout Assay"] 
+  - ["Readout Assay", "Bulk RNA-seq"]
+  - ["Readout Assay", "scRNA-seq"]
+  - ["Readout Assay", "DNA-seq"]
+  - ["Readout Assay", "L1000"]
+  - ["Dataset", "Sample"]
+  - ["Sample", "Experimental System"]
+  - ["Sample", "Perturbation"]
+  - ["Perturbation", "Perturbagen"]
+  - ["Perturbation", "Extracellular Matrix"]
+  - ["Perturbagen", "Small Molecule"]
+  - ["Perturbagen", "CRISPR"]
+  - ["Perturbagen", "RNAi"]
+  - ["Perturbagen", "Antibody"]
+  - ["Experimental System", "Cellular/Tissue"]
+  - ["Experimental System", "Biospecimen"]
+  - ["Experimental System", "Biochemical"]
+  - ["Experimental System", "Model Organism"]
+  - ["Cellular/Tissue", "Cell Line"]
+  - ["Cellular/Tissue", "iPSC"]
+  - ["Cellular/Tissue", "Differentiated Cells"]
+forms:
+  cell line: {"name": str}
+  iPSC: {"name": int}
