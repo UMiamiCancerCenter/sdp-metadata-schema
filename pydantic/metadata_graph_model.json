@@ -195,6 +195,35 @@
       "title": "Model perturbation",
       "type": "object"
     },
+    "Model_readout_assay": {
+      "properties": {
+        "children": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Model_Bulk_RNA-seq"
+            },
+            {
+              "$ref": "#/$defs/Model_scRNA-seq"
+            },
+            {
+              "$ref": "#/$defs/Model_DNA-seq"
+            },
+            {
+              "$ref": "#/$defs/Model_L1000"
+            },
+            {
+              "$ref": "#/$defs/Model_sample"
+            }
+          ],
+          "title": "Children"
+        }
+      },
+      "required": [
+        "children"
+      ],
+      "title": "Model readout assay",
+      "type": "object"
+    },
     "Model_reagent": {
       "properties": {
         "children": {
@@ -256,24 +285,7 @@
   },
   "properties": {
     "children": {
-      "anyOf": [
-        {
-          "$ref": "#/$defs/Model_Bulk_RNA-seq"
-        },
-        {
-          "$ref": "#/$defs/Model_scRNA-seq"
-        },
-        {
-          "$ref": "#/$defs/Model_DNA-seq"
-        },
-        {
-          "$ref": "#/$defs/Model_L1000"
-        },
-        {
-          "$ref": "#/$defs/Model_sample"
-        }
-      ],
-      "title": "Children"
+      "$ref": "#/$defs/Model_readout_assay"
     }
   },
   "required": [

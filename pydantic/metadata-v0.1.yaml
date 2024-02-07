@@ -1,11 +1,12 @@
 version: 0.1
 comment: experimenting with format
 graph:
-  - ["dataset", "Bulk RNA-seq"]
-  - ["dataset", "scRNA-seq"]
-  - ["dataset", "DNA-seq"]
-  - ["dataset", "L1000"]
-  - ["dataset", "sample"]
+  - ["dataset", "readout assay"] 
+  - ["readout assay", "Bulk RNA-seq"]
+  - ["readout assay", "scRNA-seq"]
+  - ["readout assay", "DNA-seq"]
+  - ["readout assay", "L1000"]
+  - ["readout assay", "sample"]
   - ["sample", "experimental sample"]
   - ["experimental sample", "perturbation"]
   - ["perturbation", "experimental subject"]
