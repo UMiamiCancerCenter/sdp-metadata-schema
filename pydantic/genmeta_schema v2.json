@@ -114,7 +114,7 @@
       "properties": {
         "entity": {
           "const": "Cellular/Tissue",
-          "default": "Model System",
+          "default": "Cellular/Tissue",
           "format": "hidden",
           "title": "Entity",
           "type": "string"

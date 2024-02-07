@@ -218,7 +218,7 @@ class cellularTissue(BaseModel):
 
     model_config = ConfigDict(title="Cellular/Tissue")
     
-    entity: str = Field(default="Model System", 
+    entity: str = Field(default="Cellular/Tissue", 
                                          json_schema_extra={"const": "Cellular/Tissue",
                                                             "format": "hidden"})
     content: Union[
