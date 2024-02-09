@@ -30,39 +30,6 @@
       "title": "Antibody",
       "type": "object"
     },
-    "biochemical": {
-      "properties": {
-        "entity": {
-          "const": "Biochemical",
-          "default": "Biochemical",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "content": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/gene"
-            },
-            {
-              "$ref": "#/$defs/transcript"
-            },
-            {
-              "$ref": "#/$defs/protein"
-            },
-            {
-              "$ref": "#/$defs/epigeneticModification"
-            }
-          ],
-          "title": "Content"
-        }
-      },
-      "required": [
-        "content"
-      ],
-      "title": "Biochemical",
-      "type": "object"
-    },
     "biospecimen": {
       "properties": {
         "entity": {
@@ -78,7 +45,7 @@
               "$ref": "#/$defs/patientSample"
             },
             {
-              "$ref": "#/$defs/coralSample"
+              "$ref": "#/$defs/wastewater"
             }
           ],
           "title": "Content"
@@ -108,62 +75,6 @@
         "cellLineName"
       ],
       "title": "Cell Line",
-      "type": "object"
-    },
-    "cellularTissue": {
-      "properties": {
-        "entity": {
-          "const": "Cellular/Tissue",
-          "default": "Cellular/Tissue",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "content": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/cellLine"
-            },
-            {
-              "$ref": "#/$defs/ipsc"
-            },
-            {
-              "$ref": "#/$defs/primaryCells"
-            },
-            {
-              "$ref": "#/$defs/differentiatedCells"
-            },
-            {
-              "$ref": "#/$defs/tissue"
-            }
-          ],
-          "title": "Content"
-        }
-      },
-      "required": [
-        "content"
-      ],
-      "title": "Cellular/Tissue",
-      "type": "object"
-    },
-    "coralSample": {
-      "properties": {
-        "entity": {
-          "const": "Coral Sample",
-          "default": "Coral Sample",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "coralSampleName": {
-          "title": "Sample ID",
-          "type": "string"
-        }
-      },
-      "required": [
-        "coralSampleName"
-      ],
-      "title": "Coral Sample",
       "type": "object"
     },
     "crispr": {
@@ -306,47 +217,40 @@
       "title": "iPSC",
       "type": "object"
     },
-    "lipopolysaccharide": {
+    "modelSystem": {
       "properties": {
         "entity": {
-          "const": "Lipopolysaccharide",
-          "default": "Lipopolysaccharide",
+          "const": "Model System",
+          "default": "Model System",
           "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
-        "lipopolysaccharideName": {
-          "title": "Compound Name",
-          "type": "string"
-        },
-        "lipopolysaccharideDuration": {
-          "title": "Duration",
-          "type": "string"
-        },
-        "lipopolysaccharideConcentration": {
-          "title": "Concentration",
-          "type": "string"
+        "content": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/cellLine"
+            },
+            {
+              "$ref": "#/$defs/ipsc"
+            },
+            {
+              "$ref": "#/$defs/primaryCells"
+            },
+            {
+              "$ref": "#/$defs/differentiatedCells"
+            },
+            {
+              "$ref": "#/$defs/tissue"
+            }
+          ],
+          "title": "Content"
         }
       },
       "required": [
-        "lipopolysaccharideName",
-        "lipopolysaccharideDuration",
-        "lipopolysaccharideConcentration"
+        "content"
       ],
-      "title": "Lipopolysaccharide",
-      "type": "object"
-    },
-    "modelOrganism": {
-      "properties": {
-        "entity": {
-          "const": "Model Organism",
-          "default": "Model Organism",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        }
-      },
-      "title": "Model Organism",
+      "title": "Model System",
       "type": "object"
     },
     "patientSample": {
@@ -499,6 +403,39 @@
       "title": "Small Molecule",
       "type": "object"
     },
+    "target": {
+      "properties": {
+        "entity": {
+          "const": "Molecular Target",
+          "default": "Molecular Target",
+          "format": "hidden",
+          "title": "Entity",
+          "type": "string"
+        },
+        "content": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/gene"
+            },
+            {
+              "$ref": "#/$defs/transcript"
+            },
+            {
+              "$ref": "#/$defs/protein"
+            },
+            {
+              "$ref": "#/$defs/epigeneticModification"
+            }
+          ],
+          "title": "Content"
+        }
+      },
+      "required": [
+        "content"
+      ],
+      "title": "Molecular Target",
+      "type": "object"
+    },
     "tissue": {
       "properties": {
         "entity": {
@@ -538,6 +475,26 @@
       ],
       "title": "Transcript",
       "type": "object"
+    },
+    "wastewater": {
+      "properties": {
+        "entity": {
+          "const": "Wastewater",
+          "default": "Wastewater",
+          "format": "hidden",
+          "title": "Entity",
+          "type": "string"
+        },
+        "wastewaterName": {
+          "title": "Sample ID",
+          "type": "string"
+        }
+      },
+      "required": [
+        "wastewaterName"
+      ],
+      "title": "Wastewater",
+      "type": "object"
     }
   },
   "properties": {
@@ -552,16 +509,13 @@
     "experimentalSystem": {
       "anyOf": [
         {
-          "$ref": "#/$defs/cellularTissue"
+          "$ref": "#/$defs/modelSystem"
         },
         {
           "$ref": "#/$defs/biospecimen"
         },
         {
-          "$ref": "#/$defs/biochemical"
-        },
-        {
-          "$ref": "#/$defs/modelOrganism"
+          "$ref": "#/$defs/target"
         }
       ],
       "title": "Experimental System"
@@ -583,9 +537,6 @@
           },
           {
             "$ref": "#/$defs/proteinP"
-          },
-          {
-            "$ref": "#/$defs/lipopolysaccharide"
           },
           {
             "$ref": "#/$defs/infectiousAgent"
