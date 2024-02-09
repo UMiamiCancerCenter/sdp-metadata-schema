@@ -208,7 +208,11 @@ class modelSystem(BaseModel):
             primaryCells,
             differentiatedCells,
             tissue
-            ]
+            ] = Field(json_schema_extra={"ui": {
+                                    "preview": {
+                                    "visible": True
+                                    }
+                                }})
 
 class sample(BaseModel):
 
