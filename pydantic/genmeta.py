@@ -148,12 +148,12 @@ class cellLine(BaseModel):
 
     entity: str = Field(default="Cell Line", json_schema_extra={"const": "Cell Line",
                                                                 "format": "hidden",
-                                                                "ui": {
+                                                                })
+    cellLineName: str = Field(title="Cell Line Name", json_schema_extra={"ui": {
                                                                     "preview": {
                                                                     "visible": True
                                                                  }
                                                             }})
-    cellLineName: str = Field(title="Cell Line Name")
 
 class wastewater(BaseModel):
     

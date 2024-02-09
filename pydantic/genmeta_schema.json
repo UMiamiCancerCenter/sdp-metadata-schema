@@ -64,16 +64,16 @@
           "default": "Cell Line",
           "format": "hidden",
           "title": "Entity",
+          "type": "string"
+        },
+        "cellLineName": {
+          "title": "Cell Line Name",
           "type": "string",
           "ui": {
             "preview": {
               "visible": true
             }
           }
-        },
-        "cellLineName": {
-          "title": "Cell Line Name",
-          "type": "string"
         }
       },
       "required": [
