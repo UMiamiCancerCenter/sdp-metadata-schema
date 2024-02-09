@@ -139,11 +139,20 @@ class ipsc(BaseModel):
 
 class cellLine(BaseModel):
 
-    model_config = ConfigDict(title="Cell Line")
+    model_config = ConfigDict(title="Cell Line", json_schema_extra={"ui": {
+                                    "preview": {
+                                     "visible": True
+                                    }
+                                    }
+                                })
 
     entity: str = Field(default="Cell Line", json_schema_extra={"const": "Cell Line",
                                                                 "format": "hidden",
-                                                                })
+                                                                "ui": {
+                                                                    "preview": {
+                                                                    "visible": True
+                                                                 }
+                                                            }})
     cellLineName: str = Field(title="Cell Line Name")
 
 class wastewater(BaseModel):
