@@ -251,7 +251,12 @@
         "content"
       ],
       "title": "Model System",
-      "type": "object"
+      "type": "object",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
     },
     "patientSample": {
       "properties": {

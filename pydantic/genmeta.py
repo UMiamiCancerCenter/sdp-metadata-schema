@@ -192,7 +192,12 @@ class biospecimen(BaseModel):
 
 class modelSystem(BaseModel):
 
-    model_config = ConfigDict(title="Model System")
+    model_config = ConfigDict(title="Model System", json_schema_extra={"ui": {
+                                    "preview": {
+                                     "visible": True
+                                    }
+                                    }
+                                })
     
     entity: str = Field(default="Model System", 
                                          json_schema_extra={"const": "Model System",
