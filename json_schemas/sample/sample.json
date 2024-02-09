@@ -521,6 +521,7 @@
       "title": "Experimental System",
       "ui": {
         "preview": {
+          "title": "Experimental System",
           "visible": true
         }
       }
