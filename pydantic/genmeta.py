@@ -15,7 +15,7 @@ class smallMolecule(BaseModel):
     entity: str = Field(default="Small Molecule", 
                                          json_schema_extra={"const": "Small Molecule",
                                                             "format": "hidden"})
-    smallMoleculeName: str = Field(title="Small Molecule Name")
+    Name: str = Field(title="Small Molecule Name")
     smallMoleculeDuration: str = Field(title="Duration")
     smallMoleculeConcentration: str = Field(title="Concentration")
 
@@ -26,7 +26,7 @@ class crispr(BaseModel):
     entity: str = Field(default="CRISPR", 
                                          json_schema_extra={"const": "CRISPR",
                                                             "format": "hidden"})
-    crisprName: str = Field(title="Target Gene")
+    Name: str = Field(title="Target Gene")
     crisprDuration: str = Field(title="Duration")
     crisprConcentration: str = Field(title="Concentration")
 
@@ -37,7 +37,7 @@ class rnai(BaseModel):
     entity: str = Field(default="RNAi", 
                                          json_schema_extra={"const": "RNAi",
                                                             "format": "hidden"})
-    rnaiName: str = Field(title="Target Sequence")
+    Name: str = Field(title="Target Sequence")
     rnaiDuration: str = Field(title="Duration")
     rnaiConcentration: str = Field(title="Concentration")
 
@@ -48,7 +48,7 @@ class antibody(BaseModel):
     entity: str = Field(default="Antibody", 
                                          json_schema_extra={"const": "Antibody",
                                                             "format": "hidden"})
-    antibodyName: str = Field(title="Antibody Name")
+    Name: str = Field(title="Antibody Name")
     antibodyDuration: str = Field(title="Duration")
     antibodyConcentration: str = Field(title="Concentration")
 
@@ -59,7 +59,7 @@ class proteinP(BaseModel):
     entity: str = Field(default="Protein", 
                                          json_schema_extra={"const": "Protein",
                                                             "format": "hidden"})
-    proteinPName: str = Field(title="Protein Name")
+    Name: str = Field(title="Protein Name")
     proteinPDuration: str = Field(title="Duration")
     proteinPConcentration: str = Field(title="Concentration")
 
@@ -70,7 +70,7 @@ class infectiousAgent(BaseModel):
     entity: str = Field(default="Infectious Agent", 
                                          json_schema_extra={"const": "Infectious Agent",
                                                             "format": "hidden"})
-    infectiousAgentName: str = Field(title="Agent Name")
+    Name: str = Field(title="Agent Name")
     infectiousAgentDuration: str = Field(title="Duration")
     infectiousAgentConcentration: str = Field(title="Concentration")
 
@@ -81,7 +81,7 @@ class epigeneticModification(BaseModel):
     entity: str = Field(default="Epigenetic Modification", 
                         json_schema_extra={"const": "Epigenetic Modification",
                                            "format": "hidden"})
-    epigeneticModificationName: str = Field(title="Modification Type")
+    Name: str = Field(title="Modification Type")
     
 class protein(BaseModel):
     
