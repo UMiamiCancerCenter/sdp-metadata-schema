@@ -9,7 +9,7 @@
           "title": "Entity",
           "type": "string"
         },
-        "Name": {
+        "antibodyName": {
           "title": "Antibody Name",
           "type": "string"
         },
@@ -23,7 +23,7 @@
         }
       },
       "required": [
-        "Name",
+        "antibodyName",
         "antibodyDuration",
         "antibodyConcentration"
       ],
@@ -96,7 +96,7 @@
           "title": "Entity",
           "type": "string"
         },
-        "Name": {
+        "crisprName": {
           "title": "Target Gene",
           "type": "string"
         },
@@ -110,7 +110,7 @@
         }
       },
       "required": [
-        "Name",
+        "crisprName",
         "crisprDuration",
         "crisprConcentration"
       ],
@@ -146,13 +146,13 @@
           "title": "Entity",
           "type": "string"
         },
-        "Name": {
+        "epigeneticModificationName": {
           "title": "Modification Type",
           "type": "string"
         }
       },
       "required": [
-        "Name"
+        "epigeneticModificationName"
       ],
       "title": "Epigenetic Modification",
       "type": "object"
@@ -186,7 +186,7 @@
           "title": "Entity",
           "type": "string"
         },
-        "Name": {
+        "infectiousAgentName": {
           "title": "Agent Name",
           "type": "string"
         },
@@ -200,7 +200,7 @@
         }
       },
       "required": [
-        "Name",
+        "infectiousAgentName",
         "infectiousAgentDuration",
         "infectiousAgentConcentration"
       ],
@@ -342,7 +342,7 @@
           "title": "Entity",
           "type": "string"
         },
-        "Name": {
+        "proteinPName": {
           "title": "Protein Name",
           "type": "string"
         },
@@ -356,7 +356,7 @@
         }
       },
       "required": [
-        "Name",
+        "proteinPName",
         "proteinPDuration",
         "proteinPConcentration"
       ],
@@ -372,7 +372,7 @@
           "title": "Entity",
           "type": "string"
         },
-        "Name": {
+        "rnaiName": {
           "title": "Target Sequence",
           "type": "string"
         },
@@ -386,7 +386,7 @@
         }
       },
       "required": [
-        "Name",
+        "rnaiName",
         "rnaiDuration",
         "rnaiConcentration"
       ],
@@ -402,7 +402,7 @@
           "title": "Entity",
           "type": "string"
         },
-        "Name": {
+        "smallMoleculeName": {
           "title": "Small Molecule Name",
           "type": "string"
         },
@@ -416,7 +416,7 @@
         }
       },
       "required": [
-        "Name",
+        "smallMoleculeName",
         "smallMoleculeDuration",
         "smallMoleculeConcentration"
       ],

@@ -595,7 +595,7 @@
         },
         {
           "field": "experimentalSystemColumn",
-          "getCellValue": "experimentalSystem.content.entity",
+          "getCellValue": "experimentalSystem.entity.content",
           "title": "Experimental System"
         }
       ]
