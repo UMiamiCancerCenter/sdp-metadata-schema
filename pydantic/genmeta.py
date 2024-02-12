@@ -84,57 +84,116 @@ class epigeneticModification(BaseModel):
     
 class protein(BaseModel):
     
-    model_config = ConfigDict(title="Protein")
+    model_config = ConfigDict(title="Protein", json_schema_extra={"ui": {
+                                    "preview": {
+                                     "visible": True
+                                    }
+                                    }
+                                })
 
     entity: str = Field(default="Protein", json_schema_extra={"const": "Protein",
                                                               "format": "hidden"})
     proteinName: str = Field(title="Protein Name")
 class transcript(BaseModel):
     
-    model_config = ConfigDict(title="Transcript")
+    model_config = ConfigDict(title="Transcript", json_schema_extra={"ui": {
+                                    "preview": {
+                                     "visible": True
+                                    }
+                                    }
+                                })
 
     entity: str = Field(default="Transcript", json_schema_extra={"const": "Transcript",
                                                                  "format": "hidden"})
-    transcriptName: str = Field(title="NCBI Accession Number")
+    transcriptName: str = Field(title="NCBI Accession Number", json_schema_extra={"ui": {
+                                                                    "preview": {
+                                                                    "visible": True
+                                                                 }
+                                                            }})
 class gene(BaseModel):
     
-    model_config = ConfigDict(title="Gene")
+    model_config = ConfigDict(title="Gene", json_schema_extra={"ui": {
+                                    "preview": {
+                                     "visible": True
+                                    }
+                                    }
+                                })
 
     entity: str = Field(default="Gene", json_schema_extra={"const": "Gene",
                                                            "format": "hidden"})
-    geneName: str = Field(title="Gene Name")
+    geneName: str = Field(title="Gene Name", json_schema_extra={"ui": {
+                                                                    "preview": {
+                                                                    "visible": True
+                                                                 }
+                                                            }})
 class tissue(BaseModel):
     
-    model_config = ConfigDict(title="Tissue")
+    model_config = ConfigDict(title="Tissue", json_schema_extra={"ui": {
+                                    "preview": {
+                                     "visible": True
+                                    }
+                                    }
+                                })
 
     entity: str = Field(default="Tissue", json_schema_extra={"const": "Tissue",
                                                              "format": "hidden"})
-    tissueName: str = Field(title="Tissue Type")
+    tissueName: str = Field(title="Tissue Type", json_schema_extra={"ui": {
+                                                                    "preview": {
+                                                                    "visible": True
+                                                                 }
+                                                            }})
 
 class primaryCells(BaseModel):
 
-    model_config = ConfigDict(title="Primary Cells")
+    model_config = ConfigDict(title="Primary Cells", json_schema_extra={"ui": {
+                                    "preview": {
+                                     "visible": True
+                                    }
+                                    }
+                                })
 
     entity: str = Field(default="Primary Cells", 
                         json_schema_extra={"const": "Primary Cells",
                                            "format": "hidden"})
-    primaryCellsName: str = Field(title="Cell Type")
+    primaryCellsName: str = Field(title="Cell Type", json_schema_extra={"ui": {
+                                                                    "preview": {
+                                                                    "visible": True
+                                                                 }
+                                                            }})
 
 class differentiatedCells(BaseModel):
     
-    model_config = ConfigDict(title="Differentiated Cells")
+    model_config = ConfigDict(title="Differentiated Cells", json_schema_extra={"ui": {
+                                    "preview": {
+                                     "visible": True
+                                    }
+                                    }
+                                })
 
     entity: str = Field(default="Differentiated Cells", 
                         json_schema_extra={"const": "Differentiated Cells",
                                            "format": "hidden"})
-    differentiatedCellsName: str = Field(title="Cell Type")
+    differentiatedCellsName: str = Field(title="Cell Type", json_schema_extra={"ui": {
+                                                                    "preview": {
+                                                                    "visible": True
+                                                                 }
+                                                            }})
 class ipsc(BaseModel):
     
-    model_config = ConfigDict(title="iPSC")
+    model_config = ConfigDict(title="iPSC", json_schema_extra={"ui": {
+                                    "preview": {
+                                     "visible": True
+                                    }
+                                    }
+                                })
 
     entity: str = Field(default="iPSC", json_schema_extra={"const": "iPSC",
                                                            "format": "hidden"})
-    ipscName: str = Field(title="iPSC ID")
+    ipscName: str = Field(title="iPSC ID", json_schema_extra={"ui": {
+                                                                    "preview": {
+                                                                    "visible": True
+                                                                 }
+                                                            }})
 
 class cellLine(BaseModel):
 
@@ -156,20 +215,39 @@ class cellLine(BaseModel):
 
 class wastewater(BaseModel):
     
-    model_config = ConfigDict(title="Wastewater")
+    model_config = ConfigDict(title="Wastewater", json_schema_extra={"ui": {
+                                    "preview": {
+                                     "visible": True
+                                    }
+                                    }
+                                })
 
     entity: str = Field(default="Wastewater", json_schema_extra={"const": "Wastewater",
                                                                  "format": "hidden"})
-    wastewaterName: str = Field(title="Sample ID")
+    wastewaterName: str = Field(title="Sample ID", json_schema_extra={"ui": {
+                                                                    "preview": {
+                                                                    "visible": True
+                                                                 }
+                                                            }})
 
 class patientSample(BaseModel):
     
-    model_config = ConfigDict(title="Patient Sample")
+    model_config = ConfigDict(title="Patient Sample", json_schema_extra={"ui": {
+                                    "preview": {
+                                     "visible": True
+                                    }
+                                    }
+                                })
 
     entity: str = Field(default="Patient Sample", 
                         json_schema_extra={"const": "Patient Sample",
                                            "format": "hidden"})
-    patientSampleTumorType: str = Field(title="Tumor Type")
+    patientSampleTumorType: str = Field(title="Tumor Type", 
+                                        json_schema_extra={"ui": {
+                                                                    "preview": {
+                                                                    "visible": True
+                                                                 }
+                                                            }})
    
 class target(BaseModel):
     

@@ -128,14 +128,24 @@
         },
         "differentiatedCellsName": {
           "title": "Cell Type",
-          "type": "string"
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
         }
       },
       "required": [
         "differentiatedCellsName"
       ],
       "title": "Differentiated Cells",
-      "type": "object"
+      "type": "object",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
     },
     "epigeneticModification": {
       "properties": {
@@ -168,14 +178,24 @@
         },
         "geneName": {
           "title": "Gene Name",
-          "type": "string"
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
         }
       },
       "required": [
         "geneName"
       ],
       "title": "Gene",
-      "type": "object"
+      "type": "object",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
     },
     "infectiousAgent": {
       "properties": {
@@ -218,14 +238,24 @@
         },
         "ipscName": {
           "title": "iPSC ID",
-          "type": "string"
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
         }
       },
       "required": [
         "ipscName"
       ],
       "title": "iPSC",
-      "type": "object"
+      "type": "object",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
     },
     "modelSystem": {
       "properties": {
@@ -284,14 +314,24 @@
         },
         "patientSampleTumorType": {
           "title": "Tumor Type",
-          "type": "string"
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
         }
       },
       "required": [
         "patientSampleTumorType"
       ],
       "title": "Patient Sample",
-      "type": "object"
+      "type": "object",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
     },
     "primaryCells": {
       "properties": {
@@ -304,14 +344,24 @@
         },
         "primaryCellsName": {
           "title": "Cell Type",
-          "type": "string"
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
         }
       },
       "required": [
         "primaryCellsName"
       ],
       "title": "Primary Cells",
-      "type": "object"
+      "type": "object",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
     },
     "protein": {
       "properties": {
@@ -331,7 +381,12 @@
         "proteinName"
       ],
       "title": "Protein",
-      "type": "object"
+      "type": "object",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
     },
     "proteinP": {
       "properties": {
@@ -467,14 +522,24 @@
         },
         "tissueName": {
           "title": "Tissue Type",
-          "type": "string"
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
         }
       },
       "required": [
         "tissueName"
       ],
       "title": "Tissue",
-      "type": "object"
+      "type": "object",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
     },
     "transcript": {
       "properties": {
@@ -487,14 +552,24 @@
         },
         "transcriptName": {
           "title": "NCBI Accession Number",
-          "type": "string"
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
         }
       },
       "required": [
         "transcriptName"
       ],
       "title": "Transcript",
-      "type": "object"
+      "type": "object",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
     },
     "wastewater": {
       "properties": {
@@ -507,14 +582,24 @@
         },
         "wastewaterName": {
           "title": "Sample ID",
-          "type": "string"
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
         }
       },
       "required": [
         "wastewaterName"
       ],
       "title": "Wastewater",
-      "type": "object"
+      "type": "object",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
     }
   },
   "properties": {
