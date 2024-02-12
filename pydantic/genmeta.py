@@ -246,7 +246,7 @@ class sample(BaseModel):
                                         {
                                         "field": "experimentalSystemColumn",
                                         "title": "Experimental System",
-                                        "getCellValue": "experimentalSystem.content"
+                                        "getCellValue": "experimentalSystem.content.entity"
                                         }
                                     ]
                                 }
