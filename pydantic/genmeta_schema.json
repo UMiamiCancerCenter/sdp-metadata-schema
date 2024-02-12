@@ -421,37 +421,7 @@
         "smallMoleculeConcentration"
       ],
       "title": "Small Molecule",
-      "type": "object",
-      "ui": {
-        "datagrid": {
-          "columns": [
-            {
-              "field": "entity",
-              "getCellValue": "entity",
-              "title": "Perturbagen"
-            },
-            {
-              "field": "name",
-              "getCellValue": "content.name",
-              "title": "Name"
-            },
-            {
-              "field": "duration",
-              "getCellValue": "duration",
-              "title": "Duration"
-            },
-            {
-              "field": "concentration",
-              "getCellValue": "concentration",
-              "title": "Concentration"
-            }
-          ]
-        },
-        "preview": {
-          "title": "Perturbation:",
-          "visible": true
-        }
-      }
+      "type": "object"
     },
     "target": {
       "properties": {
@@ -599,7 +569,32 @@
         ]
       },
       "title": "Perturbation",
-      "type": "array"
+      "type": "array",
+      "ui": {
+        "datagrid": {
+          "columns": [
+            {
+              "field": "entity",
+              "getCellValue": "perturbation.entity",
+              "title": "Perturbagen"
+            },
+            {
+              "field": "duration",
+              "getCellValue": "duration",
+              "title": "Duration"
+            },
+            {
+              "field": "concentration",
+              "getCellValue": "concentration",
+              "title": "Concentration"
+            }
+          ]
+        },
+        "preview": {
+          "title": "Perturbation:",
+          "visible": true
+        }
+      }
     }
   },
   "required": [

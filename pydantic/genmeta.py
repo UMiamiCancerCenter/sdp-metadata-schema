@@ -10,38 +10,7 @@ from pydantic.config import ConfigDict
 
 class smallMolecule(BaseModel):
     
-    model_config = ConfigDict(title="Small Molecule", json_schema_extra={
-        "ui": {
-        "preview": {
-          "title": "Perturbation:",
-          "visible": True
-        },
-        "datagrid": {
-          "columns": [
-            {
-              "field": "entity",
-              "title": "Perturbagen",
-              "getCellValue": "entity"
-            },
-            {
-              "field": "name",
-              "title": "Name",
-              "getCellValue": "content.name"
-            },
-            {
-              "field": "duration",
-              "title": "Duration",
-              "getCellValue": "duration"
-            },
-            {
-              "field": "concentration",
-              "title": "Concentration",
-              "getCellValue": "concentration"
-            }
-          ]
-        }
-      }
-    })
+    model_config = ConfigDict(title="Small Molecule")
 
     entity: str = Field(default="Small Molecule", 
                                          json_schema_extra={"const": "Small Molecule", "format": "hidden"})
@@ -304,7 +273,33 @@ class sample(BaseModel):
         proteinP,
         infectiousAgent
             ] 
-        ]
+        ] = Field(json_schema_extra={
+                        "ui": {
+                        "preview": {
+                        "title": "Perturbation:",
+                        "visible": True
+                        },
+                        "datagrid": {
+                        "columns": [
+                            {
+                            "field": "entity",
+                            "title": "Perturbagen",
+                            "getCellValue": "perturbation.entity"
+                            },
+                            {
+                            "field": "duration",
+                            "title": "Duration",
+                            "getCellValue": "duration"
+                            },
+                            {
+                            "field": "concentration",
+                            "title": "Concentration",
+                            "getCellValue": "concentration"
+                            }
+                        ]
+                        }
+                    }
+                    })
                  
 
 def example():
