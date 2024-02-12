@@ -170,7 +170,7 @@ class patientSample(BaseModel):
     entity: str = Field(default="Patient Sample", 
                         json_schema_extra={"const": "Patient Sample",
                                            "format": "hidden"})
-    patientSampleName: str = Field(title="Tumor Type")
+    patientSampleTumorType: str = Field(title="Tumor Type")
    
 class target(BaseModel):
     
