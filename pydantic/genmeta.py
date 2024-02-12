@@ -10,11 +10,41 @@ from pydantic.config import ConfigDict
 
 class smallMolecule(BaseModel):
     
-    model_config = ConfigDict(title="Small Molecule")
+    model_config = ConfigDict(title="Small Molecule", json_schema_extra={
+        "ui": {
+        "preview": {
+          "title": "Perturbation:",
+          "visible": True
+        },
+        "datagrid": {
+          "columns": [
+            {
+              "field": "entity",
+              "title": "Perturbagen",
+              "getCellValue": "entity"
+            },
+            {
+              "field": "name",
+              "title": "Name",
+              "getCellValue": "content.name"
+            },
+            {
+              "field": "duration",
+              "title": "Duration",
+              "getCellValue": "duration"
+            },
+            {
+              "field": "concentration",
+              "title": "Concentration",
+              "getCellValue": "concentration"
+            }
+          ]
+        }
+      }
+    })
 
     entity: str = Field(default="Small Molecule", 
-                                         json_schema_extra={"const": "Small Molecule",
-                                                            "format": "hidden"})
+                                         json_schema_extra={"const": "Small Molecule", "format": "hidden"})
     smallMoleculeName: str = Field(title="Small Molecule Name")
     smallMoleculeDuration: str = Field(title="Duration")
     smallMoleculeConcentration: str = Field(title="Concentration")
