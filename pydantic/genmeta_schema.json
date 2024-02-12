@@ -282,13 +282,13 @@
           "title": "Entity",
           "type": "string"
         },
-        "patientSampleName": {
+        "patientSampleTumorType": {
           "title": "Tumor Type",
           "type": "string"
         }
       },
       "required": [
-        "patientSampleName"
+        "patientSampleTumorType"
       ],
       "title": "Patient Sample",
       "type": "object"
@@ -421,7 +421,37 @@
         "smallMoleculeConcentration"
       ],
       "title": "Small Molecule",
-      "type": "object"
+      "type": "object",
+      "ui": {
+        "datagrid": {
+          "columns": [
+            {
+              "field": "entity",
+              "getCellValue": "entity",
+              "title": "Perturbagen"
+            },
+            {
+              "field": "name",
+              "getCellValue": "content.name",
+              "title": "Name"
+            },
+            {
+              "field": "duration",
+              "getCellValue": "duration",
+              "title": "Duration"
+            },
+            {
+              "field": "concentration",
+              "getCellValue": "concentration",
+              "title": "Concentration"
+            }
+          ]
+        },
+        "preview": {
+          "title": "Perturbation:",
+          "visible": true
+        }
+      }
     },
     "target": {
       "properties": {
@@ -595,7 +625,7 @@
         },
         {
           "field": "experimentalSystemColumn",
-          "getCellValue": "experimentalSystem.content[1]",
+          "getCellValue": "experimentalSystem.content.entity",
           "title": "Experimental System"
         }
       ]
