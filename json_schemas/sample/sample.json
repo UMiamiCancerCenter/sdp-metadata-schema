@@ -624,6 +624,7 @@
         }
       ],
       "title": "Experimental System",
+      "type": "object",
       "ui": {
         "preview": {
           "visible": true

@@ -341,7 +341,7 @@ class sample(BaseModel):
                                     "preview": {
                                     "visible": True
                                     }
-                                }
+                                }, "type": "object",
                             })
     perturbation: List[Union[
         smallMolecule,
