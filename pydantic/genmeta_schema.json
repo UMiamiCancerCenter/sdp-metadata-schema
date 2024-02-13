@@ -48,14 +48,24 @@
               "$ref": "#/$defs/wastewater"
             }
           ],
-          "title": "Content"
+          "title": "Content",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
         }
       },
       "required": [
         "content"
       ],
       "title": "Biospecimen",
-      "type": "object"
+      "type": "object",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
     },
     "cellLine": {
       "properties": {
@@ -502,14 +512,24 @@
               "$ref": "#/$defs/epigeneticModification"
             }
           ],
-          "title": "Content"
+          "title": "Content",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
         }
       },
       "required": [
         "content"
       ],
       "title": "Molecular Target",
-      "type": "object"
+      "type": "object",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
     },
     "tissue": {
       "properties": {

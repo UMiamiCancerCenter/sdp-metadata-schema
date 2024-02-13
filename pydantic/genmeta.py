@@ -251,7 +251,12 @@ class patientSample(BaseModel):
    
 class target(BaseModel):
     
-    model_config = ConfigDict(title="Molecular Target")
+    model_config = ConfigDict(title="Molecular Target", json_schema_extra={"ui": {
+                                    "preview": {
+                                     "visible": True
+                                    }
+                                    }
+                                })
 
     entity: str = Field(default="Molecular Target", 
                                          json_schema_extra={"const": "Molecular Target",
@@ -261,19 +266,32 @@ class target(BaseModel):
             transcript,
             protein,
             epigeneticModification
-            ]
+            ] = Field(json_schema_extra={
+                                  "ui": {
+                                    "preview": {
+                                    "visible": True
+                                    }}})
 
 
 class biospecimen(BaseModel):
     
-    model_config = ConfigDict(title="Biospecimen")
+    model_config = ConfigDict(title="Biospecimen", json_schema_extra={"ui": {
+                                    "preview": {
+                                     "visible": True
+                                    }
+                                    }
+                                })
 
     entity: str = Field(default="Biospecimen", json_schema_extra={"const": "Biospecimen",
                                                                   "format": "hidden"})
     content: Union[
             patientSample,
             wastewater
-            ]
+            ] = Field(json_schema_extra={
+                                  "ui": {
+                                    "preview": {
+                                    "visible": True
+                                    }}})
     
 
 class modelSystem(BaseModel):
