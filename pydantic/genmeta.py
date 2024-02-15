@@ -389,26 +389,89 @@ class sample(BaseModel):
                         "title": "Perturbation:",
                         "visible": True
                         },
-                        "datagrid": {
-                        "columns": [
-                            {
-                            "field": "entity",
-                            "title": "Perturbagen",
-                            "getCellValue": "perturbation.entity"
-                            },
-                            {
-                            "field": "duration",
-                            "title": "Duration",
-                            "getCellValue": "duration"
-                            },
-                            {
-                            "field": "concentration",
-                            "title": "Concentration",
-                            "getCellValue": "concentration"
-                            }
-                        ]
-                        }
-                    }
+                        "datagrid":{
+                        "entries": {
+            "antibody": {
+              "columns": [
+                {
+                  "field": "entity",
+                  "getCellValue": "entity"
+                },
+                {
+                  "field": "name",
+                  "getCellValue": "antibodyName"
+                },
+                {
+                  "field": "duration",
+                  "getCellValue": "antibodyDuration"
+                },
+                {
+                  "field": "concentration",
+                  "getCellValue": "antibodyConcentration"
+                }
+              ]
+            },
+            "proteinP": {
+              "columns": [
+                {
+                  "field": "entity",
+                  "getCellValue": "entity"
+                },
+                {
+                  "field": "name",
+                  "getCellValue": "proteinPName"
+                },
+                {
+                  "field": "duration",
+                  "getCellValue": "proteinPDuration"
+                },
+                {
+                  "field": "concentration",
+                  "getCellValue": "proteinPConcentration"
+                }
+              ]
+            },
+            "Infectious Agent": {
+              "columns": [
+                {
+                  "field": "entity",
+                  "getCellValue": "entity"
+                },
+                {
+                  "field": "name",
+                  "getCellValue": "infectiousAgentName"
+                },
+                {
+                  "field": "duration",
+                  "getCellValue": "infectiousAgentDuration"
+                },
+                {
+                  "field": "concentration",
+                  "getCellValue": "infectiousAgentConcentration"
+                }
+              ]
+            }
+          },
+          "columns": [
+            {
+              "field": "entity",
+              "title": "Perturbagen Type"
+            },
+            {
+              "field": "name",
+              "title": "Name"
+            },
+            {
+              "field": "duration",
+              "title": "Duration"
+            },
+            {
+              "field": "concentration",
+              "title": "Concentration"
+            }
+          ]
+        }
+                }
                     })
                  
 
