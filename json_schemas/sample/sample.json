@@ -30,45 +30,15 @@
       "title": "Antibody",
       "type": "object"
     },
-    "biospecimen": {
-      "properties": {
-        "entity": {
-          "const": "Biospecimen",
-          "default": "Biospecimen",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "content": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/patientSample"
-            },
-            {
-              "$ref": "#/$defs/wastewater"
-            }
-          ],
-          "title": "Content",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
-        }
-      },
-      "required": [
-        "content"
-      ],
-      "title": "Biospecimen",
-      "type": "object",
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
-    },
     "cellLine": {
       "properties": {
+        "role": {
+          "const": "Model System",
+          "default": "Model System",
+          "format": "hidden",
+          "title": "Role",
+          "type": "string"
+        },
         "entity": {
           "const": "Cell Line",
           "default": "Cell Line",
@@ -129,6 +99,13 @@
     },
     "differentiatedCells": {
       "properties": {
+        "role": {
+          "const": "Model System",
+          "default": "Model System",
+          "format": "hidden",
+          "title": "Role",
+          "type": "string"
+        },
         "entity": {
           "const": "Differentiated Cells",
           "default": "Differentiated Cells",
@@ -136,7 +113,7 @@
           "title": "Entity",
           "type": "string"
         },
-        "differentiatedCellsName": {
+        "differentiatedCellsType": {
           "title": "Cell Type",
           "type": "string",
           "ui": {
@@ -147,59 +124,9 @@
         }
       },
       "required": [
-        "differentiatedCellsName"
+        "differentiatedCellsType"
       ],
       "title": "Differentiated Cells",
-      "type": "object",
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
-    },
-    "epigeneticModification": {
-      "properties": {
-        "entity": {
-          "const": "Epigenetic Modification",
-          "default": "Epigenetic Modification",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "epigeneticModificationName": {
-          "title": "Modification Type",
-          "type": "string"
-        }
-      },
-      "required": [
-        "epigeneticModificationName"
-      ],
-      "title": "Epigenetic Modification",
-      "type": "object"
-    },
-    "gene": {
-      "properties": {
-        "entity": {
-          "const": "Gene",
-          "default": "Gene",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "geneName": {
-          "title": "Gene Name",
-          "type": "string",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
-        }
-      },
-      "required": [
-        "geneName"
-      ],
-      "title": "Gene",
       "type": "object",
       "ui": {
         "preview": {
@@ -239,6 +166,13 @@
     },
     "ipsc": {
       "properties": {
+        "role": {
+          "const": "Model System",
+          "default": "Model System",
+          "format": "hidden",
+          "title": "Role",
+          "type": "string"
+        },
         "entity": {
           "const": "iPSC",
           "default": "iPSC",
@@ -246,7 +180,7 @@
           "title": "Entity",
           "type": "string"
         },
-        "ipscName": {
+        "ipscID": {
           "title": "iPSC ID",
           "type": "string",
           "ui": {
@@ -257,7 +191,7 @@
         }
       },
       "required": [
-        "ipscName"
+        "ipscID"
       ],
       "title": "iPSC",
       "type": "object",
@@ -267,54 +201,15 @@
         }
       }
     },
-    "modelSystem": {
-      "properties": {
-        "entity": {
-          "const": "Model System",
-          "default": "Model System",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "content": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/cellLine"
-            },
-            {
-              "$ref": "#/$defs/ipsc"
-            },
-            {
-              "$ref": "#/$defs/primaryCells"
-            },
-            {
-              "$ref": "#/$defs/differentiatedCells"
-            },
-            {
-              "$ref": "#/$defs/tissue"
-            }
-          ],
-          "title": "Content",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
-        }
-      },
-      "required": [
-        "content"
-      ],
-      "title": "Model System",
-      "type": "object",
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
-    },
     "patientSample": {
       "properties": {
+        "role": {
+          "const": "Biospecimen",
+          "default": "Biospecimen",
+          "format": "hidden",
+          "title": "Role",
+          "type": "string"
+        },
         "entity": {
           "const": "Patient Sample",
           "default": "Patient Sample",
@@ -345,6 +240,13 @@
     },
     "primaryCells": {
       "properties": {
+        "role": {
+          "const": "Model System",
+          "default": "Model System",
+          "format": "hidden",
+          "title": "Role",
+          "type": "string"
+        },
         "entity": {
           "const": "Primary Cells",
           "default": "Primary Cells",
@@ -352,7 +254,7 @@
           "title": "Entity",
           "type": "string"
         },
-        "primaryCellsName": {
+        "primaryCellsType": {
           "title": "Cell Type",
           "type": "string",
           "ui": {
@@ -363,34 +265,9 @@
         }
       },
       "required": [
-        "primaryCellsName"
+        "primaryCellsType"
       ],
       "title": "Primary Cells",
-      "type": "object",
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
-    },
-    "protein": {
-      "properties": {
-        "entity": {
-          "const": "Protein",
-          "default": "Protein",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "proteinName": {
-          "title": "Protein Name",
-          "type": "string"
-        }
-      },
-      "required": [
-        "proteinName"
-      ],
-      "title": "Protein",
       "type": "object",
       "ui": {
         "preview": {
@@ -488,51 +365,15 @@
       "title": "Small Molecule",
       "type": "object"
     },
-    "target": {
-      "properties": {
-        "entity": {
-          "const": "Molecular Target",
-          "default": "Molecular Target",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "content": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/gene"
-            },
-            {
-              "$ref": "#/$defs/transcript"
-            },
-            {
-              "$ref": "#/$defs/protein"
-            },
-            {
-              "$ref": "#/$defs/epigeneticModification"
-            }
-          ],
-          "title": "Content",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
-        }
-      },
-      "required": [
-        "content"
-      ],
-      "title": "Molecular Target",
-      "type": "object",
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
-    },
     "tissue": {
       "properties": {
+        "role": {
+          "const": "Model System",
+          "default": "Model System",
+          "format": "hidden",
+          "title": "Role",
+          "type": "string"
+        },
         "entity": {
           "const": "Tissue",
           "default": "Tissue",
@@ -540,7 +381,7 @@
           "title": "Entity",
           "type": "string"
         },
-        "tissueName": {
+        "tissueType": {
           "title": "Tissue Type",
           "type": "string",
           "ui": {
@@ -551,69 +392,9 @@
         }
       },
       "required": [
-        "tissueName"
+        "tissueType"
       ],
       "title": "Tissue",
-      "type": "object",
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
-    },
-    "transcript": {
-      "properties": {
-        "entity": {
-          "const": "Transcript",
-          "default": "Transcript",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "transcriptName": {
-          "title": "NCBI Accession Number",
-          "type": "string",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
-        }
-      },
-      "required": [
-        "transcriptName"
-      ],
-      "title": "Transcript",
-      "type": "object",
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
-    },
-    "wastewater": {
-      "properties": {
-        "entity": {
-          "const": "Wastewater",
-          "default": "Wastewater",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "wastewaterName": {
-          "title": "Sample ID",
-          "type": "string",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
-        }
-      },
-      "required": [
-        "wastewaterName"
-      ],
-      "title": "Wastewater",
       "type": "object",
       "ui": {
         "preview": {
@@ -634,13 +415,22 @@
     "experimentalSystem": {
       "anyOf": [
         {
-          "$ref": "#/$defs/modelSystem"
+          "$ref": "#/$defs/patientSample"
         },
         {
-          "$ref": "#/$defs/biospecimen"
+          "$ref": "#/$defs/cellLine"
         },
         {
-          "$ref": "#/$defs/target"
+          "$ref": "#/$defs/primaryCells"
+        },
+        {
+          "$ref": "#/$defs/differentiatedCells"
+        },
+        {
+          "$ref": "#/$defs/ipsc"
+        },
+        {
+          "$ref": "#/$defs/tissue"
         }
       ],
       "title": "Experimental System",
@@ -726,7 +516,7 @@
         },
         {
           "field": "experimentalSystemColumn",
-          "getCellValue": "experimentalSystem.content.entity",
+          "getCellValue": "experimentalSystem.entity",
           "title": "Experimental System"
         }
       ]
