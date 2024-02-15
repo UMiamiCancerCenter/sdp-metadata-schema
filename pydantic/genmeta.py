@@ -391,7 +391,7 @@ class sample(BaseModel):
                         },
                         "datagrid":{
                         "entries": {
-            "antibody": {
+            "Antibody": {
               "columns": [
                 {
                   "field": "entity",
@@ -411,7 +411,7 @@ class sample(BaseModel):
                 }
               ]
             },
-            "proteinP": {
+            "Protein": {
               "columns": [
                 {
                   "field": "entity",
@@ -431,7 +431,7 @@ class sample(BaseModel):
                 }
               ]
             },
-            "infectousAgent": {
+            "Infectious Agent": {
               "columns": [
                 {
                   "field": "entity",
@@ -451,7 +451,7 @@ class sample(BaseModel):
                 }
               ]
             },
-            "smallMolecule": {
+            "Small Molecule": {
               "columns": [
                 {
                   "field": "entity",
@@ -471,7 +471,7 @@ class sample(BaseModel):
                 }
               ]
             },
-            "crispr": {
+            "CRISPR": {
               "columns": [
                 {
                   "field": "entity",
@@ -491,7 +491,7 @@ class sample(BaseModel):
                 }
               ]
             },
-            "rnai": {
+            "RNAi": {
               "columns": [
                 {
                   "field": "entity",

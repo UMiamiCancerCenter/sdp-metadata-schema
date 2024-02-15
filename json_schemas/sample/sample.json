@@ -507,7 +507,7 @@
                 }
               ]
             },
-            "crispr": {
+            "CRISPR": {
               "columns": [
                 {
                   "field": "entity",
@@ -527,7 +527,7 @@
                 }
               ]
             },
-            "infectousAgent": {
+            "Infectious Agent": {
               "columns": [
                 {
                   "field": "entity",
@@ -547,7 +547,7 @@
                 }
               ]
             },
-            "proteinP": {
+            "Protein": {
               "columns": [
                 {
                   "field": "entity",
@@ -567,7 +567,7 @@
                 }
               ]
             },
-            "rnai": {
+            "RNAi": {
               "columns": [
                 {
                   "field": "entity",
