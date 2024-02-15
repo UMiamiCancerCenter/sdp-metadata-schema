@@ -471,20 +471,143 @@
           "columns": [
             {
               "field": "entity",
-              "getCellValue": "perturbation.entity",
-              "title": "Perturbagen"
+              "title": "Perturbagen Type"
+            },
+            {
+              "field": "name",
+              "title": "Name"
             },
             {
               "field": "duration",
-              "getCellValue": "duration",
               "title": "Duration"
             },
             {
               "field": "concentration",
-              "getCellValue": "concentration",
               "title": "Concentration"
             }
-          ]
+          ],
+          "entries": {
+            "antibody": {
+              "columns": [
+                {
+                  "field": "entity",
+                  "getCellValue": "entity"
+                },
+                {
+                  "field": "name",
+                  "getCellValue": "antibodyName"
+                },
+                {
+                  "field": "duration",
+                  "getCellValue": "antibodyDuration"
+                },
+                {
+                  "field": "concentration",
+                  "getCellValue": "antibodyConcentration"
+                }
+              ]
+            },
+            "crispr": {
+              "columns": [
+                {
+                  "field": "entity",
+                  "getCellValue": "entity"
+                },
+                {
+                  "field": "name",
+                  "getCellValue": "crisprName"
+                },
+                {
+                  "field": "duration",
+                  "getCellValue": "crisprDuration"
+                },
+                {
+                  "field": "concentration",
+                  "getCellValue": "crisprConcentration"
+                }
+              ]
+            },
+            "infectousAgent": {
+              "columns": [
+                {
+                  "field": "entity",
+                  "getCellValue": "entity"
+                },
+                {
+                  "field": "name",
+                  "getCellValue": "infectiousAgentName"
+                },
+                {
+                  "field": "duration",
+                  "getCellValue": "infectiousAgentDuration"
+                },
+                {
+                  "field": "concentration",
+                  "getCellValue": "infectiousAgentConcentration"
+                }
+              ]
+            },
+            "proteinP": {
+              "columns": [
+                {
+                  "field": "entity",
+                  "getCellValue": "entity"
+                },
+                {
+                  "field": "name",
+                  "getCellValue": "proteinPName"
+                },
+                {
+                  "field": "duration",
+                  "getCellValue": "proteinPDuration"
+                },
+                {
+                  "field": "concentration",
+                  "getCellValue": "proteinPConcentration"
+                }
+              ]
+            },
+            "rnai": {
+              "columns": [
+                {
+                  "field": "entity",
+                  "getCellValue": "entity"
+                },
+                {
+                  "field": "name",
+                  "getCellValue": "rnaiName"
+                },
+                {
+                  "field": "duration",
+                  "getCellValue": "rnaiDuration"
+                },
+                {
+                  "field": "concentration",
+                  "getCellValue": "rnaiConcentration"
+                }
+              ]
+            },
+            "smallMolecule": {
+              "columns": [
+                {
+                  "field": "entity",
+                  "getCellValue": "entity"
+                },
+                {
+                  "field": "name",
+                  "getCellValue": "smallMoleculeName"
+                },
+                {
+                  "field": "duration",
+                  "getCellValue": "smallMoleculeDuration"
+                },
+                {
+                  "field": "concentration",
+                  "getCellValue": "smallMoleculeConcentration"
+                }
+              ]
+            }
+          }
         },
         "preview": {
           "title": "Perturbation:",

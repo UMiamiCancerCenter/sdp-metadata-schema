@@ -431,7 +431,7 @@ class sample(BaseModel):
                 }
               ]
             },
-            "Infectious Agent": {
+            "infectousAgent": {
               "columns": [
                 {
                   "field": "entity",
@@ -448,6 +448,66 @@ class sample(BaseModel):
                 {
                   "field": "concentration",
                   "getCellValue": "infectiousAgentConcentration"
+                }
+              ]
+            },
+            "smallMolecule": {
+              "columns": [
+                {
+                  "field": "entity",
+                  "getCellValue": "entity"
+                },
+                {
+                  "field": "name",
+                  "getCellValue": "smallMoleculeName"
+                },
+                {
+                  "field": "duration",
+                  "getCellValue": "smallMoleculeDuration"
+                },
+                {
+                  "field": "concentration",
+                  "getCellValue": "smallMoleculeConcentration"
+                }
+              ]
+            },
+            "crispr": {
+              "columns": [
+                {
+                  "field": "entity",
+                  "getCellValue": "entity"
+                },
+                {
+                  "field": "name",
+                  "getCellValue": "crisprName"
+                },
+                {
+                  "field": "duration",
+                  "getCellValue": "crisprDuration"
+                },
+                {
+                  "field": "concentration",
+                  "getCellValue": "crisprConcentration"
+                }
+              ]
+            },
+            "rnai": {
+              "columns": [
+                {
+                  "field": "entity",
+                  "getCellValue": "entity"
+                },
+                {
+                  "field": "name",
+                  "getCellValue": "rnaiName"
+                },
+                {
+                  "field": "duration",
+                  "getCellValue": "rnaiDuration"
+                },
+                {
+                  "field": "concentration",
+                  "getCellValue": "rnaiConcentration"
                 }
               ]
             }
