@@ -363,12 +363,12 @@ class sample(BaseModel):
     sampleName: str = Field(title='Sample Name')
     description: str
     experimentalSystem: Union[
-            patientSample,
             cellLine,
             primaryCells,
             differentiatedCells,
             ipsc,
-            tissue
+            tissue,
+            patientSample
             ] = Field(title="Experimental System", json_schema_extra={
                                   "ui": {
                                     "preview": {

@@ -420,9 +420,6 @@
     "experimentalSystem": {
       "anyOf": [
         {
-          "$ref": "#/$defs/patientSample"
-        },
-        {
           "$ref": "#/$defs/cellLine"
         },
         {
@@ -436,6 +433,9 @@
         },
         {
           "$ref": "#/$defs/tissue"
+        },
+        {
+          "$ref": "#/$defs/patientSample"
         }
       ],
       "title": "Experimental System",
