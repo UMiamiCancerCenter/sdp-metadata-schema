@@ -31,7 +31,6 @@
       "description": "Processing steps performed on dataset samples before the readout assay.",
       "title": "Processing Steps",
       "items": {
-        "description": "Processing steps performed on dataset samples before the readout assay.",
         "title": "Processing Step",
         "type": "string",
         "minLength": 1,
