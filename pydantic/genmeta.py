@@ -183,6 +183,7 @@ class differentiatedCells(BaseModel):
                                                                     "visible": True
                                                                  }
                                                             }})
+    precursorCellName: str
 class ipsc(BaseModel):
     
     model_config = ConfigDict(title="iPSC", json_schema_extra={"ui": {

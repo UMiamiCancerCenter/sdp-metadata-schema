@@ -121,10 +121,15 @@
               "visible": true
             }
           }
+        },
+        "precursorCellName": {
+          "title": "Precursorcellname",
+          "type": "string"
         }
       },
       "required": [
-        "differentiatedCellsType"
+        "differentiatedCellsType",
+        "precursorCellName"
       ],
       "title": "Differentiated Cells",
       "type": "object",
