@@ -123,7 +123,7 @@
           }
         },
         "precursorCellName": {
-          "title": "Precursorcellname",
+          "title": "Precursor Cell Name",
           "type": "string"
         }
       },
