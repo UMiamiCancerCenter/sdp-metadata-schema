@@ -41,22 +41,6 @@
         ],
         "default": "Differentiation"
       }
-    },
-    "experimentalSystem": {
-      "type": "array",
-      "items": {
-        "title": "Experimental Subject",
-        "type": "string",
-        "minLength": 1,
-        "enum": [
-          "Cell Line", 
-          "Primary Cells",
-          "Differentiated Cells",
-          "iPSC",
-          "Tissue"
-        ],
-        "default": "Cell Line"
-      }
     }
   },
   "required": [
