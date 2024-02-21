@@ -45,7 +45,20 @@
     "experimentalSystem": {
       "type": "array",
       "description": "The cell, tissue, or other biological/biochemical material used as the subject of the experiment.",
-      "title": "Experimental System"
+      "title": "Experimental System",
+      "items":{
+        "title": "Experimental System",
+        "type": "string",
+        "minLenght": 1,
+        "enum": [
+          "Cell Line",
+          "Primary Cells",
+          "Differentiated Cells",
+          "iPSC",
+          "Tissue"
+        ],
+        "default": "Cell Line"
+      }
     }
   },
   "required": [
