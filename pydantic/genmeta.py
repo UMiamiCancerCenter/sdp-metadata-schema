@@ -343,7 +343,7 @@ class sample(BaseModel):
                             {
                             "field": "sampleName",
                             "title": "Sample Name",
-                            "getCellValue": "sampleName"
+                            "getCellValue": "name"
                             },
                             {
                             "field": "description",
@@ -360,7 +360,7 @@ class sample(BaseModel):
                 }
             })
     
-    sampleName: str = Field(title='Sample Name')
+    name: str = Field(title='Sample Name')
     description: str
     experimentalSystem: Union[
             cellLine,

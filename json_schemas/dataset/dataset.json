@@ -18,7 +18,7 @@
       "type": "string",
       "enum": [
         "DNA-seq",
-        "Bulk RNA-seq",
+        "RNA-seq",
         "scRNA-seq",
         "L1000",
         "ATAC-seq",

@@ -409,7 +409,7 @@
     }
   },
   "properties": {
-    "sampleName": {
+    "name": {
       "title": "Sample Name",
       "type": "string"
     },
@@ -622,7 +622,7 @@
     }
   },
   "required": [
-    "sampleName",
+    "name",
     "description",
     "experimentalSystem",
     "perturbation"
@@ -634,7 +634,7 @@
       "columns": [
         {
           "field": "sampleName",
-          "getCellValue": "sampleName",
+          "getCellValue": "name",
           "title": "Sample Name"
         },
         {
