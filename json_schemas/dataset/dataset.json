@@ -41,6 +41,11 @@
         ],
         "default": "Differentiation"
       }
+    },
+    "experimentalSystem": {
+      "type": "array",
+      "description": "The cell, tissue, or other biological/biochemical material used as the subject of the experiment.",
+      "title": "Experimental System"
     }
   },
   "required": [
