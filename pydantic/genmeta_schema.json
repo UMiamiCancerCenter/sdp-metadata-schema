@@ -76,7 +76,7 @@
           "title": "Entity",
           "type": "string"
         },
-        "crisprName": {
+        "crisprTargetGene": {
           "title": "Target Gene",
           "type": "string"
         },
@@ -90,7 +90,7 @@
         }
       },
       "required": [
-        "crisprName",
+        "crisprTargetGene",
         "crisprDuration",
         "crisprConcentration"
       ],
@@ -520,7 +520,7 @@
                 },
                 {
                   "field": "name",
-                  "getCellValue": "crisprName"
+                  "getCellValue": "crisprTargetGene"
                 },
                 {
                   "field": "duration",

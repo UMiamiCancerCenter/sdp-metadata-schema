@@ -25,7 +25,7 @@ class crispr(BaseModel):
     entity: str = Field(default="CRISPR", 
                                          json_schema_extra={"const": "CRISPR",
                                                             "format": "hidden"})
-    crisprName: str = Field(title="Target Gene")
+    crisprTargetGene: str = Field(title="Target Gene")
     crisprDuration: str = Field(title="Duration")
     crisprConcentration: str = Field(title="Concentration")
 
@@ -480,7 +480,7 @@ class sample(BaseModel):
                 },
                 {
                   "field": "name",
-                  "getCellValue": "crisprName"
+                  "getCellValue": "crisprTargetGene"
                 },
                 {
                   "field": "duration",
