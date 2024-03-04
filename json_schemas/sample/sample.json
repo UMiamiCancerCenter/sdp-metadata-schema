@@ -91,17 +91,17 @@
           "title": "Entity",
           "type": "string"
         },
-        "cellLineName": {
-          "title": "Cell Line Name",
-          "type": "string"
-        },
         "cellLineId": {
           "title": "Cell Line Id",
           "type": "string",
           "format": "hidden"
+        },
+        "cellLineName": {
+          "title": "Cell Line Name",
+          "type": "string"
         }
       },
-      "required": ["cellLineName"],
+      "required": ["cellLineId", "cellLineName"],
       "title": "Cell Line",
       "type": "object"
     },
