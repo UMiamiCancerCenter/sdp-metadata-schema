@@ -94,6 +94,11 @@
         "cellLineName": {
           "title": "Cell Line Name",
           "type": "string"
+        },
+        "cellLineId": {
+          "title": "Cell Line Id",
+          "type": "string",
+          "format": "hidden"
         }
       },
       "required": ["cellLineName"],
