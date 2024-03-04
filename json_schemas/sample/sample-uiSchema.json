@@ -1,1 +1,9 @@
-{}
+{
+  "experimentalSystem": {
+    "content": {
+      "cellLineName": {
+        "ui:widget": "CelllineWidget"
+      }
+    }
+  }
+}
