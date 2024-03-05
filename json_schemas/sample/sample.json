@@ -101,7 +101,7 @@
           "type": "string"
         }
       },
-      "required": ["cellLineId", "cellLineName"],
+      "required": ["cellLineName"],
       "title": "Cell Line",
       "type": "object"
     },
