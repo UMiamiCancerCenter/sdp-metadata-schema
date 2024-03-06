@@ -447,6 +447,11 @@
           "title": "Small Molecule Name",
           "type": "string"
         },
+        "smallMoleculeId": {
+          "title": "Small Molecule Id",
+          "type": "string",
+          "format": "hidden"
+        },
         "smallMoleculeDuration": {
           "title": "Duration",
           "type": "string"

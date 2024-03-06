@@ -5,5 +5,12 @@
         "ui:widget": "CelllineWidget"
       }
     }
+  },
+  "perturbation": {
+    "items": {
+      "smallMoleculeName": {
+        "ui:widget": "CompoundWidget"
+      }
+    }
   }
 }
