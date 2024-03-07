@@ -4,7 +4,10 @@
       "cellLineName": {
         "ui:widget": "CelllineWidget",
         "ui:options": {
-          "link": "experimentalSystem.content.cellLineId"
+          "update": {
+            "id": "cellLineId",
+            "name": "cellLineName"
+          }
         }
       }
     }
@@ -13,7 +16,12 @@
     "items": {
       "smallMoleculeName": {
         "ui:widget": "CompoundWidget",
-        "ui:options": {}
+        "ui:options": {
+          "update": {
+            "id": "smallMoleculeId",
+            "name": "smallMoleculeName"
+          }
+        }
       }
     }
   }
