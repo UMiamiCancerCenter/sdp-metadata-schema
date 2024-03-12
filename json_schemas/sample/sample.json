@@ -90,7 +90,7 @@
     "crispr": {
       "properties": {
         "entity": {
-          "const": "CRISPR",
+          "const": "CRISPR knockout",
           "default": "CRISPR knockout",
           "format": "hidden",
           "title": "Entity",
@@ -119,7 +119,7 @@
         "crisprTargetGeneID",
         "crisprTargetGeneSpecies"
       ],
-      "title": "CRISPR",
+      "title": "CRISPR knockout",
       "type": "object"
     },
     "smallMolecule": {

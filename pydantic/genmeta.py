@@ -22,10 +22,10 @@ class smallMolecule(BaseModel):
 
 class crispr(BaseModel):
     
-    model_config = ConfigDict(title="CRISPR")
+    model_config = ConfigDict(title="CRISPR knockout")
 
     entity: str = Field(default="CRISPR knockout", 
-                                         json_schema_extra={"const": "CRISPR",
+                                         json_schema_extra={"const": "CRISPR knockout",
                                                             "format": "hidden"})
     crisprName: str = Field(title="Name")
     crisprLabBatchLabel: str = Field(default="", title="Lab Batch Label")
