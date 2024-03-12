@@ -395,11 +395,11 @@ class sample(BaseModel):
     description: str
     experimentalSystem: Union[
             cellLine,
-            primaryCells,
-            differentiatedCells,
-            ipsc,
-            tissue,
-            patientSample
+            primaryCells
+            # differentiatedCells,
+            # ipsc,
+            # tissue,
+            # patientSample
             ] = Field(title="Experimental System", json_schema_extra={
                                   "ui": {
                                     "preview": {
@@ -409,11 +409,11 @@ class sample(BaseModel):
                             })
     perturbation: List[Union[
         smallMolecule,
-        crispr,
-        rnai,
-        antibody,
-        proteinP,
-        infectiousAgent
+        crispr
+        # rnai,
+        # antibody,
+        # proteinP,
+        # infectiousAgent
             ] 
         ] = Field(json_schema_extra={
                         "ui": {

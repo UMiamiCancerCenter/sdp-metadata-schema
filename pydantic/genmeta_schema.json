@@ -1,35 +1,5 @@
 {
   "$defs": {
-    "antibody": {
-      "properties": {
-        "entity": {
-          "const": "Antibody",
-          "default": "Antibody",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "antibodyName": {
-          "title": "Antibody Name",
-          "type": "string"
-        },
-        "antibodyDuration": {
-          "title": "Duration",
-          "type": "string"
-        },
-        "antibodyConcentration": {
-          "title": "Concentration",
-          "type": "string"
-        }
-      },
-      "required": [
-        "antibodyName",
-        "antibodyDuration",
-        "antibodyConcentration"
-      ],
-      "title": "Antibody",
-      "type": "object"
-    },
     "cellLine": {
       "properties": {
         "role": {
@@ -152,152 +122,6 @@
       "title": "CRISPR",
       "type": "object"
     },
-    "differentiatedCells": {
-      "properties": {
-        "role": {
-          "const": "Model System",
-          "default": "Model System",
-          "format": "hidden",
-          "title": "Role",
-          "type": "string"
-        },
-        "entity": {
-          "const": "Differentiated Cells",
-          "default": "Differentiated Cells",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "differentiatedCellsType": {
-          "title": "Cell Type",
-          "type": "string",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
-        },
-        "precursorCellName": {
-          "title": "Precursor Cell Name",
-          "type": "string"
-        }
-      },
-      "required": [
-        "differentiatedCellsType",
-        "precursorCellName"
-      ],
-      "title": "Differentiated Cells",
-      "type": "object",
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
-    },
-    "infectiousAgent": {
-      "properties": {
-        "entity": {
-          "const": "Infectious Agent",
-          "default": "Infectious Agent",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "infectiousAgentName": {
-          "title": "Agent Name",
-          "type": "string"
-        },
-        "infectiousAgentDuration": {
-          "title": "Duration",
-          "type": "string"
-        },
-        "infectiousAgentConcentration": {
-          "title": "Concentration",
-          "type": "string"
-        }
-      },
-      "required": [
-        "infectiousAgentName",
-        "infectiousAgentDuration",
-        "infectiousAgentConcentration"
-      ],
-      "title": "Infectious Agent",
-      "type": "object"
-    },
-    "ipsc": {
-      "properties": {
-        "role": {
-          "const": "Model System",
-          "default": "Model System",
-          "format": "hidden",
-          "title": "Role",
-          "type": "string"
-        },
-        "entity": {
-          "const": "iPSC",
-          "default": "iPSC",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "ipscID": {
-          "title": "iPSC ID",
-          "type": "string",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
-        }
-      },
-      "required": [
-        "ipscID"
-      ],
-      "title": "iPSC",
-      "type": "object",
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
-    },
-    "patientSample": {
-      "properties": {
-        "role": {
-          "const": "Biospecimen",
-          "default": "Biospecimen",
-          "format": "hidden",
-          "title": "Role",
-          "type": "string"
-        },
-        "entity": {
-          "const": "Patient Sample",
-          "default": "Patient Sample",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "patientSampleTumorType": {
-          "title": "Tumor Type",
-          "type": "string",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
-        }
-      },
-      "required": [
-        "patientSampleTumorType"
-      ],
-      "title": "Patient Sample",
-      "type": "object",
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
-    },
     "primaryCells": {
       "properties": {
         "role": {
@@ -335,66 +159,6 @@
         }
       }
     },
-    "proteinP": {
-      "properties": {
-        "entity": {
-          "const": "Protein",
-          "default": "Protein",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "proteinPName": {
-          "title": "Protein Name",
-          "type": "string"
-        },
-        "proteinPDuration": {
-          "title": "Duration",
-          "type": "string"
-        },
-        "proteinPConcentration": {
-          "title": "Concentration",
-          "type": "string"
-        }
-      },
-      "required": [
-        "proteinPName",
-        "proteinPDuration",
-        "proteinPConcentration"
-      ],
-      "title": "Protein",
-      "type": "object"
-    },
-    "rnai": {
-      "properties": {
-        "entity": {
-          "const": "RNAi",
-          "default": "RNAi",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "rnaiName": {
-          "title": "Target Sequence",
-          "type": "string"
-        },
-        "rnaiDuration": {
-          "title": "Duration",
-          "type": "string"
-        },
-        "rnaiConcentration": {
-          "title": "Concentration",
-          "type": "string"
-        }
-      },
-      "required": [
-        "rnaiName",
-        "rnaiDuration",
-        "rnaiConcentration"
-      ],
-      "title": "RNAi",
-      "type": "object"
-    },
     "smallMolecule": {
       "properties": {
         "entity": {
@@ -429,43 +193,6 @@
       ],
       "title": "Small Molecule",
       "type": "object"
-    },
-    "tissue": {
-      "properties": {
-        "role": {
-          "const": "Model System",
-          "default": "Model System",
-          "format": "hidden",
-          "title": "Role",
-          "type": "string"
-        },
-        "entity": {
-          "const": "Tissue",
-          "default": "Tissue",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "tissueType": {
-          "title": "Tissue Type",
-          "type": "string",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
-        }
-      },
-      "required": [
-        "tissueType"
-      ],
-      "title": "Tissue",
-      "type": "object",
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
     }
   },
   "properties": {
@@ -484,18 +211,6 @@
         },
         {
           "$ref": "#/$defs/primaryCells"
-        },
-        {
-          "$ref": "#/$defs/differentiatedCells"
-        },
-        {
-          "$ref": "#/$defs/ipsc"
-        },
-        {
-          "$ref": "#/$defs/tissue"
-        },
-        {
-          "$ref": "#/$defs/patientSample"
         }
       ],
       "title": "Experimental System",
@@ -514,18 +229,6 @@
           },
           {
             "$ref": "#/$defs/crispr"
-          },
-          {
-            "$ref": "#/$defs/rnai"
-          },
-          {
-            "$ref": "#/$defs/antibody"
-          },
-          {
-            "$ref": "#/$defs/proteinP"
-          },
-          {
-            "$ref": "#/$defs/infectiousAgent"
           }
         ]
       },
