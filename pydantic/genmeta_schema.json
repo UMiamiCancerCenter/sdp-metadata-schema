@@ -47,7 +47,52 @@
           "type": "string"
         },
         "cellLineName": {
-          "title": "Cell Line Name",
+          "title": "Name",
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
+        },
+        "cellLineLabBatchLabel": {
+          "title": "Lab Batch Label",
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
+        },
+        "cellLineTissue": {
+          "title": "Tissue of Origin",
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
+        },
+        "cellLineOrgan": {
+          "title": "Organ of Origin",
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
+        },
+        "cellLineOrganism": {
+          "title": "Organism of Origin",
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
+        },
+        "cellLineDisease": {
+          "title": "Disease",
           "type": "string",
           "ui": {
             "preview": {
@@ -57,7 +102,12 @@
         }
       },
       "required": [
-        "cellLineName"
+        "cellLineName",
+        "cellLineLabBatchLabel",
+        "cellLineTissue",
+        "cellLineOrgan",
+        "cellLineOrganism",
+        "cellLineDisease"
       ],
       "title": "Cell Line",
       "type": "object",
@@ -76,8 +126,20 @@
           "title": "Entity",
           "type": "string"
         },
-        "crisprTargetGene": {
-          "title": "Target Gene",
+        "crisprName": {
+          "title": "Name",
+          "type": "string"
+        },
+        "crisprTargetGeneSymbol": {
+          "title": "Target Gene Symbol",
+          "type": "string"
+        },
+        "crisprTargetGeneSpecies": {
+          "title": "Target Gene Species",
+          "type": "string"
+        },
+        "crisprLabBatchLabel": {
+          "title": "Lab Batch ID",
           "type": "string"
         },
         "crisprDuration": {
@@ -90,7 +152,10 @@
         }
       },
       "required": [
-        "crisprTargetGene",
+        "crisprName",
+        "crisprTargetGeneSymbol",
+        "crisprTargetGeneSpecies",
+        "crisprLabBatchLabel",
         "crisprDuration",
         "crisprConcentration"
       ],
@@ -350,7 +415,11 @@
           "type": "string"
         },
         "smallMoleculeName": {
-          "title": "Small Molecule Name",
+          "title": "Name",
+          "type": "string"
+        },
+        "smallMoleculeLabBatchLabel": {
+          "title": "Lab Batch Label",
           "type": "string"
         },
         "smallMoleculeDuration": {
@@ -364,6 +433,7 @@
       },
       "required": [
         "smallMoleculeName",
+        "smallMoleculeLabBatchLabel",
         "smallMoleculeDuration",
         "smallMoleculeConcentration"
       ],

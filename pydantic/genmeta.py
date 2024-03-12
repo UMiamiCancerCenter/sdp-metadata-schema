@@ -14,7 +14,8 @@ class smallMolecule(BaseModel):
 
     entity: str = Field(default="Small Molecule", 
                                          json_schema_extra={"const": "Small Molecule", "format": "hidden"})
-    smallMoleculeName: str = Field(title="Small Molecule Name")
+    smallMoleculeName: str = Field(title="Name")
+    smallMoleculeLabBatchLabel: str = Field(title="Lab Batch Label")
     smallMoleculeDuration: str = Field(title="Duration")
     smallMoleculeConcentration: str = Field(title="Concentration")
 
@@ -25,7 +26,10 @@ class crispr(BaseModel):
     entity: str = Field(default="CRISPR", 
                                          json_schema_extra={"const": "CRISPR",
                                                             "format": "hidden"})
-    crisprTargetGene: str = Field(title="Target Gene")
+    crisprName: str = Field(title="Name")
+    crisprTargetGeneSymbol: str = Field(title="Target Gene Symbol")
+    crisprTargetGeneSpecies: str = Field(title="Target Gene Species")
+    crisprLabBatchLabel: str = Field(title="Lab Batch ID")
     crisprDuration: str = Field(title="Duration")
     crisprConcentration: str = Field(title="Concentration")
 
@@ -218,11 +222,38 @@ class cellLine(BaseModel):
     entity: str = Field(default="Cell Line", json_schema_extra={"const": "Cell Line",
                                                                 "format": "hidden",
                                                                 })
-    cellLineName: str = Field(title="Cell Line Name", json_schema_extra={"ui": {
+    cellLineName: str = Field(title="Name", json_schema_extra={"ui": {
                                                                     "preview": {
                                                                     "visible": True
                                                                  }
                                                             }})
+    cellLineLabBatchLabel: str = Field(title="Lab Batch Label", json_schema_extra={"ui": {
+                                                                    "preview": {
+                                                                    "visible": True
+                                                                 }
+                                                            }})
+    cellLineTissue: str = Field(title="Tissue of Origin", json_schema_extra={"ui": {
+                                                                    "preview": {
+                                                                    "visible": True
+                                                                 }
+                                                            }})
+    cellLineOrgan: str = Field(title="Organ of Origin", json_schema_extra={"ui": {
+                                                                    "preview": {
+                                                                    "visible": True
+                                                                 }
+                                                            }})
+    cellLineOrganism: str = Field(title="Organism of Origin", json_schema_extra={"ui": {
+                                                                    "preview": {
+                                                                    "visible": True
+                                                                 }
+                                                            }})
+    cellLineDisease: str = Field(title="Disease", json_schema_extra={"ui": {
+                                                                    "preview": {
+                                                                    "visible": True
+                                                                 }
+                                                            }})
+
+
 
 # class wastewater(BaseModel):
     
