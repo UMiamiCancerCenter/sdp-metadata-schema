@@ -142,22 +142,12 @@
           "default": "",
           "title": "Lab Batch Label",
           "type": "string"
-        },
-        "crisprDuration": {
-          "title": "Duration",
-          "type": "string"
-        },
-        "crisprConcentration": {
-          "title": "Concentration",
-          "type": "string"
         }
       },
       "required": [
         "crisprName",
         "crisprTargetGeneID",
-        "crisprTargetGeneSpecies",
-        "crisprDuration",
-        "crisprConcentration"
+        "crisprTargetGeneSpecies"
       ],
       "title": "CRISPR",
       "type": "object"
@@ -590,15 +580,7 @@
                 },
                 {
                   "field": "name",
-                  "getCellValue": "crisprTargetGene"
-                },
-                {
-                  "field": "duration",
-                  "getCellValue": "crisprDuration"
-                },
-                {
-                  "field": "concentration",
-                  "getCellValue": "crisprConcentration"
+                  "getCellValue": "crisprName"
                 }
               ]
             },

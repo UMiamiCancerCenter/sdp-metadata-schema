@@ -30,8 +30,8 @@ class crispr(BaseModel):
     crisprTargetGeneID: str = Field(title="NCBI Entrez ID for Target Gene")
     crisprTargetGeneSpecies: str = Field(title="Target Gene Species")
     crisprLabBatchLabel: str = Field(default="", title="Lab Batch Label")
-    crisprDuration: str = Field(title="Duration")
-    crisprConcentration: str = Field(title="Concentration")
+    # crisprDuration: str = Field(title="Duration")
+    # crisprConcentration: str = Field(title="Concentration")
 
 class rnai(BaseModel):
 
@@ -511,15 +511,7 @@ class sample(BaseModel):
                 },
                 {
                   "field": "name",
-                  "getCellValue": "crisprTargetGene"
-                },
-                {
-                  "field": "duration",
-                  "getCellValue": "crisprDuration"
-                },
-                {
-                  "field": "concentration",
-                  "getCellValue": "crisprConcentration"
+                  "getCellValue": "crisprName"
                 }
               ]
             },
