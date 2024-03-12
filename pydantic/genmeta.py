@@ -29,7 +29,7 @@ class crispr(BaseModel):
     crisprName: str = Field(title="Name")
     crisprTargetGeneID: str = Field(title="NCBI Entrez ID for Target Gene")
     crisprTargetGeneSpecies: str = Field(title="Target Gene Species")
-    crisprLabBatchLabel: Optional[str] = Field(default=None, title="Lab Batch Label")
+    crisprLabBatchLabel: str = Field(default="", title="Lab Batch Label")
     crisprDuration: str = Field(title="Duration")
     crisprConcentration: str = Field(title="Concentration")
 

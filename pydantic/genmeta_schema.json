@@ -146,16 +146,9 @@
           "type": "string"
         },
         "crisprLabBatchLabel": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "null"
-            }
-          ],
-          "default": null,
-          "title": "Lab Batch Label"
+          "default": "",
+          "title": "Lab Batch Label",
+          "type": "string"
         },
         "crisprDuration": {
           "title": "Duration",
