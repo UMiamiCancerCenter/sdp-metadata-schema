@@ -156,6 +156,63 @@
       ],
       "title": "Small Molecule",
       "type": "object"
+    },
+    "tissue": {
+      "properties": {
+        "role": {
+          "const": "Model System",
+          "default": "Model System",
+          "format": "hidden",
+          "title": "Role",
+          "type": "string"
+        },
+        "entity": {
+          "const": "Tissue",
+          "default": "Tissue",
+          "format": "hidden",
+          "title": "Entity",
+          "type": "string"
+        },
+        "tissueType": {
+          "title": "Tissue Type",
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
+        },
+        "tissueLabBatchLabel": {
+          "default": "",
+          "title": "Lab Batch Label",
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
+        },
+        "tissueOrganism": {
+          "title": "Organism of Origin",
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
+        }
+      },
+      "required": [
+        "tissueType",
+        "tissueOrganism"
+      ],
+      "title": "Tissue",
+      "type": "object",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
     }
   },
   "properties": {
@@ -168,12 +225,21 @@
       "type": "string"
     },
     "experimentalSystem": {
-      "allOf": [
+      "anyOf": [
         {
           "$ref": "#/$defs/cellLine"
+        },
+        {
+          "$ref": "#/$defs/tissue"
         }
       ],
-      "title": "Experimental System"
+      "title": "Experimental System",
+      "type": "object",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
     },
     "perturbation": {
       "items": {

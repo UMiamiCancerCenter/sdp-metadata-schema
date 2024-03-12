@@ -8,6 +8,7 @@ from pydantic import BaseModel, Field, field_validator, ValidationError
 
 from pydantic.config import ConfigDict
 
+
 class smallMolecule(BaseModel):
     
     model_config = ConfigDict(title="Small Molecule")
@@ -143,6 +144,16 @@ class tissue(BaseModel):
     entity: str = Field(default="Tissue", json_schema_extra={"const": "Tissue",
                                                              "format": "hidden"})
     tissueType: str = Field(title="Tissue Type", json_schema_extra={"ui": {
+                                                                    "preview": {
+                                                                    "visible": True
+                                                                 }
+                                                            }})
+    tissueLabBatchLabel: str = Field(default="", title="Lab Batch Label", json_schema_extra={"ui": {
+                                                                    "preview": {
+                                                                    "visible": True
+                                                                 }
+                                                            }})
+    tissueOrganism: str = Field(title="Organism of Origin", json_schema_extra={"ui": {
                                                                     "preview": {
                                                                     "visible": True
                                                                  }
@@ -394,11 +405,11 @@ class sample(BaseModel):
     name: str = Field(title='Sample Name')
     description: str
     experimentalSystem: Union[
-            cellLine
+            cellLine,
             # primaryCells
             # differentiatedCells,
             # ipsc,
-            # tissue,
+            tissue
             # patientSample
             ] = Field(title="Experimental System", json_schema_extra={
                                   "ui": {
