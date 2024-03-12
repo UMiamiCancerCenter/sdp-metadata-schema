@@ -91,7 +91,7 @@
       "properties": {
         "entity": {
           "const": "CRISPR",
-          "default": "CRISPR",
+          "default": "CRISPR knockout",
           "format": "hidden",
           "title": "Entity",
           "type": "string"
@@ -100,17 +100,17 @@
           "title": "Name",
           "type": "string"
         },
+        "crisprLabBatchLabel": {
+          "default": "",
+          "title": "Lab Batch Label",
+          "type": "string"
+        },
         "crisprTargetGeneID": {
           "title": "NCBI Entrez ID for Target Gene",
           "type": "string"
         },
         "crisprTargetGeneSpecies": {
           "title": "Target Gene Species",
-          "type": "string"
-        },
-        "crisprLabBatchLabel": {
-          "default": "",
-          "title": "Lab Batch Label",
           "type": "string"
         }
       },

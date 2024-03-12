@@ -24,13 +24,13 @@ class crispr(BaseModel):
     
     model_config = ConfigDict(title="CRISPR")
 
-    entity: str = Field(default="CRISPR", 
+    entity: str = Field(default="CRISPR knockout", 
                                          json_schema_extra={"const": "CRISPR",
                                                             "format": "hidden"})
     crisprName: str = Field(title="Name")
+    crisprLabBatchLabel: str = Field(default="", title="Lab Batch Label")
     crisprTargetGeneID: str = Field(title="NCBI Entrez ID for Target Gene")
     crisprTargetGeneSpecies: str = Field(title="Target Gene Species")
-    crisprLabBatchLabel: str = Field(default="", title="Lab Batch Label")
     # crisprDuration: str = Field(title="Duration")
     # crisprConcentration: str = Field(title="Concentration")
 
