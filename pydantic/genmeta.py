@@ -15,7 +15,7 @@ class smallMolecule(BaseModel):
     entity: str = Field(default="Small Molecule", 
                                          json_schema_extra={"const": "Small Molecule", "format": "hidden"})
     smallMoleculeName: str = Field(title="Name")
-    smallMoleculeLabBatchLabel: str = Field(title="Lab Batch Label")
+    smallMoleculeLabBatchLabel: str = Field(default=None, title="Lab Batch Label")
     smallMoleculeDuration: str = Field(title="Duration")
     smallMoleculeConcentration: str = Field(title="Concentration")
 
@@ -29,7 +29,7 @@ class crispr(BaseModel):
     crisprName: str = Field(title="Name")
     crisprTargetGeneSymbol: str = Field(title="Target Gene Symbol")
     crisprTargetGeneSpecies: str = Field(title="Target Gene Species")
-    crisprLabBatchLabel: str = Field(title="Lab Batch ID")
+    crisprLabBatchLabel: str = Field(default=None, title="Lab Batch ID")
     crisprDuration: str = Field(title="Duration")
     crisprConcentration: str = Field(title="Concentration")
 
@@ -227,7 +227,7 @@ class cellLine(BaseModel):
                                                                     "visible": True
                                                                  }
                                                             }})
-    cellLineLabBatchLabel: str = Field(title="Lab Batch Label", json_schema_extra={"ui": {
+    cellLineLabBatchLabel: str = Field(default=None, title="Lab Batch Label", json_schema_extra={"ui": {
                                                                     "preview": {
                                                                     "visible": True
                                                                  }
