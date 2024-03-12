@@ -122,43 +122,6 @@
       "title": "CRISPR",
       "type": "object"
     },
-    "primaryCells": {
-      "properties": {
-        "role": {
-          "const": "Model System",
-          "default": "Model System",
-          "format": "hidden",
-          "title": "Role",
-          "type": "string"
-        },
-        "entity": {
-          "const": "Primary Cells",
-          "default": "Primary Cells",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "primaryCellsType": {
-          "title": "Cell Type",
-          "type": "string",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
-        }
-      },
-      "required": [
-        "primaryCellsType"
-      ],
-      "title": "Primary Cells",
-      "type": "object",
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
-    },
     "smallMolecule": {
       "properties": {
         "entity": {
@@ -205,21 +168,12 @@
       "type": "string"
     },
     "experimentalSystem": {
-      "anyOf": [
+      "allOf": [
         {
           "$ref": "#/$defs/cellLine"
-        },
-        {
-          "$ref": "#/$defs/primaryCells"
         }
       ],
-      "title": "Experimental System",
-      "type": "object",
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
+      "title": "Experimental System"
     },
     "perturbation": {
       "items": {

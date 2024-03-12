@@ -394,8 +394,8 @@ class sample(BaseModel):
     name: str = Field(title='Sample Name')
     description: str
     experimentalSystem: Union[
-            cellLine,
-            primaryCells
+            cellLine
+            # primaryCells
             # differentiatedCells,
             # ipsc,
             # tissue,
