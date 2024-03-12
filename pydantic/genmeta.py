@@ -15,7 +15,7 @@ class smallMolecule(BaseModel):
     entity: str = Field(default="Small Molecule", 
                                          json_schema_extra={"const": "Small Molecule", "format": "hidden"})
     smallMoleculeName: str = Field(title="Name")
-    smallMoleculeLabBatchLabel: Optional[str] = Field(default=None, title="Lab Batch Label")
+    smallMoleculeLabBatchLabel: str = Field(default="", title="Lab Batch Label")
     smallMoleculeDuration: str = Field(title="Duration")
     smallMoleculeConcentration: str = Field(title="Concentration")
 
@@ -227,7 +227,7 @@ class cellLine(BaseModel):
                                                                     "visible": True
                                                                  }
                                                             }})
-    cellLineLabBatchLabel: Optional[str] = Field(default=None, title="Lab Batch Label", json_schema_extra={"ui": {
+    cellLineLabBatchLabel: str = Field(default="", title="Lab Batch Label", json_schema_extra={"ui": {
                                                                     "preview": {
                                                                     "visible": True
                                                                  }
