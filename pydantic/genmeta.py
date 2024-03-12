@@ -401,11 +401,7 @@ class sample(BaseModel):
             tissue,
             patientSample
             ] = Field(title="Experimental System", json_schema_extra={
-                                  "ui": {
-                                    "preview": {
-                                    "visible": True
-                                    }
-                                }, "type": "object",
+                                  "type": "object"
                             })
     perturbation: List[Union[
         smallMolecule,
