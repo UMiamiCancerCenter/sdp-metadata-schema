@@ -1,0 +1,284 @@
+{
+  "$defs": {
+    "Model_Bulk_RNA-seq": {
+      "properties": {
+        "Bulk RNA-seq": {
+          "title": "Bulk Rna-Seq",
+          "type": "string"
+        }
+      },
+      "required": [
+        "Bulk RNA-seq"
+      ],
+      "title": "Model Bulk RNA-seq",
+      "type": "object"
+    },
+    "Model_DNA-seq": {
+      "properties": {
+        "DNA-seq": {
+          "title": "Dna-Seq",
+          "type": "string"
+        }
+      },
+      "required": [
+        "DNA-seq"
+      ],
+      "title": "Model DNA-seq",
+      "type": "object"
+    },
+    "Model_L1000": {
+      "properties": {
+        "L1000": {
+          "title": "L1000",
+          "type": "string"
+        }
+      },
+      "required": [
+        "L1000"
+      ],
+      "title": "Model L1000",
+      "type": "object"
+    },
+    "Model_biospecimen": {
+      "properties": {
+        "biospecimen": {
+          "title": "Biospecimen",
+          "type": "string"
+        }
+      },
+      "required": [
+        "biospecimen"
+      ],
+      "title": "Model biospecimen",
+      "type": "object"
+    },
+    "Model_cell_line": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "Model cell line",
+      "type": "object"
+    },
+    "Model_differentiated_cells": {
+      "properties": {
+        "differentiated cells": {
+          "title": "Differentiated Cells",
+          "type": "string"
+        }
+      },
+      "required": [
+        "differentiated cells"
+      ],
+      "title": "Model differentiated cells",
+      "type": "object"
+    },
+    "Model_experimental_sample": {
+      "properties": {
+        "children": {
+          "$ref": "#/$defs/Model_perturbation"
+        }
+      },
+      "required": [
+        "children"
+      ],
+      "title": "Model experimental sample",
+      "type": "object"
+    },
+    "Model_experimental_subject": {
+      "properties": {
+        "children": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Model_model_system"
+            },
+            {
+              "$ref": "#/$defs/Model_biospecimen"
+            },
+            {
+              "$ref": "#/$defs/Model_target"
+            }
+          ],
+          "title": "Children"
+        }
+      },
+      "required": [
+        "children"
+      ],
+      "title": "Model experimental subject",
+      "type": "object"
+    },
+    "Model_extracellular_matrix": {
+      "properties": {
+        "extracellular matrix": {
+          "title": "Extracellular Matrix",
+          "type": "string"
+        }
+      },
+      "required": [
+        "extracellular matrix"
+      ],
+      "title": "Model extracellular matrix",
+      "type": "object"
+    },
+    "Model_iPSC": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "Model iPSC",
+      "type": "object"
+    },
+    "Model_model_system": {
+      "properties": {
+        "children": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Model_cell_line"
+            },
+            {
+              "$ref": "#/$defs/Model_iPSC"
+            },
+            {
+              "$ref": "#/$defs/Model_differentiated_cells"
+            }
+          ],
+          "title": "Children"
+        }
+      },
+      "required": [
+        "children"
+      ],
+      "title": "Model model system",
+      "type": "object"
+    },
+    "Model_perturbagen": {
+      "properties": {
+        "perturbagen": {
+          "title": "Perturbagen",
+          "type": "string"
+        }
+      },
+      "required": [
+        "perturbagen"
+      ],
+      "title": "Model perturbagen",
+      "type": "object"
+    },
+    "Model_perturbation": {
+      "properties": {
+        "children": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Model_experimental_subject"
+            },
+            {
+              "$ref": "#/$defs/Model_reagent"
+            }
+          ],
+          "title": "Children"
+        }
+      },
+      "required": [
+        "children"
+      ],
+      "title": "Model perturbation",
+      "type": "object"
+    },
+    "Model_reagent": {
+      "properties": {
+        "children": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Model_perturbagen"
+            },
+            {
+              "$ref": "#/$defs/Model_extracellular_matrix"
+            }
+          ],
+          "title": "Children"
+        }
+      },
+      "required": [
+        "children"
+      ],
+      "title": "Model reagent",
+      "type": "object"
+    },
+    "Model_sample": {
+      "properties": {
+        "children": {
+          "$ref": "#/$defs/Model_experimental_sample"
+        }
+      },
+      "required": [
+        "children"
+      ],
+      "title": "Model sample",
+      "type": "object"
+    },
+    "Model_scRNA-seq": {
+      "properties": {
+        "scRNA-seq": {
+          "title": "Scrna-Seq",
+          "type": "string"
+        }
+      },
+      "required": [
+        "scRNA-seq"
+      ],
+      "title": "Model scRNA-seq",
+      "type": "object"
+    },
+    "Model_target": {
+      "properties": {
+        "target": {
+          "title": "Target",
+          "type": "string"
+        }
+      },
+      "required": [
+        "target"
+      ],
+      "title": "Model target",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "children": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Model_Bulk_RNA-seq"
+        },
+        {
+          "$ref": "#/$defs/Model_scRNA-seq"
+        },
+        {
+          "$ref": "#/$defs/Model_DNA-seq"
+        },
+        {
+          "$ref": "#/$defs/Model_L1000"
+        },
+        {
+          "$ref": "#/$defs/Model_sample"
+        }
+      ],
+      "title": "Children"
+    }
+  },
+  "required": [
+    "children"
+  ],
+  "title": "Model dataset",
+  "type": "object"
+}
