@@ -27,6 +27,7 @@
         },
         "cellLineLabBatchLabel": {
           "title": "Lab Batch Label",
+          "default": "123456",
           "type": "string",
           "ui": {
             "preview": {
