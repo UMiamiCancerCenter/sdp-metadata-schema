@@ -16,6 +16,17 @@
       "type": "string",
       "title": "Description"
     },
+    "scope": {
+      "title": "Scope",
+      "description": "The privacy level of the dataset",
+      "type": "string",
+      "enum": [
+        "Public",
+        "Shared",
+        "Private"
+      ],
+      "default": "Private"
+    },
     "assay": {
       "title": "Readout Assay",
       "description": "Supported readout assays: DNA-seq, Bulk RNA-seq, scRNA-seq, L1000, ATAC-seq, qPCR",
