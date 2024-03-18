@@ -238,7 +238,7 @@ class cellLine(BaseModel):
                                                                     "visible": True
                                                                  }
                                                             }})
-    cellLineLabBatchLabel: str = Field(default="", title="Lab Batch Label", json_schema_extra={"ui": {
+    cellLineLabBatchLabel: str = Field(default="unknown", title="Lab Batch Label", json_schema_extra={"ui": {
                                                                     "preview": {
                                                                     "visible": True
                                                                  }
@@ -258,7 +258,7 @@ class cellLine(BaseModel):
                                                                     "visible": True
                                                                  }
                                                             }})
-    cellLineDisease: str = Field(title="Disease", json_schema_extra={"ui": {
+    cellLineDisease: str = Field(default="not diseased", title="Disease", json_schema_extra={"ui": {
                                                                     "preview": {
                                                                     "visible": True
                                                                  }
@@ -297,6 +297,12 @@ class patientSample(BaseModel):
     entity: str = Field(default="Patient Sample", 
                         json_schema_extra={"const": "Patient Sample",
                                            "format": "hidden"})
+    patientSampleID: str = Field(title="Patient Sample ID", 
+                                        json_schema_extra={"ui": {
+                                                                    "preview": {
+                                                                    "visible": True
+                                                                 }
+                                                            }})
     patientSampleTumorType: str = Field(title="Tumor Type", 
                                         json_schema_extra={"ui": {
                                                                     "preview": {
@@ -409,8 +415,8 @@ class sample(BaseModel):
             # primaryCells
             # differentiatedCells,
             # ipsc,
-            tissue
-            # patientSample
+            # tissue,
+            patientSample
             ] = Field(title="Experimental System", json_schema_extra={
                                   "ui": {
                                     "preview": {

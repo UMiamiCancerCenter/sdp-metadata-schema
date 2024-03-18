@@ -26,7 +26,7 @@
           }
         },
         "cellLineLabBatchLabel": {
-          "default": "",
+          "default": "unknown",
           "title": "Lab Batch Label",
           "type": "string",
           "ui": {
@@ -63,6 +63,7 @@
           }
         },
         "cellLineDisease": {
+          "default": "not diseased",
           "title": "Disease",
           "type": "string",
           "ui": {
@@ -76,8 +77,7 @@
         "cellLineName",
         "cellLineTissue",
         "cellLineOrgan",
-        "cellLineOrganism",
-        "cellLineDisease"
+        "cellLineOrganism"
       ],
       "title": "Cell Line",
       "type": "object",
@@ -122,6 +122,53 @@
       "title": "CRISPR knockout",
       "type": "object"
     },
+    "patientSample": {
+      "properties": {
+        "role": {
+          "const": "Biospecimen",
+          "default": "Biospecimen",
+          "format": "hidden",
+          "title": "Role",
+          "type": "string"
+        },
+        "entity": {
+          "const": "Patient Sample",
+          "default": "Patient Sample",
+          "format": "hidden",
+          "title": "Entity",
+          "type": "string"
+        },
+        "patientSampleID": {
+          "title": "Patient Sample ID",
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
+        },
+        "patientSampleTumorType": {
+          "title": "Tumor Type",
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
+        }
+      },
+      "required": [
+        "patientSampleID",
+        "patientSampleTumorType"
+      ],
+      "title": "Patient Sample",
+      "type": "object",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
+    },
     "smallMolecule": {
       "properties": {
         "entity": {
@@ -156,63 +203,6 @@
       ],
       "title": "Small Molecule",
       "type": "object"
-    },
-    "tissue": {
-      "properties": {
-        "role": {
-          "const": "Model System",
-          "default": "Model System",
-          "format": "hidden",
-          "title": "Role",
-          "type": "string"
-        },
-        "entity": {
-          "const": "Tissue",
-          "default": "Tissue",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "tissueType": {
-          "title": "Tissue Type",
-          "type": "string",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
-        },
-        "tissueLabBatchLabel": {
-          "default": "",
-          "title": "Lab Batch Label",
-          "type": "string",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
-        },
-        "tissueOrganism": {
-          "title": "Organism of Origin",
-          "type": "string",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
-        }
-      },
-      "required": [
-        "tissueType",
-        "tissueOrganism"
-      ],
-      "title": "Tissue",
-      "type": "object",
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
     }
   },
   "properties": {
@@ -230,7 +220,7 @@
           "$ref": "#/$defs/cellLine"
         },
         {
-          "$ref": "#/$defs/tissue"
+          "$ref": "#/$defs/patientSample"
         }
       ],
       "title": "Experimental System",

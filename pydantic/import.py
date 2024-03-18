@@ -8,7 +8,7 @@ def create_pydantic_model(class_name, fields):
     for field in fields:
         field_name = field['fieldname']
         field_type = eval(field['fieldtype_schema'])
-        attributes[field_name] = (field_type, None)
+        attributes[field_name] = (field_type, ...)
     return create_model(class_name, **attributes)
 
 

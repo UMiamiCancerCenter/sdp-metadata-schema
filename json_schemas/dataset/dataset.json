@@ -6,7 +6,11 @@
   "properties": {
     "name": {
       "type": "string",
-      "title": "Name"
+      "title": "Dataset Name"
+    },
+    "labName": {
+      "type": "string",
+      "title": "Lab Name"
     },
     "description": {
       "type": "string",
@@ -20,9 +24,7 @@
         "DNA-seq",
         "RNA-seq",
         "scRNA-seq",
-        "L1000",
-        "ATAC-seq",
-        "qPCR"
+        "ATAC-seq"
       ],
       "default": "DNA-seq"
     },
