@@ -26,7 +26,6 @@
           }
         },
         "cellLineLabBatchLabel": {
-          "default": null,
           "title": "Lab Batch Label",
           "type": "string",
           "ui": {
@@ -63,7 +62,6 @@
           }
         },
         "cellLineDisease": {
-          "default": null,
           "title": "Disease",
           "type": "string",
           "ui": {
