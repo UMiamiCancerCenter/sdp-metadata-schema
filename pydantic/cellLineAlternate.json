@@ -1,0 +1,88 @@
+{
+  "properties": {
+    "cellLineName": {
+      "title": "Celllinename",
+      "type": "string"
+    },
+    "cellLineLabCanonicalID": {
+      "title": "Celllinelabcanonicalid",
+      "type": "string"
+    },
+    "cellLineLabName": {
+      "title": "Celllinelabname",
+      "type": "string"
+    },
+    "cellLineLabBatchLabel": {
+      "title": "Celllinelabbatchlabel",
+      "type": "string"
+    },
+    "cellLineProviderName": {
+      "title": "Celllineprovidername",
+      "type": "string"
+    },
+    "cellLineProviderCatalogID": {
+      "title": "Celllineprovidercatalogid",
+      "type": "string"
+    },
+    "cellLineProviderBatchID": {
+      "title": "Celllineproviderbatchid",
+      "type": "string"
+    },
+    "cellLineOrganism": {
+      "title": "Celllineorganism",
+      "type": "string"
+    },
+    "cellLineOrgan": {
+      "title": "Celllineorgan",
+      "type": "string"
+    },
+    "cellLineTissue": {
+      "title": "Celllinetissue",
+      "type": "string"
+    },
+    "cellLineCellType": {
+      "title": "Celllinecelltype",
+      "type": "string"
+    },
+    "cellLineDonorSex": {
+      "title": "Celllinedonorsex",
+      "type": "string"
+    },
+    "cellLineDonorAge": {
+      "title": "Celllinedonorage",
+      "type": "number"
+    },
+    "cellLineDonorEthnicity": {
+      "title": "Celllinedonorethnicity",
+      "type": "string"
+    },
+    "cellLineHealthStatus": {
+      "title": "Celllinehealthstatus",
+      "type": "string"
+    },
+    "cellLineDisease": {
+      "title": "Celllinedisease",
+      "type": "string"
+    }
+  },
+  "required": [
+    "cellLineName",
+    "cellLineLabCanonicalID",
+    "cellLineLabName",
+    "cellLineLabBatchLabel",
+    "cellLineProviderName",
+    "cellLineProviderCatalogID",
+    "cellLineProviderBatchID",
+    "cellLineOrganism",
+    "cellLineOrgan",
+    "cellLineTissue",
+    "cellLineCellType",
+    "cellLineDonorSex",
+    "cellLineDonorAge",
+    "cellLineDonorEthnicity",
+    "cellLineHealthStatus",
+    "cellLineDisease"
+  ],
+  "title": "cellLine",
+  "type": "object"
+}

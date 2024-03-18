@@ -1,0 +1,86 @@
+{
+    "properties": {
+        "cellLineName": {
+            "default": null,
+            "title": "Celllinename",
+            "type": "string"
+        },
+        "cellLineLabCanonicalID": {
+            "default": null,
+            "title": "Celllinelabcanonicalid",
+            "type": "string"
+        },
+        "cellLineLabName": {
+            "default": null,
+            "title": "Celllinelabname",
+            "type": "string"
+        },
+        "cellLineLabBatchLabel": {
+            "default": null,
+            "title": "Celllinelabbatchlabel",
+            "type": "string"
+        },
+        "cellLineProviderName": {
+            "default": null,
+            "title": "Celllineprovidername",
+            "type": "string"
+        },
+        "cellLineProviderCatalogID": {
+            "default": null,
+            "title": "Celllineprovidercatalogid",
+            "type": "string"
+        },
+        "cellLineProviderBatchID": {
+            "default": null,
+            "title": "Celllineproviderbatchid",
+            "type": "string"
+        },
+        "cellLineOrganism": {
+            "default": null,
+            "title": "Celllineorganism",
+            "type": "string"
+        },
+        "cellLineOrgan": {
+            "default": null,
+            "title": "Celllineorgan",
+            "type": "string"
+        },
+        "cellLineTissue": {
+            "default": null,
+            "title": "Celllinetissue",
+            "type": "string"
+        },
+        "cellLineCellType": {
+            "default": null,
+            "title": "Celllinecelltype",
+            "type": "string"
+        },
+        "cellLineDonorSex": {
+            "default": null,
+            "title": "Celllinedonorsex",
+            "type": "string"
+        },
+        "cellLineDonorAge": {
+            "default": null,
+            "title": "Celllinedonorage",
+            "type": "number"
+        },
+        "cellLineDonorEthnicity": {
+            "default": null,
+            "title": "Celllinedonorethnicity",
+            "type": "string"
+        },
+        "cellLineHealthStatus": {
+            "default": null,
+            "title": "Celllinehealthstatus",
+            "type": "string"
+        },
+        "cellLineDisease": {
+            "default": null,
+            "title": "Celllinedisease",
+            "type": "string"
+        }
+    },
+    "title": "cellLine",
+    "type": "object"
+}
