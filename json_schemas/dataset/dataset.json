@@ -21,11 +21,11 @@
       "description": "The privacy level of the dataset",
       "type": "string",
       "enum": [
-        "Public",
-        "Shared",
-        "Private"
+        "private",
+        "shared",
+        "public"
       ],
-      "default": "Private"
+      "default": "private"
     },
     "assay": {
       "title": "Readout Assay",
