@@ -65,10 +65,7 @@
         "minLenght": 1,
         "enum": [
           "Cell Line",
-          "Primary Cells",
-          "Differentiated Cells",
-          "iPSC",
-          "Tissue"
+          "Patient Sample"
         ],
         "default": "Cell Line"
       }
