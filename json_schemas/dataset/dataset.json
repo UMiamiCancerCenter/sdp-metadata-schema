@@ -29,6 +29,7 @@
     },
     "assay": {
       "title": "Readout Assay",
+      "description": "Supported readout assays: DNA-seq, RNA-seq, scRNA-seq, ATAC-seq",
       "type": "string",
       "enum": [
         "DNA-seq",
@@ -43,16 +44,15 @@
       "description": "The cell, tissue, or other biological/biochemical material used as the subject of the experiment.",
       "title": "Experimental System",
       "items":{
+        "title": "Experimental System",
         "type": "string",
         "minLength": 1,
-        "title": "Experimental System",
         "enum": [
           "Cell Line",
           "Patient Sample"
         ],
         "default": "Cell Line"
-      },
-      "uniqueItems": true
+      }
     }
   },
   "required": [
