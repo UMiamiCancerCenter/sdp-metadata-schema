@@ -6,63 +6,56 @@
   "properties": {
     "name": {
       "type": "string",
-      "title": "Name"
+      "title": "Dataset Name"
+    },
+    "labName": {
+      "type": "string",
+      "title": "Lab Name"
     },
     "description": {
       "type": "string",
       "title": "Description"
     },
+    "scope": {
+      "title": "Scope",
+      "description": "The privacy level of the dataset",
+      "type": "string",
+      "enum": [
+        "private",
+        "shared",
+        "public"
+      ],
+      "default": "private"
+    },
     "assay": {
       "title": "Readout Assay",
-      "description": "Supported readout assays: DNA-seq, Bulk RNA-seq, scRNA-seq, L1000, ATAC-seq, qPCR",
       "type": "string",
       "enum": [
         "DNA-seq",
         "RNA-seq",
         "scRNA-seq",
-        "L1000",
-        "ATAC-seq",
-        "qPCR"
+        "ATAC-seq"
       ],
       "default": "DNA-seq"
-    },
-    "processingSteps": {
-      "type": "array",
-      "description": "Processing steps performed on dataset samples before the readout assay.",
-      "title": "Processing Steps",
-      "items": {
-        "title": "Processing Step",
-        "type": "string",
-        "minLength": 1,
-        "enum": [
-          "Differentiation", 
-          "Pretreatment",
-          "Filtration"
-        ],
-        "default": "Differentiation"
-      }
     },
     "experimentalSystem": {
       "type": "array",
       "description": "The cell, tissue, or other biological/biochemical material used as the subject of the experiment.",
       "title": "Experimental System",
       "items":{
-        "title": "Experimental System",
         "type": "string",
-        "minLenght": 1,
         "enum": [
           "Cell Line",
-          "Primary Cells",
-          "Differentiated Cells",
-          "iPSC",
-          "Tissue"
+          "Patient Sample"
         ],
         "default": "Cell Line"
-      }
+      },
+      "uniqueItems": true
     }
   },
   "required": [
     "name",
+    "labName",
     "description",
     "assay"
   ]
