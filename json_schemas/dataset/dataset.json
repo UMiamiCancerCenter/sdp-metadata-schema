@@ -1,7 +1,6 @@
 {
   "title": "Dataset",
-  "description": "This document records the details of a Dataset's metadata content.",
-  "version": "0.0.2",
+  "version": "0.1",
   "type": "object",
   "properties": {
     "name": {
@@ -42,7 +41,7 @@
     },
       "experimentalSystem": {
         "type": "array",
-        "description": "The type of biological/biochemical material(s) used as the subject(s) of the readout assay. Please select all that apply, considering all samples in the dataset. This selection will expand in future versions. If you do not see your system represented here, feel free to leave this field blank.",
+        "description": "The type of biological/biochemical material(s) used as the subject(s) of the readout assay. Please select all that apply, considering all samples in the dataset. This selection will expand in future versions of this form. If you do not see your system represented here, feel free to leave this field blank.",
         "title": "Experimental System",
         "items":{
           "type": "string",
@@ -57,7 +56,6 @@
   "required": [
     "name",
     "labName",
-    "description",
     "scope",
     "assay"
   ]
