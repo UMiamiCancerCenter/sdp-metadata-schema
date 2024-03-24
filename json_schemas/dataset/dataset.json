@@ -32,9 +32,9 @@
       "description": "Supported readout assays: DNA-seq, RNA-seq, scRNA-seq, ATAC-seq",
       "type": "string",
       "enum": [
-        "DNA-seq",
         "RNA-seq",
         "scRNA-seq",
+        "DNA-seq",
         "ATAC-seq"
       ]
     },
