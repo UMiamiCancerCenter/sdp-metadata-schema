@@ -44,7 +44,6 @@
       "description": "The cell, tissue, or other biological/biochemical material used as the subject of the experiment.",
       "title": "Experimental System",
       "items":{
-        "title": "Experimental System",
         "type": "string",
         "enum": [
           "Cell Line",
