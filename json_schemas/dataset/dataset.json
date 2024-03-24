@@ -48,8 +48,7 @@
         "enum": [
           "Cell Line",
           "Patient Sample"
-        ],
-        "default": "Cell Line"
+        ]
       }
     }
   },
