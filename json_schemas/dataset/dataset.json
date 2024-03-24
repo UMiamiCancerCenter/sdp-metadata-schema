@@ -46,7 +46,6 @@
       "items":{
         "title": "Experimental System",
         "type": "string",
-        "minLength": 1,
         "enum": [
           "Cell Line",
           "Patient Sample"
