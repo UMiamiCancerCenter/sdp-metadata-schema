@@ -36,7 +36,8 @@
         "scRNA-seq",
         "DNA-seq",
         "ATAC-seq"
-      ]
+      ],
+      "default": "RNA-seq"
     },
     "experimentalSystem": {
       "type": "array",
