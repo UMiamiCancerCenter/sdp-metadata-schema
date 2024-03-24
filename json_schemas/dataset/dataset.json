@@ -50,8 +50,7 @@
             "Patient Sample"
           ],
           "default": "Cell Line"
-        },
-        "uniqueItems": true
+        }
       }
   },
   "required": [
