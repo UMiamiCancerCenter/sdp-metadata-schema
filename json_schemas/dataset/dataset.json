@@ -51,6 +51,7 @@
         ],
         "default": "Cell Line"
       },
+      "minItems": 1,
       "uniqueItems": true
     }
   },
