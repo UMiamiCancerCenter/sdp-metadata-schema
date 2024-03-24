@@ -24,8 +24,7 @@
         "private",
         "shared",
         "public"
-      ],
-      "default": "private"
+      ]
     },
     "assay": {
       "title": "Readout Assay",
@@ -36,12 +35,11 @@
         "scRNA-seq",
         "DNA-seq",
         "ATAC-seq"
-      ],
-      "default": "RNA-seq"
+      ]
     },
       "experimentalSystem": {
         "type": "array",
-        "description": "The cell, tissue, or other biological/biochemical material used as the subject of the experiment.",
+        "description": "The cell, tissue, or other biological/biochemical material used as the subject of the experiment. Select all that apply.",
         "title": "Experimental System",
         "items":{
           "type": "string",
@@ -50,13 +48,14 @@
             "Patient Sample"
           ]
         },
-        "uniqueItems": true,
-        "default": "Cell Line"
+        "uniqueItems": true
       }
   },
   "required": [
     "name",
     "labName",
-    "description"
+    "description",
+    "scope",
+    "assay"
   ]
 }
