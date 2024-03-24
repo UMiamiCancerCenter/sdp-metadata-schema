@@ -1,24 +1,27 @@
 {
-  "title": "SDP Dataset",
-  "description": "This document records the details of the SDP dataset metadata content",
+  "title": "Dataset",
+  "description": "This document records the details of a Dataset's metadata content.",
   "version": "0.0.2",
   "type": "object",
   "properties": {
     "name": {
       "type": "string",
-      "title": "Dataset Name"
+      "title": "Dataset Name",
+      "description": "Please provide a unique name for the dataset."
     },
     "labName": {
       "type": "string",
-      "title": "Lab Name"
+      "title": "Lab Name",
+      "description": "Please enter the name of the lab to which the dataset belongs."
     },
     "description": {
       "type": "string",
-      "title": "Description"
+      "title": "Description",
+      "description": "Please include a description or any other helpful comments or annotations for the dataset."
     },
     "scope": {
       "title": "Scope",
-      "description": "The privacy level of the dataset",
+      "description": "The privacy level of the dataset.",
       "type": "string",
       "enum": [
         "private",
@@ -28,7 +31,7 @@
     },
     "assay": {
       "title": "Readout Assay",
-      "description": "Supported readout assays: RNA-seq, scRNA-seq, DNA-seq, ATAC-seq",
+      "description": "The assay performed on the samples in the dataset to measure changes in or ask questions about the experimental system. Currently supported readout assays include: RNA-seq, scRNA-seq, DNA-seq, ATAC-seq.",
       "type": "string",
       "enum": [
         "RNA-seq",
@@ -39,7 +42,7 @@
     },
       "experimentalSystem": {
         "type": "array",
-        "description": "The cell, tissue, or other biological/biochemical material used as the subject of the experiment. Select all that apply.",
+        "description": "The type of biological/biochemical material(s) used as the subject(s) of the readout assay. Please select all that apply, considering all samples in the dataset. This selection will expand in future versions. If you do not see your system represented here, feel free to leave this field blank.",
         "title": "Experimental System",
         "items":{
           "type": "string",
