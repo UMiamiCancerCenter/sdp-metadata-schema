@@ -51,7 +51,8 @@
           ],
           "default": "Cell Line"
         },
-        "uniqueItems": true
+        "uniqueItems": true,
+        "default": "Cell Line"
       }
   },
   "required": [
