@@ -432,7 +432,7 @@ class sample(BaseModel):
             })
     
     name: str = Field(title='Sample Name', 
-                      description="Please provide a unique name for the dataset.")
+                      description="Please provide a unique name for the sample.")
     description: str = Field(title="Description", 
                              description="Please include a description or any other helpful comments or annotations for the sample.")
     experimentalSystem: Union[

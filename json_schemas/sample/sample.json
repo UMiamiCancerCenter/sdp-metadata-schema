@@ -224,7 +224,7 @@
   },
   "properties": {
     "name": {
-      "description": "Please provide a unique name for the dataset.",
+      "description": "Please provide a unique name for the sample.",
       "title": "Sample Name",
       "type": "string"
     },
