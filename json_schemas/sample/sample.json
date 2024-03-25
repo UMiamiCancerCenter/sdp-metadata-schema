@@ -2,21 +2,22 @@
   "$defs": {
     "cellLine": {
       "properties": {
-        "role": {
+        "materialResearchObjectRole": {
           "const": "Model System",
           "default": "Model System",
           "format": "hidden",
-          "title": "Role",
+          "title": "Materialresearchobjectrole",
           "type": "string"
         },
-        "entity": {
+        "materialResearchObjectType": {
           "const": "Cell Line",
           "default": "Cell Line",
           "format": "hidden",
-          "title": "Entity",
+          "title": "Materialresearchobjecttype",
           "type": "string"
         },
         "cellLineName": {
+          "description": "The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'.",
           "title": "Name",
           "type": "string",
           "ui": {
@@ -26,7 +27,7 @@
           }
         },
         "cellLineLabBatchLabel": {
-          "default": "",
+          "description": "Lab-specific ID for the  batch of cells used in the experiment.",
           "title": "Lab Batch Label",
           "type": "string",
           "ui": {
@@ -36,6 +37,7 @@
           }
         },
         "cellLineTissue": {
+          "description": "Tissue from which the cell line was derived, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'.",
           "title": "Tissue of Origin",
           "type": "string",
           "ui": {
@@ -45,6 +47,7 @@
           }
         },
         "cellLineOrgan": {
+          "description": "Organ from which the cell line was derived, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.",
           "title": "Organ of Origin",
           "type": "string",
           "ui": {
@@ -54,6 +57,7 @@
           }
         },
         "cellLineOrganism": {
+          "description": "Organism from which the cell line was derived, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
           "title": "Organism of Origin",
           "type": "string",
           "ui": {
@@ -63,6 +67,7 @@
           }
         },
         "cellLineDisease": {
+          "description": "If the cell line came from a diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the origin tissue or cells were not diseased.",
           "title": "Disease",
           "type": "string",
           "ui": {
@@ -76,8 +81,7 @@
         "cellLineName",
         "cellLineTissue",
         "cellLineOrgan",
-        "cellLineOrganism",
-        "cellLineDisease"
+        "cellLineOrganism"
       ],
       "title": "Cell Line",
       "type": "object",
@@ -119,12 +123,53 @@
       },
       "required": [
         "crisprName",
-        "crisprLabBatchLabel",
         "crisprTargetGeneID",
         "crisprTargetGeneSpecies"
       ],
       "title": "CRISPR knockout",
       "type": "object"
+    },
+    "patientSample": {
+      "properties": {
+        "materialResearchObjectRole": {
+          "const": "Biospecimen",
+          "default": "Biospecimen",
+          "format": "hidden",
+          "title": "Materialresearchobjectrole",
+          "type": "string"
+        },
+        "materialResearchObjectType": {
+          "const": "Patient Sample",
+          "default": "Patient Sample",
+          "format": "hidden",
+          "title": "Materialresearchobjecttype",
+          "type": "string"
+        },
+        "patientSampleId": {
+          "title": "Patient Sample ID",
+          "type": "string"
+        },
+        "patientSampleDisease": {
+          "description": "If the sample came from diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the tissue was not diseased.",
+          "title": "Tumor Type",
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
+        }
+      },
+      "required": [
+        "patientSampleId"
+      ],
+      "title": "Patient Sample",
+      "type": "object",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
     },
     "smallMolecule": {
       "properties": {
@@ -137,7 +182,7 @@
         },
         "smallMoleculeName": {
           "description": "The common, primary, recognizable name for the small molecule being used.",
-          "title": "Name",
+          "title": "Small Molecule Name",
           "type": "string"
         },
         "smallMoleculeLabBatchLabel": {
@@ -168,7 +213,6 @@
       },
       "required": [
         "smallMoleculeName",
-        "smallMoleculeLabBatchLabel",
         "smallMoleculeDuration",
         "smallMoleculeDurationUnits",
         "smallMoleculeConcentration",
@@ -176,71 +220,16 @@
       ],
       "title": "Small Molecule",
       "type": "object"
-    },
-    "tissue": {
-      "properties": {
-        "role": {
-          "const": "Model System",
-          "default": "Model System",
-          "format": "hidden",
-          "title": "Role",
-          "type": "string"
-        },
-        "entity": {
-          "const": "Tissue",
-          "default": "Tissue",
-          "format": "hidden",
-          "title": "Entity",
-          "type": "string"
-        },
-        "tissueType": {
-          "title": "Tissue Type",
-          "type": "string",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
-        },
-        "tissueLabBatchLabel": {
-          "default": "",
-          "title": "Lab Batch Label",
-          "type": "string",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
-        },
-        "tissueOrganism": {
-          "title": "Organism of Origin",
-          "type": "string",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
-        }
-      },
-      "required": [
-        "tissueType",
-        "tissueOrganism"
-      ],
-      "title": "Tissue",
-      "type": "object",
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
     }
   },
   "properties": {
     "name": {
+      "description": "Please provide a unique name for the dataset.",
       "title": "Sample Name",
       "type": "string"
     },
     "description": {
+      "description": "Please include a description or any other helpful comments or annotations for the sample.",
       "title": "Description",
       "type": "string"
     },
@@ -250,7 +239,7 @@
           "$ref": "#/$defs/cellLine"
         },
         {
-          "$ref": "#/$defs/tissue"
+          "$ref": "#/$defs/patientSample"
         }
       ],
       "title": "Experimental System",
@@ -418,7 +407,6 @@
   },
   "required": [
     "name",
-    "description",
     "experimentalSystem",
     "perturbation"
   ],
@@ -439,7 +427,7 @@
         },
         {
           "field": "experimentalSystemColumn",
-          "getCellValue": "experimentalSystem.entity",
+          "getCellValue": "experimentalSystem.materialResearchObjectType",
           "title": "Experimental System"
         }
       ]

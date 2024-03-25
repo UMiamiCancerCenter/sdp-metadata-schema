@@ -16,7 +16,7 @@ class smallMolecule(BaseModel):
 
     materialResearchObjectType: str = Field(default="Small Molecule", 
                                          json_schema_extra={"const": "Small Molecule", "format": "hidden"})
-    smallMoleculeName: str = Field(title="Name", 
+    smallMoleculeName: str = Field(title="Small Molecule Name", 
                                    description="The common, primary, recognizable name for the small molecule being used.")
     smallMoleculeLabBatchLabel: str = Field(title="Lab Batch Label",
                                              description="Lab-specific ID for the batch of small molecule used in the experiment.")
@@ -235,44 +235,57 @@ class ipsc(BaseModel):
 
 class cellLine(BaseModel):
 
-    model_config = ConfigDict(title="Cell Line", json_schema_extra={"ui": {
+    model_config = ConfigDict(title="Cell Line", 
+                              description="Immortalized (naturally or engineered), genetically uniform tissue cells able to reproduce indefinitely in standard culture conditions.", 
+                              json_schema_extra={"ui": {
                                     "preview": {
                                      "visible": True
                                     }
                                     }
                                 })
-    role: str = Field(default="Model System", 
-                        json_schema_extra={"const": "Model System",
+    materialResearchObjectRole: str = Field(default="Model System",
+                                            json_schema_extra={"const": "Model System",
                                            "format": "hidden"})
-    entity: str = Field(default="Cell Line", json_schema_extra={"const": "Cell Line",
+    materialResearchObjectType: str = Field(default="Cell Line", 
+                                            json_schema_extra={"const": "Cell Line",
                                                                 "format": "hidden",
                                                                 })
-    cellLineName: str = Field(title="Name", json_schema_extra={"ui": {
+    cellLineName: str = Field(title="Name", 
+                              description="The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'.", 
+                              json_schema_extra={"ui": {
+                                  "preview": {
+                                      "visible": True
+                                      }}})
+    cellLineLabBatchLabel: str = Field(title="Lab Batch Label", 
+                                       description="Lab-specific ID for the  batch of cells used in the experiment.", json_schema_extra={"ui": {
                                                                     "preview": {
                                                                     "visible": True
                                                                  }
                                                             }})
-    cellLineLabBatchLabel: str = Field(default="", title="Lab Batch Label", json_schema_extra={"ui": {
+    cellLineTissue: str = Field(title="Tissue of Origin", 
+                                description="Tissue from which the cell line was derived, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'.", 
+                                json_schema_extra={"ui": {
+                                                                    "preview": {
+                                                                    "visible": True
+                                                                  }
+                                                            }})
+    cellLineOrgan: str = Field(title="Organ of Origin", 
+                               description="Organ from which the cell line was derived, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.",
+                               json_schema_extra={"ui": {
                                                                     "preview": {
                                                                     "visible": True
                                                                  }
                                                             }})
-    cellLineTissue: str = Field(title="Tissue of Origin", json_schema_extra={"ui": {
+    cellLineOrganism: str = Field(title="Organism of Origin", 
+                                  description="Organism from which the cell line was derived, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
+                                  json_schema_extra={"ui": {
                                                                     "preview": {
                                                                     "visible": True
                                                                  }
                                                             }})
-    cellLineOrgan: str = Field(title="Organ of Origin", json_schema_extra={"ui": {
-                                                                    "preview": {
-                                                                    "visible": True
-                                                                 }
-                                                            }})
-    cellLineOrganism: str = Field(title="Organism of Origin", json_schema_extra={"ui": {
-                                                                    "preview": {
-                                                                    "visible": True
-                                                                 }
-                                                            }})
-    cellLineDisease: str = Field(title="Disease", json_schema_extra={"ui": {
+    cellLineDisease: str = Field(title="Disease", 
+                                 description="If the cell line came from a diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the origin tissue or cells were not diseased.",
+                                 json_schema_extra={"ui": {
                                                                     "preview": {
                                                                     "visible": True
                                                                  }
@@ -305,14 +318,15 @@ class patientSample(BaseModel):
                                     }
                                     }
                                 })
-    role: str = Field(default="Biospecimen", 
+    materialResearchObjectRole: str = Field(default="Biospecimen", 
                         json_schema_extra={"const": "Biospecimen",
                                            "format": "hidden"})
-    entity: str = Field(default="Patient Sample", 
+    materialResearchObjectType: str = Field(default="Patient Sample", 
                         json_schema_extra={"const": "Patient Sample",
                                            "format": "hidden"})
-    patientSampleTumorType: str = Field(title="Tumor Type", 
-                                        json_schema_extra={"ui": {
+    patientSampleId: str = Field(title="Patient Sample ID")
+    patientSampleDisease: str = Field(title="Tumor Type", description="If the sample came from diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the tissue was not diseased.",
+                                      json_schema_extra={"ui": {
                                                                     "preview": {
                                                                     "visible": True
                                                                  }
@@ -410,22 +424,24 @@ class sample(BaseModel):
                             {
                             "field": "experimentalSystemColumn",
                             "title": "Experimental System",
-                            "getCellValue": "experimentalSystem.entity"
+                            "getCellValue": "experimentalSystem.materialResearchObjectType"
                             }
                         ]
                     }
                 }
             })
     
-    name: str = Field(title='Sample Name')
-    description: str
+    name: str = Field(title='Sample Name', 
+                      description="Please provide a unique name for the dataset.")
+    description: str = Field(title="Description", 
+                             description="Please include a description or any other helpful comments or annotations for the sample.")
     experimentalSystem: Union[
             cellLine,
             # primaryCells
             # differentiatedCells,
             # ipsc,
-            tissue
-            # patientSample
+            # tissue
+            patientSample
             ] = Field(title="Experimental System", json_schema_extra={
                                   "ui": {
                                     "preview": {
