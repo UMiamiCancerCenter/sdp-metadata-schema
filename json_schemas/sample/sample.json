@@ -124,35 +124,51 @@
     },
     "smallMolecule": {
       "properties": {
-        "entity": {
+        "materialResearchObjectType": {
           "const": "Small Molecule",
           "default": "Small Molecule",
           "format": "hidden",
-          "title": "Entity",
+          "title": "Materialresearchobjecttype",
           "type": "string"
         },
         "smallMoleculeName": {
+          "description": "The common, primary, recognizable name for the small molecule being used.",
           "title": "Name",
           "type": "string"
         },
         "smallMoleculeLabBatchLabel": {
-          "default": "",
+          "description": "Lab-specific ID for the batch of small molecule used in the experiment.",
           "title": "Lab Batch Label",
           "type": "string"
         },
         "smallMoleculeDuration": {
+          "description": "Amount of time the biological system was exposed to the small molecule.",
           "title": "Duration",
+          "type": "number"
+        },
+        "smallMoleculeDurationUnits": {
+          "description": "Time units of exposure (e.g. minutes, hours, days).",
+          "title": "Time Units",
           "type": "string"
         },
         "smallMoleculeConcentration": {
+          "description": "Concentration of small molecule the biological system was exposed to.",
           "title": "Concentration",
+          "type": "number"
+        },
+        "smallMoleculeConcentrationUnits": {
+          "description": "Concentration units of exposure (e.g. nM, \u03bcM, ng/\u03bcL).",
+          "title": "Concentration Units",
           "type": "string"
         }
       },
       "required": [
         "smallMoleculeName",
+        "smallMoleculeLabBatchLabel",
         "smallMoleculeDuration",
-        "smallMoleculeConcentration"
+        "smallMoleculeDurationUnits",
+        "smallMoleculeConcentration",
+        "smallMoleculeConcentrationUnits"
       ],
       "title": "Small Molecule",
       "type": "object"
@@ -427,5 +443,6 @@
     "preview": {
       "visible": true
     }
-  }
+  },
+  "version": "0.1"
 }

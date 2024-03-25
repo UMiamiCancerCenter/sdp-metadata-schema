@@ -11,14 +11,23 @@ from pydantic.config import ConfigDict
 
 class smallMolecule(BaseModel):
     
-    model_config = ConfigDict(title="Small Molecule")
+    model_config = ConfigDict(title="Small Molecule", 
+                              description="Molecules with a low molecular weight (generally < 900 daltons) used to perturb the biological system, often binding to specific biological targets.")
 
-    entity: str = Field(default="Small Molecule", 
+    materialResearchObjectType: str = Field(default="Small Molecule", 
                                          json_schema_extra={"const": "Small Molecule", "format": "hidden"})
-    smallMoleculeName: str = Field(title="Name")
-    smallMoleculeLabBatchLabel: str = Field(default="", title="Lab Batch Label")
-    smallMoleculeDuration: str = Field(title="Duration")
-    smallMoleculeConcentration: str = Field(title="Concentration")
+    smallMoleculeName: str = Field(title="Name", 
+                                   description="The common, primary, recognizable name for the small molecule being used.")
+    smallMoleculeLabBatchLabel: str = Field(title="Lab Batch Label",
+                                             description="Lab-specific ID for the batch of small molecule used in the experiment.")
+    smallMoleculeDuration: float = Field(title="Duration", 
+                                         description="Amount of time the biological system was exposed to the small molecule.")
+    smallMoleculeDurationUnits: str = Field(title="Time Units",
+                                             description="Time units of exposure (e.g. minutes, hours, days).")
+    smallMoleculeConcentration: float = Field(title="Concentration", 
+                                              description="Concentration of small molecule the biological system was exposed to.")
+    smallMoleculeConcentrationUnits: str = Field(title="Concentration Units", 
+                                                 description="Concentration units of exposure (e.g. nM, μM, ng/μL).")
 
 class crispr(BaseModel):
     
@@ -376,6 +385,7 @@ class patientSample(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
+                        "version": "0.1",
                         "ui": {
                         "preview": {
                         "visible": True
