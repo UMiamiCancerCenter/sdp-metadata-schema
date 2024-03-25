@@ -2,18 +2,18 @@
   "$defs": {
     "cellLine": {
       "properties": {
-        "materialResearchObjectRole": {
+        "role": {
           "const": "Model System",
           "default": "Model System",
           "format": "hidden",
-          "title": "Materialresearchobjectrole",
+          "title": "Role",
           "type": "string"
         },
-        "materialResearchObjectType": {
+        "entity": {
           "const": "Cell Line",
           "default": "Cell Line",
           "format": "hidden",
-          "title": "Materialresearchobjecttype",
+          "title": "Entity",
           "type": "string"
         },
         "cellLineName": {
@@ -79,9 +79,11 @@
       },
       "required": [
         "cellLineName",
+        "cellLineLabBatchLabel",
         "cellLineTissue",
         "cellLineOrgan",
-        "cellLineOrganism"
+        "cellLineOrganism",
+        "cellLineDisease"
       ],
       "title": "Cell Line",
       "type": "object",
@@ -93,11 +95,11 @@
     },
     "crispr": {
       "properties": {
-        "materialResearchObjectType": {
+        "entity": {
           "const": "CRISPR knockout",
           "default": "CRISPR knockout",
           "format": "hidden",
-          "title": "Materialresearchobjecttype",
+          "title": "Entity",
           "type": "string"
         },
         "crisprName": {
@@ -123,6 +125,7 @@
       },
       "required": [
         "crisprName",
+        "crisprLabBatchLabel",
         "crisprTargetGeneID",
         "crisprTargetGeneSpecies"
       ],
@@ -131,18 +134,18 @@
     },
     "patientSample": {
       "properties": {
-        "materialResearchObjectRole": {
+        "role": {
           "const": "Biospecimen",
           "default": "Biospecimen",
           "format": "hidden",
-          "title": "Materialresearchobjectrole",
+          "title": "Role",
           "type": "string"
         },
-        "materialResearchObjectType": {
+        "entity": {
           "const": "Patient Sample",
           "default": "Patient Sample",
           "format": "hidden",
-          "title": "Materialresearchobjecttype",
+          "title": "Entity",
           "type": "string"
         },
         "patientSampleId": {
@@ -151,7 +154,7 @@
         },
         "patientSampleDisease": {
           "description": "If the sample came from diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the tissue was not diseased.",
-          "title": "Tumor Type",
+          "title": "Disease",
           "type": "string",
           "ui": {
             "preview": {
@@ -161,7 +164,8 @@
         }
       },
       "required": [
-        "patientSampleId"
+        "patientSampleId",
+        "patientSampleDisease"
       ],
       "title": "Patient Sample",
       "type": "object",
@@ -173,11 +177,11 @@
     },
     "smallMolecule": {
       "properties": {
-        "materialResearchObjectType": {
+        "entity": {
           "const": "Small Molecule",
           "default": "Small Molecule",
           "format": "hidden",
-          "title": "Materialresearchobjecttype",
+          "title": "Entity",
           "type": "string"
         },
         "smallMoleculeName": {
@@ -213,6 +217,7 @@
       },
       "required": [
         "smallMoleculeName",
+        "smallMoleculeLabBatchLabel",
         "smallMoleculeDuration",
         "smallMoleculeDurationUnits",
         "smallMoleculeConcentration",
@@ -407,6 +412,7 @@
   },
   "required": [
     "name",
+    "description",
     "experimentalSystem",
     "perturbation"
   ],
@@ -427,7 +433,7 @@
         },
         {
           "field": "experimentalSystemColumn",
-          "getCellValue": "experimentalSystem.materialResearchObjectType",
+          "getCellValue": "experimentalSystem.entity",
           "title": "Experimental System"
         }
       ]

@@ -14,7 +14,7 @@ class smallMolecule(BaseModel):
     model_config = ConfigDict(title="Small Molecule", 
                               description="Molecules with a low molecular weight (generally < 900 daltons) used to perturb the biological system, often binding to specific biological targets.")
 
-    materialResearchObjectType: str = Field(default="Small Molecule", 
+    entity: str = Field(default="Small Molecule", 
                                          json_schema_extra={"const": "Small Molecule", "format": "hidden"})
     smallMoleculeName: str = Field(title="Small Molecule Name", 
                                    description="The common, primary, recognizable name for the small molecule being used.")
@@ -34,7 +34,7 @@ class crispr(BaseModel):
     model_config = ConfigDict(title="CRISPR knockout", 
                               description="A Cas9/gRNA ribonucleoprotein complex that introduces permanent loss-of-function mutations in a gene.")
 
-    materialResearchObjectType: str = Field(default="CRISPR knockout", 
+    entity: str = Field(default="CRISPR knockout", 
                                          json_schema_extra={"const": "CRISPR knockout", 
                                                             "format": "hidden"})
     crisprName: str = Field(title="Name", 
@@ -243,10 +243,10 @@ class cellLine(BaseModel):
                                     }
                                     }
                                 })
-    materialResearchObjectRole: str = Field(default="Model System",
+    role: str = Field(default="Model System",
                                             json_schema_extra={"const": "Model System",
                                            "format": "hidden"})
-    materialResearchObjectType: str = Field(default="Cell Line", 
+    entity: str = Field(default="Cell Line", 
                                             json_schema_extra={"const": "Cell Line",
                                                                 "format": "hidden",
                                                                 })
@@ -318,10 +318,10 @@ class patientSample(BaseModel):
                                     }
                                     }
                                 })
-    materialResearchObjectRole: str = Field(default="Biospecimen", 
+    role: str = Field(default="Biospecimen", 
                         json_schema_extra={"const": "Biospecimen",
                                            "format": "hidden"})
-    materialResearchObjectType: str = Field(default="Patient Sample", 
+    entity: str = Field(default="Patient Sample", 
                         json_schema_extra={"const": "Patient Sample",
                                            "format": "hidden"})
     patientSampleId: str = Field(title="Patient Sample ID")
@@ -425,7 +425,7 @@ class sample(BaseModel):
                             {
                             "field": "experimentalSystemColumn",
                             "title": "Experimental System",
-                            "getCellValue": "experimentalSystem.materialResearchObjectType"
+                            "getCellValue": "experimentalSystem.entity"
                             }
                         ]
                     }
@@ -530,7 +530,7 @@ class sample(BaseModel):
               "columns": [
                 {
                   "field": "entity",
-                  "getCellValue": "materialResearchObjectType"
+                  "getCellValue": "entity"
                 },
                 {
                   "field": "name",
@@ -550,7 +550,7 @@ class sample(BaseModel):
               "columns": [
                 {
                   "field": "entity",
-                  "getCellValue": "materialResearchObjectType"
+                  "getCellValue": "entity"
                 },
                 {
                   "field": "name",
