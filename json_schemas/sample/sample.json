@@ -164,7 +164,6 @@
       },
       "required": [
         "smallMoleculeName",
-        "smallMoleculeLabBatchLabel",
         "smallMoleculeDuration",
         "smallMoleculeDurationUnits",
         "smallMoleculeConcentration",
