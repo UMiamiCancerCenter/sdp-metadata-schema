@@ -325,7 +325,8 @@ class patientSample(BaseModel):
                         json_schema_extra={"const": "Patient Sample",
                                            "format": "hidden"})
     patientSampleId: str = Field(title="Patient Sample ID")
-    patientSampleDisease: str = Field(title="Tumor Type", description="If the sample came from diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the tissue was not diseased.",
+    patientSampleDisease: str = Field(title="Disease", 
+                                      description="If the sample came from diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the tissue was not diseased.",
                                       json_schema_extra={"ui": {
                                                                     "preview": {
                                                                     "visible": True
@@ -529,7 +530,7 @@ class sample(BaseModel):
               "columns": [
                 {
                   "field": "entity",
-                  "getCellValue": "entity"
+                  "getCellValue": "materialResearchObjectType"
                 },
                 {
                   "field": "name",
@@ -549,7 +550,7 @@ class sample(BaseModel):
               "columns": [
                 {
                   "field": "entity",
-                  "getCellValue": "entity"
+                  "getCellValue": "materialResearchObjectType"
                 },
                 {
                   "field": "name",
