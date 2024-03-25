@@ -79,11 +79,9 @@
       },
       "required": [
         "cellLineName",
-        "cellLineLabBatchLabel",
         "cellLineTissue",
         "cellLineOrgan",
-        "cellLineOrganism",
-        "cellLineDisease"
+        "cellLineOrganism"
       ],
       "title": "Cell Line",
       "type": "object",
@@ -164,8 +162,7 @@
         }
       },
       "required": [
-        "patientSampleId",
-        "patientSampleDisease"
+        "patientSampleId"
       ],
       "title": "Patient Sample",
       "type": "object",
@@ -217,7 +214,6 @@
       },
       "required": [
         "smallMoleculeName",
-        "smallMoleculeLabBatchLabel",
         "smallMoleculeDuration",
         "smallMoleculeDurationUnits",
         "smallMoleculeConcentration",
@@ -412,7 +408,6 @@
   },
   "required": [
     "name",
-    "description",
     "experimentalSystem",
     "perturbation"
   ],
