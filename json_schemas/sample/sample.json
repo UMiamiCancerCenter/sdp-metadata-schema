@@ -89,33 +89,37 @@
     },
     "crispr": {
       "properties": {
-        "entity": {
+        "materialResearchObjectType": {
           "const": "CRISPR knockout",
           "default": "CRISPR knockout",
           "format": "hidden",
-          "title": "Entity",
+          "title": "Materialresearchobjecttype",
           "type": "string"
         },
         "crisprName": {
+          "description": "The primary name of the CRISPR reagent.",
           "title": "Name",
           "type": "string"
         },
         "crisprLabBatchLabel": {
-          "default": "",
+          "description": "Lab-specific ID for the batch of CRISPR reagent used in the experiment.",
           "title": "Lab Batch Label",
           "type": "string"
         },
         "crisprTargetGeneID": {
+          "description": "The NCBI Entrez Gene ID for the gene knocked out by CRISPR.",
           "title": "NCBI Entrez ID for Target Gene",
           "type": "string"
         },
         "crisprTargetGeneSpecies": {
+          "description": "The species of the target locus, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
           "title": "Target Gene Species",
           "type": "string"
         }
       },
       "required": [
         "crisprName",
+        "crisprLabBatchLabel",
         "crisprTargetGeneID",
         "crisprTargetGeneSpecies"
       ],
@@ -164,6 +168,7 @@
       },
       "required": [
         "smallMoleculeName",
+        "smallMoleculeLabBatchLabel",
         "smallMoleculeDuration",
         "smallMoleculeDurationUnits",
         "smallMoleculeConcentration",

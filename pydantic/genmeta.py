@@ -31,15 +31,20 @@ class smallMolecule(BaseModel):
 
 class crispr(BaseModel):
     
-    model_config = ConfigDict(title="CRISPR knockout")
+    model_config = ConfigDict(title="CRISPR knockout", 
+                              description="A Cas9/gRNA ribonucleoprotein complex that introduces permanent loss-of-function mutations in a gene.")
 
-    entity: str = Field(default="CRISPR knockout", 
-                                         json_schema_extra={"const": "CRISPR knockout",
+    materialResearchObjectType: str = Field(default="CRISPR knockout", 
+                                         json_schema_extra={"const": "CRISPR knockout", 
                                                             "format": "hidden"})
-    crisprName: str = Field(title="Name")
-    crisprLabBatchLabel: str = Field(default="", title="Lab Batch Label")
-    crisprTargetGeneID: str = Field(title="NCBI Entrez ID for Target Gene")
-    crisprTargetGeneSpecies: str = Field(title="Target Gene Species")
+    crisprName: str = Field(title="Name", 
+                            description="The primary name of the CRISPR reagent.")
+    crisprLabBatchLabel: str = Field(title="Lab Batch Label", 
+                                     description="Lab-specific ID for the batch of CRISPR reagent used in the experiment.")
+    crisprTargetGeneID: str = Field(title="NCBI Entrez ID for Target Gene", 
+                                    description="The NCBI Entrez Gene ID for the gene knocked out by CRISPR.")
+    crisprTargetGeneSpecies: str = Field(title="Target Gene Species", 
+                                         description="The species of the target locus, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.")
     # crisprDuration: str = Field(title="Duration")
     # crisprConcentration: str = Field(title="Concentration")
 
