@@ -1,0 +1,188 @@
+{
+    "properties": {
+        "categorydescriptorid": {
+            "title": "Categorydescriptorid",
+            "type": "string"
+        },
+        "metadatacategoryid": {
+            "title": "Metadatacategoryid",
+            "type": "string"
+        },
+        "fieldname": {
+            "title": "Fieldname",
+            "type": "string"
+        },
+        "fieldpropertyiri": {
+            "title": "Fieldpropertyiri",
+            "type": "string"
+        },
+        "description": {
+            "title": "Description",
+            "type": "string"
+        },
+        "importance": {
+            "title": "Importance",
+            "type": "string"
+        },
+        "fieldtype_schema": {
+            "title": "Fieldtype Schema",
+            "type": "string"
+        },
+        "ontologyname": {
+            "title": "Ontologyname",
+            "type": "string"
+        },
+        "ontologybranch": {
+            "title": "Ontologybranch",
+            "type": "string"
+        },
+        "ontologyiri": {
+            "title": "Ontologyiri",
+            "type": "string"
+        },
+        "controlledvocabulary": {
+            "title": "Controlledvocabulary",
+            "type": "string"
+        },
+        "dateloaded": {
+            "title": "Dateloaded",
+            "type": "string"
+        },
+        "pittable": {
+            "title": "Pittable",
+            "type": "string"
+        },
+        "pitmilestone": {
+            "title": "Pitmilestone",
+            "type": "string"
+        },
+        "pharosspec": {
+            "title": "Pharosspec",
+            "type": "string"
+        },
+        "metadataspec": {
+            "title": "Metadataspec",
+            "type": "string"
+        },
+        "fieldcardinality": {
+            "title": "Fieldcardinality",
+            "type": "string"
+        },
+        "dataupdated": {
+            "title": "Dataupdated",
+            "type": "string"
+        },
+        "fieldtype_cedar": {
+            "title": "Fieldtype Cedar",
+            "type": "string"
+        },
+        "custom_importance": {
+            "title": "Custom Importance",
+            "type": "string"
+        },
+        "associated_milestone_link": {
+            "title": "Associated Milestone Link",
+            "type": "string"
+        },
+        "fieldtype_os": {
+            "title": "Fieldtype Os",
+            "type": "string"
+        },
+        "default_value": {
+            "title": "Default Value",
+            "type": "string"
+        },
+        "date_format": {
+            "title": "Date Format",
+            "type": "string"
+        },
+        "range_min": {
+            "title": "Range Min",
+            "type": "string"
+        },
+        "range_max": {
+            "title": "Range Max",
+            "type": "string"
+        },
+        "datafile_field": {
+            "title": "Datafile Field",
+            "type": "string"
+        },
+        "dcc_field": {
+            "title": "Dcc Field",
+            "type": "string"
+        },
+        "fieldtype_dcc": {
+            "title": "Fieldtype Dcc",
+            "type": "string"
+        },
+        "dcc_importance": {
+            "title": "Dcc Importance",
+            "type": "string"
+        },
+        "dcc_units": {
+            "title": "Dcc Units",
+            "type": "string"
+        },
+        "dcc_validation": {
+            "title": "Dcc Validation",
+            "type": "string"
+        },
+        "dcc_logic": {
+            "title": "Dcc Logic",
+            "type": "string"
+        },
+        "numberfractiondigits": {
+            "title": "Numberfractiondigits",
+            "type": "string"
+        },
+        "showwhen": {
+            "title": "Showwhen",
+            "type": "string"
+        },
+        "capturetime_os": {
+            "title": "Capturetime Os",
+            "type": "string"
+        }
+    },
+    "required": [
+        "categorydescriptorid",
+        "metadatacategoryid",
+        "fieldname",
+        "fieldpropertyiri",
+        "description",
+        "importance",
+        "fieldtype_schema",
+        "ontologyname",
+        "ontologybranch",
+        "ontologyiri",
+        "controlledvocabulary",
+        "dateloaded",
+        "pittable",
+        "pitmilestone",
+        "pharosspec",
+        "metadataspec",
+        "fieldcardinality",
+        "dataupdated",
+        "fieldtype_cedar",
+        "custom_importance",
+        "associated_milestone_link",
+        "fieldtype_os",
+        "default_value",
+        "date_format",
+        "range_min",
+        "range_max",
+        "datafile_field",
+        "dcc_field",
+        "fieldtype_dcc",
+        "dcc_importance",
+        "dcc_units",
+        "dcc_validation",
+        "dcc_logic",
+        "numberfractiondigits",
+        "showwhen",
+        "capturetime_os"
+    ],
+    "title": "TestModel",
+    "type": "object"
+}
