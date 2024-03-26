@@ -54,8 +54,8 @@
       }
   },
   "required": [
-    "name",
-    "description",
+    "datasetName",
+    "datasetDescription",
     "scope",
     "assay"
   ]
