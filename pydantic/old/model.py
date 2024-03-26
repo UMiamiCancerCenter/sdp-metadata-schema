@@ -6,14 +6,23 @@ from __future__ import annotations
 
 from typing import Optional
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 import json
 
-def 
+def pop_default_ui(s):
+    s.pop('default')
+    s.update({"ui": 
+              {
+                  "preview": 
+                  {
+                      "visible": True
+                      }
+                      }
+                      })
 class CellLine(BaseModel):
     name: str
     type: str
-    organism: Optional[str] = None
+    organism: str = Field(default="", json_schema_extra=lambda x: x.pop("default"))
 
 print(json.dumps(CellLine.model_json_schema(), indent=2))

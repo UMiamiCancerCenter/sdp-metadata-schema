@@ -56,9 +56,9 @@
             }
           }
         },
-        "cellLineOrganism": {
-          "description": "Organism from which the cell line was derived, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
-          "title": "Organism of Origin",
+        "cellLineSpecies": {
+          "description": "Species from which the cell line was derived, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
+          "title": "Species of Origin",
           "type": "string",
           "ui": {
             "preview": {
@@ -79,11 +79,8 @@
       },
       "required": [
         "cellLineName",
-        "cellLineLabBatchLabel",
         "cellLineTissue",
-        "cellLineOrgan",
-        "cellLineOrganism",
-        "cellLineDisease"
+        "cellLineSpecies"
       ],
       "title": "Cell Line",
       "type": "object",
@@ -112,6 +109,11 @@
           "title": "Lab Batch Label",
           "type": "string"
         },
+        "crisprTargetGeneSymbol": {
+          "description": "The HGNC (human), MGI (mouse), RGD (rat), or ZFIN (zebrafish) symbol of the gene knocked out by CRISPR for knockout, or VGNC gene symbols for other vertebrate species.",
+          "title": "Target Gene Symbol",
+          "type": "string"
+        },
         "crisprTargetGeneID": {
           "description": "The NCBI Entrez Gene ID for the gene knocked out by CRISPR.",
           "title": "NCBI Entrez ID for Target Gene",
@@ -125,8 +127,7 @@
       },
       "required": [
         "crisprName",
-        "crisprLabBatchLabel",
-        "crisprTargetGeneID",
+        "crisprTargetGeneSymbol",
         "crisprTargetGeneSpecies"
       ],
       "title": "CRISPR knockout",
@@ -164,8 +165,7 @@
         }
       },
       "required": [
-        "patientSampleId",
-        "patientSampleDisease"
+        "patientSampleId"
       ],
       "title": "Patient Sample",
       "type": "object",
@@ -200,8 +200,8 @@
           "type": "number"
         },
         "smallMoleculeDurationUnits": {
-          "description": "Time units of exposure (e.g. minutes, hours, days).",
-          "title": "Time Units",
+          "description": "Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology and must be a child term of 'time unit'.",
+          "title": "Duration Units",
           "type": "string"
         },
         "smallMoleculeConcentration": {
@@ -210,14 +210,13 @@
           "type": "number"
         },
         "smallMoleculeConcentrationUnits": {
-          "description": "Concentration units of exposure (e.g. nM, \u03bcM, ng/\u03bcL).",
+          "description": "Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Units of Measurement Ontology and must be a child term of 'concentration unit'.",
           "title": "Concentration Units",
           "type": "string"
         }
       },
       "required": [
         "smallMoleculeName",
-        "smallMoleculeLabBatchLabel",
         "smallMoleculeDuration",
         "smallMoleculeDurationUnits",
         "smallMoleculeConcentration",
@@ -228,12 +227,12 @@
     }
   },
   "properties": {
-    "name": {
+    "sampleName": {
       "description": "Please provide a unique name for the sample.",
       "title": "Sample Name",
       "type": "string"
     },
-    "description": {
+    "sampleDescription": {
       "description": "Please include a description or any other helpful comments or annotations for the sample.",
       "title": "Description",
       "type": "string"
@@ -309,7 +308,7 @@
                 }
               ]
             },
-            "CRISPR": {
+            "CRISPR knockout": {
               "columns": [
                 {
                   "field": "entity",
@@ -411,8 +410,8 @@
     }
   },
   "required": [
-    "name",
-    "description",
+    "sampleName",
+    "sampleDescription",
     "experimentalSystem",
     "perturbation"
   ],
@@ -423,13 +422,13 @@
       "columns": [
         {
           "field": "sampleName",
-          "getCellValue": "name",
+          "getCellValue": "sampleName",
           "title": "Sample Name"
         },
         {
           "field": "description",
-          "getCellValue": "description",
-          "title": "Description"
+          "getCellValue": "sampleDescription",
+          "title": "Sample Description"
         },
         {
           "field": "experimentalSystemColumn",

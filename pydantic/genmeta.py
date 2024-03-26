@@ -8,6 +8,19 @@ from pydantic import BaseModel, Field, field_validator, ValidationError
 
 from pydantic.config import ConfigDict
 
+def pop_default(s):
+    s.pop('default')
+
+def pop_default_ui(s):
+    s.pop('default')
+    s.update({"ui": 
+              {
+                  "preview": 
+                  {
+                      "visible": True
+                      }
+                      }
+                      })
 
 class smallMolecule(BaseModel):
     
@@ -19,15 +32,15 @@ class smallMolecule(BaseModel):
     smallMoleculeName: str = Field(title="Small Molecule Name", 
                                    description="The common, primary, recognizable name for the small molecule being used.")
     smallMoleculeLabBatchLabel: str = Field(title="Lab Batch Label",
-                                             description="Lab-specific ID for the batch of small molecule used in the experiment.")
+                                             description="Lab-specific ID for the batch of small molecule used in the experiment.", default="", json_schema_extra=pop_default)
     smallMoleculeDuration: float = Field(title="Duration", 
                                          description="Amount of time the biological system was exposed to the small molecule.")
-    smallMoleculeDurationUnits: str = Field(title="Time Units",
-                                             description="Time units of exposure (e.g. minutes, hours, days).")
+    smallMoleculeDurationUnits: str = Field(title="Duration Units",
+                                             description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology and must be a child term of 'time unit'.")
     smallMoleculeConcentration: float = Field(title="Concentration", 
                                               description="Concentration of small molecule the biological system was exposed to.")
     smallMoleculeConcentrationUnits: str = Field(title="Concentration Units", 
-                                                 description="Concentration units of exposure (e.g. nM, μM, ng/μL).")
+                                                 description="Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Units of Measurement Ontology and must be a child term of 'concentration unit'.")
 
 class crispr(BaseModel):
     
@@ -40,9 +53,11 @@ class crispr(BaseModel):
     crisprName: str = Field(title="Name", 
                             description="The primary name of the CRISPR reagent.")
     crisprLabBatchLabel: str = Field(title="Lab Batch Label", 
-                                     description="Lab-specific ID for the batch of CRISPR reagent used in the experiment.")
+                                     description="Lab-specific ID for the batch of CRISPR reagent used in the experiment.", default="", json_schema_extra=pop_default)
+    crisprTargetGeneSymbol: str = Field(title="Target Gene Symbol",
+                                         description="The HGNC (human), MGI (mouse), RGD (rat), or ZFIN (zebrafish) symbol of the gene knocked out by CRISPR for knockout, or VGNC gene symbols for other vertebrate species.")
     crisprTargetGeneID: str = Field(title="NCBI Entrez ID for Target Gene", 
-                                    description="The NCBI Entrez Gene ID for the gene knocked out by CRISPR.")
+                                    description="The NCBI Entrez Gene ID for the gene knocked out by CRISPR.", default="", json_schema_extra=pop_default)
     crisprTargetGeneSpecies: str = Field(title="Target Gene Species", 
                                          description="The species of the target locus, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.")
     # crisprDuration: str = Field(title="Duration")
@@ -257,11 +272,7 @@ class cellLine(BaseModel):
                                       "visible": True
                                       }}})
     cellLineLabBatchLabel: str = Field(title="Lab Batch Label", 
-                                       description="Lab-specific ID for the  batch of cells used in the experiment.", json_schema_extra={"ui": {
-                                                                    "preview": {
-                                                                    "visible": True
-                                                                 }
-                                                            }})
+                                       description="Lab-specific ID for the  batch of cells used in the experiment.", default="", json_schema_extra=pop_default_ui)
     cellLineTissue: str = Field(title="Tissue of Origin", 
                                 description="Tissue from which the cell line was derived, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'.", 
                                 json_schema_extra={"ui": {
@@ -271,13 +282,10 @@ class cellLine(BaseModel):
                                                             }})
     cellLineOrgan: str = Field(title="Organ of Origin", 
                                description="Organ from which the cell line was derived, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.",
-                               json_schema_extra={"ui": {
-                                                                    "preview": {
-                                                                    "visible": True
-                                                                 }
-                                                            }})
-    cellLineOrganism: str = Field(title="Organism of Origin", 
-                                  description="Organism from which the cell line was derived, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
+                               default="",
+                               json_schema_extra=pop_default_ui)
+    cellLineSpecies: str = Field(title="Species of Origin", 
+                                  description="Species from which the cell line was derived, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
                                   json_schema_extra={"ui": {
                                                                     "preview": {
                                                                     "visible": True
@@ -285,11 +293,8 @@ class cellLine(BaseModel):
                                                             }})
     cellLineDisease: str = Field(title="Disease", 
                                  description="If the cell line came from a diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the origin tissue or cells were not diseased.",
-                                 json_schema_extra={"ui": {
-                                                                    "preview": {
-                                                                    "visible": True
-                                                                 }
-                                                            }})
+                                 default="",
+                                 json_schema_extra=pop_default_ui)
 
 
 
@@ -327,11 +332,8 @@ class patientSample(BaseModel):
     patientSampleId: str = Field(title="Patient Sample ID")
     patientSampleDisease: str = Field(title="Disease", 
                                       description="If the sample came from diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the tissue was not diseased.",
-                                      json_schema_extra={"ui": {
-                                                                    "preview": {
-                                                                    "visible": True
-                                                                 }
-                                                            }})
+                                      default="",
+                                      json_schema_extra=pop_default_ui)
    
 # class target(BaseModel):
     
@@ -415,12 +417,12 @@ class sample(BaseModel):
                             {
                             "field": "sampleName",
                             "title": "Sample Name",
-                            "getCellValue": "name"
+                            "getCellValue": "sampleName"
                             },
                             {
                             "field": "description",
-                            "title": "Description",
-                            "getCellValue": "description"
+                            "title": "Sample Description",
+                            "getCellValue": "sampleDescription"
                             },
                             {
                             "field": "experimentalSystemColumn",
@@ -432,9 +434,9 @@ class sample(BaseModel):
                 }
             })
     
-    name: str = Field(title='Sample Name', 
+    sampleName: str = Field(title='Sample Name', 
                       description="Please provide a unique name for the sample.")
-    description: str = Field(title="Description", 
+    sampleDescription: str = Field(title="Description", 
                              description="Please include a description or any other helpful comments or annotations for the sample.")
     experimentalSystem: Union[
             cellLine,
@@ -546,7 +548,7 @@ class sample(BaseModel):
                 }
               ]
             },
-            "CRISPR": {
+            "CRISPR knockout": {
               "columns": [
                 {
                   "field": "entity",
