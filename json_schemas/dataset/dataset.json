@@ -8,15 +8,15 @@
       "title": "Dataset Name",
       "description": "Please provide a unique name for the dataset."
     },
-    "labName": {
-      "type": "string",
-      "title": "Lab Name",
-      "description": "Please enter the name of the lab to which the dataset belongs."
-    },
     "description": {
       "type": "string",
       "title": "Description",
       "description": "Please include a description or any other helpful comments or annotations for the dataset."
+    },
+    "labName": {
+      "type": "string",
+      "title": "Lab Name",
+      "description": "Please enter the name of the lab to which the dataset belongs."
     },
     "scope": {
       "title": "Scope",
@@ -39,7 +39,7 @@
         "ATAC-seq"
       ]
     },
-      "experimentalSystem": {
+      "experimentalSystems": {
         "type": "array",
         "description": "The type of biological/biochemical material(s) used as the subject(s) of the readout assay. Please select all that apply, considering all samples in the dataset. This selection will expand in future versions of this form. If you do not see your system represented here, feel free to leave this field blank.",
         "title": "Experimental System",
@@ -55,7 +55,7 @@
   },
   "required": [
     "name",
-    "labName",
+    "description",
     "scope",
     "assay"
   ]

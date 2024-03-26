@@ -2,7 +2,7 @@
     "scope": {
         "ui:widget": "radio"
     },
-    "experimentalSystem": {
+    "experimentalSystems": {
       "ui:widget": "checkboxes"
     }
   }
