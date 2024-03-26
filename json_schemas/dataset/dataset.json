@@ -3,14 +3,14 @@
   "version": "0.1",
   "type": "object",
   "properties": {
-    "name": {
+    "datasetName": {
       "type": "string",
       "title": "Dataset Name",
       "description": "Please provide a unique name for the dataset."
     },
-    "description": {
+    "datasetDescription": {
       "type": "string",
-      "title": "Description",
+      "title": "Dataset Description",
       "description": "Please include a description or any other helpful comments or annotations for the dataset."
     },
     "labName": {
