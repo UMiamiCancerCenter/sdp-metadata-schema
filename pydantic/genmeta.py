@@ -56,7 +56,7 @@ class crispr(BaseModel):
                                      description="Lab-specific ID for the batch of CRISPR reagent used in the experiment.", default="", json_schema_extra=pop_default)
     crisprTargetGeneSymbol: str = Field(title="Target Gene Symbol",
                                          description="The HGNC (human), MGI (mouse), RGD (rat), or ZFIN (zebrafish) symbol of the gene knocked out by CRISPR for knockout, or VGNC gene symbols for other vertebrate species.")
-    crisprTargetGeneID: str = Field(title="NCBI Entrez ID for Target Gene", 
+    crisprTargetGeneId: str = Field(title="NCBI Entrez ID for Target Gene", 
                                     description="The NCBI Entrez Gene ID for the gene knocked out by CRISPR.", default="", json_schema_extra=pop_default)
     crisprTargetGeneSpecies: str = Field(title="Target Gene Species", 
                                          description="The species of the target locus, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.")
@@ -242,7 +242,7 @@ class ipsc(BaseModel):
                                            "format": "hidden"})
     entity: str = Field(default="iPSC", json_schema_extra={"const": "iPSC",
                                                            "format": "hidden"})
-    ipscID: str = Field(title="iPSC ID", json_schema_extra={"ui": {
+    ipscId: str = Field(title="iPSC ID", json_schema_extra={"ui": {
                                                                     "preview": {
                                                                     "visible": True
                                                                  }

@@ -114,7 +114,7 @@
           "title": "Target Gene Symbol",
           "type": "string"
         },
-        "crisprTargetGeneID": {
+        "crisprTargetGeneId": {
           "description": "The NCBI Entrez Gene ID for the gene knocked out by CRISPR.",
           "title": "NCBI Entrez ID for Target Gene",
           "type": "string"
