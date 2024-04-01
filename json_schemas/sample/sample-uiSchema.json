@@ -3,7 +3,7 @@
     "datagrid": {
       "columns": [
         {
-          "field": "name",
+          "field": "sampleName",
           "getCellValue": "name",
           "title": "Sample Name"
         },
