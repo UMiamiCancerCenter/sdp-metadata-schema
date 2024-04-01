@@ -182,12 +182,12 @@
     }
   },
   "properties": {
-    "sampleName": {
+    "name": {
       "description": "Please provide a unique name for the sample.",
       "title": "Sample Name",
       "type": "string"
     },
-    "sampleDescription": {
+    "description": {
       "description": "Please include a description or any other helpful comments or annotations for the sample.",
       "title": "Description",
       "type": "string"
@@ -220,8 +220,8 @@
     }
   },
   "required": [
-    "sampleName",
-    "sampleDescription",
+    "name",
+    "description",
     "experimentalSystem",
     "perturbation"
   ],
