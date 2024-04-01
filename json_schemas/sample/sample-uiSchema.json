@@ -3,13 +3,13 @@
     "datagrid": {
       "columns": [
         {
-          "field": "sampleName",
-          "getCellValue": "sampleName",
+          "field": "name",
+          "getCellValue": "name",
           "title": "Sample Name"
         },
         {
           "field": "description",
-          "getCellValue": "sampleDescription",
+          "getCellValue": "description",
           "title": "Sample Description"
         },
         {
