@@ -1,4 +1,6 @@
 .DS_Store
 metadata/
 pydantic/.DS_Store
+pydantic/.env
 pydantic/old/
+
