@@ -17,3 +17,4 @@ class cellLine(BaseModel):
     cellLineDonorEthnicity: str
     cellLineHealthStatus: str
     cellLineDisease: str
+
