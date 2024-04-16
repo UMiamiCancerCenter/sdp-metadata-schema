@@ -130,7 +130,7 @@
         "crisprTargetGeneSymbol",
         "crisprTargetGeneSpecies"
       ],
-      "title": "CRISPR knockout",
+      "title": "CRISPR Knockout",
       "type": "object"
     },
     "patientSample": {

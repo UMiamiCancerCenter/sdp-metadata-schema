@@ -44,7 +44,7 @@ class smallMolecule(BaseModel):
 
 class crispr(BaseModel):
     
-    model_config = ConfigDict(title="CRISPR knockout", 
+    model_config = ConfigDict(title="CRISPR Knockout", 
                               description="A Cas9/gRNA ribonucleoprotein complex that introduces permanent loss-of-function mutations in a gene.")
 
     entity: str = Field(default="CRISPR knockout", 
