@@ -380,9 +380,9 @@ class sample(BaseModel):
                         "version": "0.0.1"
             })
     
-    sampleName: str = Field(title='Sample Name', 
+    name: str = Field(title='Sample Name', 
                       description="Please provide a unique name for the sample.")
-    sampleDescription: str = Field(title="Description", 
+    description: str = Field(title="Sample Description", 
                              description="Please include a description or any other helpful comments or annotations for the sample.")
     experimentalSystem: Union[
             cellLine,
