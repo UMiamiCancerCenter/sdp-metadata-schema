@@ -23,9 +23,9 @@
       "description": "The privacy level of the dataset.",
       "type": "string",
       "enum": [
-        "Private",
-        "Shared",
-        "Public"
+        "private",
+        "shared",
+        "public"
       ]
     },
     "assay": {
