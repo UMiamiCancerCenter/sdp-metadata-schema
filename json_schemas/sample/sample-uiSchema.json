@@ -66,6 +66,20 @@
         }
       }
     },
+    "patientSampleId": {
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
+    },
+    "patientSampleDisease": {
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
+    },
     "ui": {
       "preview": {
         "visible": true
@@ -114,7 +128,7 @@
               }
             ]
           },
-          "CRISPR knockout": {
+          "CRISPR Knockout": {
             "columns": [
               {
                 "field": "entity",
@@ -122,7 +136,11 @@
               },
               {
                 "field": "name",
-                "getCellValue": "crisprName"
+                "getCellValue": "crisprKnockoutName"
+              },
+              {
+                "field": "duration",
+                "getCellValue": "crisprKnockoutDuration"
               }
             ]
           },

@@ -1,9 +1,8 @@
 import json
-from typing import Literal, Union, List, Optional, TypeAlias
-from enum import Enum
+from typing import Union, List
 
 # import streamlit as st
-from pydantic import BaseModel, Field, field_validator, ValidationError
+from pydantic import BaseModel, Field
 # import streamlit_pydantic as sp
 
 from pydantic.config import ConfigDict
@@ -11,21 +10,10 @@ from pydantic.config import ConfigDict
 def pop_default(s):
     s.pop('default')
 
-def pop_default_ui(s):
-    s.pop('default')
-    s.update({"ui": 
-              {
-                  "preview": 
-                  {
-                      "visible": True
-                      }
-                      }
-                      })
-
 class smallMolecule(BaseModel):
     
     model_config = ConfigDict(title="Small Molecule", 
-                              description="Molecules with a low molecular weight (generally < 900 daltons) used to perturb the biological system, often binding to specific biological targets.")
+                              description="Molecules with a low molecular weight (generally < 900 daltons) used to perturb the experimental system, often binding to specific biological targets.")
 
     entity: str = Field(default="Small Molecule", 
                                          json_schema_extra={"const": "Small Molecule", "format": "hidden"})
@@ -34,78 +22,81 @@ class smallMolecule(BaseModel):
     smallMoleculeLabBatchLabel: str = Field(title="Lab Batch Label",
                                              description="Lab-specific ID for the batch of small molecule used in the experiment.", default="", json_schema_extra=pop_default)
     smallMoleculeDuration: float = Field(title="Duration", 
-                                         description="Amount of time the biological system was exposed to the small molecule.")
+                                         description="Amount of time the experimental system was exposed to the small molecule.")
     smallMoleculeDurationUnits: str = Field(title="Duration Units",
                                              description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology and must be a child term of 'time unit'.")
     smallMoleculeConcentration: float = Field(title="Concentration", 
-                                              description="Concentration of small molecule the biological system was exposed to.")
+                                              description="Concentration of small molecule the experimental system was exposed to.")
     smallMoleculeConcentrationUnits: str = Field(title="Concentration Units", 
                                                  description="Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Units of Measurement Ontology and must be a child term of 'concentration unit'.")
 
-class crispr(BaseModel):
+class crisprKnockout(BaseModel):
     
     model_config = ConfigDict(title="CRISPR Knockout", 
                               description="A Cas9/gRNA ribonucleoprotein complex that introduces permanent loss-of-function mutations in a gene.")
 
-    entity: str = Field(default="CRISPR knockout", 
-                                         json_schema_extra={"const": "CRISPR knockout", 
+    entity: str = Field(default="CRISPR Knockout", 
+                                         json_schema_extra={"const": "CRISPR Knockout", 
                                                             "format": "hidden"})
-    crisprName: str = Field(title="Name", 
+    crisprKnockoutName: str = Field(title="Name", 
                             description="The primary name of the CRISPR reagent.")
-    crisprLabBatchLabel: str = Field(title="Lab Batch Label", 
+    crisprKnockoutLabBatchLabel: str = Field(title="Lab Batch Label", 
                                      description="Lab-specific ID for the batch of CRISPR reagent used in the experiment.", default="", json_schema_extra=pop_default)
-    crisprTargetGeneSymbol: str = Field(title="Target Gene Symbol",
+    crisprKnockoutTargetGeneSymbol: str = Field(title="Target Gene Symbol",
                                          description="The HGNC (human), MGI (mouse), RGD (rat), or ZFIN (zebrafish) symbol of the gene knocked out by CRISPR for knockout, or VGNC gene symbols for other vertebrate species.")
-    crisprTargetGeneId: str = Field(title="NCBI Entrez ID for Target Gene", 
+    crisprKnockoutTargetGeneId: str = Field(title="NCBI Entrez ID for Target Gene", 
                                     description="The NCBI Entrez Gene ID for the gene knocked out by CRISPR.", default="", json_schema_extra=pop_default)
-    crisprTargetGeneSpecies: str = Field(title="Target Gene Species", 
+    crisprKnockoutTargetGeneSpecies: str = Field(title="Target Gene Species", 
                                          description="The species of the target locus, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.")
-    # crisprDuration: str = Field(title="Duration")
-    # crisprConcentration: str = Field(title="Concentration")
+    crisprKnockoutDuration: float = Field(title="Duration", 
+                                         description="Amount of time the experimental system was exposed to the small molecule.")
+    crisprKnockoutDurationUnits: str = Field(title="Duration Units",
+                                             description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology and must be a child term of 'time unit'.")
+    # crisprKnockoutConcentration: str = Field(title="Concentration")
 
-class rnai(BaseModel):
+# class rnai(BaseModel):
 
-    model_config = ConfigDict(title="RNAi")
+#     model_config = ConfigDict(title="RNAi")
     
-    entity: str = Field(default="RNAi", 
-                                         json_schema_extra={"const": "RNAi",
-                                                            "format": "hidden"})
-    rnaiName: str = Field(title="Target Sequence")
-    rnaiDuration: str = Field(title="Duration")
-    rnaiConcentration: str = Field(title="Concentration")
+#     entity: str = Field(default="RNAi", 
+#                                          json_schema_extra={"const": "RNAi",
+#                                                             "format": "hidden"})
+#     rnaiName: str = Field(title="Target Sequence")
+#     rnaiDuration: str = Field(title="Duration")
+#     rnaiConcentration: str = Field(title="Concentration")
 
-class antibody(BaseModel):
+# class antibody(BaseModel):
 
-    model_config = ConfigDict(title="Antibody")
+#     model_config = ConfigDict(title="Antibody")
     
-    entity: str = Field(default="Antibody", 
-                                         json_schema_extra={"const": "Antibody",
-                                                            "format": "hidden"})
-    antibodyName: str = Field(title="Antibody Name")
-    antibodyDuration: str = Field(title="Duration")
-    antibodyConcentration: str = Field(title="Concentration")
+#     entity: str = Field(default="Antibody", 
+#                                          json_schema_extra={"const": "Antibody",
+#                                                             "format": "hidden"})
+#     antibodyName: str = Field(title="Antibody Name")
+#     antibodyDuration: str = Field(title="Duration")
+#     antibodyConcentration: str = Field(title="Concentration")
 
-class proteinP(BaseModel):
+# class proteinP(BaseModel):
     
-    model_config = ConfigDict(title='Protein')
+#     model_config = ConfigDict(title='Protein')
 
-    entity: str = Field(default="Protein", 
-                                         json_schema_extra={"const": "Protein",
-                                                            "format": "hidden"})
-    proteinPName: str = Field(title="Protein Name")
-    proteinPDuration: str = Field(title="Duration")
-    proteinPConcentration: str = Field(title="Concentration")
+#     entity: str = Field(default="Protein", 
+#                                          json_schema_extra={"const": "Protein",
+#                                                             "format": "hidden"})
+#     proteinPName: str = Field(title="Protein Name")
+#     proteinPDuration: str = Field(title="Duration")
+#     proteinPConcentration: str = Field(title="Concentration")
 
-class infectiousAgent(BaseModel):
+# class infectiousAgent(BaseModel):
     
-    model_config = ConfigDict(title="Infectious Agent")
+#     model_config = ConfigDict(title="Infectious Agent")
 
-    entity: str = Field(default="Infectious Agent", 
-                                         json_schema_extra={"const": "Infectious Agent",
-                                                            "format": "hidden"})
-    infectiousAgentName: str = Field(title="Agent Name")
-    infectiousAgentDuration: str = Field(title="Duration")
-    infectiousAgentConcentration: str = Field(title="Concentration")
+#     entity: str = Field(default="Infectious Agent", 
+#                                          json_schema_extra={"const": "Infectious Agent",
+#                                                             "format": "hidden"})
+#     infectiousAgentName: str = Field(title="Agent Name")
+#     infectiousAgentDuration: str = Field(title="Duration")
+#     infectiousAgentConcentration: str = Field(title="Concentration")
 
 # class epigeneticModification(BaseModel):
 
@@ -160,104 +151,99 @@ class infectiousAgent(BaseModel):
     #                                                                 "visible": True
     #                                                              }
     #                                                         }})
-class tissue(BaseModel):
+# class tissue(BaseModel):
     
-    model_config = ConfigDict(title="Tissue", json_schema_extra={"ui": {
-                                    "preview": {
-                                     "visible": True
-                                    }
-                                    }
-                                })
-    role: str = Field(default="Model System", json_schema_extra={"const": "Model System",
-                                                             "format": "hidden"})
-    entity: str = Field(default="Tissue", json_schema_extra={"const": "Tissue",
-                                                             "format": "hidden"})
-    tissueType: str = Field(title="Tissue Type", json_schema_extra={"ui": {
-                                                                    "preview": {
-                                                                    "visible": True
-                                                                 }
-                                                            }})
-    tissueLabBatchLabel: str = Field(default="", title="Lab Batch Label", json_schema_extra={"ui": {
-                                                                    "preview": {
-                                                                    "visible": True
-                                                                 }
-                                                            }})
-    tissueOrganism: str = Field(title="Organism of Origin", json_schema_extra={"ui": {
-                                                                    "preview": {
-                                                                    "visible": True
-                                                                 }
-                                                            }})
+#     model_config = ConfigDict(title="Tissue", json_schema_extra={"ui": {
+#                                     "preview": {
+#                                      "visible": True
+#                                     }
+#                                     }
+#                                 })
+#     role: str = Field(default="Model System", json_schema_extra={"const": "Model System",
+#                                                              "format": "hidden"})
+#     entity: str = Field(default="Tissue", json_schema_extra={"const": "Tissue",
+#                                                              "format": "hidden"})
+#     tissueType: str = Field(title="Tissue Type", json_schema_extra={"ui": {
+#                                                                     "preview": {
+#                                                                     "visible": True
+#                                                                  }
+#                                                             }})
+#     tissueLabBatchLabel: str = Field(default="", title="Lab Batch Label", json_schema_extra={"ui": {
+#                                                                     "preview": {
+#                                                                     "visible": True
+#                                                                  }
+#                                                             }})
+#     tissueOrganism: str = Field(title="Organism of Origin", json_schema_extra={"ui": {
+#                                                                     "preview": {
+#                                                                     "visible": True
+#                                                                  }
+#                                                             }})
 
-class primaryCells(BaseModel):
+# class primaryCells(BaseModel):
 
-    model_config = ConfigDict(title="Primary Cells", json_schema_extra={"ui": {
-                                    "preview": {
-                                     "visible": True
-                                    }
-                                    }
-                                })
-    role: str = Field(default="Model System", 
-                        json_schema_extra={"const": "Model System",
-                                           "format": "hidden"})
-    entity: str = Field(default="Primary Cells", 
-                        json_schema_extra={"const": "Primary Cells",
-                                           "format": "hidden"})
-    primaryCellsType: str = Field(title="Cell Type", json_schema_extra={"ui": {
-                                                                    "preview": {
-                                                                    "visible": True
-                                                                 }
-                                                            }})
+#     model_config = ConfigDict(title="Primary Cells", json_schema_extra={"ui": {
+#                                     "preview": {
+#                                      "visible": True
+#                                     }
+#                                     }
+#                                 })
+#     role: str = Field(default="Model System", 
+#                         json_schema_extra={"const": "Model System",
+#                                            "format": "hidden"})
+#     entity: str = Field(default="Primary Cells", 
+#                         json_schema_extra={"const": "Primary Cells",
+#                                            "format": "hidden"})
+#     primaryCellsType: str = Field(title="Cell Type", json_schema_extra={"ui": {
+#                                                                     "preview": {
+#                                                                     "visible": True
+#                                                                  }
+#                                                             }})
 
-class differentiatedCells(BaseModel):
+# class differentiatedCells(BaseModel):
     
-    model_config = ConfigDict(title="Differentiated Cells", json_schema_extra={"ui": {
-                                    "preview": {
-                                     "visible": True
-                                    }
-                                    }
-                                })
-    role: str = Field(default="Model System", 
-                        json_schema_extra={"const": "Model System",
-                                           "format": "hidden"})
-    entity: str = Field(default="Differentiated Cells", 
-                        json_schema_extra={"const": "Differentiated Cells",
-                                           "format": "hidden"})
-    differentiatedCellsType: str = Field(title="Cell Type", json_schema_extra={"ui": {
-                                                                    "preview": {
-                                                                    "visible": True
-                                                                 }
-                                                            }})
-    precursorCellName: str = Field(title="Precursor Cell Name")
-class ipsc(BaseModel):
+#     model_config = ConfigDict(title="Differentiated Cells", json_schema_extra={"ui": {
+#                                     "preview": {
+#                                      "visible": True
+#                                     }
+#                                     }
+#                                 })
+#     role: str = Field(default="Model System", 
+#                         json_schema_extra={"const": "Model System",
+#                                            "format": "hidden"})
+#     entity: str = Field(default="Differentiated Cells", 
+#                         json_schema_extra={"const": "Differentiated Cells",
+#                                            "format": "hidden"})
+#     differentiatedCellsType: str = Field(title="Cell Type", json_schema_extra={"ui": {
+#                                                                     "preview": {
+#                                                                     "visible": True
+#                                                                  }
+#                                                             }})
+#     precursorCellName: str = Field(title="Precursor Cell Name")
+# class ipsc(BaseModel):
     
-    model_config = ConfigDict(title="iPSC", json_schema_extra={"ui": {
-                                    "preview": {
-                                     "visible": True
-                                    }
-                                    }
-                                })
+#     model_config = ConfigDict(title="iPSC", json_schema_extra={"ui": {
+#                                     "preview": {
+#                                      "visible": True
+#                                     }
+#                                     }
+#                                 })
 
-    role: str = Field(default="Model System", 
-                        json_schema_extra={"const": "Model System",
-                                           "format": "hidden"})
-    entity: str = Field(default="iPSC", json_schema_extra={"const": "iPSC",
-                                                           "format": "hidden"})
-    ipscId: str = Field(title="iPSC ID", json_schema_extra={"ui": {
-                                                                    "preview": {
-                                                                    "visible": True
-                                                                 }
-                                                            }})
+#     role: str = Field(default="Model System", 
+#                         json_schema_extra={"const": "Model System",
+#                                            "format": "hidden"})
+#     entity: str = Field(default="iPSC", json_schema_extra={"const": "iPSC",
+#                                                            "format": "hidden"})
+#     ipscId: str = Field(title="iPSC ID", json_schema_extra={"ui": {
+#                                                                     "preview": {
+#                                                                     "visible": True
+#                                                                  }
+#                                                             }})
 
 class cellLine(BaseModel):
 
     model_config = ConfigDict(title="Cell Line", 
-                              description="Immortalized (naturally or engineered), genetically uniform tissue cells able to reproduce indefinitely in standard culture conditions.", 
-                              json_schema_extra={"ui": {
-                                    "preview": {
-                                     "visible": True
-                                    }
-                                    }
-                                })
+                              description="Immortalized (naturally or engineered), genetically uniform tissue cells able to reproduce indefinitely in standard culture conditions."
+                              )
     role: str = Field(default="Model System",
                                             json_schema_extra={"const": "Model System",
                                            "format": "hidden"})
@@ -266,35 +252,24 @@ class cellLine(BaseModel):
                                                                 "format": "hidden",
                                                                 })
     cellLineName: str = Field(title="Name", 
-                              description="The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'.", 
-                              json_schema_extra={"ui": {
-                                  "preview": {
-                                      "visible": True
-                                      }}})
+                              description="The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'." 
+                              )
     cellLineLabBatchLabel: str = Field(title="Lab Batch Label", 
-                                       description="Lab-specific ID for the  batch of cells used in the experiment.", default="", json_schema_extra=pop_default_ui)
+                                       description="Lab-specific ID for the  batch of cells used in the experiment.", default="", json_schema_extra=pop_default)
     cellLineTissue: str = Field(title="Tissue of Origin", 
-                                description="Tissue from which the cell line was derived, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'.", 
-                                json_schema_extra={"ui": {
-                                                                    "preview": {
-                                                                    "visible": True
-                                                                  }
-                                                            }})
+                                description="Tissue from which the cell line was derived, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'."
+                                )
     cellLineOrgan: str = Field(title="Organ of Origin", 
                                description="Organ from which the cell line was derived, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.",
                                default="",
-                               json_schema_extra=pop_default_ui)
+                               json_schema_extra=pop_default)
     cellLineSpecies: str = Field(title="Species of Origin", 
-                                  description="Species from which the cell line was derived, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
-                                  json_schema_extra={"ui": {
-                                                                    "preview": {
-                                                                    "visible": True
-                                                                 }
-                                                            }})
+                                  description="Species from which the cell line was derived, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'."
+                                  )
     cellLineDisease: str = Field(title="Disease", 
                                  description="If the cell line came from a diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the origin tissue or cells were not diseased.",
                                  default="",
-                                 json_schema_extra=pop_default_ui)
+                                 json_schema_extra=pop_default)
 
 
 
@@ -317,12 +292,7 @@ class cellLine(BaseModel):
 
 class patientSample(BaseModel):
     
-    model_config = ConfigDict(title="Patient Sample", json_schema_extra={"ui": {
-                                    "preview": {
-                                     "visible": True
-                                    }
-                                    }
-                                })
+    model_config = ConfigDict(title="Patient Sample")
     role: str = Field(default="Biospecimen", 
                         json_schema_extra={"const": "Biospecimen",
                                            "format": "hidden"})
@@ -333,7 +303,7 @@ class patientSample(BaseModel):
     patientSampleDisease: str = Field(title="Disease", 
                                       description="If the sample came from diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the tissue was not diseased.",
                                       default="",
-                                      json_schema_extra=pop_default_ui)
+                                      json_schema_extra=pop_default)
    
 # class target(BaseModel):
     
@@ -407,31 +377,7 @@ class patientSample(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.1",
-                        "ui": {
-                        "preview": {
-                        "visible": True
-                        },
-                        "datagrid": {
-                        "columns": [
-                            {
-                            "field": "sampleName",
-                            "title": "Sample Name",
-                            "getCellValue": "sampleName"
-                            },
-                            {
-                            "field": "description",
-                            "title": "Sample Description",
-                            "getCellValue": "sampleDescription"
-                            },
-                            {
-                            "field": "experimentalSystemColumn",
-                            "title": "Experimental System",
-                            "getCellValue": "experimentalSystem.entity"
-                            }
-                        ]
-                    }
-                }
+                        "version": "0.0.1"
             })
     
     sampleName: str = Field(title='Sample Name', 
@@ -446,162 +392,17 @@ class sample(BaseModel):
             # tissue
             patientSample
             ] = Field(title="Experimental System", json_schema_extra={
-                                  "ui": {
-                                    "preview": {
-                                    "visible": True
-                                    }
-                                }, "type": "object",
+                                  "type": "object"
                             })
     perturbation: List[Union[
         smallMolecule,
-        crispr
+        crisprKnockout
         # rnai,
         # antibody,
         # proteinP,
         # infectiousAgent
             ] 
-        ] = Field(json_schema_extra={
-                        "ui": {
-                        "preview": {
-                        "title": "Perturbation:",
-                        "visible": True
-                        },
-                        "datagrid":{
-                        "entries": {
-            "Antibody": {
-              "columns": [
-                {
-                  "field": "entity",
-                  "getCellValue": "entity"
-                },
-                {
-                  "field": "name",
-                  "getCellValue": "antibodyName"
-                },
-                {
-                  "field": "duration",
-                  "getCellValue": "antibodyDuration"
-                },
-                {
-                  "field": "concentration",
-                  "getCellValue": "antibodyConcentration"
-                }
-              ]
-            },
-            "Protein": {
-              "columns": [
-                {
-                  "field": "entity",
-                  "getCellValue": "entity"
-                },
-                {
-                  "field": "name",
-                  "getCellValue": "proteinPName"
-                },
-                {
-                  "field": "duration",
-                  "getCellValue": "proteinPDuration"
-                },
-                {
-                  "field": "concentration",
-                  "getCellValue": "proteinPConcentration"
-                }
-              ]
-            },
-            "Infectious Agent": {
-              "columns": [
-                {
-                  "field": "entity",
-                  "getCellValue": "entity"
-                },
-                {
-                  "field": "name",
-                  "getCellValue": "infectiousAgentName"
-                },
-                {
-                  "field": "duration",
-                  "getCellValue": "infectiousAgentDuration"
-                },
-                {
-                  "field": "concentration",
-                  "getCellValue": "infectiousAgentConcentration"
-                }
-              ]
-            },
-            "Small Molecule": {
-              "columns": [
-                {
-                  "field": "entity",
-                  "getCellValue": "entity"
-                },
-                {
-                  "field": "name",
-                  "getCellValue": "smallMoleculeName"
-                },
-                {
-                  "field": "duration",
-                  "getCellValue": "smallMoleculeDuration"
-                },
-                {
-                  "field": "concentration",
-                  "getCellValue": "smallMoleculeConcentration"
-                }
-              ]
-            },
-            "CRISPR knockout": {
-              "columns": [
-                {
-                  "field": "entity",
-                  "getCellValue": "entity"
-                },
-                {
-                  "field": "name",
-                  "getCellValue": "crisprName"
-                }
-              ]
-            },
-            "RNAi": {
-              "columns": [
-                {
-                  "field": "entity",
-                  "getCellValue": "entity"
-                },
-                {
-                  "field": "name",
-                  "getCellValue": "rnaiName"
-                },
-                {
-                  "field": "duration",
-                  "getCellValue": "rnaiDuration"
-                },
-                {
-                  "field": "concentration",
-                  "getCellValue": "rnaiConcentration"
-                }
-              ]
-            }
-          },
-          "columns": [
-            {
-              "field": "entity",
-              "title": "Perturbagen Type"
-            },
-            {
-              "field": "name",
-              "title": "Name"
-            },
-            {
-              "field": "duration",
-              "title": "Duration"
-            },
-            {
-              "field": "concentration",
-              "title": "Concentration"
-            }
-          ]
-        }
-                }
-                    })
+        ]
                  
 
 def example():

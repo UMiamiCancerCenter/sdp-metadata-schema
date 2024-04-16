@@ -19,62 +19,32 @@
         "cellLineName": {
           "description": "The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'.",
           "title": "Name",
-          "type": "string",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
+          "type": "string"
         },
         "cellLineLabBatchLabel": {
           "description": "Lab-specific ID for the  batch of cells used in the experiment.",
           "title": "Lab Batch Label",
-          "type": "string",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
+          "type": "string"
         },
         "cellLineTissue": {
           "description": "Tissue from which the cell line was derived, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'.",
           "title": "Tissue of Origin",
-          "type": "string",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
+          "type": "string"
         },
         "cellLineOrgan": {
           "description": "Organ from which the cell line was derived, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.",
           "title": "Organ of Origin",
-          "type": "string",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
+          "type": "string"
         },
         "cellLineSpecies": {
           "description": "Species from which the cell line was derived, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
           "title": "Species of Origin",
-          "type": "string",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
+          "type": "string"
         },
         "cellLineDisease": {
           "description": "If the cell line came from a diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the origin tissue or cells were not diseased.",
           "title": "Disease",
-          "type": "string",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
+          "type": "string"
         }
       },
       "required": [
@@ -83,52 +53,59 @@
         "cellLineSpecies"
       ],
       "title": "Cell Line",
-      "type": "object",
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
+      "type": "object"
     },
-    "crispr": {
+    "crisprKnockout": {
       "properties": {
         "entity": {
-          "const": "CRISPR knockout",
-          "default": "CRISPR knockout",
+          "const": "CRISPR Knockout",
+          "default": "CRISPR Knockout",
           "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
-        "crisprName": {
+        "crisprKnockoutName": {
           "description": "The primary name of the CRISPR reagent.",
           "title": "Name",
           "type": "string"
         },
-        "crisprLabBatchLabel": {
+        "crisprKnockoutLabBatchLabel": {
           "description": "Lab-specific ID for the batch of CRISPR reagent used in the experiment.",
           "title": "Lab Batch Label",
           "type": "string"
         },
-        "crisprTargetGeneSymbol": {
+        "crisprKnockoutTargetGeneSymbol": {
           "description": "The HGNC (human), MGI (mouse), RGD (rat), or ZFIN (zebrafish) symbol of the gene knocked out by CRISPR for knockout, or VGNC gene symbols for other vertebrate species.",
           "title": "Target Gene Symbol",
           "type": "string"
         },
-        "crisprTargetGeneId": {
+        "crisprKnockoutTargetGeneId": {
           "description": "The NCBI Entrez Gene ID for the gene knocked out by CRISPR.",
           "title": "NCBI Entrez ID for Target Gene",
           "type": "string"
         },
-        "crisprTargetGeneSpecies": {
+        "crisprKnockoutTargetGeneSpecies": {
           "description": "The species of the target locus, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
           "title": "Target Gene Species",
+          "type": "string"
+        },
+        "crisprKnockoutDuration": {
+          "description": "Amount of time the experimental system was exposed to the small molecule.",
+          "title": "Duration",
+          "type": "number"
+        },
+        "crisprKnockoutDurationUnits": {
+          "description": "Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology and must be a child term of 'time unit'.",
+          "title": "Duration Units",
           "type": "string"
         }
       },
       "required": [
-        "crisprName",
-        "crisprTargetGeneSymbol",
-        "crisprTargetGeneSpecies"
+        "crisprKnockoutName",
+        "crisprKnockoutTargetGeneSymbol",
+        "crisprKnockoutTargetGeneSpecies",
+        "crisprKnockoutDuration",
+        "crisprKnockoutDurationUnits"
       ],
       "title": "CRISPR Knockout",
       "type": "object"
@@ -156,24 +133,14 @@
         "patientSampleDisease": {
           "description": "If the sample came from diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the tissue was not diseased.",
           "title": "Disease",
-          "type": "string",
-          "ui": {
-            "preview": {
-              "visible": true
-            }
-          }
+          "type": "string"
         }
       },
       "required": [
         "patientSampleId"
       ],
       "title": "Patient Sample",
-      "type": "object",
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
+      "type": "object"
     },
     "smallMolecule": {
       "properties": {
@@ -195,7 +162,7 @@
           "type": "string"
         },
         "smallMoleculeDuration": {
-          "description": "Amount of time the biological system was exposed to the small molecule.",
+          "description": "Amount of time the experimental system was exposed to the small molecule.",
           "title": "Duration",
           "type": "number"
         },
@@ -205,7 +172,7 @@
           "type": "string"
         },
         "smallMoleculeConcentration": {
-          "description": "Concentration of small molecule the biological system was exposed to.",
+          "description": "Concentration of small molecule the experimental system was exposed to.",
           "title": "Concentration",
           "type": "number"
         },
@@ -247,12 +214,7 @@
         }
       ],
       "title": "Experimental System",
-      "type": "object",
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
+      "type": "object"
     },
     "perturbation": {
       "items": {
@@ -261,152 +223,12 @@
             "$ref": "#/$defs/smallMolecule"
           },
           {
-            "$ref": "#/$defs/crispr"
+            "$ref": "#/$defs/crisprKnockout"
           }
         ]
       },
       "title": "Perturbation",
-      "type": "array",
-      "ui": {
-        "datagrid": {
-          "columns": [
-            {
-              "field": "entity",
-              "title": "Perturbagen Type"
-            },
-            {
-              "field": "name",
-              "title": "Name"
-            },
-            {
-              "field": "duration",
-              "title": "Duration"
-            },
-            {
-              "field": "concentration",
-              "title": "Concentration"
-            }
-          ],
-          "entries": {
-            "Antibody": {
-              "columns": [
-                {
-                  "field": "entity",
-                  "getCellValue": "entity"
-                },
-                {
-                  "field": "name",
-                  "getCellValue": "antibodyName"
-                },
-                {
-                  "field": "duration",
-                  "getCellValue": "antibodyDuration"
-                },
-                {
-                  "field": "concentration",
-                  "getCellValue": "antibodyConcentration"
-                }
-              ]
-            },
-            "CRISPR knockout": {
-              "columns": [
-                {
-                  "field": "entity",
-                  "getCellValue": "entity"
-                },
-                {
-                  "field": "name",
-                  "getCellValue": "crisprName"
-                }
-              ]
-            },
-            "Infectious Agent": {
-              "columns": [
-                {
-                  "field": "entity",
-                  "getCellValue": "entity"
-                },
-                {
-                  "field": "name",
-                  "getCellValue": "infectiousAgentName"
-                },
-                {
-                  "field": "duration",
-                  "getCellValue": "infectiousAgentDuration"
-                },
-                {
-                  "field": "concentration",
-                  "getCellValue": "infectiousAgentConcentration"
-                }
-              ]
-            },
-            "Protein": {
-              "columns": [
-                {
-                  "field": "entity",
-                  "getCellValue": "entity"
-                },
-                {
-                  "field": "name",
-                  "getCellValue": "proteinPName"
-                },
-                {
-                  "field": "duration",
-                  "getCellValue": "proteinPDuration"
-                },
-                {
-                  "field": "concentration",
-                  "getCellValue": "proteinPConcentration"
-                }
-              ]
-            },
-            "RNAi": {
-              "columns": [
-                {
-                  "field": "entity",
-                  "getCellValue": "entity"
-                },
-                {
-                  "field": "name",
-                  "getCellValue": "rnaiName"
-                },
-                {
-                  "field": "duration",
-                  "getCellValue": "rnaiDuration"
-                },
-                {
-                  "field": "concentration",
-                  "getCellValue": "rnaiConcentration"
-                }
-              ]
-            },
-            "Small Molecule": {
-              "columns": [
-                {
-                  "field": "entity",
-                  "getCellValue": "entity"
-                },
-                {
-                  "field": "name",
-                  "getCellValue": "smallMoleculeName"
-                },
-                {
-                  "field": "duration",
-                  "getCellValue": "smallMoleculeDuration"
-                },
-                {
-                  "field": "concentration",
-                  "getCellValue": "smallMoleculeConcentration"
-                }
-              ]
-            }
-          }
-        },
-        "preview": {
-          "title": "Perturbation:",
-          "visible": true
-        }
-      }
+      "type": "array"
     }
   },
   "required": [
@@ -417,29 +239,5 @@
   ],
   "title": "Sample",
   "type": "object",
-  "ui": {
-    "datagrid": {
-      "columns": [
-        {
-          "field": "sampleName",
-          "getCellValue": "sampleName",
-          "title": "Sample Name"
-        },
-        {
-          "field": "description",
-          "getCellValue": "sampleDescription",
-          "title": "Sample Description"
-        },
-        {
-          "field": "experimentalSystemColumn",
-          "getCellValue": "experimentalSystem.entity",
-          "title": "Experimental System"
-        }
-      ]
-    },
-    "preview": {
-      "visible": true
-    }
-  },
-  "version": "0.1"
+  "version": "0.0.1"
 }
