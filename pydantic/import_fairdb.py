@@ -1,6 +1,14 @@
 from sqlalchemy import create_engine, select, Table, MetaData
 from sqlmodel import SQLModel, Field
 import inflection
+from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic import create_model
+class Settings(BaseSettings):
+    model_config = SettingsConfigDict(env_file='.env')
+
+    pg_dsn: str = Field(alias="PG_DSN")
+
+settings = Settings()
 
 def get_rows(engine, table_name):
     metadata = MetaData()
@@ -15,22 +23,21 @@ def get_rows(engine, table_name):
 def create_sqlmodel_class(table_name, columns):
     fields = {}
     for column in columns:
-        column_name = column['name']
-        python_type = column['type'].python_type
+        column_name = column.name
+        python_type = column.type.python_type
         # Convert column names to snake_case
-        field_name = inflection.underscore(column_name)
-        fields[field_name] = (python_type, Field(default=None))
-
+        # field_name = inflection.underscore(column_name)
+        fields[column_name] = (python_type, Field(default=None))
     class_name = inflection.camelize(table_name, uppercase_first_letter=True)
-    return type(class_name, (SQLModel,), fields)
+    return create_model(class_name, **fields)
 
 if __name__ == "__main__":
     # Connect to the PostgreSQL database
-    DATABASE_URL = "postgresql://username:password@localhost/database_name"
-    engine = create_engine(DATABASE_URL)
+    engine = create_engine(settings.pg_dsn)
+    print(engine)
 
     # Specify the table name
-    table_name = "your_table_name"
+    table_name = ""
 
     # Retrieve column information for the specified table
     metadata = MetaData()
@@ -39,16 +46,17 @@ if __name__ == "__main__":
 
     # Dynamically create a SQLModel class for the table
     sqlmodel_class = create_sqlmodel_class(table_name, columns_info)
+    print(sqlmodel_class)
 
     # Retrieve rows from the specified table
     rows = get_rows(engine, table_name)
 
-    # Instantiate SQLModel objects dynamically for each row
-    sqlmodel_objects = []
-    for row in rows:
-        obj = sqlmodel_class(**dict(row))
-        sqlmodel_objects.append(obj)
+#     # Instantiate SQLModel objects dynamically for each row
+#     sqlmodel_objects = []
+#     for row in rows:
+#         obj = sqlmodel_class(**dict(row))
+#         sqlmodel_objects.append(obj)
 
-    # Optionally, perform operations with the instantiated objects
-    for obj in sqlmodel_objects:
-        print(obj)
+#     # Optionally, perform operations with the instantiated objects
+#     for obj in sqlmodel_objects:
+#         print(obj)
