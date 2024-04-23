@@ -5,3 +5,4 @@ pydantic/.env
 pydantic/old/
 __pycache__/
 pydantic/__pycache__/
+pydantic/scratch/
