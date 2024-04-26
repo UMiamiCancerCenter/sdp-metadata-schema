@@ -20,7 +20,7 @@
     },
     "scope": {
       "title": "Scope",
-      "description": "The privacy level of the dataset.\n* Private - can only be seen by the dataset owner.\n* Shared - can be shared with other SDP users.\n* Public - can be seen by any SDP user.",
+      "description": "The privacy level of the dataset.\\n* Private - can only be seen by the dataset owner.\\n* Shared - can be shared with other SDP users.\\n* Public - can be seen by any SDP user.",
       "type": "string",
       "enum": [
         "private",
