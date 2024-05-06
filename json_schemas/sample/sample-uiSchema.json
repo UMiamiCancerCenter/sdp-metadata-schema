@@ -1,165 +1,131 @@
 {
-  "ui": {
-    "datagrid": {
-      "columns": [
-        {
-          "field": "sampleName",
-          "getCellValue": "name",
-          "title": "Sample Name"
+  "mapping": {
+    "sampleName": {
+      "title": "Sample Name",
+      "getValue": "name"
+    },
+    "sampleDescription": {
+      "title": "Sample Description",
+      "getValue": "description"
+    },
+    "experimentalSystem": {
+      "fields": {
+        "entity": {
+          "title": "Entity",
+          "getValue": "experimentalSystem.entity"
         },
-        {
-          "field": "description",
-          "getCellValue": "description",
-          "title": "Sample Description"
+        "cellLineName": {
+          "title": "CellLine Name",
+          "getValue": "experimentalSystem.cellLineName"
         },
-        {
-          "field": "experimentalSystemColumn",
-          "getCellValue": "experimentalSystem.entity",
-          "title": "Experimental System"
-        }
-      ]
-    },
-    "preview": {
-      "visible": true
-    }
-  },
-  "experimentalSystem": {
-    "cellLineName": {
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
-    },
-    "cellLineLabBatchLabel": {
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
-    },
-    "cellLineTissue": {
-      "ui": {
-        "preview": {
-          "visible": true
+        "cellLineLabBatchLabel": {
+          "title": "CellLine Lab Batch Label",
+          "getValue": "experimentalSystem.cellLineLabBatchLabel"
+        },
+        "cellLineTissue": {
+          "title": "CellLine Tissue",
+          "getValue": "experimentalSystem.cellLineTissue"
+        },
+        "cellLineOrgan": {
+          "title": "CellLine Organ",
+          "getValue": "experimentalSystem.cellLineOrgan"
+        },
+        "cellLineSpecies": {
+          "title": "CellLine Species",
+          "getValue": "experimentalSystem.cellLineSpecies"
+        },
+        "cellLineDisease": {
+          "title": "CellLine Disease",
+          "getValue": "experimentalSystem.cellLineDisease"
+        },
+        "patientSampleId": {
+          "title": "Patient Sample Id",
+          "getValue": "experimentalSystem.patientSampleId"
         }
       }
     },
-    "cellLineOrgan": {
-      "ui": {
-        "preview": {
-          "visible": true
+    "perturbation": {
+      "title": "Perturbations",
+      "getValue": "perturbation",
+      "context": "sampleSubmissionPerturbationList",
+      "fields": {
+        "entity": {
+          "title": "Entity",
+          "getValue": "entity"
+        },
+        "name": {
+          "title": "Name",
+          "getValue": "name"
+        },
+        "duration": {
+          "title": "Duration",
+          "getValue": "duration"
+        },
+        "concentration": {
+          "title": "Concentration",
+          "getValue": "concentration"
         }
-      }
-    },
-    "cellLineSpecies": {
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
-    },
-    "cellLineDisease": {
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
-    },
-    "patientSampleId": {
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
-    },
-    "patientSampleDisease": {
-      "ui": {
-        "preview": {
-          "visible": true
-        }
-      }
-    },
-    "ui": {
-      "preview": {
-        "visible": true
       }
     }
   },
-  "perturbation": {
-    "ui": {
+  "contexts": {
+    "sampleSubmissionPerturbationList": {
       "datagrid": {
         "columns": [
-          {
-            "field": "entity",
-            "title": "Perturbagen Type"
-          },
-          {
-            "field": "name",
-            "title": "Name"
-          },
-          {
-            "field": "duration",
-            "title": "Duration"
-          },
-          {
-            "field": "concentration",
-            "title": "Concentration"
-          }
+          "mapping.perturbation.fields.entity",
+          "mapping.perturbation.fields.name",
+          "mapping.perturbation.fields.duration",
+          "mapping.perturbation.fields.concentration"
         ],
         "entries": {
           "Antibody": {
             "columns": [
               {
-                "field": "entity",
+                "column": "mapping.perturbation.fields.entity",
                 "getCellValue": "entity"
               },
               {
-                "field": "name",
+                "column": "mapping.perturbation.fields.name",
                 "getCellValue": "antibodyName"
               },
               {
-                "field": "duration",
+                "column": "mapping.perturbation.fields.duration",
                 "getCellValue": "antibodyDuration"
               },
               {
-                "field": "concentration",
+                "column": "mapping.perturbation.fields.concentration",
                 "getCellValue": "antibodyConcentration"
               }
             ]
           },
-          "CRISPR Knockout": {
+          "CRISPR knockout": {
             "columns": [
               {
-                "field": "entity",
+                "column": "mapping.perturbation.fields.entity",
                 "getCellValue": "entity"
               },
               {
-                "field": "name",
-                "getCellValue": "crisprKnockoutName"
-              },
-              {
-                "field": "duration",
-                "getCellValue": "crisprKnockoutDuration"
+                "column": "mapping.perturbation.fields.name",
+                "getCellValue": "crisprName"
               }
             ]
           },
           "Infectious Agent": {
             "columns": [
               {
-                "field": "entity",
+                "column": "mapping.perturbation.fields.entity",
                 "getCellValue": "entity"
               },
               {
-                "field": "name",
+                "column": "mapping.perturbation.fields.name",
                 "getCellValue": "infectiousAgentName"
               },
               {
-                "field": "duration",
+                "column": "mapping.perturbation.fields.duration",
                 "getCellValue": "infectiousAgentDuration"
               },
               {
-                "field": "concentration",
+                "column": "mapping.perturbation.fields.concentration",
                 "getCellValue": "infectiousAgentConcentration"
               }
             ]
@@ -167,19 +133,19 @@
           "Protein": {
             "columns": [
               {
-                "field": "entity",
+                "column": "mapping.perturbation.fields.entity",
                 "getCellValue": "entity"
               },
               {
-                "field": "name",
+                "column": "mapping.perturbation.fields.name",
                 "getCellValue": "proteinPName"
               },
               {
-                "field": "duration",
+                "column": "mapping.perturbation.fields.duration",
                 "getCellValue": "proteinPDuration"
               },
               {
-                "field": "concentration",
+                "column": "mapping.perturbation.fields.concentration",
                 "getCellValue": "proteinPConcentration"
               }
             ]
@@ -187,19 +153,19 @@
           "RNAi": {
             "columns": [
               {
-                "field": "entity",
+                "column": "mapping.perturbation.fields.entity",
                 "getCellValue": "entity"
               },
               {
-                "field": "name",
+                "column": "mapping.perturbation.fields.name",
                 "getCellValue": "rnaiName"
               },
               {
-                "field": "duration",
+                "column": "mapping.perturbation.fields.duration",
                 "getCellValue": "rnaiDuration"
               },
               {
-                "field": "concentration",
+                "column": "mapping.perturbation.fields.concentration",
                 "getCellValue": "rnaiConcentration"
               }
             ]
@@ -207,28 +173,74 @@
           "Small Molecule": {
             "columns": [
               {
-                "field": "entity",
+                "column": "mapping.perturbation.fields.entity",
                 "getCellValue": "entity"
               },
               {
-                "field": "name",
+                "column": "mapping.perturbation.fields.name",
                 "getCellValue": "smallMoleculeName"
               },
               {
-                "field": "duration",
+                "column": "mapping.perturbation.fields.duration",
                 "getCellValue": "smallMoleculeDuration"
               },
               {
-                "field": "concentration",
+                "column": "mapping.perturbation.fields.concentration",
                 "getCellValue": "smallMoleculeConcentration"
               }
             ]
           }
         }
-      },
-      "preview": {
-        "title": "Perturbation:",
-        "visible": true
+      }
+    },
+    "sampleSubmissionList": {
+      "datagrid": {
+        "columns": [
+          "mapping.sampleName",
+          "mapping.sampleDescription",
+          "mapping.experimentalSystem.fields.entity"
+        ],
+        "expandableRows": [
+          "mapping.experimentalSystem.fields.cellLineName",
+          "mapping.experimentalSystem.fields.cellLineLabBatchLabel",
+          "mapping.experimentalSystem.fields.cellLineTissue",
+          "mapping.experimentalSystem.fields.cellLineOrgan",
+          "mapping.experimentalSystem.fields.cellLineSpecies",
+          "mapping.experimentalSystem.fields.cellLineDisease",
+          "mapping.experimentalSystem.fields.patientSampleId",
+          "mapping.perturbation"
+        ]
+      }
+    },
+    "sampleSubmissionPreview": {
+      "datagrid": {
+        "columns": [
+          "mapping.sampleName",
+          "mapping.sampleDescription",
+          "mapping.experimentalSystem.fields.entity"
+        ],
+        "expandableRows": [
+          "mapping.experimentalSystem.fields.cellLineName",
+          "mapping.experimentalSystem.fields.cellLineLabBatchLabel",
+          "mapping.experimentalSystem.fields.cellLineTissue",
+          "mapping.experimentalSystem.fields.cellLineOrgan",
+          "mapping.experimentalSystem.fields.cellLineSpecies",
+          "mapping.experimentalSystem.fields.cellLineDisease",
+          "mapping.experimentalSystem.fields.patientSampleId",
+          "mapping.perturbation"
+        ]
+      }
+    },
+    "datasetSamplesList": {
+      "datagrid": {
+        "columns": [
+          "mapping.experimentalSystem.fields.cellLineName",
+          "mapping.experimentalSystem.fields.cellLineLabBatchLabel",
+          "mapping.experimentalSystem.fields.cellLineTissue",
+          "mapping.experimentalSystem.fields.cellLineOrgan",
+          "mapping.experimentalSystem.fields.cellLineSpecies",
+          "mapping.experimentalSystem.fields.cellLineDisease"
+        ]
       }
     }
   }
