@@ -90,7 +90,7 @@
           "type": "string"
         },
         "crisprKnockoutDuration": {
-          "description": "Amount of time the experimental system was exposed to the small molecule.",
+          "description": "Amount of time the experimental system was exposed to the CRISPR reagent.",
           "title": "Duration",
           "type": "number"
         },

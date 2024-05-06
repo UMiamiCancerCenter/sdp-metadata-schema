@@ -49,7 +49,7 @@ class crisprKnockout(BaseModel):
     crisprKnockoutTargetGeneSpecies: str = Field(title="Target Gene Species", 
                                          description="The species of the target locus, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.")
     crisprKnockoutDuration: float = Field(title="Duration", 
-                                         description="Amount of time the experimental system was exposed to the small molecule.")
+                                         description="Amount of time the experimental system was exposed to the CRISPR reagent.")
     crisprKnockoutDurationUnits: str = Field(title="Duration Units",
                                              description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology and must be a child term of 'time unit'.")
     # crisprKnockoutConcentration: str = Field(title="Concentration")
