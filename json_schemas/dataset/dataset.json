@@ -1,80 +1,84 @@
 {
-  "title": "SDP Dataset",
-  "description": "This document records the details of the SDP dataset metadata content",
-  "version": "0.0.2",
-  "type": "object",
-  "properties": {
-    "name": {
-      "type": "string",
-      "title": "Dataset Name"
+  "$defs": {
+    "assay_enum": {
+      "enum": [
+        "RNA-seq",
+        "scRNA-seq",
+        "DNA-seq",
+        "ATAC-seq"
+      ],
+      "title": "assay_enum",
+      "type": "string"
     },
-    "labName": {
-      "type": "string",
-      "title": "Lab Name"
+    "experimentalSystems_enum": {
+      "enum": [
+        "Cell Line",
+        "Patient Sample"
+      ],
+      "title": "experimentalSystems_enum",
+      "type": "string"
     },
-    "description": {
-      "type": "string",
-      "title": "Description"
-    },
-    "scope": {
-      "title": "Scope",
-      "description": "The privacy level of the dataset",
-      "type": "string",
+    "scope_enum": {
       "enum": [
         "private",
         "shared",
         "public"
       ],
-      "default": "private"
-    },
+      "title": "scope_enum",
+      "type": "string"
+    }
+  },
+  "description": "This document records the details of the SDP dataset metadata content.",
+  "properties": {
     "assay": {
-      "title": "Readout Assay",
-      "description": "Supported readout assays: DNA-seq, Bulk RNA-seq, scRNA-seq, L1000, ATAC-seq, qPCR",
-      "type": "string",
-      "enum": [
-        "DNA-seq",
-        "RNA-seq",
-        "scRNA-seq",
-        "ATAC-seq"
+      "allOf": [
+        {
+          "$ref": "#/$defs/assay_enum"
+        }
       ],
-      "default": "DNA-seq"
+      "description": "The assay performed on the samples in the dataset to measure changes in or ask questions about the experimental system.",
+      "title": "Readout Assay"
     },
-    "processingSteps": {
-      "type": "array",
-      "description": "Processing steps performed on dataset samples before the readout assay.",
-      "title": "Processing Steps",
+    "description": {
+      "description": "Please include a description or any other helpful comments or annotations for the dataset.",
+      "title": "Dataset Description",
+      "type": "string"
+    },
+    "experimentalSystems": {
+      "description": "The type of biological/biochemical material(s) used as the subject(s) of the readout assay. Please select all that apply, considering all samples in the dataset. This selection will expand in future versions of this form. If you do not see your system represented here, feel free to leave this field blank.",
       "items": {
-        "title": "Processing Step",
-        "type": "string",
-        "minLength": 1,
-        "enum": [
-          "Differentiation", 
-          "Pretreatment",
-          "Filtration"
-        ],
-        "default": "Differentiation"
-      }
-    },
-    "experimentalSystem": {
-      "type": "array",
-      "description": "The cell, tissue, or other biological/biochemical material used as the subject of the experiment.",
+        "$ref": "#/$defs/experimentalSystems_enum"
+      },
       "title": "Experimental System",
-      "items":{
-        "title": "Experimental System",
-        "type": "string",
-        "minLength": 1,
-        "enum": [
-          "Cell Line",
-          "Patient Sample"
-        ],
-        "default": "Cell Line"
-      }
+      "type": "array",
+      "uniqueItems": true
+    },
+    "labName": {
+      "description": "Please enter the name of the lab to which the dataset belongs.",
+      "title": "Lab Name",
+      "type": "string"
+    },
+    "name": {
+      "description": "Please provide a unique name for the dataset.",
+      "title": "Dataset Name",
+      "type": "string"
+    },
+    "scope": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/scope_enum"
+        }
+      ],
+      "description": "The privacy level of the dataset.",
+      "title": "Scope"
     }
   },
   "required": [
-    "name",
-    "labName",
+    "assay",
     "description",
-    "assay"
-  ]
+    "name",
+    "scope"
+  ],
+  "title": "Dataset",
+  "type": "object"
 }
