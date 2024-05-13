@@ -1,7 +1,25 @@
 from datetime import datetime
 
-from sqlmodel import SQLModel, Field
+from sqlmodel import SQLModel, Field, Relationship
 from sqlalchemy import UniqueConstraint
+
+class MetadataCategory(SQLModel, table=True):
+    __tablename__ = 'metadata_category'
+    __table_args__ = (
+        UniqueConstraint('category', 'projectid', name='metadata_category_category_projectid_key'),
+    )
+
+    metadatacategoryid: int | None = Field(default=None, primary_key=True)
+    projectid: int
+    category: str | None = Field(default=None)
+    uiname: str | None = Field(default=None)
+    description: str | None = Field(default=None)
+    canonical_type: str | None = Field(default=None)
+    csvtemplate_name: str | None = Field(default=None)
+    categorytype: str | None = Field(default=None)
+    os_cp_id: str | None = Field(default=None)
+
+    category_descriptors: list["CategoryDescriptor"] = Relationship(back_populates="metadata_category")
 
 class CategoryDescriptor(SQLModel, table=True):
     __tablename__ = "category_descriptors"
@@ -10,7 +28,7 @@ class CategoryDescriptor(SQLModel, table=True):
         )
 
     categorydescriptorid: int | None = Field(default=None, primary_key=True)
-    metadatacategoryid: int
+    metadatacategoryid: int = Field(foreign_key="metadata_category.metadatacategoryid")
     importance: int
     fieldname: str | None = Field(default=None)
     fieldpropertyiri: str | None = Field(default=None)
@@ -47,3 +65,5 @@ class CategoryDescriptor(SQLModel, table=True):
     capturetime_os: str | None = Field(default=None)
     fieldtype_python: str | None = Field(default=None)
     uiname: str | None = Field(default=None)
+
+    metadata_category: MetadataCategory | None = Relationship(back_populates="category_descriptors")
