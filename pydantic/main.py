@@ -27,6 +27,7 @@ def generate_model(result: MetadataCategory):
     model_name = result.category
     config = ConfigDict(title=result.uiname, json_schema_extra={"description": result.description})
     attributes = {}
+    result.category_descriptors.sort(key=lambda x: x.categorydescriptorid)
 
     for descriptor in result.category_descriptors:
         name = descriptor.fieldname
