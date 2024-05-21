@@ -16,12 +16,13 @@ def pop_default(s):
 
 def select_category():
     with Session(engine) as session:
-        statement = select(MetadataCategory).where(MetadataCategory.projectid == settings.project_id).where(MetadataCategory.metadatacategoryid == 74)
-        result = session.exec(statement).one()
+        statement = select(MetadataCategory).where(MetadataCategory.projectid == settings.project_id)
+        results = session.exec(statement)
+        models = []
+        for result in results:
+            models.append(generate_model(result))
 
-        model, model_name = generate_model(result)
-
-        return model, model_name
+        return models
      
 def generate_model(result: MetadataCategory):
     model_name = result.category
@@ -60,24 +61,24 @@ def generate_model(result: MetadataCategory):
 
 
         if importance == 1:
-            field = Field(title=title, description=description)
+            field_info = Field(title=title, description=description)
         
         else:
-            field = Field(default=default, title=title, description=description, json_schema_extra=pop_default)
+            field_info = Field(default=default, title=title, description=description, json_schema_extra=pop_default)
 
-        attributes[name] = (type, field)
+        attributes[name] = (type, field_info)
     
     return create_model(model_name, **attributes, __config__=config), model_name
 
-def generate_json_schema(model, model_name):
-    schema_file_path = f"scratch/{model_name}.json"
-
-    with open (schema_file_path, "w") as ft:
-        print(json.dumps(model.model_json_schema(), indent=2), file = ft)
+def generate_json_schema(models):
+    for model in models:
+        schema_file_path = f"scratch/{model[1]}.json"
+        with open (schema_file_path, "w") as ft:
+            print(json.dumps(model[0].model_json_schema(), indent=2), file = ft)
 
 def main():
-    model, model_name = select_category()
-    generate_json_schema(model, model_name)
+    models = select_category()
+    generate_json_schema(models)
 
 if __name__ == "__main__":
     main()
