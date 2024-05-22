@@ -38,7 +38,11 @@ def generate_model(result: MetadataCategory):
         importance = descriptor.importance
         default = descriptor.default_value
 
-        if descriptor.fieldtype_python == "Enum":
+        if descriptor.fieldtype_python is None:
+            
+            type = str
+
+        elif descriptor.fieldtype_python == "Enum":
             values = descriptor.controlledvocabulary.split(";")
             members = {}
             for value in values:
@@ -72,7 +76,7 @@ def generate_model(result: MetadataCategory):
 
 def generate_json_schema(models):
     for model in models:
-        schema_file_path = f"scratch/{model[1]}.json"
+        schema_file_path = f"scratch/{settings.project_id}/{model[1]}.json"
         with open (schema_file_path, "w") as ft:
             print(json.dumps(model[0].model_json_schema(), indent=2), file = ft)
 
