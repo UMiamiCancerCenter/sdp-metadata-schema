@@ -71,6 +71,8 @@ def generate_model(result: MetadataCategory):
             field_info = Field(default=default, title=title, description=description, json_schema_extra=pop_default)
 
         attributes[name] = (type, field_info)
+        
+    attributes["entity"] = (str, Field(default=result.uiname, json_schema_extra={"const": result.uiname, "format": "hidden"}))
     
     return create_model(model_name, **attributes, __config__=config), model_name
 
