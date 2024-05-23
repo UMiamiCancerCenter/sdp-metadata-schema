@@ -1,5 +1,4 @@
 metadata/
-pydantic/.DS_Store
 .DS_Store
 pydantic/old/
 .env

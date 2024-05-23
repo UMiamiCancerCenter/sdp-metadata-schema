@@ -24,11 +24,11 @@ class smallMolecule(BaseModel):
     smallMoleculeDuration: float = Field(title="Duration", 
                                          description="Amount of time the experimental system was exposed to the small molecule.")
     smallMoleculeDurationUnits: str = Field(title="Duration Units",
-                                             description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology and must be a child term of 'time unit'.")
+                                             description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.")
     smallMoleculeConcentration: float = Field(title="Concentration", 
                                               description="Concentration of small molecule the experimental system was exposed to.")
     smallMoleculeConcentrationUnits: str = Field(title="Concentration Units", 
-                                                 description="Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Units of Measurement Ontology and must be a child term of 'concentration unit'.")
+                                                 description="Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Experimental Factor Ontology (EFO) or the Units of Measurement Ontology (UO) and must be a child term of 'concentration unit'.")
 
 class crisprKnockout(BaseModel):
     
@@ -51,7 +51,7 @@ class crisprKnockout(BaseModel):
     crisprKnockoutDuration: float = Field(title="Duration", 
                                          description="Amount of time the experimental system was exposed to the CRISPR reagent.")
     crisprKnockoutDurationUnits: str = Field(title="Duration Units",
-                                             description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology and must be a child term of 'time unit'.")
+                                             description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.")
     # crisprKnockoutConcentration: str = Field(title="Concentration")
 
 # class rnai(BaseModel):
@@ -377,7 +377,7 @@ class patientSample(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.0.1"
+                        "version": "0.0.2"
             })
     
     name: str = Field(title='Sample Name', 
