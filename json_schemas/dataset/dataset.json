@@ -1,63 +1,84 @@
 {
-  "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "title": "SDP Dataset",
-  "description": "This document records the details of the SDP dataset metadata content",
-  "version": "0.0.2",
-  "type": "object",
-  "properties": {
-    "name": {
-      "type": "string",
-      "title": "Name"
-    },
-    "description": {
-      "type": "string",
-      "title": "Description"
-    },
-    "assay": {
-      "title": "Readout Assay",
-      "description": "Supported readout assays: RNA-seq, scRNA-seq.",
-      "type": "string",
+  "$defs": {
+    "assay_enum": {
       "enum": [
         "RNA-seq",
-        "scRNA-seq"
-      ]
+        "scRNA-seq",
+        "DNA-seq",
+        "ATAC-seq"
+      ],
+      "title": "assay_enum",
+      "type": "string"
     },
-    "experimentalSubject": {
-      "type": "array",
-      "minItems": 1,
-      "description": "Model organ system(s) being studied or modelled in this study.",
-      "title": "Experimental subject(s)",
-      "items": {
-        "description": "Model organ system being studied or modelled in this dataset. Supported: Model System, Biospecimen, Target.",
-        "title": "Model system",
-        "type": "string",
-        "minLength": 1,
-        "enum": [
-          "Model System", 
-          "Biospecimen",
-          "Target"
-        ]
-      }
+    "experimentalSystems_enum": {
+      "enum": [
+        "Cell Line",
+        "Patient Sample"
+      ],
+      "title": "experimentalSystems_enum",
+      "type": "string"
     },
-    "perturbationType": {
-      "type": "array",
-      "minItems": 1,
-      "description": "Type of perturbation introduced by the gene expression alteration assay.",
-      "title": "Perturbation type(s)",
+    "scope_enum": {
+      "enum": [
+        "private",
+        "shared",
+        "public"
+      ],
+      "title": "scope_enum",
+      "type": "string"
+    }
+  },
+  "description": "This document records the details of the SDP dataset metadata content.",
+  "properties": {
+    "assay": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/assay_enum"
+        }
+      ],
+      "description": "The assay performed on the samples in the dataset to measure changes in or ask questions about the experimental system.",
+      "title": "Readout Assay"
+    },
+    "description": {
+      "description": "Please include a description or any other helpful comments or annotations for the dataset.",
+      "title": "Dataset Description",
+      "type": "string"
+    },
+    "experimentalSystems": {
+      "description": "The type of biological/biochemical material(s) used as the subject(s) of the readout assay. Please select all that apply, considering all samples in the dataset. This selection will expand in future versions of this form. If you do not see your system represented here, feel free to leave this field blank.",
       "items": {
-        "type": "string",
-        "minLength": 1
+        "$ref": "#/$defs/experimentalSystems_enum"
       },
-      "examples": [
-        "drug perturbations",
-        "irreversible gene knockout",
-        "reversible gene knockdown"
-      ]
+      "title": "Experimental System",
+      "type": "array",
+      "uniqueItems": true
+    },
+    "labName": {
+      "description": "Please enter the name of the lab to which the dataset belongs.",
+      "title": "Lab Name",
+      "type": "string"
+    },
+    "name": {
+      "description": "Please provide a unique name for the dataset.",
+      "title": "Dataset Name",
+      "type": "string"
+    },
+    "scope": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/scope_enum"
+        }
+      ],
+      "description": "The privacy level of the dataset.",
+      "title": "Scope"
     }
   },
   "required": [
-    "name",
+    "assay",
     "description",
-    "assay"
-  ]
+    "name",
+    "scope"
+  ],
+  "title": "Dataset",
+  "type": "object"
 }
