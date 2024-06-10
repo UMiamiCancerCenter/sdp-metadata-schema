@@ -1,121 +1,419 @@
 {
-  "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "title": "SDP Sample",
-  "description": "This document records the details of the SDP sample metadata content",
-  "version": "0.0.2",
-  "type": "object",
-  "properties": {
-    "name": {
-      "type": "string",
-      "title": "Name"
-    },
-    "description": {
-      "type": "string",
-      "title": "Description"
-    },
-    "subject": {
-      "type": "object",
-      "title": "Subject in the sample",
-      "required": [
-        "type"
-      ],
+  "$defs": {
+    "cellLine": {
       "properties": {
-        "type": {
-          "type": "string",
-          "title": "Subject Type",
-          "enum": [
-            "organism",
-            "cell line",
-            "soil sample",
-            "waste water",
-            "other"
-          ]
+        "role": {
+          "const": "Model System",
+          "default": "Model System",
+          "format": "hidden",
+          "title": "Role",
+          "type": "string"
         },
-        "name": {
-          "type": "string",
-          "title": "Name"
-        },
-        "organismName": {
-          "type": "string",
-          "title": "Organism Name",
-          "graphRestriction": {
-            "ontologies": [
-                "obo:duo"
-            ],
-            "classes": [
-                "DUO:0000017"
-            ],
-            "includeSelf": false,
-            "queryFields": [
-                "obo_id",
-                "label"
-            ]
-        }
+        "entity": {
+          "const": "Cell Line",
+          "default": "Cell Line",
+          "format": "hidden",
+          "title": "Entity",
+          "type": "string"
         },
         "cellLineName": {
+          "title": "Name",
           "type": "string",
-          "title": "Cell Line Name"
-        },
-        "soilSample": {
-          "type": "string",
-          "title": "Soil Sample Name"
-        },
-        "wasteWater": {
-          "type": "string",
-          "title": "Waste Water Name"
-        },
-        "description": {
-          "type": "string",
-          "title": "Description"
-        }
-      }
-    },
-    "protocol": {
-      "type": "object",
-      "title": "Protocol used in the sample",
-      "properties": {
-        "name": {
-          "type": "string",
-          "title": "Protocol Name"
-        },
-        "description": {
-          "type": "string",
-          "title": "Protocol Description"
-        },
-        "protocolExtId": {
-          "type": "string",
-          "format": "uri",
-          "title": "Protocol External URI Identifier"
-        }
-      }
-    },
-    "perturbations": {
-      "type": "array",
-      "title": "List of Perturbations",
-      "items": {
-        "type": "object",
-        "required": [
-          "type"
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "title": "Perturbation Type"
-          },
-          "name": {
-            "type": "string",
-            "title": "Perturbation Name"
-          },
-          "description": {
-            "type": "string",
-            "title": "Perturbation Description"
+          "ui": {
+            "preview": {
+              "visible": true
+            }
           }
+        },
+        "cellLineLabBatchLabel": {
+          "title": "Lab Batch Label",
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
+        },
+        "cellLineTissue": {
+          "title": "Tissue of Origin",
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
+        },
+        "cellLineOrgan": {
+          "title": "Organ of Origin",
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
+        },
+        "cellLineOrganism": {
+          "title": "Organism of Origin",
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
+        },
+        "cellLineDisease": {
+          "title": "Disease",
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
+        }
+      },
+      "required": [
+        "cellLineName",
+        "cellLineTissue",
+        "cellLineOrgan",
+        "cellLineOrganism"
+      ],
+      "title": "Cell Line",
+      "type": "object",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
+    },
+    "crispr": {
+      "properties": {
+        "entity": {
+          "const": "CRISPR knockout",
+          "default": "CRISPR knockout",
+          "format": "hidden",
+          "title": "Entity",
+          "type": "string"
+        },
+        "crisprName": {
+          "title": "Name",
+          "type": "string"
+        },
+        "crisprLabBatchLabel": {
+          "default": "",
+          "title": "Lab Batch Label",
+          "type": "string"
+        },
+        "crisprTargetGeneID": {
+          "title": "NCBI Entrez ID for Target Gene",
+          "type": "string"
+        },
+        "crisprTargetGeneSpecies": {
+          "title": "Target Gene Species",
+          "type": "string"
+        }
+      },
+      "required": [
+        "crisprName",
+        "crisprTargetGeneID",
+        "crisprTargetGeneSpecies"
+      ],
+      "title": "CRISPR knockout",
+      "type": "object"
+    },
+    "patientSample": {
+      "properties": {
+        "role": {
+          "const": "Biospecimen",
+          "default": "Biospecimen",
+          "format": "hidden",
+          "title": "Role",
+          "type": "string"
+        },
+        "entity": {
+          "const": "Patient Sample",
+          "default": "Patient Sample",
+          "format": "hidden",
+          "title": "Entity",
+          "type": "string"
+        },
+        "patientSampleID": {
+          "title": "Patient Sample ID",
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
+        },
+        "patientSampleTumorType": {
+          "title": "Tumor Type",
+          "type": "string",
+          "ui": {
+            "preview": {
+              "visible": true
+            }
+          }
+        }
+      },
+      "required": [
+        "patientSampleID",
+        "patientSampleTumorType"
+      ],
+      "title": "Patient Sample",
+      "type": "object",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
+    },
+    "smallMolecule": {
+      "properties": {
+        "entity": {
+          "const": "Small Molecule",
+          "default": "Small Molecule",
+          "format": "hidden",
+          "title": "Entity",
+          "type": "string"
+        },
+        "smallMoleculeName": {
+          "title": "Name",
+          "type": "string"
+        },
+        "smallMoleculeLabBatchLabel": {
+          "default": "",
+          "title": "Lab Batch Label",
+          "type": "string"
+        },
+        "smallMoleculeDuration": {
+          "title": "Duration",
+          "type": "string"
+        },
+        "smallMoleculeConcentration": {
+          "title": "Concentration",
+          "type": "string"
+        }
+      },
+      "required": [
+        "smallMoleculeName",
+        "smallMoleculeDuration",
+        "smallMoleculeConcentration"
+      ],
+      "title": "Small Molecule",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "name": {
+      "title": "Sample Name",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "type": "string"
+    },
+    "experimentalSystem": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/cellLine"
+        },
+        {
+          "$ref": "#/$defs/patientSample"
+        }
+      ],
+      "title": "Experimental System",
+      "type": "object",
+      "ui": {
+        "preview": {
+          "visible": true
+        }
+      }
+    },
+    "perturbation": {
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/smallMolecule"
+          },
+          {
+            "$ref": "#/$defs/crispr"
+          }
+        ]
+      },
+      "title": "Perturbation",
+      "type": "array",
+      "ui": {
+        "datagrid": {
+          "columns": [
+            {
+              "field": "entity",
+              "title": "Perturbagen Type"
+            },
+            {
+              "field": "name",
+              "title": "Name"
+            },
+            {
+              "field": "duration",
+              "title": "Duration"
+            },
+            {
+              "field": "concentration",
+              "title": "Concentration"
+            }
+          ],
+          "entries": {
+            "Antibody": {
+              "columns": [
+                {
+                  "field": "entity",
+                  "getCellValue": "entity"
+                },
+                {
+                  "field": "name",
+                  "getCellValue": "antibodyName"
+                },
+                {
+                  "field": "duration",
+                  "getCellValue": "antibodyDuration"
+                },
+                {
+                  "field": "concentration",
+                  "getCellValue": "antibodyConcentration"
+                }
+              ]
+            },
+            "CRISPR": {
+              "columns": [
+                {
+                  "field": "entity",
+                  "getCellValue": "entity"
+                },
+                {
+                  "field": "name",
+                  "getCellValue": "crisprName"
+                }
+              ]
+            },
+            "Infectious Agent": {
+              "columns": [
+                {
+                  "field": "entity",
+                  "getCellValue": "entity"
+                },
+                {
+                  "field": "name",
+                  "getCellValue": "infectiousAgentName"
+                },
+                {
+                  "field": "duration",
+                  "getCellValue": "infectiousAgentDuration"
+                },
+                {
+                  "field": "concentration",
+                  "getCellValue": "infectiousAgentConcentration"
+                }
+              ]
+            },
+            "Protein": {
+              "columns": [
+                {
+                  "field": "entity",
+                  "getCellValue": "entity"
+                },
+                {
+                  "field": "name",
+                  "getCellValue": "proteinPName"
+                },
+                {
+                  "field": "duration",
+                  "getCellValue": "proteinPDuration"
+                },
+                {
+                  "field": "concentration",
+                  "getCellValue": "proteinPConcentration"
+                }
+              ]
+            },
+            "RNAi": {
+              "columns": [
+                {
+                  "field": "entity",
+                  "getCellValue": "entity"
+                },
+                {
+                  "field": "name",
+                  "getCellValue": "rnaiName"
+                },
+                {
+                  "field": "duration",
+                  "getCellValue": "rnaiDuration"
+                },
+                {
+                  "field": "concentration",
+                  "getCellValue": "rnaiConcentration"
+                }
+              ]
+            },
+            "Small Molecule": {
+              "columns": [
+                {
+                  "field": "entity",
+                  "getCellValue": "entity"
+                },
+                {
+                  "field": "name",
+                  "getCellValue": "smallMoleculeName"
+                },
+                {
+                  "field": "duration",
+                  "getCellValue": "smallMoleculeDuration"
+                },
+                {
+                  "field": "concentration",
+                  "getCellValue": "smallMoleculeConcentration"
+                }
+              ]
+            }
+          }
+        },
+        "preview": {
+          "title": "Perturbation:",
+          "visible": true
         }
       }
     }
   },
   "required": [
     "name",
-    "description"
-  ]
+    "description",
+    "experimentalSystem",
+    "perturbation"
+  ],
+  "title": "Sample",
+  "type": "object",
+  "ui": {
+    "datagrid": {
+      "columns": [
+        {
+          "field": "sampleName",
+          "getCellValue": "name",
+          "title": "Sample Name"
+        },
+        {
+          "field": "description",
+          "getCellValue": "description",
+          "title": "Description"
+        },
+        {
+          "field": "experimentalSystemColumn",
+          "getCellValue": "experimentalSystem.entity",
+          "title": "Experimental System"
+        }
+      ]
+    },
+    "preview": {
+      "visible": true
+    }
+  }
 }
