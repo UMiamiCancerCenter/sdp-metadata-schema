@@ -1,63 +1,62 @@
 {
-  "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "title": "SDP Dataset",
-  "description": "This document records the details of the SDP dataset metadata content",
-  "version": "0.0.2",
+  "title": "Dataset",
+  "version": "0.0.1",
   "type": "object",
   "properties": {
     "name": {
       "type": "string",
-      "title": "Name"
+      "title": "Dataset Name",
+      "description": "Please provide a unique name for the dataset."
     },
     "description": {
       "type": "string",
-      "title": "Description"
+      "title": "Dataset Description",
+      "description": "Please include a description or any other helpful comments or annotations for the dataset."
+    },
+    "labName": {
+      "type": "string",
+      "title": "Lab Name",
+      "description": "Please enter the name of the lab to which the dataset belongs."
+    },
+    "scope": {
+      "title": "Scope",
+      "description": "The privacy level of the dataset.\n* Private - can only be seen by the dataset owner and supervisor/PI.\n* Shared - can be shared with other SDP users.\n* Public - can be seen by any SDP user.",
+      "type": "string",
+      "enum": [
+        "private",
+        "shared",
+        "public"
+      ]
     },
     "assay": {
       "title": "Readout Assay",
-      "description": "Supported readout assays: RNA-seq, scRNA-seq.",
+      "description": "The assay performed on the samples in the dataset to measure changes in or ask questions about the experimental system. Currently supported readout assays include: RNA-seq, scRNA-seq, DNA-seq, ATAC-seq.",
       "type": "string",
       "enum": [
         "RNA-seq",
-        "scRNA-seq"
+        "scRNA-seq",
+        "DNA-seq",
+        "ATAC-seq"
       ]
     },
-    "experimentalSubject": {
-      "type": "array",
-      "minItems": 1,
-      "description": "Model organ system(s) being studied or modelled in this study.",
-      "title": "Experimental subject(s)",
-      "items": {
-        "description": "Model organ system being studied or modelled in this dataset. Supported: Model System, Biospecimen, Target.",
-        "title": "Model system",
-        "type": "string",
-        "minLength": 1,
-        "enum": [
-          "Model System", 
-          "Biospecimen",
-          "Target"
-        ]
+      "experimentalSystems": {
+        "type": "array",
+        "description": "The type of biological/biochemical material(s) used as the subject(s) of the readout assay. Please select all that apply, considering all samples in the dataset. This selection will expand in future versions of this form. If you do not see your system represented here, feel free to leave this field blank.",
+        "title": "Experimental System",
+        "items":{
+          "type": "string",
+          "enum": [
+            "Cell Line",
+            "Patient Sample"
+          ]
+        },
+        "uniqueItems": true
       }
-    },
-    "perturbationType": {
-      "type": "array",
-      "minItems": 1,
-      "description": "Type of perturbation introduced by the gene expression alteration assay.",
-      "title": "Perturbation type(s)",
-      "items": {
-        "type": "string",
-        "minLength": 1
-      },
-      "examples": [
-        "drug perturbations",
-        "irreversible gene knockout",
-        "reversible gene knockdown"
-      ]
-    }
   },
   "required": [
     "name",
     "description",
+    "scope",
     "assay"
   ]
 }

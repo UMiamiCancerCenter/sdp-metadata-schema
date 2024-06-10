@@ -1,0 +1,8 @@
+{
+    "scope": {
+        "ui:widget": "radio"
+    },
+    "experimentalSystems": {
+      "ui:widget": "checkboxes"
+    }
+  }
