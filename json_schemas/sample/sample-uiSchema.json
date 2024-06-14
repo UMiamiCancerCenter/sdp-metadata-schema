@@ -1,14 +1,27 @@
 {
     "experimentalSystem": {
-        "content": {
-            "cellLineName": {
-                "ui:widget": "CelllineWidget"
-            }
+      "cellLineName": {
+        "ui:widget": "CelllineWidget",
+        "ui:options": {
+          "update": {
+            "id": "cellLineId",
+            "name": "cellLineName"
+          }
         }
+      }
     },
     "perturbation": {
+      "items": {
         "smallMoleculeName": {
-            "ui:widget": "CompoundWidget"
+          "ui:widget": "CompoundWidget",
+          "ui:options": {
+            "update": {
+              "id": "smallMoleculeId",
+              "name": "smallMoleculeName"
+            }
+          }
         }
+      }
     }
-}
+  }
+  
