@@ -100,7 +100,7 @@ class protein(BaseModel):
                                               description="Concentration of protein that the experimental system was exposed to.")
     proteinConcentrationUnits: str = Field(title="Concentration Units", 
                                                  description="Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Experimental Factor Ontology (EFO) or the Units of Measurement Ontology (UO) and must be a child term of 'concentration unit'.")
-    proteinDuration: str = Field(title="Duration", description="Amount of time the experimental system was exposed to the protein.")
+    proteinDuration: float = Field(title="Duration", description="Amount of time the experimental system was exposed to the protein.")
     proteinDurationUnits: str = Field(title="Duration Units",
                                              description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.")
    
