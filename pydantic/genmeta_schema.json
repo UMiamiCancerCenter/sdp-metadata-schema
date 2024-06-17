@@ -217,7 +217,7 @@
         "proteinDuration": {
           "description": "Amount of time the experimental system was exposed to the protein.",
           "title": "Duration",
-          "type": "string"
+          "type": "number"
         },
         "proteinDurationUnits": {
           "description": "Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.",
