@@ -1,6 +1,6 @@
 {
   "title": "Dataset",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "object",
   "properties": {
     "name": {
@@ -33,7 +33,7 @@
       "description": "The assay performed on the samples in the dataset to measure changes in or ask questions about the experimental system. Currently supported readout assays include: RNA-seq, scRNA-seq, DNA-seq, ATAC-seq.",
       "type": "string",
       "enum": [
-        "RNA-seq",
+        "Bulk RNA-seq",
         "scRNA-seq",
         "DNA-seq",
         "ATAC-seq"
@@ -47,7 +47,7 @@
           "type": "string",
           "enum": [
             "Cell Line",
-            "Patient Sample"
+            "Primary Cells"
           ]
         },
         "uniqueItems": true
