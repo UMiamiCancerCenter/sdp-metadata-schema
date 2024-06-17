@@ -1,9 +1,7 @@
 import json
 from typing import Union, List
 
-# import streamlit as st
 from pydantic import BaseModel, Field
-# import streamlit_pydantic as sp
 
 from pydantic.config import ConfigDict
 
@@ -14,6 +12,10 @@ class smallMolecule(BaseModel):
     
     model_config = ConfigDict(title="Small Molecule", 
                               description="Molecules with a low molecular weight (generally < 900 daltons) used to perturb the experimental system, often binding to specific biological targets.")
+    
+    role: str = Field(default="Perturbagen", 
+                        json_schema_extra={"const": "Perturbagen",
+                                           "format": "hidden"})
 
     entity: str = Field(default="Small Molecule", 
                                          json_schema_extra={"const": "Small Molecule", "format": "hidden"})
@@ -34,6 +36,10 @@ class crisprKnockout(BaseModel):
     
     model_config = ConfigDict(title="CRISPR Knockout", 
                               description="A Cas9/gRNA ribonucleoprotein complex that introduces permanent loss-of-function mutations in a gene.")
+    
+    role: str = Field(default="Perturbagen", 
+                        json_schema_extra={"const": "Perturbagen",
+                                           "format": "hidden"})
 
     entity: str = Field(default="CRISPR Knockout", 
                                          json_schema_extra={"const": "CRISPR Knockout", 
@@ -76,16 +82,28 @@ class crisprKnockout(BaseModel):
 #     antibodyDuration: str = Field(title="Duration")
 #     antibodyConcentration: str = Field(title="Concentration")
 
-# class proteinP(BaseModel):
+class protein(BaseModel):
     
-#     model_config = ConfigDict(title='Protein')
+    model_config = ConfigDict(title='Protein', description="Natural or engineered perturbagens consisting of large, heavy polypeptide chains structured by primary, secondary, tertiary, and quaternary structures.  Includes, but not limited to, enzymes, cofactors, signaling molecules, adhesion molecules, and structural chains.  Antibodies, while proteins, are defined separately as Antibody perturbagens.")
 
-#     entity: str = Field(default="Protein", 
-#                                          json_schema_extra={"const": "Protein",
-#                                                             "format": "hidden"})
-#     proteinPName: str = Field(title="Protein Name")
-#     proteinPDuration: str = Field(title="Duration")
-#     proteinPConcentration: str = Field(title="Concentration")
+    role: str = Field(default="Perturbagen", 
+                        json_schema_extra={"const": "Perturbagen",
+                                           "format": "hidden"})
+
+    entity: str = Field(default="Protein", 
+                                         json_schema_extra={"const": "Protein",
+                                                            "format": "hidden"})
+    proteinName: str = Field(title="Name", description="The primary name of the protein.")
+    proteinLabBatchLabel: str = Field(title="Lab Batch Label", description="Lab-specific ID for the batch of protein used in the experiment.")
+    proteinUniProtId: str = Field(title="UniProt ID", description="The UniProt ID of the specific protein and, if relevant, isoform.", default="", json_schema_extra=pop_default)
+    proteinConcentration: float = Field(title="Concentration", 
+                                              description="Concentration of protein that the experimental system was exposed to.")
+    proteinConcentrationUnits: str = Field(title="Concentration Units", 
+                                                 description="Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Experimental Factor Ontology (EFO) or the Units of Measurement Ontology (UO) and must be a child term of 'concentration unit'.")
+    proteinDuration: str = Field(title="Duration", description="Amount of time the experimental system was exposed to the protein.")
+    proteinDurationUnits: str = Field(title="Duration Units",
+                                             description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.")
+   
 
 # class infectiousAgent(BaseModel):
     
@@ -179,25 +197,30 @@ class crisprKnockout(BaseModel):
 #                                                                  }
 #                                                             }})
 
-# class primaryCells(BaseModel):
+class primaryCell(BaseModel):
 
-#     model_config = ConfigDict(title="Primary Cells", json_schema_extra={"ui": {
-#                                     "preview": {
-#                                      "visible": True
-#                                     }
-#                                     }
-#                                 })
-#     role: str = Field(default="Model System", 
-#                         json_schema_extra={"const": "Model System",
-#                                            "format": "hidden"})
-#     entity: str = Field(default="Primary Cells", 
-#                         json_schema_extra={"const": "Primary Cells",
-#                                            "format": "hidden"})
-#     primaryCellsType: str = Field(title="Cell Type", json_schema_extra={"ui": {
-#                                                                     "preview": {
-#                                                                     "visible": True
-#                                                                  }
-#                                                             }})
+    model_config = ConfigDict(title="Primary Cells", description="Cells obtained from homogeneous tissue, such as a singular organ or organ sub-structure, and maintained in culture temporarily for experimental purposes.  Only viable for a limited time after isolation.")
+
+    role: str = Field(default="Model System", 
+                        json_schema_extra={"const": "Model System",
+                                           "format": "hidden"})
+    entity: str = Field(default="Primary Cells", 
+                        json_schema_extra={"const": "Primary Cells",
+                                           "format": "hidden"})
+    primaryCellName: str = Field(title="Name", description="Name of the type of the cell, with the name chosen from the Cell Ontology (CL). Must be a child of term 'cell'.")
+
+    primaryCellLabBatchLabel: str = Field(title='Lab Batch Label', description="Lab-specific ID for the  batch of cells used in the experiment")
+
+    primaryCellTissue: str = Field(title="Tissue of Origin", description="Tissue from which the cells were extracted, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'.")
+
+    primaryCellOrgan: str = Field(title="Organ of Origin", description="Organ from which the cells were extracted, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.", default="", json_schema_extra=pop_default)
+
+    primaryCellSpecies: str = Field(title="Species of Origin", description="Species from which the cells were extracted, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.")
+
+    primaryCellDisease: str = Field(title="Disease", description="If the cells are diseased, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the cells were not diseased when obtained from the donor.", default="",json_schema_extra=pop_default)
+
+
+
 
 # class differentiatedCells(BaseModel):
     
@@ -290,20 +313,20 @@ class cellLine(BaseModel):
     #                                                              }
     #                                                         }})
 
-class patientSample(BaseModel):
+# class patientSample(BaseModel):
     
-    model_config = ConfigDict(title="Patient Sample")
-    role: str = Field(default="Biospecimen", 
-                        json_schema_extra={"const": "Biospecimen",
-                                           "format": "hidden"})
-    entity: str = Field(default="Patient Sample", 
-                        json_schema_extra={"const": "Patient Sample",
-                                           "format": "hidden"})
-    patientSampleId: str = Field(title="Patient Sample ID")
-    patientSampleDisease: str = Field(title="Disease", 
-                                      description="If the sample came from diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the tissue was not diseased.",
-                                      default="",
-                                      json_schema_extra=pop_default)
+#     model_config = ConfigDict(title="Patient Sample")
+#     role: str = Field(default="Biospecimen", 
+#                         json_schema_extra={"const": "Biospecimen",
+#                                            "format": "hidden"})
+#     entity: str = Field(default="Patient Sample", 
+#                         json_schema_extra={"const": "Patient Sample",
+#                                            "format": "hidden"})
+#     patientSampleId: str = Field(title="Patient Sample ID")
+#     patientSampleDisease: str = Field(title="Disease", 
+#                                       description="If the sample came from diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the tissue was not diseased.",
+#                                       default="",
+#                                       json_schema_extra=pop_default)
    
 # class target(BaseModel):
     
@@ -377,7 +400,7 @@ class patientSample(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.0.2"
+                        "version": "0.0.4"
             })
     
     name: str = Field(title='Sample Name', 
@@ -386,20 +409,20 @@ class sample(BaseModel):
                              description="Please include a description or any other helpful comments or annotations for the sample.")
     experimentalSystem: Union[
             cellLine,
-            # primaryCells
+            primaryCell
             # differentiatedCells,
             # ipsc,
             # tissue
-            patientSample
+            # patientSample
             ] = Field(title="Experimental System", json_schema_extra={
                                   "type": "object"
                             })
     perturbation: List[Union[
         smallMolecule,
-        crisprKnockout
+        crisprKnockout,
         # rnai,
         # antibody,
-        # proteinP,
+        protein
         # infectiousAgent
             ] 
         ]

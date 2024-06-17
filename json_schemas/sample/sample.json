@@ -57,6 +57,13 @@
     },
     "crisprKnockout": {
       "properties": {
+        "role": {
+          "const": "Perturbagen",
+          "default": "Perturbagen",
+          "format": "hidden",
+          "title": "Role",
+          "type": "string"
+        },
         "entity": {
           "const": "CRISPR Knockout",
           "default": "CRISPR Knockout",
@@ -110,40 +117,134 @@
       "title": "CRISPR Knockout",
       "type": "object"
     },
-    "patientSample": {
+    "primaryCell": {
       "properties": {
         "role": {
-          "const": "Biospecimen",
-          "default": "Biospecimen",
+          "const": "Model System",
+          "default": "Model System",
           "format": "hidden",
           "title": "Role",
           "type": "string"
         },
         "entity": {
-          "const": "Patient Sample",
-          "default": "Patient Sample",
+          "const": "Primary Cells",
+          "default": "Primary Cells",
           "format": "hidden",
           "title": "Entity",
           "type": "string"
         },
-        "patientSampleId": {
-          "title": "Patient Sample ID",
+        "primaryCellName": {
+          "description": "Name of the type of the cell, with the name chosen from the Cell Ontology (CL). Must be a child of term 'cell'.",
+          "title": "Name",
           "type": "string"
         },
-        "patientSampleDisease": {
-          "description": "If the sample came from diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the tissue was not diseased.",
+        "primaryCellLabBatchLabel": {
+          "description": "Lab-specific ID for the  batch of cells used in the experiment",
+          "title": "Lab Batch Label",
+          "type": "string"
+        },
+        "primaryCellTissue": {
+          "description": "Tissue from which the cells were extracted, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'.",
+          "title": "Tissue of Origin",
+          "type": "string"
+        },
+        "primaryCellOrgan": {
+          "description": "Organ from which the cells were extracted, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.",
+          "title": "Organ of Origin",
+          "type": "string"
+        },
+        "primaryCellSpecies": {
+          "description": "Species from which the cells were extracted, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
+          "title": "Species of Origin",
+          "type": "string"
+        },
+        "primaryCellDisease": {
+          "description": "If the cells are diseased, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the cells were not diseased when obtained from the donor.",
           "title": "Disease",
           "type": "string"
         }
       },
       "required": [
-        "patientSampleId"
+        "primaryCellName",
+        "primaryCellLabBatchLabel",
+        "primaryCellTissue",
+        "primaryCellSpecies"
       ],
-      "title": "Patient Sample",
+      "title": "Primary Cells",
+      "type": "object"
+    },
+    "protein": {
+      "properties": {
+        "role": {
+          "const": "Perturbagen",
+          "default": "Perturbagen",
+          "format": "hidden",
+          "title": "Role",
+          "type": "string"
+        },
+        "entity": {
+          "const": "Protein",
+          "default": "Protein",
+          "format": "hidden",
+          "title": "Entity",
+          "type": "string"
+        },
+        "proteinName": {
+          "description": "The primary name of the protein.",
+          "title": "Name",
+          "type": "string"
+        },
+        "proteinLabBatchLabel": {
+          "description": "Lab-specific ID for the batch of protein used in the experiment.",
+          "title": "Lab Batch Label",
+          "type": "string"
+        },
+        "proteinUniProtId": {
+          "description": "The UniProt ID of the specific protein and, if relevant, isoform.",
+          "title": "UniProt ID",
+          "type": "string"
+        },
+        "proteinConcentration": {
+          "description": "Concentration of protein that the experimental system was exposed to.",
+          "title": "Concentration",
+          "type": "number"
+        },
+        "proteinConcentrationUnits": {
+          "description": "Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Experimental Factor Ontology (EFO) or the Units of Measurement Ontology (UO) and must be a child term of 'concentration unit'.",
+          "title": "Concentration Units",
+          "type": "string"
+        },
+        "proteinDuration": {
+          "description": "Amount of time the experimental system was exposed to the protein.",
+          "title": "Duration",
+          "type": "string"
+        },
+        "proteinDurationUnits": {
+          "description": "Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.",
+          "title": "Duration Units",
+          "type": "string"
+        }
+      },
+      "required": [
+        "proteinName",
+        "proteinLabBatchLabel",
+        "proteinConcentration",
+        "proteinConcentrationUnits",
+        "proteinDuration",
+        "proteinDurationUnits"
+      ],
+      "title": "Protein",
       "type": "object"
     },
     "smallMolecule": {
       "properties": {
+        "role": {
+          "const": "Perturbagen",
+          "default": "Perturbagen",
+          "format": "hidden",
+          "title": "Role",
+          "type": "string"
+        },
         "entity": {
           "const": "Small Molecule",
           "default": "Small Molecule",
@@ -210,7 +311,7 @@
           "$ref": "#/$defs/cellLine"
         },
         {
-          "$ref": "#/$defs/patientSample"
+          "$ref": "#/$defs/primaryCell"
         }
       ],
       "title": "Experimental System",
@@ -224,6 +325,9 @@
           },
           {
             "$ref": "#/$defs/crisprKnockout"
+          },
+          {
+            "$ref": "#/$defs/protein"
           }
         ]
       },
@@ -239,5 +343,5 @@
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.0.3"
+  "version": "0.0.4"
 }
