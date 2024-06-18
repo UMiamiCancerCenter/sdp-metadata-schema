@@ -54,6 +54,7 @@
         }
       },
       "required": [
+        "cellLineId",
         "cellLineName",
         "cellLineTissue",
         "cellLineSpecies"
@@ -296,6 +297,7 @@
         }
       },
       "required": [
+        "smallMoleculeId",
         "smallMoleculeName",
         "smallMoleculeDuration",
         "smallMoleculeDurationUnits",
