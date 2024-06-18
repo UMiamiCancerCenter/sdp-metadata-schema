@@ -16,6 +16,12 @@
           "title": "Entity",
           "type": "string"
         },
+        "cellLineId": {
+          "description": "",
+          "title": "",
+          "type": "string",
+          "format": "hidden"
+        },
         "cellLineName": {
           "description": "The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'.",
           "title": "Name",
@@ -251,6 +257,12 @@
           "format": "hidden",
           "title": "Entity",
           "type": "string"
+        },
+        "smallMoleculeId": {
+          "description": "",
+          "title": "",
+          "type": "string",
+          "format": "hidden"
         },
         "smallMoleculeName": {
           "description": "The common, primary, recognizable name for the small molecule being used.",
