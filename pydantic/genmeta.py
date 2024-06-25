@@ -24,7 +24,7 @@ class smallMolecule(BaseModel):
     entity: str = Field(default="Small Molecule", 
                                          json_schema_extra={"const": "Small Molecule", "format": "hidden"})
     
-    smallMoleculeId: str = Field(title= "Small Molecule ID", default="", json_schema_extra=add_hidden)
+    smallMoleculeId: str = Field(title= "", default="", json_schema_extra=add_hidden)
 
     smallMoleculeName: str = Field(title="Small Molecule Name", 
                                    description="The common, primary, recognizable name for the small molecule being used.")
@@ -282,7 +282,7 @@ class cellLine(BaseModel):
                                                                 "format": "hidden",
                                                                 })
     
-    cellLineId: str = Field(title="Cell Line ID", default="", json_schema_extra=add_hidden)
+    cellLineId: str = Field(title="", default="", json_schema_extra=add_hidden)
 
     cellLineName: str = Field(title="Name", 
                               description="The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'." 

@@ -18,7 +18,7 @@
         },
         "cellLineId": {
           "format": "hidden",
-          "title": "Cell Line ID",
+          "title": "",
           "type": "string"
         },
         "cellLineName": {
@@ -259,7 +259,7 @@
         },
         "smallMoleculeId": {
           "format": "hidden",
-          "title": "Small Molecule ID",
+          "title": "",
           "type": "string"
         },
         "smallMoleculeName": {
