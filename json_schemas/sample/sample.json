@@ -17,10 +17,9 @@
           "type": "string"
         },
         "cellLineId": {
-          "description": "",
-          "title": "",
-          "type": "string",
-          "format": "hidden"
+          "format": "hidden",
+          "title": "Cell Line ID",
+          "type": "string"
         },
         "cellLineName": {
           "description": "The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'.",
@@ -54,7 +53,6 @@
         }
       },
       "required": [
-        "cellLineId",
         "cellLineName",
         "cellLineTissue",
         "cellLineSpecies"
@@ -260,10 +258,9 @@
           "type": "string"
         },
         "smallMoleculeId": {
-          "description": "",
-          "title": "",
-          "type": "string",
-          "format": "hidden"
+          "format": "hidden",
+          "title": "Small Molecule ID",
+          "type": "string"
         },
         "smallMoleculeName": {
           "description": "The common, primary, recognizable name for the small molecule being used.",
@@ -297,7 +294,6 @@
         }
       },
       "required": [
-        "smallMoleculeId",
         "smallMoleculeName",
         "smallMoleculeDuration",
         "smallMoleculeDurationUnits",
@@ -352,10 +348,9 @@
   "required": [
     "name",
     "description",
-    "experimentalSystem",
-    "perturbation"
+    "experimentalSystem"
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.0.5"
+  "version": "0.0.6"
 }

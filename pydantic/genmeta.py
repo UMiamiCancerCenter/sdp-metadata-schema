@@ -8,6 +8,10 @@ from pydantic.config import ConfigDict
 def pop_default(s):
     s.pop('default')
 
+def add_hidden(s):
+    s.pop('default')
+    s.update({"format": "hidden"})
+
 class smallMolecule(BaseModel):
     
     model_config = ConfigDict(title="Small Molecule", 
@@ -19,6 +23,9 @@ class smallMolecule(BaseModel):
 
     entity: str = Field(default="Small Molecule", 
                                          json_schema_extra={"const": "Small Molecule", "format": "hidden"})
+    
+    smallMoleculeId: str = Field(title= "Small Molecule ID", default="", json_schema_extra=add_hidden)
+
     smallMoleculeName: str = Field(title="Small Molecule Name", 
                                    description="The common, primary, recognizable name for the small molecule being used.")
     smallMoleculeLabBatchLabel: str = Field(title="Lab Batch Label",
@@ -274,6 +281,9 @@ class cellLine(BaseModel):
                                             json_schema_extra={"const": "Cell Line",
                                                                 "format": "hidden",
                                                                 })
+    
+    cellLineId: str = Field(title="Cell Line ID", default="", json_schema_extra=add_hidden)
+
     cellLineName: str = Field(title="Name", 
                               description="The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'." 
                               )
@@ -400,7 +410,7 @@ class cellLine(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.0.4"
+                        "version": "0.0.6"
             })
     
     name: str = Field(title='Sample Name', 
@@ -425,7 +435,7 @@ class sample(BaseModel):
         protein
         # infectiousAgent
             ] 
-        ]
+        ] = Field(default="", json_schema_extra=pop_default)
                  
 
 def example():
