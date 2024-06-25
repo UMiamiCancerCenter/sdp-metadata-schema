@@ -139,7 +139,7 @@
           "type": "string"
         },
         "primaryCellName": {
-          "description": "Name of the type of the cell, with the name chosen from the Cell Ontology (CL). Must be a child term of 'cell'.",
+          "description": "Name of the type of cells, with the name chosen from the Cell Ontology (CL). Must be a child term of 'cell'.",
           "title": "Name",
           "type": "string"
         },

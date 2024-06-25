@@ -214,7 +214,7 @@ class primaryCell(BaseModel):
     entity: str = Field(default="Primary Cells", 
                         json_schema_extra={"const": "Primary Cells",
                                            "format": "hidden"})
-    primaryCellName: str = Field(title="Name", description="Name of the type of the cell, with the name chosen from the Cell Ontology (CL). Must be a child term of 'cell'.")
+    primaryCellName: str = Field(title="Name", description="Name of the type of cells, with the name chosen from the Cell Ontology (CL). Must be a child term of 'cell'.")
 
     primaryCellLabBatchLabel: str = Field(title='Lab Batch Label', description="Lab-specific ID for the  batch of cells used in the experiment")
 
