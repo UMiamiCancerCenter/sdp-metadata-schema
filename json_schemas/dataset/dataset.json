@@ -22,11 +22,8 @@
       "title": "Scope",
       "description": "The privacy level of the dataset.\n* Private - can only be seen by the dataset owner and supervisor/PI.\n* Shared - can be shared with other SDP users.\n* Public - can be seen by any SDP user.",
       "type": "string",
-      "enum": [
-        "private",
-        "shared",
-        "public"
-      ]
+      "format": "hidden",
+      "default": "private"
     },
     "assay": {
       "title": "Readout Assay",
