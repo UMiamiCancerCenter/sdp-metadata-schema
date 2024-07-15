@@ -6,19 +6,16 @@
           "const": "Model System",
           "default": "Model System",
           "format": "hidden",
-          "title": "Role",
           "type": "string"
         },
         "entity": {
           "const": "Cell Line",
           "default": "Cell Line",
           "format": "hidden",
-          "title": "Entity",
           "type": "string"
         },
         "cellLineId": {
           "format": "hidden",
-          "title": "",
           "type": "string"
         },
         "cellLineName": {
@@ -66,14 +63,12 @@
           "const": "Perturbagen",
           "default": "Perturbagen",
           "format": "hidden",
-          "title": "Role",
           "type": "string"
         },
         "entity": {
           "const": "CRISPR Knockout",
           "default": "CRISPR Knockout",
           "format": "hidden",
-          "title": "Entity",
           "type": "string"
         },
         "crisprKnockoutName": {
@@ -128,14 +123,12 @@
           "const": "Model System",
           "default": "Model System",
           "format": "hidden",
-          "title": "Role",
           "type": "string"
         },
         "entity": {
           "const": "Primary Cells",
           "default": "Primary Cells",
           "format": "hidden",
-          "title": "Entity",
           "type": "string"
         },
         "primaryCellName": {
@@ -184,14 +177,12 @@
           "const": "Perturbagen",
           "default": "Perturbagen",
           "format": "hidden",
-          "title": "Role",
           "type": "string"
         },
         "entity": {
           "const": "Protein",
           "default": "Protein",
           "format": "hidden",
-          "title": "Entity",
           "type": "string"
         },
         "proteinName": {
@@ -247,19 +238,16 @@
           "const": "Perturbagen",
           "default": "Perturbagen",
           "format": "hidden",
-          "title": "Role",
           "type": "string"
         },
         "entity": {
           "const": "Small Molecule",
           "default": "Small Molecule",
           "format": "hidden",
-          "title": "Entity",
           "type": "string"
         },
         "smallMoleculeId": {
           "format": "hidden",
-          "title": "",
           "type": "string"
         },
         "smallMoleculeName": {
@@ -341,7 +329,6 @@
           }
         ]
       },
-      "title": "Perturbation",
       "type": "array"
     }
   },
@@ -352,5 +339,5 @@
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.0.6"
+  "version": "0.0.7"
 }

@@ -4,6 +4,8 @@ from typing import Union, List
 from pydantic import BaseModel, Field
 
 from pydantic.config import ConfigDict
+from pydantic._internal._core_utils import is_core_schema, CoreSchemaOrField
+from pydantic.json_schema import GenerateJsonSchema
 
 def pop_default(s):
     s.pop('default')
@@ -11,6 +13,13 @@ def pop_default(s):
 def add_hidden(s):
     s.pop('default')
     s.update({"format": "hidden"})
+
+class GenerateJsonSchemaWithoutDefaultTitles(GenerateJsonSchema):
+    def field_title_should_be_set(self, schema: CoreSchemaOrField) -> bool:
+        return_value = super().field_title_should_be_set(schema)
+        if return_value and is_core_schema(schema):
+            return False
+        return return_value
 
 class smallMolecule(BaseModel):
     
@@ -24,7 +33,7 @@ class smallMolecule(BaseModel):
     entity: str = Field(default="Small Molecule", 
                                          json_schema_extra={"const": "Small Molecule", "format": "hidden"})
     
-    smallMoleculeId: str = Field(title= "", default="", json_schema_extra=add_hidden)
+    smallMoleculeId: str = Field(default="", json_schema_extra=add_hidden)
 
     smallMoleculeName: str = Field(title="Small Molecule Name", 
                                    description="The common, primary, recognizable name for the small molecule being used.")
@@ -282,7 +291,7 @@ class cellLine(BaseModel):
                                                                 "format": "hidden",
                                                                 })
     
-    cellLineId: str = Field(title="", default="", json_schema_extra=add_hidden)
+    cellLineId: str = Field(default="", json_schema_extra=add_hidden)
 
     cellLineName: str = Field(title="Name", 
                               description="The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'." 
@@ -441,7 +450,7 @@ class sample(BaseModel):
 def example():
     """ run this to see the schema dumped """
     with open ("genmeta_schema.json", "w") as ft:
-        print(json.dumps(sample.model_json_schema(), indent=2), 
+        print(json.dumps(sample.model_json_schema(schema_generator=GenerateJsonSchemaWithoutDefaultTitles), indent=2), 
               file = ft)
 
 example()
