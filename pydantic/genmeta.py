@@ -7,12 +7,14 @@ from pydantic.config import ConfigDict
 from pydantic._internal._core_utils import is_core_schema, CoreSchemaOrField
 from pydantic.json_schema import GenerateJsonSchema
 
-def pop_default(s):
-    s.pop('default')
-
-def add_hidden(s):
-    s.pop('default')
-    s.update({"format": "hidden"})
+def delete_empty_default(schema):
+    for key in list(schema):
+        if key == "default":
+            if schema["default"] == "":
+                schema.pop("default")
+                continue
+        if isinstance(schema[key], dict):
+            delete_empty_default(schema[key])
 
 class GenerateJsonSchemaWithoutDefaultTitles(GenerateJsonSchema):
     def field_title_should_be_set(self, schema: CoreSchemaOrField) -> bool:
@@ -33,12 +35,12 @@ class smallMolecule(BaseModel):
     entity: str = Field(default="Small Molecule", 
                                          json_schema_extra={"const": "Small Molecule", "format": "hidden"})
     
-    smallMoleculeId: str = Field(default="", json_schema_extra=add_hidden)
+    smallMoleculeId: str = Field(default="", json_schema_extra={"format": "hidden"})
 
     smallMoleculeName: str = Field(title="Small Molecule Name", 
                                    description="The common, primary, recognizable name for the small molecule being used.")
     smallMoleculeLabBatchLabel: str = Field(title="Lab Batch Label",
-                                             description="Lab-specific ID for the batch of small molecule used in the experiment.", default="", json_schema_extra=pop_default)
+                                             description="Lab-specific ID for the batch of small molecule used in the experiment.", default="")
     smallMoleculeDuration: float = Field(title="Duration", 
                                          description="Amount of time the experimental system was exposed to the small molecule.")
     smallMoleculeDurationUnits: str = Field(title="Duration Units",
@@ -63,11 +65,11 @@ class crisprKnockout(BaseModel):
     crisprKnockoutName: str = Field(title="Name", 
                             description="The primary name of the CRISPR reagent.")
     crisprKnockoutLabBatchLabel: str = Field(title="Lab Batch Label", 
-                                     description="Lab-specific ID for the batch of CRISPR reagent used in the experiment.", default="", json_schema_extra=pop_default)
+                                     description="Lab-specific ID for the batch of CRISPR reagent used in the experiment.", default="")
     crisprKnockoutTargetGeneSymbol: str = Field(title="Target Gene Symbol",
                                          description="The HGNC (human), MGI (mouse), RGD (rat), or ZFIN (zebrafish) symbol of the gene knocked out by CRISPR for knockout, or VGNC gene symbols for other vertebrate species.")
     crisprKnockoutTargetGeneId: str = Field(title="NCBI Entrez ID for Target Gene", 
-                                    description="The NCBI Entrez Gene ID for the gene knocked out by CRISPR.", default="", json_schema_extra=pop_default)
+                                    description="The NCBI Entrez Gene ID for the gene knocked out by CRISPR.", default="")
     crisprKnockoutTargetGeneSpecies: str = Field(title="Target Gene Species", 
                                          description="The species of the target locus, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.")
     crisprKnockoutDuration: float = Field(title="Duration", 
@@ -110,8 +112,8 @@ class protein(BaseModel):
                                          json_schema_extra={"const": "Protein",
                                                             "format": "hidden"})
     proteinName: str = Field(title="Name", description="The primary name of the protein.")
-    proteinLabBatchLabel: str = Field(title="Lab Batch Label", description="Lab-specific ID for the batch of protein used in the experiment.")
-    proteinUniProtId: str = Field(title="UniProt ID", description="The UniProt ID of the specific protein and, if relevant, isoform.", default="", json_schema_extra=pop_default)
+    proteinLabBatchLabel: str = Field(title="Lab Batch Label", description="Lab-specific ID for the batch of protein used in the experiment.", default="")
+    proteinUniProtId: str = Field(title="UniProt ID", description="The UniProt ID of the specific protein and, if relevant, isoform.", default="")
     proteinConcentration: float = Field(title="Concentration", 
                                               description="Concentration of protein that the experimental system was exposed to.")
     proteinConcentrationUnits: str = Field(title="Concentration Units", 
@@ -225,15 +227,15 @@ class primaryCell(BaseModel):
                                            "format": "hidden"})
     primaryCellName: str = Field(title="Name", description="Name of the type of cells, with the name chosen from the Cell Ontology (CL). Must be a child term of 'cell'.")
 
-    primaryCellLabBatchLabel: str = Field(title='Lab Batch Label', description="Lab-specific ID for the  batch of cells used in the experiment")
+    primaryCellLabBatchLabel: str = Field(title='Lab Batch Label', description="Lab-specific ID for the  batch of cells used in the experiment", default="")
 
     primaryCellTissue: str = Field(title="Tissue of Origin", description="Tissue from which the cells were extracted, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'.")
 
-    primaryCellOrgan: str = Field(title="Organ of Origin", description="Organ from which the cells were extracted, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.", default="", json_schema_extra=pop_default)
+    primaryCellOrgan: str = Field(title="Organ of Origin", description="Organ from which the cells were extracted, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.", default="")
 
     primaryCellSpecies: str = Field(title="Species of Origin", description="Species from which the cells were extracted, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.")
 
-    primaryCellDisease: str = Field(title="Disease", description="If the cells are diseased, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the cells were not diseased when obtained from the donor.", default="",json_schema_extra=pop_default)
+    primaryCellDisease: str = Field(title="Disease", description="If the cells are diseased, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the cells were not diseased when obtained from the donor.", default="")
 
 
 
@@ -291,27 +293,25 @@ class cellLine(BaseModel):
                                                                 "format": "hidden",
                                                                 })
     
-    cellLineId: str = Field(default="", json_schema_extra=add_hidden)
+    cellLineId: str = Field(default="", json_schema_extra={"format": "hidden"})
 
     cellLineName: str = Field(title="Name", 
                               description="The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'." 
                               )
     cellLineLabBatchLabel: str = Field(title="Lab Batch Label", 
-                                       description="Lab-specific ID for the  batch of cells used in the experiment.", default="", json_schema_extra=pop_default)
+                                       description="Lab-specific ID for the  batch of cells used in the experiment.", default="")
     cellLineTissue: str = Field(title="Tissue of Origin", 
                                 description="Tissue from which the cell line was derived, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'."
                                 )
     cellLineOrgan: str = Field(title="Organ of Origin", 
                                description="Organ from which the cell line was derived, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.",
-                               default="",
-                               json_schema_extra=pop_default)
+                               default="")
     cellLineSpecies: str = Field(title="Species of Origin", 
                                   description="Species from which the cell line was derived, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'."
                                   )
     cellLineDisease: str = Field(title="Disease", 
                                  description="If the cell line came from a diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the origin tissue or cells were not diseased.",
-                                 default="",
-                                 json_schema_extra=pop_default)
+                                 default="")
 
 
 
@@ -419,7 +419,7 @@ class cellLine(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.0.6"
+                        "version": "0.0.7"
             })
     
     name: str = Field(title='Sample Name', 
@@ -444,14 +444,14 @@ class sample(BaseModel):
         protein
         # infectiousAgent
             ] 
-        ] = Field(default="", json_schema_extra=pop_default)
+        ] = Field(default="")
                  
 
 def example():
-    """ run this to see the schema dumped """
+    json_schema=sample.model_json_schema(schema_generator=GenerateJsonSchemaWithoutDefaultTitles)
+    delete_empty_default(json_schema)
     with open ("genmeta_schema.json", "w") as ft:
-        print(json.dumps(sample.model_json_schema(schema_generator=GenerateJsonSchemaWithoutDefaultTitles), indent=2), 
-              file = ft)
+        print(json.dumps(json_schema, indent=2), file = ft)
 
 example()
 

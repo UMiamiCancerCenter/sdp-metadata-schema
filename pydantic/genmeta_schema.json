@@ -164,7 +164,6 @@
       },
       "required": [
         "primaryCellName",
-        "primaryCellLabBatchLabel",
         "primaryCellTissue",
         "primaryCellSpecies"
       ],
@@ -223,7 +222,6 @@
       },
       "required": [
         "proteinName",
-        "proteinLabBatchLabel",
         "proteinConcentration",
         "proteinConcentrationUnits",
         "proteinDuration",
