@@ -41,15 +41,15 @@ class smallMolecule(BaseModel):
                                    description="The common, primary, recognizable name for the small molecule being used.")
     smallMoleculeLabBatchLabel: str = Field(title="Lab Batch Label",
                                              description="Lab-specific ID for the batch of small molecule used in the experiment.", default="")
-    smallMoleculeDuration: float = Field(title="Duration", 
-                                         description="Amount of time the experimental system was exposed to the small molecule.")
-    smallMoleculeDurationUnits: str = Field(title="Duration Units",
-                                             description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.")
     smallMoleculeConcentration: float = Field(title="Concentration", 
                                               description="Concentration of small molecule the experimental system was exposed to.")
     smallMoleculeConcentrationUnits: str = Field(title="Concentration Units", 
                                                  description="Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Experimental Factor Ontology (EFO) or the Units of Measurement Ontology (UO) and must be a child term of 'concentration unit'.")
-
+    smallMoleculeDuration: float = Field(title="Duration", 
+                                         description="Amount of time the experimental system was exposed to the small molecule.")
+    smallMoleculeDurationUnits: str = Field(title="Duration Units",
+                                             description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.")
+    
 class crisprKnockout(BaseModel):
     
     model_config = ConfigDict(title="CRISPR Knockout", 

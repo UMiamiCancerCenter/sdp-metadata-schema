@@ -258,16 +258,6 @@
           "title": "Lab Batch Label",
           "type": "string"
         },
-        "smallMoleculeDuration": {
-          "description": "Amount of time the experimental system was exposed to the small molecule.",
-          "title": "Duration",
-          "type": "number"
-        },
-        "smallMoleculeDurationUnits": {
-          "description": "Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.",
-          "title": "Duration Units",
-          "type": "string"
-        },
         "smallMoleculeConcentration": {
           "description": "Concentration of small molecule the experimental system was exposed to.",
           "title": "Concentration",
@@ -277,14 +267,24 @@
           "description": "Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Experimental Factor Ontology (EFO) or the Units of Measurement Ontology (UO) and must be a child term of 'concentration unit'.",
           "title": "Concentration Units",
           "type": "string"
+        },
+        "smallMoleculeDuration": {
+          "description": "Amount of time the experimental system was exposed to the small molecule.",
+          "title": "Duration",
+          "type": "number"
+        },
+        "smallMoleculeDurationUnits": {
+          "description": "Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.",
+          "title": "Duration Units",
+          "type": "string"
         }
       },
       "required": [
         "smallMoleculeName",
-        "smallMoleculeDuration",
-        "smallMoleculeDurationUnits",
         "smallMoleculeConcentration",
-        "smallMoleculeConcentrationUnits"
+        "smallMoleculeConcentrationUnits",
+        "smallMoleculeDuration",
+        "smallMoleculeDurationUnits"
       ],
       "title": "Small Molecule",
       "type": "object"
