@@ -20,6 +20,18 @@
         },
         "cellLineName": {
           "description": "The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'.",
+          "graphRestriction": {
+            "classes": [
+              "CLO:0000019"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:clo"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
           "title": "Name",
           "type": "string"
         },
@@ -30,21 +42,77 @@
         },
         "cellLineTissue": {
           "description": "Tissue from which the cell line was derived, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'.",
+          "graphRestriction": {
+            "classes": [
+              "NCIT:C12801",
+              "BTO:0000000",
+              "UBERON:0000479"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:ncit",
+              "obo:bto",
+              "obo:uberon"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
           "title": "Tissue of Origin",
           "type": "string"
         },
         "cellLineOrgan": {
           "description": "Organ from which the cell line was derived, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.",
+          "graphRestriction": {
+            "classes": [
+              "NCIT:C13018",
+              "FMA:67498",
+              "UBERON:0000062"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:ncit",
+              "obo:fma",
+              "obo:uberon"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
           "title": "Organ of Origin",
           "type": "string"
         },
         "cellLineSpecies": {
           "description": "Species from which the cell line was derived, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
+          "graphRestriction": {
+            "classes": [
+              "NCBITaxon:131567"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:ncbitaxon"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
           "title": "Species of Origin",
           "type": "string"
         },
         "cellLineDisease": {
           "description": "If the cell line came from a diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the origin tissue or cells were not diseased.",
+          "graphRestriction": {
+            "classes": [
+              "DOID:4"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:doid"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
           "title": "Disease",
           "type": "string"
         }
@@ -93,6 +161,18 @@
         },
         "crisprKnockoutTargetGeneSpecies": {
           "description": "The species of the target locus, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
+          "graphRestriction": {
+            "classes": [
+              "NCBITaxon:131567"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:ncbitaxon"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
           "title": "Target Gene Species",
           "type": "string"
         },
@@ -103,6 +183,18 @@
         },
         "crisprKnockoutDurationUnits": {
           "description": "Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.",
+          "graphRestriction": {
+            "classes": [
+              "UO:0000003"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:uo"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
           "title": "Duration Units",
           "type": "string"
         }
@@ -133,6 +225,18 @@
         },
         "primaryCellName": {
           "description": "Name of the type of cells, with the name chosen from the Cell Ontology (CL). Must be a child term of 'cell'.",
+          "graphRestriction": {
+            "classes": [
+              "CL:0000000"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:cl"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
           "title": "Name",
           "type": "string"
         },
@@ -143,21 +247,77 @@
         },
         "primaryCellTissue": {
           "description": "Tissue from which the cells were extracted, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'.",
+          "graphRestriction": {
+            "classes": [
+              "NCIT:C12801",
+              "BTO:0000000",
+              "UBERON:0000479"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:ncit",
+              "obo:bto",
+              "obo:uberon"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
           "title": "Tissue of Origin",
           "type": "string"
         },
         "primaryCellOrgan": {
           "description": "Organ from which the cells were extracted, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.",
+          "graphRestriction": {
+            "classes": [
+              "NCIT:C13018",
+              "FMA:67498",
+              "UBERON:0000062"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:ncit",
+              "obo:fma",
+              "obo:uberon"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
           "title": "Organ of Origin",
           "type": "string"
         },
         "primaryCellSpecies": {
           "description": "Species from which the cells were extracted, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
+          "graphRestriction": {
+            "classes": [
+              "NCBITaxon:131567"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:ncbitaxon"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
           "title": "Species of Origin",
           "type": "string"
         },
         "primaryCellDisease": {
           "description": "If the cells are diseased, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the cells were not diseased when obtained from the donor.",
+          "graphRestriction": {
+            "classes": [
+              "DOID:4"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:doid"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
           "title": "Disease",
           "type": "string"
         }
@@ -206,6 +366,20 @@
         },
         "proteinConcentrationUnits": {
           "description": "Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Experimental Factor Ontology (EFO) or the Units of Measurement Ontology (UO) and must be a child term of 'concentration unit'.",
+          "graphRestriction": {
+            "classes": [
+              "UO:0000051",
+              "UO:0000051"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "efo",
+              "obo:uo"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
           "title": "Concentration Units",
           "type": "string"
         },
@@ -216,6 +390,18 @@
         },
         "proteinDurationUnits": {
           "description": "Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.",
+          "graphRestriction": {
+            "classes": [
+              "UO:0000003"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:uo"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
           "title": "Duration Units",
           "type": "string"
         }
@@ -265,6 +451,20 @@
         },
         "smallMoleculeConcentrationUnits": {
           "description": "Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Experimental Factor Ontology (EFO) or the Units of Measurement Ontology (UO) and must be a child term of 'concentration unit'.",
+          "graphRestriction": {
+            "classes": [
+              "UO:0000051",
+              "UO:0000051"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "efo",
+              "obo:uo"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
           "title": "Concentration Units",
           "type": "string"
         },
@@ -275,6 +475,18 @@
         },
         "smallMoleculeDurationUnits": {
           "description": "Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.",
+          "graphRestriction": {
+            "classes": [
+              "UO:0000003"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:uo"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
           "title": "Duration Units",
           "type": "string"
         }
