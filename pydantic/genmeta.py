@@ -119,7 +119,8 @@ class protein(BaseModel):
                                               description="Concentration of protein that the experimental system was exposed to.")
     proteinConcentrationUnits: str = Field(title="Concentration Units", 
                                                  description="Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Experimental Factor Ontology (EFO) or the Units of Measurement Ontology (UO) and must be a child term of 'concentration unit'.",json_schema_extra={"graphRestriction": {"ontologies": ["efo","obo:uo"],"classes": ["UO:0000051","UO:0000051"],"queryFields": ["label"],"includeSelf": True}})
-    proteinDuration: float = Field(title="Duration", description="Amount of time the experimental system was exposed to the protein.")
+    proteinDuration: float = Field(title="Duration", description=
+                                   "Amount of time the experimental system was exposed to the protein.")
     proteinDurationUnits: str = Field(title="Duration Units",
                                              description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.",json_schema_extra={"graphRestriction": {"ontologies": ["obo:uo"],"classes": ["UO:0000003"],"queryFields": ["label"],"includeSelf": True}})
    
