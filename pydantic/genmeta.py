@@ -445,7 +445,7 @@ class sample(BaseModel):
         protein
         # infectiousAgent
             ] 
-        ] = Field(default="")
+        ] = Field(default="", title="Perturbation")
                  
 
 def example():
