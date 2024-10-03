@@ -1,0 +1,156 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "_id": {
+      "type": "object",
+      "properties": {
+        "$oid": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{24}$"
+        }
+      },
+      "required": ["$oid"]
+    },
+    "name": {
+      "type": "string"
+    },
+    "identifier": {
+      "type": "string"
+    },
+    "accession": {
+      "type": "object",
+      "properties": {
+        "primary": {
+          "type": "string"
+        }
+      },
+      "required": ["primary"]
+    },
+    "category": {
+      "type": "string"
+    },
+    "sex": {
+      "type": "string"
+    },
+    "synonyms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "diseases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "terminology": {
+            "type": "string"
+          },
+          "accession": {
+            "type": "string"
+          },
+          "disease": {
+            "type": "string"
+          }
+        },
+        "required": ["terminology", "accession", "disease"]
+      }
+    },
+    "speciesOfOrigin": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "terminology": {
+            "type": "string"
+          },
+          "accession": {
+            "type": "string"
+          },
+          "species": {
+            "type": "string"
+          }
+        },
+        "required": ["terminology", "accession", "species"]
+      }
+    },
+    "entryDate": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "created": {
+            "type": "string"
+          },
+          "last-updated": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "required": ["created", "last-updated", "version"]
+      }
+    },
+    "createdAt": {
+      "type": "object",
+      "properties": {
+        "$date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["$date"]
+    },
+    "createdBy": {
+      "type": "object",
+      "properties": {
+        "$oid": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{24}$"
+        }
+      },
+      "required": ["$oid"]
+    },
+    "updatedAt": {
+      "type": "object",
+      "properties": {
+        "$date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["$date"]
+    },
+    "scope": {
+      "type": "string",
+      "enum": ["private", "shared", "public"],
+      "default": "public"
+    },
+    "ownerUserId": {
+      "type": "object",
+      "properties": {
+        "$oid": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{24}$"
+        }
+      },
+      "required": ["$oid"],
+      "options": {
+        "hidden": true
+      }
+    },
+    "updatedBy": {
+      "type": "object",
+      "properties": {
+        "$oid": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{24}$"
+        }
+      },
+      "required": ["$oid"]
+    }
+  },
+  "required": ["_id", "name", "identifier", "accession", "category", "sex", "synonyms", "diseases", "speciesOfOrigin", "entryDate", "createdAt", "createdBy", "updatedAt", "scope", "ownerUserId", "updatedBy"]
+}
