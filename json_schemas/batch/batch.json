@@ -45,7 +45,7 @@
       "type": "string",
       "format": "date"
     },
-    "type": {
+    "content": {
       "anyOf": [
         {
           "$ref": "#/$defs/cellLine"
@@ -121,6 +121,12 @@
     "cellLine": {
       "type": "object",
       "properties": {
+        "type": {
+          "const": "Cell Line",
+          "default": "Cell Line",
+          "format": "hidden",
+          "type": "string"
+        },
         "cellLineId": {
           "type": "object",
           "properties": {
@@ -154,6 +160,12 @@
     "compound": {
       "type": "object",
       "properties": {
+        "type": {
+          "const": "Compound",
+          "default": "Compound",
+          "format": "hidden",
+          "type": "string"
+        },
         "compoundId": {
           "type": "object",
           "properties": {
