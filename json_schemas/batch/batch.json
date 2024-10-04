@@ -4,7 +4,9 @@
   "properties": {
     "_id": {
       "type": "object",
-      "hidden": true,
+      "options": {
+        "hidden": true
+      },
       "properties": {
         "$oid": {
           "type": "string",
@@ -69,7 +71,9 @@
     },
     "createdBy": {
       "type": "object",
-      "hidden": true,
+      "options": {
+        "hidden": true
+      },
       "properties": {
         "$oid": {
           "type": "string",
@@ -95,7 +99,6 @@
     },
     "ownerUserId": {
       "type": "object",
-      "hidden": true,
       "properties": {
         "$oid": {
           "type": "string",
@@ -109,7 +112,9 @@
     },
     "updatedBy": {
       "type": "object",
-      "hidden": true,
+      "options": {
+        "hidden": true
+      },
       "properties": {
         "$oid": {
           "type": "string",
@@ -132,7 +137,9 @@
         },
         "cellLineId": {
           "type": "object",
-          "hidden": true,
+          "options": {
+        "hidden": true
+      },
           "properties": {
             "$oid": {
               "type": "string",
@@ -172,7 +179,9 @@
         },
         "compoundId": {
           "type": "object",
-          "hidden": true,
+          "options": {
+            "hidden": true
+          },
           "properties": {
             "$oid": {
               "type": "string",
