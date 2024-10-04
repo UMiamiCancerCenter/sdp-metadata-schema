@@ -69,6 +69,7 @@
     },
     "createdBy": {
       "type": "object",
+      "hidden": true,
       "properties": {
         "$oid": {
           "type": "string",
@@ -94,6 +95,7 @@
     },
     "ownerUserId": {
       "type": "object",
+      "hidden": true,
       "properties": {
         "$oid": {
           "type": "string",
@@ -107,6 +109,7 @@
     },
     "updatedBy": {
       "type": "object",
+      "hidden": true,
       "properties": {
         "$oid": {
           "type": "string",
@@ -116,7 +119,7 @@
       "required": ["$oid"]
     }
   },
-  "required": ["_id", "name", "description", "vendorName", "vendorCode", "type", "deliveryDate", "expirationDate", "createdAt", "createdBy", "updatedAt", "scope", "ownerUserId", "updatedBy"],
+  "required": ["name", "description", "vendorName", "vendorCode", "type", "deliveryDate", "expirationDate", "scope"],
   "$defs": {
     "cellLine": {
       "type": "object",
@@ -129,6 +132,7 @@
         },
         "cellLineId": {
           "type": "object",
+          "hidden": true,
           "properties": {
             "$oid": {
               "type": "string",
@@ -155,7 +159,7 @@
           "type": "string"
         }
       },
-      "required": ["cellLineId", "cellLineName", "synonyms", "organism", "diseases", "biologicalSource"]
+      "required": ["cellLineName", "synonyms", "organism", "diseases", "biologicalSource"]
     },
     "compound": {
       "type": "object",
@@ -168,6 +172,7 @@
         },
         "compoundId": {
           "type": "object",
+          "hidden": true,
           "properties": {
             "$oid": {
               "type": "string",
