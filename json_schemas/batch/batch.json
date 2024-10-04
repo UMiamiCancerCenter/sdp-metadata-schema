@@ -153,6 +153,30 @@
         },
         "biologicalSource": {
           "type": "string"
+        },
+        "if": {
+          "properties": {
+            "compoundId": {
+              "properties": {
+                "$oid": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "Salt": {
+              "type": "null"
+            },
+            "SMILES": {
+              "type": "null"
+            },
+            "InChI": {
+              "type": "null"
+            }
+          }
         }
       },
       "required": ["cellLineName"]
