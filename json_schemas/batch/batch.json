@@ -116,7 +116,7 @@
       "required": ["$oid"]
     }
   },
-  "required": ["name", "description", "vendorName", "vendorCode", "type", "deliveryDate", "expirationDate", "scope"],
+  "required": ["name", "vendorName", "vendorCode", "type"],
   "$defs": {
     "cellLine": {
       "type": "object",
@@ -156,7 +156,7 @@
           "type": "string"
         }
       },
-      "required": ["cellLineName", "synonyms", "organism", "diseases", "biologicalSource"]
+      "required": ["cellLineName"]
     },
     "compound": {
       "type": "object",
@@ -169,9 +169,7 @@
         },
         "compoundId": {
           "type": "object",
-          "options": {
-            "hidden": true
-          },
+          "format": "hidden",
           "properties": {
             "$oid": {
               "type": "string",
@@ -201,7 +199,7 @@
           "type": "string"
         }
       },
-      "required": ["compoundId", "compoundName", "Salt", "molecularFormula", "molecularWeight", "purity", "smiles", "inchi"]
+      "required": ["compoundName"]
     }
   }
 }
