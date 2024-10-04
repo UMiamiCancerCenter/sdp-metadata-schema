@@ -1,0 +1,23 @@
+
+{
+    "content": {
+      "cellLineName": {
+        "ui:widget": "CelllineWidget",
+        "ui:options": {
+          "update": {
+            "id": "cellLineId",
+            "name": "cellLineName"
+          }
+        }
+      },
+      "compoundName": {
+          "ui:widget": "CompoundWidget",
+          "ui:options": {
+            "update": {
+              "id": "compoundId",
+              "name": "compoundName"
+            }
+          }
+        }
+    }
+  }
