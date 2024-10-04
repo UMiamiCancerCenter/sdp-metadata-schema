@@ -95,16 +95,14 @@
     },
     "ownerUserId": {
       "type": "object",
+      "format": "hidden",
       "properties": {
         "$oid": {
           "type": "string",
           "pattern": "^[a-fA-F0-9]{24}$"
         }
       },
-      "required": ["$oid"],
-      "options": {
-        "hidden": true
-      }
+      "required": ["$oid"]
     },
     "updatedBy": {
       "type": "object",
