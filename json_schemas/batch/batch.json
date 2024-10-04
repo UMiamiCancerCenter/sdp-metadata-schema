@@ -129,7 +129,6 @@
         },
         "cellLineId": {
           "type": "object",
-          "format": "hidden",
           "properties": {
             "$oid": {
               "type": "string",
@@ -169,7 +168,6 @@
         },
         "compoundId": {
           "type": "object",
-          "format": "hidden",
           "properties": {
             "$oid": {
               "type": "string",
