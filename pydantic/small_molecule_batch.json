@@ -46,11 +46,6 @@
           "title": "Small Molecule Alternative Names",
           "type": "array"
         },
-        "smallMoleculeLabName": {
-          "description": "Name of the lab running the experiment",
-          "title": "Lab Name",
-          "type": "string"
-        },
         "smallMoleculeLabCanonicalId": {
           "description": "Lab-specific ID for the small molecule compound",
           "title": "Small Molecule Lab Canonical ID",

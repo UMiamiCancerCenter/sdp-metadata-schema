@@ -49,7 +49,7 @@ class SmallMoleculeCanonical(BaseModel):
 
     smallMoleculeAlternativeNames: list[str] = Field(title="Small Molecule Alternative Names", description="List of synonymous compound names, drug name (if applicable), and other alternative names", default="")
 
-    smallMoleculeLabName: str = Field(title="Lab Name", description="Name of the lab running the experiment", default="")
+    # smallMoleculeLabName: str = Field(title="Lab Name", description="Name of the lab running the experiment", default="")
 
     smallMoleculeLabCanonicalId: str = Field(title="Small Molecule Lab Canonical ID", description="Lab-specific ID for the small molecule compound", default="")
 
@@ -83,14 +83,11 @@ class SmallMolecule(BaseModel):
 
     canonical: SmallMoleculeCanonical = Field(default="")
 
-def example():
+def main():
     json_schema=SmallMolecule.model_json_schema(schema_generator=GenerateJsonSchemaWithoutDefaultTitles)
     delete_empty_default(json_schema)
-    with open ("small_molecule.json", "w") as ft:
+    with open ("small_molecule_batch.json", "w") as ft:
         print(json.dumps(json_schema, indent=2), file = ft)
 
-example()
-
-# data = sp.pydantic_form(key="my_form", model=ExperimentalSubject)
-# if data:
-#     st.json(data.json())
+if __name__ == "__main__":
+    main()
