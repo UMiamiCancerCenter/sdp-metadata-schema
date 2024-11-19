@@ -1,0 +1,135 @@
+{
+  "$defs": {
+    "SmallMoleculeBatch": {
+      "properties": {
+        "smallMoleculeLabBatchLabel": {
+          "description": "Lab-specific ID for the batch of small molecule used in the experiment.",
+          "title": "Lab Batch Label",
+          "type": "string"
+        },
+        "smallMoleculeSmilesBatch": {
+          "description": "SMILES representation only as provided from the vendor; full structure with all information, i.e. isomeric SMILES",
+          "title": "Small Molecule Vendor-provided SMILES",
+          "type": "string"
+        },
+        "smallMoleculeProviderName": {
+          "description": "Vendor or lab that supplied the small molecule",
+          "title": "Small Molecule Provider Name",
+          "type": "string"
+        },
+        "smallMoleculeProviderCatalogId": {
+          "description": "ID or catalogue number assigned by the vendor or provider to the small molecule",
+          "title": "Small Molecule Provider Catalog ID",
+          "type": "string"
+        },
+        "smallMoleculeProviderBatchId": {
+          "description": "SMILES representation only as provided from the vendor; full structure with all information, i.e. isomeric SMILES",
+          "title": "Small Molecule Vendor-provided SMILES",
+          "type": "string"
+        }
+      },
+      "title": "SmallMoleculeBatch",
+      "type": "object"
+    },
+    "SmallMoleculeCanonical": {
+      "properties": {
+        "smallMoleculeName": {
+          "description": "The common, primary, recognizable name for the small molecule being used.",
+          "title": "Small Molecule Name",
+          "type": "string"
+        },
+        "smallMoleculeAlternativeNames": {
+          "description": "List of synonymous compound names, drug name (if applicable), and other alternative names",
+          "items": {
+            "type": "string"
+          },
+          "title": "Small Molecule Alternative Names",
+          "type": "array"
+        },
+        "smallMoleculeLabName": {
+          "description": "Name of the lab running the experiment",
+          "title": "Lab Name",
+          "type": "string"
+        },
+        "smallMoleculeLabCanonicalId": {
+          "description": "Lab-specific ID for the small molecule compound",
+          "title": "Small Molecule Lab Canonical ID",
+          "type": "string"
+        },
+        "smallMoleculeLincsId": {
+          "description": "The global LINCS ID of the small molecule for cross-reference to the LINCS project",
+          "title": "Small Molecule LINCS ID",
+          "type": "string"
+        },
+        "smallMoleculePubChemCid": {
+          "description": "CID that corresponds to the standardized parent compound in NCBIs PubChem database",
+          "title": "Small Molecule PubChem CID",
+          "type": "string"
+        },
+        "smallMoleculeChebiId": {
+          "description": "ChEBI ID of the small molecule",
+          "title": "Small Molecule ChEBI ID",
+          "type": "string"
+        },
+        "smallMoleculeSmilesParent": {
+          "description": "Canonical isomeric SMILES representation of parent (standardized) chemical structure",
+          "title": "Small Molecule Canonical SMILES",
+          "type": "string"
+        }
+      },
+      "required": [
+        "smallMoleculeName"
+      ],
+      "title": "SmallMoleculeCanonical",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "name": {
+      "description": "The common, primary, recognizable name for the small molecule being used.",
+      "title": "Small Molecule Name",
+      "type": "string"
+    },
+    "description": {
+      "description": "Please include a description or any other helpful comments or annotations for the small molecule.",
+      "title": "Description",
+      "type": "string"
+    },
+    "batchType": {
+      "const": "Small Molecule",
+      "default": "Small Molecule",
+      "format": "hidden",
+      "type": "string"
+    },
+    "scope": {
+      "default": "private",
+      "format": "hidden",
+      "type": "string"
+    },
+    "smallMoleculeId": {
+      "description": "A MongoDB ObjectId string",
+      "format": "hidden",
+      "type": "string"
+    },
+    "batch": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/SmallMoleculeBatch"
+        }
+      ]
+    },
+    "canonical": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/SmallMoleculeCanonical"
+        }
+      ]
+    }
+  },
+  "required": [
+    "name",
+    "description"
+  ],
+  "title": "Small Molecule",
+  "type": "object"
+}
