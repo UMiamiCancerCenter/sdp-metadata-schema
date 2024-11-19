@@ -52,6 +52,7 @@ def generate_model(result: MetadataCategory):
         description = descriptor.description
         importance = descriptor.importance
         default = descriptor.default_value
+        json_schema_extra = {}
 
         if descriptor.fieldtype_python is None:
             
@@ -78,16 +79,21 @@ def generate_model(result: MetadataCategory):
         else:
             type = eval(descriptor.fieldtype_python)
 
+        if descriptor.metadata_tier == "batch":
+            json_schema_extra["tier"] = "batch"
+        
+        if descriptor.metadata_tier == "canonical":
+            json_schema_extra["tier"] = "canonical"
 
         if importance == 1:
-            field_info = Field(title=title, description=description)
+            field_info = Field(title=title, description=description, json_schema_extra=json_schema_extra)
         
         else:
-            field_info = Field(default=default, title=title, description=description)
+            field_info = Field(default=default, title=title, description=description, json_schema_extra=json_schema_extra)
 
         attributes[name] = (type, field_info)
         
-    attributes["entity"] = (str, Field(default=result.uiname, json_schema_extra={"const": result.uiname, "format": "hidden"}))
+    # attributes["entity"] = (str, Field(default=result.uiname, json_schema_extra={"const": result.uiname, "format": "hidden"}))
     
     return create_model(model_name, **attributes, __config__=config), model_name
 

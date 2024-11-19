@@ -65,5 +65,7 @@ class CategoryDescriptor(SQLModel, table=True):
     capturetime_os: str | None = Field(default=None)
     fieldtype_python: str | None = Field(default=None)
     uiname: str | None = Field(default=None)
+    metadata_tier: str | None = Field(default=None)
+    hidden: bool
 
     metadata_category: MetadataCategory | None = Relationship(back_populates="category_descriptors")
