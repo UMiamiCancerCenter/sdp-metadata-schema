@@ -81,7 +81,7 @@
   },
   "properties": {
     "name": {
-      "description": "The common, primary, recognizable name for the small molecule being used.",
+      "description": "Name for the batch of small molecule used in the experiment.",
       "title": "Small Molecule Name",
       "type": "string"
     },

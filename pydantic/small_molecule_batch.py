@@ -67,7 +67,7 @@ class SmallMolecule(BaseModel):
                               description="Molecules with a low molecular weight (generally < 900 daltons) used to perturb the experimental system, often binding to specific biological targets.", arbitrary_types_allowed=True)
 
     name: str = Field(title="Small Molecule Name", 
-                                   description="The common, primary, recognizable name for the small molecule being used.")
+                                   description="Name for the batch of small molecule used in the experiment.")
     
     description: str = Field(title="Description", 
                              description="Please include a description or any other helpful comments or annotations for the small molecule.")
