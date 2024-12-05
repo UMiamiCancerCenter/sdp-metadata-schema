@@ -400,7 +400,7 @@ class cellLine(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.0.4"
+                        "version": "0.0.8"
             })
     
     name: str = Field(title='Sample Name', 
@@ -417,7 +417,7 @@ class sample(BaseModel):
             ] = Field(title="Experimental System", json_schema_extra={
                                   "type": "object"
                             })
-    perturbation: List[Union[
+    perturbations: List[Union[
         smallMolecule,
         crisprKnockout,
         # rnai,
@@ -425,8 +425,9 @@ class sample(BaseModel):
         protein
         # infectiousAgent
             ] 
-        ]
-                 
+        ] = Field(Title="Perturbations")
+
+    protocol: str = Field(title="Protocol", default="")           
 
 def example():
     """ run this to see the schema dumped """
