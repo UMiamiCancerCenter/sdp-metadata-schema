@@ -364,7 +364,7 @@ class tetExpressionSystem(BaseModel):
 
     transactivatorVectorName: str = Field(default="", title="Transactivator Vector Name", description="The name of the vector/plasmid containing the gene for the tetracycline transactivator protein.")
 
-    transactivatorType: tetOnOff = Field(title="Transactivator Type", description="Tet-On or Tet-OfftransactivatorProteinName	The name of the specific transactivator protein encoded by the vector, e.g. tTA, rtTA, rtTA2, etc.")
+    transactivatorType: tetOnOff = Field(title="Transactivator Type", description="The name of the specific transactivator protein encoded by the vector, e.g. tTA, rtTA, rtTA2, etc.")
 
     transactivatorProteinName: str = Field(title="Transactivator Protein Name", description="The name of the specific transactivator protein encoded by the vector, e.g. tTA, rtTA, rtTA2, etc.")
 
@@ -401,7 +401,7 @@ class tetExpressionSystem(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.0.8"
+                        "version": "0.0.9"
             })
     
     name: str = Field(title='Sample Name', 

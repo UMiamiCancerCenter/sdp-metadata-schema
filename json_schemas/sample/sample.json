@@ -516,7 +516,7 @@
               "$ref": "#/$defs/tetOnOff"
             }
           ],
-          "description": "Tet-On or Tet-OfftransactivatorProteinName\tThe name of the specific transactivator protein encoded by the vector, e.g. tTA, rtTA, rtTA2, etc.",
+          "description": "The name of the specific transactivator protein encoded by the vector, e.g. tTA, rtTA, rtTA2, etc.",
           "title": "Transactivator Type"
         },
         "transactivatorProteinName": {
@@ -670,5 +670,5 @@
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.0.8"
+  "version": "0.0.9"
 }
