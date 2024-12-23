@@ -595,7 +595,6 @@
           "type": "string"
         },
         "transfectionTransductionReagent": {
-          "defaut": "",
           "description": "Specific transfection reagent or virus used (e.g. lipofectamine, lentivirus, adenovirus.",
           "title": "Transfection/Transduction Reagent",
           "type": "string"
@@ -604,8 +603,7 @@
       "required": [
         "transactivatorType",
         "transactivatorProteinName",
-        "responseVectorGeneOfInterest",
-        "transfectionTransductionReagent"
+        "responseVectorGeneOfInterest"
       ],
       "title": "Tet Expression System",
       "type": "object"
@@ -670,5 +668,5 @@
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.0.11"
+  "version": "0.0.12"
 }

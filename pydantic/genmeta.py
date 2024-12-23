@@ -396,12 +396,12 @@ class tetExpressionSystem(BaseModel):
 
     transfectionTransductionMethod: str = Field(default="", title="Transfection/Transduction Method", description="Method used for introducing the Tet expression system (e.g. lipofection, electroporation, viral transduction.")
 
-    transfectionTransductionReagent: str = Field(defaut="", title="Transfection/Transduction Reagent", description="Specific transfection reagent or virus used (e.g. lipofectamine, lentivirus, adenovirus.")
+    transfectionTransductionReagent: str = Field(default="", title="Transfection/Transduction Reagent", description="Specific transfection reagent or virus used (e.g. lipofectamine, lentivirus, adenovirus.")
 
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.0.11"
+                        "version": "0.0.12"
             })
     
     name: str = Field(title='Sample Name', 
