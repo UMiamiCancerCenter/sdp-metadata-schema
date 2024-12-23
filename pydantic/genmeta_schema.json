@@ -202,9 +202,7 @@
       "required": [
         "crisprKnockoutName",
         "crisprKnockoutTargetGeneSymbol",
-        "crisprKnockoutTargetGeneSpecies",
-        "crisprKnockoutDuration",
-        "crisprKnockoutDurationUnits"
+        "crisprKnockoutTargetGeneSpecies"
       ],
       "title": "CRISPR Knockout",
       "type": "object"
@@ -407,11 +405,7 @@
         }
       },
       "required": [
-        "proteinName",
-        "proteinConcentration",
-        "proteinConcentrationUnits",
-        "proteinDuration",
-        "proteinDurationUnits"
+        "proteinName"
       ],
       "title": "Protein",
       "type": "object"
@@ -492,14 +486,137 @@
         }
       },
       "required": [
-        "smallMoleculeName",
-        "smallMoleculeConcentration",
-        "smallMoleculeConcentrationUnits",
-        "smallMoleculeDuration",
-        "smallMoleculeDurationUnits"
+        "smallMoleculeName"
       ],
       "title": "Small Molecule",
       "type": "object"
+    },
+    "tetExpressionSystem": {
+      "properties": {
+        "role": {
+          "const": "Perturbagen",
+          "default": "Perturbagen",
+          "format": "hidden",
+          "type": "string"
+        },
+        "entity": {
+          "const": "Tet Expression System",
+          "default": "Tet Expression System",
+          "format": "hidden",
+          "type": "string"
+        },
+        "transactivatorVectorName": {
+          "description": "The name of the vector/plasmid containing the gene for the tetracycline transactivator protein.",
+          "title": "Transactivator Vector Name",
+          "type": "string"
+        },
+        "transactivatorType": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/tetOnOff"
+            }
+          ],
+          "description": "Tet-On or Tet-OfftransactivatorProteinName\tThe name of the specific transactivator protein encoded by the vector, e.g. tTA, rtTA, rtTA2, etc.",
+          "title": "Transactivator Type"
+        },
+        "transactivatorProteinName": {
+          "description": "The name of the specific transactivator protein encoded by the vector, e.g. tTA, rtTA, rtTA2, etc.",
+          "title": "Transactivator Protein Name",
+          "type": "string"
+        },
+        "transactivatorVectorLabBatchLabel": {
+          "description": "Lab-specific ID for the batch of transactivator vector.",
+          "title": "Transactivator Vector Lab Batch Label",
+          "type": "string"
+        },
+        "responseVectorName": {
+          "description": "The name of the vector/plasmid containing the gene(s) under control of the tetracycline response element (TRE).",
+          "title": "Response Vector Name",
+          "type": "string"
+        },
+        "responseVectorGeneOfInterest": {
+          "description": "The gene being regulated under the Tet system.",
+          "title": "Response Vector Gene of Interest",
+          "type": "string"
+        },
+        "responseVectorReporterGene": {
+          "description": "If present, the reporter gene used to monitor expression.",
+          "title": "Response Vector Reporter Gene",
+          "type": "string"
+        },
+        "responseVectorPromoter": {
+          "description": "The type of promoter making up the TRE in the response vector.",
+          "title": "Response Vector Promoter",
+          "type": "string"
+        },
+        "responseVectorLabBatchLabel": {
+          "description": "Lab-specific ID for the batch of response vector.",
+          "title": "Response Vector Lab Batch Label",
+          "type": "string"
+        },
+        "tetLabName": {
+          "description": "Name of the lab running the experiment.",
+          "title": "Lab Name",
+          "type": "string"
+        },
+        "doxLabBatchLabel": {
+          "description": "Lab-specific ID for the batch of doxycycine used in the experiment.",
+          "title": "Doxycycline Lab Batch Label",
+          "type": "string"
+        },
+        "doxConcentration": {
+          "description": "Concentration of doxycycline the experimental system was incubated with.",
+          "title": "Doxycycline Concentration",
+          "type": "string"
+        },
+        "doxConcentrationUnits": {
+          "description": "Concentration units of incubation with doxycycline.",
+          "title": "Doxycycline Concentration Units",
+          "type": "string"
+        },
+        "doxDuration": {
+          "description": "Time of incubation with doxycycline.",
+          "title": "Doxycycline Incubation Time",
+          "type": "string"
+        },
+        "doxDurationUnits": {
+          "description": "Time units of incubation with doxycycline.",
+          "title": "Doxycycline Incubation Time Units",
+          "type": "string"
+        },
+        "doxVehicle": {
+          "description": "Solvent used to dissolve doxycycline.",
+          "title": "Doxycycline Vehicle",
+          "type": "string"
+        },
+        "transfectionTransductionMethod": {
+          "description": "Method used for introducing the Tet expression system (e.g. lipofection, electroporation, viral transduction.",
+          "title": "Transfection/Transduction Method",
+          "type": "string"
+        },
+        "transfectionTransductionReagent": {
+          "defaut": "",
+          "description": "Specific transfection reagent or virus used (e.g. lipofectamine, lentivirus, adenovirus.",
+          "title": "Transfection/Transduction Reagent",
+          "type": "string"
+        }
+      },
+      "required": [
+        "transactivatorType",
+        "transactivatorProteinName",
+        "responseVectorGeneOfInterest",
+        "transfectionTransductionReagent"
+      ],
+      "title": "Tet Expression System",
+      "type": "object"
+    },
+    "tetOnOff": {
+      "enum": [
+        "Tet-ON",
+        "Tet-OFF"
+      ],
+      "title": "tetOnOff",
+      "type": "string"
     }
   },
   "properties": {
@@ -536,10 +653,13 @@
           },
           {
             "$ref": "#/$defs/protein"
+          },
+          {
+            "$ref": "#/$defs/tetExpressionSystem"
           }
         ]
       },
-      "title": "Perturbation",
+      "title": "Perturbations",
       "type": "array"
     }
   },
@@ -550,5 +670,5 @@
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.0.7"
+  "version": "0.0.8"
 }
