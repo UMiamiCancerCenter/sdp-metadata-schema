@@ -384,11 +384,11 @@ class tetExpressionSystem(BaseModel):
 
     doxLabBatchLabel: str = Field(default="", title="Doxycycline Lab Batch Label", description="Lab-specific ID for the batch of doxycycine used in the experiment.")
 
-    doxConcentration: str = Field(default="", title="Doxycycline Concentration", description="Concentration of doxycycline the experimental system was incubated with.")
+    doxConcentration: float = Field(default="", title="Doxycycline Concentration", description="Concentration of doxycycline the experimental system was incubated with.")
 
     doxConcentrationUnits: str = Field(default="", title="Doxycycline Concentration Units", description="Concentration units of incubation with doxycycline.")
 
-    doxDuration: str = Field(default="", title="Doxycycline Incubation Time", description="Time of incubation with doxycycline.")
+    doxDuration: float = Field(default="", title="Doxycycline Incubation Time", description="Time of incubation with doxycycline.")
 
     doxDurationUnits: str = Field(default="", title="Doxycycline Incubation Time Units", description="Time units of incubation with doxycycline.")
 
@@ -401,7 +401,7 @@ class tetExpressionSystem(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.0.10"
+                        "version": "0.0.11"
             })
     
     name: str = Field(title='Sample Name', 

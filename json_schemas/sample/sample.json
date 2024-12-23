@@ -567,7 +567,7 @@
         "doxConcentration": {
           "description": "Concentration of doxycycline the experimental system was incubated with.",
           "title": "Doxycycline Concentration",
-          "type": "string"
+          "type": "number"
         },
         "doxConcentrationUnits": {
           "description": "Concentration units of incubation with doxycycline.",
@@ -577,7 +577,7 @@
         "doxDuration": {
           "description": "Time of incubation with doxycycline.",
           "title": "Doxycycline Incubation Time",
-          "type": "string"
+          "type": "number"
         },
         "doxDurationUnits": {
           "description": "Time units of incubation with doxycycline.",
@@ -670,5 +670,5 @@
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.0.10"
+  "version": "0.0.11"
 }
