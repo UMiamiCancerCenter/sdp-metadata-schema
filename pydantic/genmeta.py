@@ -1,5 +1,6 @@
 import json
 from typing import Union, List
+from enum import Enum
 
 from pydantic import BaseModel, Field
 
@@ -41,13 +42,13 @@ class smallMolecule(BaseModel):
                                    description="The common, primary, recognizable name for the small molecule being used.")
     smallMoleculeLabBatchLabel: str = Field(title="Lab Batch Label",
                                              description="Lab-specific ID for the batch of small molecule used in the experiment.", default="")
-    smallMoleculeConcentration: float = Field(title="Concentration", 
+    smallMoleculeConcentration: float = Field(default="", title="Concentration", 
                                               description="Concentration of small molecule the experimental system was exposed to.")
-    smallMoleculeConcentrationUnits: str = Field(title="Concentration Units", 
+    smallMoleculeConcentrationUnits: str = Field(default="", title="Concentration Units", 
                                                  description="Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Experimental Factor Ontology (EFO) or the Units of Measurement Ontology (UO) and must be a child term of 'concentration unit'.",json_schema_extra={"graphRestriction": {"ontologies": ["efo","obo:uo"],"classes": ["UO:0000051","UO:0000051"],"queryFields": ["label"],"includeSelf": True}})
-    smallMoleculeDuration: float = Field(title="Duration", 
+    smallMoleculeDuration: float = Field(default="", title="Duration", 
                                          description="Amount of time the experimental system was exposed to the small molecule.")
-    smallMoleculeDurationUnits: str = Field(title="Duration Units",
+    smallMoleculeDurationUnits: str = Field(default="", title="Duration Units",
                                              description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.",json_schema_extra={"graphRestriction": {"ontologies": ["obo:uo"],"classes": ["UO:0000003"],"queryFields": ["label"],"includeSelf": True}})
 
 class crisprKnockout(BaseModel):
@@ -73,9 +74,9 @@ class crisprKnockout(BaseModel):
                                             description="The NCBI Entrez Gene ID for the gene knocked out by CRISPR.", default="")
     crisprKnockoutTargetGeneSpecies: str = Field(title="Target Gene Species", 
                                          description="The species of the target locus, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",json_schema_extra={"graphRestriction":{"ontologies":["obo:ncbitaxon"],"classes": ["NCBITaxon:131567"],"queryFields": ["label"],"includeSelf": True}})
-    crisprKnockoutDuration: float = Field(title="Duration", 
+    crisprKnockoutDuration: float = Field(default="", title="Duration", 
                                          description="Amount of time the experimental system was exposed to the CRISPR reagent.")
-    crisprKnockoutDurationUnits: str = Field(title="Duration Units",
+    crisprKnockoutDurationUnits: str = Field(default="", title="Duration Units",
                                              description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.",json_schema_extra={"graphRestriction": {"ontologies": ["obo:uo"],"classes": ["UO:0000003"],"queryFields": ["label"],"includeSelf": True}})
     # crisprKnockoutConcentration: str = Field(title="Concentration")
 
@@ -115,13 +116,13 @@ class protein(BaseModel):
     proteinName: str = Field(title="Name", description="The primary name of the protein.")
     proteinLabBatchLabel: str = Field(title="Lab Batch Label", description="Lab-specific ID for the batch of protein used in the experiment.", default="")
     proteinUniProtId: str = Field(title="UniProt ID", description="The UniProt ID of the specific protein and, if relevant, isoform.", default="")
-    proteinConcentration: float = Field(title="Concentration", 
+    proteinConcentration: float = Field(default="", title="Concentration", 
                                               description="Concentration of protein that the experimental system was exposed to.")
-    proteinConcentrationUnits: str = Field(title="Concentration Units", 
+    proteinConcentrationUnits: str = Field(default="", title="Concentration Units", 
                                                  description="Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Experimental Factor Ontology (EFO) or the Units of Measurement Ontology (UO) and must be a child term of 'concentration unit'.",json_schema_extra={"graphRestriction": {"ontologies": ["efo","obo:uo"],"classes": ["UO:0000051","UO:0000051"],"queryFields": ["label"],"includeSelf": True}})
-    proteinDuration: float = Field(title="Duration", description=
+    proteinDuration: float = Field(default="", title="Duration", description=
                                    "Amount of time the experimental system was exposed to the protein.")
-    proteinDurationUnits: str = Field(title="Duration Units",
+    proteinDurationUnits: str = Field(default="", title="Duration Units",
                                              description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.",json_schema_extra={"graphRestriction": {"ontologies": ["obo:uo"],"classes": ["UO:0000003"],"queryFields": ["label"],"includeSelf": True}})
    
 
@@ -347,80 +348,60 @@ class cellLine(BaseModel):
 #                                       description="If the sample came from diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the tissue was not diseased.",
 #                                       default="",
 #                                       json_schema_extra=pop_default)
-   
-# class target(BaseModel):
-    
-    # model_config = ConfigDict(title="Molecular Target", json_schema_extra={"ui": {
-    #                                 "preview": {
-    #                                  "visible": True
-    #                                 }
-    #                                 }
-    #                             })
+class tetOnOff(Enum):
+    tetOn = "Tet-ON"
+    tetOff = "Tet-OFF"   
+class tetExpressionSystem(BaseModel):
+    model_config = ConfigDict(title="Tet Expression System") 
 
-    # entity: str = Field(default="Molecular Target", 
-    #                                      json_schema_extra={"const": "Molecular Target",
-    #                                                         "format": "hidden"})
-    # content: Union[
-    #         gene,
-    #         transcript,
-    #         protein,
-    #         epigeneticModification
-    #         ] = Field(json_schema_extra={
-    #                               "ui": {
-    #                                 "preview": {
-    #                                 "visible": True
-    #                                 }}})
+    role: str = Field(default="Perturbagen",
+                                            json_schema_extra={"const": "Perturbagen",
+                                           "format": "hidden"})
+    entity: str = Field(default="Tet Expression System", 
+                                            json_schema_extra={"const": "Tet Expression System",
+                                                                "format": "hidden",
+                                                                })
 
+    transactivatorVectorName: str = Field(default="", title="Transactivator Vector Name", description="The name of the vector/plasmid containing the gene for the tetracycline transactivator protein.")
 
-# class biospecimen(BaseModel):
-    
-    # model_config = ConfigDict(title="Biospecimen", json_schema_extra={"ui": {
-    #                                 "preview": {
-    #                                  "visible": True
-    #                                 }
-    #                                 }
-    #                             })
+    transactivatorType: tetOnOff = Field(title="Transactivator Type", description="Tet-On or Tet-OfftransactivatorProteinName	The name of the specific transactivator protein encoded by the vector, e.g. tTA, rtTA, rtTA2, etc.")
 
-    # entity: str = Field(default="Biospecimen", json_schema_extra={"const": "Biospecimen",
-    #                                                               "format": "hidden"})
-    # content: Union[
-    #         patientSample,
-    #         wastewater
-    #         ] = Field(json_schema_extra={
-    #                               "ui": {
-    #                                 "preview": {
-    #                                 "visible": True
-    #                                 }}})
-    
+    transactivatorProteinName: str = Field(title="Transactivator Protein Name", description="The name of the specific transactivator protein encoded by the vector, e.g. tTA, rtTA, rtTA2, etc.")
 
-# class modelSystem(BaseModel):
+    transactivatorVectorLabBatchLabel: str = Field(default="", title="Transactivator Vector Lab Batch Label", description="Lab-specific ID for the batch of transactivator vector.")
 
-    # model_config = ConfigDict(title="Model System", json_schema_extra={"ui": {
-    #                                 "preview": {
-    #                                  "visible": True
-    #                                 }
-    #                                 }
-    #                             })
-    
-    # entity: str = Field(default="Model System", 
-    #                                      json_schema_extra={"const": "Model System",
-    #                                                         "format": "hidden"})
-    # content: Union[
-    #         cellLine,
-    #         ipsc,
-    #         primaryCells,
-    #         differentiatedCells,
-    #         tissue
-    #         ] = Field(json_schema_extra={"ui": {
-    #                                 "preview": {
-    #                                 "visible": True
-    #                                 }
-    #                             }})
+    responseVectorName: str = Field(default="", title="Response Vector Name", description="The name of the vector/plasmid containing the gene(s) under control of the tetracycline response element (TRE).")
+
+    responseVectorGeneOfInterest: str = Field(title="Response Vector Gene of Interest", description="The gene being regulated under the Tet system.")
+
+    responseVectorReporterGene: str = Field(default="", title="Response Vector Reporter Gene", description="If present, the reporter gene used to monitor expression.")
+
+    responseVectorPromoter: str = Field(default="", title="Response Vector Promoter", description="The type of promoter making up the TRE in the response vector.")
+
+    responseVectorLabBatchLabel: str = Field(default="", title="Response Vector Lab Batch Label", description="Lab-specific ID for the batch of response vector.")
+
+    tetLabName: str = Field(default="", title="Lab Name", description="Name of the lab running the experiment.")
+
+    doxLabBatchLabel: str = Field(default="", title="Doxycycline Lab Batch Label", description="Lab-specific ID for the batch of doxycycine used in the experiment.")
+
+    doxConcentration: str = Field(default="", title="Doxycycline Concentration", description="Concentration of doxycycline the experimental system was incubated with.")
+
+    doxConcentrationUnits: str = Field(default="", title="Doxycycline Concentration Units", description="Concentration units of incubation with doxycycline.")
+
+    doxDuration: str = Field(default="", title="Doxycycline Incubation Time", description="Time of incubation with doxycycline.")
+
+    doxDurationUnits: str = Field(default="", title="Doxycycline Incubation Time Units", description="Time units of incubation with doxycycline.")
+
+    doxVehicle: str = Field(default="", title="Doxycycline Vehicle", description="Solvent used to dissolve doxycycline.")
+
+    transfectionTransductionMethod: str = Field(default="", title="Transfection/Transduction Method", description="Method used for introducing the Tet expression system (e.g. lipofection, electroporation, viral transduction.")
+
+    transfectionTransductionReagent: str = Field(defaut="", title="Transfection/Transduction Reagent", description="Specific transfection reagent or virus used (e.g. lipofectamine, lentivirus, adenovirus.")
 
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.0.7"
+                        "version": "0.0.8"
             })
     
     name: str = Field(title='Sample Name', 
@@ -442,20 +423,15 @@ class sample(BaseModel):
         crisprKnockout,
         # rnai,
         # antibody,
-        protein
+        protein,
+        tetExpressionSystem
         # infectiousAgent
             ] 
-        ] = Field(default="", title="Perturbation")
+        ] = Field(default="", title="Perturbations")
                  
 
-def example():
+if __name__ == "__main__":
     json_schema=sample.model_json_schema(schema_generator=GenerateJsonSchemaWithoutDefaultTitles)
     delete_empty_default(json_schema)
     with open ("genmeta_schema.json", "w") as ft:
         print(json.dumps(json_schema, indent=2), file = ft)
-
-example()
-
-# data = sp.pydantic_form(key="my_form", model=ExperimentalSubject)
-# if data:
-#     st.json(data.json())
