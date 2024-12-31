@@ -602,8 +602,7 @@
       },
       "required": [
         "transactivatorType",
-        "transactivatorProteinName",
-        "responseVectorGeneOfInterest"
+        "transactivatorProteinName"
       ],
       "title": "Tet Expression System",
       "type": "object"
@@ -668,5 +667,5 @@
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.0.12"
+  "version": "0.0.13"
 }

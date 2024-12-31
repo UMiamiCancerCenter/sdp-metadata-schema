@@ -372,7 +372,7 @@ class tetExpressionSystem(BaseModel):
 
     responseVectorName: str = Field(default="", title="Response Vector Name", description="The name of the vector/plasmid containing the gene(s) under control of the tetracycline response element (TRE).")
 
-    responseVectorGeneOfInterest: str = Field(title="Response Vector Gene of Interest", description="The gene being regulated under the Tet system.")
+    responseVectorGeneOfInterest: str = Field(default="", title="Response Vector Gene of Interest", description="The gene being regulated under the Tet system.")
 
     responseVectorReporterGene: str = Field(default="", title="Response Vector Reporter Gene", description="If present, the reporter gene used to monitor expression.")
 
@@ -401,7 +401,7 @@ class tetExpressionSystem(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.0.12"
+                        "version": "0.0.13"
             })
     
     name: str = Field(title='Sample Name', 
