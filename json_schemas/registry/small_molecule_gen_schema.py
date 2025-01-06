@@ -1,6 +1,4 @@
 import json
-from typing import Union, List
-from enum import Enum
 
 from pydantic import BaseModel, Field
 
@@ -332,7 +330,7 @@ class SmallMolecule(BaseModel):
     model_config = ConfigDict(title="Small Molecule")
 
     name: str = Field(title="Name")
-    uniChem: UniChem = Field(default="", title="UniChem Cross References")
+    unichem: UniChem = Field(default="", title="UniChem Cross References")
     lincs: Lincs = Field(default="", title="LINCS Metadata")
     aeolus: Aeolus = Field(default="", title="AEOLUS", description="Adverse Event Open Learning through Universal Standardization")
     chebi: Chebi = Field(default="", title="ChEBI", description="Chemical Entities of Biological Interest")
