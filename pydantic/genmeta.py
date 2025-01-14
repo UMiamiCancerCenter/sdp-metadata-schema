@@ -401,7 +401,7 @@ class tetExpressionSystem(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.0.13"
+                        "version": "0.0.14"
             })
     
     name: str = Field(title='Sample Name', 
