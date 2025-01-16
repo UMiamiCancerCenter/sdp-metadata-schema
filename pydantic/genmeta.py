@@ -27,7 +27,7 @@ class GenerateJsonSchemaWithoutDefaultTitles(GenerateJsonSchema):
 class smallMolecule(BaseModel):
     
     model_config = ConfigDict(title="Small Molecule", 
-                              description="Molecules with a low molecular weight (generally < 900 daltons) used to perturb the experimental system, often binding to specific biological targets.")
+                              description="Molecules with a low molecular weight (generally < 900 daltons) used to perturb the model system, often binding to specific biological targets.")
     
     role: str = Field(default="Perturbagen", 
                         json_schema_extra={"const": "Perturbagen",
@@ -43,11 +43,11 @@ class smallMolecule(BaseModel):
     smallMoleculeLabBatchLabel: str = Field(title="Lab Batch Label",
                                              description="Lab-specific ID for the batch of small molecule used in the experiment.", default="")
     smallMoleculeConcentration: float = Field(default="", title="Concentration", 
-                                              description="Concentration of small molecule the experimental system was exposed to.")
+                                              description="Concentration of small molecule the model system was exposed to.")
     smallMoleculeConcentrationUnits: str = Field(default="", title="Concentration Units", 
                                                  description="Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Experimental Factor Ontology (EFO) or the Units of Measurement Ontology (UO) and must be a child term of 'concentration unit'.",json_schema_extra={"graphRestriction": {"ontologies": ["efo","obo:uo"],"classes": ["UO:0000051","UO:0000051"],"queryFields": ["label"],"includeSelf": True}})
     smallMoleculeDuration: float = Field(default="", title="Duration", 
-                                         description="Amount of time the experimental system was exposed to the small molecule.")
+                                         description="Amount of time the model system was exposed to the small molecule.")
     smallMoleculeDurationUnits: str = Field(default="", title="Duration Units",
                                              description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.",json_schema_extra={"graphRestriction": {"ontologies": ["obo:uo"],"classes": ["UO:0000003"],"queryFields": ["label"],"includeSelf": True}})
 
@@ -75,7 +75,7 @@ class crisprKnockout(BaseModel):
     crisprKnockoutTargetGeneSpecies: str = Field(title="Target Gene Species", 
                                          description="The species of the target locus, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",json_schema_extra={"graphRestriction":{"ontologies":["obo:ncbitaxon"],"classes": ["NCBITaxon:131567"],"queryFields": ["label"],"includeSelf": True}})
     crisprKnockoutDuration: float = Field(default="", title="Duration", 
-                                         description="Amount of time the experimental system was exposed to the CRISPR reagent.")
+                                         description="Amount of time the model system was exposed to the CRISPR reagent.")
     crisprKnockoutDurationUnits: str = Field(default="", title="Duration Units",
                                              description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.",json_schema_extra={"graphRestriction": {"ontologies": ["obo:uo"],"classes": ["UO:0000003"],"queryFields": ["label"],"includeSelf": True}})
     # crisprKnockoutConcentration: str = Field(title="Concentration")
@@ -117,11 +117,11 @@ class protein(BaseModel):
     proteinLabBatchLabel: str = Field(title="Lab Batch Label", description="Lab-specific ID for the batch of protein used in the experiment.", default="")
     proteinUniProtId: str = Field(title="UniProt ID", description="The UniProt ID of the specific protein and, if relevant, isoform.", default="")
     proteinConcentration: float = Field(default="", title="Concentration", 
-                                              description="Concentration of protein that the experimental system was exposed to.")
+                                              description="Concentration of protein that the model system was exposed to.")
     proteinConcentrationUnits: str = Field(default="", title="Concentration Units", 
                                                  description="Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Experimental Factor Ontology (EFO) or the Units of Measurement Ontology (UO) and must be a child term of 'concentration unit'.",json_schema_extra={"graphRestriction": {"ontologies": ["efo","obo:uo"],"classes": ["UO:0000051","UO:0000051"],"queryFields": ["label"],"includeSelf": True}})
     proteinDuration: float = Field(default="", title="Duration", description=
-                                   "Amount of time the experimental system was exposed to the protein.")
+                                   "Amount of time the model system was exposed to the protein.")
     proteinDurationUnits: str = Field(default="", title="Duration Units",
                                              description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.",json_schema_extra={"graphRestriction": {"ontologies": ["obo:uo"],"classes": ["UO:0000003"],"queryFields": ["label"],"includeSelf": True}})
    
@@ -384,7 +384,7 @@ class tetExpressionSystem(BaseModel):
 
     doxLabBatchLabel: str = Field(default="", title="Doxycycline Lab Batch Label", description="Lab-specific ID for the batch of doxycycine used in the experiment.")
 
-    doxConcentration: float = Field(default="", title="Doxycycline Concentration", description="Concentration of doxycycline the experimental system was incubated with.")
+    doxConcentration: float = Field(default="", title="Doxycycline Concentration", description="Concentration of doxycycline the model system was incubated with.")
 
     doxConcentrationUnits: str = Field(default="", title="Doxycycline Concentration Units", description="Concentration units of incubation with doxycycline.")
 
@@ -398,8 +398,16 @@ class tetExpressionSystem(BaseModel):
 
     transfectionTransductionReagent: str = Field(default="", title="Transfection/Transduction Reagent", description="Specific transfection reagent or virus used (e.g. lipofectamine, lentivirus, adenovirus.")
 
-class tumor(BaseModel):
-    model_config = ConfigDict(title="Tumor")
+class tumorSample(BaseModel):
+    model_config = ConfigDict(title="Tumor Sample")
+
+    role: str = Field(default="Model System",
+                                            json_schema_extra={"const": "Model System",
+                                           "format": "hidden"})
+    entity: str = Field(default="Tumor Sample", 
+                                            json_schema_extra={"const": "Tumor Sample",
+                                                                "format": "hidden",
+                                                                })
 
     tumorType: str = Field(default="", title="Tumor Type", description="The type of cancer or benign tumor, preferably using OncoTree terminology.")
 
@@ -423,7 +431,7 @@ class sample(BaseModel):
     modelSystem: Union[
             cellLine,
             primaryCell,
-            tumor
+            tumorSample
             # differentiatedCells,
             # ipsc,
             # tissue
