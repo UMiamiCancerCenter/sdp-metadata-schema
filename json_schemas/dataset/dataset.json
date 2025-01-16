@@ -52,7 +52,7 @@
       },
       "expressConsent": {
         "type": "boolean",
-        "description": "IMPORTANT: You hereby certify that no data in this dataset is protected by any federal, state, or local privacy laws. This means that the sample material comes from non-humans, cell lines from humans have been sufficiently de-identified, and express consent for research purposes has been obtained for sample material obtained from human subjects.  Sylvester Data Portal staff have permission to view and transfer the data for the purpose of performing their required duties.  You assume full liability for any breaches of privacy law; the Sylvester Data Portal shall not be responsible for protected PHI data being submitted as research data.",
+        "description": "IMPORTANT: You hereby certify that no data in this dataset is protected by any federal, state, or local privacy laws. This means that the sample material comes from non-humans, cell lines from humans have been sufficiently de-identified, and express consent for research purposes has been obtained for primary sample material obtained from human subjects.  Sylvester Data Portal staff have permission to view and transfer the data for the purpose of performing their required duties.  You assume full liability for any breaches of privacy law; the Sylvester Data Portal shall not be responsible for protected PHI data being submitted as research data.",
         "title": "Express Consent",
         "enum": [true]
       }
