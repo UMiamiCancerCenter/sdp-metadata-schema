@@ -398,24 +398,37 @@ class tetExpressionSystem(BaseModel):
 
     transfectionTransductionReagent: str = Field(default="", title="Transfection/Transduction Reagent", description="Specific transfection reagent or virus used (e.g. lipofectamine, lentivirus, adenovirus.")
 
+class tumor(BaseModel):
+    model_config = ConfigDict(title="Tumor")
+
+    tumorType: str = Field(default="", title="Tumor Type", description="The type of cancer or benign tumor, preferably using OncoTree terminology.")
+
+    collectionSite: str = Field(default="", title="Collection Site", description="The anatomical location of the tumor from which the sample was obtained.")
+
+    tumorOrgan: str = Field(default="", title="Organ of Origin", description="The organ in which the tumor originated.")
+
+    tumorTissue: str = Field(default="", title="Tissue of Origin", description="The tissue type in which the tumor originated.")
+
+    tumorCellType: str = Field(default="", title="Cell Type of Origin", description="The type of cell from which the tumor originated.")
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.0.13"
+                        "version": "0.0.14"
             })
     
     name: str = Field(title='Sample Name', 
                       description="Please provide a unique name for the sample.")
-    description: str = Field(title="Sample Description", 
+    description: str = Field(default="", title="Sample Description", 
                              description="Please include a description or any other helpful comments or annotations for the sample.")
-    experimentalSystem: Union[
+    modelSystem: Union[
             cellLine,
-            primaryCell
+            primaryCell,
+            tumor
             # differentiatedCells,
             # ipsc,
             # tissue
             # patientSample
-            ] = Field(title="Experimental System", json_schema_extra={
+            ] = Field(title="Model System", json_schema_extra={
                                   "type": "object"
                             })
     perturbation: List[Union[

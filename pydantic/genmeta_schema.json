@@ -614,6 +614,37 @@
       ],
       "title": "tetOnOff",
       "type": "string"
+    },
+    "tumor": {
+      "properties": {
+        "tumorType": {
+          "description": "The type of cancer or benign tumor, preferably using OncoTree terminology.",
+          "title": "Tumor Type",
+          "type": "string"
+        },
+        "collectionSite": {
+          "description": "The anatomical location of the tumor from which the sample was obtained.",
+          "title": "Collection Site",
+          "type": "string"
+        },
+        "tumorOrgan": {
+          "description": "The organ in which the tumor originated.",
+          "title": "Organ of Origin",
+          "type": "string"
+        },
+        "tumorTissue": {
+          "description": "The tissue type in which the tumor originated.",
+          "title": "Tissue of Origin",
+          "type": "string"
+        },
+        "tumorCellType": {
+          "description": "The type of cell from which the tumor originated.",
+          "title": "Cell Type of Origin",
+          "type": "string"
+        }
+      },
+      "title": "Tumor",
+      "type": "object"
     }
   },
   "properties": {
@@ -627,16 +658,19 @@
       "title": "Sample Description",
       "type": "string"
     },
-    "experimentalSystem": {
+    "modelSystem": {
       "anyOf": [
         {
           "$ref": "#/$defs/cellLine"
         },
         {
           "$ref": "#/$defs/primaryCell"
+        },
+        {
+          "$ref": "#/$defs/tumor"
         }
       ],
-      "title": "Experimental System",
+      "title": "Model System",
       "type": "object"
     },
     "perturbation": {
@@ -662,10 +696,9 @@
   },
   "required": [
     "name",
-    "description",
-    "experimentalSystem"
+    "modelSystem"
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.0.13"
+  "version": "0.0.14"
 }
