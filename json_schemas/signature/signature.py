@@ -70,6 +70,10 @@ class ExperimentalSystem(BaseModel):
     id: str = Field(title="ID")
     type: ExperimentalSystemType = Field("Type")
 
+class Datum(BaseModel):
+    geneSymbol: str = Field(title="Gene Symbol")
+    score: float = Field(title="Score")
+
 class Signature(BaseModel):
     model_config = ConfigDict(title="Signature", json_schema_extra={"version": "0.0.14"})
 
@@ -91,6 +95,7 @@ class Signature(BaseModel):
     input: Input = Field(default="", title="Input")
     experimentalSystems: list[ExperimentalSystem] = Field(default="", title="Experimental Systems")
     perturbations: list[Perturbation] = Field(default="", title="Perturbations")
+    data: list[Datum] = Field(default="", title="Data")
 
 
 if __name__ == "__main__":

@@ -1,5 +1,23 @@
 {
   "$defs": {
+    "Datum": {
+      "properties": {
+        "geneSymbol": {
+          "title": "Gene Symbol",
+          "type": "string"
+        },
+        "score": {
+          "title": "Score",
+          "type": "number"
+        }
+      },
+      "required": [
+        "geneSymbol",
+        "score"
+      ],
+      "title": "Datum",
+      "type": "object"
+    },
     "ExperimentalSystem": {
       "properties": {
         "name": {
@@ -237,6 +255,13 @@
         "$ref": "#/$defs/Perturbation"
       },
       "title": "Perturbations",
+      "type": "array"
+    },
+    "data": {
+      "items": {
+        "$ref": "#/$defs/Datum"
+      },
+      "title": "Data",
       "type": "array"
     }
   },
