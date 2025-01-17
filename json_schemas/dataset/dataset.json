@@ -36,7 +36,7 @@
         "ATAC-seq"
       ]
     },
-      "modelSystems": {
+      "experimentalSystems": {
         "type": "array",
         "description": "The type of biological/biochemical material(s) used as the subject(s) of the readout assay. Please select all that apply, considering all samples in the dataset. This selection will expand in future versions of this form. If you do not see your system represented here, feel free to leave this field blank.",
         "title": "Model System(s)",
