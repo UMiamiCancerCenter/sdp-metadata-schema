@@ -177,7 +177,7 @@
           "type": "string"
         },
         "crisprKnockoutDuration": {
-          "description": "Amount of time the experimental system was exposed to the CRISPR reagent.",
+          "description": "Amount of time the model system was exposed to the CRISPR reagent.",
           "title": "Duration",
           "type": "number"
         },
@@ -358,7 +358,7 @@
           "type": "string"
         },
         "proteinConcentration": {
-          "description": "Concentration of protein that the experimental system was exposed to.",
+          "description": "Concentration of protein that the model system was exposed to.",
           "title": "Concentration",
           "type": "number"
         },
@@ -382,7 +382,7 @@
           "type": "string"
         },
         "proteinDuration": {
-          "description": "Amount of time the experimental system was exposed to the protein.",
+          "description": "Amount of time the model system was exposed to the protein.",
           "title": "Duration",
           "type": "number"
         },
@@ -439,7 +439,7 @@
           "type": "string"
         },
         "smallMoleculeConcentration": {
-          "description": "Concentration of small molecule the experimental system was exposed to.",
+          "description": "Concentration of small molecule the model system was exposed to.",
           "title": "Concentration",
           "type": "number"
         },
@@ -463,7 +463,7 @@
           "type": "string"
         },
         "smallMoleculeDuration": {
-          "description": "Amount of time the experimental system was exposed to the small molecule.",
+          "description": "Amount of time the model system was exposed to the small molecule.",
           "title": "Duration",
           "type": "number"
         },
@@ -565,7 +565,7 @@
           "type": "string"
         },
         "doxConcentration": {
-          "description": "Concentration of doxycycline the experimental system was incubated with.",
+          "description": "Concentration of doxycycline the model system was incubated with.",
           "title": "Doxycycline Concentration",
           "type": "number"
         },
@@ -614,6 +614,49 @@
       ],
       "title": "tetOnOff",
       "type": "string"
+    },
+    "tumorSample": {
+      "properties": {
+        "role": {
+          "const": "Model System",
+          "default": "Model System",
+          "format": "hidden",
+          "type": "string"
+        },
+        "entity": {
+          "const": "Tumor Sample",
+          "default": "Tumor Sample",
+          "format": "hidden",
+          "type": "string"
+        },
+        "tumorType": {
+          "description": "The type of cancer or benign tumor, preferably using OncoTree terminology.",
+          "title": "Tumor Type",
+          "type": "string"
+        },
+        "collectionSite": {
+          "description": "The anatomical location of the tumor from which the sample was obtained.",
+          "title": "Collection Site",
+          "type": "string"
+        },
+        "tumorOrgan": {
+          "description": "The organ in which the tumor originated.",
+          "title": "Organ of Origin",
+          "type": "string"
+        },
+        "tumorTissue": {
+          "description": "The tissue type in which the tumor originated.",
+          "title": "Tissue of Origin",
+          "type": "string"
+        },
+        "tumorCellType": {
+          "description": "The type of cell from which the tumor originated.",
+          "title": "Cell Type of Origin",
+          "type": "string"
+        }
+      },
+      "title": "Tumor Sample",
+      "type": "object"
     }
   },
   "properties": {
@@ -634,9 +677,12 @@
         },
         {
           "$ref": "#/$defs/primaryCell"
+        },
+        {
+          "$ref": "#/$defs/tumorSample"
         }
       ],
-      "title": "Experimental System",
+      "title": "Model System",
       "type": "object"
     },
     "perturbation": {
@@ -662,10 +708,9 @@
   },
   "required": [
     "name",
-    "description",
     "experimentalSystem"
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.0.13"
+  "version": "0.0.14"
 }
