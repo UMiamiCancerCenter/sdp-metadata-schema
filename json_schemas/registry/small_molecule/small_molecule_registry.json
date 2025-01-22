@@ -1,0 +1,1426 @@
+{
+  "$defs": {
+    "Aeolus": {
+      "properties": {
+        "drug_id": {
+          "title": "Drug ID",
+          "type": "string"
+        },
+        "drug_name": {
+          "title": "Drug Name",
+          "type": "string"
+        },
+        "inchikey": {
+          "title": "InChI Key",
+          "type": "string"
+        },
+        "indicatons": {
+          "items": {
+            "$ref": "#/$defs/AeolusIndication"
+          },
+          "title": "Indications",
+          "type": "array"
+        },
+        "no_of_outcomes": {
+          "title": "Number of Outcomes",
+          "type": "integer"
+        },
+        "outcomes": {
+          "items": {
+            "$ref": "#/$defs/AeolusOutcome"
+          },
+          "title": "Outcomes",
+          "type": "array"
+        },
+        "pt": {
+          "title": "Preferred Term",
+          "type": "string"
+        },
+        "rxcui": {
+          "description": "RxNorm Concept Unique Identifier",
+          "title": "RxCUI",
+          "type": "string"
+        },
+        "unii": {
+          "description": "Unique Ingredient Identifier",
+          "title": "UNII",
+          "type": "string"
+        }
+      },
+      "title": "Aeolus",
+      "type": "object"
+    },
+    "AeolusIndication": {
+      "properties": {
+        "count": {
+          "title": "Count",
+          "type": "integer"
+        },
+        "id": {
+          "title": "ID",
+          "type": "string"
+        },
+        "meddra_code": {
+          "title": "medDRA Code",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "title": "AeolusIndication",
+      "type": "object"
+    },
+    "AeolusOutcome": {
+      "properties": {
+        "case_count": {
+          "title": "Case Count",
+          "type": "integer"
+        },
+        "id": {
+          "title": "ID",
+          "type": "string"
+        },
+        "meddra_code": {
+          "title": "medDRA Code",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "prr": {
+          "title": "Proportional Reporting Ratio",
+          "type": "number"
+        },
+        "prr_95_ci": {
+          "items": {
+            "type": "number"
+          },
+          "title": "PRR 95% Confidence Interval",
+          "type": "array"
+        },
+        "ror": {
+          "title": "Reporting Odds Ratio",
+          "type": "number"
+        },
+        "ror_95_ci": {
+          "items": {
+            "type": "number"
+          },
+          "title": "ROR 95% Confidence Interval",
+          "type": "array"
+        }
+      },
+      "title": "AeolusOutcome",
+      "type": "object"
+    },
+    "Chebi": {
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "string"
+        },
+        "secondary_chebi_id": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Secondary ChEBI IDs",
+          "type": "array"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "formulae": {
+          "title": "Chemical Formula",
+          "type": "string"
+        },
+        "definition": {
+          "title": "Definition",
+          "type": "string"
+        },
+        "brand_names": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Brand Names",
+          "type": "array"
+        },
+        "inchi": {
+          "title": "InChI",
+          "type": "string"
+        },
+        "inchikey": {
+          "title": "InChI Key",
+          "type": "string"
+        },
+        "inn": {
+          "description": "International Nonproprietary Name",
+          "title": "INN",
+          "type": "string"
+        },
+        "iupac": {
+          "title": "IUPAC Name",
+          "type": "string"
+        },
+        "smiles": {
+          "title": "SMILES",
+          "type": "string"
+        },
+        "synonyms": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Synonyms",
+          "type": "array"
+        }
+      },
+      "title": "Chebi",
+      "type": "object"
+    },
+    "Chembl": {
+      "properties": {
+        "drug_indications": {
+          "items": {
+            "$ref": "#/$defs/ChemblDrugIndication"
+          },
+          "title": "Drug Indications",
+          "type": "array"
+        },
+        "binding_site_name": {
+          "title": "Binding Site Name",
+          "type": "string"
+        },
+        "drug_mechanisms": {
+          "items": {
+            "$ref": "#/$defs/ChemblDrugMechanism"
+          },
+          "title": "Drug Mechanisms",
+          "type": "array"
+        },
+        "first_approval": {
+          "title": "First Approval",
+          "type": "integer"
+        },
+        "first_in_class": {
+          "title": "First in Class",
+          "type": "integer"
+        },
+        "helm_notation": {
+          "title": "Helm Notation",
+          "type": "string"
+        },
+        "inchi": {
+          "title": "InChI",
+          "type": "string"
+        },
+        "inchi_key": {
+          "title": "InChI Key",
+          "type": "string"
+        },
+        "indication_class": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Indication Class(es)",
+          "type": "array"
+        },
+        "inorganic_flag": {
+          "title": "Inorganic Flag",
+          "type": "integer"
+        },
+        "max_phase": {
+          "description": "Maximum phase of development reached for the compound (4 = approved). Null where max phase has not yet been assigned.",
+          "title": "Maximum Phase",
+          "type": "number"
+        },
+        "molecule_chembl_id": {
+          "title": "Molecule ChEMBL ID",
+          "type": "string"
+        },
+        "molecule_synonyms": {
+          "items": {
+            "$ref": "#/$defs/ChemblMoleculeSynonym"
+          },
+          "title": "Molecule Synonyms",
+          "type": "array"
+        },
+        "molecule_type": {
+          "title": "Molecule Type",
+          "type": "string"
+        },
+        "natural_product": {
+          "description": "Indicates whether the compound is natural product-derived (currently curated only for drugs)",
+          "title": "Natural Product",
+          "type": "integer"
+        },
+        "oral": {
+          "description": "Indicates whether the drug is known to be administered orally.",
+          "title": "Oral",
+          "type": "boolean"
+        },
+        "orphan": {
+          "description": "Indicates orphan designation, i.e. intended for use against a rare condition (1 = yes, 0 = no, -1 = preclinical compound ie not a drug)",
+          "title": "Orphan",
+          "type": "integer"
+        },
+        "parenteral": {
+          "description": "Indicates whether the drug is known to be administered parenterally",
+          "title": "Parenteral",
+          "type": "boolean"
+        },
+        "polymer_flag": {
+          "description": "Indicates whether a molecule is a small molecule polymer (e.g., polistyrex)",
+          "title": "Polymer Flag",
+          "type": "boolean"
+        },
+        "pref_name": {
+          "title": "Preferred Name",
+          "type": "string"
+        },
+        "prodrug": {
+          "description": "Indicates that the molecule is a pro-drug (see molecule hierarchy for active component, where known)",
+          "title": "Prodrug",
+          "type": "string"
+        },
+        "smiles": {
+          "title": "SMILES",
+          "type": "string"
+        },
+        "structure_type": {
+          "description": "Indications whether the molecule has a small molecule structure or a protein sequence (MOL indicates an entry in the compound_structures table, SEQ indications an entry in the protein_therapeutics table, NONE indicates an entry in neither table, e.g., structure unknown)",
+          "title": "Structure Type",
+          "type": "string"
+        },
+        "therapeutic_flag": {
+          "description": "Indicates that a drug has a therapeutic application (as opposed to e.g., an imaging agent, additive etc).",
+          "title": "Therapeutic Flag",
+          "type": "boolean"
+        },
+        "topical": {
+          "description": "Indicates whether the drug is known to be administered topically.",
+          "title": "Topical",
+          "type": "boolean"
+        },
+        "usan_stem": {
+          "description": "Where the compound has been assigned a USAN name, this indicates the stem, as described in the USAN_STEM table.",
+          "title": "USAN Stem",
+          "type": "string"
+        },
+        "usan_stem_definition": {
+          "description": "Definition of the USAN stem",
+          "title": "USAN Stem Definition",
+          "type": "string"
+        },
+        "usan_substem": {
+          "description": "Where the compound has been assigned a USAN name, this indicates the substem",
+          "title": "USAN Substem",
+          "type": "string"
+        },
+        "usan_year": {
+          "description": "The year in which the application for a USAN/INN name was made",
+          "title": "USAN Year",
+          "type": "integer"
+        }
+      },
+      "title": "Chembl",
+      "type": "object"
+    },
+    "ChemblDrugIndication": {
+      "properties": {
+        "efo": {
+          "description": "Experimental Factor Ontology",
+          "items": {
+            "$ref": "#/$defs/Efo"
+          },
+          "title": "EFO",
+          "type": "array"
+        },
+        "first_approval": {
+          "title": "First Approval",
+          "type": "integer"
+        },
+        "indicaton_refs": {
+          "items": {
+            "$ref": "#/$defs/IndicationRefs"
+          },
+          "title": "Indication References",
+          "type": "array"
+        },
+        "max_phase_for_ind": {
+          "title": "Maximum Phase for Indication",
+          "type": "string"
+        },
+        "mesh_heading": {
+          "title": "MeSH Heading",
+          "type": "string"
+        },
+        "mesh_id": {
+          "title": "MeSH ID",
+          "type": "string"
+        }
+      },
+      "title": "ChemblDrugIndication",
+      "type": "object"
+    },
+    "ChemblDrugMechanism": {
+      "properties": {
+        "action_type": {
+          "title": "Action Type",
+          "type": "string"
+        },
+        "mechanism_refs": {
+          "items": {
+            "$ref": "#/$defs/ChemblMechanismRefs"
+          },
+          "title": "Mechanism References",
+          "type": "array"
+        },
+        "target_chembl_id": {
+          "title": "Target ChEMBL ID",
+          "type": "string"
+        },
+        "target_components": {
+          "items": {
+            "$ref": "#/$defs/ChemblTargetComponent"
+          },
+          "title": "Target Components",
+          "type": "array"
+        },
+        "target_name": {
+          "title": "Target Name",
+          "type": "string"
+        },
+        "target_organism": {
+          "title": "Target Organism",
+          "type": "string"
+        },
+        "target_type": {
+          "title": "Target Type",
+          "type": "string"
+        }
+      },
+      "title": "ChemblDrugMechanism",
+      "type": "object"
+    },
+    "ChemblMechanismRefs": {
+      "properties": {
+        "ClinicalTrials": {
+          "type": "string"
+        },
+        "DOI": {
+          "type": "string"
+        },
+        "DailyMed": {
+          "type": "string"
+        },
+        "Expert": {
+          "type": "string"
+        },
+        "FDA": {
+          "type": "string"
+        },
+        "ISBN": {
+          "type": "string"
+        },
+        "IUPHAR": {
+          "type": "string"
+        },
+        "InterPro": {
+          "type": "string"
+        },
+        "KEGG": {
+          "type": "string"
+        },
+        "Other": {
+          "type": "string"
+        },
+        "PMC": {
+          "type": "string"
+        },
+        "Patent": {
+          "type": "string"
+        },
+        "PubChem": {
+          "type": "string"
+        },
+        "PubMed": {
+          "type": "string"
+        },
+        "UniProt": {
+          "type": "string"
+        },
+        "Wikipedia": {
+          "type": "string"
+        },
+        "id": {
+          "title": "ID",
+          "type": "string"
+        },
+        "type": {
+          "title": "Type",
+          "type": "string"
+        },
+        "url": {
+          "title": "URL",
+          "type": "string"
+        }
+      },
+      "title": "ChemblMechanismRefs",
+      "type": "object"
+    },
+    "ChemblMoleculeSynonym": {
+      "properties": {
+        "molecule_synonym": {
+          "title": "Molecule Synonym",
+          "type": "string"
+        },
+        "syn_type": {
+          "title": "Synonym Type",
+          "type": "string"
+        },
+        "synonyms": {
+          "title": "Synonyms",
+          "type": "string"
+        }
+      },
+      "title": "ChemblMoleculeSynonym",
+      "type": "object"
+    },
+    "ChemblTargetComponent": {
+      "properties": {
+        "ensembl_gene": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Ensembl Genes",
+          "type": "array"
+        },
+        "uniprot": {
+          "items": {
+            "type": "string"
+          },
+          "title": "UniProt",
+          "type": "array"
+        }
+      },
+      "title": "ChemblTargetComponent",
+      "type": "object"
+    },
+    "DrugBank": {
+      "properties": {
+        "accession_number": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Accession Number",
+          "type": "array"
+        },
+        "cas": {
+          "description": "Chemical Abstracts Service (CAS) registry number",
+          "title": "CAS",
+          "type": "string"
+        },
+        "id": {
+          "title": "ID",
+          "type": "string"
+        },
+        "inchi_key": {
+          "title": "InChI Key",
+          "type": "string"
+        },
+        "name": {
+          "title": "name",
+          "type": "string"
+        },
+        "synonyms": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Synonyms",
+          "type": "array"
+        },
+        "unii": {
+          "description": "Unique Ingredient Identifier",
+          "title": "UNII",
+          "type": "string"
+        }
+      },
+      "title": "DrugBank",
+      "type": "object"
+    },
+    "DrugCentral": {
+      "properties": {
+        "approval": {
+          "items": {
+            "$ref": "#/$defs/DrugCentralApproval"
+          },
+          "title": "Approvals",
+          "type": "array"
+        },
+        "bioactivity": {
+          "items": {
+            "$ref": "#/$defs/DrugCentralBioactivity"
+          },
+          "title": "Bioactivities",
+          "type": "array"
+        },
+        "drug_dosage": {
+          "items": {
+            "$ref": "#/$defs/DrugCentralDrugDosage"
+          },
+          "title": "Drug Dosages",
+          "type": "array"
+        },
+        "drug_use": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/DrugCentralDrugUse"
+            }
+          ],
+          "title": "Drug Use"
+        },
+        "fda_adverse_event": {
+          "items": {
+            "$ref": "#/$defs/DrugCentralFdaAdverseEvent"
+          },
+          "title": "FDA Adverse Events",
+          "type": "array"
+        },
+        "pharmacology_class": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/DrugCentralPharmClass"
+            }
+          ],
+          "title": "Pharmacology Class"
+        },
+        "structures": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/DrugCentralStructure"
+            }
+          ],
+          "title": "Structures"
+        },
+        "synonyms": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Synonyms",
+          "type": "array"
+        }
+      },
+      "title": "DrugCentral",
+      "type": "object"
+    },
+    "DrugCentralApproval": {
+      "properties": {
+        "agency": {
+          "title": "Agency",
+          "type": "string"
+        },
+        "company": {
+          "title": "Company",
+          "type": "string"
+        },
+        "date": {
+          "title": "Date",
+          "type": "string"
+        },
+        "orphan": {
+          "title": "Orphan",
+          "type": "string"
+        }
+      },
+      "title": "DrugCentralApproval",
+      "type": "object"
+    },
+    "DrugCentralBioactivity": {
+      "properties": {
+        "act_source": {
+          "title": "Bioactivity Source",
+          "type": "string"
+        },
+        "act_type": {
+          "title": "Bioactivity Type",
+          "type": "string"
+        },
+        "act_value": {
+          "title": "Bioactivity Value",
+          "type": "number"
+        },
+        "action_type": {
+          "title": "Action Type",
+          "type": "string"
+        },
+        "moa": {
+          "title": "Mechanism of Action",
+          "type": "number"
+        },
+        "moa_source": {
+          "title": "Mechanism of Action Source",
+          "type": "string"
+        },
+        "organism": {
+          "title": "Organism",
+          "type": "string"
+        },
+        "target_class": {
+          "title": "Target Class",
+          "type": "string"
+        },
+        "target_name": {
+          "title": "Target Name",
+          "type": "string"
+        },
+        "uniprot": {
+          "items": {
+            "$ref": "#/$defs/DrugCentralUniProt"
+          },
+          "title": "UniProt",
+          "type": "array"
+        }
+      },
+      "title": "DrugCentralBioactivity",
+      "type": "object"
+    },
+    "DrugCentralDrugDosage": {
+      "properties": {
+        "dosage": {
+          "title": "Dosage",
+          "type": "number"
+        },
+        "route": {
+          "title": "Route",
+          "type": "string"
+        },
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        }
+      },
+      "title": "DrugCentralDrugDosage",
+      "type": "object"
+    },
+    "DrugCentralDrugUse": {
+      "properties": {
+        "contraindication": {
+          "items": {
+            "$ref": "#/$defs/DrugCentralIndication"
+          },
+          "title": "Contraindications",
+          "type": "array"
+        },
+        "diagnosis": {
+          "items": {
+            "$ref": "#/$defs/DrugCentralIndication"
+          },
+          "title": "Diagnoses",
+          "type": "array"
+        },
+        "indication": {
+          "items": {
+            "$ref": "#/$defs/DrugCentralIndication"
+          },
+          "title": "Indications",
+          "type": "array"
+        },
+        "off_label_use": {
+          "items": {
+            "$ref": "#/$defs/DrugCentralIndication"
+          },
+          "title": "Off Label Uses",
+          "type": "array"
+        },
+        "reduce_risk": {
+          "items": {
+            "$ref": "#/$defs/DrugCentralIndication"
+          },
+          "title": "Reduced Risks",
+          "type": "array"
+        },
+        "symptomatic_treatment": {
+          "items": {
+            "$ref": "#/$defs/DrugCentralIndication"
+          },
+          "title": "Symptomatic Treatments",
+          "type": "array"
+        }
+      },
+      "title": "DrugCentralDrugUse",
+      "type": "object"
+    },
+    "DrugCentralFdaAdverseEvent": {
+      "properties": {
+        "drug_ae": {
+          "title": "Patients Taking Drug Having Adverse Event",
+          "type": "integer"
+        },
+        "drug_no_ae": {
+          "title": "Patients Taking Drug Not Having Adverse Event",
+          "type": "integer"
+        },
+        "level": {
+          "title": "Level",
+          "type": "string"
+        },
+        "llr": {
+          "title": "Likelihood Ratio",
+          "type": "number"
+        },
+        "llr_threshold": {
+          "title": "Likelihood Ratio Threshold",
+          "type": "number"
+        },
+        "meddra_code": {
+          "title": "medDRA Code",
+          "type": "integer"
+        },
+        "meddra_term": {
+          "title": "medDRA Term",
+          "type": "string"
+        },
+        "no_drug_ae": {
+          "title": "Patients Not Taking Drug Having Adverse Event",
+          "type": "integer"
+        },
+        "no_drug_no_ar": {
+          "title": "Patients Not Taking Drug Not Having Adverse Event",
+          "type": "integer"
+        }
+      },
+      "title": "DrugCentralFdaAdverseEvent",
+      "type": "object"
+    },
+    "DrugCentralIndication": {
+      "properties": {
+        "concept_name": {
+          "title": "Concept Name",
+          "type": "string"
+        },
+        "cui_semantic_type": {
+          "title": "CUI Semantic Type",
+          "type": "string"
+        },
+        "snomed_concept_id": {
+          "title": "SNOMED Concept ID",
+          "type": "integer"
+        },
+        "snomed_full_name": {
+          "title": "SNOMED Full Name",
+          "type": "string"
+        },
+        "umls_cui": {
+          "title": "UMLS CUI",
+          "type": "string"
+        }
+      },
+      "title": "DrugCentralIndication",
+      "type": "object"
+    },
+    "DrugCentralPharmClass": {
+      "properties": {
+        "chebi": {
+          "items": {
+            "$ref": "#/$defs/DrugCentralPharmClassSpecs"
+          },
+          "title": "ChEBI",
+          "type": "array"
+        },
+        "fda_cs": {
+          "items": {
+            "$ref": "#/$defs/DrugCentralPharmClassSpecs"
+          },
+          "title": "FDA CS",
+          "type": "array"
+        },
+        "fda_epc": {
+          "items": {
+            "$ref": "#/$defs/DrugCentralPharmClassSpecs"
+          },
+          "title": "FDA EPC",
+          "type": "array"
+        },
+        "fda_ext": {
+          "items": {
+            "$ref": "#/$defs/DrugCentralPharmClassSpecs"
+          },
+          "title": "FDA EXT",
+          "type": "array"
+        },
+        "fda_moa": {
+          "items": {
+            "$ref": "#/$defs/DrugCentralPharmClassSpecs"
+          },
+          "title": "FDA MoA",
+          "type": "array"
+        },
+        "fda_pe": {
+          "items": {
+            "$ref": "#/$defs/DrugCentralPharmClassSpecs"
+          },
+          "title": "FDA PE",
+          "type": "array"
+        },
+        "mesh_pa": {
+          "items": {
+            "$ref": "#/$defs/DrugCentralPharmClassSpecs"
+          },
+          "title": "MeSH PA",
+          "type": "array"
+        }
+      },
+      "title": "DrugCentralPharmClass",
+      "type": "object"
+    },
+    "DrugCentralPharmClassSpecs": {
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "title": "DrugCentralPharmClassSpecs",
+      "type": "object"
+    },
+    "DrugCentralStructure": {
+      "properties": {
+        "cas_rn": {
+          "description": "Chemical Abstracts Service (CAS) registry number",
+          "title": "CAS RN",
+          "type": "string"
+        },
+        "inchi": {
+          "title": "InChI",
+          "type": "string"
+        },
+        "inchikey": {
+          "title": "InChI Key",
+          "type": "string"
+        },
+        "inn": {
+          "description": "International Nonproprietary Name",
+          "title": "INN",
+          "type": "string"
+        },
+        "smiles": {
+          "title": "SMILES",
+          "type": "string"
+        }
+      },
+      "title": "DrugCentralStructure",
+      "type": "object"
+    },
+    "DrugCentralUniProt": {
+      "properties": {
+        "gene_symbol": {
+          "title": "Gene Symbol",
+          "type": "string"
+        },
+        "swissprot_entry": {
+          "title": "Swiss-Prot Entry",
+          "type": "string"
+        },
+        "uniprot_id": {
+          "title": "UniProt ID",
+          "type": "string"
+        }
+      },
+      "title": "DrugCentralUniProt",
+      "type": "object"
+    },
+    "Efo": {
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "string"
+        },
+        "term": {
+          "title": "Term",
+          "type": "string"
+        }
+      },
+      "title": "Efo",
+      "type": "object"
+    },
+    "IndicationRefs": {
+      "properties": {
+        "ATC": {
+          "type": "string"
+        },
+        "ClinicalTrials": {
+          "type": "string"
+        },
+        "DailyMed": {
+          "type": "string"
+        },
+        "FDA": {
+          "type": "string"
+        },
+        "id": {
+          "title": "ID",
+          "type": "string"
+        },
+        "type": {
+          "title": "Type",
+          "type": "string"
+        },
+        "url": {
+          "title": "URL",
+          "type": "string"
+        }
+      },
+      "title": "IndicationRefs",
+      "type": "object"
+    },
+    "Lincs": {
+      "properties": {
+        "id": {
+          "title": "LINCS ID",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "alternativeNames": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Alternative Names",
+          "type": "array"
+        },
+        "alternativeIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Alternative IDs",
+          "type": "array"
+        },
+        "pubchemCid": {
+          "title": "PubChem CID",
+          "type": "string"
+        },
+        "chebiId": {
+          "title": "ChEBI ID",
+          "type": "string"
+        },
+        "inchiParent": {
+          "title": "Parent InChI",
+          "type": "string"
+        },
+        "smilesParent": {
+          "title": "Parent SMILES",
+          "type": "string"
+        }
+      },
+      "title": "Lincs",
+      "type": "object"
+    },
+    "PharmGKB": {
+      "properties": {
+        "id": {
+          "title": "ID",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "inchi": {
+          "title": "InChI",
+          "type": "string"
+        },
+        "smiles": {
+          "title": "SMILES",
+          "type": "string"
+        },
+        "generic_names": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Generic Names",
+          "type": "array"
+        },
+        "trade_names": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Trade Names",
+          "type": "array"
+        },
+        "type": {
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "title": "PharmGKB",
+      "type": "object"
+    },
+    "PubChem": {
+      "properties": {
+        "cid": {
+          "title": "CID",
+          "type": "string"
+        },
+        "inchi": {
+          "title": "InChI",
+          "type": "string"
+        },
+        "inchikey": {
+          "title": "InChI Key",
+          "type": "string"
+        },
+        "iupac": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/PubChemIupac"
+            }
+          ],
+          "title": "IUPAC"
+        },
+        "molecular_formula": {
+          "title": "Molecular Formula",
+          "type": "string"
+        },
+        "smiles": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/PubChemSmiles"
+            }
+          ],
+          "title": "SMILES"
+        }
+      },
+      "title": "PubChem",
+      "type": "object"
+    },
+    "PubChemIupac": {
+      "properties": {
+        "allowed": {
+          "title": "Allowed",
+          "type": "string"
+        },
+        "cas_like_style": {
+          "title": "CAS-like Style",
+          "type": "string"
+        },
+        "markup": {
+          "title": "Markup",
+          "type": "string"
+        },
+        "preferred": {
+          "title": "Preferred",
+          "type": "string"
+        },
+        "systematic": {
+          "title": "Systematic",
+          "type": "string"
+        },
+        "traditional": {
+          "title": "Traditional",
+          "type": "string"
+        }
+      },
+      "title": "PubChemIupac",
+      "type": "object"
+    },
+    "PubChemSmiles": {
+      "properties": {
+        "canonical": {
+          "title": "Canonical",
+          "type": "string"
+        },
+        "isomeric": {
+          "title": "Isomeric",
+          "type": "string"
+        }
+      },
+      "title": "PubChemSmiles",
+      "type": "object"
+    },
+    "UniChem": {
+      "properties": {
+        "chebi": {
+          "description": "ChEBI is a freely available ontology of molecular entities focused on 'small' chemical compounds",
+          "title": "ChEBI",
+          "type": "string"
+        },
+        "chembl": {
+          "description": "A database of bioactive drug-like small molecules and bioactivities abstracted from the scientific literature.",
+          "title": "ChEMBL",
+          "type": "string"
+        },
+        "lincs": {
+          "description": "The LINCS DCIC facilitates and standardizes the information relevant to LINCS assays as described in http://www.lincsproject.org/data/data-standards/",
+          "title": "LINCS",
+          "type": "string"
+        },
+        "mcule": {
+          "description": "An online drug discovery platform with virtual screening and molecular modelling services.",
+          "title": "Mcule",
+          "type": "string"
+        },
+        "molport": {
+          "description": "MolPort. A database designed to assist users find commercial sources of compounds. Access requires (free) registration. Only stock compounds included from Nov 2017.",
+          "title": "MolPort",
+          "type": "string"
+        },
+        "pubchem": {
+          "description": "A database of normalized PubChem compounds (CIDs) from the PubChem Database.",
+          "title": "PubChem",
+          "type": "string"
+        },
+        "drugbank": {
+          "description": "A database that combines drug (i.e. chemical, pharmacological and pharmaceutical) data with drug target (i.e. sequence, structure, and pathway) information.",
+          "title": "DrugBank",
+          "type": "string"
+        },
+        "pdb": {
+          "description": "The European resource for the collection, organisation and dissemination of data on biological macromolecular structures, including structures of small molecule ligands for proteins.",
+          "title": "PDBe",
+          "type": "string"
+        },
+        "gtopdb": {
+          "description": "The IUPHAR (International Union of Basic and Clinical Pharmacology)/BPS (British Pharmacological Society) Guide to PHARMACOLOGY database contains structures of small molecule ligands, peptides and antibodies, with their affinities at protein targets.",
+          "title": "Guide to Pharmacology",
+          "type": "string"
+        },
+        "pubchem_dotf": {
+          "description": "A subset of the PubChem DB: from the original depositor 'drugs of the future' (Prous).",
+          "title": "PubChem: Drugs of the Future",
+          "type": "string"
+        },
+        "kegg_ligand": {
+          "description": "KEGG LIGAND is a composite DB consisting of COMPOUND, GLYCAN, REACTION, RPAIR, RCLASS, and ENZYME DBs, whose entries are identified by C, G, R, RP, RC, and EC numbers, respectively.",
+          "title": "KEGG Ligand",
+          "type": "string"
+        },
+        "nih_ncc": {
+          "description": "Collections of plated arrays of small molecules that have a history of use in human clinical trials. Assembled by the National Institutes of Health (NIH) through the Molecular Libraries Roadmap Initiative",
+          "title": "NIH Clinical Collection",
+          "type": "string"
+        },
+        "zinc": {
+          "description": "A free database of commercially-available compounds for virtual screening, provided by the Shoichet Laboratory in the Department of Pharmaceutical Chemistry at the University of California, San Francisco (UCSF).  [Irwin and Shoichet, J. Chem. Inf. Model. 2005;45(1):177-82]",
+          "title": "ZINC",
+          "type": "string"
+        },
+        "emolecules": {
+          "description": "A free chemical structure search engine containing millions of public domain structures. Pricing, availabilities, and vendor information requires an eMolecules Plus subscription.",
+          "title": "eMolecules",
+          "type": "string"
+        },
+        "atlas": {
+          "description": "The Gene Expression Atlas is a semantically enriched database of meta-analysis based summary statistics over a curated subset of ArrayExpress Archive, servicing queries for condition-specific gene expression patterns as well as broader exploratory searches for biologically interesting genes/samples.",
+          "title": "Atlas",
+          "type": "string"
+        },
+        "fdasrs": {
+          "description": "The primary goal of the FDA/USP Substance Registration System (SRS) is to unambiguously define all substances present in regulated products. Once a substance has been defined, the SRS assigns a strong identifier that is permanently associated with the substance: a UNII (Unique Ingredient Identifier). This is a a non-proprietary, free, unique, unambiguous, nonsemantic, alphanumeric identifier based on a substances molecular structure and/or descriptive information.",
+          "title": "FDA SRS",
+          "type": "string"
+        },
+        "surechembl": {
+          "description": "SureChEMBL automatically extracts chemistry from the full text of all major patent authorities. Compounds are derived from either chemical names found in text or in chemical depictions. All SureChEMBL compounds are included, except those failing UniChem loading rules.",
+          "title": "SureChEMBL",
+          "type": "string"
+        },
+        "pharmgkb": {
+          "description": "PharmGKB (Pharmacogenomics Knowledgebase) is a comprehensive resource that curates knowledge about the impact of genetic variation on drug response for clinicians and researchers.",
+          "title": "PharmGKB",
+          "type": "string"
+        },
+        "hmdb": {
+          "description": "The Human Metabolome Database (HMDB) is a freely available electronic database containing detailed information about small molecule metabolites found in the human body. It is intended to be used for applications in metabolomics, clinical chemistry, biomarker discovery and general education. The database is designed to contain or link three kinds of data: 1) chemical data, 2) clinical data, and 3) molecular biology/biochemistry data",
+          "title": "Human Metabolome Database",
+          "type": "string"
+        },
+        "selleck": {
+          "description": "Selleck Chemicals is a supplier of biochemical products, including over 1,000 inhibitor products",
+          "title": "Selleck",
+          "type": "string"
+        },
+        "pubchem_tpharma": {
+          "description": "A subset of the PubChem DB: from the original depositor 'Thomson Pharma'.",
+          "title": "PubChem: Thomson Pharma",
+          "type": "string"
+        },
+        "nmrshiftdb2": {
+          "description": "An NMR database (web database) for organic structures and their nuclear magnetic resonance (nmr) spectra. It allows for spectrum prediction (13C, 1H and other nuclei) as well as for searching spectra, structures and other properties. Last not least, it features peer-reviewed submission of datasets by its users.",
+          "title": "NMRShiftDB",
+          "type": "string"
+        },
+        "actor": {
+          "description": "ACToR (Aggregated Computational Toxicology Resource)",
+          "title": "ACToR",
+          "type": "string"
+        },
+        "recon": {
+          "description": "A biochemical knowledge-base on human metabolism",
+          "title": "Recon",
+          "type": "string"
+        },
+        "nikkaji": {
+          "description": "Nakkaji (The Japan Chemical Substance Dictionary) is an organic compound dictionary database prepared by the Japan Science and Technology Agency (JST).",
+          "title": "Nikkaji",
+          "type": "string"
+        },
+        "bindingdb": {
+          "description": "A public, web-accessible database of measured binding affinities, focusing chiefly on the interactions of proteins considered to be drug-targets with small, drug-like molecules",
+          "title": "BindingDB",
+          "type": "string"
+        },
+        "comptox": {
+          "description": "The foundation of chemical safety testing relies on chemistry information such as high-quality chemical structures and physicochemical properties. This information is used by scientists to predict the potential health risks of chemicals.The CompTox Dashboard is part of a suite of dashboards developed by EPA to help evaluate the safety of chemicals. It provides access to a variety of data and information on over 700,000 chemicals currently in use and of interest to environmental researchers. Within the CompTox Dashboard, users can access chemical structures, experimental and predicted physicochemical and toxicity data, and additional links to relevant websites and applications. It maps curated physicochemical property data associated with chemical substances to their corresponding chemical structures",
+          "title": "EPA CompTox Dashboard",
+          "type": "string"
+        },
+        "lipidmaps": {
+          "description": "LIPID Metabolites And Pathways Strategy (LIPID MAPS) is a multi-institutional effort created to identify and quantitate, using a systems biology approach and sophisticated mass spectrometers, all of the major, and many minor, lipid species in mammalian cells, as well as to quantitate the changes in these species in response to perturbation",
+          "title": "LipidMaps",
+          "type": "string"
+        },
+        "drugcentral": {
+          "description": "DrugCentral is an online drug information resource created and maintained by Division of Translational Informatics at University of New Mexico, providing information on active ingredients chemical entities, pharmaceutical products, drug mode of action, indications, pharmacologic action",
+          "title": "DrugCentral",
+          "type": "string"
+        },
+        "carotenoiddb": {
+          "description": "A Database of information on naturally occurring carotenoids from many organisms, extracted  from the literature.",
+          "title": "CarotenoidDB",
+          "type": "string"
+        },
+        "metabolights": {
+          "description": "A database for Metabolomics experiments and derived information. The database is cross-species, cross-technique and covers metabolite structures and their reference spectra as well as their biological roles, locations and concentrations, and experimental data from metabolic experiments.",
+          "title": "Metabolights",
+          "type": "string"
+        },
+        "brenda": {
+          "description": "A comprehensive Enzyme Information system containing enzyme functional data extracted directly from the primary literature.",
+          "title": "Brenda",
+          "type": "string"
+        },
+        "rhea": {
+          "description": "An expert curated resource of biochemical reactions designed for the annotation of enzymes and genome-scale metabolic networks and models",
+          "title": "Rhea",
+          "type": "string"
+        },
+        "chemicalbook": {
+          "description": "An online knowledge-base of chemicals and a platform of the Chinese domestic vendors in chemical industry",
+          "title": "ChemicalBook",
+          "type": "string"
+        },
+        "swisslipids": {
+          "description": "SwissLipids is an expert curated resource that provides a framework for the integration of lipid and lipidomic data with biological knowledge and models",
+          "title": "SwissLipids",
+          "type": "string"
+        },
+        "dailymed": {
+          "description": "A database of marketed drugs in the USA, containing label and package insert information",
+          "title": "DailyMed",
+          "type": "string"
+        },
+        "clinicaltrials": {
+          "description": "Intervention names from ClinicalTrials.gov. A database of privately and publicly funded clinical studies conducted around the world",
+          "title": "ClinicalTrials",
+          "type": "string"
+        }
+      },
+      "title": "UniChem",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "uniChem": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/UniChem"
+        }
+      ],
+      "title": "UniChem Cross References"
+    },
+    "lincs": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/Lincs"
+        }
+      ],
+      "title": "LINCS Metadata"
+    },
+    "aeolus": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/Aeolus"
+        }
+      ],
+      "description": "Adverse Event Open Learning through Universal Standardization",
+      "title": "AEOLUS"
+    },
+    "chebi": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/Chebi"
+        }
+      ],
+      "description": "Chemical Entities of Biological Interest",
+      "title": "ChEBI"
+    },
+    "chembl": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/Chembl"
+        }
+      ],
+      "title": "ChEMBL"
+    },
+    "drugbank": {
+      "Title": "DrugBank",
+      "allOf": [
+        {
+          "$ref": "#/$defs/DrugBank"
+        }
+      ]
+    },
+    "drugcentral": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/DrugCentral"
+        }
+      ],
+      "title": "DrugCentral"
+    },
+    "pharmgkb": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/PharmGKB"
+        }
+      ],
+      "title": "PharmGKB"
+    },
+    "pubchem": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/PubChem"
+        }
+      ],
+      "title": "PubChem"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "title": "Small Molecule",
+  "type": "object"
+}
