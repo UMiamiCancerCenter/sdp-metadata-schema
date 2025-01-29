@@ -286,7 +286,7 @@ class primaryCell(BaseModel):
 
     primaryCellDisease: str = Field(title="Disease", description="If the cells are diseased, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the cells were not diseased when obtained from the donor.", default="",json_schema_extra={"graphRestriction":  {"ontologies": ["obo:doid"],"classes": ["DOID:4"],"queryFields": ["label"],"includeSelf": True}})
 
-    primaryCellDonorInformation: donorInformation | None = Field(title="Donor Information", description="Information about the human or non-human donor from which the sample material was taken.")
+    primaryCellDonorInformation: donorInformation | None = Field(title="Donor Information", description="Information about the human or non-human donor from which the sample material was taken. Select 'None' if none available.")
 
 
 
@@ -476,7 +476,7 @@ class tumorSample(BaseModel):
 
     tumorPrimaryDiseaseSite: str = Field(default="", title="Primary Disease Site", description="Diagnosis site granular grouper for standarization.")
 
-    tumorSampleDonorInformation: donorInformation | None = Field(title="Donor Information", description="Information about the human or non-human donor from which the sample material was taken.")
+    tumorSampleDonorInformation: donorInformation | None = Field(title="Donor Information", description="Information about the human or non-human donor from which the sample material was taken. Select 'None' if none available.")
 
 class tissue(BaseModel):
     model_config = ConfigDict(title="Tissue")
@@ -497,7 +497,7 @@ class tissue(BaseModel):
 
     tissueDisease: str = Field(default="", title="Disease", description="If the tissue was diseased, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the tissue was not diseased when obtained from the donor.")
 
-    tissueDonorInformation: donorInformation | None = Field(title="Donor Information", description="Information about the human or non-human donor from which the sample material was taken.")
+    tissueDonorInformation: donorInformation | None = Field(title="Donor Information", description="Information about the human or non-human donor from which the sample material was taken. Select 'None' if none available.")
 
 class sample(BaseModel):
 
