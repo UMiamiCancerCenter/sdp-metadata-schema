@@ -515,7 +515,7 @@ class sample(BaseModel):
             tumorSample,
             # differentiatedCells,
             # ipsc,
-            tissue,
+            tissue
             # patientSample
             ] = Field(title="Model System", json_schema_extra={
                                   "type": "object"

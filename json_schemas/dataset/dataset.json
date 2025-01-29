@@ -45,7 +45,8 @@
           "enum": [
             "Cell Line",
             "Primary Cells",
-            "Tumor Sample"
+            "Tumor Sample",
+            "Tissue"
           ]
         },
         "uniqueItems": true
