@@ -1,6 +1,6 @@
 {
   "title": "Dataset",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "type": "object",
   "properties": {
     "name": {
@@ -45,7 +45,8 @@
           "enum": [
             "Cell Line",
             "Primary Cells",
-            "Tumor Sample"
+            "Tumor Sample",
+            "Tissue"
           ]
         },
         "uniqueItems": true
