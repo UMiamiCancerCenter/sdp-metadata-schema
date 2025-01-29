@@ -1,4 +1,5 @@
 import json
+from datetime import date
 from typing import Union, List
 from enum import Enum
 
@@ -24,6 +25,52 @@ class GenerateJsonSchemaWithoutDefaultTitles(GenerateJsonSchema):
             return False
         return return_value
 
+class smokingStatus(Enum):
+    smoker = "Smoker"
+    nonSmoker = "Non-smoker"
+
+class specimenOrigin(Enum):
+    tissue = "Tissue"
+    liquid = "Liquid"
+
+class tumorSampleTypeEnum(Enum):
+    primarySite = "Primary Site"
+    localRecurrence = "Local Recurrence"
+    distantMetastasis = "Distant Metastasis"
+
+class donorInformation(BaseModel):
+    model_config = ConfigDict(title="Patient/Donor Information")
+
+    species: str = Field(title="Species of Donor (Homo sapiens if human patient/donor, otherwise scientific name of model organism.)")
+
+    gender: str = Field(default="", title="Gender", description="The self-identified gender of the donor in case of a human, the biological sex in case of a non-human donor.")
+
+    primaryRace: str = Field(default="", title="Primary Race", description="The primary race indicated by a human donor.")
+
+    strain: str = Field(default="", title="Strain/Breed", description="The strain or breed of the model organism in case of a non-human donor.")
+
+    ethnicity: str = Field(default="", title="Ethnicity", description="The ethnic group of origin of a human donor.")
+
+    dateOfBirth: date = Field(default="", title="Date of Birth", description="The date of the donor's birth.")
+
+    age: int = Field(default="", title="Age", description="The donor's age at the time of collection of the sample. Age units will be specified in the next field.")
+
+    ageUnits: str = Field(default="", title="Age Units", description="The units of time in which the age is recorded.")
+
+    ageGroup: str = Field(default="", title="Age Group", description="The age group of the donor.")
+
+    intervalDeath: int = Field(default="", title="Interval of Death", description="The number of days between the donor's date of birth and date of death. Report the time units in the Age Units field.")
+
+    tobaccoSmokingHistory: bool = Field(default="", title="Tobacco Smoking History", description="In the case of a human, the donor's self-reported smoking history. True if the patient has ever smoked.")
+
+    tobaccoSmokingStatus: smokingStatus = Field(default="", title="Tobacco Smoking Status", description="In the case of a human, the status of the donor as a smoker or non-smoker at the time the sample was collected.")
+
+    icd10Code: str = Field(default="", title="ICD10 Code", description="In the case of a human donor that is diseased, the ICD-10 code for the diagnosis associated with the sample material coming from pathology reports and chart reviews, if the sample itself is diseased, or the relevant diagnosis code for the patient if the tissue itself is healthy (e.g. normal tissue from a cancer patient).")
+
+    icd10Description: str = Field(default="", title="ICD10 Description", description="In the case of a human donor that is diseased, the ICD-10 code description for the diagnosis associated with the sample material coming from pathology reports and chart reviews, if the sample itself is diseased, or the relevant diagnosis code description for the patient if the tissue itself is healthy (e.g. normal tissue from a cancer patient).")
+
+    pathologicDiagnosis: str = Field(default="", title="Pathologic Diagnosis", description="In the case of a human donor who is diseased, pathologic diagnosis recorded by the provider or researcher relevant to the study or sample material. In the case of a non-human donor that is diseased, name of the disease.")
+     
 class smallMolecule(BaseModel):
     
     model_config = ConfigDict(title="Small Molecule", 
@@ -239,6 +286,8 @@ class primaryCell(BaseModel):
 
     primaryCellDisease: str = Field(title="Disease", description="If the cells are diseased, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the cells were not diseased when obtained from the donor.", default="",json_schema_extra={"graphRestriction":  {"ontologies": ["obo:doid"],"classes": ["DOID:4"],"queryFields": ["label"],"includeSelf": True}})
 
+    primaryCellDonorInformation: donorInformation = Field(default="", title="Donor Information", description="Information about the human or non-human donor from which the sample material was taken.")
+
 
 
 
@@ -298,7 +347,7 @@ class cellLine(BaseModel):
     cellLineId: str = Field(default="", json_schema_extra={"format": "hidden"})
 
     cellLineName: str = Field(title="Name", 
-                              description="The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'.", json_schema_extra={"graphRestriction":  {"ontologies": ["obo:clo"],"classes": ["CLO:0000019"], "queryFields": ["label"], "includeSelf": True}} 
+                              description="The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'."
                               )
     cellLineLabBatchLabel: str = Field(title="Lab Batch Label", 
                                        description="Lab-specific ID for the  batch of cells used in the experiment.", default="")
@@ -350,6 +399,7 @@ class cellLine(BaseModel):
 class tetOnOff(Enum):
     tetOn = "Tet-ON"
     tetOff = "Tet-OFF"   
+
 class tetExpressionSystem(BaseModel):
     model_config = ConfigDict(title="Tet Expression System") 
 
@@ -408,19 +458,51 @@ class tumorSample(BaseModel):
                                                                 "format": "hidden",
                                                                 })
 
-    tumorType: str = Field(default="", title="Tumor Type", description="The type of cancer or benign tumor, preferably using OncoTree terminology.")
+    tumorType: str = Field(title="Tumor Type", description="The type of cancer or benign tumor, preferably using OncoTree terminology.")
 
-    collectionSite: str = Field(default="", title="Collection Site", description="The anatomical location of the tumor from which the sample was obtained.")
+    resectionSite: str = Field(default="", title="Resection Site", description="The anatomical, organ, and/or tissue location where the resection for the tumor sample was performed.")
+
+    tumorSpecimenOrigin: specimenOrigin = Field(default="", title="Specimen Origin", description="The type of biopsy performed for specimen collection: tissue or liquid.") 
+
+    tumorSampleType: tumorSampleTypeEnum = Field(default="", title="Sample Type", description="The tumor sample's type based on its location: primary site, site of local recurrence, or distant metastasis.")
 
     tumorOrgan: str = Field(default="", title="Organ of Origin", description="The organ in which the tumor originated.")
 
     tumorTissue: str = Field(default="", title="Tissue of Origin", description="The tissue type in which the tumor originated.")
 
     tumorCellType: str = Field(default="", title="Cell Type of Origin", description="The type of cell from which the tumor originated.")
+
+    tumorSpecies: str = Field(title="Species of Origin", description="The species in which the tumor originated.")
+
+    tumorPrimaryDiseaseSite: str = Field(default="", title="Primary Disease Site", description="Diagnosis site granular grouper for standarization.")
+
+    tumorSampleDonorInformation: donorInformation = Field(default="", title="Donor Information", description="Information about the human or non-human donor from which the sample material was taken.")
+
+class tissue(BaseModel):
+    model_config = ConfigDict(title="Tissue")
+
+    role: str = Field(default="Model System",
+                                            json_schema_extra={"const": "Model System",
+                                           "format": "hidden"})
+    entity: str = Field(default="Tissue", 
+                                            json_schema_extra={"const": "Tissue",
+                                                                "format": "hidden",
+                                                                })
+    
+    tissueType: str = Field(title="Tissue Type", description="The type of tissue sampled.")
+
+    tissueOrgan: str = Field(default="", title="Organ of Origin", description="The organ in which the tissue was located.")
+
+    tissueSpecies: str = Field(title="Species of Origin", description="The species of the organism from which the tissue was taken.")
+
+    tissueDisease: str = Field(default="", title="Disease", description="If the tissue was diseased, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the tissue was not diseased when obtained from the donor.")
+
+    tissueDonorInformation: donorInformation = Field(default="", title="Donor Information", description="Information about the human or non-human donor from which the sample material was taken.")
+
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.0.14"
+                        "version": "0.0.15"
             })
     
     name: str = Field(title='Sample Name', 
@@ -430,10 +512,10 @@ class sample(BaseModel):
     experimentalSystem: Union[
             cellLine,
             primaryCell,
-            tumorSample
+            tumorSample,
             # differentiatedCells,
             # ipsc,
-            # tissue
+            tissue,
             # patientSample
             ] = Field(title="Model System", json_schema_extra={
                                   "type": "object"
