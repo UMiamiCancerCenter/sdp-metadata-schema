@@ -160,6 +160,12 @@
     "compound": {
       "type": "object",
       "properties": {
+        "role": {
+          "const": "Compound",
+          "default": "Compound",
+          "format": "hidden",
+          "type": "string"
+        },
         "type": {
           "const": "Compound",
           "default": "Compound",
