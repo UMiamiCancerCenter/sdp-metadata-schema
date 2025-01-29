@@ -197,10 +197,6 @@
     },
     "donorInformation": {
       "properties": {
-        "species": {
-          "title": "Species of Donor (Homo sapiens if human patient/donor, otherwise scientific name of model organism.)",
-          "type": "string"
-        },
         "gender": {
           "description": "The self-identified gender of the donor in case of a human, the biological sex in case of a non-human donor.",
           "title": "Gender",
@@ -262,12 +258,12 @@
           "title": "Tobacco Smoking Status"
         },
         "icd10Code": {
-          "description": "In the case of a human donor that is diseased, the ICD-10 code for the diagnosis associated with the sample material coming from pathology reports and chart reviews, if the sample itself is diseased, or the relevant diagnosis code for the patient if the tissue itself is healthy (e.g. normal tissue from a cancer patient).",
+          "description": "In the case of a human donor that is diseased, the ICD-10 code for the diagnosis associated with the sample material coming from pathology reports and chart reviews, if the sample itself is diseased, or the relevant diagnosis code for the patient if the sample material itself is healthy (e.g. normal tissue from a cancer patient).",
           "title": "ICD10 Code",
           "type": "string"
         },
         "icd10Description": {
-          "description": "In the case of a human donor that is diseased, the ICD-10 code description for the diagnosis associated with the sample material coming from pathology reports and chart reviews, if the sample itself is diseased, or the relevant diagnosis code description for the patient if the tissue itself is healthy (e.g. normal tissue from a cancer patient).",
+          "description": "In the case of a human donor that is diseased, the ICD-10 code description for the diagnosis associated with the sample material coming from pathology reports and chart reviews, if the sample itself is diseased, or the relevant diagnosis code description for the patient if the sample material itself is healthy (e.g. normal tissue from a cancer patient).",
           "title": "ICD10 Description",
           "type": "string"
         },
@@ -277,9 +273,6 @@
           "type": "string"
         }
       },
-      "required": [
-        "species"
-      ],
       "title": "Patient/Donor Information",
       "type": "object"
     },
