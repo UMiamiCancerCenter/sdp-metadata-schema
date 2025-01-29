@@ -396,19 +396,23 @@
           "type": "string"
         },
         "primaryCellDonorInformation": {
-          "allOf": [
+          "anyOf": [
             {
               "$ref": "#/$defs/donorInformation"
+            },
+            {
+              "type": "null"
             }
           ],
-          "description": "Information about the human or non-human donor from which the sample material was taken.",
+          "description": "Information about the human or non-human donor from which the sample material was taken. Select option 2 if none available.",
           "title": "Donor Information"
         }
       },
       "required": [
         "primaryCellName",
         "primaryCellTissue",
-        "primaryCellSpecies"
+        "primaryCellSpecies",
+        "primaryCellDonorInformation"
       ],
       "title": "Primary Cells",
       "type": "object"
@@ -751,18 +755,22 @@
           "type": "string"
         },
         "tissueDonorInformation": {
-          "allOf": [
+          "anyOf": [
             {
               "$ref": "#/$defs/donorInformation"
+            },
+            {
+              "type": "null"
             }
           ],
-          "description": "Information about the human or non-human donor from which the sample material was taken.",
+          "description": "Information about the human or non-human donor from which the sample material was taken. Select option 2 if none available.",
           "title": "Donor Information"
         }
       },
       "required": [
         "tissueType",
-        "tissueSpecies"
+        "tissueSpecies",
+        "tissueDonorInformation"
       ],
       "title": "Tissue",
       "type": "object"
@@ -835,18 +843,22 @@
           "type": "string"
         },
         "tumorSampleDonorInformation": {
-          "allOf": [
+          "anyOf": [
             {
               "$ref": "#/$defs/donorInformation"
+            },
+            {
+              "type": "null"
             }
           ],
-          "description": "Information about the human or non-human donor from which the sample material was taken.",
+          "description": "Information about the human or non-human donor from which the sample material was taken. Select option 2 if none available.",
           "title": "Donor Information"
         }
       },
       "required": [
         "tumorType",
-        "tumorSpecies"
+        "tumorSpecies",
+        "tumorSampleDonorInformation"
       ],
       "title": "Tumor Sample",
       "type": "object"
