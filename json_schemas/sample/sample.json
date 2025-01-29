@@ -389,13 +389,9 @@
           "type": "string"
         },
         "primaryCellDonorInformation": {
-          "anyOf": [
+          "allOf": [
             {
               "$ref": "#/$defs/donorInformation"
-            },
-            {
-              "type": "null",
-              "title": "None"
             }
           ],
           "description": "Information about the human or non-human donor from which the sample material was taken. Select 'None' if none available.",
@@ -405,8 +401,7 @@
       "required": [
         "primaryCellName",
         "primaryCellTissue",
-        "primaryCellSpecies",
-        "primaryCellDonorInformation"
+        "primaryCellSpecies"
       ],
       "title": "Primary Cells",
       "type": "object"
@@ -749,13 +744,9 @@
           "type": "string"
         },
         "tissueDonorInformation": {
-          "anyOf": [
+          "allOf": [
             {
               "$ref": "#/$defs/donorInformation"
-            },
-            {
-              "type": "null",
-              "title": "None"
             }
           ],
           "description": "Information about the human or non-human donor from which the sample material was taken. Select 'None' if none available.",
@@ -764,8 +755,7 @@
       },
       "required": [
         "tissueType",
-        "tissueSpecies",
-        "tissueDonorInformation"
+        "tissueSpecies"
       ],
       "title": "Tissue",
       "type": "object"
@@ -838,13 +828,9 @@
           "type": "string"
         },
         "tumorSampleDonorInformation": {
-          "anyOf": [
+          "allOf": [
             {
               "$ref": "#/$defs/donorInformation"
-            },
-            {
-              "type": "null",
-              "title": "None"
             }
           ],
           "description": "Information about the human or non-human donor from which the sample material was taken. Select 'None' if none available.",
@@ -853,8 +839,7 @@
       },
       "required": [
         "tumorType",
-        "tumorSpecies",
-        "tumorSampleDonorInformation"
+        "tumorSpecies"
       ],
       "title": "Tumor Sample",
       "type": "object"
@@ -925,5 +910,5 @@
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.0.17"
+  "version": "0.0.18"
 }
