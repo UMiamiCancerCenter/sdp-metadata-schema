@@ -41,8 +41,6 @@ class tumorSampleTypeEnum(Enum):
 class donorInformation(BaseModel):
     model_config = ConfigDict(title="Patient/Donor Information")
 
-    species: str = Field(title="Species of Donor (Homo sapiens if human patient/donor, otherwise scientific name of model organism.)")
-
     gender: str = Field(default="", title="Gender", description="The self-identified gender of the donor in case of a human, the biological sex in case of a non-human donor.")
 
     primaryRace: str = Field(default="", title="Primary Race", description="The primary race indicated by a human donor.")
@@ -65,9 +63,9 @@ class donorInformation(BaseModel):
 
     tobaccoSmokingStatus: smokingStatus = Field(default="", title="Tobacco Smoking Status", description="In the case of a human, the status of the donor as a smoker or non-smoker at the time the sample was collected.")
 
-    icd10Code: str = Field(default="", title="ICD10 Code", description="In the case of a human donor that is diseased, the ICD-10 code for the diagnosis associated with the sample material coming from pathology reports and chart reviews, if the sample itself is diseased, or the relevant diagnosis code for the patient if the tissue itself is healthy (e.g. normal tissue from a cancer patient).")
+    icd10Code: str = Field(default="", title="ICD10 Code", description="In the case of a human donor that is diseased, the ICD-10 code for the diagnosis associated with the sample material coming from pathology reports and chart reviews, if the sample itself is diseased, or the relevant diagnosis code for the patient if the sample material itself is healthy (e.g. normal tissue from a cancer patient).")
 
-    icd10Description: str = Field(default="", title="ICD10 Description", description="In the case of a human donor that is diseased, the ICD-10 code description for the diagnosis associated with the sample material coming from pathology reports and chart reviews, if the sample itself is diseased, or the relevant diagnosis code description for the patient if the tissue itself is healthy (e.g. normal tissue from a cancer patient).")
+    icd10Description: str = Field(default="", title="ICD10 Description", description="In the case of a human donor that is diseased, the ICD-10 code description for the diagnosis associated with the sample material coming from pathology reports and chart reviews, if the sample itself is diseased, or the relevant diagnosis code description for the patient if the sample material itself is healthy (e.g. normal tissue from a cancer patient).")
 
     pathologicDiagnosis: str = Field(default="", title="Pathologic Diagnosis", description="In the case of a human donor who is diseased, pathologic diagnosis recorded by the provider or researcher relevant to the study or sample material. In the case of a non-human donor that is diseased, name of the disease.")
      
@@ -535,5 +533,5 @@ class sample(BaseModel):
 if __name__ == "__main__":
     json_schema=sample.model_json_schema(schema_generator=GenerateJsonSchemaWithoutDefaultTitles)
     delete_empty_default(json_schema)
-    with open ("genmeta_schema.json", "w") as ft:
+    with open ("sample.json", "w") as ft:
         print(json.dumps(json_schema, indent=2), file = ft)

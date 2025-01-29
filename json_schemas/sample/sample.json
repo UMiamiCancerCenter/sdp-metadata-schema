@@ -401,7 +401,8 @@
               "$ref": "#/$defs/donorInformation"
             },
             {
-              "type": "null"
+              "type": "null",
+              "title": "None"
             }
           ],
           "description": "Information about the human or non-human donor from which the sample material was taken. Select 'None' if none available.",
@@ -760,7 +761,8 @@
               "$ref": "#/$defs/donorInformation"
             },
             {
-              "type": "null"
+              "type": "null",
+              "title": "None"
             }
           ],
           "description": "Information about the human or non-human donor from which the sample material was taken. Select 'None' if none available.",
@@ -848,7 +850,8 @@
               "$ref": "#/$defs/donorInformation"
             },
             {
-              "type": "null"
+              "type": "null",
+              "title": "None"
             }
           ],
           "description": "Information about the human or non-human donor from which the sample material was taken. Select 'None' if none available.",
