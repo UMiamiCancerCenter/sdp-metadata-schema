@@ -500,7 +500,7 @@ class tissue(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.0.15"
+                        "version": "0.0.17"
             })
     
     name: str = Field(title='Sample Name', 
