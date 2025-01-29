@@ -41,6 +41,8 @@ class tumorSampleTypeEnum(Enum):
 class donorInformation(BaseModel):
     model_config = ConfigDict(title="Patient/Donor Information")
 
+    species: str = Field(title="Species", description="Species from which the sample material was extracted, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",json_schema_extra={"graphRestriction":  {"ontologies":["obo:ncbitaxon"],"classes": ["NCBITaxon:131567"],"queryFields": ["label"],"includeSelf": True}})
+
     gender: str = Field(default="", title="Gender", description="The self-identified gender of the donor in case of a human, the biological sex in case of a non-human donor.")
 
     primaryRace: str = Field(default="", title="Primary Race", description="The primary race indicated by a human donor.")
@@ -280,11 +282,9 @@ class primaryCell(BaseModel):
 
     primaryCellOrgan: str = Field(title="Organ of Origin", description="Organ from which the cells were extracted, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.", default="",json_schema_extra={"graphRestriction":  {"ontologies":["obo:ncit","obo:fma","obo:uberon"],"classes": ["NCIT:C13018","FMA:67498","UBERON:0000062"],"queryFields": ["label"],"includeSelf": True}})
 
-    primaryCellSpecies: str = Field(title="Species of Origin", description="Species from which the cells were extracted, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",json_schema_extra={"graphRestriction":  {"ontologies":["obo:ncbitaxon"],"classes": ["NCBITaxon:131567"],"queryFields": ["label"],"includeSelf": True}})
-
     primaryCellDisease: str = Field(title="Disease", description="If the cells are diseased, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the cells were not diseased when obtained from the donor.", default="",json_schema_extra={"graphRestriction":  {"ontologies": ["obo:doid"],"classes": ["DOID:4"],"queryFields": ["label"],"includeSelf": True}})
 
-    primaryCellDonorInformation: donorInformation = Field(default="", title="Donor Information", description="Information about the human or non-human donor from which the sample material was taken. Select 'None' if none available.")
+    primaryCellDonorInformation: donorInformation = Field(default="", title="Donor Information", description="Information about the human or non-human donor from which the sample material was taken.")
 
 
 
@@ -470,11 +470,9 @@ class tumorSample(BaseModel):
 
     tumorCellType: str = Field(default="", title="Cell Type of Origin", description="The type of cell from which the tumor originated.")
 
-    tumorSpecies: str = Field(title="Species of Origin", description="The species in which the tumor originated.")
-
     tumorPrimaryDiseaseSite: str = Field(default="", title="Primary Disease Site", description="Diagnosis site granular grouper for standarization.")
 
-    tumorSampleDonorInformation: donorInformation = Field(default="", title="Donor Information", description="Information about the human or non-human donor from which the sample material was taken. Select 'None' if none available.")
+    tumorSampleDonorInformation: donorInformation = Field(default="", title="Donor Information", description="Information about the human or non-human donor from which the sample material was taken.")
 
 class tissue(BaseModel):
     model_config = ConfigDict(title="Tissue")
@@ -491,16 +489,14 @@ class tissue(BaseModel):
 
     tissueOrgan: str = Field(default="", title="Organ of Origin", description="The organ in which the tissue was located.")
 
-    tissueSpecies: str = Field(title="Species of Origin", description="The species of the organism from which the tissue was taken.")
-
     tissueDisease: str = Field(default="", title="Disease", description="If the tissue was diseased, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the tissue was not diseased when obtained from the donor.")
 
-    tissueDonorInformation: donorInformation = Field(default="", title="Donor Information", description="Information about the human or non-human donor from which the sample material was taken. Select 'None' if none available.")
+    tissueDonorInformation: donorInformation = Field(default="", title="Donor Information", description="Information about the human or non-human donor from which the sample material was taken.")
 
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.0.18"
+                        "version": "0.0.19"
             })
     
     name: str = Field(title='Sample Name', 

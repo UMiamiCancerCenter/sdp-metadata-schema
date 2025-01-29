@@ -197,6 +197,23 @@
     },
     "donorInformation": {
       "properties": {
+        "species": {
+          "description": "Species from which the sample material was extracted, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
+          "graphRestriction": {
+            "classes": [
+              "NCBITaxon:131567"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:ncbitaxon"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
+          "title": "Species",
+          "type": "string"
+        },
         "gender": {
           "description": "The self-identified gender of the donor in case of a human, the biological sex in case of a non-human donor.",
           "title": "Gender",
@@ -273,6 +290,9 @@
           "type": "string"
         }
       },
+      "required": [
+        "species"
+      ],
       "title": "Patient/Donor Information",
       "type": "object"
     },
@@ -354,23 +374,6 @@
           "title": "Organ of Origin",
           "type": "string"
         },
-        "primaryCellSpecies": {
-          "description": "Species from which the cells were extracted, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
-          "graphRestriction": {
-            "classes": [
-              "NCBITaxon:131567"
-            ],
-            "includeSelf": true,
-            "ontologies": [
-              "obo:ncbitaxon"
-            ],
-            "queryFields": [
-              "label"
-            ]
-          },
-          "title": "Species of Origin",
-          "type": "string"
-        },
         "primaryCellDisease": {
           "description": "If the cells are diseased, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the cells were not diseased when obtained from the donor.",
           "graphRestriction": {
@@ -394,14 +397,13 @@
               "$ref": "#/$defs/donorInformation"
             }
           ],
-          "description": "Information about the human or non-human donor from which the sample material was taken. Select 'None' if none available.",
+          "description": "Information about the human or non-human donor from which the sample material was taken.",
           "title": "Donor Information"
         }
       },
       "required": [
         "primaryCellName",
-        "primaryCellTissue",
-        "primaryCellSpecies"
+        "primaryCellTissue"
       ],
       "title": "Primary Cells",
       "type": "object"
@@ -733,11 +735,6 @@
           "title": "Organ of Origin",
           "type": "string"
         },
-        "tissueSpecies": {
-          "description": "The species of the organism from which the tissue was taken.",
-          "title": "Species of Origin",
-          "type": "string"
-        },
         "tissueDisease": {
           "description": "If the tissue was diseased, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the tissue was not diseased when obtained from the donor.",
           "title": "Disease",
@@ -749,13 +746,12 @@
               "$ref": "#/$defs/donorInformation"
             }
           ],
-          "description": "Information about the human or non-human donor from which the sample material was taken. Select 'None' if none available.",
+          "description": "Information about the human or non-human donor from which the sample material was taken.",
           "title": "Donor Information"
         }
       },
       "required": [
-        "tissueType",
-        "tissueSpecies"
+        "tissueType"
       ],
       "title": "Tissue",
       "type": "object"
@@ -817,11 +813,6 @@
           "title": "Cell Type of Origin",
           "type": "string"
         },
-        "tumorSpecies": {
-          "description": "The species in which the tumor originated.",
-          "title": "Species of Origin",
-          "type": "string"
-        },
         "tumorPrimaryDiseaseSite": {
           "description": "Diagnosis site granular grouper for standarization.",
           "title": "Primary Disease Site",
@@ -833,13 +824,12 @@
               "$ref": "#/$defs/donorInformation"
             }
           ],
-          "description": "Information about the human or non-human donor from which the sample material was taken. Select 'None' if none available.",
+          "description": "Information about the human or non-human donor from which the sample material was taken.",
           "title": "Donor Information"
         }
       },
       "required": [
-        "tumorType",
-        "tumorSpecies"
+        "tumorType"
       ],
       "title": "Tumor Sample",
       "type": "object"
@@ -910,5 +900,5 @@
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.0.18"
+  "version": "0.0.19"
 }
