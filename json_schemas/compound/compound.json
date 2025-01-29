@@ -1,0 +1,158 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "_id": {
+      "type": "object",
+      "properties": {
+        "$oid": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{24}$"
+        }
+      },
+      "required": ["$oid"]
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "inchikey": {
+      "type": "string"
+    },
+    "inchi": {
+      "type": "string"
+    },
+    "aeolus": {
+      "type": "object",
+      "properties": {
+        "drug_id": {
+          "type": "string"
+        },
+        "drug_name": {
+          "type": "string"
+        }
+      },
+      "required": ["drug_id", "drug_name"]
+    },
+    "chembl": {
+      "type": "object",
+      "properties": {
+        "molecule_chembl_id": {
+          "type": "string"
+        },
+        "inchikey": {
+          "type": "string"
+        },
+        "inchi": {
+          "type": "string"
+        },
+        "pref_name": {
+          "type": "string"
+        },
+        "smiles": {
+          "type": "string"
+        }
+      },
+      "required": ["molecule_chembl_id", "inchikey", "inchi", "pref_name", "smiles"]
+    },
+    "drugbank": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": ["id", "name"]
+    },
+    "scope": {
+      "type": "string",
+      "enum": ["private", "shared", "public"],
+      "default": "public"
+    },
+    "createdAt": {
+      "type": "object",
+      "properties": {
+        "$date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["$date"]
+    },
+    "createdBy": {
+      "type": "object",
+      "properties": {
+        "$oid": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{24}$"
+        }
+      },
+      "required": ["$oid"]
+    },
+    "updatedAt": {
+      "type": "object",
+      "properties": {
+        "$date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["$date"]
+    },
+    "updatedBy": {
+      "type": "object",
+      "properties": {
+        "$oid": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{24}$"
+        }
+      },
+      "required": ["$oid"]
+    },
+    "ownerUserId": {
+        "type": "object",
+        "properties": {
+            "$oid": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{24}$"
+            }
+        },
+        "required": ["$oid"],
+        "options": {
+            "hidden": true
+        }
+    },
+    "smiles": {
+      "type": "string"
+    },
+    "chebi": {
+      "type": "object",
+      "properties": {
+        "definition": {
+          "type": "string"
+        },
+        "formulae": {
+          "type": "string"
+        }
+      },
+      "required": ["definition", "formulae"]
+    },
+    "sourceUrl": {
+      "type": "string",
+      "format": "uri"
+    },
+    "isStandarized": {
+      "type": "boolean",
+      "default": false
+    },
+    "source": {
+      "type": "string"
+    }
+  },
+  "required": ["name", "inchikey", "inchi", "scope", "ownerUserId", "smiles", "chebi", "isStandarized"]
+}
