@@ -1,0 +1,14 @@
+
+{
+  "CellLineCanonical": {
+    "cellLineName": {
+      "ui:widget": "CelllineWidget",
+      "ui:options": {
+        "update": {
+          "id": "cellLineId.$oid",
+          "name": "cellLineName"
+        }
+      }
+    }
+  }
+}
