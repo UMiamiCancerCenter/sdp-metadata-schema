@@ -1,6 +1,6 @@
 
 {
-  "SmallMoleculeCanonical": {
+  "canonical": {
     "smallMoleculeName": {
         "ui:widget": "CompoundWidget",
         "ui:options": {
