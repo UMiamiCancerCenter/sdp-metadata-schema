@@ -1,0 +1,14 @@
+
+{
+  "SmallMoleculeCanonical": {
+    "smallMoleculeName": {
+        "ui:widget": "CompoundWidget",
+        "ui:options": {
+          "update": {
+            "id": "compoundId.$oid",
+            "name": "smallMoleculeName"
+          }
+        }
+      }
+  }
+}
