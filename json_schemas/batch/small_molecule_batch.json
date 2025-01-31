@@ -101,7 +101,7 @@
       "format": "hidden",
       "type": "string"
     },
-    "smallMoleculeId": {
+    "compoundId": {
       "description": "A MongoDB ObjectId string",
       "format": "hidden",
       "type": "string"
