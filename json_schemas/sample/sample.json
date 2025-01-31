@@ -20,18 +20,6 @@
         },
         "cellLineName": {
           "description": "The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'.",
-          "graphRestriction": {
-            "classes": [
-              "CLO:0000019"
-            ],
-            "includeSelf": true,
-            "ontologies": [
-              "obo:clo"
-            ],
-            "queryFields": [
-              "label"
-            ]
-          },
           "title": "Name",
           "type": "string"
         },
@@ -177,7 +165,7 @@
           "type": "string"
         },
         "crisprKnockoutDuration": {
-          "description": "Amount of time the experimental system was exposed to the CRISPR reagent.",
+          "description": "Amount of time the model system was exposed to the CRISPR reagent.",
           "title": "Duration",
           "type": "number"
         },
@@ -205,6 +193,107 @@
         "crisprKnockoutTargetGeneSpecies"
       ],
       "title": "CRISPR Knockout",
+      "type": "object"
+    },
+    "donorInformation": {
+      "properties": {
+        "species": {
+          "description": "Species from which the sample material was extracted, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
+          "graphRestriction": {
+            "classes": [
+              "NCBITaxon:131567"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:ncbitaxon"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
+          "title": "Species",
+          "type": "string"
+        },
+        "gender": {
+          "description": "The self-identified gender of the donor in case of a human, the biological sex in case of a non-human donor.",
+          "title": "Gender",
+          "type": "string"
+        },
+        "primaryRace": {
+          "description": "The primary race indicated by a human donor.",
+          "title": "Primary Race",
+          "type": "string"
+        },
+        "strain": {
+          "description": "The strain or breed of the model organism in case of a non-human donor.",
+          "title": "Strain/Breed",
+          "type": "string"
+        },
+        "ethnicity": {
+          "description": "The ethnic group of origin of a human donor.",
+          "title": "Ethnicity",
+          "type": "string"
+        },
+        "dateOfBirth": {
+          "description": "The date of the donor's birth.",
+          "format": "date",
+          "title": "Date of Birth",
+          "type": "string"
+        },
+        "age": {
+          "description": "The donor's age at the time of collection of the sample. Age units will be specified in the next field.",
+          "title": "Age",
+          "type": "integer"
+        },
+        "ageUnits": {
+          "description": "The units of time in which the age is recorded.",
+          "title": "Age Units",
+          "type": "string"
+        },
+        "ageGroup": {
+          "description": "The age group of the donor.",
+          "title": "Age Group",
+          "type": "string"
+        },
+        "intervalDeath": {
+          "description": "The number of days between the donor's date of birth and date of death. Report the time units in the Age Units field.",
+          "title": "Interval of Death",
+          "type": "integer"
+        },
+        "tobaccoSmokingHistory": {
+          "description": "In the case of a human, the donor's self-reported smoking history. True if the patient has ever smoked.",
+          "title": "Tobacco Smoking History",
+          "type": "boolean"
+        },
+        "tobaccoSmokingStatus": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/smokingStatus"
+            }
+          ],
+          "description": "In the case of a human, the status of the donor as a smoker or non-smoker at the time the sample was collected.",
+          "title": "Tobacco Smoking Status"
+        },
+        "icd10Code": {
+          "description": "In the case of a human donor that is diseased, the ICD-10 code for the diagnosis associated with the sample material coming from pathology reports and chart reviews, if the sample itself is diseased, or the relevant diagnosis code for the patient if the sample material itself is healthy (e.g. normal tissue from a cancer patient).",
+          "title": "ICD10 Code",
+          "type": "string"
+        },
+        "icd10Description": {
+          "description": "In the case of a human donor that is diseased, the ICD-10 code description for the diagnosis associated with the sample material coming from pathology reports and chart reviews, if the sample itself is diseased, or the relevant diagnosis code description for the patient if the sample material itself is healthy (e.g. normal tissue from a cancer patient).",
+          "title": "ICD10 Description",
+          "type": "string"
+        },
+        "pathologicDiagnosis": {
+          "description": "In the case of a human donor who is diseased, pathologic diagnosis recorded by the provider or researcher relevant to the study or sample material. In the case of a non-human donor that is diseased, name of the disease.",
+          "title": "Pathologic Diagnosis",
+          "type": "string"
+        }
+      },
+      "required": [
+        "species"
+      ],
+      "title": "Patient/Donor Information",
       "type": "object"
     },
     "primaryCell": {
@@ -285,23 +374,6 @@
           "title": "Organ of Origin",
           "type": "string"
         },
-        "primaryCellSpecies": {
-          "description": "Species from which the cells were extracted, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
-          "graphRestriction": {
-            "classes": [
-              "NCBITaxon:131567"
-            ],
-            "includeSelf": true,
-            "ontologies": [
-              "obo:ncbitaxon"
-            ],
-            "queryFields": [
-              "label"
-            ]
-          },
-          "title": "Species of Origin",
-          "type": "string"
-        },
         "primaryCellDisease": {
           "description": "If the cells are diseased, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the cells were not diseased when obtained from the donor.",
           "graphRestriction": {
@@ -318,12 +390,20 @@
           },
           "title": "Disease",
           "type": "string"
+        },
+        "primaryCellDonorInformation": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/donorInformation"
+            }
+          ],
+          "description": "Information about the human or non-human donor from which the sample material was taken.",
+          "title": "Donor Information"
         }
       },
       "required": [
         "primaryCellName",
-        "primaryCellTissue",
-        "primaryCellSpecies"
+        "primaryCellTissue"
       ],
       "title": "Primary Cells",
       "type": "object"
@@ -358,7 +438,7 @@
           "type": "string"
         },
         "proteinConcentration": {
-          "description": "Concentration of protein that the experimental system was exposed to.",
+          "description": "Concentration of protein that the model system was exposed to.",
           "title": "Concentration",
           "type": "number"
         },
@@ -382,7 +462,7 @@
           "type": "string"
         },
         "proteinDuration": {
-          "description": "Amount of time the experimental system was exposed to the protein.",
+          "description": "Amount of time the model system was exposed to the protein.",
           "title": "Duration",
           "type": "number"
         },
@@ -439,7 +519,7 @@
           "type": "string"
         },
         "smallMoleculeConcentration": {
-          "description": "Concentration of small molecule the experimental system was exposed to.",
+          "description": "Concentration of small molecule the model system was exposed to.",
           "title": "Concentration",
           "type": "number"
         },
@@ -463,7 +543,7 @@
           "type": "string"
         },
         "smallMoleculeDuration": {
-          "description": "Amount of time the experimental system was exposed to the small molecule.",
+          "description": "Amount of time the model system was exposed to the small molecule.",
           "title": "Duration",
           "type": "number"
         },
@@ -490,6 +570,22 @@
       ],
       "title": "Small Molecule",
       "type": "object"
+    },
+    "smokingStatus": {
+      "enum": [
+        "Smoker",
+        "Non-smoker"
+      ],
+      "title": "smokingStatus",
+      "type": "string"
+    },
+    "specimenOrigin": {
+      "enum": [
+        "Tissue",
+        "Liquid"
+      ],
+      "title": "specimenOrigin",
+      "type": "string"
     },
     "tetExpressionSystem": {
       "properties": {
@@ -565,7 +661,7 @@
           "type": "string"
         },
         "doxConcentration": {
-          "description": "Concentration of doxycycline the experimental system was incubated with.",
+          "description": "Concentration of doxycycline the model system was incubated with.",
           "title": "Doxycycline Concentration",
           "type": "number"
         },
@@ -614,6 +710,138 @@
       ],
       "title": "tetOnOff",
       "type": "string"
+    },
+    "tissue": {
+      "properties": {
+        "role": {
+          "const": "Model System",
+          "default": "Model System",
+          "format": "hidden",
+          "type": "string"
+        },
+        "entity": {
+          "const": "Tissue",
+          "default": "Tissue",
+          "format": "hidden",
+          "type": "string"
+        },
+        "tissueType": {
+          "description": "The type of tissue sampled.",
+          "title": "Tissue Type",
+          "type": "string"
+        },
+        "tissueOrgan": {
+          "description": "The organ in which the tissue was located.",
+          "title": "Organ of Origin",
+          "type": "string"
+        },
+        "tissueDisease": {
+          "description": "If the tissue was diseased, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the tissue was not diseased when obtained from the donor.",
+          "title": "Disease",
+          "type": "string"
+        },
+        "tissueDonorInformation": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/donorInformation"
+            }
+          ],
+          "description": "Information about the human or non-human donor from which the sample material was taken.",
+          "title": "Donor Information"
+        }
+      },
+      "required": [
+        "tissueType"
+      ],
+      "title": "Tissue",
+      "type": "object"
+    },
+    "tumorSample": {
+      "properties": {
+        "role": {
+          "const": "Model System",
+          "default": "Model System",
+          "format": "hidden",
+          "type": "string"
+        },
+        "entity": {
+          "const": "Tumor Sample",
+          "default": "Tumor Sample",
+          "format": "hidden",
+          "type": "string"
+        },
+        "tumorType": {
+          "description": "The type of cancer or benign tumor, preferably using OncoTree terminology.",
+          "title": "Tumor Type",
+          "type": "string"
+        },
+        "resectionSite": {
+          "description": "The anatomical, organ, and/or tissue location where the resection for the tumor sample was performed.",
+          "title": "Resection Site",
+          "type": "string"
+        },
+        "tumorSpecimenOrigin": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/specimenOrigin"
+            }
+          ],
+          "description": "The type of biopsy performed for specimen collection: tissue or liquid.",
+          "title": "Specimen Origin"
+        },
+        "tumorSampleType": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/tumorSampleTypeEnum"
+            }
+          ],
+          "description": "The tumor sample's type based on its location: primary site, site of local recurrence, or distant metastasis.",
+          "title": "Sample Type"
+        },
+        "tumorOrgan": {
+          "description": "The organ in which the tumor originated.",
+          "title": "Organ of Origin",
+          "type": "string"
+        },
+        "tumorTissue": {
+          "description": "The tissue type in which the tumor originated.",
+          "title": "Tissue of Origin",
+          "type": "string"
+        },
+        "tumorCellType": {
+          "description": "The type of cell from which the tumor originated.",
+          "title": "Cell Type of Origin",
+          "type": "string"
+        },
+        "tumorPrimaryDiseaseSite": {
+          "description": "Diagnosis site granular grouper for standarization.",
+          "title": "Primary Disease Site",
+          "type": "string"
+        },
+        "tumorSampleDonorInformation": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/donorInformation"
+            }
+          ],
+          "description": "Information about the human or non-human donor from which the sample material was taken.",
+          "title": "Donor Information"
+        }
+      },
+      "required": [
+        "tumorType"
+      ],
+      "title": "Tumor Sample",
+      "type": "object"
+    },
+    "tumorSampleTypeEnum": {
+      "enum": [
+        "Primary Site",
+        "Local Recurrence",
+        "Distant Metastasis"
+      ],
+      "title": "tumorSampleTypeEnum",
+      "type": "string"
     }
   },
   "properties": {
@@ -634,9 +862,15 @@
         },
         {
           "$ref": "#/$defs/primaryCell"
+        },
+        {
+          "$ref": "#/$defs/tumorSample"
+        },
+        {
+          "$ref": "#/$defs/tissue"
         }
       ],
-      "title": "Experimental System",
+      "title": "Model System",
       "type": "object"
     },
     "perturbation": {
@@ -662,10 +896,9 @@
   },
   "required": [
     "name",
-    "description",
     "experimentalSystem"
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.0.13"
+  "version": "0.0.20"
 }
