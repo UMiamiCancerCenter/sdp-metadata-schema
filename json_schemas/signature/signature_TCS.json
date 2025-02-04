@@ -152,30 +152,9 @@
       ],
       "title": "PerturbationType",
       "type": "string"
-    },
-    "SignatureClass": {
-      "enum": [
-        "Within-group/background",
-        "Between-groups",
-        "Dose-response"
-      ],
-      "title": "SignatureClass",
-      "type": "string"
     }
   },
   "properties": {
-    "signatureClass": {
-      "allOf": [
-        {
-          "$ref": "#/$defs/SignatureClass"
-        }
-      ],
-      "title": "Signature Class"
-    },
-    "signatureType": {
-      "title": "Signature Type",
-      "type": "string"
-    },
     "name": {
       "title": "Name",
       "type": "string"
@@ -221,11 +200,11 @@
       "type": "string"
     },
     "endpoints": {
-      "items": {
-        "type": "string"
-      },
+      "const": "TCS Score",
+      "default": "TCS Score",
+      "format": "hidden",
       "title": "Endpoints",
-      "type": "array"
+      "type": "string"
     },
     "processingMethod": {
       "title": "Processing Method",
@@ -241,7 +220,8 @@
           "$ref": "#/$defs/Input"
         }
       ],
-      "title": "Input"
+      "title": "Input",
+      "type": "object"
     },
     "experimentalSystems": {
       "items": {
@@ -266,12 +246,10 @@
     }
   },
   "required": [
-    "signatureClass",
-    "signatureType",
     "name",
     "assay"
   ],
   "title": "Signature",
   "type": "object",
-  "version": "0.0.14"
+  "version": "0.0.20"
 }

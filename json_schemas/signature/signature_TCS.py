@@ -25,11 +25,6 @@ class GenerateJsonSchemaWithoutDefaultTitles(GenerateJsonSchema):
             return False
         return return_value
 
-class SignatureClass(Enum):
-    one = "Within-group/background"
-    two = "Between-groups"
-    three = "Dose-response"
-
 class Level(Enum):
     one = "1"
     two = "2"
@@ -74,11 +69,9 @@ class Datum(BaseModel):
     geneSymbol: str = Field(title="Gene Symbol")
     score: float = Field(title="Score")
 
-class Signature(BaseModel):
-    model_config = ConfigDict(title="Signature", json_schema_extra={"version": "0.0.14"})
+class SignatureTcs(BaseModel):
+    model_config = ConfigDict(title="Signature", json_schema_extra={"version": "0.0.20"})
 
-    signatureClass: SignatureClass = Field(title="Signature Class")
-    signatureType: str = Field(title="Signature Type")
     name: str = Field(title="Name")
     description: str = Field(default="", title="Description")
     assay: str = Field(title="Assay")
@@ -89,17 +82,17 @@ class Signature(BaseModel):
     level: Level = Field(default="", title="Level")
     areaOfStudy: str = Field(default="", title="Area of Study")
     measuredEntity: str = Field(default="", title="Measured Entity")
-    endpoints: list[str] = Field(default="", title="Endpoints")
+    endpoints: str = Field(default="TCS Score", title="Endpoints", json_schema_extra={"const": "TCS Score", "format": "hidden"})
     processingMethod: str = Field(default="", title="Processing Method")
     processingDescription: str = Field(default="", title="Processing Description")
-    input: Input = Field(default="", title="Input")
+    input: Input = Field(default="", title="Input", json_schema_extra={"type": "object"})
     experimentalSystems: list[ExperimentalSystem] = Field(default="", title="Experimental Systems")
     perturbations: list[Perturbation] = Field(default="", title="Perturbations")
     data: list[Datum] = Field(default="", title="Data")
 
 
 if __name__ == "__main__":
-    json_schema=Signature.model_json_schema(schema_generator=GenerateJsonSchemaWithoutDefaultTitles)
+    json_schema=SignatureTcs.model_json_schema(schema_generator=GenerateJsonSchemaWithoutDefaultTitles)
     delete_empty_default(json_schema)
-    with open ("signature.json", "w") as ft:
+    with open ("signature_TCS.json", "w") as ft:
         print(json.dumps(json_schema, indent=2), file = ft)
