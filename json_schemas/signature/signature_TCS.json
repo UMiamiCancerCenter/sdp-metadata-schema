@@ -159,6 +159,20 @@
       "title": "Name",
       "type": "string"
     },
+    "signatureClass": {
+      "const": "Within-group/Background",
+      "default": "Within-group/Background",
+      "format": "hidden",
+      "title": "Signature Class",
+      "type": "string"
+    },
+    "signatureType": {
+      "const": "Transcriptional Consensus Signature",
+      "default": "Transcriptional Consensus Signature",
+      "format": "hidden",
+      "title": "Signature Type",
+      "type": "string"
+    },
     "description": {
       "title": "Description",
       "type": "string"

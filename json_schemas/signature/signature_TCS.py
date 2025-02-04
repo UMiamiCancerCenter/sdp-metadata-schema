@@ -73,6 +73,8 @@ class SignatureTcs(BaseModel):
     model_config = ConfigDict(title="Signature", json_schema_extra={"version": "0.0.20"})
 
     name: str = Field(title="Name")
+    signatureClass: str = Field(title="Signature Class", default="Within-group/Background", json_schema_extra={"const": "Within-group/Background", "format": "hidden"})
+    signatureType: str = Field(title="Signature Type", default="Transcriptional Consensus Signature", json_schema_extra={"const": "Transcriptional Consensus Signature", "format": "hidden"})
     description: str = Field(default="", title="Description")
     assay: str = Field(title="Assay")
     source: str = Field(default="", title="Source")
