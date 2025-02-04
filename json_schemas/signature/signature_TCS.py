@@ -58,7 +58,7 @@ class Input(BaseModel):
     datasetName: str = Field(default="", title="Dataset Name")
     fileType: str = Field(default="", title="File Type")
     endpoints: list[str] = Field(default="", title="Endpoints")
-    sampleIds: list[ObjectId] = Field(default="", title="Sample IDs")
+    sampleIds: list[ObjectId] = Field(default="", title="Sample IDs") # Specific to type of signature.
 
 class ExperimentalSystem(BaseModel):
     name: str = Field(title="Name")
@@ -87,10 +87,10 @@ class SignatureTcs(BaseModel):
     endpoints: str = Field(default="TCS Score", title="Endpoints", json_schema_extra={"const": "TCS Score", "format": "hidden"})
     processingMethod: str = Field(default="", title="Processing Method")
     processingDescription: str = Field(default="", title="Processing Description")
-    input: Input = Field(default="", title="Input", json_schema_extra={"type": "object"})
+    input: Input = Field(default="", title="Input", json_schema_extra={"type": "object"}) # In this object, the sampleIds field is specific to type of signature.
     experimentalSystems: list[ExperimentalSystem] = Field(default="", title="Experimental Systems")
     perturbations: list[Perturbation] = Field(default="", title="Perturbations")
-    data: list[Datum] = Field(default="", title="Data")
+    data: list[Datum] = Field(default="", title="Data") # Specific to type of signature
 
 
 if __name__ == "__main__":
