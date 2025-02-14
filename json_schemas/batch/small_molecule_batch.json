@@ -54,6 +54,7 @@
         "smallMoleculeLincsId": {
           "description": "The global LINCS ID of the small molecule for cross-reference to the LINCS project",
           "title": "Small Molecule LINCS ID",
+          "format": "hidden",
           "type": "string"
         },
         "smallMoleculePubChemCid": {
@@ -122,8 +123,7 @@
     }
   },
   "required": [
-    "name",
-    "description"
+    "name"
   ],
   "title": "Small Molecule",
   "type": "object"

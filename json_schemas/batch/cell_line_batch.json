@@ -56,6 +56,7 @@
         "cellLineLabCanonicalId": {
           "description": "Lab-specific ID for the cell line",
           "title": "Cell Line Lab Canonical ID",
+          "format": "hidden",
           "type": "string"
         },
         "cellLineLincsId": {
@@ -226,8 +227,7 @@
     }
   },
   "required": [
-    "name",
-    "description"
+    "name"
   ],
   "title": "Cell Line",
   "type": "object"
