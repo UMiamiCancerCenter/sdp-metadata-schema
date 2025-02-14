@@ -28,7 +28,7 @@
           "type": "string"
         }
       },
-      "title": "SmallMoleculeBatch",
+      "title": "Small Molecule Batch Fields",
       "type": "object"
     },
     "SmallMoleculeCanonical": {
@@ -49,6 +49,7 @@
         "smallMoleculeLabCanonicalId": {
           "description": "Lab-specific ID for the small molecule compound",
           "title": "Small Molecule Lab Canonical ID",
+          "format": "hidden",
           "type": "string"
         },
         "smallMoleculeLincsId": {
@@ -75,14 +76,14 @@
       "required": [
         "smallMoleculeName"
       ],
-      "title": "SmallMoleculeCanonical",
+      "title": "Small Molecule Canonical Fields",
       "type": "object"
     }
   },
   "properties": {
     "name": {
       "description": "Name for the batch of small molecule used in the experiment.",
-      "title": "Small Molecule Name",
+      "title": "Small Molecule Batch Name",
       "type": "string"
     },
     "description": {
@@ -101,7 +102,7 @@
       "format": "hidden",
       "type": "string"
     },
-    "smallMoleculeId": {
+    "compoundId": {
       "description": "A MongoDB ObjectId string",
       "format": "hidden",
       "type": "string"
@@ -122,9 +123,8 @@
     }
   },
   "required": [
-    "name",
-    "description"
+    "name"
   ],
-  "title": "Small Molecule",
+  "title": "Small Molecule Batch",
   "type": "object"
 }

@@ -23,7 +23,7 @@
           "type": "string"
         }
       },
-      "title": "CellLineBatch",
+      "title": "Cell Line Batch Fields",
       "type": "object"
     },
     "CellLineCanonical": {
@@ -56,6 +56,7 @@
         "cellLineLabCanonicalId": {
           "description": "Lab-specific ID for the cell line",
           "title": "Cell Line Lab Canonical ID",
+          "format": "hidden",
           "type": "string"
         },
         "cellLineLincsId": {
@@ -179,14 +180,14 @@
         "cellLineCellType",
         "cellLineSpecies"
       ],
-      "title": "CellLineCanonical",
+      "title": "CellLine Canonical Fields",
       "type": "object"
     }
   },
   "properties": {
     "name": {
       "description": "Name for the batch of cells used in the experiment.",
-      "title": "Cell Line Name",
+      "title": "Cell Line Batch Name",
       "type": "string"
     },
     "description": {
@@ -226,9 +227,8 @@
     }
   },
   "required": [
-    "name",
-    "description"
+    "name"
   ],
-  "title": "Cell Line",
+  "title": "Cell Line Batch",
   "type": "object"
 }

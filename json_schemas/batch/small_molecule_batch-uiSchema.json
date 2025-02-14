@@ -1,11 +1,11 @@
 
 {
-  "SmallMoleculeCanonical": {
+  "canonical": {
     "smallMoleculeName": {
         "ui:widget": "CompoundWidget",
         "ui:options": {
           "update": {
-            "id": "compoundId.$oid",
+            "id": "smallMoleculeLabCanonicalId",
             "name": "smallMoleculeName"
           }
         }
