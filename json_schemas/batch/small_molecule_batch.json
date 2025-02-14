@@ -28,7 +28,7 @@
           "type": "string"
         }
       },
-      "title": "SmallMoleculeBatch",
+      "title": "Small Molecule Batch Fields",
       "type": "object"
     },
     "SmallMoleculeCanonical": {
@@ -76,14 +76,14 @@
       "required": [
         "smallMoleculeName"
       ],
-      "title": "SmallMoleculeCanonical",
+      "title": "Small Molecule Canonical Fields",
       "type": "object"
     }
   },
   "properties": {
     "name": {
       "description": "Name for the batch of small molecule used in the experiment.",
-      "title": "Small Molecule Name",
+      "title": "Small Molecule Batch Name",
       "type": "string"
     },
     "description": {
@@ -125,6 +125,6 @@
   "required": [
     "name"
   ],
-  "title": "Small Molecule",
+  "title": "Small Molecule Batch",
   "type": "object"
 }

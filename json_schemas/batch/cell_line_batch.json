@@ -23,7 +23,7 @@
           "type": "string"
         }
       },
-      "title": "CellLineBatch",
+      "title": "Cell Line Batch Fields",
       "type": "object"
     },
     "CellLineCanonical": {
@@ -180,14 +180,14 @@
         "cellLineCellType",
         "cellLineSpecies"
       ],
-      "title": "CellLineCanonical",
+      "title": "CellLine Canonical Fields",
       "type": "object"
     }
   },
   "properties": {
     "name": {
       "description": "Name for the batch of cells used in the experiment.",
-      "title": "Cell Line Name",
+      "title": "Cell Line Batch Name",
       "type": "string"
     },
     "description": {
@@ -229,6 +229,6 @@
   "required": [
     "name"
   ],
-  "title": "Cell Line",
+  "title": "Cell Line Batch",
   "type": "object"
 }
