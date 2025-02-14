@@ -85,9 +85,9 @@ class CellLineCanonical(BaseModel):
 
 class CellLine(BaseModel):
 
-    model_config = ConfigDict(title="Cell Line", 
+    model_config = ConfigDict(title="Cell Line Batch", 
                               description="Immortalized (naturally or engineered), genetically uniform tissue cells able to reproduce indefinitely in standard culture conditions.", json_schema_extra={
-                        "version": "0.0.20"}
+                        "version": "0.0.21"}
                               )
     
     name: str = Field(title="Cell Line Batch Name", 
