@@ -49,12 +49,12 @@
         "smallMoleculeLabCanonicalId": {
           "description": "Lab-specific ID for the small molecule compound",
           "title": "Small Molecule Lab Canonical ID",
+          "format": "hidden",
           "type": "string"
         },
         "smallMoleculeLincsId": {
           "description": "The global LINCS ID of the small molecule for cross-reference to the LINCS project",
           "title": "Small Molecule LINCS ID",
-          "format": "hidden",
           "type": "string"
         },
         "smallMoleculePubChemCid": {
