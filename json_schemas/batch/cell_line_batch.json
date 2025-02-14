@@ -55,8 +55,8 @@
         },
         "cellLineLabCanonicalId": {
           "description": "Lab-specific ID for the cell line",
-          "title": "Cell Line Lab Canonical ID",
           "format": "hidden",
+          "title": "Cell Line Lab Canonical ID",
           "type": "string"
         },
         "cellLineLincsId": {
@@ -180,7 +180,7 @@
         "cellLineCellType",
         "cellLineSpecies"
       ],
-      "title": "CellLine Canonical Fields",
+      "title": "Cell Line Canonical Fields",
       "type": "object"
     }
   },
@@ -229,6 +229,7 @@
   "required": [
     "name"
   ],
-  "title": "Cell Line Batch",
-  "type": "object"
+  "title": "Cell Line",
+  "type": "object",
+  "version": "0.0.20"
 }

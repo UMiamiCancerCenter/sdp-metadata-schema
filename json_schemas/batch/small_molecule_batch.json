@@ -48,8 +48,8 @@
         },
         "smallMoleculeLabCanonicalId": {
           "description": "Lab-specific ID for the small molecule compound",
-          "title": "Small Molecule Lab Canonical ID",
           "format": "hidden",
+          "title": "Small Molecule Lab Canonical ID",
           "type": "string"
         },
         "smallMoleculeLincsId": {
@@ -125,6 +125,7 @@
   "required": [
     "name"
   ],
-  "title": "Small Molecule Batch",
-  "type": "object"
+  "title": "Small Molecule",
+  "type": "object",
+  "version": "0.0.20"
 }
