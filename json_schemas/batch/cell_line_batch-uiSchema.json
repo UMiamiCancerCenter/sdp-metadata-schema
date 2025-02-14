@@ -1,0 +1,14 @@
+
+{
+  "canonical": {
+    "cellLineName": {
+      "ui:widget": "CelllineWidget",
+            "ui:options": {
+              "update": {
+                "id": "cellLineLabCanonicalId",
+                "name": "cellLineName"
+              }
+            }
+    }
+  }
+}
