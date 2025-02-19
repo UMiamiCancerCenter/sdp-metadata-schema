@@ -2,33 +2,33 @@
   "$defs": {
     "Chembl": {
       "properties": {
-        "drug_indications": {
+        "drugIndications": {
           "items": {
             "$ref": "#/$defs/ChemblDrugIndication"
           },
           "title": "Drug Indications",
           "type": "array"
         },
-        "drug_mechanisms": {
+        "drugMechanisms": {
           "items": {
             "$ref": "#/$defs/ChemblDrugMechanism"
           },
           "title": "Drug Mechanisms",
           "type": "array"
         },
-        "max_phase": {
+        "maxPhase": {
           "description": "Maximum phase of development reached for the compound (4 = approved). Null where max phase has not yet been assigned.",
           "title": "Maximum Phase",
           "type": "number"
         },
-        "molecule_synonyms": {
+        "moleculeSynonyms": {
           "items": {
             "$ref": "#/$defs/ChemblMoleculeSynonym"
           },
           "title": "Molecule Synonyms",
           "type": "array"
         },
-        "molecule_type": {
+        "moleculeType": {
           "title": "Molecule Type",
           "type": "string"
         }
@@ -52,18 +52,18 @@
     },
     "ChemblDrugMechanism": {
       "properties": {
-        "action_type": {
+        "actionType": {
           "title": "Action Type",
           "type": "string"
         },
-        "target_components": {
+        "targetComponents": {
           "items": {
             "$ref": "#/$defs/ChemblTargetComponent"
           },
           "title": "Target Components",
           "type": "array"
         },
-        "target_name": {
+        "targetName": {
           "title": "Target Name",
           "type": "string"
         }
@@ -73,11 +73,11 @@
     },
     "ChemblMoleculeSynonym": {
       "properties": {
-        "molecule_synonym": {
+        "moleculeSynonym": {
           "title": "Molecule Synonym",
           "type": "string"
         },
-        "syn_type": {
+        "synType": {
           "title": "Synonym Type",
           "type": "string"
         }
@@ -213,7 +213,7 @@
           "title": "IUPAC",
           "type": "object"
         },
-        "molecular_formula": {
+        "molecularFormula": {
           "title": "Molecular Formula",
           "type": "string"
         },

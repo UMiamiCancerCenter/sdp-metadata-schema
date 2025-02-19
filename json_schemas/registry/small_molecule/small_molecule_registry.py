@@ -167,23 +167,23 @@ class ChemblTargetComponent(BaseModel):
     uniprot: list[str] = Field(default="", title="UniProt")
 
 class ChemblDrugMechanism(BaseModel):
-    action_type: str = Field(default="", title="Action Type")
+    actionType: str = Field(default="", title="Action Type")
     # mechanism_refs: list[ChemblMechanismRefs] = Field(default="", title="Mechanism References")
     # target_chembl_id: str = Field(default="", title="Target ChEMBL ID")
-    target_components: list[ChemblTargetComponent] = Field(default="", title="Target Components")
-    target_name: str = Field(default="", title="Target Name")
+    targetComponents: list[ChemblTargetComponent] = Field(default="", title="Target Components")
+    targetName: str = Field(default="", title="Target Name")
     # target_organism: str = Field(default="", title="Target Organism")
     # target_type: str = Field(default="", title="Target Type")
 
 class ChemblMoleculeSynonym(BaseModel):
-    molecule_synonym: str = Field(default="", title="Molecule Synonym")
-    syn_type: str = Field(default="", title="Synonym Type")
+    moleculeSynonym: str = Field(default="", title="Molecule Synonym")
+    synType: str = Field(default="", title="Synonym Type")
     # synonyms: str = Field(default="", title="Synonyms")
 
 class Chembl(BaseModel):
-    drug_indications: list[ChemblDrugIndication] = Field(default="", title="Drug Indications")
+    drugIndications: list[ChemblDrugIndication] = Field(default="", title="Drug Indications")
     # binding_site_name: str = Field(default="", title="Binding Site Name")
-    drug_mechanisms: list[ChemblDrugMechanism] = Field(default="", title="Drug Mechanisms")
+    drugMechanisms: list[ChemblDrugMechanism] = Field(default="", title="Drug Mechanisms")
     # first_approval: int = Field(default="", title="First Approval")
     # first_in_class: int = Field(default="", title="First in Class")
     # helm_notation: str = Field(default="", title="Helm Notation")
@@ -191,10 +191,10 @@ class Chembl(BaseModel):
     # inchi_key: str = Field(default="", title="InChI Key")
     # indication_class: list[str] = Field(default="", title="Indication Class(es)")
     # inorganic_flag: int = Field(default="", title="Inorganic Flag")
-    max_phase: float = Field(default="", title="Maximum Phase", description="Maximum phase of development reached for the compound (4 = approved). Null where max phase has not yet been assigned.")
+    maxPhase: float = Field(default="", title="Maximum Phase", description="Maximum phase of development reached for the compound (4 = approved). Null where max phase has not yet been assigned.")
     # molecule_chembl_id: str = Field(default="", title="Molecule ChEMBL ID")
-    molecule_synonyms: list[ChemblMoleculeSynonym] = Field(default="", title="Molecule Synonyms")
-    molecule_type: str = Field(default="", title="Molecule Type")
+    moleculeSynonyms: list[ChemblMoleculeSynonym] = Field(default="", title="Molecule Synonyms")
+    moleculeType: str = Field(default="", title="Molecule Type")
     # natural_product: int = Field(default="", title="Natural Product", description="Indicates whether the compound is natural product-derived (currently curated only for drugs)")
     # oral: bool = Field(default="", title="Oral", description="Indicates whether the drug is known to be administered orally.")
     # orphan: int = Field(default="", title="Orphan", description="Indicates orphan designation, i.e. intended for use against a rare condition (1 = yes, 0 = no, -1 = preclinical compound ie not a drug)")
@@ -331,7 +331,7 @@ class PubChem(BaseModel):
     inchi: str = Field(default="", title="InChI")
     # inchikey: str = Field(default="", title="InChI Key")  
     iupac: PubChemIupac = Field(default="", title="IUPAC", json_schema_extra={"type": "object"})
-    molecular_formula: str = Field(default="", title="Molecular Formula")
+    molecularFormula: str = Field(default="", title="Molecular Formula")
     smiles: PubChemSmiles = Field(default="", title="SMILES", json_schema_extra={"type": "object"})
  
 class SmallMolecule(BaseModel):
