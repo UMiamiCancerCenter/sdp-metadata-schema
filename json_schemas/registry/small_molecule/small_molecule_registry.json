@@ -53,8 +53,11 @@
     "ChemblDrugMechanism": {
       "properties": {
         "actionType": {
+          "items": {
+            "type": "string"
+          },
           "title": "Action Type",
-          "type": "string"
+          "type": "array"
         },
         "targetComponents": {
           "items": {
@@ -64,8 +67,11 @@
           "type": "array"
         },
         "targetName": {
+          "items": {
+            "type": "string"
+          },
           "title": "Target Name",
-          "type": "string"
+          "type": "array"
         }
       },
       "title": "ChemblDrugMechanism",
@@ -179,11 +185,19 @@
           "type": "string"
         },
         "chebiId": {
+          "items": {
+            "type": "string"
+          },
           "title": "ChEBI ID",
-          "type": "string"
+          "type": "array"
         },
         "inchiParent": {
           "title": "Parent InChI",
+          "type": "string"
+        },
+        "inchiKeyParent": {
+          "defaut": null,
+          "title": "Parent InChI Key",
           "type": "string"
         },
         "smilesParent": {
@@ -191,6 +205,9 @@
           "type": "string"
         }
       },
+      "required": [
+        "inchiKeyParent"
+      ],
       "title": "Lincs",
       "type": "object"
     },
@@ -198,10 +215,14 @@
       "properties": {
         "cid": {
           "title": "CID",
-          "type": "string"
+          "type": "integer"
         },
         "inchi": {
           "title": "InChI",
+          "type": "string"
+        },
+        "inchikey": {
+          "title": "InChI Key",
           "type": "string"
         },
         "iupac": {
@@ -227,6 +248,9 @@
           "type": "object"
         }
       },
+      "required": [
+        "cid"
+      ],
       "title": "PubChem",
       "type": "object"
     },
@@ -254,28 +278,43 @@
       "properties": {
         "chebi": {
           "description": "ChEBI is a freely available ontology of molecular entities focused on 'small' chemical compounds",
+          "items": {
+            "type": "string"
+          },
           "title": "ChEBI",
-          "type": "string"
+          "type": "array"
         },
         "chembl": {
           "description": "A database of bioactive drug-like small molecules and bioactivities abstracted from the scientific literature.",
+          "items": {
+            "type": "string"
+          },
           "title": "ChEMBL",
-          "type": "string"
+          "type": "array"
         },
         "lincs": {
           "description": "The LINCS DCIC facilitates and standardizes the information relevant to LINCS assays as described in http://www.lincsproject.org/data/data-standards/",
+          "items": {
+            "type": "string"
+          },
           "title": "LINCS",
-          "type": "string"
+          "type": "array"
         },
         "pubchem": {
           "description": "A database of normalized PubChem compounds (CIDs) from the PubChem Database.",
+          "items": {
+            "type": "string"
+          },
           "title": "PubChem",
-          "type": "string"
+          "type": "array"
         },
         "drugbank": {
           "description": "A database that combines drug (i.e. chemical, pharmacological and pharmaceutical) data with drug target (i.e. sequence, structure, and pathway) information.",
+          "items": {
+            "type": "string"
+          },
           "title": "DrugBank",
-          "type": "string"
+          "type": "array"
         }
       },
       "title": "UniChem",
@@ -324,18 +363,17 @@
       "type": "object"
     },
     "pubchem": {
-      "allOf": [
-        {
-          "$ref": "#/$defs/PubChem"
-        }
-      ],
+      "items": {
+        "$ref": "#/$defs/PubChem"
+      },
       "title": "PubChem",
-      "type": "object"
+      "type": "array"
     }
   },
   "required": [
     "name"
   ],
   "title": "Small Molecule",
-  "type": "object"
+  "type": "object",
+  "version": "0.0.22"
 }
