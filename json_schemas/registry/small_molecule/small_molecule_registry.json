@@ -326,6 +326,11 @@
       "title": "Name",
       "type": "string"
     },
+    "scope": {
+      "default": "public",
+      "format": "hidden",
+      "type": "string"
+    },
     "content": {
       "allOf": [
         {

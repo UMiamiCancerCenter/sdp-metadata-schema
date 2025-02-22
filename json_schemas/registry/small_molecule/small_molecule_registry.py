@@ -83,6 +83,7 @@ class SmallMolecule(BaseModel):
     model_config = ConfigDict(title="Small Molecule", json_schema_extra={"version": "0.0.22"})
 
     name: str = Field(title="Name")
+    scope: str = Field(default="public", json_schema_extra={"format": "hidden"})
     content: Content | SkipJsonSchema[None] = Field(default=None, title="User-submitted Content", json_schema_extra={"type": "object"})
     unichem: UniChem | SkipJsonSchema[None] = Field(default=None, title="UniChem Cross References", json_schema_extra={"type": "object"})
     lincs: Lincs | SkipJsonSchema[None] = Field(default=None, title="LINCS Metadata", json_schema_extra={"type": "object"})
