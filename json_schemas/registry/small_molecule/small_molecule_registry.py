@@ -23,11 +23,11 @@ class GenerateJsonSchemaWithoutDefaultTitles(GenerateJsonSchema):
         return return_value
 
 class UniChem(BaseModel):
-    chebi: list[str] | SkipJsonSchema[None] = Field(default=None, title="ChEBI", description="ChEBI is a freely available ontology of molecular entities focused on 'small' chemical compounds")  
-    chembl: list[str] | SkipJsonSchema[None] = Field(default=None, title="ChEMBL", description="A database of bioactive drug-like small molecules and bioactivities abstracted from the scientific literature.") 
-    lincs: list[str] | SkipJsonSchema[None] = Field(default=None, title="LINCS", description="The LINCS DCIC facilitates and standardizes the information relevant to LINCS assays as described in http://www.lincsproject.org/data/data-standards/")
-    pubchem: list[str] | SkipJsonSchema[None] = Field(default=None, title="PubChem", description="A database of normalized PubChem compounds (CIDs) from the PubChem Database.")
-    drugbank: list[str] | SkipJsonSchema[None] = Field(default=None, title="DrugBank", description="A database that combines drug (i.e. chemical, pharmacological and pharmaceutical) data with drug target (i.e. sequence, structure, and pathway) information.")
+    chebi: list[str] | SkipJsonSchema[str] | SkipJsonSchema[None] = Field(default=None, title="ChEBI", description="ChEBI is a freely available ontology of molecular entities focused on 'small' chemical compounds")  
+    chembl: list[str] | SkipJsonSchema[str] | SkipJsonSchema[None] = Field(default=None, title="ChEMBL", description="A database of bioactive drug-like small molecules and bioactivities abstracted from the scientific literature.") 
+    lincs: list[str] | SkipJsonSchema[str] | SkipJsonSchema[None] = Field(default=None, title="LINCS", description="The LINCS DCIC facilitates and standardizes the information relevant to LINCS assays as described in http://www.lincsproject.org/data/data-standards/")
+    pubchem: list[str] | SkipJsonSchema[str] | SkipJsonSchema[None] = Field(default=None, title="PubChem", description="A database of normalized PubChem compounds (CIDs) from the PubChem Database.")
+    drugbank: list[str] | SkipJsonSchema[str] | SkipJsonSchema[None] = Field(default=None, title="DrugBank", description="A database that combines drug (i.e. chemical, pharmacological and pharmaceutical) data with drug target (i.e. sequence, structure, and pathway) information.")
 
 class Content(BaseModel):
     name: str | SkipJsonSchema[None] = Field(default=None, title="Name")
