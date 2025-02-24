@@ -1,0 +1,671 @@
+{
+  "$defs": {
+    "cellLine": {
+      "properties": {
+        "role": {
+          "const": "Model System",
+          "default": "Model System",
+          "format": "hidden",
+          "type": "string"
+        },
+        "entity": {
+          "const": "Cell Line",
+          "default": "Cell Line",
+          "format": "hidden",
+          "type": "string"
+        },
+        "cellLineId": {
+          "format": "hidden",
+          "type": "string"
+        },
+        "cellLineName": {
+          "description": "The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'.",
+          "graphRestriction": {
+            "classes": [
+              "CLO:0000019"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:clo"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
+          "title": "Name",
+          "type": "string"
+        },
+        "cellLineLabBatchLabel": {
+          "description": "Lab-specific ID for the  batch of cells used in the experiment.",
+          "title": "Lab Batch Label",
+          "type": "string"
+        },
+        "cellLineTissue": {
+          "description": "Tissue from which the cell line was derived, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'.",
+          "graphRestriction": {
+            "classes": [
+              "NCIT:C12801",
+              "BTO:0000000",
+              "UBERON:0000479"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:ncit",
+              "obo:bto",
+              "obo:uberon"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
+          "title": "Tissue of Origin",
+          "type": "string"
+        },
+        "cellLineOrgan": {
+          "description": "Organ from which the cell line was derived, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.",
+          "graphRestriction": {
+            "classes": [
+              "NCIT:C13018",
+              "FMA:67498",
+              "UBERON:0000062"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:ncit",
+              "obo:fma",
+              "obo:uberon"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
+          "title": "Organ of Origin",
+          "type": "string"
+        },
+        "cellLineSpecies": {
+          "description": "Species from which the cell line was derived, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
+          "graphRestriction": {
+            "classes": [
+              "NCBITaxon:131567"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:ncbitaxon"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
+          "title": "Species of Origin",
+          "type": "string"
+        },
+        "cellLineDisease": {
+          "description": "If the cell line came from a diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the origin tissue or cells were not diseased.",
+          "graphRestriction": {
+            "classes": [
+              "DOID:4"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:doid"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
+          "title": "Disease",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cellLineName",
+        "cellLineTissue",
+        "cellLineSpecies"
+      ],
+      "title": "Cell Line",
+      "type": "object"
+    },
+    "crisprKnockout": {
+      "properties": {
+        "role": {
+          "const": "Perturbagen",
+          "default": "Perturbagen",
+          "format": "hidden",
+          "type": "string"
+        },
+        "entity": {
+          "const": "CRISPR Knockout",
+          "default": "CRISPR Knockout",
+          "format": "hidden",
+          "type": "string"
+        },
+        "crisprKnockoutName": {
+          "description": "The primary name of the CRISPR reagent.",
+          "title": "Name",
+          "type": "string"
+        },
+        "crisprKnockoutLabBatchLabel": {
+          "description": "Lab-specific ID for the batch of CRISPR reagent used in the experiment.",
+          "title": "Lab Batch Label",
+          "type": "string"
+        },
+        "crisprKnockoutTargetGeneSymbol": {
+          "description": "The HGNC (human), MGI (mouse), RGD (rat), or ZFIN (zebrafish) symbol of the gene knocked out by CRISPR for knockout, or VGNC gene symbols for other vertebrate species.",
+          "title": "Target Gene Symbol",
+          "type": "string"
+        },
+        "crisprKnockoutTargetGeneId": {
+          "description": "The NCBI Entrez Gene ID for the gene knocked out by CRISPR.",
+          "title": "NCBI Entrez ID for Target Gene",
+          "type": "string"
+        },
+        "crisprKnockoutTargetGeneSpecies": {
+          "description": "The species of the target locus, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
+          "graphRestriction": {
+            "classes": [
+              "NCBITaxon:131567"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:ncbitaxon"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
+          "title": "Target Gene Species",
+          "type": "string"
+        },
+        "crisprKnockoutDuration": {
+          "description": "Amount of time the experimental system was exposed to the CRISPR reagent.",
+          "title": "Duration",
+          "type": "number"
+        },
+        "crisprKnockoutDurationUnits": {
+          "description": "Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.",
+          "graphRestriction": {
+            "classes": [
+              "UO:0000003"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:uo"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
+          "title": "Duration Units",
+          "type": "string"
+        }
+      },
+      "required": [
+        "crisprKnockoutName",
+        "crisprKnockoutTargetGeneSymbol",
+        "crisprKnockoutTargetGeneSpecies"
+      ],
+      "title": "CRISPR Knockout",
+      "type": "object"
+    },
+    "primaryCell": {
+      "properties": {
+        "role": {
+          "const": "Model System",
+          "default": "Model System",
+          "format": "hidden",
+          "type": "string"
+        },
+        "entity": {
+          "const": "Primary Cells",
+          "default": "Primary Cells",
+          "format": "hidden",
+          "type": "string"
+        },
+        "primaryCellName": {
+          "description": "Name of the type of cells, with the name chosen from the Cell Ontology (CL). Must be a child term of 'cell'.",
+          "graphRestriction": {
+            "classes": [
+              "CL:0000000"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:cl"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
+          "title": "Name",
+          "type": "string"
+        },
+        "primaryCellLabBatchLabel": {
+          "description": "Lab-specific ID for the  batch of cells used in the experiment",
+          "title": "Lab Batch Label",
+          "type": "string"
+        },
+        "primaryCellTissue": {
+          "description": "Tissue from which the cells were extracted, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'.",
+          "graphRestriction": {
+            "classes": [
+              "NCIT:C12801",
+              "BTO:0000000",
+              "UBERON:0000479"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:ncit",
+              "obo:bto",
+              "obo:uberon"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
+          "title": "Tissue of Origin",
+          "type": "string"
+        },
+        "primaryCellOrgan": {
+          "description": "Organ from which the cells were extracted, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.",
+          "graphRestriction": {
+            "classes": [
+              "NCIT:C13018",
+              "FMA:67498",
+              "UBERON:0000062"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:ncit",
+              "obo:fma",
+              "obo:uberon"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
+          "title": "Organ of Origin",
+          "type": "string"
+        },
+        "primaryCellSpecies": {
+          "description": "Species from which the cells were extracted, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
+          "graphRestriction": {
+            "classes": [
+              "NCBITaxon:131567"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:ncbitaxon"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
+          "title": "Species of Origin",
+          "type": "string"
+        },
+        "primaryCellDisease": {
+          "description": "If the cells are diseased, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the cells were not diseased when obtained from the donor.",
+          "graphRestriction": {
+            "classes": [
+              "DOID:4"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:doid"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
+          "title": "Disease",
+          "type": "string"
+        }
+      },
+      "required": [
+        "primaryCellName",
+        "primaryCellTissue",
+        "primaryCellSpecies"
+      ],
+      "title": "Primary Cells",
+      "type": "object"
+    },
+    "protein": {
+      "properties": {
+        "role": {
+          "const": "Perturbagen",
+          "default": "Perturbagen",
+          "format": "hidden",
+          "type": "string"
+        },
+        "entity": {
+          "const": "Protein",
+          "default": "Protein",
+          "format": "hidden",
+          "type": "string"
+        },
+        "proteinName": {
+          "description": "The primary name of the protein.",
+          "title": "Name",
+          "type": "string"
+        },
+        "proteinLabBatchLabel": {
+          "description": "Lab-specific ID for the batch of protein used in the experiment.",
+          "title": "Lab Batch Label",
+          "type": "string"
+        },
+        "proteinUniProtId": {
+          "description": "The UniProt ID of the specific protein and, if relevant, isoform.",
+          "title": "UniProt ID",
+          "type": "string"
+        },
+        "proteinConcentration": {
+          "description": "Concentration of protein that the experimental system was exposed to.",
+          "title": "Concentration",
+          "type": "number"
+        },
+        "proteinConcentrationUnits": {
+          "description": "Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Experimental Factor Ontology (EFO) or the Units of Measurement Ontology (UO) and must be a child term of 'concentration unit'.",
+          "graphRestriction": {
+            "classes": [
+              "UO:0000051",
+              "UO:0000051"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "efo",
+              "obo:uo"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
+          "title": "Concentration Units",
+          "type": "string"
+        },
+        "proteinDuration": {
+          "description": "Amount of time the experimental system was exposed to the protein.",
+          "title": "Duration",
+          "type": "number"
+        },
+        "proteinDurationUnits": {
+          "description": "Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.",
+          "graphRestriction": {
+            "classes": [
+              "UO:0000003"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:uo"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
+          "title": "Duration Units",
+          "type": "string"
+        }
+      },
+      "required": [
+        "proteinName"
+      ],
+      "title": "Protein",
+      "type": "object"
+    },
+    "smallMolecule": {
+      "properties": {
+        "role": {
+          "const": "Perturbagen",
+          "default": "Perturbagen",
+          "format": "hidden",
+          "type": "string"
+        },
+        "entity": {
+          "const": "Small Molecule",
+          "default": "Small Molecule",
+          "format": "hidden",
+          "type": "string"
+        },
+        "smallMoleculeId": {
+          "format": "hidden",
+          "type": "string"
+        },
+        "smallMoleculeName": {
+          "description": "The common, primary, recognizable name for the small molecule being used.",
+          "title": "Small Molecule Name",
+          "type": "string"
+        },
+        "smallMoleculeLabBatchLabel": {
+          "description": "Lab-specific ID for the batch of small molecule used in the experiment.",
+          "title": "Lab Batch Label",
+          "type": "string"
+        },
+        "smallMoleculeConcentration": {
+          "description": "Concentration of small molecule the experimental system was exposed to.",
+          "title": "Concentration",
+          "type": "number"
+        },
+        "smallMoleculeConcentrationUnits": {
+          "description": "Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Experimental Factor Ontology (EFO) or the Units of Measurement Ontology (UO) and must be a child term of 'concentration unit'.",
+          "graphRestriction": {
+            "classes": [
+              "UO:0000051",
+              "UO:0000051"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "efo",
+              "obo:uo"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
+          "title": "Concentration Units",
+          "type": "string"
+        },
+        "smallMoleculeDuration": {
+          "description": "Amount of time the experimental system was exposed to the small molecule.",
+          "title": "Duration",
+          "type": "number"
+        },
+        "smallMoleculeDurationUnits": {
+          "description": "Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.",
+          "graphRestriction": {
+            "classes": [
+              "UO:0000003"
+            ],
+            "includeSelf": true,
+            "ontologies": [
+              "obo:uo"
+            ],
+            "queryFields": [
+              "label"
+            ]
+          },
+          "title": "Duration Units",
+          "type": "string"
+        }
+      },
+      "required": [
+        "smallMoleculeName"
+      ],
+      "title": "Small Molecule",
+      "type": "object"
+    },
+    "tetExpressionSystem": {
+      "properties": {
+        "role": {
+          "const": "Perturbagen",
+          "default": "Perturbagen",
+          "format": "hidden",
+          "type": "string"
+        },
+        "entity": {
+          "const": "Tet Expression System",
+          "default": "Tet Expression System",
+          "format": "hidden",
+          "type": "string"
+        },
+        "transactivatorVectorName": {
+          "description": "The name of the vector/plasmid containing the gene for the tetracycline transactivator protein.",
+          "title": "Transactivator Vector Name",
+          "type": "string"
+        },
+        "transactivatorType": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/tetOnOff"
+            }
+          ],
+          "description": "Tet-On or Tet-Off.",
+          "title": "Transactivator Type"
+        },
+        "transactivatorProteinName": {
+          "description": "The name of the specific transactivator protein encoded by the vector, e.g. tTA, rtTA, rtTA2, etc.",
+          "title": "Transactivator Protein Name",
+          "type": "string"
+        },
+        "transactivatorVectorLabBatchLabel": {
+          "description": "Lab-specific ID for the batch of transactivator vector.",
+          "title": "Transactivator Vector Lab Batch Label",
+          "type": "string"
+        },
+        "responseVectorName": {
+          "description": "The name of the vector/plasmid containing the gene(s) under control of the tetracycline response element (TRE).",
+          "title": "Response Vector Name",
+          "type": "string"
+        },
+        "responseVectorGeneOfInterest": {
+          "description": "The gene being regulated under the Tet system.",
+          "title": "Response Vector Gene of Interest",
+          "type": "string"
+        },
+        "responseVectorReporterGene": {
+          "description": "If present, the reporter gene used to monitor expression.",
+          "title": "Response Vector Reporter Gene",
+          "type": "string"
+        },
+        "responseVectorPromoter": {
+          "description": "The type of promoter making up the TRE in the response vector.",
+          "title": "Response Vector Promoter",
+          "type": "string"
+        },
+        "responseVectorLabBatchLabel": {
+          "description": "Lab-specific ID for the batch of response vector.",
+          "title": "Response Vector Lab Batch Label",
+          "type": "string"
+        },
+        "tetLabName": {
+          "description": "Name of the lab running the experiment.",
+          "title": "Lab Name",
+          "type": "string"
+        },
+        "doxLabBatchLabel": {
+          "description": "Lab-specific ID for the batch of doxycycine used in the experiment.",
+          "title": "Doxycycline Lab Batch Label",
+          "type": "string"
+        },
+        "doxConcentration": {
+          "description": "Concentration of doxycycline the experimental system was incubated with.",
+          "title": "Doxycycline Concentration",
+          "type": "number"
+        },
+        "doxConcentrationUnits": {
+          "description": "Concentration units of incubation with doxycycline.",
+          "title": "Doxycycline Concentration Units",
+          "type": "string"
+        },
+        "doxDuration": {
+          "description": "Time of incubation with doxycycline.",
+          "title": "Doxycycline Incubation Time",
+          "type": "number"
+        },
+        "doxDurationUnits": {
+          "description": "Time units of incubation with doxycycline.",
+          "title": "Doxycycline Incubation Time Units",
+          "type": "string"
+        },
+        "doxVehicle": {
+          "description": "Solvent used to dissolve doxycycline.",
+          "title": "Doxycycline Vehicle",
+          "type": "string"
+        },
+        "transfectionTransductionMethod": {
+          "description": "Method used for introducing the Tet expression system (e.g. lipofection, electroporation, viral transduction.",
+          "title": "Transfection/Transduction Method",
+          "type": "string"
+        },
+        "transfectionTransductionReagent": {
+          "description": "Specific transfection reagent or virus used (e.g. lipofectamine, lentivirus, adenovirus.",
+          "title": "Transfection/Transduction Reagent",
+          "type": "string"
+        }
+      },
+      "required": [
+        "transactivatorType",
+        "transactivatorProteinName"
+      ],
+      "title": "Tet Expression System",
+      "type": "object"
+    },
+    "tetOnOff": {
+      "enum": [
+        "Tet-ON",
+        "Tet-OFF"
+      ],
+      "title": "tetOnOff",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "name": {
+      "description": "Please provide a unique name for the sample.",
+      "title": "Sample Name",
+      "type": "string"
+    },
+    "description": {
+      "description": "Please include a description or any other helpful comments or annotations for the sample.",
+      "title": "Sample Description",
+      "type": "string"
+    },
+    "experimentalSystem": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/cellLine"
+        },
+        {
+          "$ref": "#/$defs/primaryCell"
+        }
+      ],
+      "title": "Experimental System",
+      "type": "object"
+    },
+    "perturbation": {
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/smallMolecule"
+          },
+          {
+            "$ref": "#/$defs/crisprKnockout"
+          },
+          {
+            "$ref": "#/$defs/protein"
+          },
+          {
+            "$ref": "#/$defs/tetExpressionSystem"
+          }
+        ]
+      },
+      "title": "Perturbations",
+      "type": "array"
+    }
+  },
+  "required": [
+    "name",
+    "description",
+    "experimentalSystem"
+  ],
+  "title": "Sample",
+  "type": "object",
+  "version": "0.0.13"
+}
