@@ -26,14 +26,14 @@ class UniChem(BaseModel):
     chebi: list[str] | SkipJsonSchema[str] | SkipJsonSchema[None] = Field(default=None, title="ChEBI", description="ChEBI is a freely available ontology of molecular entities focused on 'small' chemical compounds")  
     chembl: list[str] | SkipJsonSchema[str] | SkipJsonSchema[None] = Field(default=None, title="ChEMBL", description="A database of bioactive drug-like small molecules and bioactivities abstracted from the scientific literature.") 
     lincs: list[str] | SkipJsonSchema[str] | SkipJsonSchema[None] = Field(default=None, title="LINCS", description="The LINCS DCIC facilitates and standardizes the information relevant to LINCS assays as described in http://www.lincsproject.org/data/data-standards/")
-    pubchem: list[str] | SkipJsonSchema[str] | SkipJsonSchema[None] = Field(default=None, title="PubChem", description="A database of normalized PubChem compounds (CIDs) from the PubChem Database.")
+    pubchem: list[int] | SkipJsonSchema[int] | SkipJsonSchema[None] = Field(default=None, title="PubChem", description="A database of normalized PubChem compounds (CIDs) from the PubChem Database.")
     drugbank: list[str] | SkipJsonSchema[str] | SkipJsonSchema[None] = Field(default=None, title="DrugBank", description="A database that combines drug (i.e. chemical, pharmacological and pharmaceutical) data with drug target (i.e. sequence, structure, and pathway) information.")
 
 class Content(BaseModel):
     name: str | SkipJsonSchema[None] = Field(default=None, title="Name")
     alternativeNames: list[str] | SkipJsonSchema[None] = Field(default=None, title="Alternative Names")
     alternativeIds: list[str] | SkipJsonSchema[None] = Field(default=None, title="Alternative IDs")
-    pubchemCid: str | SkipJsonSchema[None] = Field(default=None, title="PubChem CID")
+    pubchemCid: int | SkipJsonSchema[None] = Field(default=None, title="PubChem CID")
     chebiId: str | SkipJsonSchema[None] = Field(default=None, title="ChEBI ID")
     inchiCanonical: str | SkipJsonSchema[None] = Field(default=None, title="Canonical InChI", description="InChi representation of standardized chemical structure")
     smilesCanonical: str | SkipJsonSchema[None] = Field(default=None, title="Canonical SMILES", description="Canonical SMILES representation of standardized chemical structure")
@@ -93,5 +93,5 @@ class SmallMolecule(BaseModel):
 if __name__ == "__main__":
     json_schema=SmallMolecule.model_json_schema(schema_generator=GenerateJsonSchemaWithoutDefaultTitles)
     delete_empty_default(json_schema)
-    with open ("small_molecule_registry.json", "w") as ft:
+    with open ("../json_schemas/registry/small_molecule/small_molecule_registry.json", "w") as ft:
         print(json.dumps(json_schema, indent=2), file = ft)

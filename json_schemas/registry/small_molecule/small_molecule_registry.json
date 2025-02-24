@@ -126,7 +126,7 @@
         },
         "pubchemCid": {
           "title": "PubChem CID",
-          "type": "string"
+          "type": "integer"
         },
         "chebiId": {
           "title": "ChEBI ID",
@@ -304,7 +304,7 @@
         "pubchem": {
           "description": "A database of normalized PubChem compounds (CIDs) from the PubChem Database.",
           "items": {
-            "type": "string"
+            "type": "integer"
           },
           "title": "PubChem",
           "type": "array"
