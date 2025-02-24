@@ -182,7 +182,7 @@
         },
         "pubchemCid": {
           "title": "PubChem CID",
-          "type": "string"
+          "type": "integer"
         },
         "chebiId": {
           "items": {

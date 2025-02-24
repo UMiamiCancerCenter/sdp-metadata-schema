@@ -42,7 +42,7 @@ class Lincs(BaseModel):
     name: str | SkipJsonSchema[None] = Field(default=None, title="Name")
     alternativeNames: list[str] | SkipJsonSchema[None] = Field(default=None, title="Alternative Names")
     alternativeIds: list[str] | SkipJsonSchema[None] = Field(default=None, title="Alternative IDs")
-    pubchemCid: str | SkipJsonSchema[None] = Field(default=None, title="PubChem CID")
+    pubchemCid: int | SkipJsonSchema[None] = Field(default=None, title="PubChem CID")
     chebiId: list[int] | SkipJsonSchema[None] = Field(default=None, title="ChEBI ID")
     inchiParent: str | SkipJsonSchema[None] = Field(default=None, title="Parent InChI")
     inchiKeyParent: str | SkipJsonSchema[None] = Field(defaut=None, title="Parent InChI Key")
