@@ -1,0 +1,244 @@
+{
+  "$defs": {
+    "Input": {
+      "properties": {
+        "fileType": {
+          "title": "File Type",
+          "type": "string"
+        },
+        "sampleGroups": {
+          "items": {
+            "$ref": "#/$defs/SampleGroup"
+          },
+          "title": "Sample Groups",
+          "type": "array"
+        }
+      },
+      "required": [
+        "sampleGroups"
+      ],
+      "title": "Input",
+      "type": "object"
+    },
+    "Perturbation": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "id": {
+          "title": "ID",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "Small Molecule",
+            "CRISPR Knockout",
+            "Protein",
+            "Tet Expression System"
+          ],
+          "title": "Perturbation Type",
+          "type": "string"
+        },
+        "concentration": {
+          "title": "Concentration",
+          "type": "number"
+        },
+        "concentrationUnits": {
+          "title": "Concentration Units",
+          "type": "string"
+        },
+        "duration": {
+          "title": "Duration",
+          "type": "number"
+        },
+        "durationUnits": {
+          "title": "Duration Units",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "type"
+      ],
+      "title": "Perturbation",
+      "type": "object"
+    },
+    "Sample": {
+      "properties": {
+        "name": {
+          "description": "Name for this sample.",
+          "title": "Sample Name",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "description": "ID by which this sample is identified in the input data.",
+          "title": "Sample ID",
+          "type": "string"
+        },
+        "datasetName": {
+          "default": "",
+          "description": "Name of the dataset the sample was taken from.",
+          "title": "Dataset Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "id"
+      ],
+      "title": "Sample",
+      "type": "object"
+    },
+    "SampleGroup": {
+      "properties": {
+        "name": {
+          "description": "Name for this group of samples.",
+          "title": "Group Name",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "samples": {
+          "items": {
+            "$ref": "#/$defs/Sample"
+          },
+          "title": "Samples",
+          "type": "array"
+        }
+      },
+      "required": [
+        "name",
+        "samples"
+      ],
+      "title": "SampleGroup",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "signatureType": {
+      "default": "Transcriptional Consensus Signature",
+      "enum": [
+        "Transcriptional Consensus Signature",
+        "Differential Gene Expression"
+      ],
+      "title": "Signature Type",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "type": "string"
+    },
+    "assay": {
+      "title": "Assay",
+      "type": "string"
+    },
+    "source": {
+      "title": "Source",
+      "type": "string"
+    },
+    "sourceLink": {
+      "title": "Source Link",
+      "type": "string"
+    },
+    "project": {
+      "title": "Project",
+      "type": "string"
+    },
+    "organization": {
+      "title": "Organization",
+      "type": "string"
+    },
+    "level": {
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        "Not Applicable"
+      ],
+      "title": "Level"
+    },
+    "areaOfStudy": {
+      "title": "Area of Study",
+      "type": "string"
+    },
+    "measuredEntity": {
+      "title": "Measured Entity",
+      "type": "string"
+    },
+    "endpoints": {
+      "items": {
+        "enum": [
+          "log2FC",
+          "TCS Score",
+          "pIC50"
+        ],
+        "type": "string"
+      },
+      "title": "Endpoint(s)",
+      "type": "array"
+    },
+    "processingMethod": {
+      "title": "Processing Method",
+      "type": "string"
+    },
+    "processingDescription": {
+      "title": "Processing Description",
+      "type": "string"
+    },
+    "input": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/Input"
+        }
+      ],
+      "title": "Input",
+      "type": "object"
+    },
+    "experimentalSystems": {
+      "items": {
+        "enum": [
+          "Cell Line",
+          "Primary Cell",
+          "Tumor",
+          "Tissue"
+        ],
+        "type": "string"
+      },
+      "title": "Experimental Systems",
+      "type": "array"
+    },
+    "perturbations": {
+      "items": {
+        "$ref": "#/$defs/Perturbation"
+      },
+      "title": "Perturbations",
+      "type": "array"
+    },
+    "data": {
+      "format": "hidden",
+      "title": "Data",
+      "type": "object"
+    }
+  },
+  "required": [
+    "name",
+    "assay",
+    "level",
+    "endpoints",
+    "experimentalSystems"
+  ],
+  "title": "Signature",
+  "type": "object",
+  "version": "0.0.24"
+}
