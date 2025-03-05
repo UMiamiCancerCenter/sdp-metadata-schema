@@ -38,7 +38,7 @@ class Sample(BaseModel):
     name: str = Field(title="Sample Name", description="Name for this sample.")
     description: str | SkipJsonSchema[None] = Field(default=None)
     id: str = Field(title="Sample ID", description="ID by which this sample is identified in the input data.")
-    datasetName: str = Field(default="", title="Dataset Name", description="Name of the dataset the sample was taken from.")
+    datasetName: str = Field(default=None, title="Dataset Name", description="Name of the dataset the sample was taken from.")
 
 class SampleGroup(BaseModel):
     name: str = Field(title="Group Name", description="Name for this group of samples.")

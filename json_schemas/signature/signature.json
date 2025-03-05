@@ -80,7 +80,6 @@
           "type": "string"
         },
         "datasetName": {
-          "default": "",
           "description": "Name of the dataset the sample was taken from.",
           "title": "Dataset Name",
           "type": "string"
