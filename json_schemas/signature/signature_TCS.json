@@ -1,0 +1,269 @@
+{
+  "$defs": {
+    "Datum": {
+      "properties": {
+        "geneSymbol": {
+          "title": "Gene Symbol",
+          "type": "string"
+        },
+        "score": {
+          "title": "Score",
+          "type": "number"
+        }
+      },
+      "required": [
+        "geneSymbol",
+        "score"
+      ],
+      "title": "Datum",
+      "type": "object"
+    },
+    "ExperimentalSystem": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "id": {
+          "title": "ID",
+          "type": "string"
+        },
+        "type": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/ExperimentalSystemType"
+            }
+          ],
+          "default": "Type"
+        }
+      },
+      "required": [
+        "name",
+        "id"
+      ],
+      "title": "ExperimentalSystem",
+      "type": "object"
+    },
+    "ExperimentalSystemType": {
+      "enum": [
+        "Cell Line",
+        "Primary Cell"
+      ],
+      "title": "ExperimentalSystemType",
+      "type": "string"
+    },
+    "Input": {
+      "properties": {
+        "datasetName": {
+          "title": "Dataset Name",
+          "type": "string"
+        },
+        "fileType": {
+          "title": "File Type",
+          "type": "string"
+        },
+        "endpoints": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Endpoints",
+          "type": "array"
+        },
+        "sampleIds": {
+          "items": {
+            "$ref": "#/$defs/ObjectId"
+          },
+          "title": "Sample IDs",
+          "type": "array"
+        }
+      },
+      "title": "Input",
+      "type": "object"
+    },
+    "Level": {
+      "enum": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "title": "Level",
+      "type": "string"
+    },
+    "ObjectId": {
+      "properties": {
+        "$oid": {
+          "type": "string"
+        }
+      },
+      "title": "ObjectId",
+      "type": "object"
+    },
+    "Perturbation": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "id": {
+          "title": "ID",
+          "type": "string"
+        },
+        "type": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/PerturbationType"
+            }
+          ],
+          "title": "Perturbation Type"
+        },
+        "concentration": {
+          "title": "Concentration",
+          "type": "number"
+        },
+        "concentrationUnits": {
+          "title": "Concentration Units",
+          "type": "string"
+        },
+        "duration": {
+          "title": "Duration",
+          "type": "number"
+        },
+        "durationUnits": {
+          "title": "Duration Units",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "id",
+        "type"
+      ],
+      "title": "Perturbation",
+      "type": "object"
+    },
+    "PerturbationType": {
+      "enum": [
+        "Small Molecule",
+        "CRISPR Knockout",
+        "Protein",
+        "Tet Expression System"
+      ],
+      "title": "PerturbationType",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "signatureClass": {
+      "const": "Within-group/Background",
+      "default": "Within-group/Background",
+      "format": "hidden",
+      "title": "Signature Class",
+      "type": "string"
+    },
+    "signatureType": {
+      "const": "Transcriptional Consensus Signature",
+      "default": "Transcriptional Consensus Signature",
+      "format": "hidden",
+      "title": "Signature Type",
+      "type": "string"
+    },
+    "description": {
+      "title": "Description",
+      "type": "string"
+    },
+    "assay": {
+      "title": "Assay",
+      "type": "string"
+    },
+    "source": {
+      "title": "Source",
+      "type": "string"
+    },
+    "sourceLink": {
+      "title": "Source Link",
+      "type": "string"
+    },
+    "project": {
+      "title": "Project",
+      "type": "string"
+    },
+    "organization": {
+      "title": "Organization",
+      "type": "string"
+    },
+    "level": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/Level"
+        }
+      ],
+      "title": "Level"
+    },
+    "areaOfStudy": {
+      "title": "Area of Study",
+      "type": "string"
+    },
+    "measuredEntity": {
+      "title": "Measured Entity",
+      "type": "string"
+    },
+    "endpoints": {
+      "const": "TCS Score",
+      "default": "TCS Score",
+      "format": "hidden",
+      "title": "Endpoints",
+      "type": "string"
+    },
+    "processingMethod": {
+      "title": "Processing Method",
+      "type": "string"
+    },
+    "processingDescription": {
+      "title": "Processing Description",
+      "type": "string"
+    },
+    "input": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/Input"
+        }
+      ],
+      "title": "Input",
+      "type": "object"
+    },
+    "experimentalSystems": {
+      "items": {
+        "$ref": "#/$defs/ExperimentalSystem"
+      },
+      "title": "Experimental Systems",
+      "type": "array"
+    },
+    "perturbations": {
+      "items": {
+        "$ref": "#/$defs/Perturbation"
+      },
+      "title": "Perturbations",
+      "type": "array"
+    },
+    "data": {
+      "items": {
+        "$ref": "#/$defs/Datum"
+      },
+      "title": "Data",
+      "type": "array"
+    }
+  },
+  "required": [
+    "name",
+    "assay"
+  ],
+  "title": "Signature",
+  "type": "object",
+  "version": "0.0.23"
+}
