@@ -1,0 +1,385 @@
+{
+  "$defs": {
+    "Chembl": {
+      "properties": {
+        "drugIndications": {
+          "items": {
+            "$ref": "#/$defs/ChemblDrugIndication"
+          },
+          "title": "Drug Indications",
+          "type": "array"
+        },
+        "drugMechanisms": {
+          "items": {
+            "$ref": "#/$defs/ChemblDrugMechanism"
+          },
+          "title": "Drug Mechanisms",
+          "type": "array"
+        },
+        "maxPhase": {
+          "description": "Maximum phase of development reached for the compound (4 = approved). Null where max phase has not yet been assigned.",
+          "title": "Maximum Phase",
+          "type": "number"
+        },
+        "moleculeSynonyms": {
+          "items": {
+            "$ref": "#/$defs/ChemblMoleculeSynonym"
+          },
+          "title": "Molecule Synonyms",
+          "type": "array"
+        },
+        "moleculeType": {
+          "title": "Molecule Type",
+          "type": "string"
+        }
+      },
+      "title": "Chembl",
+      "type": "object"
+    },
+    "ChemblDrugIndication": {
+      "properties": {
+        "efo": {
+          "description": "Experimental Factor Ontology",
+          "items": {
+            "$ref": "#/$defs/Efo"
+          },
+          "title": "EFO",
+          "type": "array"
+        }
+      },
+      "title": "ChemblDrugIndication",
+      "type": "object"
+    },
+    "ChemblDrugMechanism": {
+      "properties": {
+        "actionType": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Action Type",
+          "type": "array"
+        },
+        "targetComponents": {
+          "items": {
+            "$ref": "#/$defs/ChemblTargetComponent"
+          },
+          "title": "Target Components",
+          "type": "array"
+        },
+        "targetName": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Target Name",
+          "type": "array"
+        }
+      },
+      "title": "ChemblDrugMechanism",
+      "type": "object"
+    },
+    "ChemblMoleculeSynonym": {
+      "properties": {
+        "moleculeSynonym": {
+          "title": "Molecule Synonym",
+          "type": "string"
+        },
+        "synType": {
+          "title": "Synonym Type",
+          "type": "string"
+        }
+      },
+      "title": "ChemblMoleculeSynonym",
+      "type": "object"
+    },
+    "ChemblTargetComponent": {
+      "properties": {
+        "uniprot": {
+          "items": {
+            "type": "string"
+          },
+          "title": "UniProt",
+          "type": "array"
+        }
+      },
+      "title": "ChemblTargetComponent",
+      "type": "object"
+    },
+    "Content": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "alternativeNames": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Alternative Names",
+          "type": "array"
+        },
+        "alternativeIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Alternative IDs",
+          "type": "array"
+        },
+        "pubchemCid": {
+          "title": "PubChem CID",
+          "type": "integer"
+        },
+        "chebiId": {
+          "title": "ChEBI ID",
+          "type": "string"
+        },
+        "inchiCanonical": {
+          "description": "InChi representation of standardized chemical structure",
+          "title": "Canonical InChI",
+          "type": "string"
+        },
+        "smilesCanonical": {
+          "description": "Canonical SMILES representation of standardized chemical structure",
+          "title": "Canonical SMILES",
+          "type": "string"
+        }
+      },
+      "title": "Content",
+      "type": "object"
+    },
+    "Efo": {
+      "properties": {
+        "term": {
+          "title": "Term",
+          "type": "string"
+        }
+      },
+      "title": "Efo",
+      "type": "object"
+    },
+    "Lincs": {
+      "properties": {
+        "id": {
+          "title": "LINCS ID",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "alternativeNames": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Alternative Names",
+          "type": "array"
+        },
+        "alternativeIds": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Alternative IDs",
+          "type": "array"
+        },
+        "pubchemCid": {
+          "title": "PubChem CID",
+          "type": "integer"
+        },
+        "chebiId": {
+          "items": {
+            "type": "integer"
+          },
+          "title": "ChEBI ID",
+          "type": "array"
+        },
+        "inchiParent": {
+          "title": "Parent InChI",
+          "type": "string"
+        },
+        "inchiKeyParent": {
+          "defaut": null,
+          "title": "Parent InChI Key",
+          "type": "string"
+        },
+        "smilesParent": {
+          "title": "Parent SMILES",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "inchiKeyParent"
+      ],
+      "title": "Lincs",
+      "type": "object"
+    },
+    "PubChem": {
+      "properties": {
+        "cid": {
+          "title": "CID",
+          "type": "integer"
+        },
+        "inchi": {
+          "title": "InChI",
+          "type": "string"
+        },
+        "inchikey": {
+          "title": "InChI Key",
+          "type": "string"
+        },
+        "iupac": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/PubChemIupac"
+            }
+          ],
+          "title": "IUPAC",
+          "type": "object"
+        },
+        "molecularFormula": {
+          "title": "Molecular Formula",
+          "type": "string"
+        },
+        "smiles": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/PubChemSmiles"
+            }
+          ],
+          "title": "SMILES",
+          "type": "object"
+        }
+      },
+      "required": [
+        "cid"
+      ],
+      "title": "PubChem",
+      "type": "object"
+    },
+    "PubChemIupac": {
+      "properties": {
+        "systematic": {
+          "title": "Systematic",
+          "type": "string"
+        }
+      },
+      "title": "PubChemIupac",
+      "type": "object"
+    },
+    "PubChemSmiles": {
+      "properties": {
+        "canonical": {
+          "title": "Canonical",
+          "type": "string"
+        }
+      },
+      "title": "PubChemSmiles",
+      "type": "object"
+    },
+    "UniChem": {
+      "properties": {
+        "chebi": {
+          "description": "ChEBI is a freely available ontology of molecular entities focused on 'small' chemical compounds",
+          "items": {
+            "type": "string"
+          },
+          "title": "ChEBI",
+          "type": "array"
+        },
+        "chembl": {
+          "description": "A database of bioactive drug-like small molecules and bioactivities abstracted from the scientific literature.",
+          "items": {
+            "type": "string"
+          },
+          "title": "ChEMBL",
+          "type": "array"
+        },
+        "lincs": {
+          "description": "The LINCS DCIC facilitates and standardizes the information relevant to LINCS assays as described in http://www.lincsproject.org/data/data-standards/",
+          "items": {
+            "type": "string"
+          },
+          "title": "LINCS",
+          "type": "array"
+        },
+        "pubchem": {
+          "description": "A database of normalized PubChem compounds (CIDs) from the PubChem Database.",
+          "items": {
+            "type": "integer"
+          },
+          "title": "PubChem",
+          "type": "array"
+        },
+        "drugbank": {
+          "description": "A database that combines drug (i.e. chemical, pharmacological and pharmaceutical) data with drug target (i.e. sequence, structure, and pathway) information.",
+          "items": {
+            "type": "string"
+          },
+          "title": "DrugBank",
+          "type": "array"
+        }
+      },
+      "title": "UniChem",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "scope": {
+      "default": "public",
+      "format": "hidden",
+      "type": "string"
+    },
+    "content": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/Content"
+        }
+      ],
+      "title": "User-submitted Content",
+      "type": "object"
+    },
+    "unichem": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/UniChem"
+        }
+      ],
+      "title": "UniChem Cross References",
+      "type": "object"
+    },
+    "lincs": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/Lincs"
+        }
+      ],
+      "title": "LINCS Metadata",
+      "type": "object"
+    },
+    "chembl": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/Chembl"
+        }
+      ],
+      "title": "ChEMBL",
+      "type": "object"
+    },
+    "pubchem": {
+      "items": {
+        "$ref": "#/$defs/PubChem"
+      },
+      "title": "PubChem",
+      "type": "array"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "title": "Small Molecule",
+  "type": "object",
+  "version": "0.0.22"
+}

@@ -39,21 +39,29 @@
       "experimentalSystems": {
         "type": "array",
         "description": "The type of biological/biochemical material(s) used as the subject(s) of the readout assay. Please select all that apply, considering all samples in the dataset. This selection will expand in future versions of this form. If you do not see your system represented here, feel free to leave this field blank.",
-        "title": "Experimental System",
+        "title": "Model System(s)",
         "items":{
           "type": "string",
           "enum": [
             "Cell Line",
-            "Primary Cells"
+            "Primary Cells",
+            "Tumor Sample",
+            "Tissue"
           ]
         },
         "uniqueItems": true
+      },
+      "expressConsent": {
+        "type": "boolean",
+        "description": "IMPORTANT: You hereby certify that no data in this dataset is protected by any federal, state, or local privacy laws. This means that the sample material comes from non-humans, cell lines derived from humans have been sufficiently de-identified, and express consent for research purposes has been obtained for primary sample material obtained from human subjects.  Sylvester Data Portal / PAC3R staff have permission to view and transfer the data for the purpose of performing their required duties.  You assume full liability for any breaches of privacy law; the Sylvester Data Portal / PAC3R shall not be responsible for protected PHI data being submitted as research data.",
+        "title": "Express Consent",
+        "enum": [true]
       }
   },
   "required": [
     "name",
-    "description",
     "scope",
-    "assay"
+    "assay",
+    "expressConsent"
   ]
 }
