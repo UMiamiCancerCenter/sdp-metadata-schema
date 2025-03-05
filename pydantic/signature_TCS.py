@@ -70,7 +70,7 @@ class Datum(BaseModel):
     score: float = Field(title="Score")
 
 class SignatureTcs(BaseModel):
-    model_config = ConfigDict(title="Signature", json_schema_extra={"version": "0.0.20"})
+    model_config = ConfigDict(title="Signature", json_schema_extra={"version": "0.0.23"})
 
     name: str = Field(title="Name")
     signatureClass: str = Field(title="Signature Class", default="Within-group/Background", json_schema_extra={"const": "Within-group/Background", "format": "hidden"})
