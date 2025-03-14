@@ -226,8 +226,9 @@
     },
     "data": {
       "format": "hidden",
+      "items": {},
       "title": "Data",
-      "type": "object"
+      "type": "array"
     }
   },
   "required": [
