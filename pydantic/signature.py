@@ -69,7 +69,7 @@ class Signature(BaseModel):
     input: Input | SkipJsonSchema[None] = Field(default=None, title="Input", json_schema_extra={"type": "object"})
     experimentalSystems: list[Literal["Cell Line", "Primary Cell", "Tumor", "Tissue"]] = Field(title="Experimental Systems")
     perturbations: list[Perturbation] | SkipJsonSchema[None] = Field(default=None, title="Perturbations")
-    data: list[Any] = Field(default=None, title="Data", json_schema_extra={"format": "hidden"}) # Specific to what is submitted or pulled from external data source.
+    data: list[Any] | SkipJsonSchema[None] = Field(default=None, title="Data", json_schema_extra={"format": "hidden"}) # Specific to what is submitted or pulled from external data source.
 
 
 if __name__ == "__main__":
