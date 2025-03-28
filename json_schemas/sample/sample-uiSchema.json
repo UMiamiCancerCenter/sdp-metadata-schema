@@ -8,6 +8,15 @@
             "name": "cellLineName"
           }
         }
+      },
+      "cellLineLabBatchLabel": {
+        "ui:widget": "BatchWidget",
+        "ui:options": {
+          "update": {
+            "id": "cellLineLabBatchId",
+            "name": "cellLineLabBatchLabel"
+          }
+        }
       }
     },
     "perturbation": {

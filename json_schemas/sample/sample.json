@@ -28,6 +28,11 @@
           "title": "Lab Batch Label",
           "type": "string"
         },
+        "cellLineLabBatchId": {
+          "description": "A MongoDB ObjectId string",
+          "format": "hidden",
+          "type": "string"
+        },
         "cellLineTissue": {
           "description": "Tissue from which the cell line was derived, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'.",
           "graphRestriction": {
