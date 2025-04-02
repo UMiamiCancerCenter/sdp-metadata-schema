@@ -1,103 +1,23 @@
 {
   "$defs": {
-    "Datum": {
-      "properties": {
-        "geneSymbol": {
-          "title": "Gene Symbol",
-          "type": "string"
-        },
-        "score": {
-          "title": "Score",
-          "type": "number"
-        }
-      },
-      "required": [
-        "geneSymbol",
-        "score"
-      ],
-      "title": "Datum",
-      "type": "object"
-    },
-    "ExperimentalSystem": {
-      "properties": {
-        "name": {
-          "title": "Name",
-          "type": "string"
-        },
-        "id": {
-          "title": "ID",
-          "type": "string"
-        },
-        "type": {
-          "allOf": [
-            {
-              "$ref": "#/$defs/ExperimentalSystemType"
-            }
-          ],
-          "default": "Type"
-        }
-      },
-      "required": [
-        "name",
-        "id"
-      ],
-      "title": "ExperimentalSystem",
-      "type": "object"
-    },
-    "ExperimentalSystemType": {
-      "enum": [
-        "Cell Line",
-        "Primary Cell"
-      ],
-      "title": "ExperimentalSystemType",
-      "type": "string"
-    },
     "Input": {
       "properties": {
-        "datasetName": {
-          "title": "Dataset Name",
-          "type": "string"
-        },
         "fileType": {
           "title": "File Type",
           "type": "string"
         },
-        "endpoints": {
+        "sampleGroups": {
           "items": {
-            "type": "string"
+            "$ref": "#/$defs/SampleGroup"
           },
-          "title": "Endpoints",
-          "type": "array"
-        },
-        "sampleIds": {
-          "items": {
-            "$ref": "#/$defs/ObjectId"
-          },
-          "title": "Sample IDs",
+          "title": "Sample Groups",
           "type": "array"
         }
       },
-      "title": "Input",
-      "type": "object"
-    },
-    "Level": {
-      "enum": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
+      "required": [
+        "sampleGroups"
       ],
-      "title": "Level",
-      "type": "string"
-    },
-    "ObjectId": {
-      "properties": {
-        "$oid": {
-          "type": "string"
-        }
-      },
-      "title": "ObjectId",
+      "title": "Input",
       "type": "object"
     },
     "Perturbation": {
@@ -111,12 +31,14 @@
           "type": "string"
         },
         "type": {
-          "allOf": [
-            {
-              "$ref": "#/$defs/PerturbationType"
-            }
+          "enum": [
+            "Small Molecule",
+            "CRISPR Knockout",
+            "Protein",
+            "Tet Expression System"
           ],
-          "title": "Perturbation Type"
+          "title": "Perturbation Type",
+          "type": "string"
         },
         "concentration": {
           "title": "Concentration",
@@ -137,21 +59,63 @@
       },
       "required": [
         "name",
-        "id",
         "type"
       ],
       "title": "Perturbation",
       "type": "object"
     },
-    "PerturbationType": {
-      "enum": [
-        "Small Molecule",
-        "CRISPR Knockout",
-        "Protein",
-        "Tet Expression System"
+    "Sample": {
+      "properties": {
+        "name": {
+          "description": "Name for this sample.",
+          "title": "Sample Name",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "id": {
+          "description": "ID by which this sample is identified in the input data.",
+          "title": "Sample ID",
+          "type": "string"
+        },
+        "datasetName": {
+          "description": "Name of the dataset the sample was taken from.",
+          "title": "Dataset Name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "id"
       ],
-      "title": "PerturbationType",
-      "type": "string"
+      "title": "Sample",
+      "type": "object"
+    },
+    "SampleGroup": {
+      "properties": {
+        "name": {
+          "description": "Name for this group of samples.",
+          "title": "Group Name",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "samples": {
+          "items": {
+            "$ref": "#/$defs/Sample"
+          },
+          "title": "Samples",
+          "type": "array"
+        }
+      },
+      "required": [
+        "name",
+        "samples"
+      ],
+      "title": "SampleGroup",
+      "type": "object"
     }
   },
   "properties": {
@@ -159,17 +123,12 @@
       "title": "Name",
       "type": "string"
     },
-    "signatureClass": {
-      "const": "Within-group/Background",
-      "default": "Within-group/Background",
-      "format": "hidden",
-      "title": "Signature Class",
-      "type": "string"
-    },
     "signatureType": {
-      "const": "Transcriptional Consensus Signature",
       "default": "Transcriptional Consensus Signature",
-      "format": "hidden",
+      "enum": [
+        "Transcriptional Consensus Signature",
+        "Differential Gene Expression"
+      ],
       "title": "Signature Type",
       "type": "string"
     },
@@ -198,10 +157,13 @@
       "type": "string"
     },
     "level": {
-      "allOf": [
-        {
-          "$ref": "#/$defs/Level"
-        }
+      "enum": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        "Not Applicable"
       ],
       "title": "Level"
     },
@@ -214,11 +176,16 @@
       "type": "string"
     },
     "endpoints": {
-      "const": "TCS Score",
-      "default": "TCS Score",
-      "format": "hidden",
-      "title": "Endpoints",
-      "type": "string"
+      "items": {
+        "enum": [
+          "log2FC",
+          "TCS Score",
+          "pIC50"
+        ],
+        "type": "string"
+      },
+      "title": "Endpoint(s)",
+      "type": "array"
     },
     "processingMethod": {
       "title": "Processing Method",
@@ -239,7 +206,13 @@
     },
     "experimentalSystems": {
       "items": {
-        "$ref": "#/$defs/ExperimentalSystem"
+        "enum": [
+          "Cell Line",
+          "Primary Cell",
+          "Tumor",
+          "Tissue"
+        ],
+        "type": "string"
       },
       "title": "Experimental Systems",
       "type": "array"
@@ -252,18 +225,20 @@
       "type": "array"
     },
     "data": {
-      "items": {
-        "$ref": "#/$defs/Datum"
-      },
+      "format": "hidden",
+      "items": {},
       "title": "Data",
       "type": "array"
     }
   },
   "required": [
     "name",
-    "assay"
+    "assay",
+    "level",
+    "endpoints",
+    "experimentalSystems"
   ],
   "title": "Signature",
   "type": "object",
-  "version": "0.0.23"
+  "version": "0.0.24"
 }
