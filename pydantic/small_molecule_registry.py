@@ -80,7 +80,7 @@ class PubChem(BaseModel):
     smiles: PubChemSmiles | SkipJsonSchema[None] = Field(default=None, title="SMILES", json_schema_extra={"type": "object"})
  
 class SmallMolecule(BaseModel):
-    model_config = ConfigDict(title="Small Molecule", json_schema_extra={"version": "0.0.22"})
+    model_config = ConfigDict(title="Small Molecule", json_schema_extra={"version": "0.0.24"})
 
     name: str = Field(title="Name")
     scope: str = Field(default="public", json_schema_extra={"format": "hidden"})
