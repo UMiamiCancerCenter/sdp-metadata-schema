@@ -1,3 +1,5 @@
+# ruff: noqa
+
 import json
 
 from pydantic import BaseModel, Field
@@ -87,7 +89,7 @@ class CellLine(BaseModel):
 
     model_config = ConfigDict(title="Cell Line Batch", 
                               description="Immortalized (naturally or engineered), genetically uniform tissue cells able to reproduce indefinitely in standard culture conditions.", json_schema_extra={
-                        "version": "0.0.24"}
+                        "version": "0.0.25"}
                               )
     
     name: str = Field(title="Cell Line Batch Name", 

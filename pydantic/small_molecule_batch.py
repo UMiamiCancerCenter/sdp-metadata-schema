@@ -1,27 +1,29 @@
+# ruff: noqa
+
 import json
 
+from bson import ObjectId as _ObjectId
+from typing_extensions import Annotated  # noqa: UP035
+
 from pydantic import BaseModel, Field
-from typing_extensions import Annotated
-from pydantic.functional_validators import AfterValidator
+from pydantic._internal._core_utils import CoreSchemaOrField, is_core_schema
 from pydantic.config import ConfigDict
-from pydantic._internal._core_utils import is_core_schema, CoreSchemaOrField
+from pydantic.functional_validators import AfterValidator
 from pydantic.json_schema import GenerateJsonSchema
 
-from bson import ObjectId as _ObjectId
 
 def check_object_id(value: str) -> str:
     if not _ObjectId.is_valid(value):
-        raise ValueError('Invalid ObjectId')
+        raise ValueError("Invalid ObjectId")
     return value
 
 ObjectId = Annotated[str, AfterValidator(check_object_id)]
 
 def delete_empty_default(schema):
     for key in list(schema):
-        if key == "default":
-            if schema["default"] == "":
-                schema.pop("default")
-                continue
+        if key == "default" and schema["default"] == "":
+            schema.pop("default")
+            continue
         if isinstance(schema[key], dict):
             delete_empty_default(schema[key])
 
@@ -37,7 +39,7 @@ class SmallMoleculeBatch(BaseModel):
 
     smallMoleculeLabBatchLabel: str = Field(title="Lab Batch Label",
                                              description="Lab-specific ID for the batch of small molecule used in the experiment.", default="")
-    
+
     smallMoleculeSmilesBatch: str = Field(title="Small Molecule Vendor-provided SMILES", description="SMILES representation only as provided from the vendor; full structure with all information, i.e. isomeric SMILES", default="")
 
     smallMoleculeProviderName: str = Field(title="Small Molecule Provider Name", description="Vendor or lab that supplied the small molecule", default="")
@@ -66,24 +68,24 @@ class SmallMoleculeCanonical(BaseModel):
     smallMoleculeSmilesParent: str = Field(title="Small Molecule Canonical SMILES", description="Canonical isomeric SMILES representation of parent (standardized) chemical structure", default="")
 
 class SmallMolecule(BaseModel):
-    
+
     model_config = ConfigDict(title="Small Molecule Batch", 
                               description="Molecules with a low molecular weight (generally < 900 daltons) used to perturb the experimental system, often binding to specific biological targets.", arbitrary_types_allowed=True, json_schema_extra={
-                        "version": "0.0.24"})
+                        "version": "0.0.25"})
 
     name: str = Field(title="Small Molecule Batch Name", 
                                    description="Name for the batch of small molecule used in the experiment.")
-    
+
     description: str = Field(default="", title="Description", 
                              description="Please include a description or any other helpful comments or annotations for the small molecule.")
 
     batchType: str = Field(default="Small Molecule", 
                                          json_schema_extra={"const": "Small Molecule", "format": "hidden"})
-    
+
     scope: str = Field(default="private", json_schema_extra={"format": "hidden"})
-    
+
     compoundId: ObjectId = Field(default="", description="A MongoDB ObjectId string", json_schema_extra={"format": "hidden"})
-    
+
     batch: SmallMoleculeBatch = Field(default="")
 
     canonical: SmallMoleculeCanonical = Field(default="")

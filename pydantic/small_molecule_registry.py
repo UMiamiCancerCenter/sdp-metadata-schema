@@ -1,97 +1,123 @@
 import json
+from typing import Any, Self
 
-from pydantic import BaseModel, Field
+from utils import (
+    CustomBaseModel,
+    GenerateJsonSchemaWithoutDefaultTitles,
+    PyObjectId,
+    delete_empty_default,
+)
 
-from pydantic.config import ConfigDict
-from pydantic._internal._core_utils import is_core_schema, CoreSchemaOrField
-from pydantic.json_schema import GenerateJsonSchema, SkipJsonSchema
+from pydantic import ConfigDict, Field, field_validator, model_validator
+from pydantic.json_schema import SkipJsonSchema
 
-def delete_empty_default(schema):
-    for key in list(schema):
-        if key == "default":
-            if schema["default"] is None:
-                schema.pop("default")
-                continue
-        if isinstance(schema[key], dict):
-            delete_empty_default(schema[key])
 
-class GenerateJsonSchemaWithoutDefaultTitles(GenerateJsonSchema):
-    def field_title_should_be_set(self, schema: CoreSchemaOrField) -> bool:
-        return_value = super().field_title_should_be_set(schema)
-        if return_value and is_core_schema(schema):
-            return False
-        return return_value
+class Content(CustomBaseModel):
+    name: str | SkipJsonSchema[None] = None
+    alternative_names: list[str] | SkipJsonSchema[None] = Field(default=None, alias="alternativeNames")
+    alternative_ids: list[str] | SkipJsonSchema[None] = Field(default=None, alias="alternativeIds")
+    pubchem_cid: int | SkipJsonSchema[None] = Field(default=None, alias="pubchemCid")
+    chebi_id: str | SkipJsonSchema[None] = Field(default=None, alias="chebiId")
+    inchi_canonical: str | SkipJsonSchema[None] = Field(default=None, alias="inchiCanonical")
+    smiles_canonical: str | SkipJsonSchema[None] = Field(default=None, alias="smilesCanonical")
 
-class UniChem(BaseModel):
-    chebi: list[str] | SkipJsonSchema[str] | SkipJsonSchema[None] = Field(default=None, title="ChEBI", description="ChEBI is a freely available ontology of molecular entities focused on 'small' chemical compounds")  
-    chembl: list[str] | SkipJsonSchema[str] | SkipJsonSchema[None] = Field(default=None, title="ChEMBL", description="A database of bioactive drug-like small molecules and bioactivities abstracted from the scientific literature.") 
-    lincs: list[str] | SkipJsonSchema[str] | SkipJsonSchema[None] = Field(default=None, title="LINCS", description="The LINCS DCIC facilitates and standardizes the information relevant to LINCS assays as described in http://www.lincsproject.org/data/data-standards/")
-    pubchem: list[int] | SkipJsonSchema[int] | SkipJsonSchema[None] = Field(default=None, title="PubChem", description="A database of normalized PubChem compounds (CIDs) from the PubChem Database.")
-    drugbank: list[str] | SkipJsonSchema[str] | SkipJsonSchema[None] = Field(default=None, title="DrugBank", description="A database that combines drug (i.e. chemical, pharmacological and pharmaceutical) data with drug target (i.e. sequence, structure, and pathway) information.")
+class UniChem(CustomBaseModel):
+    chebi: str | list[str] | SkipJsonSchema[None] = None
+    chembl: str | list[str] | SkipJsonSchema[None] = None
+    lincs: str | list[str] | SkipJsonSchema[None] = None
+    pubchem: int | list[int] | SkipJsonSchema[None] = None
+    drugbank: str | list[str] | SkipJsonSchema[None] = None
 
-class Content(BaseModel):
-    name: str | SkipJsonSchema[None] = Field(default=None, title="Name")
-    alternativeNames: list[str] | SkipJsonSchema[None] = Field(default=None, title="Alternative Names")
-    alternativeIds: list[str] | SkipJsonSchema[None] = Field(default=None, title="Alternative IDs")
-    pubchemCid: int | SkipJsonSchema[None] = Field(default=None, title="PubChem CID")
-    chebiId: str | SkipJsonSchema[None] = Field(default=None, title="ChEBI ID")
-    inchiCanonical: str | SkipJsonSchema[None] = Field(default=None, title="Canonical InChI", description="InChi representation of standardized chemical structure")
-    smilesCanonical: str | SkipJsonSchema[None] = Field(default=None, title="Canonical SMILES", description="Canonical SMILES representation of standardized chemical structure")
-class Lincs(BaseModel):
-    id: str = Field(title="LINCS ID")
-    name: str | SkipJsonSchema[None] = Field(default=None, title="Name")
-    alternativeNames: list[str] | SkipJsonSchema[None] = Field(default=None, title="Alternative Names")
-    alternativeIds: list[str] | SkipJsonSchema[None] = Field(default=None, title="Alternative IDs")
-    pubchemCid: int | SkipJsonSchema[None] = Field(default=None, title="PubChem CID")
-    chebiId: list[int] | SkipJsonSchema[None] = Field(default=None, title="ChEBI ID")
-    inchiParent: str | SkipJsonSchema[None] = Field(default=None, title="Parent InChI")
-    inchiKeyParent: str | SkipJsonSchema[None] = Field(defaut=None, title="Parent InChI Key")
-    smilesParent: str | SkipJsonSchema[None] = Field(default=None, title="Parent SMILES")
-class Efo(BaseModel):
-    term: str | SkipJsonSchema[None] = Field(default=None, title="Term")
-class ChemblDrugIndication(BaseModel):
-    efo: list[Efo] | SkipJsonSchema[None] = Field(default=None, title="EFO", description="Experimental Factor Ontology")
-class ChemblTargetComponent(BaseModel):
-    uniprot: list[str] | SkipJsonSchema[None] = Field(default=None, title="UniProt")
+    @field_validator("chebi", "chembl", "lincs", "drugbank", mode="before")
+    @classmethod
+    def ensure_list(cls: type[Self], v: Any) -> list[Any] | SkipJsonSchema[None]:
+        if v is None:
+            return v
+        if isinstance(v, list):
+            return v
+        return [v]
 
-class ChemblDrugMechanism(BaseModel):
-    actionType: list[str] | SkipJsonSchema[None] = Field(default=None, title="Action Type")
-    targetComponents: list[ChemblTargetComponent] | SkipJsonSchema[None] = Field(default=None, title="Target Components")
-    targetName: list[str] | SkipJsonSchema[None] = Field(default=None, title="Target Name")
-class ChemblMoleculeSynonym(BaseModel):
-    moleculeSynonym: str | SkipJsonSchema[None] = Field(default=None, title="Molecule Synonym")
-    synType: str | SkipJsonSchema[None] = Field(default=None, title="Synonym Type")
-class Chembl(BaseModel):
-    drugIndications: list[ChemblDrugIndication] | SkipJsonSchema[None] = Field(default=None, title="Drug Indications")
-    drugMechanisms: list[ChemblDrugMechanism] | SkipJsonSchema[None] = Field(default=None, title="Drug Mechanisms")
-    maxPhase: float | SkipJsonSchema[None] = Field(default=None, title="Maximum Phase", description="Maximum phase of development reached for the compound (4 = approved). Null where max phase has not yet been assigned.")
-    moleculeSynonyms: list[ChemblMoleculeSynonym] | SkipJsonSchema[None] = Field(default=None, title="Molecule Synonyms")
-    moleculeType: str | SkipJsonSchema[None] = Field(default=None, title="Molecule Type")
-class PubChemIupac(BaseModel):
-    systematic: str | SkipJsonSchema[None] = Field(default=None, title="Systematic")
-class PubChemSmiles(BaseModel):
-    canonical: str | SkipJsonSchema[None] = Field(default=None, title="Canonical")
-class PubChem(BaseModel):
-    cid: int = Field(title="CID")
-    inchi: str | SkipJsonSchema[None] = Field(default=None, title="InChI")
-    inchikey: str | SkipJsonSchema[None] = Field(default=None, title="InChI Key")  
-    iupac: PubChemIupac | SkipJsonSchema[None] = Field(default=None, title="IUPAC", json_schema_extra={"type": "object"})
-    molecularFormula: str | SkipJsonSchema[None] = Field(default=None, title="Molecular Formula")
-    smiles: PubChemSmiles | SkipJsonSchema[None] = Field(default=None, title="SMILES", json_schema_extra={"type": "object"})
- 
-class SmallMolecule(BaseModel):
-    model_config = ConfigDict(title="Small Molecule", json_schema_extra={"version": "0.0.24"})
+    @field_validator("pubchem", mode="before")
+    @classmethod
+    def ensure_list_pubchem(cls: type[Self], v: Any) -> list[Any] | SkipJsonSchema[None]:
+        if v is None:
+            return v
+        if isinstance(v, list):
+            return v
+        return [v]
 
-    name: str = Field(title="Name")
-    scope: str = Field(default="public", json_schema_extra={"format": "hidden"})
-    content: Content | SkipJsonSchema[None] = Field(default=None, title="User-submitted Content", json_schema_extra={"type": "object"})
-    unichem: UniChem | SkipJsonSchema[None] = Field(default=None, title="UniChem Cross References", json_schema_extra={"type": "object"})
-    lincs: Lincs | SkipJsonSchema[None] = Field(default=None, title="LINCS Metadata", json_schema_extra={"type": "object"})
-    chembl: Chembl | SkipJsonSchema[None] = Field(default=None, title="ChEMBL", json_schema_extra={"type": "object"})
-    pubchem: list[PubChem] | SkipJsonSchema[None] = Field(default=None, title="PubChem")
+class Lincs(CustomBaseModel):
+    id: str
+    name: str | SkipJsonSchema[None] = None
+    alternative_names: list[str] | SkipJsonSchema[None] = Field(default=None, alias="alternativeNames")
+    alternative_ids: list[str] | SkipJsonSchema[None] = Field(default=None, alias="alternativeIds")
+    pubchem_cid: int | SkipJsonSchema[None] = Field(default=None, alias="pubchemCid")
+    chebi_id: list[int] | SkipJsonSchema[None] = Field(default=None, alias="chebiId")
+    inchi_parent: str | SkipJsonSchema[None] = Field(default=None, alias="inchiParent")
+    inchi_key_parent: str | SkipJsonSchema[None] = Field(default=None, alias="inchiKeyParent")
+    smiles_parent: str | SkipJsonSchema[None] = Field(default=None, alias="smilesParent")
+
+class Efo(CustomBaseModel):
+    term: str | SkipJsonSchema[None] = None
+
+class ChemblDrugIndication(CustomBaseModel):
+    efo: list[Efo] | SkipJsonSchema[None] = None
+
+class ChemblTargetComponent(CustomBaseModel):
+    uniprot: list[str] | SkipJsonSchema[None] = None
+
+class ChemblDrugMechanism(CustomBaseModel):
+    action_type: list[str] | SkipJsonSchema[None] = Field(default=None, alias="actionType")
+    target_components: list[ChemblTargetComponent] | SkipJsonSchema[None] = Field(default=None, alias="targetComponents")
+    target_name: list[str] | SkipJsonSchema[None] = Field(default=None, alias="targetName")
+
+class ChemblMoleculeSynonym(CustomBaseModel):
+    molecule_synonym: str | SkipJsonSchema[None] = Field(default=None, alias="moleculeSynonym")
+    syn_type: str | SkipJsonSchema[None] = Field(default=None, alias="synType")
+
+class Chembl(CustomBaseModel):
+    drug_indications: list[ChemblDrugIndication] | SkipJsonSchema[None] = Field(default=None, alias="drugIndications")
+    drug_mechanisms: list[ChemblDrugMechanism] | SkipJsonSchema[None] = Field(default= None, alias="drugMechanisms")
+    max_phase: float | SkipJsonSchema[None] = Field(default=None, alias="maxPhase")
+    molecule_synonyms: list[ChemblMoleculeSynonym] | SkipJsonSchema[None] = Field(default=None, alias="moleculeSynonyms")
+    molecule_type: str | SkipJsonSchema[None] = Field(default=None, alias="moleculeType")
+
+class PubChemIupac(CustomBaseModel):
+    systematic: str | SkipJsonSchema[None] = None
+
+class PubChemSmiles(CustomBaseModel):
+    canonical: str | SkipJsonSchema[None] = None
+
+class PubChem(CustomBaseModel):
+    cid: int
+    inchi: str | SkipJsonSchema[None] = None
+    inchikey: str | SkipJsonSchema[None] = None
+    iupac: PubChemIupac | SkipJsonSchema[None] = None
+    molecular_formula: str | SkipJsonSchema[None] = Field(default=None, alias="molecularFormula")
+    smiles: PubChemSmiles | SkipJsonSchema[None] = None
+
+class SmallMolecule(CustomBaseModel):
+    model_config = ConfigDict(title="Small Molecule Registry", json_schema_extra={"version": "0.0.25"})
+
+    id:  PyObjectId | SkipJsonSchema[None] = Field(default_factory=PyObjectId)
+    name: str
+    scope: str
+    content: Content | SkipJsonSchema[None] = None
+    unichem: UniChem | SkipJsonSchema[None] = None
+    lincs: Lincs | SkipJsonSchema[None] = None
+    chembl: Chembl | SkipJsonSchema[None] = None
+    pubchem: list[PubChem] | SkipJsonSchema[None] = None
+    structure_image: str | SkipJsonSchema[None] = Field(default=None, alias="structureImage")
+
+    @model_validator(mode="before")
+    @classmethod
+    def rename_id(cls, values: dict[str, Any]) -> dict[str, Any]:
+        if "_id" in values:
+            values["id"] = values.pop("_id")
+        return values
 
 if __name__ == "__main__":
     json_schema=SmallMolecule.model_json_schema(schema_generator=GenerateJsonSchemaWithoutDefaultTitles)
     delete_empty_default(json_schema)
-    with open ("../json_schemas/registry/small_molecule/small_molecule_registry.json", "w") as ft:
+    with open ("json_schemas/registry/small_molecule/small_molecule.json", "w") as ft:
         print(json.dumps(json_schema, indent=2), file = ft)
