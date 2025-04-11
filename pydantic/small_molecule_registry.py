@@ -119,5 +119,5 @@ class SmallMolecule(CustomBaseModel):
 if __name__ == "__main__":
     json_schema=SmallMolecule.model_json_schema(schema_generator=GenerateJsonSchemaWithoutDefaultTitles)
     delete_empty_default(json_schema)
-    with open ("json_schemas/registry/small_molecule/small_molecule_registry.json", "w") as ft:
+    with open ("json_schemas/registry/small_molecule/small_molecule.json", "w") as ft:
         print(json.dumps(json_schema, indent=2), file = ft)

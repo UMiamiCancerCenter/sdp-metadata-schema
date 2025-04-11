@@ -50,5 +50,5 @@ class CellLine(CustomBaseModel):
 if __name__ == "__main__":
     json_schema=CellLine.model_json_schema(schema_generator=GenerateJsonSchemaWithoutDefaultTitles)
     delete_empty_default(json_schema)
-    with open ("json_schemas/registry/cell_line/cell_line_registry.json", "w") as ft:
+    with open ("json_schemas/registry/cell_line/cell_line.json", "w") as ft:
         print(json.dumps(json_schema, indent=2), file = ft)
