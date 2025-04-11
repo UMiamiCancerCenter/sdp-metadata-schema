@@ -1,3 +1,5 @@
+# ruff: noqa
+
 import json
 from datetime import date
 from typing import Union, List
@@ -496,7 +498,7 @@ class tissue(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.0.24"
+                        "version": "0.0.25"
             })
     
     name: str = Field(title='Sample Name', 

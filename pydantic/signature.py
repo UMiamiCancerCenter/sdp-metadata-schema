@@ -1,3 +1,5 @@
+# ruff: noqa
+
 import json
 from typing import Literal, Any
 
@@ -50,7 +52,7 @@ class Input(BaseModel):
     sampleGroups: list[SampleGroup] = Field(title="Sample Groups") 
 
 class Signature(BaseModel):
-    model_config = ConfigDict(title="Signature", json_schema_extra={"version": "0.0.24"})
+    model_config = ConfigDict(title="Signature", json_schema_extra={"version": "0.0.25"})
 
     name: str = Field(title="Name")
     signatureType: Literal["Transcriptional Consensus Signature", "Differential Gene Expression"] = Field(title="Signature Type", default="Transcriptional Consensus Signature")
