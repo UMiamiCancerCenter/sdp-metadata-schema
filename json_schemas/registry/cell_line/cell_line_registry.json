@@ -1,0 +1,96 @@
+{
+  "$defs": {
+    "ResourceEntry": {
+      "properties": {
+        "accession": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "database": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "iri": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "title": "ResourceEntry",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "id": {
+      "$oid": {
+        "type": "string"
+      }
+    },
+    "name": {
+      "type": "string"
+    },
+    "synonyms": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "cellosaurusAccession": {
+      "type": "string"
+    },
+    "disease": {
+      "items": {
+        "$ref": "#/$defs/ResourceEntry"
+      },
+      "type": "array"
+    },
+    "species": {
+      "items": {
+        "$ref": "#/$defs/ResourceEntry"
+      },
+      "type": "array"
+    },
+    "sex": {
+      "type": "string"
+    },
+    "ageAtSampling": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "cellLineDatabases": {
+      "items": {
+        "$ref": "#/$defs/ResourceEntry"
+      },
+      "type": "array"
+    },
+    "anatomyCellTypeResources": {
+      "items": {
+        "$ref": "#/$defs/ResourceEntry"
+      },
+      "type": "array"
+    },
+    "createdAt": {
+      "$date": {
+        "format": "date-time",
+        "type": "string"
+      }
+    },
+    "scope": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "scope"
+  ],
+  "title": "Cell Line Registry",
+  "type": "object",
+  "version": "0.0.25"
+}
