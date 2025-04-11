@@ -101,7 +101,7 @@ class SmallMolecule(CustomBaseModel):
 
     id:  PyObjectId | SkipJsonSchema[None] = Field(default_factory=PyObjectId)
     name: str
-    scope: str = "public"
+    scope: str
     content: Content | SkipJsonSchema[None] = None
     unichem: UniChem | SkipJsonSchema[None] = None
     lincs: Lincs | SkipJsonSchema[None] = None

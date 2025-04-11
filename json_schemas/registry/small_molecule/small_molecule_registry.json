@@ -304,7 +304,6 @@
       "type": "string"
     },
     "scope": {
-      "default": "public",
       "type": "string"
     },
     "content": {
@@ -330,7 +329,8 @@
     }
   },
   "required": [
-    "name"
+    "name",
+    "scope"
   ],
   "title": "Small Molecule Registry",
   "type": "object",
