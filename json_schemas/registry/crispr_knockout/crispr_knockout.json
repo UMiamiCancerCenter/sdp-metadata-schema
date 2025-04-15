@@ -1,0 +1,74 @@
+{
+  "properties": {
+    "id": {
+      "$oid": {
+        "type": "string"
+      }
+    },
+    "name": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "alternativeName": {
+      "type": "string"
+    },
+    "alternativeIds": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "centerName": {
+      "type": "string"
+    },
+    "centerCanonicalId": {
+      "type": "string"
+    },
+    "providerName": {
+      "type": "string"
+    },
+    "providerCatalogId": {
+      "type": "string"
+    },
+    "lincsId": {
+      "type": "string"
+    },
+    "isCoding": {
+      "enum": [
+        "Coding",
+        "Non-coding"
+      ],
+      "type": "string"
+    },
+    "targetLocus": {
+      "type": "string"
+    },
+    "targetLocusSpecies": {
+      "type": "string"
+    },
+    "targetGeneId": {
+      "type": "string"
+    },
+    "tanscriptId": {
+      "type": "string"
+    },
+    "senseSequence": {
+      "type": "string"
+    },
+    "createdAt": {
+      "$date": {
+        "format": "date-time",
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "name",
+    "scope"
+  ],
+  "title": "CRISPR Knockout Registry",
+  "type": "object",
+  "version": "0.0.25"
+}
