@@ -11,8 +11,11 @@
     "scope": {
       "type": "string"
     },
-    "alternativeName": {
-      "type": "string"
+    "alternativeNames": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
     },
     "alternativeIds": {
       "items": {

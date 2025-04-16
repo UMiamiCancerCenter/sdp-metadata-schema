@@ -19,7 +19,7 @@ class CrisprKnockout(CustomBaseModel):
     id: PyObjectId | SkipJsonSchema[None] = Field(default_factory=PyObjectId)
     name: str
     scope: str = Field(..., alias="scope")
-    alternative_name: str | SkipJsonSchema[None] = Field(default=None, alias="alternativeName")
+    alternative_names: list[str] | SkipJsonSchema[None] = Field(default=None, alias="alternativeNames")
     alternative_ids: list[str] | SkipJsonSchema[None] = Field(default=None, alias="alternativeIds")
     center_name: str | SkipJsonSchema[None] = Field(default=None, alias="centerName")
     center_canonical_id: str | SkipJsonSchema[None] = Field(default=None, alias="centerCanonicalId")
