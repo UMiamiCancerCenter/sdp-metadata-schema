@@ -57,7 +57,7 @@ class Signature(CustomBaseModel):
 
     id: PyObjectId = Field(default_factory=PyObjectId, title="Signature ID")
     name: str = Field(title="Name")
-    scope: Scope = Field(default=Scope.PRIVATE, alias="scope")
+    scope: Scope = Field(default=Scope.PRIVATE, title="Scope", alias="scope")
     signature_type: SignatureType = Field(title="Signature Type", alias="signatureType")
     description: str | SkipJsonSchema[None] = Field(default=None, title="Description")
     source: str | SkipJsonSchema[None] = Field(default=None, title="Source")
