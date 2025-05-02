@@ -1,6 +1,6 @@
 import json
 from datetime import datetime, timezone
-from typing import Any, Literal
+from typing import Any
 
 from utils import (
     CustomBaseModel,
@@ -14,7 +14,7 @@ from utils import (
     delete_empty_default,
 )
 
-from pydantic import Field, model_validator
+from pydantic import ConfigDict, Field, model_validator
 from pydantic.json_schema import SkipJsonSchema
 
 
@@ -53,6 +53,8 @@ class Analytes(CustomBaseModel):
     items: tuple[str, ...] | PyObjectId | SkipJsonSchema[None] = Field(default=None, title="Analyte(s)")
 
 class Signature(CustomBaseModel):
+    model_config = ConfigDict(title="Signature", json_schema_extra={"version": "0.0.26"})
+
     id: PyObjectId = Field(default_factory=PyObjectId, title="Signature ID")
     name: str = Field(title="Name")
     scope: Scope = Field(default=Scope.PRIVATE, alias="scope")
@@ -80,5 +82,5 @@ class Signature(CustomBaseModel):
 if __name__ == "__main__":
     json_schema=Signature.model_json_schema(schema_generator=GenerateJsonSchemaWithoutDefaultTitles)
     delete_empty_default(json_schema)
-    with open ("json_schemas/registry/signature/signature.json", "w") as ft:
+    with open ("json_schemas/signature/signature.json", "w") as ft:
         print(json.dumps(json_schema, indent=2), file = ft)

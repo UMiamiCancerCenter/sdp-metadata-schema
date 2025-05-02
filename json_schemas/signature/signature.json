@@ -1,24 +1,63 @@
 {
   "$defs": {
-    "Input": {
+    "Analytes": {
       "properties": {
-        "fileType": {
-          "title": "File Type",
+        "type": {
+          "title": "Type",
           "type": "string"
         },
-        "sampleGroups": {
-          "items": {
-            "$ref": "#/$defs/SampleGroup"
+        "items": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "$oid": {
+                "type": "string"
+              }
+            }
+          ],
+          "title": "Analyte(s)"
+        }
+      },
+      "title": "Analytes",
+      "type": "object"
+    },
+    "ModelSystem": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/$defs/ModelSystemType",
+          "title": "Type"
+        },
+        "id": {
+          "$oid": {
+            "type": "string"
           },
-          "title": "Sample Groups",
-          "type": "array"
+          "title": "ID"
         }
       },
       "required": [
-        "sampleGroups"
+        "type"
       ],
-      "title": "Input",
+      "title": "ModelSystem",
       "type": "object"
+    },
+    "ModelSystemType": {
+      "enum": [
+        "Cell Line",
+        "Primary Cell",
+        "Tumor",
+        "Tissue"
+      ],
+      "title": "ModelSystemType",
+      "type": "string"
     },
     "Perturbation": {
       "properties": {
@@ -26,19 +65,15 @@
           "title": "Name",
           "type": "string"
         },
-        "id": {
-          "title": "ID",
-          "type": "string"
+        "perturbationId": {
+          "$oid": {
+            "type": "string"
+          },
+          "title": "ID"
         },
         "type": {
-          "enum": [
-            "Small Molecule",
-            "CRISPR Knockout",
-            "Protein",
-            "Tet Expression System"
-          ],
-          "title": "Perturbation Type",
-          "type": "string"
+          "$ref": "#/$defs/PerturbationType",
+          "title": "Perturbation Type"
         },
         "concentration": {
           "title": "Concentration",
@@ -58,11 +93,20 @@
         }
       },
       "required": [
-        "name",
         "type"
       ],
       "title": "Perturbation",
       "type": "object"
+    },
+    "PerturbationType": {
+      "enum": [
+        "Small Molecule",
+        "CRISPR Knockout",
+        "Protein",
+        "Tet Expression System"
+      ],
+      "title": "PerturbationType",
+      "type": "string"
     },
     "Sample": {
       "properties": {
@@ -75,14 +119,24 @@
           "type": "string"
         },
         "id": {
+          "$oid": {
+            "type": "string"
+          },
           "description": "ID by which this sample is identified in the input data.",
-          "title": "Sample ID",
-          "type": "string"
+          "title": "Sample ID"
         },
-        "datasetName": {
-          "description": "Name of the dataset the sample was taken from.",
-          "title": "Dataset Name",
-          "type": "string"
+        "dataset": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "$oid": {
+                "type": "string"
+              }
+            }
+          ],
+          "title": "Dataset Name or ID"
         }
       },
       "required": [
@@ -108,36 +162,65 @@
           },
           "title": "Samples",
           "type": "array"
+        },
+        "modelSystems": {
+          "items": {
+            "$ref": "#/$defs/ModelSystem"
+          },
+          "title": "Model Systems",
+          "type": "array"
+        },
+        "perturbations": {
+          "items": {
+            "$ref": "#/$defs/Perturbation"
+          },
+          "title": "Perturbations",
+          "type": "array"
         }
       },
-      "required": [
-        "name",
-        "samples"
-      ],
       "title": "SampleGroup",
       "type": "object"
+    },
+    "Scope": {
+      "enum": [
+        "public",
+        "private",
+        "shared"
+      ],
+      "title": "Scope",
+      "type": "string"
+    },
+    "SignatureType": {
+      "enum": [
+        "Transcriptional Consensus Signature",
+        "Differential Gene Expression",
+        "Fusion Signature"
+      ],
+      "title": "SignatureType",
+      "type": "string"
     }
   },
   "properties": {
+    "id": {
+      "$oid": {
+        "type": "string"
+      },
+      "title": "Signature ID"
+    },
     "name": {
       "title": "Name",
       "type": "string"
     },
+    "scope": {
+      "$ref": "#/$defs/Scope",
+      "default": "private"
+    },
     "signatureType": {
-      "default": "Transcriptional Consensus Signature",
-      "enum": [
-        "Transcriptional Consensus Signature",
-        "Differential Gene Expression"
-      ],
-      "title": "Signature Type",
-      "type": "string"
+      "$ref": "#/$defs/SignatureType",
+      "title": "Signature Type"
     },
     "description": {
       "title": "Description",
-      "type": "string"
-    },
-    "assay": {
-      "title": "Assay",
       "type": "string"
     },
     "source": {
@@ -156,89 +239,55 @@
       "title": "Organization",
       "type": "string"
     },
-    "level": {
-      "enum": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        "Not Applicable"
-      ],
-      "title": "Level"
+    "sampleGroups": {
+      "items": {
+        "$ref": "#/$defs/SampleGroup"
+      },
+      "title": "Input",
+      "type": "array"
     },
     "areaOfStudy": {
       "title": "Area of Study",
       "type": "string"
     },
-    "measuredEntity": {
-      "title": "Measured Entity",
+    "assay": {
+      "title": "Assay",
+      "type": "string"
+    },
+    "analytes": {
+      "items": {
+        "$ref": "#/$defs/Analytes"
+      },
+      "title": "Analyte(s)",
+      "type": "array"
+    },
+    "method": {
+      "title": "Processing Method",
       "type": "string"
     },
     "endpoints": {
       "items": {
-        "enum": [
-          "log2FC",
-          "TCS Score",
-          "pIC50"
-        ],
         "type": "string"
       },
       "title": "Endpoint(s)",
       "type": "array"
     },
-    "processingMethod": {
-      "title": "Processing Method",
-      "type": "string"
-    },
-    "processingDescription": {
-      "title": "Processing Description",
-      "type": "string"
-    },
-    "input": {
-      "allOf": [
-        {
-          "$ref": "#/$defs/Input"
-        }
-      ],
-      "title": "Input",
-      "type": "object"
-    },
-    "experimentalSystems": {
-      "items": {
-        "enum": [
-          "Cell Line",
-          "Primary Cell",
-          "Tumor",
-          "Tissue"
-        ],
+    "createdAt": {
+      "$date": {
+        "format": "date-time",
         "type": "string"
       },
-      "title": "Experimental Systems",
-      "type": "array"
-    },
-    "perturbations": {
-      "items": {
-        "$ref": "#/$defs/Perturbation"
-      },
-      "title": "Perturbations",
-      "type": "array"
-    },
-    "data": {
-      "format": "hidden",
-      "items": {},
-      "title": "Data",
-      "type": "array"
+      "title": "Created At"
     }
   },
   "required": [
     "name",
-    "assay",
-    "level",
-    "endpoints",
-    "experimentalSystems"
+    "signatureType",
+    "analytes",
+    "method",
+    "endpoints"
   ],
   "title": "Signature",
   "type": "object",
-  "version": "0.0.25"
+  "version": "0.0.26"
 }
