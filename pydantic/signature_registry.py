@@ -32,13 +32,13 @@ class ModelSystem(CustomBaseModel):
 
     name: str | SkipJsonSchema[None] = Field(default=None, title="Name")
     type: ModelSystemType = Field(title="Type")
-    sample_id: PyObjectId | SkipJsonSchema[None] = Field(default=None, title="ID", alias="sampleId")
+    id: PyObjectId | SkipJsonSchema[None] = Field(default=None, title="ID")
 
 class Sample(CustomBaseModel):
 
     name: str = Field(title="Sample Name", description="Name for this sample.")
     description: str | SkipJsonSchema[None] = Field(default=None)
-    id: PyObjectId | SkipJsonSchema[None] = Field(default=None, title="Sample ID", description="ID by which this sample is identified in the input data.")
+    sample_id: PyObjectId | SkipJsonSchema[None] = Field(default=None, title="Sample ID", description="ID by which this sample is identified in the input data.", alias="sampleId")
     dataset: str | PyObjectId | SkipJsonSchema[None] = Field(default=None, title="Dataset Name or ID")
 
 class SampleGroup(CustomBaseModel):

@@ -118,7 +118,7 @@
         "description": {
           "type": "string"
         },
-        "id": {
+        "sampleId": {
           "$oid": {
             "type": "string"
           },
@@ -140,8 +140,7 @@
         }
       },
       "required": [
-        "name",
-        "id"
+        "name"
       ],
       "title": "Sample",
       "type": "object"
@@ -278,11 +277,6 @@
         "type": "string"
       },
       "title": "Created At"
-    },
-    "data": {
-      "items": {},
-      "title": "Data",
-      "type": "array"
     }
   },
   "required": [
