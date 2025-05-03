@@ -278,6 +278,11 @@
         "type": "string"
       },
       "title": "Created At"
+    },
+    "data": {
+      "items": {},
+      "title": "Data",
+      "type": "array"
     }
   },
   "required": [
