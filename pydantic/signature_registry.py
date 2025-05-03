@@ -28,11 +28,14 @@ class Perturbation(CustomBaseModel):
     duration: float | SkipJsonSchema[None] = Field(default=None, title="Duration")
     duration_units: str | SkipJsonSchema[None] = Field(default=None, title="Duration Units", alias="durationUnits")
 
+class ModelSystemItem(CustomBaseModel):
+    name: str | SkipJsonSchema[None] = Field(default=None, title="Name")
+    model_system_id: PyObjectId | SkipJsonSchema[None] = Field(default=None, title="ID", alias="modelSystemId")
+
 class ModelSystem(CustomBaseModel):
 
     name: str | SkipJsonSchema[None] = Field(default=None, title="Name")
-    type: ModelSystemType = Field(title="Type")
-    id: PyObjectId | SkipJsonSchema[None] = Field(default=None, title="ID")
+    items: list[ModelSystemItem] | SkipJsonSchema[None] = Field(default=None, title="Model System Items")
 
 class Sample(CustomBaseModel):
 

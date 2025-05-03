@@ -32,32 +32,32 @@
           "title": "Name",
           "type": "string"
         },
-        "type": {
-          "$ref": "#/$defs/ModelSystemType",
-          "title": "Type"
+        "items": {
+          "items": {
+            "$ref": "#/$defs/ModelSystemItem"
+          },
+          "title": "Model System Items",
+          "type": "array"
+        }
+      },
+      "title": "ModelSystem",
+      "type": "object"
+    },
+    "ModelSystemItem": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
         },
-        "id": {
+        "modelSystemId": {
           "$oid": {
             "type": "string"
           },
           "title": "ID"
         }
       },
-      "required": [
-        "type"
-      ],
-      "title": "ModelSystem",
+      "title": "ModelSystemItem",
       "type": "object"
-    },
-    "ModelSystemType": {
-      "enum": [
-        "Cell Line",
-        "Primary Cell",
-        "Tumor",
-        "Tissue"
-      ],
-      "title": "ModelSystemType",
-      "type": "string"
     },
     "Perturbation": {
       "properties": {
