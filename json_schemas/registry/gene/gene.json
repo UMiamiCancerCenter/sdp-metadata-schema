@@ -33,16 +33,39 @@
           "title": "RefSeq ID",
           "type": "string"
         },
+        "riskLabel": {
+          "title": "Risk Label",
+          "type": "string"
+        },
         "functionalClass": {
           "title": "Functional Class",
           "type": "string"
         },
-        "linkedTraits": {
-          "items": {
-            "$ref": "#/$defs/LinkedTrait"
-          },
-          "title": "Linked Traits",
-          "type": "array"
+        "pValue": {
+          "title": "p-Value",
+          "type": "integer"
+        },
+        "pValueExponent": {
+          "title": "p-Value Exponent",
+          "type": "integer"
+        },
+        "traitName": {
+          "title": "Trait Name",
+          "type": "string"
+        },
+        "linkedTrait": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/LinkedTrait"
+            },
+            {
+              "items": {
+                "$ref": "#/$defs/LinkedTrait"
+              },
+              "type": "array"
+            }
+          ],
+          "title": "Linked Traits"
         }
       },
       "title": "GWASAssociation",
@@ -76,16 +99,16 @@
     },
     "LinkedTrait": {
       "properties": {
-        "trait": {
-          "title": "Trait",
+        "label": {
+          "title": "Label",
           "type": "string"
         },
-        "uri": {
-          "title": "URI",
+        "traitId": {
+          "title": "Trait ID",
           "type": "string"
         },
-        "shortForm": {
-          "title": "Short Form",
+        "url": {
+          "title": "URL",
           "type": "string"
         }
       },

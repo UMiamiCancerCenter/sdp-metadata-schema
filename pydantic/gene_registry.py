@@ -25,14 +25,18 @@ class GO(CustomBaseModel):
     MF: list[GoEntry] | SkipJsonSchema[None] = Field(default=None, title="Molecular Function")
 
 class LinkedTrait(CustomBaseModel):
-    trait: str | SkipJsonSchema[None] = Field(default=None, title="Trait")
-    uri: str | SkipJsonSchema[None] = Field(default=None, title="URI")
-    short_form: str | SkipJsonSchema[None] = Field(default=None, title="Short Form", alias="shortForm")
+    label: str | SkipJsonSchema[None] = Field(default=None, title="Label")
+    trait_id: str | SkipJsonSchema[None] = Field(default=None, title="Trait ID", alias="traitId")
+    url: str | SkipJsonSchema[None] = Field(default=None, title="URL")
 
 class GWASAssociation(CustomBaseModel):
     rs_id: str | SkipJsonSchema[None] = Field(default=None, title="RefSeq ID", alias="rsId")
+    risk_label: str | SkipJsonSchema[None] = Field(default=None, title="Risk Label", alias="riskLabel")
     functional_class: str | SkipJsonSchema[None] = Field(default=None, title="Functional Class", alias="functionalClass")
-    linked_traits: list[LinkedTrait] | SkipJsonSchema[None] = Field(default=None, title="Linked Traits", alias="linkedTraits")
+    p_value: int | SkipJsonSchema[None] = Field(default=None, title="p-Value", alias="pValue")
+    p_value_exponent: int | SkipJsonSchema[None] = Field(default=None, title="p-Value Exponent", alias="pValueExponent")
+    trait_name: str | SkipJsonSchema[None] = Field(default=None, title="Trait Name", alias="traitName")
+    linked_trait: LinkedTrait | list[LinkedTrait] | SkipJsonSchema[None] = Field(default=None, title="Linked Traits", alias="linkedTrait")
 
 class Gene(CustomBaseModel):
     model_config = ConfigDict(title="Gene Registry", json_schema_extra={"version": "0.0.26"})
