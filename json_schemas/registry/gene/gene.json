@@ -103,12 +103,6 @@
     }
   },
   "properties": {
-    "id": {
-      "$oid": {
-        "type": "string"
-      },
-      "title": "Signature ID"
-    },
     "name": {
       "title": "Name",
       "type": "string"

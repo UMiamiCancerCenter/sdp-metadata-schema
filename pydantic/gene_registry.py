@@ -4,7 +4,6 @@ from typing import Any
 from utils import (
     CustomBaseModel,
     GenerateJsonSchemaWithoutDefaultTitles,
-    PyObjectId,
     Scope,
     delete_empty_default,
 )
@@ -31,14 +30,13 @@ class LinkedTrait(CustomBaseModel):
     short_form: str | SkipJsonSchema[None] = Field(default=None, title="Short Form", alias="shortForm")
 
 class GWASAssociation(CustomBaseModel):
-    rsId: str | SkipJsonSchema[None] = Field(default=None, title="RefSeq ID")
+    rs_id: str | SkipJsonSchema[None] = Field(default=None, title="RefSeq ID", alias="rsId")
     functional_class: str | SkipJsonSchema[None] = Field(default=None, title="Functional Class", alias="functionalClass")
     linked_traits: list[LinkedTrait] | SkipJsonSchema[None] = Field(default=None, title="Linked Traits", alias="linkedTraits")
 
 class Gene(CustomBaseModel):
     model_config = ConfigDict(title="Gene Registry", json_schema_extra={"version": "0.0.26"})
 
-    id: PyObjectId = Field(default_factory=PyObjectId, title="Signature ID")
     name: str = Field(title="Name")
     scope: Scope = Field(default=Scope.PRIVATE, title="Scope")
     description: str | SkipJsonSchema[None] = Field(default=None, title="Description")
