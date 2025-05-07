@@ -36,7 +36,7 @@ class GWASAssociation(CustomBaseModel):
     p_value: int | SkipJsonSchema[None] = Field(default=None, title="p-Value", alias="pValue")
     p_value_exponent: int | SkipJsonSchema[None] = Field(default=None, title="p-Value Exponent", alias="pValueExponent")
     trait_name: str | SkipJsonSchema[None] = Field(default=None, title="Trait Name", alias="traitName")
-    linked_trait: LinkedTrait | list[LinkedTrait] | SkipJsonSchema[None] = Field(default=None, title="Linked Traits", alias="linkedTrait")
+    linked_trait: LinkedTrait | SkipJsonSchema[None] = Field(default=None, title="Linked Traits", alias="linkedTrait")
 
 class Gene(CustomBaseModel):
     model_config = ConfigDict(title="Gene Registry", json_schema_extra={"version": "0.0.26"})

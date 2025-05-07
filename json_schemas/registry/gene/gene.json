@@ -54,17 +54,7 @@
           "type": "string"
         },
         "linkedTrait": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/LinkedTrait"
-            },
-            {
-              "items": {
-                "$ref": "#/$defs/LinkedTrait"
-              },
-              "type": "array"
-            }
-          ],
+          "$ref": "#/$defs/LinkedTrait",
           "title": "Linked Traits"
         }
       },
