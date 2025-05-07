@@ -35,7 +35,7 @@ class GWASAssociation(CustomBaseModel):
     p_value: int | SkipJsonSchema[None] = Field(default=None, title="p-Value", alias="pValue")
     p_value_exponent: int | SkipJsonSchema[None] = Field(default=None, title="p-Value Exponent", alias="pValueExponent")
     trait_name: str | SkipJsonSchema[None] = Field(default=None, title="Trait Name", alias="traitName")
-    linked_trait: LinkedTrait | SkipJsonSchema[None] = Field(default=None, title="Linked Traits", alias="linkedTrait")
+    linked_traits: list[LinkedTrait] | SkipJsonSchema[None] = Field(default=None, title="Linked Traits", alias="linkedTraits")
 
 class KeggEntry(CustomBaseModel):
     kegg_id: str | SkipJsonSchema[None] = Field(default=None, title="KEGG ID", alias="keggId")

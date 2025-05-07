@@ -49,9 +49,12 @@
           "title": "Trait Name",
           "type": "string"
         },
-        "linkedTrait": {
-          "$ref": "#/$defs/LinkedTrait",
-          "title": "Linked Traits"
+        "linkedTraits": {
+          "items": {
+            "$ref": "#/$defs/LinkedTrait"
+          },
+          "title": "Linked Traits",
+          "type": "array"
         }
       },
       "title": "GWASAssociation",
