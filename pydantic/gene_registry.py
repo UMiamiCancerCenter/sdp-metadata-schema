@@ -15,7 +15,7 @@ from pydantic.json_schema import SkipJsonSchema
 class GoEntry(CustomBaseModel):
     evidence: str | SkipJsonSchema[None] = Field(default=None, title="Evidence")
     gocategory: str | SkipJsonSchema[None] = Field(default=None, title="GO Category")
-    id: str | SkipJsonSchema[None] = Field(default=None, title="GO ID")
+    go_id: str | SkipJsonSchema[None] = Field(default=None, title="GO ID", alias="goId")
     qualifier: str | SkipJsonSchema[None] = Field(default=None, title="Qualifier")
     term: str | SkipJsonSchema[None] = Field(default=None, title="Term")
 
@@ -32,11 +32,18 @@ class LinkedTrait(CustomBaseModel):
 class GWASAssociation(CustomBaseModel):
     rs_id: str | SkipJsonSchema[None] = Field(default=None, title="RefSeq ID", alias="rsId")
     risk_label: str | SkipJsonSchema[None] = Field(default=None, title="Risk Label", alias="riskLabel")
-    functional_class: str | SkipJsonSchema[None] = Field(default=None, title="Functional Class", alias="functionalClass")
     p_value: int | SkipJsonSchema[None] = Field(default=None, title="p-Value", alias="pValue")
     p_value_exponent: int | SkipJsonSchema[None] = Field(default=None, title="p-Value Exponent", alias="pValueExponent")
     trait_name: str | SkipJsonSchema[None] = Field(default=None, title="Trait Name", alias="traitName")
     linked_trait: LinkedTrait | SkipJsonSchema[None] = Field(default=None, title="Linked Traits", alias="linkedTrait")
+
+class KeggEntry(CustomBaseModel):
+    kegg_id: str | SkipJsonSchema[None] = Field(default=None, title="KEGG ID", alias="keggId")
+    kegg_name: str | SkipJsonSchema[None] = Field(default=None, title="Name", alias="keggName")
+
+class ReactomeEntry(CustomBaseModel):
+    reactome_id: str | SkipJsonSchema[None] = Field(default=None, title="Reactome ID", alias="reactomeId")
+    reactome_name: str | SkipJsonSchema[None] = Field(default=None, title="Name", alias="reactomeName")
 
 class Gene(CustomBaseModel):
     model_config = ConfigDict(title="Gene Registry", json_schema_extra={"version": "0.0.26"})
@@ -53,6 +60,8 @@ class Gene(CustomBaseModel):
     species: str = Field(title="Species")
     type_of_gene: str | SkipJsonSchema[None] = Field(default=None, title="Type of Gene", alias="typeOfGene")
     go: GO | SkipJsonSchema[None] = Field(default=None, title="Gene Ontology")
+    kegg: list[KeggEntry] | SkipJsonSchema[None] = Field(default=None, title="KEGG")
+    reactome: list[ReactomeEntry] | SkipJsonSchema[None] = Field(default=None, title="Reactome")
     gwas_associations: list[GWASAssociation] | SkipJsonSchema[None] = Field(default=None, title="GWAS Asssociations", alias="gwasAssociations")
 
     @model_validator(mode="before")

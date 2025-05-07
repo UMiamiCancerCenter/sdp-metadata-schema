@@ -37,10 +37,6 @@
           "title": "Risk Label",
           "type": "string"
         },
-        "functionalClass": {
-          "title": "Functional Class",
-          "type": "string"
-        },
         "pValue": {
           "title": "p-Value",
           "type": "integer"
@@ -71,7 +67,7 @@
           "title": "GO Category",
           "type": "string"
         },
-        "id": {
+        "goId": {
           "title": "GO ID",
           "type": "string"
         },
@@ -85,6 +81,20 @@
         }
       },
       "title": "GoEntry",
+      "type": "object"
+    },
+    "KeggEntry": {
+      "properties": {
+        "keggId": {
+          "title": "KEGG ID",
+          "type": "string"
+        },
+        "keggName": {
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "title": "KeggEntry",
       "type": "object"
     },
     "LinkedTrait": {
@@ -103,6 +113,20 @@
         }
       },
       "title": "LinkedTrait",
+      "type": "object"
+    },
+    "ReactomeEntry": {
+      "properties": {
+        "reactomeId": {
+          "title": "Reactome ID",
+          "type": "string"
+        },
+        "reactomeName": {
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "title": "ReactomeEntry",
       "type": "object"
     },
     "Scope": {
@@ -165,6 +189,20 @@
     "go": {
       "$ref": "#/$defs/GO",
       "title": "Gene Ontology"
+    },
+    "kegg": {
+      "items": {
+        "$ref": "#/$defs/KeggEntry"
+      },
+      "title": "KEGG",
+      "type": "array"
+    },
+    "reactome": {
+      "items": {
+        "$ref": "#/$defs/ReactomeEntry"
+      },
+      "title": "Reactome",
+      "type": "array"
     },
     "gwasAssociations": {
       "items": {
