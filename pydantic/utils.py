@@ -1,5 +1,6 @@
 from collections.abc import Callable, Iterator
 from datetime import datetime
+from enum import Enum
 from typing import Any
 
 from bson import ObjectId
@@ -9,6 +10,28 @@ from pydantic import BaseModel, ConfigDict, GetJsonSchemaHandler
 from pydantic._internal._core_utils import CoreSchemaOrField, is_core_schema
 from pydantic.json_schema import GenerateJsonSchema
 
+
+class Scope(str, Enum):
+    PUBLIC = "public"
+    PRIVATE = "private"
+    SHARED = "shared"
+
+class PerturbationType(str, Enum):
+    SMALL_MOLECULE = "Small Molecule"
+    CRISPR_KNOCKOUT = "CRISPR Knockout"
+    PROTEIN = "Protein"
+    TET_EXPRESSION_SYSTEM = "Tet Expression System"
+
+class ModelSystemType(str, Enum):
+    CELL_LINE = "Cell Line"
+    PRIMARY_CELL = "Primary Cell"
+    TUMOR = "Tumor"
+    TISSUE = "Tissue"
+
+class SignatureType(str, Enum):
+    TCS = "Transcriptional Consensus Signature"
+    DGE = "Differential Gene Expression"
+    FUSION = "Fusion Signature"
 
 def delete_empty_default(schema):
     for key in list(schema):
