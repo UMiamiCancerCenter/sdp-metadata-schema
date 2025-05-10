@@ -17,7 +17,7 @@ from pydantic.json_schema import SkipJsonSchema
 class Perturbation(CustomBaseModel):
 
     name: str | SkipJsonSchema[None] = Field(default=None, title="Name")
-    perturbation_id: str | SkipJsonSchema[None] = Field(default=None, title="ID", alias="perturbationId")
+    perturbation_id: str | SkipJsonSchema[None] = Field(default=None, title="ID", alias="perturbationId", json_schema_extra={"pattern": "^[a-fA-F0-9]{24}$"})
     type: PerturbationType = Field(title="Perturbation Type")
     concentration: float | SkipJsonSchema[None] = Field(default=None, title="Concentration")
     concentration_units: str | SkipJsonSchema[None] = Field(default=None, title="Concentration Units", alias="concentrationUnits")
@@ -26,7 +26,7 @@ class Perturbation(CustomBaseModel):
 
 class ModelSystemItem(CustomBaseModel):
     name: str | SkipJsonSchema[None] = Field(default=None, title="Name")
-    model_system_id: str | SkipJsonSchema[None] = Field(default=None, title="ID", alias="modelSystemId")
+    model_system_id: str | SkipJsonSchema[None] = Field(default=None, title="ID", alias="modelSystemId", json_schema_extra={"pattern": "^[a-fA-F0-9]{24}$"})
 
 class ModelSystem(CustomBaseModel):
 
@@ -37,7 +37,7 @@ class Sample(CustomBaseModel):
 
     name: str = Field(title="Sample Name", description="Name for this sample.")
     description: str | SkipJsonSchema[None] = Field(default=None)
-    sample_id: str | SkipJsonSchema[None] = Field(default=None, title="Sample ID", description="ID by which this sample is identified in the input data.", alias="sampleId")
+    sample_id: str | SkipJsonSchema[None] = Field(default=None, title="Sample ID", description="ID by which this sample is identified in the input data.", alias="sampleId", json_schema_extra={"pattern": "^[a-fA-F0-9]{24}$"})
     dataset: str | SkipJsonSchema[None] = Field(default=None, title="Dataset Name or ID")
 
 class SampleGroup(CustomBaseModel):

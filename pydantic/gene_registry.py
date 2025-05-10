@@ -45,14 +45,18 @@ class ReactomeEntry(CustomBaseModel):
     reactome_id: str | SkipJsonSchema[None] = Field(default=None, title="Reactome ID", alias="reactomeId")
     reactome_name: str | SkipJsonSchema[None] = Field(default=None, title="Name", alias="reactomeName")
 
+class WikipediaStub(CustomBaseModel):
+    url_stub: str | SkipJsonSchema[None] = Field(default=None, title="URL Stub", alias="urlStub")
 class Gene(CustomBaseModel):
     model_config = ConfigDict(title="Gene Registry", json_schema_extra={"version": "0.0.26"})
 
     name: str = Field(title="Name")
     scope: Scope = Field(default=Scope.PRIVATE, title="Scope")
-    description: str | SkipJsonSchema[None] = Field(default=None, title="Description")
+    summary: str | SkipJsonSchema[None] = Field(default=None, title="Summary")
+    alias: list[str] | SkipJsonSchema[None] = Field(default=None, title="Aliases")
     HGNC: str | SkipJsonSchema[None] = Field(default=None)
     symbol: str | SkipJsonSchema[None] = Field(default=None, title="Gene Symbol")
+    map_location: str | SkipJsonSchema[None] = Field(default=None, title="Map Location", alias="mapLocation")
     entrez_gene: str | SkipJsonSchema[None] = Field(default=None, title="Entrez Gene ID", alias="entrezGene")
     ensembl: str | SkipJsonSchema[None] = Field(default=None, title="Ensembl ID")
     other_names: list[str] | SkipJsonSchema[None] = Field(default=None, title="Other Names", alias="otherNames")
@@ -63,6 +67,7 @@ class Gene(CustomBaseModel):
     kegg: list[KeggEntry] | SkipJsonSchema[None] = Field(default=None, title="KEGG")
     reactome: list[ReactomeEntry] | SkipJsonSchema[None] = Field(default=None, title="Reactome")
     gwas_associations: list[GWASAssociation] | SkipJsonSchema[None] = Field(default=None, title="GWAS Asssociations", alias="gwasAssociations")
+    wikipedia: WikipediaStub | SkipJsonSchema[None] = Field(default=None, title="Wikipedia Reference")
 
     @model_validator(mode="before")
     @classmethod

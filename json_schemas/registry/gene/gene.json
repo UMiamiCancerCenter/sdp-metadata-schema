@@ -140,6 +140,16 @@
       ],
       "title": "Scope",
       "type": "string"
+    },
+    "WikipediaStub": {
+      "properties": {
+        "urlStub": {
+          "title": "URL Stub",
+          "type": "string"
+        }
+      },
+      "title": "WikipediaStub",
+      "type": "object"
     }
   },
   "properties": {
@@ -151,15 +161,26 @@
       "$ref": "#/$defs/Scope",
       "default": "private"
     },
-    "description": {
-      "title": "Description",
+    "summary": {
+      "title": "Summary",
       "type": "string"
+    },
+    "alias": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Aliases",
+      "type": "array"
     },
     "HGNC": {
       "type": "string"
     },
     "symbol": {
       "title": "Gene Symbol",
+      "type": "string"
+    },
+    "mapLocation": {
+      "title": "Map Location",
       "type": "string"
     },
     "entrezGene": {
@@ -213,6 +234,10 @@
       },
       "title": "GWAS Asssociations",
       "type": "array"
+    },
+    "wikipedia": {
+      "$ref": "#/$defs/WikipediaStub",
+      "title": "Wikipedia Reference"
     }
   },
   "required": [

@@ -49,6 +49,7 @@
           "type": "string"
         },
         "modelSystemId": {
+          "pattern": "^[a-fA-F0-9]{24}$",
           "title": "ID",
           "type": "string"
         }
@@ -63,6 +64,7 @@
           "type": "string"
         },
         "perturbationId": {
+          "pattern": "^[a-fA-F0-9]{24}$",
           "title": "ID",
           "type": "string"
         },
@@ -115,6 +117,7 @@
         },
         "sampleId": {
           "description": "ID by which this sample is identified in the input data.",
+          "pattern": "^[a-fA-F0-9]{24}$",
           "title": "Sample ID",
           "type": "string"
         },
