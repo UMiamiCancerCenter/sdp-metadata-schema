@@ -1,0 +1,250 @@
+{
+  "$defs": {
+    "GO": {
+      "properties": {
+        "BP": {
+          "items": {
+            "$ref": "#/$defs/GoEntry"
+          },
+          "title": "Biological Process",
+          "type": "array"
+        },
+        "CC": {
+          "items": {
+            "$ref": "#/$defs/GoEntry"
+          },
+          "title": "Cellular Component",
+          "type": "array"
+        },
+        "MF": {
+          "items": {
+            "$ref": "#/$defs/GoEntry"
+          },
+          "title": "Molecular Function",
+          "type": "array"
+        }
+      },
+      "title": "GO",
+      "type": "object"
+    },
+    "GWASAssociation": {
+      "properties": {
+        "rsId": {
+          "title": "RefSeq ID",
+          "type": "string"
+        },
+        "riskLabel": {
+          "title": "Risk Label",
+          "type": "string"
+        },
+        "pValue": {
+          "title": "p-Value",
+          "type": "integer"
+        },
+        "pValueExponent": {
+          "title": "p-Value Exponent",
+          "type": "integer"
+        },
+        "traitName": {
+          "title": "Trait Name",
+          "type": "string"
+        },
+        "linkedTraits": {
+          "items": {
+            "$ref": "#/$defs/LinkedTrait"
+          },
+          "title": "Linked Traits",
+          "type": "array"
+        }
+      },
+      "title": "GWASAssociation",
+      "type": "object"
+    },
+    "GoEntry": {
+      "properties": {
+        "evidence": {
+          "title": "Evidence",
+          "type": "string"
+        },
+        "gocategory": {
+          "title": "GO Category",
+          "type": "string"
+        },
+        "goId": {
+          "title": "GO ID",
+          "type": "string"
+        },
+        "qualifier": {
+          "title": "Qualifier",
+          "type": "string"
+        },
+        "term": {
+          "title": "Term",
+          "type": "string"
+        }
+      },
+      "title": "GoEntry",
+      "type": "object"
+    },
+    "KeggEntry": {
+      "properties": {
+        "keggId": {
+          "title": "KEGG ID",
+          "type": "string"
+        },
+        "keggName": {
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "title": "KeggEntry",
+      "type": "object"
+    },
+    "LinkedTrait": {
+      "properties": {
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "traitId": {
+          "title": "Trait ID",
+          "type": "string"
+        },
+        "url": {
+          "title": "URL",
+          "type": "string"
+        }
+      },
+      "title": "LinkedTrait",
+      "type": "object"
+    },
+    "ReactomeEntry": {
+      "properties": {
+        "reactomeId": {
+          "title": "Reactome ID",
+          "type": "string"
+        },
+        "reactomeName": {
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "title": "ReactomeEntry",
+      "type": "object"
+    },
+    "Scope": {
+      "enum": [
+        "public",
+        "private",
+        "shared"
+      ],
+      "title": "Scope",
+      "type": "string"
+    },
+    "WikipediaStub": {
+      "properties": {
+        "urlStub": {
+          "title": "URL Stub",
+          "type": "string"
+        }
+      },
+      "title": "WikipediaStub",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "scope": {
+      "$ref": "#/$defs/Scope",
+      "default": "private"
+    },
+    "summary": {
+      "title": "Summary",
+      "type": "string"
+    },
+    "alias": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Aliases",
+      "type": "array"
+    },
+    "HGNC": {
+      "type": "string"
+    },
+    "symbol": {
+      "title": "Gene Symbol",
+      "type": "string"
+    },
+    "mapLocation": {
+      "title": "Map Location",
+      "type": "string"
+    },
+    "entrezGene": {
+      "title": "Entrez Gene ID",
+      "type": "string"
+    },
+    "ensembl": {
+      "title": "Ensembl ID",
+      "type": "string"
+    },
+    "otherNames": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Other Names",
+      "type": "array"
+    },
+    "taxid": {
+      "title": "Taxonomy ID",
+      "type": "integer"
+    },
+    "species": {
+      "title": "Species",
+      "type": "string"
+    },
+    "typeOfGene": {
+      "title": "Type of Gene",
+      "type": "string"
+    },
+    "go": {
+      "$ref": "#/$defs/GO",
+      "title": "Gene Ontology"
+    },
+    "kegg": {
+      "items": {
+        "$ref": "#/$defs/KeggEntry"
+      },
+      "title": "KEGG",
+      "type": "array"
+    },
+    "reactome": {
+      "items": {
+        "$ref": "#/$defs/ReactomeEntry"
+      },
+      "title": "Reactome",
+      "type": "array"
+    },
+    "gwasAssociations": {
+      "items": {
+        "$ref": "#/$defs/GWASAssociation"
+      },
+      "title": "GWAS Asssociations",
+      "type": "array"
+    },
+    "wikipedia": {
+      "$ref": "#/$defs/WikipediaStub",
+      "title": "Wikipedia Reference"
+    }
+  },
+  "required": [
+    "name",
+    "species"
+  ],
+  "title": "Gene Registry",
+  "type": "object",
+  "version": "0.0.26"
+}
