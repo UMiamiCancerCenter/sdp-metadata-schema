@@ -68,6 +68,7 @@ class Signature(CustomBaseModel):
     analytes: list[Analytes] = Field(title="Analyte(s)")
     method: str = Field(title="Processing Method")
     endpoints: list[str] = Field(title="Endpoint(s)")
+    data: list[Any] | SkipJsonSchema[None] = Field(default=None, title="Data")
 
     @model_validator(mode="before")
     @classmethod

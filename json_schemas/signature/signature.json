@@ -251,6 +251,11 @@
       },
       "title": "Endpoint(s)",
       "type": "array"
+    },
+    "data": {
+      "items": {},
+      "title": "Data",
+      "type": "array"
     }
   },
   "required": [
