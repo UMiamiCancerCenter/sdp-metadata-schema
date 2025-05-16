@@ -97,7 +97,7 @@ class PubChem(CustomBaseModel):
     smiles: PubChemSmiles | SkipJsonSchema[None] = None
 
 class SmallMolecule(CustomBaseModel):
-    model_config = ConfigDict(title="Small Molecule Registry", json_schema_extra={"version": "0.0.26"})
+    model_config = ConfigDict(title="Small Molecule Registry", json_schema_extra={"version": "0.0.27"})
 
     id:  PyObjectId | SkipJsonSchema[None] = Field(default_factory=PyObjectId)
     name: str
