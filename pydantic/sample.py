@@ -351,6 +351,7 @@ class cellLine(BaseModel):
                               )
     cellLineLabBatchLabel: str = Field(title="Lab Batch Label", 
                                        description="Lab-specific ID for the  batch of cells used in the experiment.", default="")
+    cellLineLabBatchId: str = Field(default="", description="A MongoDB ObjectId string", json_schema_extra={"format": "hidden"})
     cellLineTissue: str = Field(title="Tissue of Origin", 
                                 description="Tissue from which the cell line was derived, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'."
                                 )
