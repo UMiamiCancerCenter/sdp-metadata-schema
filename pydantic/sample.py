@@ -43,7 +43,7 @@ class tumorSampleTypeEnum(Enum):
 class donorInformation(BaseModel):
     model_config = ConfigDict(title="Patient/Donor Information")
 
-    species: str = Field(title="Species", description="Species from which the sample material was extracted, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",json_schema_extra={"graphRestriction":  {"ontologies":["obo:ncbitaxon"],"classes": ["NCBITaxon:131567"],"queryFields": ["label"],"includeSelf": True}})
+    species: str = Field(title="Species", description="Species from which the sample material was extracted, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.")
 
     gender: str = Field(default="", title="Gender", description="The self-identified gender of the donor in case of a human, the biological sex in case of a non-human donor.")
 
@@ -94,11 +94,11 @@ class smallMolecule(BaseModel):
     smallMoleculeConcentration: float = Field(default="", title="Concentration", 
                                               description="Concentration of small molecule the model system was exposed to.")
     smallMoleculeConcentrationUnits: str = Field(default="", title="Concentration Units", 
-                                                 description="Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Experimental Factor Ontology (EFO) or the Units of Measurement Ontology (UO) and must be a child term of 'concentration unit'.",json_schema_extra={"graphRestriction": {"ontologies": ["efo","obo:uo"],"classes": ["UO:0000051","UO:0000051"],"queryFields": ["label"],"includeSelf": True}})
+                                                 description="Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Experimental Factor Ontology (EFO) or the Units of Measurement Ontology (UO) and must be a child term of 'concentration unit'.")
     smallMoleculeDuration: float = Field(default="", title="Duration", 
                                          description="Amount of time the model system was exposed to the small molecule.")
     smallMoleculeDurationUnits: str = Field(default="", title="Duration Units",
-                                             description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.",json_schema_extra={"graphRestriction": {"ontologies": ["obo:uo"],"classes": ["UO:0000003"],"queryFields": ["label"],"includeSelf": True}})
+                                             description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.")
 
 class crisprKnockout(BaseModel):
     
@@ -122,11 +122,11 @@ class crisprKnockout(BaseModel):
                                             "NCBI Entrez ID for Target Gene",
                                             description="The NCBI Entrez Gene ID for the gene knocked out by CRISPR.", default="")
     crisprKnockoutTargetGeneSpecies: str = Field(title="Target Gene Species", 
-                                         description="The species of the target locus, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",json_schema_extra={"graphRestriction":{"ontologies":["obo:ncbitaxon"],"classes": ["NCBITaxon:131567"],"queryFields": ["label"],"includeSelf": True}})
+                                         description="The species of the target locus, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.")
     crisprKnockoutDuration: float = Field(default="", title="Duration", 
                                          description="Amount of time the model system was exposed to the CRISPR reagent.")
     crisprKnockoutDurationUnits: str = Field(default="", title="Duration Units",
-                                             description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.",json_schema_extra={"graphRestriction": {"ontologies": ["obo:uo"],"classes": ["UO:0000003"],"queryFields": ["label"],"includeSelf": True}})
+                                             description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.")
     # crisprKnockoutConcentration: str = Field(title="Concentration")
 
 # class rnai(BaseModel):
@@ -168,10 +168,10 @@ class protein(BaseModel):
     proteinConcentration: float = Field(default="", title="Concentration", 
                                               description="Concentration of protein that the model system was exposed to.")
     proteinConcentrationUnits: str = Field(default="", title="Concentration Units", 
-                                                 description="Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Experimental Factor Ontology (EFO) or the Units of Measurement Ontology (UO) and must be a child term of 'concentration unit'.",json_schema_extra={"graphRestriction": {"ontologies": ["efo","obo:uo"],"classes": ["UO:0000051","UO:0000051"],"queryFields": ["label"],"includeSelf": True}})
+                                                 description="Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Experimental Factor Ontology (EFO) or the Units of Measurement Ontology (UO) and must be a child term of 'concentration unit'.")
     proteinDuration: float = Field(default="", title="Duration", description="Amount of time the model system was exposed to the protein.")
     proteinDurationUnits: str = Field(default="", title="Duration Units",
-                                             description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.",json_schema_extra={"graphRestriction": {"ontologies": ["obo:uo"],"classes": ["UO:0000003"],"queryFields": ["label"],"includeSelf": True}})
+                                             description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.")
    
 
 # class infectiousAgent(BaseModel):
@@ -249,7 +249,7 @@ class protein(BaseModel):
 #     role: str = Field(default="Model System", json_schema_extra={"const": "Model System",
 #                                                              "format": "hidden"})
 #     entity: str = Field(default="Tissue", json_schema_extra={"const": "Tissue",
-#                                                              "format": "hidden"})
+#                                                              "formjson_schema_extraat": "hidden"})
 #     tissueType: str = Field(title="Tissue Type", json_schema_extra={"ui": {
 #                                                                     "preview": {
 #                                                                     "visible": True
@@ -276,15 +276,15 @@ class primaryCell(BaseModel):
     entity: str = Field(default="Primary Cells", 
                         json_schema_extra={"const": "Primary Cells",
                                            "format": "hidden"})
-    primaryCellName: str = Field(title="Name", description="Name of the type of cells, with the name chosen from the Cell Ontology (CL). Must be a child term of 'cell'.",json_schema_extra={"graphRestriction": {"ontologies": ["obo:cl"],"classes": ["CL:0000000"],"queryFields": ["label"],"includeSelf": True}})
+    primaryCellName: str = Field(title="Name", description="Name of the type of cells, with the name chosen from the Cell Ontology (CL). Must be a child term of 'cell'.")
 
     primaryCellLabBatchLabel: str = Field(title='Lab Batch Label', description="Lab-specific ID for the  batch of cells used in the experiment", default="")
 
-    primaryCellTissue: str = Field(title="Tissue of Origin", description="Tissue from which the cells were extracted, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'.",json_schema_extra={"graphRestriction":  {"ontologies" : ["obo:ncit","obo:bto","obo:uberon"], "classes": ["NCIT:C12801","BTO:0000000","UBERON:0000479"], "queryFields": ["label"], "includeSelf": True}})
+    primaryCellTissue: str = Field(title="Tissue of Origin", description="Tissue from which the cells were extracted, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'.")
 
-    primaryCellOrgan: str = Field(title="Organ of Origin", description="Organ from which the cells were extracted, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.", default="",json_schema_extra={"graphRestriction":  {"ontologies":["obo:ncit","obo:fma","obo:uberon"],"classes": ["NCIT:C13018","FMA:67498","UBERON:0000062"],"queryFields": ["label"],"includeSelf": True}})
+    primaryCellOrgan: str = Field(title="Organ of Origin", description="Organ from which the cells were extracted, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.", default="")
 
-    primaryCellDisease: str = Field(title="Disease", description="If the cells are diseased, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the cells were not diseased when obtained from the donor.", default="",json_schema_extra={"graphRestriction":  {"ontologies": ["obo:doid"],"classes": ["DOID:4"],"queryFields": ["label"],"includeSelf": True}})
+    primaryCellDisease: str = Field(title="Disease", description="If the cells are diseased, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the cells were not diseased when obtained from the donor.", default="")
 
     primaryCellDonorInformation: donorInformation = Field(default="", title="Donor Information", description="Information about the human or non-human donor from which the sample material was taken.")
 
@@ -351,17 +351,17 @@ class cellLine(BaseModel):
                               )
     cellLineLabBatchLabel: str = Field(title="Lab Batch Label", 
                                        description="Lab-specific ID for the  batch of cells used in the experiment.", default="")
+    cellLineLabBatchId: str = Field(default="", description="A MongoDB ObjectId string", json_schema_extra={"format": "hidden"})
     cellLineTissue: str = Field(title="Tissue of Origin", 
-                                description="Tissue from which the cell line was derived, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'.", json_schema_extra={"graphRestriction":  {"ontologies" : ["obo:ncit","obo:bto","obo:uberon"], "classes": ["NCIT:C12801","BTO:0000000","UBERON:0000479"], "queryFields": ["label"], "includeSelf": True}}
+                                description="Tissue from which the cell line was derived, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'."
                                 )
     cellLineOrgan: str = Field(title="Organ of Origin", 
-                               description="Organ from which the cell line was derived, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.",default="",json_schema_extra={"graphRestriction":  {"ontologies":["obo:ncit","obo:fma","obo:uberon"],"classes": ["NCIT:C13018","FMA:67498","UBERON:0000062"],"queryFields": ["label"],"includeSelf": True}})
+                               description="Organ from which the cell line was derived, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.",default="")
     cellLineSpecies: str = Field(title="Species of Origin", 
-                                  description="Species from which the cell line was derived, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",json_schema_extra={"graphRestriction":  {"ontologies":["obo:ncbitaxon"],"classes": ["NCBITaxon:131567"],"queryFields": ["label"],"includeSelf": True}})
+                                  description="Species from which the cell line was derived, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.")
     cellLineDisease: str = Field(title="Disease", 
                                  description="If the cell line came from a diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the origin tissue or cells were not diseased.",
-                                 default="",json_schema_extra={"graphRestriction":  {"ontologies": ["obo:doid"],"classes": ["DOID:4"],"queryFields": ["label"],"includeSelf": True
-                                }})
+                                 default="")
 
 
 
@@ -498,7 +498,7 @@ class tissue(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.0.26"
+                        "version": "0.0.27"
             })
     
     name: str = Field(title='Sample Name', 
@@ -531,5 +531,5 @@ class sample(BaseModel):
 if __name__ == "__main__":
     json_schema=sample.model_json_schema(schema_generator=GenerateJsonSchemaWithoutDefaultTitles)
     delete_empty_default(json_schema)
-    with open ("sample.json", "w") as ft:
+    with open ("json_schemas/sample/sample.json", "w") as ft:
         print(json.dumps(json_schema, indent=2), file = ft)
