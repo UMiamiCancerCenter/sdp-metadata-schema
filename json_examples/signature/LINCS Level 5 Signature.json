@@ -1,0 +1,51 @@
+{
+  "_id": {
+    "$oid": "68260ed66b0ecbaa6376568e"
+  },
+  "name": "ABY001_A375_XH:BRD-A61304759:0.625:3",
+  "scope": "public",
+  "signatureType": "LINCS Level 5 Signature",
+  "source": "BroadT",
+  "sourceLink": "https://lincsportal.ccs.miami.edu/dcic/api/download?path=LINCS_Data/BroadT_LINCS&file=LDS-1613_1.0.tar.gz",
+  "project": "LINCS",
+  "organization": "BroadT",
+  "sampleGroups": [
+    {
+      "modelSystems": [
+        {
+          "type": "Cell Line",
+          "items": [
+            {
+              "name": "A375",
+              "modelSystemId": "67f87098dc7be84b3d987250"
+            }
+          ]
+        }
+      ],
+      "perturbations": [
+        {
+          "name": "SCHEMBL16226502",
+          "perturbationId": "67bce554bd4a50a0578c7a9a",
+          "type": "Small Molecule",
+          "concentration": 0.625,
+          "concentrationUnits": "uM",
+          "duration": 3,
+          "durationUnits": "hours"
+        }
+      ]
+    }
+  ],
+  "areaOfStudy": "Transcriptomics",
+  "assay": "L1000",
+  "analytes": [
+    {
+      "type": "Gene",
+      "items": "68237122933c9eaf3f3331fc"
+    }
+  ],
+  "method": "Moderated Z-score",
+  "endpoints": [
+    "ModZ"
+  ],
+  "createdAt": "2025-05-15T04:23:47.404836+00:00"
+}

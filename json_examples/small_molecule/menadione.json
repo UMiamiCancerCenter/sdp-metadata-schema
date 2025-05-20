@@ -1,0 +1,141 @@
+{
+  "_id": {
+    "$oid": "67bce554bd4a50a0578c7aac"
+  },
+  "name": "Menadione",
+  "scope": "public",
+  "unichem": {
+    "chebi": [
+      "CHEBI:28869"
+    ],
+    "chembl": [
+      "CHEMBL590"
+    ],
+    "lincs": [
+      "LSM-3755"
+    ],
+    "pubchem": [
+      4055
+    ],
+    "drugbank": [
+      "DB00170"
+    ]
+  },
+  "lincs": {
+    "id": "LSM-3755",
+    "name": "Menadione",
+    "alternativeNames": [
+      "Kappaxin",
+      "Kayquinone",
+      "Menadione",
+      "Menaphthene",
+      "Menaphthone",
+      "NSC-4170",
+      "VITAMIN K 3"
+    ],
+    "pubchemCid": 4055,
+    "chebiId": [
+      28869
+    ],
+    "inchiParent": "InChI=1S/C11H8O2/c1-7-6-10(12)8-4-2-3-5-9(8)11(7)13/h2-6H,1H3",
+    "inchiKeyParent": "MJVAVZPDRWSRRC-UHFFFAOYSA-N",
+    "smilesParent": "CC1=CC(=O)c2ccccc2C1=O"
+  },
+  "chembl": {
+    "drugIndications": [
+      {
+        "efo": [
+          {
+            "term": "hemorrhage"
+          }
+        ]
+      }
+    ],
+    "maxPhase": 4,
+    "moleculeSynonyms": [
+      {
+        "moleculeSynonym": "1,4-naphthalenedione, 2-methyl",
+        "synType": "OTHER"
+      },
+      {
+        "moleculeSynonym": "Kappaxin",
+        "synType": "TRADE_NAME"
+      },
+      {
+        "moleculeSynonym": "Menadione",
+        "synType": "USAN"
+      },
+      {
+        "moleculeSynonym": "Menadione",
+        "synType": "ATC"
+      },
+      {
+        "moleculeSynonym": "Menadione",
+        "synType": "BAN"
+      },
+      {
+        "moleculeSynonym": "Menadione",
+        "synType": "FDA"
+      },
+      {
+        "moleculeSynonym": "Menadione",
+        "synType": "MERCK_INDEX"
+      },
+      {
+        "moleculeSynonym": "Menadione",
+        "synType": "OTHER"
+      },
+      {
+        "moleculeSynonym": "Menadione",
+        "synType": "TRADE_NAME"
+      },
+      {
+        "moleculeSynonym": "Menadione",
+        "synType": "USP"
+      },
+      {
+        "moleculeSynonym": "Menaphthene",
+        "synType": "OTHER"
+      },
+      {
+        "moleculeSynonym": "Menaphthone",
+        "synType": "OTHER"
+      },
+      {
+        "moleculeSynonym": "NSC-4170",
+        "synType": "RESEARCH_CODE"
+      },
+      {
+        "moleculeSynonym": "Vitamin K 3",
+        "synType": "TRADE_NAME"
+      },
+      {
+        "moleculeSynonym": "Vitamin k 3",
+        "synType": "OTHER"
+      },
+      {
+        "moleculeSynonym": "Vitamin k3",
+        "synType": "OTHER"
+      }
+    ],
+    "maxPhaseCurated": "Approved"
+  },
+  "pubchem": [
+    {
+      "cid": 4055,
+      "inchi": "InChI=1S/C11H8O2/c1-7-6-10(12)8-4-2-3-5-9(8)11(7)13/h2-6H,1H3",
+      "inchikey": "MJVAVZPDRWSRRC-UHFFFAOYSA-N",
+      "iupac": {
+        "systematic": "2-methylnaphthalene-1,4-dione"
+      },
+      "molecularFormula": "C11H8O2",
+      "smiles": {
+        "canonical": "CC1=CC(=O)C2=CC=CC=C2C1=O"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-02-26T18:11:52.652Z"
+  },
+  "structureImage": "https://stmetaregdeveus.blob.core.windows.net/chemical-structures/67bce554bd4a50a0578c7aac.png"
+}

@@ -1,0 +1,232 @@
+{
+  "_id": {
+    "$oid": "67f87098dc7be84b3d98726d"
+  },
+  "name": "HeLa",
+  "synonyms": [
+    "HELA",
+    "Hela",
+    "He La",
+    "He-La",
+    "HeLa-CCL2",
+    "Henrietta Lacks cells",
+    "Helacyton gartleri"
+  ],
+  "cellosaurusAccession": "CVCL_0030",
+  "disease": [
+    {
+      "accession": "C27677",
+      "category": "Medical resources",
+      "database": "NCIt",
+      "iri": "http://purl.obolibrary.org/obo/NCIT_C27677",
+      "label": "Human papillomavirus-related endocervical adenocarcinoma",
+      "url": "https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C27677"
+    }
+  ],
+  "species": [
+    {
+      "accession": "9606",
+      "category": "Taxonomy",
+      "database": "NCBI_TaxID",
+      "iri": "http://purl.obolibrary.org/obo/NCBITaxon_9606",
+      "label": "Homo sapiens (Human)",
+      "url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=9606&lvl=3"
+    }
+  ],
+  "sex": "Female",
+  "ageAtSampling": "30Y6M",
+  "category": "Cancer cell line",
+  "cellLineDatabases": [
+    {
+      "accession": "CLO_0003684",
+      "category": "Cell line databases/resources",
+      "database": "CLO",
+      "iri": "http://purl.obolibrary.org/obo/CLO_0003684",
+      "url": "https://www.ebi.ac.uk/ols4/ontologies/clo/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCLO_0003684"
+    },
+    {
+      "accession": "CLO_0050910",
+      "category": "Cell line databases/resources",
+      "database": "CLO",
+      "iri": "http://purl.obolibrary.org/obo/CLO_0050910",
+      "url": "https://www.ebi.ac.uk/ols4/ontologies/clo/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCLO_0050910"
+    },
+    {
+      "accession": "MCC:0000219",
+      "category": "Cell line databases/resources",
+      "database": "MCCL"
+    },
+    {
+      "accession": "cl1594",
+      "category": "Cell line databases/resources",
+      "database": "CLDB",
+      "url": "https://bioinformatics.hsanmartino.it/hypercldb/cl1594.html"
+    },
+    {
+      "accession": "cl1595",
+      "category": "Cell line databases/resources",
+      "database": "CLDB",
+      "url": "https://bioinformatics.hsanmartino.it/hypercldb/cl1595.html"
+    },
+    {
+      "accession": "cl1596",
+      "category": "Cell line databases/resources",
+      "database": "CLDB",
+      "url": "https://bioinformatics.hsanmartino.it/hypercldb/cl1596.html"
+    },
+    {
+      "accession": "cl1597",
+      "category": "Cell line databases/resources",
+      "database": "CLDB",
+      "url": "https://bioinformatics.hsanmartino.it/hypercldb/cl1597.html"
+    },
+    {
+      "accession": "cl1599",
+      "category": "Cell line databases/resources",
+      "database": "CLDB",
+      "url": "https://bioinformatics.hsanmartino.it/hypercldb/cl1599.html"
+    },
+    {
+      "accession": "cl1600",
+      "category": "Cell line databases/resources",
+      "database": "CLDB",
+      "url": "https://bioinformatics.hsanmartino.it/hypercldb/cl1600.html"
+    },
+    {
+      "accession": "cl1601",
+      "category": "Cell line databases/resources",
+      "database": "CLDB",
+      "url": "https://bioinformatics.hsanmartino.it/hypercldb/cl1601.html"
+    },
+    {
+      "accession": "cl1603",
+      "category": "Cell line databases/resources",
+      "database": "CLDB",
+      "url": "https://bioinformatics.hsanmartino.it/hypercldb/cl1603.html"
+    },
+    {
+      "accession": "CVCL_0030",
+      "category": "Cell line databases/resources",
+      "database": "cancercelllines",
+      "url": "https://cancercelllines.org/cellline/?id=cellosaurus:CVCL_0030"
+    },
+    {
+      "accession": "1101HUM-PUMC000011",
+      "category": "Cell line databases/resources",
+      "database": "CCRID",
+      "url": "http://www.cellresource.cn/cellsearch.aspx?sc=1&where=1101HUM-PUMC000011"
+    },
+    {
+      "accession": "1101HUM-PUMC000332",
+      "category": "Cell line databases/resources",
+      "database": "CCRID",
+      "url": "http://www.cellresource.cn/cellsearch.aspx?sc=1&where=1101HUM-PUMC000332"
+    },
+    {
+      "accession": "1102HUM-NIFDC00057",
+      "category": "Cell line databases/resources",
+      "database": "CCRID",
+      "url": "http://www.cellresource.cn/cellsearch.aspx?sc=1&where=1102HUM-NIFDC00057"
+    },
+    {
+      "accession": "3101HUMSCSP504",
+      "category": "Cell line databases/resources",
+      "database": "CCRID",
+      "url": "http://www.cellresource.cn/cellsearch.aspx?sc=1&where=3101HUMSCSP504"
+    },
+    {
+      "accession": "3101HUMTCHu187",
+      "category": "Cell line databases/resources",
+      "database": "CCRID",
+      "url": "http://www.cellresource.cn/cellsearch.aspx?sc=1&where=3101HUMTCHu187"
+    },
+    {
+      "accession": "4201HUM-CCTCC00009",
+      "category": "Cell line databases/resources",
+      "database": "CCRID",
+      "url": "http://www.cellresource.cn/cellsearch.aspx?sc=1&where=4201HUM-CCTCC00009"
+    },
+    {
+      "accession": "5301HUM-KCB90024YJ",
+      "category": "Cell line databases/resources",
+      "database": "CCRID",
+      "url": "http://www.cellresource.cn/cellsearch.aspx?sc=1&where=5301HUM-KCB90024YJ"
+    },
+    {
+      "accession": "SIDM00846",
+      "category": "Cell line databases/resources",
+      "database": "Cell_Model_Passport",
+      "url": "https://cellmodelpassports.sanger.ac.uk/passports/SIDM00846"
+    },
+    {
+      "accession": "1298134",
+      "category": "Cell line databases/resources",
+      "database": "Cosmic-CLP",
+      "url": "https://cancer.sanger.ac.uk/cell_lines/sample/overview?id=1298134"
+    },
+    {
+      "accession": "ACH-001086",
+      "category": "Cell line databases/resources",
+      "database": "DepMap",
+      "url": "https://depmap.org/portal/cell_line/ACH-001086"
+    },
+    {
+      "accession": "ACC-57",
+      "category": "Cell line databases/resources",
+      "database": "DSMZCellDive",
+      "url": "https://celldive.dsmz.de/celllines/ACC-57"
+    },
+    {
+      "accession": "44-2-47-1-8-9",
+      "category": "Cell line databases/resources",
+      "database": "FCS-free",
+      "url": "https://fcs-free.org/fcs-database?44-2-47-1-8-9"
+    },
+    {
+      "accession": "HeLA",
+      "category": "Cell line databases/resources",
+      "database": "IGRhCellID",
+      "url": "http://igrcid.ibms.sinica.edu.tw/cgi-bin/cell_line_view.cgi?cl_name=HeLA"
+    },
+    {
+      "accession": "50061",
+      "category": "Cell line databases/resources",
+      "database": "LINCS_HMS",
+      "url": "http://lincs.hms.harvard.edu/db/cells/50061/"
+    },
+    {
+      "accession": "LCL-1512",
+      "category": "Cell line databases/resources",
+      "database": "LINCS_LDP",
+      "url": "http://lincsportal.ccs.miami.edu/cells/#/view/LCL-1512"
+    },
+    {
+      "accession": "51",
+      "category": "Cell line databases/resources",
+      "database": "Lonza",
+      "url": "https://knowledge.lonza.com/cell?id=51"
+    },
+    {
+      "accession": "5351",
+      "category": "Cell line databases/resources",
+      "database": "SKY/M-FISH/CGH"
+    },
+    {
+      "accession": "1434",
+      "category": "Cell line databases/resources",
+      "database": "TOKU-E",
+      "url": "http://cell-lines.toku-e.com/Cell-Lines_1434.html"
+    }
+  ],
+  "anatomyCellTypeResources": [
+    {
+      "accession": "BTO_0000567",
+      "category": "Anatomy/cell type resources",
+      "database": "BTO",
+      "iri": "http://purl.obolibrary.org/obo/BTO_0000567",
+      "url": "https://www.ebi.ac.uk/ols4/ontologies/bto/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FBTO_0000567"
+    }
+  ],
+  "createdAt": "2025-04-11T01:18:29.454012Z",
+  "scope": "public"
+}

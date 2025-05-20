@@ -1,0 +1,1797 @@
+{
+  "_id": {
+    "$oid": "6809cfe46950e06ff4cf28ea"
+  },
+  "name": "LSM-3716 LINCS L1000 Fusion Landmark Genes",
+  "scope": "public",
+  "signatureType": "Fusion Signature",
+  "source": "BroadT",
+  "sourceLink": "https://lincsportal.ccs.miami.edu/dcic/api/download?path=LINCS_Data/BroadT_LINCS&file=LDS-1613_1.0.tar.gz",
+  "project": "LINCS",
+  "organization": "University of Miami",
+  "createdAt": {
+    "$date": "2025-04-24T05:45:08.969Z"
+  },
+  "sampleGroups": [
+    {
+      "modelSystems": [
+        {
+          "type": "Cell Line",
+          "items": [
+            {
+              "name": "PC3",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987259"
+              }
+            },
+            {
+              "name": "MCF7",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987263"
+              }
+            },
+            {
+              "name": "A549",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987273"
+              }
+            },
+            {
+              "name": "HEPG2",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987298"
+              }
+            },
+            {
+              "name": "HT29",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d98724b"
+              }
+            },
+            {
+              "name": "HUH7",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987299"
+              }
+            },
+            {
+              "name": "JURKAT",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872a8"
+              }
+            },
+            {
+              "name": "TOV112D",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987297"
+              }
+            },
+            {
+              "name": "XC.P091"
+            },
+            {
+              "name": "SKES1",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987262"
+              }
+            },
+            {
+              "name": "MDAMB468",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987265"
+              }
+            },
+            {
+              "name": "XC.P904"
+            },
+            {
+              "name": "SNU407",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872d2"
+              }
+            },
+            {
+              "name": "ES2",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987291"
+              }
+            },
+            {
+              "name": "XC.P914"
+            },
+            {
+              "name": "BT474",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d98725a"
+              }
+            },
+            {
+              "name": "GP2D",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d98724e"
+              }
+            },
+            {
+              "name": "XC.P907"
+            },
+            {
+              "name": "OVTOKO",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987270"
+              }
+            },
+            {
+              "name": "XC.P901"
+            },
+            {
+              "name": "T47D",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987268"
+              }
+            },
+            {
+              "name": "XC.P905"
+            },
+            {
+              "name": "GI1",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872dc"
+              }
+            },
+            {
+              "name": "HEC265",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872da"
+              }
+            },
+            {
+              "name": "NCIH1437",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d98727d"
+              }
+            },
+            {
+              "name": "XC.P922"
+            },
+            {
+              "name": "JHH5",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872d7"
+              }
+            },
+            {
+              "name": "HCC95",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872d0"
+              }
+            },
+            {
+              "name": "NCIH841",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987292"
+              }
+            },
+            {
+              "name": "MELHO",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987253"
+              }
+            },
+            {
+              "name": "XC.P908"
+            },
+            {
+              "name": "XC.P936"
+            },
+            {
+              "name": "XC.P935"
+            },
+            {
+              "name": "HEC251",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872d8"
+              }
+            },
+            {
+              "name": "IM95",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987295"
+              }
+            },
+            {
+              "name": "NCIH2110",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987279"
+              }
+            },
+            {
+              "name": "XC.P909"
+            },
+            {
+              "name": "CAL29",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987287"
+              }
+            },
+            {
+              "name": "SKMEL3",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987255"
+              }
+            },
+            {
+              "name": "XC.P915"
+            },
+            {
+              "name": "U2OS",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987261"
+              }
+            },
+            {
+              "name": "A375",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987250"
+              }
+            },
+            {
+              "name": "YH13",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872d6"
+              }
+            },
+            {
+              "name": "XC.L10"
+            },
+            {
+              "name": "22RV1",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987242"
+              }
+            },
+            {
+              "name": "IGR37",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987251"
+              }
+            },
+            {
+              "name": "OC316",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872cf"
+              }
+            },
+            {
+              "name": "YAPC",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872aa"
+              }
+            },
+            {
+              "name": "LNCAP",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987258"
+              }
+            },
+            {
+              "name": "TC32",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872c8"
+              }
+            },
+            {
+              "name": "XC.P910"
+            },
+            {
+              "name": "XC.P934"
+            },
+            {
+              "name": "XC.500"
+            },
+            {
+              "name": "XC.P033"
+            },
+            {
+              "name": "XC.P930"
+            },
+            {
+              "name": "RCC10RGB",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d98728b"
+              }
+            },
+            {
+              "name": "HCC1588",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872d1"
+              }
+            },
+            {
+              "name": "OVK18",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872dd"
+              }
+            },
+            {
+              "name": "CJM"
+            },
+            {
+              "name": "HEC151",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872d9"
+              }
+            },
+            {
+              "name": "A204",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872cd"
+              }
+            },
+            {
+              "name": "XC.P031"
+            },
+            {
+              "name": "XC.P912"
+            },
+            {
+              "name": "BC3C"
+            },
+            {
+              "name": "XC.P026"
+            },
+            {
+              "name": "U251MG",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d98725f"
+              }
+            },
+            {
+              "name": "NCIH1573",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d98727e"
+              }
+            },
+            {
+              "name": "JHH7",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d98729a"
+              }
+            },
+            {
+              "name": "NCIH2172",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d98727a"
+              }
+            },
+            {
+              "name": "BICR6",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872d4"
+              }
+            },
+            {
+              "name": "XC.P931"
+            },
+            {
+              "name": "XC.P933"
+            },
+            {
+              "name": "XC.P932"
+            },
+            {
+              "name": "NCIH838",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d98727b"
+              }
+            },
+            {
+              "name": "AGS",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987296"
+              }
+            },
+            {
+              "name": "COV434",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872d3"
+              }
+            },
+            {
+              "name": "OAW28",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987284"
+              }
+            },
+            {
+              "name": "SH4",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987256"
+              }
+            },
+            {
+              "name": "MKN45",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987271"
+              }
+            },
+            {
+              "name": "G401",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d98726c"
+              }
+            },
+            {
+              "name": "XC.P911"
+            },
+            {
+              "name": "ZR751",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d98725c"
+              }
+            },
+            {
+              "name": "HEC108",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872b1"
+              }
+            },
+            {
+              "name": "HEC1A",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872ca"
+              }
+            },
+            {
+              "name": "XC.P092"
+            },
+            {
+              "name": "XC.P906"
+            },
+            {
+              "name": "BEN",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987274"
+              }
+            },
+            {
+              "name": "HA1E",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872a3"
+              }
+            },
+            {
+              "name": "SKB",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872c2"
+              }
+            },
+            {
+              "name": "HCC515",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872a1"
+              }
+            },
+            {
+              "name": "ASC"
+            },
+            {
+              "name": "MDAMB231",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987264"
+              }
+            },
+            {
+              "name": "MCF10A",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872a2"
+              }
+            },
+            {
+              "name": "HELA",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d98726d"
+              }
+            },
+            {
+              "name": "THP1",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d98723b"
+              }
+            },
+            {
+              "name": "HEK293",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872b2"
+              }
+            },
+            {
+              "name": "XC.R10"
+            }
+          ]
+        },
+        {
+          "type": "Primary Cell",
+          "items": [
+            {
+              "name": "PHH"
+            }
+          ]
+        },
+        {
+          "type": "Embryonic Stem Cell",
+          "items": [
+            {
+              "name": "WA09"
+            }
+          ]
+        }
+      ],
+      "perturbations": [
+        {
+          "name": "Omacetaxine Mepesuccinate",
+          "perturbationId": {
+            "$oid": "67bce554bd4a50a0578c7c4e"
+          },
+          "type": "Small Molecule",
+          "duration": 24,
+          "durationUnits": "hours"
+        }
+      ],
+      "samples": [
+        {
+          "name": "POL001_PC3_24H:G19"
+        },
+        {
+          "name": "HOG002_MCF7_24H:BRD-K76674262-001-02-5:0.0045"
+        },
+        {
+          "name": "POL001_PC3_24H:G20"
+        },
+        {
+          "name": "HOG002_MCF7_24H:BRD-K76674262-001-02-5:0.0015"
+        },
+        {
+          "name": "CVD001_PHH_24H:BRD-K76674262-001-01-7:2.5"
+        },
+        {
+          "name": "HOG002_A549_24H:BRD-K76674262-001-02-5:0.0015"
+        },
+        {
+          "name": "HOG002_A549_24H:BRD-K76674262-001-02-5:0.0412"
+        },
+        {
+          "name": "POL001_PC3_24H:G23"
+        },
+        {
+          "name": "POL001_HEPG2_24H:G19"
+        },
+        {
+          "name": "POL001_MCF7_24H:G22"
+        },
+        {
+          "name": "HOG002_A549_24H:BRD-K76674262-001-02-5:0.0045"
+        },
+        {
+          "name": "HOG002_MCF7_24H:BRD-K76674262-001-02-5:0.0412"
+        },
+        {
+          "name": "POL001_HT29_24H:G22"
+        },
+        {
+          "name": "HOG002_MCF7_24H:BRD-K76674262-001-02-5:0.3704"
+        },
+        {
+          "name": "POL001_HEPG2_24H:G23"
+        },
+        {
+          "name": "POL001_PC3_24H:G21"
+        },
+        {
+          "name": "CVD001_HEPG2_24H:BRD-K76674262-001-01-7:2.5"
+        },
+        {
+          "name": "HOG002_A549_24H:BRD-K76674262-001-02-5:1.11"
+        },
+        {
+          "name": "HOG002_A549_24H:BRD-K76674262-001-02-5:10"
+        },
+        {
+          "name": "POL001_HT29_24H:G24"
+        },
+        {
+          "name": "CVD001_HUH7_24H:BRD-K76674262-001-01-7:2.5"
+        },
+        {
+          "name": "POL001_MCF7_24H:G19"
+        },
+        {
+          "name": "POL001_HEPG2_24H:G24"
+        },
+        {
+          "name": "POL001_PC3_24H:G22"
+        },
+        {
+          "name": "HOG002_MCF7_24H:BRD-K76674262-001-02-5:10"
+        },
+        {
+          "name": "HOG002_MCF7_24H:BRD-K76674262-001-02-5:3.33"
+        },
+        {
+          "name": "POL001_PC3_24H:G24"
+        },
+        {
+          "name": "POL001_HEPG2_24H:G20"
+        },
+        {
+          "name": "POL001_MCF7_24H:G20"
+        },
+        {
+          "name": "HOG002_A549_24H:BRD-K76674262-001-02-5:0.1235"
+        },
+        {
+          "name": "POL001_MCF7_24H:G21"
+        },
+        {
+          "name": "POL001_MCF7_24H:G24"
+        },
+        {
+          "name": "HOG002_A549_24H:BRD-K76674262-001-02-5:0.3704"
+        },
+        {
+          "name": "POL001_JURKAT_24H:G23"
+        },
+        {
+          "name": "HOG002_MCF7_24H:BRD-K76674262-001-02-5:0.1235"
+        },
+        {
+          "name": "POL001_HEPG2_24H:G22"
+        },
+        {
+          "name": "POL001_MCF7_24H:G23"
+        },
+        {
+          "name": "POL001_JURKAT_24H:G19"
+        },
+        {
+          "name": "CVD001_HEPG2_24H:BRD-K76674262-001-01-7:10"
+        },
+        {
+          "name": "POL001_JURKAT_24H:G20"
+        },
+        {
+          "name": "HOG002_MCF7_24H:BRD-K76674262-001-02-5:0.013"
+        },
+        {
+          "name": "POL001_JURKAT_24H:G21"
+        },
+        {
+          "name": "POL001_JURKAT_24H:G24"
+        },
+        {
+          "name": "CVD001_PHH_24H:BRD-K76674262-001-01-7:10"
+        },
+        {
+          "name": "HOG002_A549_24H:BRD-K76674262-001-02-5:3.33"
+        },
+        {
+          "name": "HOG002_A549_24H:BRD-K76674262-001-02-5:0.013"
+        },
+        {
+          "name": "POL001_HT29_24H:G23"
+        },
+        {
+          "name": "POL001_HEPG2_24H:G21"
+        },
+        {
+          "name": "POL001_JURKAT_24H:G22"
+        },
+        {
+          "name": "HOG002_MCF7_24H:BRD-K76674262-001-02-5:1.11"
+        },
+        {
+          "name": "ASG002_TOV112D_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P091_24H:O12"
+        },
+        {
+          "name": "ASG002_SKES1_24H:E01"
+        },
+        {
+          "name": "ASG002_MDAMB468_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P904_24H:O12"
+        },
+        {
+          "name": "ASG002_SNU407_24H:E03"
+        },
+        {
+          "name": "ASG002_ES2_24H:E03"
+        },
+        {
+          "name": "ASG003_XC.P914_24H:O12"
+        },
+        {
+          "name": "ASG002_BT474_24H:E02"
+        },
+        {
+          "name": "ASG002_GP2D_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P907_24H:O12"
+        },
+        {
+          "name": "ASG002_OVTOKO_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P901_24H:O12"
+        },
+        {
+          "name": "ASG002_T47D_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P905_24H:O11"
+        },
+        {
+          "name": "ASG002_GI1_24H:E01"
+        },
+        {
+          "name": "ASG002_HEC265_24H:E02"
+        },
+        {
+          "name": "ASG002_NCIH1437_24H:E01"
+        },
+        {
+          "name": "ASG003_XC.P922_24H:O11"
+        },
+        {
+          "name": "ASG002_GI1_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P901_24H:O10"
+        },
+        {
+          "name": "ASG003_XC.P091_24H:O11"
+        },
+        {
+          "name": "ASG002_JHH5_24H:E02"
+        },
+        {
+          "name": "ASG002_PC3_24H:E01"
+        },
+        {
+          "name": "ASG002_HCC95_24H:E03"
+        },
+        {
+          "name": "ASG002_NCIH841_24H:E03"
+        },
+        {
+          "name": "ASG002_MELHO_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P908_24H:O11"
+        },
+        {
+          "name": "ASG003_XC.P936_24H:O12"
+        },
+        {
+          "name": "ASG003_WA09.AST_24H:O12"
+        },
+        {
+          "name": "ASG003_XC.P935_24H:O12"
+        },
+        {
+          "name": "ASG002_HEC251_24H:E02"
+        },
+        {
+          "name": "ASG002_IM95_24H:E01"
+        },
+        {
+          "name": "ASG002_NCIH2110_24H:E03"
+        },
+        {
+          "name": "ASG003_XC.P904_24H:O11"
+        },
+        {
+          "name": "ASG003_XC.P909_24H:O11"
+        },
+        {
+          "name": "ASG002_CAL29_24H:E03"
+        },
+        {
+          "name": "ASG002_HT29_24H:E02"
+        },
+        {
+          "name": "ASG002_GP2D_24H:E03"
+        },
+        {
+          "name": "ASG002_OVTOKO_24H:E01"
+        },
+        {
+          "name": "ASG002_SKMEL3_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P915_24H:O10"
+        },
+        {
+          "name": "ASG003_XC.P905_24H:O12"
+        },
+        {
+          "name": "ASG003_U2OS_24H:O10"
+        },
+        {
+          "name": "ASG002_A375_24H:E01"
+        },
+        {
+          "name": "ASG002_YH13_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.L10_24H:O10"
+        },
+        {
+          "name": "ASG002_22RV1_24H:E03"
+        },
+        {
+          "name": "ASG002_IGR37_24H:E01"
+        },
+        {
+          "name": "ASG002_OC316_24H:E01"
+        },
+        {
+          "name": "ASG002_YAPC_24H:E03"
+        },
+        {
+          "name": "ASG002_NCIH2110_24H:E01"
+        },
+        {
+          "name": "ASG003_XC.P936_24H:O11"
+        },
+        {
+          "name": "ASG002_LNCAP.FGC_24H:E02"
+        },
+        {
+          "name": "ASG002_HCC95_24H:E02"
+        },
+        {
+          "name": "ASG002_OC316_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P908_24H:O12"
+        },
+        {
+          "name": "ASG002_A549_24H:E01"
+        },
+        {
+          "name": "ASG002_TC32_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P910_24H:O10"
+        },
+        {
+          "name": "ASG003_WA09.AST_24H:O11"
+        },
+        {
+          "name": "ASG003_WA09.AST_24H:O10"
+        },
+        {
+          "name": "ASG003_XC.P934_24H:O11"
+        },
+        {
+          "name": "ASG003_XC.500_24H:O11"
+        },
+        {
+          "name": "ASG003_XC.P033_24H:O10"
+        },
+        {
+          "name": "ASG002_22RV1_24H:E01"
+        },
+        {
+          "name": "ASG003_XC.P930_24H:O12"
+        },
+        {
+          "name": "ASG002_RCC10RGB_24H:E01"
+        },
+        {
+          "name": "ASG003_XC.P934_24H:O12"
+        },
+        {
+          "name": "ASG002_HCC1588_24H:E02"
+        },
+        {
+          "name": "ASG002_A375_24H:E02"
+        },
+        {
+          "name": "ASG002_OVK18_24H:E02"
+        },
+        {
+          "name": "ASG002_CJM_24H:E01"
+        },
+        {
+          "name": "ASG002_HEC151_24H:E02"
+        },
+        {
+          "name": "ASG002_IM95_24H:E03"
+        },
+        {
+          "name": "ASG002_A204_24H:E02"
+        },
+        {
+          "name": "ASG002_A549_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P031_24H:O12"
+        },
+        {
+          "name": "ASG002_HEC251_24H:E03"
+        },
+        {
+          "name": "ASG003_XC.P912_24H:O10"
+        },
+        {
+          "name": "ASG002_MDAMB468_24H:E01"
+        },
+        {
+          "name": "ASG002_SNU407_24H:E02"
+        },
+        {
+          "name": "ASG002_BC3C_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P026_24H:O12"
+        },
+        {
+          "name": "ASG002_22RV1_24H:E02"
+        },
+        {
+          "name": "ASG003_MCF7_24H:O10"
+        },
+        {
+          "name": "ASG003_MCF7_24H:O11"
+        },
+        {
+          "name": "ASG002_ES2_24H:E02"
+        },
+        {
+          "name": "ASG002_OC316_24H:E03"
+        },
+        {
+          "name": "ASG002_U251MG_24H:E01"
+        },
+        {
+          "name": "ASG002_NCIH1573_24H:E02"
+        },
+        {
+          "name": "ASG003_A549_24H:O11"
+        },
+        {
+          "name": "ASG002_JHH7_24H:E01"
+        },
+        {
+          "name": "ASG002_HT29_24H:E03"
+        },
+        {
+          "name": "ASG002_NCIH2172_24H:E02"
+        },
+        {
+          "name": "ASG002_SKES1_24H:E02"
+        },
+        {
+          "name": "ASG002_BICR6_24H:E01"
+        },
+        {
+          "name": "ASG002_HCC1588_24H:E01"
+        },
+        {
+          "name": "ASG003_XC.P931_24H:O11"
+        },
+        {
+          "name": "ASG002_SNU407_24H:E01"
+        },
+        {
+          "name": "ASG002_MELHO_24H:E03"
+        },
+        {
+          "name": "ASG003_XC.P915_24H:O11"
+        },
+        {
+          "name": "ASG002_YH13_24H:E03"
+        },
+        {
+          "name": "ASG002_TOV112D_24H:E01"
+        },
+        {
+          "name": "ASG003_XC.P934_24H:O10"
+        },
+        {
+          "name": "ASG003_U2OS_24H:O11"
+        },
+        {
+          "name": "ASG002_BC3C_24H:E01"
+        },
+        {
+          "name": "ASG002_RCC10RGB_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P933_24H:O10"
+        },
+        {
+          "name": "ASG003_XC.P935_24H:O10"
+        },
+        {
+          "name": "ASG002_T47D_24H:E03"
+        },
+        {
+          "name": "ASG003_XC.L10_24H:O11"
+        },
+        {
+          "name": "ASG003_XC.P910_24H:O11"
+        },
+        {
+          "name": "ASG003_XC.P932_24H:O12"
+        },
+        {
+          "name": "ASG002_NCIH838_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.500_24H:O10"
+        },
+        {
+          "name": "ASG003_A549_24H:O12"
+        },
+        {
+          "name": "ASG002_AGS_24H:E02"
+        },
+        {
+          "name": "ASG002_LNCAP.FGC_24H:E03"
+        },
+        {
+          "name": "ASG002_IGR37_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P933_24H:O11"
+        },
+        {
+          "name": "ASG002_YH13_24H:E01"
+        },
+        {
+          "name": "ASG002_COV434_24H:E02"
+        },
+        {
+          "name": "ASG002_COV434_24H:E01"
+        },
+        {
+          "name": "ASG002_CJM_24H:E02"
+        },
+        {
+          "name": "ASG002_YAPC_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P915_24H:O12"
+        },
+        {
+          "name": "ASG002_OAW28_24H:E01"
+        },
+        {
+          "name": "ASG002_NCIH1573_24H:E03"
+        },
+        {
+          "name": "ASG002_SH4_24H:E02"
+        },
+        {
+          "name": "ASG002_YAPC_24H:E01"
+        },
+        {
+          "name": "ASG002_AGS_24H:E03"
+        },
+        {
+          "name": "ASG002_BT474_24H:E03"
+        },
+        {
+          "name": "ASG002_JHH5_24H:E03"
+        },
+        {
+          "name": "ASG002_U251MG_24H:E02"
+        },
+        {
+          "name": "ASG002_PC3_24H:E02"
+        },
+        {
+          "name": "ASG002_PC3_24H:E03"
+        },
+        {
+          "name": "ASG002_OAW28_24H:E02"
+        },
+        {
+          "name": "ASG002_A204_24H:E03"
+        },
+        {
+          "name": "ASG002_MKN45_24H:E01"
+        },
+        {
+          "name": "ASG002_G401_24H:E02"
+        },
+        {
+          "name": "ASG002_COV434_24H:E03"
+        },
+        {
+          "name": "ASG003_XC.P033_24H:O12"
+        },
+        {
+          "name": "ASG003_XC.P911_24H:O11"
+        },
+        {
+          "name": "ASG002_SKES1_24H:E03"
+        },
+        {
+          "name": "ASG002_MKN45_24H:E03"
+        },
+        {
+          "name": "ASG002_JHH7_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.L10_24H:O12"
+        },
+        {
+          "name": "ASG002_A549_24H:E03"
+        },
+        {
+          "name": "ASG002_U251MG_24H:E03"
+        },
+        {
+          "name": "ASG003_XC.P912_24H:O11"
+        },
+        {
+          "name": "ASG003_XC.P931_24H:O12"
+        },
+        {
+          "name": "ASG002_ZR751_24H:E03"
+        },
+        {
+          "name": "ASG002_HEC108_24H:E02"
+        },
+        {
+          "name": "ASG002_HEC1A_24H:E02"
+        },
+        {
+          "name": "ASG002_MKN45_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P932_24H:O11"
+        },
+        {
+          "name": "ASG002_NCIH841_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P092_24H:O12"
+        },
+        {
+          "name": "ASG003_XC.P912_24H:O12"
+        },
+        {
+          "name": "ASG003_XC.P906_24H:O12"
+        },
+        {
+          "name": "ASG002_LNCAP.FGC_24H:E01"
+        },
+        {
+          "name": "ASG003_A549_24H:O10"
+        },
+        {
+          "name": "ASG002_ZR751_24H:E01"
+        },
+        {
+          "name": "ASG002_OVK18_24H:E03"
+        },
+        {
+          "name": "ASG003_XC.P909_24H:O12"
+        },
+        {
+          "name": "ASG003_XC.500_24H:O12"
+        },
+        {
+          "name": "ASG002_NCIH2172_24H:E03"
+        },
+        {
+          "name": "ASG003_XC.P931_24H:O10"
+        },
+        {
+          "name": "ASG002_HEC108_24H:E01"
+        },
+        {
+          "name": "ASG003_XC.P907_24H:O10"
+        },
+        {
+          "name": "ASG003_U2OS_24H:O12"
+        },
+        {
+          "name": "ASG002_SKMEL3_24H:E03"
+        },
+        {
+          "name": "ASG003_XC.P904_24H:O10"
+        },
+        {
+          "name": "ASG003_XC.P092_24H:O11"
+        },
+        {
+          "name": "ASG003_XC.P908_24H:O10"
+        },
+        {
+          "name": "ASG003_XC.P935_24H:O11"
+        },
+        {
+          "name": "ASG002_HEC265_24H:E03"
+        },
+        {
+          "name": "ASG003_XC.P914_24H:O11"
+        },
+        {
+          "name": "ASG002_BEN_24H:E02"
+        },
+        {
+          "name": "ASG002_NCIH1573_24H:E01"
+        },
+        {
+          "name": "ASG002_NCIH841_24H:E01"
+        },
+        {
+          "name": "ASG002_JHH7_24H:E03"
+        },
+        {
+          "name": "ASG002_NCIH1437_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P911_24H:O12"
+        },
+        {
+          "name": "ASG002_GI1_24H:E03"
+        },
+        {
+          "name": "ASG003_XC.P031_24H:O11"
+        },
+        {
+          "name": "ASG002_BT474_24H:E01"
+        },
+        {
+          "name": "ASG002_OVTOKO_24H:E03"
+        },
+        {
+          "name": "ASG002_NCIH838_24H:E03"
+        },
+        {
+          "name": "ASG002_HCC95_24H:E01"
+        },
+        {
+          "name": "ASG003_XC.P914_24H:O10"
+        },
+        {
+          "name": "ASG002_MCF7_24H:E03"
+        },
+        {
+          "name": "ASG003_MCF7_24H:O12"
+        },
+        {
+          "name": "ASG002_IM95_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P933_24H:O12"
+        },
+        {
+          "name": "ASG003_XC.P910_24H:O12"
+        },
+        {
+          "name": "ASG002_HEC108_24H:E03"
+        },
+        {
+          "name": "ASG002_HEC1A_24H:E03"
+        },
+        {
+          "name": "ASG002_OAW28_24H:E03"
+        },
+        {
+          "name": "ASG002_NCIH2110_24H:E02"
+        },
+        {
+          "name": "ASG002_BEN_24H:E03"
+        },
+        {
+          "name": "ASG002_MCF7_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P922_24H:O12"
+        },
+        {
+          "name": "ASG003_XC.P907_24H:O11"
+        },
+        {
+          "name": "ASG002_T47D_24H:E01"
+        },
+        {
+          "name": "ASG002_MDAMB468_24H:E03"
+        },
+        {
+          "name": "ASG003_XC.P033_24H:O11"
+        },
+        {
+          "name": "ASG002_SH4_24H:E03"
+        },
+        {
+          "name": "ASG002_A204_24H:E01"
+        },
+        {
+          "name": "ASG003_XC.P930_24H:O11"
+        },
+        {
+          "name": "ASG002_TC32_24H:E01"
+        },
+        {
+          "name": "ASG002_MELHO_24H:E01"
+        },
+        {
+          "name": "ASG002_ZR751_24H:E02"
+        },
+        {
+          "name": "ASG002_SH4_24H:E01"
+        },
+        {
+          "name": "ASG003_XC.P901_24H:O11"
+        },
+        {
+          "name": "ASG002_BICR6_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P936_24H:O10"
+        },
+        {
+          "name": "ASG002_HEC1A_24H:E01"
+        },
+        {
+          "name": "ASG002_CAL29_24H:E02"
+        },
+        {
+          "name": "ASG003_XC.P932_24H:O10"
+        },
+        {
+          "name": "ASG003_XC.P026_24H:O11"
+        },
+        {
+          "name": "ASG002_IGR37_24H:E03"
+        },
+        {
+          "name": "ASG003_XC.P906_24H:O11"
+        },
+        {
+          "name": "CPC017_A549_24H:BRD-K76674262-001-01-7:10"
+        },
+        {
+          "name": "CPC017_PHH_24H:BRD-K76674262-001-01-7:10"
+        },
+        {
+          "name": "CPC001_HA1E_24H:BRD-K76674262-001-01-7:10"
+        },
+        {
+          "name": "CPC001_PC3_24H:M20"
+        },
+        {
+          "name": "CPC017_SKB_24H:BRD-K76674262-001-01-7:10"
+        },
+        {
+          "name": "CPC001_HCC515_24H:BRD-K76674262-001-01-7:10"
+        },
+        {
+          "name": "CPC017_ASC_24H:BRD-K76674262-001-01-7:10"
+        },
+        {
+          "name": "CPC017_MCF7_24H:BRD-K76674262-001-01-7:10"
+        },
+        {
+          "name": "REP.B025_HA1E_24H:L09"
+        },
+        {
+          "name": "REP.A025_JURKAT_24H:L10"
+        },
+        {
+          "name": "REP.B025_HA1E_24H:L07"
+        },
+        {
+          "name": "REP.A025_HT29_24H:L12"
+        },
+        {
+          "name": "REP.B025_MDAMB231_24H:L10"
+        },
+        {
+          "name": "REP.B025_A549_24H:L09"
+        },
+        {
+          "name": "REP.A025_HA1E_24H:L10"
+        },
+        {
+          "name": "REP.B025_JURKAT_24H:L08"
+        },
+        {
+          "name": "REP.B025_MDAMB231_24H:L11"
+        },
+        {
+          "name": "REP.A025_MCF10A_24H:L08"
+        },
+        {
+          "name": "REP.A025_PC3_24H:L12"
+        },
+        {
+          "name": "REP.B025_HT29_24H:L09"
+        },
+        {
+          "name": "REP.B025_YAPC_24H:L10"
+        },
+        {
+          "name": "REP.B025_MDAMB231_24H:L07"
+        },
+        {
+          "name": "REP.B025_HT29_24H:L11"
+        },
+        {
+          "name": "REP.B025_YAPC_24H:L11"
+        },
+        {
+          "name": "REP.B025_HT29_24H:L10"
+        },
+        {
+          "name": "REP.B025_HT29_24H:L07"
+        },
+        {
+          "name": "REP.B025_HELA_24H:L12"
+        },
+        {
+          "name": "REP.B025_A375_24H:L07"
+        },
+        {
+          "name": "REP.B025_MCF7_24H:L11"
+        },
+        {
+          "name": "REP.A025_A375_24H:L11"
+        },
+        {
+          "name": "REP.B025_MDAMB231_24H:L08"
+        },
+        {
+          "name": "REP.A025_HA1E_24H:L09"
+        },
+        {
+          "name": "REP.B025_YAPC_24H:L12"
+        },
+        {
+          "name": "REP.B025_A375_24H:L12"
+        },
+        {
+          "name": "REP.B025_A549_24H:L12"
+        },
+        {
+          "name": "REP.B025_HELA_24H:L10"
+        },
+        {
+          "name": "REP.B025_HT29_24H:L12"
+        },
+        {
+          "name": "REP.B025_THP1_24H:L10"
+        },
+        {
+          "name": "REP.A025_HA1E_24H:L11"
+        },
+        {
+          "name": "REP.B025_HT29_24H:L08"
+        },
+        {
+          "name": "REP.A025_A549_24H:L09"
+        },
+        {
+          "name": "REP.B025_HEK293_24H:L09"
+        },
+        {
+          "name": "REP.A025_MDAMB231_24H:L07"
+        },
+        {
+          "name": "REP.B025_MCF7_24H:L10"
+        },
+        {
+          "name": "REP.A025_HT29_24H:L08"
+        },
+        {
+          "name": "REP.B025_HA1E_24H:L08"
+        },
+        {
+          "name": "REP.A025_MDAMB231_24H:L09"
+        },
+        {
+          "name": "REP.B025_HA1E_24H:L10"
+        },
+        {
+          "name": "REP.B025_JURKAT_24H:L10"
+        },
+        {
+          "name": "REP.B025_HELA_24H:L08"
+        },
+        {
+          "name": "REP.B025_HELA_24H:L11"
+        },
+        {
+          "name": "REP.A025_YAPC_24H:L12"
+        },
+        {
+          "name": "REP.A025_MDAMB231_24H:L11"
+        },
+        {
+          "name": "REP.B025_THP1_24H:L08"
+        },
+        {
+          "name": "REP.A025_JURKAT_24H:L11"
+        },
+        {
+          "name": "REP.A025_HELA_24H:L11"
+        },
+        {
+          "name": "REP.B025_MCF10A_24H:L07"
+        },
+        {
+          "name": "REP.A025_HT29_24H:L07"
+        },
+        {
+          "name": "REP.B025_A549_24H:L08"
+        },
+        {
+          "name": "REP.B025_MCF10A_24H:L08"
+        },
+        {
+          "name": "REP.B025_THP1_24H:L12"
+        },
+        {
+          "name": "REP.B025_MCF7_24H:L09"
+        },
+        {
+          "name": "REP.B025_A549_24H:L10"
+        },
+        {
+          "name": "REP.A025_HELA_24H:L09"
+        },
+        {
+          "name": "REP.A025_MCF7_24H:L07"
+        },
+        {
+          "name": "REP.A025_HA1E_24H:L12"
+        },
+        {
+          "name": "REP.A025_MCF10A_24H:L09"
+        },
+        {
+          "name": "REP.A025_THP1_24H:L12"
+        },
+        {
+          "name": "REP.B025_A375_24H:L08"
+        },
+        {
+          "name": "REP.B025_JURKAT_24H:L09"
+        },
+        {
+          "name": "REP.A025_HEK293_24H:L12"
+        },
+        {
+          "name": "REP.B025_MCF7_24H:L07"
+        },
+        {
+          "name": "REP.A025_HT29_24H:L09"
+        },
+        {
+          "name": "REP.A025_MCF10A_24H:L11"
+        },
+        {
+          "name": "REP.A025_HELA_24H:L12"
+        },
+        {
+          "name": "REP.A025_THP1_24H:L10"
+        },
+        {
+          "name": "REP.A025_A549_24H:L07"
+        },
+        {
+          "name": "REP.A025_THP1_24H:L11"
+        },
+        {
+          "name": "REP.B025_MCF10A_24H:L12"
+        },
+        {
+          "name": "REP.A025_A375_24H:L08"
+        },
+        {
+          "name": "REP.A025_A549_24H:L10"
+        },
+        {
+          "name": "REP.A025_HEK293_24H:L07"
+        },
+        {
+          "name": "REP.A025_YAPC_24H:L09"
+        },
+        {
+          "name": "REP.A025_MDAMB231_24H:L10"
+        },
+        {
+          "name": "REP.B025_JURKAT_24H:L12"
+        },
+        {
+          "name": "REP.A025_HT29_24H:L10"
+        },
+        {
+          "name": "REP.A025_A549_24H:L11"
+        },
+        {
+          "name": "REP.A025_MCF10A_24H:L10"
+        },
+        {
+          "name": "REP.A025_HELA_24H:L08"
+        },
+        {
+          "name": "REP.B025_A549_24H:L07"
+        },
+        {
+          "name": "REP.B025_A375_24H:L10"
+        },
+        {
+          "name": "REP.B025_MCF10A_24H:L10"
+        },
+        {
+          "name": "REP.A025_JURKAT_24H:L12"
+        },
+        {
+          "name": "REP.A025_MCF7_24H:L10"
+        },
+        {
+          "name": "REP.A025_YAPC_24H:L10"
+        },
+        {
+          "name": "REP.B025_A549_24H:L11"
+        },
+        {
+          "name": "REP.A025_MCF7_24H:L12"
+        },
+        {
+          "name": "REP.B025_HEK293_24H:L12"
+        },
+        {
+          "name": "REP.A025_HELA_24H:L10"
+        },
+        {
+          "name": "REP.B025_HA1E_24H:L12"
+        },
+        {
+          "name": "REP.B025_THP1_24H:L11"
+        },
+        {
+          "name": "REP.A025_JURKAT_24H:L08"
+        },
+        {
+          "name": "REP.A025_A375_24H:L09"
+        },
+        {
+          "name": "REP.A025_MCF7_24H:L11"
+        },
+        {
+          "name": "REP.B025_A375_24H:L09"
+        },
+        {
+          "name": "REP.B025_MCF10A_24H:L11"
+        },
+        {
+          "name": "REP.A025_JURKAT_24H:L07"
+        },
+        {
+          "name": "REP.A025_A549_24H:L12"
+        },
+        {
+          "name": "REP.B025_HEK293_24H:L11"
+        },
+        {
+          "name": "REP.B025_HELA_24H:L09"
+        },
+        {
+          "name": "REP.A025_HEK293_24H:L10"
+        },
+        {
+          "name": "REP.A025_MDAMB231_24H:L08"
+        },
+        {
+          "name": "REP.B025_THP1_24H:L09"
+        },
+        {
+          "name": "REP.B025_JURKAT_24H:L11"
+        },
+        {
+          "name": "REP.A025_YAPC_24H:L11"
+        },
+        {
+          "name": "REP.A025_MCF7_24H:L08"
+        },
+        {
+          "name": "REP.B025_A375_24H:L11"
+        },
+        {
+          "name": "REP.B025_YAPC_24H:L09"
+        },
+        {
+          "name": "REP.A025_HA1E_24H:L07"
+        },
+        {
+          "name": "REP.A025_A549_24H:L08"
+        },
+        {
+          "name": "REP.A025_JURKAT_24H:L09"
+        },
+        {
+          "name": "REP.B025_MCF7_24H:L12"
+        },
+        {
+          "name": "REP.A025_A375_24H:L12"
+        },
+        {
+          "name": "REP.A025_A375_24H:L10"
+        },
+        {
+          "name": "REP.B025_HA1E_24H:L11"
+        },
+        {
+          "name": "REP.B025_MCF10A_24H:L09"
+        },
+        {
+          "name": "REP.B025_HEK293_24H:L10"
+        },
+        {
+          "name": "REP.A025_MCF7_24H:L09"
+        },
+        {
+          "name": "REP.A025_HT29_24H:L11"
+        },
+        {
+          "name": "REP.A025_MCF10A_24H:L12"
+        },
+        {
+          "name": "REP.A025_HEK293_24H:L11"
+        },
+        {
+          "name": "REP.B025_MCF7_24H:L08"
+        },
+        {
+          "name": "REP.A025_PC3_24H:L11"
+        },
+        {
+          "name": "REP.A025_HA1E_24H:L08"
+        },
+        {
+          "name": "PBIOA004_XC.L10_24H:K01"
+        },
+        {
+          "name": "PBIOA004_XC.R10_24H:K03"
+        },
+        {
+          "name": "PBIOA004_XC.L10_24H:K02"
+        },
+        {
+          "name": "PBIOA004_XC.R10_24H:K02"
+        },
+        {
+          "name": "PBIOA004_XC.L10_24H:K03"
+        }
+      ]
+    }
+  ],
+  "areaOfStudy": "Transcriptomics",
+  "assay": "L1000",
+  "endpoints": [
+    "Fusion Score"
+  ],
+  "method": "Fusion",
+  "analytes": [
+    {
+      "type": "Gene",
+      "items": {
+        "$oid": "680945305b8094dbc3d768ba"
+      }
+    }
+  ]
+}

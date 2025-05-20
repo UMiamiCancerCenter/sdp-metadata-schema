@@ -1,0 +1,800 @@
+{
+  "_id": {
+    "$oid": "67eab969395b859e27acf12d"
+  },
+  "name": "LSM-43277 LINCS L1000 TCS Landmark Genes",
+  "scope": "public",
+  "signatureType": "Transcriptional Consensus Signature",
+  "source": "BroadT",
+  "sourceLink": "https://lincsportal.ccs.miami.edu/datasets/view/LDS-1612",
+  "project": "LINCS",
+  "organization": "University of Miami",
+  "createdAt": {
+    "$date": "2025-03-31T15:48:57.265Z"
+  },
+  "sampleGroups": [
+    {
+      "modelSystems": [
+        {
+          "type": "Cell Line",
+          "items": [
+            {
+              "name": "VCAP",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987244"
+              }
+            },
+            {
+              "name": "A375",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987250"
+              }
+            },
+            {
+              "name": "HCC515",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872a1"
+              }
+            },
+            {
+              "name": "MCF7",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987263"
+              }
+            },
+            {
+              "name": "HT29",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d98724b"
+              }
+            },
+            {
+              "name": "PC3",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987259"
+              }
+            },
+            {
+              "name": "A549",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987273"
+              }
+            },
+            {
+              "name": "HA1E",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d9872a3"
+              }
+            },
+            {
+              "name": "HEPG2",
+              "modelSystemId": {
+                "$oid": "67f87098dc7be84b3d987298"
+              }
+            }
+          ]
+        }
+      ],
+      "perturbations": [
+        {
+          "name": "PRL-3InhibitorI",
+          "type": "Small Molecule",
+          "perturbationId": {
+            "$oid": "67bce554bd4a50a0578c7ad6"
+          },
+          "duration": 24,
+          "durationUnits": "hours"
+        }
+      ],
+      "samples": [
+        {
+          "name": "CPC006_VCAP_24H_X1_B3_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_A375_24H_X1_B3_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_HCC515_24H_X3_B4_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_MCF7_24H_X4_B4_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_HT29_24H_X3_B3_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_PC3_24H_X4_B4_DUO52HI53LO:F04"
+        },
+        {
+          "name": "HOG003_A549_24H_X2_F1B10:F10"
+        },
+        {
+          "name": "CPC006_HCC515_24H_X5_B1_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_PC3_24H_X3_F1B3_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_VCAP_24H_X5_B4_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_VCAP_24H_X3_B3_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_HT29_24H_X5_B4_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_PC3_24H_X2_F1B3_DUO52HI53LO:F04"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X1_B10:F10"
+        },
+        {
+          "name": "CPC006_MCF7_24H_X3_F1B3_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_HA1E_24H_X2_B3_DUO52HI53LO:F04"
+        },
+        {
+          "name": "HOG003_A549_24H_X3_F1B10:F10"
+        },
+        {
+          "name": "CPC006_HA1E_24H_X3_B3_DUO52HI53LO:F04"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X3_B10:F11"
+        },
+        {
+          "name": "HOG003_A549_24H_X3_F1B10:F11"
+        },
+        {
+          "name": "CPC006_MCF7_24H_X2_B4_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_MCF7_24H_X5_B4_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_VCAP_24H_X4_B4_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_A375_24H_X3_B3_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_HT29_24H_X1_B3_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_A375_24H_X5_B4_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_A375_24H_X2_B3_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_HT29_24H_X4_B4_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_PC3_24H_X1_B4_DUO52HI53LO:F04"
+        },
+        {
+          "name": "HOG003_A549_24H_X2_F1B10:F11"
+        },
+        {
+          "name": "HOG003_A549_24H_X1_F1B10:F11"
+        },
+        {
+          "name": "CPC006_PC3_24H_X5_B4_DUO52HI53LO:F04"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X3_B10:F10"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X2_B10:F11"
+        },
+        {
+          "name": "CPC006_MCF7_24H_X1_B4_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_VCAP_24H_X2_B3_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_HCC515_24H_X2_B4_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_HCC515_24H_X4_F1B3_DUO52HI53LO:F04"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X1_B10:F11"
+        },
+        {
+          "name": "CPC006_A549_24H_X3_B3_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_A549_24H_X1_B3_DUO52HI53LO:F04"
+        },
+        {
+          "name": "HOG003_A549_24H_X1_F1B10:F10"
+        },
+        {
+          "name": "CPC006_HCC515_24H_X1_B4_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_A375_24H_X4_B4_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_A549_24H_X2_B3_DUO52HI53LO:F04"
+        },
+        {
+          "name": "CPC006_HA1E_24H_X1.A2_F1B3_DUO52HI53LO:F04"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X2_B10:F10"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X1_B10:F03"
+        },
+        {
+          "name": "PBIOA022_A549_24H_X1_B21:C13"
+        },
+        {
+          "name": "PBIOA022_A375_24H_X3_B21:C13"
+        },
+        {
+          "name": "PBIOA022_HCC515_24H_X3_B21:C13"
+        },
+        {
+          "name": "PBIOA022_MCF7_24H_X3.A2_B20:C13"
+        },
+        {
+          "name": "PBIOA022_MCF7_24H_X1_B21:C13"
+        },
+        {
+          "name": "HOG003_A549_24H_X3_F1B10:F03"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X3_B10:F03"
+        },
+        {
+          "name": "PBIOA022_HT29_24H_X1_B21:C13"
+        },
+        {
+          "name": "PBIOA022_HEPG2_24H_X1_B21:C13"
+        },
+        {
+          "name": "PBIOA022_HEPG2_24H_X2_B21:C13"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X2_B10:F03"
+        },
+        {
+          "name": "PBIOA022_A549_24H_X2_B21:C13"
+        },
+        {
+          "name": "PBIOA022_A375_24H_X1_B21:C13"
+        },
+        {
+          "name": "PBIOA022_HCC515_24H_X2_B21:C13"
+        },
+        {
+          "name": "PBIOA022_PC3_24H_X2_B21:C13"
+        },
+        {
+          "name": "PBIOA022_HA1E_24H_X3_B21:C13"
+        },
+        {
+          "name": "PBIOA022_MCF7_24H_X2_B21:C13"
+        },
+        {
+          "name": "PBIOA022_HA1E_24H_X1_B21:C13"
+        },
+        {
+          "name": "PBIOA022_HA1E_24H_X2_B21:C13"
+        },
+        {
+          "name": "HOG003_A549_24H_X1_F1B10:F03"
+        },
+        {
+          "name": "PBIOA022_HT29_24H_X2_B21:C13"
+        },
+        {
+          "name": "PBIOA022_PC3_24H_X3_B21:C13"
+        },
+        {
+          "name": "PBIOA022_PC3_24H_X1_B21:C13"
+        },
+        {
+          "name": "PBIOA022_A549_24H_X3_B21:C13"
+        },
+        {
+          "name": "HOG003_A549_24H_X2_F1B10:F03"
+        },
+        {
+          "name": "PBIOA022_A375_24H_X2_B21:C13"
+        },
+        {
+          "name": "PBIOA022_HCC515_24H_X1_B21:C13"
+        },
+        {
+          "name": "PBIOA022_HT29_24H_X3_B21:C13"
+        },
+        {
+          "name": "PBIOA022_HEPG2_24H_X3_B21:C13"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X3_B10:F09"
+        },
+        {
+          "name": "HOG003_A549_24H_X1_F1B10:F09"
+        },
+        {
+          "name": "HOG003_A549_24H_X2_F1B10:F09"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X1_B10:F09"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X2_B10:F09"
+        },
+        {
+          "name": "HOG003_A549_24H_X3_F1B10:F09"
+        },
+        {
+          "name": "PBIOA022_HEPG2_24H_X1_B21:C18"
+        },
+        {
+          "name": "HOG003_A549_24H_X1_F1B10:F08"
+        },
+        {
+          "name": "PBIOA022_PC3_24H_X3_B21:C18"
+        },
+        {
+          "name": "PBIOA022_A549_24H_X3_B21:C18"
+        },
+        {
+          "name": "PBIOA022_HEPG2_24H_X3_B21:C18"
+        },
+        {
+          "name": "PBIOA022_HCC515_24H_X1_B21:C18"
+        },
+        {
+          "name": "PBIOA022_HT29_24H_X2_B21:C18"
+        },
+        {
+          "name": "HOG003_A549_24H_X2_F1B10:F08"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X2_B10:F08"
+        },
+        {
+          "name": "PBIOA022_MCF7_24H_X3.A2_B20:C18"
+        },
+        {
+          "name": "PBIOA022_MCF7_24H_X2_B21:C18"
+        },
+        {
+          "name": "PBIOA022_HA1E_24H_X3_B21:C18"
+        },
+        {
+          "name": "PBIOA022_HEPG2_24H_X2_B21:C18"
+        },
+        {
+          "name": "PBIOA022_HT29_24H_X1_B21:C18"
+        },
+        {
+          "name": "PBIOA022_PC3_24H_X2_B21:C18"
+        },
+        {
+          "name": "PBIOA022_MCF7_24H_X1_B21:C18"
+        },
+        {
+          "name": "PBIOA022_A375_24H_X3_B21:C18"
+        },
+        {
+          "name": "PBIOA022_HT29_24H_X3_B21:C18"
+        },
+        {
+          "name": "PBIOA022_HA1E_24H_X1_B21:C18"
+        },
+        {
+          "name": "PBIOA022_A375_24H_X2_B21:C18"
+        },
+        {
+          "name": "PBIOA022_HCC515_24H_X2_B21:C18"
+        },
+        {
+          "name": "HOG003_A549_24H_X3_F1B10:F08"
+        },
+        {
+          "name": "PBIOA022_PC3_24H_X1_B21:C18"
+        },
+        {
+          "name": "PBIOA022_HCC515_24H_X3_B21:C18"
+        },
+        {
+          "name": "PBIOA022_A549_24H_X1_B21:C18"
+        },
+        {
+          "name": "PBIOA022_A549_24H_X2_B21:C18"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X3_B10:F08"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X1_B10:F08"
+        },
+        {
+          "name": "PBIOA022_HA1E_24H_X2_B21:C18"
+        },
+        {
+          "name": "PBIOA022_A375_24H_X1_B21:C18"
+        },
+        {
+          "name": "PBIOA022_HT29_24H_X1_B21:C16"
+        },
+        {
+          "name": "PBIOA022_HA1E_24H_X1_B21:C16"
+        },
+        {
+          "name": "PBIOA022_HEPG2_24H_X1_B21:C16"
+        },
+        {
+          "name": "PBIOA022_HT29_24H_X3_B21:C16"
+        },
+        {
+          "name": "PBIOA022_MCF7_24H_X3.A2_B20:C16"
+        },
+        {
+          "name": "PBIOA022_HCC515_24H_X3_B21:C16"
+        },
+        {
+          "name": "PBIOA022_PC3_24H_X2_B21:C16"
+        },
+        {
+          "name": "PBIOA022_HT29_24H_X2_B21:C16"
+        },
+        {
+          "name": "PBIOA022_A549_24H_X3_B21:C16"
+        },
+        {
+          "name": "PBIOA022_A549_24H_X2_B21:C16"
+        },
+        {
+          "name": "PBIOA022_HCC515_24H_X2_B21:C16"
+        },
+        {
+          "name": "PBIOA022_PC3_24H_X1_B21:C16"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X3_B10:F06"
+        },
+        {
+          "name": "PBIOA022_MCF7_24H_X1_B21:C16"
+        },
+        {
+          "name": "PBIOA022_MCF7_24H_X2_B21:C16"
+        },
+        {
+          "name": "PBIOA022_HEPG2_24H_X2_B21:C16"
+        },
+        {
+          "name": "PBIOA022_A375_24H_X2_B21:C16"
+        },
+        {
+          "name": "HOG003_A549_24H_X2_F1B10:F06"
+        },
+        {
+          "name": "PBIOA022_HCC515_24H_X1_B21:C16"
+        },
+        {
+          "name": "PBIOA022_A549_24H_X1_B21:C16"
+        },
+        {
+          "name": "PBIOA022_A375_24H_X3_B21:C16"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X2_B10:F06"
+        },
+        {
+          "name": "HOG003_A549_24H_X3_F1B10:F06"
+        },
+        {
+          "name": "PBIOA022_PC3_24H_X3_B21:C16"
+        },
+        {
+          "name": "PBIOA022_HA1E_24H_X3_B21:C16"
+        },
+        {
+          "name": "PBIOA022_A375_24H_X1_B21:C16"
+        },
+        {
+          "name": "HOG003_A549_24H_X1_F1B10:F06"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X1_B10:F06"
+        },
+        {
+          "name": "PBIOA022_HA1E_24H_X2_B21:C16"
+        },
+        {
+          "name": "PBIOA022_HEPG2_24H_X3_B21:C16"
+        },
+        {
+          "name": "PBIOA022_HEPG2_24H_X1_B21:C15"
+        },
+        {
+          "name": "PBIOA022_HA1E_24H_X3_B21:C15"
+        },
+        {
+          "name": "PBIOA022_HT29_24H_X3_B21:C15"
+        },
+        {
+          "name": "HOG003_A549_24H_X2_F1B10:F05"
+        },
+        {
+          "name": "PBIOA022_PC3_24H_X3_B21:C15"
+        },
+        {
+          "name": "PBIOA022_PC3_24H_X2_B21:C15"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X3_B10:F05"
+        },
+        {
+          "name": "PBIOA022_HCC515_24H_X1_B21:C15"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X2_B10:F05"
+        },
+        {
+          "name": "PBIOA022_HT29_24H_X1_B21:C15"
+        },
+        {
+          "name": "PBIOA022_A375_24H_X1_B21:C15"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X1_B10:F05"
+        },
+        {
+          "name": "PBIOA022_HEPG2_24H_X2_B21:C15"
+        },
+        {
+          "name": "PBIOA022_A549_24H_X3_B21:C15"
+        },
+        {
+          "name": "PBIOA022_MCF7_24H_X1_B21:C15"
+        },
+        {
+          "name": "PBIOA022_HA1E_24H_X2_B21:C15"
+        },
+        {
+          "name": "PBIOA022_HA1E_24H_X1_B21:C15"
+        },
+        {
+          "name": "PBIOA022_A375_24H_X2_B21:C15"
+        },
+        {
+          "name": "PBIOA022_HEPG2_24H_X3_B21:C15"
+        },
+        {
+          "name": "PBIOA022_PC3_24H_X1_B21:C15"
+        },
+        {
+          "name": "PBIOA022_HCC515_24H_X2_B21:C15"
+        },
+        {
+          "name": "PBIOA022_A375_24H_X3_B21:C15"
+        },
+        {
+          "name": "HOG003_A549_24H_X3_F1B10:F05"
+        },
+        {
+          "name": "PBIOA022_MCF7_24H_X2_B21:C15"
+        },
+        {
+          "name": "PBIOA022_HCC515_24H_X3_B21:C15"
+        },
+        {
+          "name": "PBIOA022_HT29_24H_X2_B21:C15"
+        },
+        {
+          "name": "PBIOA022_MCF7_24H_X3.A2_B20:C15"
+        },
+        {
+          "name": "PBIOA022_A549_24H_X2_B21:C15"
+        },
+        {
+          "name": "PBIOA022_A549_24H_X1_B21:C15"
+        },
+        {
+          "name": "HOG003_A549_24H_X1_F1B10:F05"
+        },
+        {
+          "name": "HOG003_A549_24H_X1_F1B10:F04"
+        },
+        {
+          "name": "PBIOA022_HA1E_24H_X2_B21:C14"
+        },
+        {
+          "name": "PBIOA022_HCC515_24H_X3_B21:C14"
+        },
+        {
+          "name": "PBIOA022_PC3_24H_X1_B21:C14"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X2_B10:F04"
+        },
+        {
+          "name": "PBIOA022_HA1E_24H_X1_B21:C14"
+        },
+        {
+          "name": "PBIOA022_HCC515_24H_X2_B21:C14"
+        },
+        {
+          "name": "HOG003_A549_24H_X2_F1B10:F04"
+        },
+        {
+          "name": "PBIOA022_HT29_24H_X1_B21:C14"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X3_B10:F04"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X1_B10:F04"
+        },
+        {
+          "name": "PBIOA022_HEPG2_24H_X1_B21:C14"
+        },
+        {
+          "name": "PBIOA022_HEPG2_24H_X3_B21:C14"
+        },
+        {
+          "name": "PBIOA022_A549_24H_X2_B21:C14"
+        },
+        {
+          "name": "PBIOA022_HT29_24H_X2_B21:C14"
+        },
+        {
+          "name": "PBIOA022_HCC515_24H_X1_B21:C14"
+        },
+        {
+          "name": "PBIOA022_A375_24H_X3_B21:C14"
+        },
+        {
+          "name": "PBIOA022_MCF7_24H_X3.A2_B20:C14"
+        },
+        {
+          "name": "HOG003_A549_24H_X3_F1B10:F04"
+        },
+        {
+          "name": "PBIOA022_HA1E_24H_X3_B21:C14"
+        },
+        {
+          "name": "PBIOA022_PC3_24H_X3_B21:C14"
+        },
+        {
+          "name": "PBIOA022_A375_24H_X2_B21:C14"
+        },
+        {
+          "name": "PBIOA022_MCF7_24H_X2_B21:C14"
+        },
+        {
+          "name": "PBIOA022_A375_24H_X1_B21:C14"
+        },
+        {
+          "name": "PBIOA022_A549_24H_X3_B21:C14"
+        },
+        {
+          "name": "PBIOA022_HEPG2_24H_X2_B21:C14"
+        },
+        {
+          "name": "PBIOA022_PC3_24H_X2_B21:C14"
+        },
+        {
+          "name": "PBIOA022_MCF7_24H_X1_B21:C14"
+        },
+        {
+          "name": "PBIOA022_A549_24H_X1_B21:C14"
+        },
+        {
+          "name": "HOG003_A549_24H_X2_F1B10:F07"
+        },
+        {
+          "name": "PBIOA022_PC3_24H_X1_B21:C17"
+        },
+        {
+          "name": "PBIOA022_HCC515_24H_X3_B21:C17"
+        },
+        {
+          "name": "PBIOA022_MCF7_24H_X2_B21:C17"
+        },
+        {
+          "name": "PBIOA022_HEPG2_24H_X3_B21:C17"
+        },
+        {
+          "name": "PBIOA022_HA1E_24H_X3_B21:C17"
+        },
+        {
+          "name": "PBIOA022_HT29_24H_X3_B21:C17"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X1_B10:F07"
+        },
+        {
+          "name": "PBIOA022_A375_24H_X2_B21:C17"
+        },
+        {
+          "name": "PBIOA022_HT29_24H_X1_B21:C17"
+        },
+        {
+          "name": "HOG003_A549_24H_X3_F1B10:F07"
+        },
+        {
+          "name": "PBIOA022_A549_24H_X2_B21:C17"
+        },
+        {
+          "name": "PBIOA022_HCC515_24H_X2_B21:C17"
+        },
+        {
+          "name": "PBIOA022_MCF7_24H_X1_B21:C17"
+        },
+        {
+          "name": "PBIOA022_A375_24H_X1_B21:C17"
+        },
+        {
+          "name": "PBIOA022_HEPG2_24H_X1_B21:C17"
+        },
+        {
+          "name": "PBIOA022_HA1E_24H_X1_B21:C17"
+        },
+        {
+          "name": "HOG003_A549_24H_X1_F1B10:F07"
+        },
+        {
+          "name": "PBIOA022_HEPG2_24H_X2_B21:C17"
+        },
+        {
+          "name": "PBIOA022_HA1E_24H_X2_B21:C17"
+        },
+        {
+          "name": "PBIOA022_MCF7_24H_X3.A2_B20:C17"
+        },
+        {
+          "name": "PBIOA022_PC3_24H_X2_B21:C17"
+        },
+        {
+          "name": "PBIOA022_A549_24H_X1_B21:C17"
+        },
+        {
+          "name": "PBIOA022_PC3_24H_X3_B21:C17"
+        },
+        {
+          "name": "PBIOA022_HT29_24H_X2_B21:C17"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X2_B10:F07"
+        },
+        {
+          "name": "HOG003_MCF7_24H_X3_B10:F07"
+        },
+        {
+          "name": "PBIOA022_A549_24H_X3_B21:C17"
+        },
+        {
+          "name": "PBIOA022_HCC515_24H_X1_B21:C17"
+        }
+      ]
+    }
+  ],
+  "areaOfStudy": "Transcriptomics",
+  "assay": "L1000",
+  "endpoints": [
+    "TCS Score"
+  ],
+  "method": "TCS",
+  "analytes": [
+    {
+      "type": "Gene",
+      "items": {
+        "$oid": "680945305b8094dbc3d768ba"
+      }
+    }
+  ]
+}

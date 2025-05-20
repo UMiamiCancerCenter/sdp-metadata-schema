@@ -1,0 +1,802 @@
+{
+  "_id": {
+    "$oid": "67bce554bd4a50a0578c7b38"
+  },
+  "name": "Sunitinib",
+  "scope": "public",
+  "unichem": {
+    "chebi": "CHEBI:38940",
+    "chembl": "CHEMBL535",
+    "lincs": "LSM-42800",
+    "pubchem": 5329102,
+    "drugbank": [
+      "DB07417",
+      "DB01268"
+    ]
+  },
+  "lincs": {
+    "id": "LSM-42800",
+    "name": "Sunitinib",
+    "alternativeNames": [
+      "PHA-290940AD",
+      "SU010398",
+      "SU-010398",
+      "SU011248",
+      "SU-011248",
+      "SU-011248 L-MALATE SALT",
+      "SU011248 L-MALATE SALT",
+      "SU-11248",
+      "Sunitinib",
+      "Sunitinib Malate",
+      "Sunitinib Malate (Sutent)",
+      "Sutent"
+    ],
+    "pubchemCid": 5329102,
+    "chebiId": [
+      38940
+    ],
+    "inchiParent": "InChI=1S/C22H27FN4O2/c1-5-27(6-2)10-9-24-22(29)20-13(3)19(25-14(20)4)12-17-16-11-15(23)7-8-18(16)26-21(17)28/h7-8,11-12,25H,5-6,9-10H2,1-4H3,(H,24,29)(H,26,28)/b17-12-",
+    "inchiKeyParent": "WINHZLLDWRZWRT-ATVHPVEESA-N",
+    "smilesParent": "CCN(CC)CCNC(=O)c1c(C)[nH]c(\\C=C\\2/C(=O)Nc3ccc(F)cc23)c1C"
+  },
+  "chembl": {
+    "drugIndications": [
+      {
+        "efo": [
+          {
+            "term": "adenocarcinoma"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "adrenal cortex carcinoma"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "Ascites"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "urothelial carcinoma"
+          },
+          {
+            "term": "urinary bladder cancer"
+          },
+          {
+            "term": "bladder tumor"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "brain neoplasm"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "breast cancer"
+          },
+          {
+            "term": "breast neoplasm"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "carcinoid tumor"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "carcinoma"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "non-small cell lung carcinoma"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "papillary renal cell carcinoma"
+          },
+          {
+            "term": "renal cell carcinoma"
+          },
+          {
+            "term": "clear cell renal carcinoma"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "head and neck squamous cell carcinoma"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "esophageal cancer"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "Fallopian Tube Carcinoma"
+          },
+          {
+            "term": "fallopian tube cancer"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "glioblastoma multiforme"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "hepatocellular carcinoma"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "von Hippel-Lindau disease"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "kidney cancer"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "lung cancer"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "metastatic melanoma"
+          },
+          {
+            "term": "melanoma"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "nasopharyngeal neoplasm"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "neoplasm"
+          },
+          {
+            "term": "cancer"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "germ cell tumor"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "ovarian cancer"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "pancreatic carcinoma"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "peritoneum cancer"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "adrenal gland pheochromocytoma"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "prostate adenocarcinoma"
+          },
+          {
+            "term": "metastatic prostate cancer"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "soft tissue sarcoma"
+          },
+          {
+            "term": "sarcoma"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "osteosarcoma"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "gastric cancer"
+          },
+          {
+            "term": "stomach neoplasm"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "Thymoma"
+          },
+          {
+            "term": "Thymic Carcinoma"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "thyroid carcinoma"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "urogenital neoplasm"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "colorectal carcinoma"
+          },
+          {
+            "term": "colorectal neoplasm"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "acute myeloid leukemia"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "alveolar soft part sarcoma"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "pancreatic endocrine carcinoma"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "cholangiocarcinoma"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "gliosarcoma"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "neuroendocrine neoplasm"
+          },
+          {
+            "term": "pancreatic neuroendocrine tumor"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "Ebola hemorrhagic fever"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "gastrointestinal stromal tumor"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "small cell lung carcinoma"
+          }
+        ]
+      },
+      {
+        "efo": [
+          {
+            "term": "prostate cancer"
+          }
+        ]
+      }
+    ],
+    "drugMechanisms": [
+      {
+        "actionType": [
+          "INHIBITOR"
+        ],
+        "targetComponents": [
+          {
+            "uniprot": [
+              "P07333"
+            ]
+          }
+        ],
+        "targetName": [
+          "Macrophage colony stimulating factor receptor"
+        ]
+      },
+      {
+        "actionType": [
+          "INHIBITOR"
+        ],
+        "targetComponents": [
+          {
+            "uniprot": [
+              "P07333"
+            ]
+          },
+          {
+            "uniprot": [
+              "P35968"
+            ]
+          }
+        ],
+        "targetName": [
+          "Vascular endothelial growth factor receptor 2"
+        ]
+      },
+      {
+        "actionType": [
+          "INHIBITOR"
+        ],
+        "targetComponents": [
+          {
+            "uniprot": [
+              "P07333"
+            ]
+          },
+          {
+            "uniprot": [
+              "P35968"
+            ]
+          },
+          {
+            "uniprot": [
+              "P10721"
+            ]
+          }
+        ],
+        "targetName": [
+          "Stem cell growth factor receptor"
+        ]
+      },
+      {
+        "actionType": [
+          "INHIBITOR"
+        ],
+        "targetComponents": [
+          {
+            "uniprot": [
+              "P07333"
+            ]
+          },
+          {
+            "uniprot": [
+              "P35968"
+            ]
+          },
+          {
+            "uniprot": [
+              "P10721"
+            ]
+          },
+          {
+            "uniprot": [
+              "P09619"
+            ]
+          }
+        ],
+        "targetName": [
+          "Platelet-derived growth factor receptor beta"
+        ]
+      },
+      {
+        "actionType": [
+          "INHIBITOR"
+        ],
+        "targetComponents": [
+          {
+            "uniprot": [
+              "P07333"
+            ]
+          },
+          {
+            "uniprot": [
+              "P35968"
+            ]
+          },
+          {
+            "uniprot": [
+              "P10721"
+            ]
+          },
+          {
+            "uniprot": [
+              "P09619"
+            ]
+          },
+          {
+            "uniprot": [
+              "P16234"
+            ]
+          }
+        ],
+        "targetName": [
+          "Platelet-derived growth factor receptor alpha"
+        ]
+      },
+      {
+        "actionType": [
+          "INHIBITOR"
+        ],
+        "targetComponents": [
+          {
+            "uniprot": [
+              "P07333"
+            ]
+          },
+          {
+            "uniprot": [
+              "P35968"
+            ]
+          },
+          {
+            "uniprot": [
+              "P10721"
+            ]
+          },
+          {
+            "uniprot": [
+              "P09619"
+            ]
+          },
+          {
+            "uniprot": [
+              "P16234"
+            ]
+          },
+          {
+            "uniprot": [
+              "P17948"
+            ]
+          }
+        ],
+        "targetName": [
+          "Vascular endothelial growth factor receptor 1"
+        ]
+      },
+      {
+        "actionType": [
+          "INHIBITOR"
+        ],
+        "targetComponents": [
+          {
+            "uniprot": [
+              "P07333"
+            ]
+          },
+          {
+            "uniprot": [
+              "P35968"
+            ]
+          },
+          {
+            "uniprot": [
+              "P10721"
+            ]
+          },
+          {
+            "uniprot": [
+              "P09619"
+            ]
+          },
+          {
+            "uniprot": [
+              "P16234"
+            ]
+          },
+          {
+            "uniprot": [
+              "P17948"
+            ]
+          },
+          {
+            "uniprot": [
+              "P35916"
+            ]
+          }
+        ],
+        "targetName": [
+          "Vascular endothelial growth factor receptor 3"
+        ]
+      },
+      {
+        "actionType": [
+          "INHIBITOR"
+        ],
+        "targetComponents": [
+          {
+            "uniprot": [
+              "P07333"
+            ]
+          },
+          {
+            "uniprot": [
+              "P35968"
+            ]
+          },
+          {
+            "uniprot": [
+              "P10721"
+            ]
+          },
+          {
+            "uniprot": [
+              "P09619"
+            ]
+          },
+          {
+            "uniprot": [
+              "P16234"
+            ]
+          },
+          {
+            "uniprot": [
+              "P17948"
+            ]
+          },
+          {
+            "uniprot": [
+              "P35916"
+            ]
+          },
+          {
+            "uniprot": [
+              "P36888"
+            ]
+          }
+        ],
+        "targetName": [
+          "Tyrosine-protein kinase receptor FLT3"
+        ]
+      },
+      {
+        "actionType": [
+          "INHIBITOR"
+        ],
+        "targetComponents": [
+          {
+            "uniprot": [
+              "P07333"
+            ]
+          },
+          {
+            "uniprot": [
+              "P35968"
+            ]
+          },
+          {
+            "uniprot": [
+              "P10721"
+            ]
+          },
+          {
+            "uniprot": [
+              "P09619"
+            ]
+          },
+          {
+            "uniprot": [
+              "P16234"
+            ]
+          },
+          {
+            "uniprot": [
+              "P17948"
+            ]
+          },
+          {
+            "uniprot": [
+              "P35916"
+            ]
+          },
+          {
+            "uniprot": [
+              "P36888"
+            ]
+          },
+          {
+            "uniprot": [
+              "P07949"
+            ]
+          }
+        ],
+        "targetName": [
+          "Tyrosine-protein kinase receptor RET"
+        ]
+      }
+    ],
+    "maxPhase": 4,
+    "moleculeSynonyms": [
+      {
+        "moleculeSynonym": "NSC-736511",
+        "synType": "RESEARCH_CODE"
+      },
+      {
+        "moleculeSynonym": "NSC-750690",
+        "synType": "RESEARCH_CODE"
+      },
+      {
+        "moleculeSynonym": "SU-011248",
+        "synType": "RESEARCH_CODE"
+      },
+      {
+        "moleculeSynonym": "SU011248",
+        "synType": "RESEARCH_CODE"
+      },
+      {
+        "moleculeSynonym": "SU-11248",
+        "synType": "RESEARCH_CODE"
+      },
+      {
+        "moleculeSynonym": "Sunitinib",
+        "synType": "ATC"
+      },
+      {
+        "moleculeSynonym": "Sunitinib",
+        "synType": "BNF"
+      },
+      {
+        "moleculeSynonym": "Sunitinib",
+        "synType": "EMA"
+      },
+      {
+        "moleculeSynonym": "Sunitinib",
+        "synType": "INN"
+      },
+      {
+        "moleculeSynonym": "Sunitinib",
+        "synType": "MERCK_INDEX"
+      },
+      {
+        "moleculeSynonym": "Sunitinib",
+        "synType": "OTHER"
+      },
+      {
+        "moleculeSynonym": "Sunitinib accord",
+        "synType": "TRADE_NAME"
+      },
+      {
+        "moleculeSynonym": "Sutent",
+        "synType": "OTHER"
+      },
+      {
+        "moleculeSynonym": "Sutent",
+        "synType": "TRADE_NAME"
+      }
+    ],
+    "maxPhaseCurated": "Approved",
+    "drugMechanismsCurated": [
+      "Macrophage colony stimulating factor receptor Inhibitor",
+      "Vascular endothelial growth factor receptor 2 Inhibitor",
+      "Stem cell growth factor receptor Inhibitor",
+      "Platelet-derived growth factor receptor beta Inhibitor",
+      "Platelet-derived growth factor receptor alpha Inhibitor",
+      "Vascular endothelial growth factor receptor 1 Inhibitor",
+      "Vascular endothelial growth factor receptor 3 Inhibitor",
+      "Tyrosine-protein kinase receptor flt3 Inhibitor",
+      "Tyrosine-protein kinase receptor ret Inhibitor"
+    ]
+  },
+  "pubchem": [
+    {
+      "cid": 5329102,
+      "inchi": "InChI=1S/C22H27FN4O2/c1-5-27(6-2)10-9-24-22(29)20-13(3)19(25-14(20)4)12-17-16-11-15(23)7-8-18(16)26-21(17)28/h7-8,11-12,25H,5-6,9-10H2,1-4H3,(H,24,29)(H,26,28)/b17-12-",
+      "inchikey": "WINHZLLDWRZWRT-ATVHPVEESA-N",
+      "iupac": {
+        "systematic": "N-[2-(diethylamino)ethyl]-5-[(Z)-(5-fluoranyl-2-oxidanylidene-1H-indol-3-ylidene)methyl]-2,4-dimethyl-1H-pyrrole-3-carboxamide"
+      },
+      "molecularFormula": "C22H27FN4O2",
+      "smiles": {
+        "canonical": "CCN(CC)CCNC(=O)C1=C(NC(=C1C)C=C2C3=C(C=CC(=C3)F)NC2=O)C"
+      }
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-02-26T18:11:52.653Z"
+  },
+  "structureImage": "https://stmetaregdeveus.blob.core.windows.net/chemical-structures/67bce554bd4a50a0578c7b38.png"
+}

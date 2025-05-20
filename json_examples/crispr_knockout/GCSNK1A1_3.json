@@ -1,0 +1,17 @@
+{
+  "_id": {
+    "$oid": "67ff41d7b1214c120fedc802"
+  },
+  "name": "GCSNK1A1_3",
+  "scope": "public",
+  "centerName": "BroadT_LINCS",
+  "centerCanonicalId": "GCSNK1A1_3",
+  "providerName": "BROAD INSTITUTE GPP",
+  "providerCatalogId": "GCSNK1A1_3",
+  "lincsId": "LNA-36809",
+  "isCoding": "Non-coding",
+  "targetLocus": "CSNK1A1",
+  "targetLocusSpecies": "Homo sapiens",
+  "targetGeneId": "1452",
+  "createdAt": "2025-04-16T05:35:41.071718Z"
+}

@@ -1,0 +1,254 @@
+{
+  "_id": {
+    "$oid": "67f87098dc7be84b3d987263"
+  },
+  "name": "MCF-7",
+  "synonyms": [
+    "MCF 7",
+    "MCF.7",
+    "MCF7",
+    "Michigan Cancer Foundation-7",
+    "ssMCF-7",
+    "ssMCF7",
+    "MCF7/WT",
+    "MCF7-CTRL",
+    "IBMF-7"
+  ],
+  "cellosaurusAccession": "CVCL_0031",
+  "disease": [
+    {
+      "accession": "C4194",
+      "category": "Medical resources",
+      "database": "NCIt",
+      "iri": "http://purl.obolibrary.org/obo/NCIT_C4194",
+      "label": "Invasive breast carcinoma of no special type",
+      "url": "https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C4194"
+    }
+  ],
+  "species": [
+    {
+      "accession": "9606",
+      "category": "Taxonomy",
+      "database": "NCBI_TaxID",
+      "iri": "http://purl.obolibrary.org/obo/NCBITaxon_9606",
+      "label": "Homo sapiens (Human)",
+      "url": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=9606&lvl=3"
+    }
+  ],
+  "sex": "Female",
+  "ageAtSampling": "69Y",
+  "category": "Cancer cell line",
+  "cellLineDatabases": [
+    {
+      "accession": "CLO_0007601",
+      "category": "Cell line databases/resources",
+      "database": "CLO",
+      "iri": "http://purl.obolibrary.org/obo/CLO_0007601",
+      "url": "https://www.ebi.ac.uk/ols4/ontologies/clo/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCLO_0007601"
+    },
+    {
+      "accession": "CLO_0007605",
+      "category": "Cell line databases/resources",
+      "database": "CLO",
+      "iri": "http://purl.obolibrary.org/obo/CLO_0007605",
+      "url": "https://www.ebi.ac.uk/ols4/ontologies/clo/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCLO_0007605"
+    },
+    {
+      "accession": "CLO_0007606",
+      "category": "Cell line databases/resources",
+      "database": "CLO",
+      "iri": "http://purl.obolibrary.org/obo/CLO_0007606",
+      "url": "https://www.ebi.ac.uk/ols4/ontologies/clo/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCLO_0007606"
+    },
+    {
+      "accession": "CLO_0050868",
+      "category": "Cell line databases/resources",
+      "database": "CLO",
+      "iri": "http://purl.obolibrary.org/obo/CLO_0050868",
+      "url": "https://www.ebi.ac.uk/ols4/ontologies/clo/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCLO_0050868"
+    },
+    {
+      "accession": "MCC:0000307",
+      "category": "Cell line databases/resources",
+      "database": "MCCL"
+    },
+    {
+      "accession": "cl3366",
+      "category": "Cell line databases/resources",
+      "database": "CLDB",
+      "url": "https://bioinformatics.hsanmartino.it/hypercldb/cl3366.html"
+    },
+    {
+      "accession": "cl3367",
+      "category": "Cell line databases/resources",
+      "database": "CLDB",
+      "url": "https://bioinformatics.hsanmartino.it/hypercldb/cl3367.html"
+    },
+    {
+      "accession": "cl3368",
+      "category": "Cell line databases/resources",
+      "database": "CLDB",
+      "url": "https://bioinformatics.hsanmartino.it/hypercldb/cl3368.html"
+    },
+    {
+      "accession": "cl3369",
+      "category": "Cell line databases/resources",
+      "database": "CLDB",
+      "url": "https://bioinformatics.hsanmartino.it/hypercldb/cl3369.html"
+    },
+    {
+      "accession": "cl3370",
+      "category": "Cell line databases/resources",
+      "database": "CLDB",
+      "url": "https://bioinformatics.hsanmartino.it/hypercldb/cl3370.html"
+    },
+    {
+      "accession": "cl3371",
+      "category": "Cell line databases/resources",
+      "database": "CLDB",
+      "url": "https://bioinformatics.hsanmartino.it/hypercldb/cl3371.html"
+    },
+    {
+      "accession": "cl3372",
+      "category": "Cell line databases/resources",
+      "database": "CLDB",
+      "url": "https://bioinformatics.hsanmartino.it/hypercldb/cl3372.html"
+    },
+    {
+      "accession": "cl3373",
+      "category": "Cell line databases/resources",
+      "database": "CLDB",
+      "url": "https://bioinformatics.hsanmartino.it/hypercldb/cl3373.html"
+    },
+    {
+      "accession": "cl3375",
+      "category": "Cell line databases/resources",
+      "database": "CLDB",
+      "url": "https://bioinformatics.hsanmartino.it/hypercldb/cl3375.html"
+    },
+    {
+      "accession": "CVCL_0031",
+      "category": "Cell line databases/resources",
+      "database": "cancercelllines",
+      "url": "https://cancercelllines.org/cellline/?id=cellosaurus:CVCL_0031"
+    },
+    {
+      "accession": "1101HUM-PUMC000013",
+      "category": "Cell line databases/resources",
+      "database": "CCRID",
+      "url": "http://www.cellresource.cn/cellsearch.aspx?sc=1&where=1101HUM-PUMC000013"
+    },
+    {
+      "accession": "1101HUM-PUMC000328",
+      "category": "Cell line databases/resources",
+      "database": "CCRID",
+      "url": "http://www.cellresource.cn/cellsearch.aspx?sc=1&where=1101HUM-PUMC000328"
+    },
+    {
+      "accession": "3101HUMSCSP531",
+      "category": "Cell line databases/resources",
+      "database": "CCRID",
+      "url": "http://www.cellresource.cn/cellsearch.aspx?sc=1&where=3101HUMSCSP531"
+    },
+    {
+      "accession": "3101HUMTCHu74",
+      "category": "Cell line databases/resources",
+      "database": "CCRID",
+      "url": "http://www.cellresource.cn/cellsearch.aspx?sc=1&where=3101HUMTCHu74"
+    },
+    {
+      "accession": "4201HUM-CCTCC00055",
+      "category": "Cell line databases/resources",
+      "database": "CCRID",
+      "url": "http://www.cellresource.cn/cellsearch.aspx?sc=1&where=4201HUM-CCTCC00055"
+    },
+    {
+      "accession": "SIDM00148",
+      "category": "Cell line databases/resources",
+      "database": "Cell_Model_Passport",
+      "url": "https://cellmodelpassports.sanger.ac.uk/passports/SIDM00148"
+    },
+    {
+      "accession": "905946",
+      "category": "Cell line databases/resources",
+      "database": "Cosmic-CLP",
+      "url": "https://cancer.sanger.ac.uk/cell_lines/sample/overview?id=905946"
+    },
+    {
+      "accession": "ACH-000019",
+      "category": "Cell line databases/resources",
+      "database": "DepMap",
+      "url": "https://depmap.org/portal/cell_line/ACH-000019"
+    },
+    {
+      "accession": "ACC-115",
+      "category": "Cell line databases/resources",
+      "database": "DSMZCellDive",
+      "url": "https://celldive.dsmz.de/celllines/ACC-115"
+    },
+    {
+      "accession": "MCF7",
+      "category": "Cell line databases/resources",
+      "database": "IGRhCellID",
+      "url": "http://igrcid.ibms.sinica.edu.tw/cgi-bin/cell_line_view.cgi?cl_name=MCF7"
+    },
+    {
+      "accession": "12401",
+      "category": "Cell line databases/resources",
+      "database": "IPD-IMGT/HLA",
+      "url": "https://www.ebi.ac.uk/ipd/imgt/hla/cells/cell/?cellid=12401"
+    },
+    {
+      "accession": "50029",
+      "category": "Cell line databases/resources",
+      "database": "LINCS_HMS",
+      "url": "http://lincs.hms.harvard.edu/db/cells/50029/"
+    },
+    {
+      "accession": "LCL-1460",
+      "category": "Cell line databases/resources",
+      "database": "LINCS_LDP",
+      "url": "http://lincsportal.ccs.miami.edu/cells/#/view/LCL-1460"
+    },
+    {
+      "accession": "113",
+      "category": "Cell line databases/resources",
+      "database": "Lonza",
+      "url": "https://knowledge.lonza.com/cell?id=113"
+    },
+    {
+      "accession": "2814",
+      "category": "Cell line databases/resources",
+      "database": "SKY/M-FISH/CGH"
+    },
+    {
+      "accession": "3572",
+      "category": "Cell line databases/resources",
+      "database": "SLKBase",
+      "url": "https://sumlineknowledgebase.com/?page_id=3572"
+    },
+    {
+      "accession": "2383",
+      "category": "Cell line databases/resources",
+      "database": "TOKU-E",
+      "url": "http://cell-lines.toku-e.com/Cell-Lines_2383.html"
+    },
+    {
+      "accession": "3748",
+      "category": "Cell line databases/resources",
+      "database": "TOKU-E",
+      "url": "http://cell-lines.toku-e.com/Cell-Lines_3748.html"
+    }
+  ],
+  "anatomyCellTypeResources": [
+    {
+      "accession": "BTO_0000093",
+      "category": "Anatomy/cell type resources",
+      "database": "BTO",
+      "iri": "http://purl.obolibrary.org/obo/BTO_0000093",
+      "url": "https://www.ebi.ac.uk/ols4/ontologies/bto/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FBTO_0000093"
+    }
+  ],
+  "createdAt": "2025-04-11T01:18:16.556427Z",
+  "scope": "public"
+}

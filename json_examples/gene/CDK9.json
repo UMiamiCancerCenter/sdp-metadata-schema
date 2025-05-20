@@ -1,0 +1,938 @@
+{
+  "_id": {
+    "$oid": "681bbfa1e40b5d7453808f75"
+  },
+  "name": "cyclin dependent kinase 9",
+  "HGNC": "1780",
+  "symbol": "CDK9",
+  "entrezGene": "1025",
+  "ensembl": "ENSG00000136807",
+  "otherNames": [
+    "CDC2-related kinase",
+    "cell division cycle 2-like protein kinase 4",
+    "cell division protein kinase 9",
+    "cyclin-dependent kinase 9",
+    "serine/threonine protein kinase PITALRE",
+    "tat-associated kinase complex catalytic subunit"
+  ],
+  "taxid": 9606,
+  "species": "Homo sapiens",
+  "typeOfGene": "protein-coding",
+  "kegg": [
+    {
+      "keggId": "hsa05202",
+      "keggName": "Transcriptional misregulation in cancer - Homo sapiens (human)"
+    }
+  ],
+  "reactome": [
+    {
+      "reactomeId": "R-HSA-112382",
+      "reactomeName": "Formation of RNA Pol II elongation complex "
+    },
+    {
+      "reactomeId": "R-HSA-162582",
+      "reactomeName": "Signal Transduction"
+    },
+    {
+      "reactomeId": "R-HSA-162587",
+      "reactomeName": "HIV Life Cycle"
+    },
+    {
+      "reactomeId": "R-HSA-162587",
+      "reactomeName": "HIV Life Cycle"
+    },
+    {
+      "reactomeId": "R-HSA-162599",
+      "reactomeName": "Late Phase of HIV Life Cycle"
+    },
+    {
+      "reactomeId": "R-HSA-162599",
+      "reactomeName": "Late Phase of HIV Life Cycle"
+    },
+    {
+      "reactomeId": "R-HSA-162906",
+      "reactomeName": "HIV Infection"
+    },
+    {
+      "reactomeId": "R-HSA-162906",
+      "reactomeName": "HIV Infection"
+    },
+    {
+      "reactomeId": "R-HSA-162909",
+      "reactomeName": "Host Interactions of HIV factors"
+    },
+    {
+      "reactomeId": "R-HSA-1643685",
+      "reactomeName": "Disease"
+    },
+    {
+      "reactomeId": "R-HSA-1643685",
+      "reactomeName": "Disease"
+    },
+    {
+      "reactomeId": "R-HSA-167152",
+      "reactomeName": "Formation of HIV elongation complex in the absence of HIV Tat"
+    },
+    {
+      "reactomeId": "R-HSA-167169",
+      "reactomeName": "HIV Transcription Elongation"
+    },
+    {
+      "reactomeId": "R-HSA-167169",
+      "reactomeName": "HIV Transcription Elongation"
+    },
+    {
+      "reactomeId": "R-HSA-167172",
+      "reactomeName": "Transcription of the HIV genome"
+    },
+    {
+      "reactomeId": "R-HSA-167172",
+      "reactomeName": "Transcription of the HIV genome"
+    },
+    {
+      "reactomeId": "R-HSA-167200",
+      "reactomeName": "Formation of HIV-1 elongation complex containing HIV-1 Tat"
+    },
+    {
+      "reactomeId": "R-HSA-167200",
+      "reactomeName": "Formation of HIV-1 elongation complex containing HIV-1 Tat"
+    },
+    {
+      "reactomeId": "R-HSA-167238",
+      "reactomeName": "Pausing and recovery of Tat-mediated HIV elongation"
+    },
+    {
+      "reactomeId": "R-HSA-167243",
+      "reactomeName": "Tat-mediated HIV elongation arrest and recovery"
+    },
+    {
+      "reactomeId": "R-HSA-167246",
+      "reactomeName": "Tat-mediated elongation of the HIV-1 transcript"
+    },
+    {
+      "reactomeId": "R-HSA-167246",
+      "reactomeName": "Tat-mediated elongation of the HIV-1 transcript"
+    },
+    {
+      "reactomeId": "R-HSA-167287",
+      "reactomeName": "HIV elongation arrest and recovery"
+    },
+    {
+      "reactomeId": "R-HSA-167290",
+      "reactomeName": "Pausing and recovery of HIV elongation"
+    },
+    {
+      "reactomeId": "R-HSA-170834",
+      "reactomeName": "Signaling by TGF-beta Receptor Complex"
+    },
+    {
+      "reactomeId": "R-HSA-176034",
+      "reactomeName": "Interactions of Tat with host cellular proteins"
+    },
+    {
+      "reactomeId": "R-HSA-212436",
+      "reactomeName": "Generic Transcription Pathway"
+    },
+    {
+      "reactomeId": "R-HSA-2173793",
+      "reactomeName": "Transcriptional activity of SMAD2/SMAD3:SMAD4 heterotrimer"
+    },
+    {
+      "reactomeId": "R-HSA-2173796",
+      "reactomeName": "SMAD2/SMAD3:SMAD4 heterotrimer regulates transcription"
+    },
+    {
+      "reactomeId": "R-HSA-3700989",
+      "reactomeName": "Transcriptional Regulation by TP53"
+    },
+    {
+      "reactomeId": "R-HSA-5663205",
+      "reactomeName": "Infectious disease"
+    },
+    {
+      "reactomeId": "R-HSA-5663205",
+      "reactomeName": "Infectious disease"
+    },
+    {
+      "reactomeId": "R-HSA-674695",
+      "reactomeName": "RNA Polymerase II Pre-transcription Events"
+    },
+    {
+      "reactomeId": "R-HSA-6796648",
+      "reactomeName": "TP53 Regulates Transcription of DNA Repair Genes"
+    },
+    {
+      "reactomeId": "R-HSA-6807505",
+      "reactomeName": "RNA polymerase II transcribes snRNA genes"
+    },
+    {
+      "reactomeId": "R-HSA-6807505",
+      "reactomeName": "RNA polymerase II transcribes snRNA genes"
+    },
+    {
+      "reactomeId": "R-HSA-73857",
+      "reactomeName": "RNA Polymerase II Transcription"
+    },
+    {
+      "reactomeId": "R-HSA-73857",
+      "reactomeName": "RNA Polymerase II Transcription"
+    },
+    {
+      "reactomeId": "R-HSA-74160",
+      "reactomeName": "Gene expression (Transcription)"
+    },
+    {
+      "reactomeId": "R-HSA-74160",
+      "reactomeName": "Gene expression (Transcription)"
+    },
+    {
+      "reactomeId": "R-HSA-75955",
+      "reactomeName": "RNA Polymerase II Transcription Elongation"
+    },
+    {
+      "reactomeId": "R-HSA-8939211",
+      "reactomeName": "ESR-mediated signaling"
+    },
+    {
+      "reactomeId": "R-HSA-9006931",
+      "reactomeName": "Signaling by Nuclear Receptors"
+    },
+    {
+      "reactomeId": "R-HSA-9006936",
+      "reactomeName": "Signaling by TGFB family members"
+    },
+    {
+      "reactomeId": "R-HSA-9018519",
+      "reactomeName": "Estrogen-dependent gene expression"
+    },
+    {
+      "reactomeId": "R-HSA-9824446",
+      "reactomeName": "Viral Infection Pathways"
+    },
+    {
+      "reactomeId": "R-HSA-9824446",
+      "reactomeName": "Viral Infection Pathways"
+    }
+  ],
+  "go": {
+    "BP": [
+      {
+        "evidence": "IEA",
+        "gocategory": "BP",
+        "qualifier": "involved_in",
+        "term": "DNA repair",
+        "goId": "GO:0006281"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "BP",
+        "pubmed": 20493174,
+        "qualifier": "involved_in",
+        "term": "regulation of DNA repair",
+        "goId": "GO:0006282"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "BP",
+        "pubmed": 28426094,
+        "qualifier": "involved_in",
+        "term": "transcription by RNA polymerase II",
+        "goId": "GO:0006366"
+      },
+      {
+        "evidence": "TAS",
+        "gocategory": "BP",
+        "pubmed": 10866664,
+        "qualifier": "involved_in",
+        "term": "transcription initiation at RNA polymerase II promoter",
+        "goId": "GO:0006367"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "BP",
+        "pubmed": [
+          14580347,
+          16427012
+        ],
+        "qualifier": "involved_in",
+        "term": "transcription elongation by RNA polymerase II",
+        "goId": "GO:0006368"
+      },
+      {
+        "evidence": "TAS",
+        "gocategory": "BP",
+        "pubmed": 10866664,
+        "qualifier": "involved_in",
+        "term": "transcription elongation by RNA polymerase II",
+        "goId": "GO:0006368"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "BP",
+        "pubmed": 16109376,
+        "qualifier": "acts_upstream_of_or_within",
+        "term": "protein phosphorylation",
+        "goId": "GO:0006468"
+      },
+      {
+        "evidence": "IEA",
+        "gocategory": "BP",
+        "qualifier": "involved_in",
+        "term": "DNA damage response",
+        "goId": "GO:0006974"
+      },
+      {
+        "evidence": "IMP",
+        "gocategory": "BP",
+        "pubmed": 19575011,
+        "qualifier": "NOT involved_in",
+        "term": "regulation of mitotic cell cycle",
+        "goId": "GO:0007346"
+      },
+      {
+        "evidence": "TAS",
+        "gocategory": "BP",
+        "pubmed": 8170997,
+        "qualifier": "involved_in",
+        "term": "cell population proliferation",
+        "goId": "GO:0008283"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "BP",
+        "pubmed": 20930849,
+        "qualifier": "involved_in",
+        "term": "replication fork processing",
+        "goId": "GO:0031297"
+      },
+      {
+        "evidence": "IEA",
+        "gocategory": "BP",
+        "qualifier": "involved_in",
+        "term": "regulation of mRNA 3'-end processing",
+        "goId": "GO:0031440"
+      },
+      {
+        "evidence": "IMP",
+        "gocategory": "BP",
+        "pubmed": 19575011,
+        "qualifier": "involved_in",
+        "term": "regulation of mRNA 3'-end processing",
+        "goId": "GO:0031440"
+      },
+      {
+        "evidence": "IBA",
+        "gocategory": "BP",
+        "qualifier": "involved_in",
+        "term": "positive regulation of transcription elongation by RNA polymerase II",
+        "goId": "GO:0032968"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "BP",
+        "pubmed": [
+          9499409,
+          14701750,
+          30134174
+        ],
+        "qualifier": "involved_in",
+        "term": "positive regulation of transcription elongation by RNA polymerase II",
+        "goId": "GO:0032968"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "BP",
+        "pubmed": 10866664,
+        "qualifier": "involved_in",
+        "term": "positive regulation by host of viral transcription",
+        "goId": "GO:0043923"
+      },
+      {
+        "evidence": "ISS",
+        "gocategory": "BP",
+        "qualifier": "involved_in",
+        "term": "positive regulation by host of viral transcription",
+        "goId": "GO:0043923"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "BP",
+        "pubmed": 29335245,
+        "qualifier": "involved_in",
+        "term": "positive regulation of transcription by RNA polymerase II",
+        "goId": "GO:0045944"
+      },
+      {
+        "evidence": "IMP",
+        "gocategory": "BP",
+        "pubmed": 12037670,
+        "qualifier": "involved_in",
+        "term": "regulation of muscle cell differentiation",
+        "goId": "GO:0051147"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "BP",
+        "pubmed": 12942536,
+        "qualifier": "involved_in",
+        "term": "nucleus localization",
+        "goId": "GO:0051647"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "BP",
+        "pubmed": 20930849,
+        "qualifier": "involved_in",
+        "term": "regulation of cell cycle",
+        "goId": "GO:0051726"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "BP",
+        "pubmed": 17956865,
+        "qualifier": "involved_in",
+        "term": "cellular response to cytokine stimulus",
+        "goId": "GO:0071345"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "BP",
+        "pubmed": 14701750,
+        "qualifier": "involved_in",
+        "term": "negative regulation of protein localization to chromatin",
+        "goId": "GO:0120186"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "BP",
+        "pubmed": 29335245,
+        "qualifier": "involved_in",
+        "term": "positive regulation of protein localization to chromatin",
+        "goId": "GO:0120187"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "BP",
+        "pubmed": 19844166,
+        "qualifier": "involved_in",
+        "term": "transcription elongation-coupled chromatin remodeling",
+        "goId": "GO:0140673"
+      }
+    ],
+    "CC": [
+      {
+        "evidence": "IBA",
+        "gocategory": "CC",
+        "qualifier": "is_active_in",
+        "term": "nucleus",
+        "goId": "GO:0005634"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "CC",
+        "pubmed": [
+          14701750,
+          29849146
+        ],
+        "qualifier": "is_active_in",
+        "term": "nucleus",
+        "goId": "GO:0005634"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "CC",
+        "pubmed": [
+          9499409,
+          16109376
+        ],
+        "qualifier": "located_in",
+        "term": "nucleus",
+        "goId": "GO:0005634"
+      },
+      {
+        "evidence": "IEA",
+        "gocategory": "CC",
+        "qualifier": "located_in",
+        "term": "nucleus",
+        "goId": "GO:0005634"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "CC",
+        "qualifier": "located_in",
+        "term": "nucleoplasm",
+        "goId": "GO:0005654"
+      },
+      {
+        "evidence": "TAS",
+        "gocategory": "CC",
+        "qualifier": "located_in",
+        "term": "nucleoplasm",
+        "goId": "GO:0005654"
+      },
+      {
+        "evidence": "IEA",
+        "gocategory": "CC",
+        "qualifier": "located_in",
+        "term": "cytoplasm",
+        "goId": "GO:0005737"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "CC",
+        "pubmed": 22195968,
+        "qualifier": "part_of",
+        "term": "transcription elongation factor complex",
+        "goId": "GO:0008023"
+      },
+      {
+        "evidence": "TAS",
+        "gocategory": "CC",
+        "pubmed": 10866664,
+        "qualifier": "part_of",
+        "term": "transcription elongation factor complex",
+        "goId": "GO:0008023"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "CC",
+        "pubmed": [
+          9499409,
+          15905409
+        ],
+        "qualifier": "part_of",
+        "term": "cyclin/CDK positive transcription elongation factor complex",
+        "goId": "GO:0008024"
+      },
+      {
+        "evidence": "IEA",
+        "gocategory": "CC",
+        "qualifier": "part_of",
+        "term": "cyclin/CDK positive transcription elongation factor complex",
+        "goId": "GO:0008024"
+      },
+      {
+        "evidence": "IPI",
+        "gocategory": "CC",
+        "pubmed": [
+          9499409,
+          18566585
+        ],
+        "qualifier": "part_of",
+        "term": "cyclin/CDK positive transcription elongation factor complex",
+        "goId": "GO:0008024"
+      },
+      {
+        "evidence": "HDA",
+        "gocategory": "CC",
+        "pubmed": 19946888,
+        "qualifier": "located_in",
+        "term": "membrane",
+        "goId": "GO:0016020"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "CC",
+        "pubmed": 18250157,
+        "qualifier": "located_in",
+        "term": "PML body",
+        "goId": "GO:0016605"
+      },
+      {
+        "evidence": "IEA",
+        "gocategory": "CC",
+        "qualifier": "located_in",
+        "term": "PML body",
+        "goId": "GO:0016605"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "CC",
+        "qualifier": "located_in",
+        "term": "cytoplasmic ribonucleoprotein granule",
+        "goId": "GO:0036464"
+      },
+      {
+        "evidence": "IDA",
+        "gocategory": "CC",
+        "pubmed": [
+          18483487,
+          30134174
+        ],
+        "qualifier": "part_of",
+        "term": "P-TEFb complex",
+        "goId": "GO:0070691"
+      }
+    ],
+    "MF": [
+      {
+        "category": "MF",
+        "evidence": "IEA",
+        "qualifier": "enables",
+        "term": "nucleotide binding",
+        "goId": "GO:0000166"
+      },
+      {
+        "category": "MF",
+        "evidence": "IEA",
+        "qualifier": "enables",
+        "term": "transcription cis-regulatory region binding",
+        "goId": "GO:0000976"
+      },
+      {
+        "category": "MF",
+        "evidence": "IEA",
+        "qualifier": "enables",
+        "term": "RNA polymerase II cis-regulatory region sequence-specific DNA binding",
+        "goId": "GO:0000978"
+      },
+      {
+        "category": "MF",
+        "evidence": "IPI",
+        "pubmed": 12037672,
+        "qualifier": "enables",
+        "term": "transcription coactivator binding",
+        "goId": "GO:0001223"
+      },
+      {
+        "category": "MF",
+        "evidence": "IDA",
+        "pubmed": 16109376,
+        "qualifier": "enables",
+        "term": "DNA binding",
+        "goId": "GO:0003677"
+      },
+      {
+        "category": "MF",
+        "evidence": "IEA",
+        "qualifier": "enables",
+        "term": "chromatin binding",
+        "goId": "GO:0003682"
+      },
+      {
+        "category": "MF",
+        "evidence": "ISS",
+        "qualifier": "enables",
+        "term": "chromatin binding",
+        "goId": "GO:0003682"
+      },
+      {
+        "category": "MF",
+        "evidence": "IDA",
+        "pubmed": 14580347,
+        "qualifier": "enables",
+        "term": "transcription elongation factor activity",
+        "goId": "GO:0003711"
+      },
+      {
+        "category": "MF",
+        "evidence": "IEA",
+        "qualifier": "enables",
+        "term": "protein kinase activity",
+        "goId": "GO:0004672"
+      },
+      {
+        "category": "MF",
+        "evidence": "TAS",
+        "pubmed": 8170997,
+        "qualifier": "enables",
+        "term": "protein kinase activity",
+        "goId": "GO:0004672"
+      },
+      {
+        "category": "MF",
+        "evidence": "IDA",
+        "pubmed": [
+          14701750,
+          16427012,
+          28431135,
+          29335245
+        ],
+        "qualifier": "enables",
+        "term": "protein serine/threonine kinase activity",
+        "goId": "GO:0004674"
+      },
+      {
+        "category": "MF",
+        "evidence": "IEA",
+        "qualifier": "enables",
+        "term": "protein serine/threonine kinase activity",
+        "goId": "GO:0004674"
+      },
+      {
+        "category": "MF",
+        "evidence": "TAS",
+        "qualifier": "enables",
+        "term": "protein serine/threonine kinase activity",
+        "goId": "GO:0004674"
+      },
+      {
+        "category": "MF",
+        "evidence": "IBA",
+        "qualifier": "enables",
+        "term": "cyclin-dependent protein serine/threonine kinase activity",
+        "goId": "GO:0004693"
+      },
+      {
+        "category": "MF",
+        "evidence": "IDA",
+        "pubmed": [
+          12037670,
+          14701750
+        ],
+        "qualifier": "enables",
+        "term": "cyclin-dependent protein serine/threonine kinase activity",
+        "goId": "GO:0004693"
+      },
+      {
+        "category": "MF",
+        "evidence": "IEA",
+        "qualifier": "enables",
+        "term": "cyclin-dependent protein serine/threonine kinase activity",
+        "goId": "GO:0004693"
+      },
+      {
+        "category": "MF",
+        "evidence": "TAS",
+        "pubmed": 10866664,
+        "qualifier": "enables",
+        "term": "cyclin-dependent protein serine/threonine kinase activity",
+        "goId": "GO:0004693"
+      },
+      {
+        "category": "MF",
+        "evidence": "IPI",
+        "pubmed": [
+          9499409,
+          12832472,
+          14580347,
+          15107825,
+          15286705,
+          15563843,
+          15713662,
+          16331689,
+          17690245,
+          18281698,
+          18483487,
+          18566585,
+          19387490,
+          19914168,
+          20153263,
+          20535204,
+          20562857,
+          20930849,
+          21533037,
+          21729782,
+          22190034,
+          22939624,
+          22959624,
+          23455922,
+          23602568,
+          24189400,
+          24360279,
+          24981860,
+          25036637,
+          25470060,
+          26659056,
+          28330616,
+          28426094,
+          30824372,
+          32296183,
+          32707033,
+          32814053,
+          33961781,
+          35271311
+        ],
+        "qualifier": "enables",
+        "term": "protein binding",
+        "goId": "GO:0005515"
+      },
+      {
+        "category": "MF",
+        "evidence": "IEA",
+        "qualifier": "enables",
+        "term": "ATP binding",
+        "goId": "GO:0005524"
+      },
+      {
+        "category": "MF",
+        "evidence": "IBA",
+        "qualifier": "enables",
+        "term": "RNA polymerase II CTD heptapeptide repeat kinase activity",
+        "goId": "GO:0008353"
+      },
+      {
+        "category": "MF",
+        "evidence": "IDA",
+        "pubmed": [
+          9499409,
+          12721286,
+          28426094
+        ],
+        "qualifier": "enables",
+        "term": "RNA polymerase II CTD heptapeptide repeat kinase activity",
+        "goId": "GO:0008353"
+      },
+      {
+        "category": "MF",
+        "evidence": "IEA",
+        "qualifier": "enables",
+        "term": "RNA polymerase II CTD heptapeptide repeat kinase activity",
+        "goId": "GO:0008353"
+      },
+      {
+        "category": "MF",
+        "evidence": "IDA",
+        "pubmed": 22959624,
+        "qualifier": "enables",
+        "term": "kinase activity",
+        "goId": "GO:0016301"
+      },
+      {
+        "category": "MF",
+        "evidence": "IEA",
+        "qualifier": "enables",
+        "term": "kinase activity",
+        "goId": "GO:0016301"
+      },
+      {
+        "category": "MF",
+        "evidence": "IEA",
+        "qualifier": "enables",
+        "term": "transferase activity",
+        "goId": "GO:0016740"
+      },
+      {
+        "category": "MF",
+        "evidence": "IEA",
+        "qualifier": "enables",
+        "term": "snRNA binding",
+        "goId": "GO:0017069"
+      },
+      {
+        "category": "MF",
+        "evidence": "IEA",
+        "qualifier": "enables",
+        "term": "protein kinase binding",
+        "goId": "GO:0019901"
+      },
+      {
+        "category": "MF",
+        "evidence": "IDA",
+        "pubmed": 11713533,
+        "qualifier": "enables",
+        "term": "7SK snRNA binding",
+        "goId": "GO:0097322"
+      },
+      {
+        "category": "MF",
+        "evidence": "IEA",
+        "qualifier": "enables",
+        "term": "protein serine kinase activity",
+        "goId": "GO:0106310"
+      }
+    ]
+  },
+  "gwasAssociations": [
+    {
+      "rsId": "rs10987728",
+      "riskLabel": "rs10987728-?",
+      "pValue": 6,
+      "pValueExponent": -6,
+      "traitName": "Medium chain acylcarnitines levels (dominant genetic model)",
+      "linkedTraits": [
+        {
+          "label": "acylcarnitine measurement",
+          "traitId": "EFO_0005059",
+          "uri": "https://www.ebi.ac.uk/gwas/efotraits/EFO_0005059"
+        }
+      ]
+    },
+    {
+      "rsId": "rs10987728",
+      "riskLabel": "rs10987728-?",
+      "pValue": 7,
+      "pValueExponent": -8,
+      "traitName": "Medium chain acylcarnitines levels (additive genetic model)",
+      "linkedTraits": [
+        {
+          "label": "acylcarnitine measurement",
+          "traitId": "EFO_0005059",
+          "uri": "https://www.ebi.ac.uk/gwas/efotraits/EFO_0005059"
+        }
+      ]
+    },
+    {
+      "rsId": "rs10987728",
+      "riskLabel": "rs10987728-?",
+      "pValue": 6,
+      "pValueExponent": -6,
+      "traitName": "Medium chain acylcarnitines levels (additive genetic model)",
+      "linkedTraits": [
+        {
+          "label": "acylcarnitine measurement",
+          "traitId": "EFO_0005059",
+          "uri": "https://www.ebi.ac.uk/gwas/efotraits/EFO_0005059"
+        }
+      ]
+    },
+    {
+      "rsId": "rs10987728",
+      "riskLabel": "rs10987728-?",
+      "pValue": 6,
+      "pValueExponent": -8,
+      "traitName": "Medium chain acylcarnitines levels (dominant genetic model)",
+      "linkedTraits": [
+        {
+          "label": "acylcarnitine measurement",
+          "traitId": "EFO_0005059",
+          "uri": "https://www.ebi.ac.uk/gwas/efotraits/EFO_0005059"
+        }
+      ]
+    },
+    {
+      "rsId": "rs3217750",
+      "riskLabel": "rs3217750-G",
+      "pValue": 1,
+      "pValueExponent": -8,
+      "traitName": "Height",
+      "linkedTraits": [
+        {
+          "label": "body height",
+          "traitId": "OBA_VT0001253",
+          "uri": "https://www.ebi.ac.uk/gwas/efotraits/OBA_VT0001253"
+        }
+      ]
+    },
+    {
+      "rsId": "rs183995738",
+      "riskLabel": "rs183995738-C",
+      "pValue": 3,
+      "pValueExponent": -11,
+      "traitName": "Blood protein levels",
+      "linkedTraits": [
+        {
+          "label": "blood protein measurement",
+          "traitId": "EFO_0007937",
+          "uri": "https://www.ebi.ac.uk/gwas/efotraits/EFO_0007937"
+        }
+      ]
+    }
+  ],
+  "scope": "public",
+  "createdAt": {
+    "$date": "2025-05-07T20:22:34.311Z"
+  },
+  "alias": [
+    "C-2k",
+    "CDC2L4",
+    "CTK1",
+    "PITALRE",
+    "TAK"
+  ],
+  "mapLocation": "9q34.11",
+  "summary": "The protein encoded by this gene is a member of the cyclin-dependent protein kinase (CDK) family. CDK family members are highly similar to the gene products of S. cerevisiae cdc28, and S. pombe cdc2, and known as important cell cycle regulators. This kinase was found to be a component of the multiprotein complex TAK/P-TEFb, which is an elongation factor for RNA polymerase II-directed transcription and functions by phosphorylating the C-terminal domain of the largest subunit of RNA polymerase II. This protein forms a complex with and is regulated by its regulatory subunit cyclin T or cyclin K. HIV-1 Tat protein was found to interact with this protein and cyclin T, which suggested a possible involvement of this protein in AIDS. [provided by RefSeq, Jul 2008].",
+  "wikipedia": {
+    "urlStub": "Cyclin-dependent kinase 9"
+  }
+}
