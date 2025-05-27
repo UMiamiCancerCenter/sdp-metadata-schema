@@ -86,7 +86,7 @@ class MoleculeProperties(CustomBaseModel):
 class IndicationRefs(CustomBaseModel):
 
     clinical_trials: list[str] | SkipJsonSchema[None] = Field(alias="clinicalTrials", validation_alias="ClinicalTrials", default=None)
-    fda: list[str] | SkipJsonSchema[None] = Field(default=None, alias="fda", validation_alias="FDA")
+    fda: list[str] | SkipJsonSchema[None] = Field(default=None, alias="fda", validation_alias="FDA", title="FDA")
 
 class DrugIndication(CustomBaseModel):
 

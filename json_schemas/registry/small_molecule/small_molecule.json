@@ -318,7 +318,7 @@
           "items": {
             "type": "string"
           },
-          "title": "Fda",
+          "title": "FDA",
           "type": "array"
         }
       },
