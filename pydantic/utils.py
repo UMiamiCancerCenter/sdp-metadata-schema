@@ -8,6 +8,7 @@ from pydantic_core import CoreSchema, core_schema
 
 from pydantic import BaseModel, ConfigDict, GetJsonSchemaHandler
 from pydantic._internal._core_utils import CoreSchemaOrField, is_core_schema
+from pydantic.fields import FieldInfo
 from pydantic.json_schema import GenerateJsonSchema
 
 
@@ -92,3 +93,6 @@ class MongoDate(datetime):
     def __get_pydantic_json_schema__(cls, core_schema: core_schema.CoreSchema, handler: GetJsonSchemaHandler) -> dict[str, Any]:
         # Return the Extended JSON representation for dates:
         return {"$date": {"type": "string", "format": "date-time"}}
+
+def to_title_case(field_name: str, field_info: FieldInfo) -> str:
+    return field_name.replace('_', ' ').title()

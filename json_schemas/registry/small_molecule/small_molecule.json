@@ -1,225 +1,623 @@
 {
   "$defs": {
+    "Biocomponent": {
+      "properties": {
+        "organism": {
+          "title": "Organism",
+          "type": "string"
+        }
+      },
+      "title": "Biocomponent",
+      "type": "object"
+    },
+    "Biotherapeutic": {
+      "properties": {
+        "biocomponents": {
+          "items": {
+            "$ref": "#/$defs/Biocomponent"
+          },
+          "title": "Biocomponents",
+          "type": "array"
+        }
+      },
+      "title": "Biotherapeutic",
+      "type": "object"
+    },
     "Chembl": {
       "properties": {
-        "drugIndications": {
-          "items": {
-            "$ref": "#/$defs/ChemblDrugIndication"
-          },
-          "type": "array"
+        "molecule_chembl_id": {
+          "title": "ChEMBL ID",
+          "type": "string"
         },
-        "drugMechanisms": {
-          "items": {
-            "$ref": "#/$defs/ChemblDrugMechanism"
-          },
-          "type": "array"
+        "pref_name": {
+          "title": "Preferred Name",
+          "type": "string"
         },
-        "maxPhase": {
+        "max_phase": {
+          "title": "Max Phase",
           "type": "number"
         },
-        "moleculeSynonyms": {
+        "maxPhaseCurated": {
+          "title": "Max Phase Description",
+          "type": "string"
+        },
+        "first_approval": {
+          "title": "First Approval",
+          "type": "integer"
+        },
+        "chebiParId": {
+          "title": "ChEBI Parent ID",
+          "type": "string"
+        },
+        "oral": {
+          "title": "Oral",
+          "type": "boolean"
+        },
+        "parenteral": {
+          "title": "Parenteral",
+          "type": "boolean"
+        },
+        "withdrawnFlag": {
+          "title": "Withdrawn Flag",
+          "type": "boolean"
+        },
+        "withdrawnReason": {
+          "title": "Withdrawn Reason",
+          "type": "string"
+        },
+        "black_box_warning": {
+          "title": "Black Box Warning",
+          "type": "boolean"
+        },
+        "smiles": {
+          "title": "SMILES",
+          "type": "string"
+        },
+        "inchi": {
+          "title": "InChI",
+          "type": "string"
+        },
+        "inchi_key": {
+          "title": "InChI Key",
+          "type": "string"
+        },
+        "molecule_properties": {
+          "$ref": "#/$defs/MoleculeProperties",
+          "title": "Molecule Properties"
+        },
+        "molecule_synonyms": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/MoleculeSynonym"
+            },
+            {
+              "items": {
+                "$ref": "#/$defs/MoleculeSynonym"
+              },
+              "type": "array"
+            }
+          ],
+          "title": "Molecule Synonyms"
+        },
+        "drug_indications": {
           "items": {
-            "$ref": "#/$defs/ChemblMoleculeSynonym"
+            "$ref": "#/$defs/DrugIndication"
           },
+          "title": "Drug Indications",
           "type": "array"
         },
-        "moleculeType": {
-          "type": "string"
+        "drug_mechanisms": {
+          "items": {
+            "$ref": "#/$defs/DrugMechanism"
+          },
+          "title": "Drug Mechanisms",
+          "type": "array"
+        },
+        "compound_structures": {
+          "$ref": "#/$defs/CompoundStructures",
+          "title": "Compound Structures"
+        },
+        "biotherapeutic": {
+          "$ref": "#/$defs/Biotherapeutic"
         }
       },
       "title": "Chembl",
       "type": "object"
     },
-    "ChemblDrugIndication": {
+    "ClinicalTrial": {
       "properties": {
-        "efo": {
-          "items": {
-            "$ref": "#/$defs/Efo"
-          },
-          "type": "array"
+        "protocol_section": {
+          "$ref": "#/$defs/ProtocolSection",
+          "title": "Protocol Section"
         }
       },
-      "title": "ChemblDrugIndication",
+      "title": "ClinicalTrial",
       "type": "object"
     },
-    "ChemblDrugMechanism": {
+    "CompoundStructures": {
       "properties": {
-        "actionType": {
+        "standardInchiKey": {
+          "title": "Standard InChI Key",
+          "type": "string"
+        },
+        "canonicalSmiles": {
+          "title": "Canonical Smiles",
+          "type": "string"
+        }
+      },
+      "title": "CompoundStructures",
+      "type": "object"
+    },
+    "ConditionsModule": {
+      "properties": {
+        "conditions": {
           "items": {
             "type": "string"
           },
+          "title": "Conditions",
           "type": "array"
+        }
+      },
+      "title": "ConditionsModule",
+      "type": "object"
+    },
+    "DesignModule": {
+      "properties": {
+        "study_type": {
+          "title": "Study Type",
+          "type": "string"
+        },
+        "phase_list": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          ],
+          "title": "Phase List"
+        },
+        "intervention_model": {
+          "title": "Intervention Model",
+          "type": "string"
+        },
+        "masking": {
+          "title": "Masking",
+          "type": "string"
+        },
+        "primary_purpose": {
+          "title": "Primary Purpose",
+          "type": "string"
+        }
+      },
+      "title": "DesignModule",
+      "type": "object"
+    },
+    "DrugIndication": {
+      "properties": {
+        "efo_id": {
+          "title": "EFO ID",
+          "type": "string"
+        },
+        "efo_term": {
+          "title": "EFO Term",
+          "type": "string"
+        },
+        "first_approval": {
+          "title": "First Approval",
+          "type": "integer"
+        },
+        "indication_refs": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/IndicationRefs"
+            },
+            {
+              "items": {
+                "$ref": "#/$defs/IndicationRefs"
+              },
+              "type": "array"
+            }
+          ],
+          "title": "Indication References"
+        },
+        "max_phase_for_ind": {
+          "title": "Max Phase for Indication",
+          "type": "number"
+        },
+        "mesh_heading": {
+          "title": "MeSH Heading",
+          "type": "string"
+        }
+      },
+      "title": "DrugIndication",
+      "type": "object"
+    },
+    "DrugMechanism": {
+      "properties": {
+        "mechanismOfAction": {
+          "title": "Mechanism Of Action",
+          "type": "string"
+        },
+        "actionType": {
+          "title": "Action Type",
+          "type": "string"
+        },
+        "targetName": {
+          "title": "Target Name",
+          "type": "string"
+        },
+        "targetOrganism": {
+          "title": "Target Organism",
+          "type": "string"
+        },
+        "targetType": {
+          "title": "Target Type",
+          "type": "string"
         },
         "targetComponents": {
           "items": {
-            "$ref": "#/$defs/ChemblTargetComponent"
+            "$ref": "#/$defs/TargetComponent"
           },
+          "title": "Target Components",
           "type": "array"
+        }
+      },
+      "title": "DrugMechanism",
+      "type": "object"
+    },
+    "DrugbankBlock": {
+      "properties": {
+        "cas_number": {
+          "title": "CAS Number",
+          "type": "string"
+        }
+      },
+      "title": "DrugbankBlock",
+      "type": "object"
+    },
+    "IdentificationModule": {
+      "properties": {
+        "nct_id": {
+          "title": "NCT ID",
+          "type": "string"
         },
-        "targetName": {
+        "nct_id_aliases": {
           "items": {
             "type": "string"
           },
+          "title": "NCT ID Aliases",
           "type": "array"
-        }
-      },
-      "title": "ChemblDrugMechanism",
-      "type": "object"
-    },
-    "ChemblMoleculeSynonym": {
-      "properties": {
-        "moleculeSynonym": {
+        },
+        "brief_title": {
+          "title": "Brief Title",
           "type": "string"
         },
-        "synType": {
+        "official_title": {
+          "title": "Official Title",
           "type": "string"
         }
       },
-      "title": "ChemblMoleculeSynonym",
+      "title": "IdentificationModule",
       "type": "object"
     },
-    "ChemblTargetComponent": {
+    "IndicationRefs": {
       "properties": {
-        "uniprot": {
+        "ClinicalTrials": {
           "items": {
             "type": "string"
           },
+          "title": "Clinical Trials",
           "type": "array"
-        }
-      },
-      "title": "ChemblTargetComponent",
-      "type": "object"
-    },
-    "Content": {
-      "properties": {
-        "name": {
-          "type": "string"
         },
-        "alternativeNames": {
+        "FDA": {
           "items": {
             "type": "string"
           },
+          "title": "Fda",
           "type": "array"
-        },
-        "alternativeIds": {
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "pubchemCid": {
-          "type": "integer"
-        },
-        "chebiId": {
-          "type": "string"
-        },
-        "inchiCanonical": {
-          "type": "string"
-        },
-        "smilesCanonical": {
-          "type": "string"
         }
       },
-      "title": "Content",
+      "title": "IndicationRefs",
       "type": "object"
     },
-    "Efo": {
+    "Iupac": {
       "properties": {
-        "term": {
+        "systematic": {
+          "title": "Systematic",
           "type": "string"
         }
       },
-      "title": "Efo",
+      "title": "Iupac",
       "type": "object"
     },
     "Lincs": {
       "properties": {
         "id": {
+          "title": "LINCS ID",
           "type": "string"
         },
         "name": {
+          "title": "Name",
           "type": "string"
         },
         "alternativeNames": {
           "items": {
             "type": "string"
           },
+          "title": "Alternative Names",
           "type": "array"
         },
         "alternativeIds": {
           "items": {
             "type": "string"
           },
+          "title": "Alternative Ids",
           "type": "array"
         },
         "pubchemCid": {
+          "title": "PubChem CID",
           "type": "integer"
         },
         "chebiId": {
-          "items": {
-            "type": "integer"
-          },
-          "type": "array"
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            }
+          ],
+          "title": "ChEBI ID"
         },
         "inchiParent": {
+          "title": "InChI Parent",
           "type": "string"
         },
         "inchiKeyParent": {
+          "title": "InChI Key Parent",
           "type": "string"
         },
         "smilesParent": {
+          "title": "SMILES Parent",
           "type": "string"
         }
       },
-      "required": [
-        "id"
-      ],
       "title": "Lincs",
+      "type": "object"
+    },
+    "MoleculeProperties": {
+      "properties": {
+        "full_mwt": {
+          "title": "Full Molecule Weight",
+          "type": "number"
+        },
+        "hba": {
+          "title": "Hydrogen Bond Acceptors",
+          "type": "integer"
+        },
+        "hbd": {
+          "title": "Hydrogen Bond Donors",
+          "type": "integer"
+        },
+        "acd_logp": {
+          "title": "ACD LogP",
+          "type": "number"
+        },
+        "qedWeighted": {
+          "title": "Quantitative Estimate of Drug-likeness",
+          "type": "number"
+        }
+      },
+      "title": "MoleculeProperties",
+      "type": "object"
+    },
+    "MoleculeSynonym": {
+      "properties": {
+        "molecule_synonym": {
+          "title": "Molecule Synonym",
+          "type": "string"
+        },
+        "syn_type": {
+          "title": "Synonym Type",
+          "type": "string"
+        },
+        "synonyms": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            }
+          ],
+          "title": "Synonyms"
+        }
+      },
+      "title": "MoleculeSynonym",
+      "type": "object"
+    },
+    "OutcomesModule": {
+      "properties": {
+        "primary_outcomes": {
+          "items": {
+            "$ref": "#/$defs/PrimaryOutcome"
+          },
+          "title": "Primary Outcomes",
+          "type": "array"
+        },
+        "secondary_outcomes": {
+          "items": {
+            "$ref": "#/$defs/SecondaryOutcome"
+          },
+          "title": "Secondary Outcomes",
+          "type": "array"
+        }
+      },
+      "title": "OutcomesModule",
+      "type": "object"
+    },
+    "PharmgkbBlock": {
+      "properties": {
+        "generic_names": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Generic Names",
+          "type": "array"
+        }
+      },
+      "required": [
+        "generic_names"
+      ],
+      "title": "PharmgkbBlock",
+      "type": "object"
+    },
+    "PrimaryOutcome": {
+      "properties": {
+        "measure": {
+          "title": "Measure",
+          "type": "string"
+        },
+        "time_frame": {
+          "title": "Time Frame",
+          "type": "string"
+        },
+        "result_type": {
+          "title": "Result Type",
+          "type": "string"
+        }
+      },
+      "title": "PrimaryOutcome",
+      "type": "object"
+    },
+    "ProtocolSection": {
+      "properties": {
+        "identification_module": {
+          "$ref": "#/$defs/IdentificationModule",
+          "title": "Identification Module"
+        },
+        "status_module": {
+          "$ref": "#/$defs/StatusModule",
+          "title": "Status Module"
+        },
+        "conditions_module": {
+          "$ref": "#/$defs/ConditionsModule",
+          "title": "Conditions Module"
+        },
+        "design_module": {
+          "$ref": "#/$defs/DesignModule",
+          "title": "Design Module"
+        },
+        "outcomes_module": {
+          "$ref": "#/$defs/OutcomesModule",
+          "title": "Outcomes Module"
+        }
+      },
+      "title": "ProtocolSection",
       "type": "object"
     },
     "PubChem": {
       "properties": {
         "cid": {
+          "title": "CID",
           "type": "integer"
         },
         "inchi": {
+          "title": "InChI",
           "type": "string"
         },
         "inchikey": {
+          "title": "InChI Key",
           "type": "string"
         },
         "iupac": {
-          "$ref": "#/$defs/PubChemIupac"
-        },
-        "molecularFormula": {
-          "type": "string"
+          "$ref": "#/$defs/Iupac",
+          "title": "IUPAC Name"
         },
         "smiles": {
-          "$ref": "#/$defs/PubChemSmiles"
-        }
-      },
-      "required": [
-        "cid"
-      ],
-      "title": "PubChem",
-      "type": "object"
-    },
-    "PubChemIupac": {
-      "properties": {
-        "systematic": {
+          "$ref": "#/$defs/PubChemSmiles",
+          "title": "SMILES"
+        },
+        "molecularFormula": {
+          "title": "Molecular Formula",
           "type": "string"
         }
       },
-      "title": "PubChemIupac",
+      "title": "PubChem",
       "type": "object"
     },
     "PubChemSmiles": {
       "properties": {
         "canonical": {
+          "title": "Canonical",
           "type": "string"
         }
       },
       "title": "PubChemSmiles",
+      "type": "object"
+    },
+    "SecondaryOutcome": {
+      "properties": {
+        "measure": {
+          "title": "Measure",
+          "type": "string"
+        }
+      },
+      "title": "SecondaryOutcome",
+      "type": "object"
+    },
+    "StatusModule": {
+      "properties": {
+        "overall_status": {
+          "title": "Overall Status",
+          "type": "string"
+        },
+        "why_stopped": {
+          "title": "Why Stopped",
+          "type": "string"
+        },
+        "start_date": {
+          "title": "Start Date",
+          "type": "string"
+        },
+        "primary_completion_date": {
+          "title": "Primary Completion Date",
+          "type": "string"
+        },
+        "study_first_submit_date": {
+          "title": "Study First Submit Date",
+          "type": "string"
+        },
+        "results_first_submit_date": {
+          "title": "Results First Submit Date",
+          "type": "string"
+        }
+      },
+      "title": "StatusModule",
+      "type": "object"
+    },
+    "TargetComponent": {
+      "properties": {
+        "uniprot": {
+          "items": {
+            "type": "string"
+          },
+          "title": "UniProt",
+          "type": "array"
+        }
+      },
+      "title": "TargetComponent",
       "type": "object"
     },
     "UniChem": {
@@ -235,7 +633,8 @@
               },
               "type": "array"
             }
-          ]
+          ],
+          "title": "ChEBI"
         },
         "chembl": {
           "anyOf": [
@@ -248,7 +647,8 @@
               },
               "type": "array"
             }
-          ]
+          ],
+          "title": "ChEMBL"
         },
         "lincs": {
           "anyOf": [
@@ -261,20 +661,22 @@
               },
               "type": "array"
             }
-          ]
+          ],
+          "title": "LINCS"
         },
         "pubchem": {
           "anyOf": [
             {
-              "type": "integer"
+              "type": "string"
             },
             {
               "items": {
-                "type": "integer"
+                "type": "string"
               },
               "type": "array"
             }
-          ]
+          ],
+          "title": "PubChem"
         },
         "drugbank": {
           "anyOf": [
@@ -287,7 +689,8 @@
               },
               "type": "array"
             }
-          ]
+          ],
+          "title": "DrugBank"
         }
       },
       "title": "UniChem",
@@ -295,44 +698,56 @@
     }
   },
   "properties": {
-    "id": {
-      "$oid": {
-        "type": "string"
-      }
-    },
     "name": {
+      "title": "Name",
       "type": "string"
     },
     "scope": {
+      "title": "Scope",
       "type": "string"
     },
-    "content": {
-      "$ref": "#/$defs/Content"
+    "structureImage": {
+      "title": "Structure Image",
+      "type": "string"
+    },
+    "lincs": {
+      "$ref": "#/$defs/Lincs",
+      "title": "LINCS"
     },
     "unichem": {
       "$ref": "#/$defs/UniChem"
     },
-    "lincs": {
-      "$ref": "#/$defs/Lincs"
-    },
     "chembl": {
-      "$ref": "#/$defs/Chembl"
+      "$ref": "#/$defs/Chembl",
+      "title": "ChEMBL"
     },
     "pubchem": {
       "items": {
         "$ref": "#/$defs/PubChem"
       },
+      "title": "PubChem",
       "type": "array"
     },
-    "structureImage": {
-      "type": "string"
+    "clinicaltrials": {
+      "items": {
+        "$ref": "#/$defs/ClinicalTrial"
+      },
+      "title": "Clinical Trials",
+      "type": "array"
+    },
+    "drugbank": {
+      "$ref": "#/$defs/DrugbankBlock",
+      "title": "DrugBank"
+    },
+    "pharmgkb": {
+      "$ref": "#/$defs/PharmgkbBlock",
+      "title": "PharmGKB"
     }
   },
   "required": [
     "name",
     "scope"
   ],
-  "title": "Small Molecule Registry",
-  "type": "object",
-  "version": "0.0.27"
+  "title": "SmallMolecule",
+  "type": "object"
 }
