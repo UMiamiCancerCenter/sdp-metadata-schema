@@ -1,0 +1,196 @@
+{
+  "version": "0.0.29",
+  "grid": [
+    {
+      "title": "Lincs",
+      "size": {
+        "xs": 6
+      },
+      "children": [
+        {
+          "field": "lincs.inchiKeyParent",
+          "title": "INCHIKEY",
+          "type": "string"
+        },
+        {
+          "field": "lincs.alternativeNames",
+          "title": "Alternative Names",
+          "type": {
+            "name": "arrayWithCommaSeparator"
+          }
+        },
+        {
+          "field": "lincs.alternativeIds",
+          "title": "Alternative Ids",
+          "type": {
+            "name": "arrayWithCommaSeparator"
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "xs": 6
+      },
+      "children": [
+        {
+          "field": "structureImage",
+          "type": {
+            "name": "image",
+            "options": {
+              "maxWidth": 300
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Content",
+      "size": {
+        "xs": 6
+      },
+      "children": [
+        {
+          "field": "content.name",
+          "title": "Name",
+          "type": "string"
+        },
+        {
+          "field": "content.inchiCanonical",
+          "title": "INCHI",
+          "type": "string"
+        },
+        {
+          "field": "content.smilesCanonical",
+          "title": "Smiles",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "title": "Unichem",
+      "size": {
+        "xs": 6
+      },
+      "children": [
+        {
+          "field": "unichem.chembl",
+          "title": "CHEMBLID",
+          "type": "string"
+        },
+        {
+          "field": "unichem.pubchem",
+          "title": "PubChem CID",
+          "type": {
+            "name": "arrayWithCommaSeparator"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Chembl",
+      "size": {
+        "xs": 6
+      },
+      "children": [
+        {
+          "field": "chembl.moleculeType",
+          "title": "MOLECULE_TYPE",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "pubchem",
+          "type": {
+            "name": "datagrid",
+            "options": {
+              "title": "PubChem",
+              "columns": [
+                {
+                  "field": "cid",
+                  "title": "PubChem CID",
+                  "type": "number"
+                },
+                {
+                  "field": "molecularFormula",
+                  "title": "Molecular Formula",
+                  "type": "string"
+                },
+                {
+                  "field": "inchi",
+                  "title": "INCHI",
+                  "type": "string"
+                },
+                {
+                  "field": "smiles.canonical",
+                  "title": "Smiles",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "unichem",
+          "type": {
+            "name": "datagrid",
+            "options": {
+              "title": "External Links",
+              "castObjectToOneElementArray": true,
+              "columns": [
+                {
+                  "field": "chebi",
+                  "title": "ChEBI",
+                  "type": {
+                    "name": "arrayWithCommaSeparator"
+                  }
+                },
+                {
+                  "field": "chembl",
+                  "title": "ChEMBL",
+                  "type": {
+                    "name": "arrayWithCommaSeparator"
+                  }
+                },
+                {
+                  "field": "lincs",
+                  "title": "LINCS",
+                  "type": {
+                    "name": "arrayWithCommaSeparator"
+                  }
+                },
+                {
+                  "field": "pubchem",
+                  "title": "PubChem",
+                  "type": {
+                    "name": "arrayWithCommaSeparator"
+                  }
+                },
+                {
+                  "field": "drugbank",
+                  "title": "DrugBank",
+                  "type": {
+                    "name": "arrayWithCommaSeparator"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
