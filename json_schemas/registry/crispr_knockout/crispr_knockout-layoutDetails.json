@@ -1,0 +1,86 @@
+{
+  "version": "0.0.28",
+  "grid": [
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "name",
+          "title": "Name",
+          "type": "string"
+        },
+        {
+          "field": "alternativeNames",
+          "title": "Alternative Names",
+          "type": {
+            "name": "arrayWithCommaSeparator"
+          }
+        },
+        {
+          "field": "alternativeIds",
+          "title": "Alternative Ids",
+          "type": {
+            "name": "arrayWithCommaSeparator"
+          }
+        },
+        {
+          "field": "centerName",
+          "title": "Center Name",
+          "type": "string"
+        },
+        {
+          "field": "centerCanonicalId",
+          "title": "Center Canonical Id",
+          "type": "string"
+        },
+        {
+          "field": "providerName",
+          "title": "Provider Name",
+          "type": "string"
+        },
+        {
+          "field": "providerCatalogId",
+          "title": "Provider Catalog Id",
+          "type": "string"
+        },
+        {
+          "field": "lincsId",
+          "title": "Lincs Id",
+          "type": "string"
+        },
+        {
+          "field": "isCoding",
+          "title": "Is Coding",
+          "type": "string"
+        },
+        {
+          "field": "targetLocus",
+          "title": "Target Locus",
+          "type": "string"
+        },
+        {
+          "field": "targetLocusSpecies",
+          "title": "Target Locus Species",
+          "type": "string"
+        },
+        {
+          "field": "targetGeneId",
+          "title": "Target Gene Id",
+          "type": "string"
+        },
+        {
+          "field": "tanscriptId",
+          "title": "Tanscript Id",
+          "type": "string"
+        },
+        {
+          "field": "senseSequence",
+          "title": "Sense Sequence",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}
