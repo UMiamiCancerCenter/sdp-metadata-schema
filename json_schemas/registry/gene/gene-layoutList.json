@@ -1,0 +1,59 @@
+{
+  "version": "0.0.29",
+  "children": [
+    {
+      "field": "list",
+      "type": {
+        "name": "widget",
+        "options": {
+          "name": "List",
+          "props": {
+            "additionalColumns": [
+              {
+                "field": "typeOfGene",
+                "title": "Type Of Gene",
+                "type": "string"
+              }
+            ],
+            "expandableRow": {
+              "children": [
+                {
+                  "size": {
+                    "xs": 12
+                  },
+                  "children": [
+                    {
+                      "field": "ensemblId",
+                      "title": "Ensembl Id",
+                      "type": "string"
+                    },
+                    {
+                      "field": "entrezId",
+                      "title": "Entrez Id",
+                      "type": "string"
+                    },
+                    {
+                      "field": "taxid",
+                      "title": "Tax ID",
+                      "type": "string"
+                    },
+                    {
+                      "field": "mapLocation",
+                      "title": "Map Location",
+                      "type": "string"
+                    },
+                    {
+                      "field": "summary",
+                      "title": "Summary",
+                      "type": "string"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

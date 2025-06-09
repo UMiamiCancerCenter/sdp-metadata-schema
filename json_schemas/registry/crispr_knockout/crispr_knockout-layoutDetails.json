@@ -1,6 +1,6 @@
 {
-  "version": "0.0.28",
-  "grid": [
+  "version": "0.0.29",
+  "children": [
     {
       "size": {
         "xs": 12

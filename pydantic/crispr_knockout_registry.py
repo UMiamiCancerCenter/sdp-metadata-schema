@@ -14,7 +14,7 @@ from pydantic.json_schema import SkipJsonSchema
 
 
 class CrisprKnockout(CustomBaseModel):
-    model_config = ConfigDict(title="CRISPR Knockout Registry", json_schema_extra={"version": "0.0.28"})
+    model_config = ConfigDict(title="CRISPR Knockout Registry", json_schema_extra={"version": "0.0.29"})
 
     id: PyObjectId | SkipJsonSchema[None] = Field(default_factory=PyObjectId)
     name: str
