@@ -24,7 +24,7 @@ class ResourceEntry(CustomBaseModel):
 
 
 class CellLine(CustomBaseModel):
-    model_config = ConfigDict(title="Cell Line Registry", json_schema_extra={"version": "0.0.29"})
+    model_config = ConfigDict(title="Cell Line Registry", json_schema_extra={"version": "0.0.30"})
 
     id: PyObjectId | SkipJsonSchema[None] = Field(default_factory=PyObjectId)
     name: str = Field(..., alias="name")
