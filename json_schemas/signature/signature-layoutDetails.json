@@ -1,0 +1,260 @@
+{
+  "version": "0.0.30",
+  "children": [
+    {
+      "size": {
+        "xs": 6
+      },
+      "children": [
+        {
+          "field": "signatureType",
+          "title": "Signature Type",
+          "type": "string"
+        },
+        {
+          "field": "description",
+          "title": "Description",
+          "type": "string"
+        },
+        {
+          "field": "source",
+          "title": "Source",
+          "type": "string"
+        },
+        {
+          "field": "sourceLink",
+          "title": "Source Link",
+          "type": {
+            "name": "link"
+          }
+        },
+        {
+          "field": "project",
+          "title": "Project",
+          "type": "string"
+        },
+        {
+          "field": "organization",
+          "title": "Organization",
+          "type": "string"
+        },
+        {
+          "field": "areaOfStudy",
+          "title": "Area Of Study",
+          "type": "string"
+        },
+        {
+          "field": "assay",
+          "title": "Assay",
+          "type": "string"
+        },
+        {
+          "field": "method",
+          "title": "Processing Method",
+          "type": "string"
+        },
+        {
+          "field": "endpoints",
+          "title": "Endpoint(s)",
+          "type": {
+            "name": "arrayWithCommaSeparator"
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "analytes",
+          "type": {
+            "name": "datagrid",
+            "options": {
+              "title": "Analyte(s)",
+              "columns": [
+                {
+                  "field": "type",
+                  "title": "Type",
+                  "type": "string"
+                },
+                {
+                  "field": "names",
+                  "title": "Names",
+                  "type": {
+                    "name": "arrayWithCommaSeparator"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "perturbations",
+          "type": {
+            "name": "datagrid",
+            "options": {
+              "title": "Perturbations",
+              "columns": [
+                {
+                  "field": "name",
+                  "title": "Name",
+                  "type": "string"
+                },
+                {
+                  "field": "type",
+                  "title": "Type",
+                  "type": "string"
+                },
+                {
+                  "field": "lincsId",
+                  "title": "Lincs Id",
+                  "type": "string"
+                },
+                {
+                  "field": "duration",
+                  "title": "Duration",
+                  "type": "string"
+                },
+                {
+                  "field": "durationUnits",
+                  "title": "Duration Units",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "sampleGroups",
+          "title": "Sample Groups",
+          "type": {
+            "name": "arrayOfObjects",
+            "options": {
+              "each": [
+                {
+                  "field": "modelSystems",
+                  "type": {
+                    "name": "datagrid",
+                    "options": {
+                      "title": "Model Systems",
+                      "columns": [
+                        {
+                          "field": "type",
+                          "title": "Type",
+                          "type": "string"
+                        },
+                        {
+                          "field": "items",
+                          "title": "Names",
+                          "type": {
+                            "name": "arrayWithCommaSeparator",
+                            "options": {
+                              "field": "name"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "field": "perturbations",
+                  "type": {
+                    "name": "datagrid",
+                    "options": {
+                      "title": "Perturbations",
+                      "columns": [
+                        {
+                          "field": "name",
+                          "title": "Name",
+                          "type": "string"
+                        },
+                        {
+                          "field": "type",
+                          "title": "Type",
+                          "type": "string"
+                        },
+                        {
+                          "field": "perturbationId",
+                          "title": "Perturbation Id",
+                          "type": "string"
+                        },
+                        {
+                          "field": "concentration",
+                          "title": "Concentration",
+                          "type": "string"
+                        },
+                        {
+                          "field": "concentrationUnits",
+                          "title": "Concentration Units",
+                          "type": "string"
+                        },
+                        {
+                          "field": "duration",
+                          "title": "Duration",
+                          "type": "string"
+                        },
+                        {
+                          "field": "durationUnits",
+                          "title": "Duration Units",
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "field": "samples",
+                  "type": {
+                    "name": "datagrid",
+                    "options": {
+                      "title": "Samples",
+                      "columns": [
+                        {
+                          "field": "name",
+                          "title": "Name",
+                          "type": "string"
+                        },
+                        {
+                          "field": "description",
+                          "title": "Description",
+                          "type": "string"
+                        },
+                        {
+                          "field": "sampleId",
+                          "title": "Sample Id",
+                          "type": "string"
+                        },
+                        {
+                          "field": "dataset",
+                          "title": "Dataset",
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

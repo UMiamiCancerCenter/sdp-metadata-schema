@@ -1,0 +1,59 @@
+{
+  "version": "0.0.30",
+  "children": [
+    {
+      "field": "list",
+      "type": {
+        "name": "widget",
+        "options": {
+          "name": "List",
+          "props": {
+            "additionalColumns": [
+              {
+                "field": "signatureType",
+                "title": "Signature Type",
+                "type": "string"
+              },
+              {
+                "field": "method",
+                "title": "Processing Method",
+                "type": "string"
+              },
+              {
+                "field": "source",
+                "title": "Source",
+                "type": "string"
+              }
+            ],
+            "expandableRow": {
+              "children": [
+                {
+                  "size": {
+                    "xs": 12
+                  },
+                  "children": [
+                    {
+                      "field": "probeCount",
+                      "title": "Probe Count",
+                      "type": "string"
+                    },
+                    {
+                      "field": "description",
+                      "title": "Description",
+                      "type": "string"
+                    },
+                    {
+                      "field": "type",
+                      "title": "Type",
+                      "type": "string"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

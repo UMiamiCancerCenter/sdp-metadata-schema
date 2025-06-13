@@ -1,0 +1,28 @@
+{
+  "version": "0.0.30",
+  "children": [
+    {
+      "field": "list",
+      "type": {
+        "name": "widget",
+        "options": {
+          "name": "List",
+          "props": {
+            "additionalColumns": [
+              {
+                "field": "assay",
+                "title": "Assay",
+                "type": "string"
+              },
+              {
+                "field": "source",
+                "title": "Source",
+                "type": "string"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

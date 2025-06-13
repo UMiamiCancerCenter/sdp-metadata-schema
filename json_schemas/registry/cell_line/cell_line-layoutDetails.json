@@ -1,0 +1,247 @@
+{
+  "version": "0.0.30",
+  "children": [
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "synonyms",
+          "title": "Synonyms",
+          "type": {
+            "name": "arrayWithCommaSeparator"
+          }
+        },
+        {
+          "field": "cellosaurusAccession",
+          "title": "Cellosaurus Accession",
+          "type": "string"
+        },
+        {
+          "field": "sex",
+          "title": "Sex",
+          "type": "string"
+        },
+        {
+          "field": "ageAtSampling",
+          "title": "Age At Sampling",
+          "type": "string"
+        },
+        {
+          "field": "category",
+          "title": "Category",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "disease",
+          "type": {
+            "name": "datagrid",
+            "options": {
+              "title": "Disease",
+              "columns": [
+                {
+                  "field": "accession",
+                  "title": "Accession",
+                  "type": "string"
+                },
+                {
+                  "field": "category",
+                  "title": "Category",
+                  "type": "string"
+                },
+                {
+                  "field": "database",
+                  "title": "Database",
+                  "type": "string"
+                },
+                {
+                  "field": "url",
+                  "title": "Url",
+                  "type": {
+                    "name": "link"
+                  }
+                },
+                {
+                  "field": "iri",
+                  "title": "Iri",
+                  "type": {
+                    "name": "link"
+                  }
+                },
+                {
+                  "field": "label",
+                  "title": "label",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "species",
+          "type": {
+            "name": "datagrid",
+            "options": {
+              "title": "Species",
+              "columns": [
+                {
+                  "field": "accession",
+                  "title": "Accession",
+                  "type": "string"
+                },
+                {
+                  "field": "category",
+                  "title": "Category",
+                  "type": "string"
+                },
+                {
+                  "field": "database",
+                  "title": "Database",
+                  "type": "string"
+                },
+                {
+                  "field": "url",
+                  "title": "Url",
+                  "type": {
+                    "name": "link"
+                  }
+                },
+                {
+                  "field": "iri",
+                  "title": "Iri",
+                  "type": {
+                    "name": "link"
+                  }
+                },
+                {
+                  "field": "label",
+                  "title": "label",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "cellLineDatabases",
+          "type": {
+            "name": "datagrid",
+            "options": {
+              "title": "CellLine Databases",
+              "columns": [
+                {
+                  "field": "accession",
+                  "title": "Accession",
+                  "type": "string"
+                },
+                {
+                  "field": "category",
+                  "title": "Category",
+                  "type": "string"
+                },
+                {
+                  "field": "database",
+                  "title": "Database",
+                  "type": "string"
+                },
+                {
+                  "field": "url",
+                  "title": "Url",
+                  "type": {
+                    "name": "link"
+                  }
+                },
+                {
+                  "field": "iri",
+                  "title": "Iri",
+                  "type": {
+                    "name": "link"
+                  }
+                },
+                {
+                  "field": "label",
+                  "title": "label",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "anatomyCellTypeResources",
+          "type": {
+            "name": "datagrid",
+            "options": {
+              "title": "Anatomy Cell Type Resources",
+              "columns": [
+                {
+                  "field": "accession",
+                  "title": "Accession",
+                  "type": "string"
+                },
+                {
+                  "field": "category",
+                  "title": "Category",
+                  "type": "string"
+                },
+                {
+                  "field": "database",
+                  "title": "Database",
+                  "type": "string"
+                },
+                {
+                  "field": "url",
+                  "title": "Url",
+                  "type": {
+                    "name": "link"
+                  }
+                },
+                {
+                  "field": "iri",
+                  "title": "Iri",
+                  "type": {
+                    "name": "link"
+                  }
+                },
+                {
+                  "field": "label",
+                  "title": "label",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

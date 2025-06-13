@@ -1,0 +1,115 @@
+{
+  "version": "0.0.30",
+  "children": [
+    {
+      "field": "list",
+      "type": {
+        "name": "widget",
+        "options": {
+          "name": "List",
+          "props": {
+            "additionalColumns": [
+              {
+                "field": "lincs.alternativeNames",
+                "title": "Alternative Names",
+                "type": {
+                  "name": "arrayWithCommaSeparator"
+                }
+              },
+              {
+                "field": "chembl.drugMechanismsCurated",
+                "title": "Alternative Names",
+                "type": {
+                  "name": "arrayWithCommaSeparator"
+                }
+              },
+              {
+                "field": "chembl.maxPhaseCurated",
+                "title": "Max Phase",
+                "type": "string"
+              }
+            ],
+            "expandableRow": {
+              "children": [
+                {
+                  "size": {
+                    "xs": 12
+                  },
+                  "children": [
+                    {
+                      "field": "pubchem",
+                      "title": "INCHI",
+                      "type": {
+                        "name": "arrayWithCommaSeparator",
+                        "options": {
+                          "field": "inchi"
+                        }
+                      }
+                    },
+                    {
+                      "field": "pubchem",
+                      "title": "Smiles",
+                      "type": {
+                        "name": "arrayWithCommaSeparator",
+                        "options": {
+                          "field": "smiles.canonical"
+                        }
+                      }
+                    },
+                    {
+                      "field": "unichem",
+                      "type": {
+                        "name": "datagrid",
+                        "options": {
+                          "title": "External Links",
+                          "castObjectToOneElementArray": true,
+                          "columns": [
+                            {
+                              "field": "chebi",
+                              "title": "ChEBI",
+                              "type": {
+                                "name": "arrayWithCommaSeparator"
+                              }
+                            },
+                            {
+                              "field": "chembl",
+                              "title": "ChEMBL",
+                              "type": {
+                                "name": "arrayWithCommaSeparator"
+                              }
+                            },
+                            {
+                              "field": "lincs",
+                              "title": "LINCS",
+                              "type": {
+                                "name": "arrayWithCommaSeparator"
+                              }
+                            },
+                            {
+                              "field": "pubchem",
+                              "title": "PubChem",
+                              "type": {
+                                "name": "arrayWithCommaSeparator"
+                              }
+                            },
+                            {
+                              "field": "drugbank",
+                              "title": "DrugBank",
+                              "type": {
+                                "name": "arrayWithCommaSeparator"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

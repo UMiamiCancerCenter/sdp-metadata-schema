@@ -1,0 +1,59 @@
+{
+  "version": "0.0.30",
+  "children": [
+    {
+      "field": "list",
+      "type": {
+        "name": "widget",
+        "options": {
+          "name": "List",
+          "props": {
+            "additionalColumns": [
+              {
+                "field": "cellosaurusAccession",
+                "title": "Cellosaurus Accession",
+                "type": "string"
+              },
+              {
+                "field": "disease",
+                "title": "Disease",
+                "type": {
+                  "name": "arrayWithCommaSeparator",
+                  "options": {
+                    "field": "label"
+                  }
+                }
+              },
+              {
+                "field": "species",
+                "title": "Species",
+                "type": {
+                  "name": "arrayWithCommaSeparator",
+                  "options": {
+                    "field": "label"
+                  }
+                }
+              }
+            ],
+            "expandableRow": {
+              "children": [
+                {
+                  "size": {
+                    "xs": 12
+                  },
+                  "children": [
+                    {
+                      "field": "sex",
+                      "title": "Sex",
+                      "type": "string"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

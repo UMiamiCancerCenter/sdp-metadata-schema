@@ -1,0 +1,357 @@
+{
+  "version": "0.0.30",
+  "children": [
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "name",
+          "title": "Name",
+          "type": {
+            "name": "widget",
+            "options": {
+              "name": "ToggleGeneName"
+            }
+          }
+        },
+        {
+          "field": "summary",
+          "title": "Summary",
+          "type": "string"
+        },
+        {
+          "field": "aliases",
+          "title": "Aliases",
+          "type": {
+            "name": "arrayWithCommaSeparator"
+          }
+        },
+        {
+          "field": "HGNC",
+          "title": "HGNC",
+          "type": "string"
+        },
+        {
+          "field": "symbol",
+          "title": "Symbol",
+          "type": "string"
+        },
+        {
+          "field": "mapLocation",
+          "title": "Map Location",
+          "type": "string"
+        },
+        {
+          "field": "entrezGene",
+          "title": "Entrez Gene ID",
+          "type": "string"
+        },
+        {
+          "field": "ensembl",
+          "title": "Ensembl ID",
+          "type": "string"
+        },
+        {
+          "field": "otherNames",
+          "title": "Other Names",
+          "type": "string"
+        },
+        {
+          "field": "taxid",
+          "title": "Taxonomy ID",
+          "type": "string"
+        },
+        {
+          "field": "species",
+          "title": "Species",
+          "type": "string"
+        },
+        {
+          "field": "typeOfGene",
+          "title": "Type of Gene",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "go.BP",
+          "type": {
+            "name": "datagrid",
+            "options": {
+              "title": "Gene Ontology",
+              "columns": [
+                {
+                  "field": "evidence",
+                  "title": "Evidence",
+                  "type": "string"
+                },
+                {
+                  "field": "gocategory",
+                  "title": "GO Category",
+                  "type": "string"
+                },
+                {
+                  "field": "goId",
+                  "title": "GO ID",
+                  "type": "string"
+                },
+                {
+                  "field": "qualifier",
+                  "title": "Qualifier",
+                  "type": "string"
+                },
+                {
+                  "field": "term",
+                  "title": "Term",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "go.CC",
+          "type": {
+            "name": "datagrid",
+            "options": {
+              "title": "Cellular Component",
+              "columns": [
+                {
+                  "field": "evidence",
+                  "title": "Evidence",
+                  "type": "string"
+                },
+                {
+                  "field": "gocategory",
+                  "title": "GO Category",
+                  "type": "string"
+                },
+                {
+                  "field": "goId",
+                  "title": "GO ID",
+                  "type": "string"
+                },
+                {
+                  "field": "qualifier",
+                  "title": "Qualifier",
+                  "type": "string"
+                },
+                {
+                  "field": "term",
+                  "title": "Term",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "go.MF",
+          "type": {
+            "name": "datagrid",
+            "options": {
+              "title": "Cellular Component",
+              "columns": [
+                {
+                  "field": "evidence",
+                  "title": "Evidence",
+                  "type": "string"
+                },
+                {
+                  "field": "gocategory",
+                  "title": "GO Category",
+                  "type": "string"
+                },
+                {
+                  "field": "goId",
+                  "title": "GO ID",
+                  "type": "string"
+                },
+                {
+                  "field": "qualifier",
+                  "title": "Qualifier",
+                  "type": "string"
+                },
+                {
+                  "field": "term",
+                  "title": "Term",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "KEGG",
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "kegg",
+          "title": "KEGG IDs",
+          "type": {
+            "name": "arrayWithCommaSeparator",
+            "options": {
+              "field": "keggId"
+            }
+          }
+        },
+        {
+          "field": "kegg",
+          "title": "KEGG Names",
+          "type": {
+            "name": "arrayWithCommaSeparator",
+            "options": {
+              "field": "keggName"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "Reactome",
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "reactome",
+          "title": "Reactome IDs",
+          "type": {
+            "name": "arrayWithCommaSeparator",
+            "options": {
+              "field": "reactomeId"
+            }
+          }
+        },
+        {
+          "field": "reactome",
+          "title": "Reactome Names",
+          "type": {
+            "name": "arrayWithCommaSeparator",
+            "options": {
+              "field": "reactomeName"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "xs": 12
+      },
+      "title": "Wikipedia Reference",
+      "children": [
+        {
+          "field": "wikipedia.urlStub",
+          "title": "URL Stub",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "gwasAssociations",
+          "type": {
+            "name": "datagrid",
+            "options": {
+              "title": "GWAS Asssociations",
+              "columns": [
+                {
+                  "field": "rsId",
+                  "title": "RefSeq ID",
+                  "type": "string"
+                },
+                {
+                  "field": "riskLabel",
+                  "title": "Risk Label",
+                  "type": "string"
+                },
+                {
+                  "field": "pValue",
+                  "title": "p-Value",
+                  "type": "string"
+                },
+                {
+                  "field": "pValueExponent",
+                  "title": "p-Value Exponent",
+                  "type": "string"
+                },
+                {
+                  "field": "traitName",
+                  "title": "Trait Name",
+                  "type": "string"
+                }
+              ],
+              "expandableRow": [
+                {
+                  "size": {
+                    "xs": 12
+                  },
+                  "children": [
+                    {
+                      "field": "linkedTraits",
+                      "type": {
+                        "name": "datagrid",
+                        "options": {
+                          "title": "Linked Traits",
+                          "columns": [
+                            {
+                              "field": "label",
+                              "title": "Label",
+                              "type": "string"
+                            },
+                            {
+                              "field": "traitId",
+                              "title": "Trait ID",
+                              "type": "string"
+                            },
+                            {
+                              "field": "uri",
+                              "title": "URI",
+                              "type": {
+                                "name": "link"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

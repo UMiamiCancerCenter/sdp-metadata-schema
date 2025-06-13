@@ -1,0 +1,33 @@
+{
+  "version": "0.0.30",
+  "children": [
+    {
+      "field": "list",
+      "type": {
+        "name": "widget",
+        "options": {
+          "name": "List",
+          "props": {
+            "additionalColumns": [
+              {
+                "field": "targetLocus",
+                "title": "Target Locus",
+                "type": "string"
+              },
+              {
+                "field": "targetLocusSpecies",
+                "title": "Target Locus Species",
+                "type": "string"
+              },
+              {
+                "field": "targetGeneId",
+                "title": "Target Gene Id",
+                "type": "string"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
