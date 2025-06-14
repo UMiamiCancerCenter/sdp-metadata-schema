@@ -977,6 +977,7 @@
     "name",
     "scope"
   ],
-  "title": "SmallMolecule",
-  "type": "object"
+  "title": "Small Molecule Registry",
+  "type": "object",
+  "version": "0.0.31"
 }
