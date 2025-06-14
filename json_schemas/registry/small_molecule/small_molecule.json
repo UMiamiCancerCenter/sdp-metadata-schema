@@ -1,5 +1,113 @@
 {
   "$defs": {
+    "AdverseEvent": {
+      "properties": {
+        "term": {
+          "title": "Term",
+          "type": "string"
+        },
+        "organSystem": {
+          "title": "Organ System",
+          "type": "string"
+        },
+        "sourceVocabulary": {
+          "title": "Source Vocabulary",
+          "type": "string"
+        },
+        "assessment": {
+          "title": "Assessment",
+          "type": "string"
+        },
+        "stats": {
+          "items": {
+            "$ref": "#/$defs/EventStat"
+          },
+          "title": "Stats",
+          "type": "array"
+        }
+      },
+      "title": "AdverseEvent",
+      "type": "object"
+    },
+    "AdverseEventsModule": {
+      "properties": {
+        "seriousEvents": {
+          "items": {
+            "$ref": "#/$defs/AdverseEvent"
+          },
+          "type": "array"
+        },
+        "otherEvents": {
+          "items": {
+            "$ref": "#/$defs/AdverseEvent"
+          },
+          "type": "array"
+        }
+      },
+      "title": "AdverseEventsModule",
+      "type": "object"
+    },
+    "ApiDate": {
+      "properties": {
+        "date": {
+          "title": "Date",
+          "type": "string"
+        },
+        "type": {
+          "title": "Type",
+          "type": "string"
+        }
+      },
+      "title": "ApiDate",
+      "type": "object"
+    },
+    "ArmsInterventionsModule": {
+      "properties": {
+        "interventions": {
+          "items": {
+            "$ref": "#/$defs/Intervention"
+          },
+          "title": "Interventions",
+          "type": "array"
+        }
+      },
+      "title": "ArmsInterventionsModule",
+      "type": "object"
+    },
+    "Bioactivity": {
+      "properties": {
+        "activityComment": {
+          "title": "Activity Comment",
+          "type": "string"
+        },
+        "standardRelation": {
+          "title": "Standard Relation",
+          "type": "string"
+        },
+        "standardType": {
+          "title": "Standard Type",
+          "type": "string"
+        },
+        "standardUnits": {
+          "title": "Standard Units",
+          "type": "string"
+        },
+        "standardValue": {
+          "title": "Standard Value",
+          "type": "number"
+        },
+        "targetPrefName": {
+          "title": "Target Preferred Name",
+          "type": "string"
+        },
+        "targetOrganism": {
+          "title": "Target Organism",
+          "type": "string"
+        }
+      },
+      "title": "Bioactivity",
+      "type": "object"
+    },
     "Biocomponent": {
       "properties": {
         "organism": {
@@ -25,15 +133,15 @@
     },
     "Chembl": {
       "properties": {
-        "molecule_chembl_id": {
+        "moleculeChemblId": {
           "title": "ChEMBL ID",
           "type": "string"
         },
-        "pref_name": {
+        "prefName": {
           "title": "Preferred Name",
           "type": "string"
         },
-        "max_phase": {
+        "maxPhase": {
           "title": "Max Phase",
           "type": "number"
         },
@@ -41,7 +149,7 @@
           "title": "Max Phase Description",
           "type": "string"
         },
-        "first_approval": {
+        "firstApproval": {
           "title": "First Approval",
           "type": "integer"
         },
@@ -65,7 +173,7 @@
           "title": "Withdrawn Reason",
           "type": "string"
         },
-        "black_box_warning": {
+        "blackBoxWarning": {
           "title": "Black Box Warning",
           "type": "boolean"
         },
@@ -77,75 +185,68 @@
           "title": "InChI",
           "type": "string"
         },
-        "inchi_key": {
+        "inchiKey": {
           "title": "InChI Key",
           "type": "string"
         },
-        "molecule_properties": {
+        "moleculeProperties": {
           "$ref": "#/$defs/MoleculeProperties",
           "title": "Molecule Properties"
         },
-        "molecule_synonyms": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/MoleculeSynonym"
-            },
-            {
-              "items": {
-                "$ref": "#/$defs/MoleculeSynonym"
-              },
-              "type": "array"
-            }
-          ],
-          "title": "Molecule Synonyms"
+        "moleculeSynonyms": {
+          "items": {
+            "$ref": "#/$defs/MoleculeSynonym"
+          },
+          "title": "Molecule Synonyms",
+          "type": "array"
         },
-        "drug_indications": {
+        "drugIndications": {
           "items": {
             "$ref": "#/$defs/DrugIndication"
           },
           "title": "Drug Indications",
           "type": "array"
         },
-        "drug_mechanisms": {
+        "drugMechanisms": {
           "items": {
             "$ref": "#/$defs/DrugMechanism"
           },
           "title": "Drug Mechanisms",
           "type": "array"
         },
-        "compound_structures": {
-          "$ref": "#/$defs/CompoundStructures",
-          "title": "Compound Structures"
+        "moleculeStructures": {
+          "$ref": "#/$defs/MoleculeStructures",
+          "title": "Molecule Structures"
         },
         "biotherapeutic": {
           "$ref": "#/$defs/Biotherapeutic"
+        },
+        "xrefs": {
+          "items": {
+            "$ref": "#/$defs/Xref"
+          },
+          "title": "Cross-references",
+          "type": "array"
+        },
+        "bioactivities": {
+          "items": {
+            "$ref": "#/$defs/Bioactivity"
+          },
+          "title": "Bioactivities",
+          "type": "array"
         }
       },
       "title": "Chembl",
       "type": "object"
     },
-    "ClinicalTrial": {
+    "Collaborator": {
       "properties": {
-        "protocol_section": {
-          "$ref": "#/$defs/ProtocolSection",
-          "title": "Protocol Section"
-        }
-      },
-      "title": "ClinicalTrial",
-      "type": "object"
-    },
-    "CompoundStructures": {
-      "properties": {
-        "standardInchiKey": {
-          "title": "Standard InChI Key",
-          "type": "string"
-        },
-        "canonicalSmiles": {
-          "title": "Canonical Smiles",
+        "name": {
+          "title": "Name",
           "type": "string"
         }
       },
-      "title": "CompoundStructures",
+      "title": "Collaborator",
       "type": "object"
     },
     "ConditionsModule": {
@@ -161,27 +262,54 @@
       "title": "ConditionsModule",
       "type": "object"
     },
+    "ContactsLocationsModule": {
+      "properties": {
+        "locations": {
+          "items": {
+            "$ref": "#/$defs/Location"
+          },
+          "title": "Locations",
+          "type": "array"
+        },
+        "officialContacts": {
+          "items": {
+            "$ref": "#/$defs/OfficialContact"
+          },
+          "title": "Official Contacts",
+          "type": "array"
+        }
+      },
+      "title": "ContactsLocationsModule",
+      "type": "object"
+    },
+    "CtStudy": {
+      "properties": {
+        "protocolSection": {
+          "$ref": "#/$defs/ProtocolSection",
+          "title": "Protocol Section"
+        },
+        "resultsSection": {
+          "$ref": "#/$defs/ResultsSection",
+          "title": "Results Section"
+        }
+      },
+      "title": "CtStudy",
+      "type": "object"
+    },
     "DesignModule": {
       "properties": {
-        "study_type": {
+        "studyType": {
           "title": "Study Type",
           "type": "string"
         },
-        "phase_list": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "items": {
-                "type": "string"
-              },
-              "type": "array"
-            }
-          ],
-          "title": "Phase List"
+        "phaseList": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Phase List",
+          "type": "array"
         },
-        "intervention_model": {
+        "interventionModel": {
           "title": "Intervention Model",
           "type": "string"
         },
@@ -189,9 +317,13 @@
           "title": "Masking",
           "type": "string"
         },
-        "primary_purpose": {
+        "primaryPurpose": {
           "title": "Primary Purpose",
           "type": "string"
+        },
+        "enrollmentInfo": {
+          "$ref": "#/$defs/EnrollmentInfo",
+          "title": "Enrollment Info"
         }
       },
       "title": "DesignModule",
@@ -199,37 +331,30 @@
     },
     "DrugIndication": {
       "properties": {
-        "efo_id": {
+        "efoId": {
           "title": "EFO ID",
           "type": "string"
         },
-        "efo_term": {
+        "efoTerm": {
           "title": "EFO Term",
           "type": "string"
         },
-        "first_approval": {
+        "firstApproval": {
           "title": "First Approval",
           "type": "integer"
         },
-        "indication_refs": {
-          "anyOf": [
-            {
-              "$ref": "#/$defs/IndicationRefs"
-            },
-            {
-              "items": {
-                "$ref": "#/$defs/IndicationRefs"
-              },
-              "type": "array"
-            }
-          ],
-          "title": "Indication References"
+        "indicationRefs": {
+          "items": {
+            "$ref": "#/$defs/IndicationRefs"
+          },
+          "title": "Indication References",
+          "type": "array"
         },
-        "max_phase_for_ind": {
+        "maxPhaseForInd": {
           "title": "Max Phase for Indication",
           "type": "number"
         },
-        "mesh_heading": {
+        "meshHeading": {
           "title": "MeSH Heading",
           "type": "string"
         }
@@ -270,34 +395,60 @@
       "title": "DrugMechanism",
       "type": "object"
     },
-    "DrugbankBlock": {
+    "EnrollmentInfo": {
       "properties": {
-        "cas_number": {
-          "title": "CAS Number",
+        "enrollmentCount": {
+          "title": "Count",
+          "type": "integer"
+        },
+        "enrollmentType": {
+          "title": "Type",
           "type": "string"
         }
       },
-      "title": "DrugbankBlock",
+      "title": "EnrollmentInfo",
+      "type": "object"
+    },
+    "EventStat": {
+      "properties": {
+        "groupId": {
+          "title": "Group Id",
+          "type": "string"
+        },
+        "numEvents": {
+          "title": "Num Events",
+          "type": "string"
+        },
+        "numAffected": {
+          "title": "Num Affected",
+          "type": "string"
+        },
+        "numAtRisk": {
+          "title": "Num At Risk",
+          "type": "string"
+        }
+      },
+      "title": "EventStat",
       "type": "object"
     },
     "IdentificationModule": {
       "properties": {
-        "nct_id": {
+        "nctId": {
           "title": "NCT ID",
           "type": "string"
         },
-        "nct_id_aliases": {
+        "nctIdAliases": {
           "items": {
             "type": "string"
           },
           "title": "NCT ID Aliases",
           "type": "array"
         },
-        "brief_title": {
+        "briefTitle": {
           "title": "Brief Title",
           "type": "string"
         },
-        "official_title": {
+        "officialTitle": {
           "title": "Official Title",
           "type": "string"
         }
@@ -325,6 +476,20 @@
       "title": "IndicationRefs",
       "type": "object"
     },
+    "Intervention": {
+      "properties": {
+        "interventionName": {
+          "title": "Intervention Name",
+          "type": "string"
+        },
+        "interventionType": {
+          "title": "Intervention Type",
+          "type": "string"
+        }
+      },
+      "title": "Intervention",
+      "type": "object"
+    },
     "Iupac": {
       "properties": {
         "systematic": {
@@ -333,6 +498,16 @@
         }
       },
       "title": "Iupac",
+      "type": "object"
+    },
+    "LeadSponsor": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        }
+      },
+      "title": "LeadSponsor",
       "type": "object"
     },
     "Lincs": {
@@ -364,18 +539,11 @@
           "type": "integer"
         },
         "chebiId": {
-          "anyOf": [
-            {
-              "type": "integer"
-            },
-            {
-              "items": {
-                "type": "integer"
-              },
-              "type": "array"
-            }
-          ],
-          "title": "ChEBI ID"
+          "items": {
+            "type": "integer"
+          },
+          "title": "ChEBI ID",
+          "type": "array"
         },
         "inchiParent": {
           "title": "InChI Parent",
@@ -393,9 +561,23 @@
       "title": "Lincs",
       "type": "object"
     },
+    "Location": {
+      "properties": {
+        "country": {
+          "title": "Country",
+          "type": "string"
+        },
+        "facility": {
+          "title": "Facility",
+          "type": "string"
+        }
+      },
+      "title": "Location",
+      "type": "object"
+    },
     "MoleculeProperties": {
       "properties": {
-        "full_mwt": {
+        "fullMwt": {
           "title": "Full Molecule Weight",
           "type": "number"
         },
@@ -407,7 +589,7 @@
           "title": "Hydrogen Bond Donors",
           "type": "integer"
         },
-        "acd_logp": {
+        "acdLogp": {
           "title": "ACD LogP",
           "type": "number"
         },
@@ -419,46 +601,81 @@
       "title": "MoleculeProperties",
       "type": "object"
     },
+    "MoleculeStructures": {
+      "properties": {
+        "standardInchiKey": {
+          "title": "Standard InChI Key",
+          "type": "string"
+        },
+        "canonicalSmiles": {
+          "title": "Canonical Smiles",
+          "type": "string"
+        }
+      },
+      "title": "MoleculeStructures",
+      "type": "object"
+    },
     "MoleculeSynonym": {
       "properties": {
-        "molecule_synonym": {
+        "moleculeSynonym": {
           "title": "Molecule Synonym",
           "type": "string"
         },
-        "syn_type": {
+        "synType": {
           "title": "Synonym Type",
           "type": "string"
         },
         "synonyms": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "items": {
-                "type": "string"
-              },
-              "type": "array"
-            }
-          ],
-          "title": "Synonyms"
+          "items": {
+            "type": "string"
+          },
+          "title": "Synonyms",
+          "type": "array"
         }
       },
       "title": "MoleculeSynonym",
       "type": "object"
     },
+    "OfficialContact": {
+      "properties": {
+        "contactName": {
+          "title": "Contact Name",
+          "type": "string"
+        }
+      },
+      "title": "OfficialContact",
+      "type": "object"
+    },
+    "Outcome": {
+      "properties": {
+        "measure": {
+          "title": "Measure",
+          "type": "string"
+        },
+        "timeFrame": {
+          "title": "Time Frame",
+          "type": "string"
+        },
+        "resultType": {
+          "title": "Result Type",
+          "type": "string"
+        }
+      },
+      "title": "Outcome",
+      "type": "object"
+    },
     "OutcomesModule": {
       "properties": {
-        "primary_outcomes": {
+        "primaryOutcomes": {
           "items": {
-            "$ref": "#/$defs/PrimaryOutcome"
+            "$ref": "#/$defs/Outcome"
           },
           "title": "Primary Outcomes",
           "type": "array"
         },
-        "secondary_outcomes": {
+        "secondaryOutcomes": {
           "items": {
-            "$ref": "#/$defs/SecondaryOutcome"
+            "$ref": "#/$defs/Outcome"
           },
           "title": "Secondary Outcomes",
           "type": "array"
@@ -467,9 +684,23 @@
       "title": "OutcomesModule",
       "type": "object"
     },
+    "OversightModule": {
+      "properties": {
+        "fdaRegulatedDrug": {
+          "title": "Fda Regulated Drug",
+          "type": "string"
+        },
+        "hasExpandedAccess": {
+          "title": "Has Expanded Access",
+          "type": "boolean"
+        }
+      },
+      "title": "OversightModule",
+      "type": "object"
+    },
     "PharmgkbBlock": {
       "properties": {
-        "generic_names": {
+        "genericNames": {
           "items": {
             "type": "string"
           },
@@ -478,50 +709,48 @@
         }
       },
       "required": [
-        "generic_names"
+        "genericNames"
       ],
       "title": "PharmgkbBlock",
       "type": "object"
     },
-    "PrimaryOutcome": {
-      "properties": {
-        "measure": {
-          "title": "Measure",
-          "type": "string"
-        },
-        "time_frame": {
-          "title": "Time Frame",
-          "type": "string"
-        },
-        "result_type": {
-          "title": "Result Type",
-          "type": "string"
-        }
-      },
-      "title": "PrimaryOutcome",
-      "type": "object"
-    },
     "ProtocolSection": {
       "properties": {
-        "identification_module": {
+        "identificationModule": {
           "$ref": "#/$defs/IdentificationModule",
           "title": "Identification Module"
         },
-        "status_module": {
+        "statusModule": {
           "$ref": "#/$defs/StatusModule",
           "title": "Status Module"
         },
-        "conditions_module": {
-          "$ref": "#/$defs/ConditionsModule",
-          "title": "Conditions Module"
-        },
-        "design_module": {
+        "designModule": {
           "$ref": "#/$defs/DesignModule",
           "title": "Design Module"
         },
-        "outcomes_module": {
+        "conditionsModule": {
+          "$ref": "#/$defs/ConditionsModule",
+          "title": "Conditions Module"
+        },
+        "armsInterventionsModule": {
+          "$ref": "#/$defs/ArmsInterventionsModule",
+          "title": "Arms Interventions Module"
+        },
+        "outcomesModule": {
           "$ref": "#/$defs/OutcomesModule",
           "title": "Outcomes Module"
+        },
+        "contactsLocationsModule": {
+          "$ref": "#/$defs/ContactsLocationsModule",
+          "title": "Contacts Locations Module"
+        },
+        "sponsorsCollaboratorsModule": {
+          "$ref": "#/$defs/SponsorsCollaboratorsModule",
+          "title": "Sponsors Collaborators Module"
+        },
+        "oversightModule": {
+          "$ref": "#/$defs/OversightModule",
+          "title": "Oversight Module"
         }
       },
       "title": "ProtocolSection",
@@ -552,6 +781,10 @@
         "molecularFormula": {
           "title": "Molecular Formula",
           "type": "string"
+        },
+        "casNumber": {
+          "title": "CAS Number",
+          "type": "string"
         }
       },
       "title": "PubChem",
@@ -567,39 +800,56 @@
       "title": "PubChemSmiles",
       "type": "object"
     },
-    "SecondaryOutcome": {
+    "ResultsSection": {
       "properties": {
-        "measure": {
-          "title": "Measure",
-          "type": "string"
+        "adverseEventsModule": {
+          "$ref": "#/$defs/AdverseEventsModule",
+          "title": "Adverse Events Module"
         }
       },
-      "title": "SecondaryOutcome",
+      "title": "ResultsSection",
+      "type": "object"
+    },
+    "SponsorsCollaboratorsModule": {
+      "properties": {
+        "leadSponsor": {
+          "$ref": "#/$defs/LeadSponsor",
+          "title": "Lead Sponsor"
+        },
+        "collaborators": {
+          "items": {
+            "$ref": "#/$defs/Collaborator"
+          },
+          "title": "Collaborators",
+          "type": "array"
+        }
+      },
+      "title": "SponsorsCollaboratorsModule",
       "type": "object"
     },
     "StatusModule": {
       "properties": {
-        "overall_status": {
+        "overallStatus": {
           "title": "Overall Status",
           "type": "string"
         },
-        "why_stopped": {
+        "whyStopped": {
           "title": "Why Stopped",
           "type": "string"
         },
-        "start_date": {
-          "title": "Start Date",
-          "type": "string"
+        "startDate": {
+          "$ref": "#/$defs/ApiDate",
+          "title": "Start Date"
         },
-        "primary_completion_date": {
-          "title": "Primary Completion Date",
-          "type": "string"
+        "primaryCompletionDate": {
+          "$ref": "#/$defs/ApiDate",
+          "title": "Primary Completion Date"
         },
-        "study_first_submit_date": {
+        "studyFirstSubmitDate": {
           "title": "Study First Submit Date",
           "type": "string"
         },
-        "results_first_submit_date": {
+        "resultsFirstSubmitDate": {
           "title": "Results First Submit Date",
           "type": "string"
         }
@@ -609,11 +859,11 @@
     },
     "TargetComponent": {
       "properties": {
-        "uniprot": {
+        "accession": {
           "items": {
             "type": "string"
           },
-          "title": "UniProt",
+          "title": "Accession",
           "type": "array"
         }
       },
@@ -623,77 +873,60 @@
     "UniChem": {
       "properties": {
         "chebi": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "items": {
-                "type": "string"
-              },
-              "type": "array"
-            }
-          ],
-          "title": "ChEBI"
+          "items": {
+            "type": "string"
+          },
+          "title": "ChEBI",
+          "type": "array"
         },
         "chembl": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "items": {
-                "type": "string"
-              },
-              "type": "array"
-            }
-          ],
-          "title": "ChEMBL"
+          "items": {
+            "type": "string"
+          },
+          "title": "ChEMBL",
+          "type": "array"
         },
         "lincs": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "items": {
-                "type": "string"
-              },
-              "type": "array"
-            }
-          ],
-          "title": "LINCS"
+          "items": {
+            "type": "string"
+          },
+          "title": "LINCS",
+          "type": "array"
         },
         "pubchem": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "items": {
-                "type": "string"
-              },
-              "type": "array"
-            }
-          ],
-          "title": "PubChem"
+          "items": {
+            "type": "string"
+          },
+          "title": "PubChem",
+          "type": "array"
         },
         "drugbank": {
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "items": {
-                "type": "string"
-              },
-              "type": "array"
-            }
-          ],
-          "title": "DrugBank"
+          "items": {
+            "type": "string"
+          },
+          "title": "DrugBank",
+          "type": "array"
         }
       },
       "title": "UniChem",
+      "type": "object"
+    },
+    "Xref": {
+      "properties": {
+        "xrefId": {
+          "title": "Cross-reference ID",
+          "type": "string"
+        },
+        "xrefName": {
+          "title": "Cross-reference Name",
+          "type": "string"
+        },
+        "xrefSrcDb": {
+          "title": "Cross-reference Source Database",
+          "type": "string"
+        }
+      },
+      "title": "Xref",
       "type": "object"
     }
   },
@@ -730,14 +963,10 @@
     },
     "clinicaltrials": {
       "items": {
-        "$ref": "#/$defs/ClinicalTrial"
+        "$ref": "#/$defs/CtStudy"
       },
       "title": "Clinical Trials",
       "type": "array"
-    },
-    "drugbank": {
-      "$ref": "#/$defs/DrugbankBlock",
-      "title": "DrugBank"
     },
     "pharmgkb": {
       "$ref": "#/$defs/PharmgkbBlock",
