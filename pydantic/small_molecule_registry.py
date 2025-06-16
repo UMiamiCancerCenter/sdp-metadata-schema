@@ -249,7 +249,6 @@ class ProtocolSection(CustomBaseModel):
 
 class EventStat(CustomBaseModel):
     group_id: str | SkipJsonSchema[None] = Field(alias="groupId", default=None)
-    num_events: str | SkipJsonSchema[None] = Field(alias="numEvents", default=None)
     num_affected: str | SkipJsonSchema[None] = Field(alias="numAffected", default=None)
     num_at_risk: str | SkipJsonSchema[None] = Field(alias="numAtRisk", default=None)
 
@@ -257,7 +256,7 @@ class AdverseEvent(CustomBaseModel):
     term: str | SkipJsonSchema[None] = None
     organ_system: str | SkipJsonSchema[None] = Field(alias="organSystem", default=None)
     source_vocabulary: str | SkipJsonSchema[None] = Field(alias="sourceVocabulary", default=None)
-    assessment: str | SkipJsonSchema[None] = None
+    assessment_type: str | SkipJsonSchema[None] = None
     stats: list[EventStat] | SkipJsonSchema[None] = None
 
 class AdverseEventsModule(BaseModel):
@@ -290,7 +289,7 @@ class SmallMolecule(CustomBaseModel):
     pharmgkb: PharmgkbBlock | SkipJsonSchema[None] = Field(default=None, title="PharmGKB")
 
     model_config = {"title": "Small Molecule Registry", "description": "Molecules with a low molecular weight (generally < 900 daltons) used to perturb the experimental system, often binding to specific biological targets.","json_schema_extra": {"version": "0.0.31"}}
-    
+
 if __name__ == "__main__":
     json_schema=SmallMolecule.model_json_schema(schema_generator=GenerateJsonSchemaWithoutDefaultTitles)
     delete_empty_default(json_schema)

@@ -14,8 +14,8 @@
           "title": "Source Vocabulary",
           "type": "string"
         },
-        "assessment": {
-          "title": "Assessment",
+        "assessmentType": {
+          "title": "Assessment Type",
           "type": "string"
         },
         "stats": {
@@ -413,10 +413,6 @@
       "properties": {
         "groupId": {
           "title": "Group Id",
-          "type": "string"
-        },
-        "numEvents": {
-          "title": "Num Events",
           "type": "string"
         },
         "numAffected": {
