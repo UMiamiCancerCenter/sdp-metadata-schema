@@ -704,9 +704,6 @@
           "type": "array"
         }
       },
-      "required": [
-        "genericNames"
-      ],
       "title": "PharmgkbBlock",
       "type": "object"
     },

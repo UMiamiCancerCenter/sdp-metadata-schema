@@ -272,7 +272,7 @@ class CtStudy(CustomBaseModel):
 
 class PharmgkbBlock(CustomBaseModel):
 
-    generic_names: list[str] | SkipJsonSchema[None]
+    generic_names: list[str] | SkipJsonSchema[None] = None
 
 
 # ─── SmallMolecule root ───
