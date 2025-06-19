@@ -803,6 +803,15 @@
       "title": "ResultsSection",
       "type": "object"
     },
+    "Scope": {
+      "enum": [
+        "public",
+        "private",
+        "shared"
+      ],
+      "title": "Scope",
+      "type": "string"
+    },
     "SponsorsCollaboratorsModule": {
       "properties": {
         "leadSponsor": {
@@ -929,8 +938,7 @@
       "type": "string"
     },
     "scope": {
-      "title": "Scope",
-      "type": "string"
+      "$ref": "#/$defs/Scope"
     },
     "structureImage": {
       "title": "Structure Image",

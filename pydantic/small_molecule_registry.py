@@ -3,6 +3,7 @@ import re
 
 from utils import (
     GenerateJsonSchemaWithoutDefaultTitles,
+    Scope,
     delete_empty_default,
     to_title_case,
 )
@@ -279,7 +280,7 @@ class PharmgkbBlock(CustomBaseModel):
 class SmallMolecule(CustomBaseModel):
 
     name: str
-    scope: str
+    scope: Scope
     structure_image: str | SkipJsonSchema[None] = Field(alias="structureImage", default=None)
     lincs: Lincs | SkipJsonSchema[None] = Field(default=None, title="LINCS")
     unichem: UniChem | SkipJsonSchema[None] = Field(default=None, title="UniChem")
