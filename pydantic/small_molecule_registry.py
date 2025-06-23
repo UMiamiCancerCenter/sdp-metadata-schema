@@ -94,7 +94,7 @@ class DrugIndication(CustomBaseModel):
 
 class TargetComponent(CustomBaseModel):
 
-    accession: list[str] | SkipJsonSchema[None] = None
+    accession: str | SkipJsonSchema[None] = None
 
 class DrugMechanism(CustomBaseModel):
 
