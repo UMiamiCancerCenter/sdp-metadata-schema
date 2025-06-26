@@ -9,6 +9,7 @@ from pydantic_core import CoreSchema, core_schema
 
 from pydantic import BaseModel, ConfigDict, GetJsonSchemaHandler
 from pydantic._internal._core_utils import CoreSchemaOrField, is_core_schema
+from pydantic.alias_generators import to_camel
 from pydantic.fields import FieldInfo
 from pydantic.json_schema import GenerateJsonSchema
 
@@ -37,9 +38,6 @@ class SignatureType(str, Enum):
 
 def to_title_case(field_name: str, field_info: FieldInfo) -> str:
     return field_name.replace('_', ' ').title()
-
-def to_camel(s: str) -> str:
-    return re.sub(r"_([a-z])", lambda m: m.group(1).upper(), s)
 
 def delete_empty_default(schema):
     for key in list(schema):
