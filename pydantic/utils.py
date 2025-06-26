@@ -1,3 +1,4 @@
+import re
 from collections.abc import Callable, Iterator
 from datetime import datetime
 from enum import Enum
@@ -8,6 +9,7 @@ from pydantic_core import CoreSchema, core_schema
 
 from pydantic import BaseModel, ConfigDict, GetJsonSchemaHandler
 from pydantic._internal._core_utils import CoreSchemaOrField, is_core_schema
+from pydantic.alias_generators import to_camel
 from pydantic.fields import FieldInfo
 from pydantic.json_schema import GenerateJsonSchema
 
@@ -33,6 +35,9 @@ class SignatureType(str, Enum):
     TCS = "Transcriptional Consensus Signature"
     DGE = "Differential Gene Expression"
     FUSION = "Fusion Signature"
+
+def to_title_case(field_name: str, field_info: FieldInfo) -> str:
+    return field_name.replace('_', ' ').title()
 
 def delete_empty_default(schema):
     for key in list(schema):
@@ -81,7 +86,12 @@ class PyObjectId(ObjectId):
 
 
 class CustomBaseModel(BaseModel):
-    model_config = ConfigDict(serialize_by_alias=True)
+    model_config = ConfigDict(
+        alias_generator=to_camel,
+        populate_by_name=True,
+        serialize_by_alias=True,
+        field_title_generator=to_title_case
+    )
 
 class MongoDate(datetime):
     @classmethod
@@ -94,5 +104,4 @@ class MongoDate(datetime):
         # Return the Extended JSON representation for dates:
         return {"$date": {"type": "string", "format": "date-time"}}
 
-def to_title_case(field_name: str, field_info: FieldInfo) -> str:
-    return field_name.replace('_', ' ').title()
+

@@ -1,0 +1,185 @@
+{
+  "$defs": {
+    "GOAnnotations": {
+      "properties": {
+        "molecularFunction": {
+          "description": "List of molecular function GO terms",
+          "items": {
+            "$ref": "#/$defs/GoTerm"
+          },
+          "title": "Molecular Function",
+          "type": "array"
+        },
+        "biologicalProcess": {
+          "description": "List of biological process GO terms",
+          "items": {
+            "$ref": "#/$defs/GoTerm"
+          },
+          "title": "Biological Process",
+          "type": "array"
+        },
+        "cellularComponent": {
+          "description": "List of cellular component GO terms",
+          "items": {
+            "$ref": "#/$defs/GoTerm"
+          },
+          "title": "Cellular Component",
+          "type": "array"
+        }
+      },
+      "title": "GOAnnotations",
+      "type": "object"
+    },
+    "GoTerm": {
+      "properties": {
+        "goId": {
+          "description": "GO term CURIE (e.g., GO:0005515)",
+          "title": "Go Id",
+          "type": "string"
+        },
+        "label": {
+          "description": "Human-readable GO term label (e.g., 'protein binding')",
+          "title": "Label",
+          "type": "string"
+        }
+      },
+      "required": [
+        "goId",
+        "label"
+      ],
+      "title": "GoTerm",
+      "type": "object"
+    },
+    "Scope": {
+      "enum": [
+        "public",
+        "private",
+        "shared"
+      ],
+      "title": "Scope",
+      "type": "string"
+    },
+    "Xrefs": {
+      "properties": {
+        "refseq": {
+          "description": "RefSeq protein identifier",
+          "title": "RefSeq",
+          "type": "string"
+        },
+        "ensembl": {
+          "description": "Ensembl protein or gene identifier",
+          "title": "Ensembl",
+          "type": "string"
+        },
+        "pdb": {
+          "description": "List of Protein Data Bank structure IDs",
+          "items": {
+            "type": "string"
+          },
+          "title": "Protein Data Bank",
+          "type": "array"
+        },
+        "interpro": {
+          "description": "List of InterPro domain identifiers",
+          "items": {
+            "type": "string"
+          },
+          "title": "InterPro",
+          "type": "array"
+        },
+        "lincs": {
+          "description": "LINCS PR_LINCS identifier for this protein, if available",
+          "title": "LINCS",
+          "type": "string"
+        }
+      },
+      "title": "Xrefs",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "name": {
+      "description": "Canonical protein name (e.g., from UniProt recommended name)",
+      "title": "Name",
+      "type": "string"
+    },
+    "scope": {
+      "$ref": "#/$defs/Scope"
+    },
+    "uniprotId": {
+      "description": "UniProt accession identifier for this protein",
+      "title": "Uniprot Id",
+      "type": "string"
+    },
+    "organism": {
+      "description": "Species name for this protein (e.g., Homo sapiens)",
+      "title": "Organism",
+      "type": "string"
+    },
+    "sequence": {
+      "description": "Amino acid sequence of the protein",
+      "title": "Sequence",
+      "type": "string"
+    },
+    "sequenceLength": {
+      "description": "Length of the protein sequence in amino acids",
+      "title": "Sequence Length",
+      "type": "integer"
+    },
+    "geneSymbol": {
+      "description": "Official HGNC gene symbol associated with this protein",
+      "title": "Gene Symbol",
+      "type": "string"
+    },
+    "alternativeNames": {
+      "description": "List of alternative names or synonyms for the protein",
+      "items": {
+        "type": "string"
+      },
+      "title": "Alternative Names",
+      "type": "array"
+    },
+    "function": {
+      "description": "Description of the protein's biological function",
+      "title": "Function",
+      "type": "string"
+    },
+    "subcellularLocations": {
+      "description": "List of known subcellular localizations for the protein",
+      "items": {
+        "type": "string"
+      },
+      "title": "Subcellular Locations",
+      "type": "array"
+    },
+    "numberOfIsoforms": {
+      "description": "Number of isoforms associated with the protein",
+      "title": "Number Of Isoforms",
+      "type": "integer"
+    },
+    "structureModel": {
+      "description": "PDB or Alphafold model identifier or URL",
+      "title": "Structure Model",
+      "type": "string"
+    },
+    "xrefs": {
+      "$ref": "#/$defs/Xrefs",
+      "description": "Cross-references for the protein across external databases",
+      "title": "Cross-references"
+    },
+    "goAnnotations": {
+      "$ref": "#/$defs/GOAnnotations",
+      "description": "List of associated GO terms (function, process, component)",
+      "title": "Gene Ontology Annotations"
+    }
+  },
+  "required": [
+    "name",
+    "scope",
+    "uniprotId",
+    "organism",
+    "sequence"
+  ],
+  "title": "Protein",
+  "type": "object"
+}
