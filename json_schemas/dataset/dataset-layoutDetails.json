@@ -1,0 +1,42 @@
+{
+  "version": "0.0.31",
+  "children": [
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "name",
+          "title": "Dataset Name",
+          "type": "string"
+        },
+        {
+          "field": "description",
+          "title": "Dataset Description",
+          "type": "string"
+        },
+        {
+          "field": "labName",
+          "title": "Lab Name",
+          "type": "string"
+        },
+        {
+          "field": "scope",
+          "title": "Scope",
+          "type": "string"
+        },
+        {
+          "field": "assay",
+          "title": "Readout Assay",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystems",
+          "title": "Model System(s)",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}
