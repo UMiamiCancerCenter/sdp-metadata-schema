@@ -1,0 +1,59 @@
+{
+  "version": "0.0.31",
+  "children": [
+    {
+      "field": "list",
+      "type": {
+        "name": "widget",
+        "options": {
+          "name": "List",
+          "props": {
+            "additionalColumns": [
+              {
+                "field": "experimentalSystem.role",
+                "title": "Role",
+                "type": "string"
+              },
+              {
+                "field": "experimentalSystem.entity",
+                "title": "Entity",
+                "type": "string"
+              },
+              {
+                "field": "experimentalSystem.cellLineName",
+                "title": "Cell Line Name",
+                "type": "string"
+              },
+              {
+                "field": "experimentalSystem.cellLineSpecies",
+                "title": "Cell Line Species",
+                "type": "string"
+              },
+              {
+                "field": "experimentalSystem.cellLineTissue",
+                "title": "Cell Line Tissue",
+                "type": "string"
+              }
+            ],
+            "expandableRow": {
+              "children": [
+                {
+                  "size": {
+                    "xs": 12
+                  },
+                  "children": [
+                    {
+                      "field": "description",
+                      "title": "Description",
+                      "type": "string"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}
