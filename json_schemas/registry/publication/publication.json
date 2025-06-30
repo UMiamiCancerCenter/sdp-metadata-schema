@@ -1,0 +1,168 @@
+{
+  "$defs": {
+    "Author": {
+      "properties": {
+        "name": {
+          "description": "Full name or group author",
+          "title": "Name",
+          "type": "string"
+        },
+        "orcid": {
+          "description": "ORCID identifier for author",
+          "title": "ORCID ID",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "Author",
+      "type": "object"
+    },
+    "Scope": {
+      "enum": [
+        "public",
+        "private",
+        "shared"
+      ],
+      "title": "Scope",
+      "type": "string"
+    },
+    "Xrefs": {
+      "properties": {
+        "doi": {
+          "description": "Digital Object Identifier",
+          "title": "DOI",
+          "type": "string"
+        },
+        "pmid": {
+          "description": "PubMed ID",
+          "title": "PubMed ID",
+          "type": "string"
+        },
+        "pmcid": {
+          "description": "PubMed Central ID",
+          "title": "PubMed Central ID",
+          "type": "string"
+        },
+        "arxiv": {
+          "description": "arXiv ID",
+          "title": "arXiv ID",
+          "type": "string"
+        },
+        "issn_print": {
+          "description": "ISSN (print version)",
+          "title": "ISSN Print",
+          "type": "string"
+        },
+        "issn_electronic": {
+          "description": "ISSN (electronic version)",
+          "title": "ISSN Electronic",
+          "type": "string"
+        },
+        "isbn": {
+          "description": "ISBNs",
+          "items": {
+            "type": "string"
+          },
+          "title": "ISBN",
+          "type": "array"
+        },
+        "url": {
+          "description": "Article or publisher URL",
+          "title": "URL",
+          "type": "string"
+        }
+      },
+      "title": "Xrefs",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "scope": {
+      "$ref": "#/$defs/Scope",
+      "description": "Scope of visibility or usage for this publication"
+    },
+    "xrefs": {
+      "$ref": "#/$defs/Xrefs",
+      "title": "Cross-references"
+    },
+    "title": {
+      "description": "Full title of the publication",
+      "title": "Title",
+      "type": "string"
+    },
+    "authors": {
+      "description": "List of authors",
+      "items": {
+        "$ref": "#/$defs/Author"
+      },
+      "title": "Authors",
+      "type": "array"
+    },
+    "journal": {
+      "description": "Name of journal or venue",
+      "title": "Journal",
+      "type": "string"
+    },
+    "publication_date": {
+      "description": "Publication date in ISO format",
+      "format": "date",
+      "title": "Publication Date",
+      "type": "string"
+    },
+    "volume": {
+      "description": "Journal volume",
+      "title": "Volume",
+      "type": "string"
+    },
+    "issue": {
+      "description": "Journal issue",
+      "title": "Issue",
+      "type": "string"
+    },
+    "pages": {
+      "description": "Page range",
+      "title": "Pages",
+      "type": "string"
+    },
+    "abstract": {
+      "description": "Abstract or summary text",
+      "title": "Abstract",
+      "type": "string"
+    },
+    "keywords": {
+      "description": "Author-supplied keywords",
+      "items": {
+        "type": "string"
+      },
+      "title": "Keywords",
+      "type": "array"
+    },
+    "mesh_headings": {
+      "description": "MeSH (Medical Subject Headings) terms from PubMed or curation",
+      "items": {
+        "type": "string"
+      },
+      "title": "Mesh Headings",
+      "type": "array"
+    },
+    "cited_by": {
+      "description": "PMIDs of citing publications",
+      "items": {
+        "type": "string"
+      },
+      "title": "Cited By",
+      "type": "array"
+    }
+  },
+  "required": [
+    "scope",
+    "xrefs",
+    "title",
+    "authors",
+    "publication_date"
+  ],
+  "title": "Publication",
+  "type": "object"
+}
