@@ -1,0 +1,126 @@
+{
+  "$defs": {
+    "Scope": {
+      "enum": [
+        "public",
+        "private",
+        "shared"
+      ],
+      "title": "Scope",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "name": {
+      "description": "Antibody name according to the vendor or provider",
+      "title": "Name",
+      "type": "string"
+    },
+    "scope": {
+      "$ref": "#/$defs/Scope",
+      "default": "public",
+      "description": "Scope of visibility"
+    },
+    "lincsId": {
+      "description": "Global LINCS antibody ID (batch-independent)",
+      "title": "LINCS ID",
+      "type": "string"
+    },
+    "relevantCitations": {
+      "description": "PMIDs or patent numbers",
+      "items": {
+        "type": "string"
+      },
+      "title": "Relevant Citations",
+      "type": "array"
+    },
+    "rrid": {
+      "description": "Resource Identification Initiative ID (RRID) from antibodyregistry.org",
+      "title": "RRID",
+      "type": "string"
+    },
+    "cloneName": {
+      "description": "Monoclonal clone name or ID",
+      "title": "Clone Name",
+      "type": "string"
+    },
+    "antibodyType": {
+      "description": "Natural or engineered",
+      "title": "Antibody Type",
+      "type": "string"
+    },
+    "targetProtein": {
+      "description": "Nominal protein target (UniProt name)",
+      "title": "Target Protein",
+      "type": "string"
+    },
+    "targetProteinId": {
+      "description": "UniProt ID of the protein target",
+      "title": "Target Protein ID",
+      "type": "string"
+    },
+    "nonProteinTarget": {
+      "description": "Name of the nominal target if not a protein",
+      "title": "Non-protein Target",
+      "type": "string"
+    },
+    "targetOrganism": {
+      "description": "Organism of the antibody target (NCBI Taxon)",
+      "title": "Target Organism",
+      "type": "string"
+    },
+    "immunogen": {
+      "description": "Description of the immunogen/entity used to generate the antibody",
+      "title": "Immunogen",
+      "type": "string"
+    },
+    "immunogenSequence": {
+      "description": "Complete amino acid sequence of the immunogen",
+      "title": "Immunogen Sequence",
+      "type": "string"
+    },
+    "antibodySpecies": {
+      "description": "Organism or species the antibody was derived from",
+      "title": "Antibody Species",
+      "type": "string"
+    },
+    "antibodyClonality": {
+      "description": "Monoclonal or polyclonal",
+      "title": "Antibody Clonality",
+      "type": "string"
+    },
+    "antibodyIsotype": {
+      "description": "Isotype of the Fc domain (e.g., IgG)",
+      "title": "Antibody Isotype",
+      "type": "string"
+    },
+    "antibodyProductionSourceOrganism": {
+      "description": "Organism or cell type used to produce the antibody",
+      "title": "Antibody Production Source Organism",
+      "type": "string"
+    },
+    "antibodyProductionDetails": {
+      "description": "Details about antibody production method",
+      "title": "Antibody Production Details",
+      "type": "string"
+    },
+    "antibodyLabeling": {
+      "description": "Fluor or enzyme conjugated to the antibody",
+      "title": "Antibody Labeling",
+      "type": "string"
+    },
+    "antibodyLabelingDetails": {
+      "description": "Details about the labeling/conjugation protocol",
+      "title": "Antibody Labeling Details",
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "targetProtein",
+    "antibodySpecies",
+    "antibodyProductionSourceOrganism"
+  ],
+  "title": "Antibody",
+  "type": "object"
+}
