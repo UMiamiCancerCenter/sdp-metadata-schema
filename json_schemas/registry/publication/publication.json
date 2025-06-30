@@ -50,12 +50,12 @@
           "title": "arXiv ID",
           "type": "string"
         },
-        "issn_print": {
+        "issnPrint": {
           "description": "ISSN (print version)",
           "title": "ISSN Print",
           "type": "string"
         },
-        "issn_electronic": {
+        "issnElectronic": {
           "description": "ISSN (electronic version)",
           "title": "ISSN Electronic",
           "type": "string"
@@ -105,7 +105,7 @@
       "title": "Journal",
       "type": "string"
     },
-    "publication_date": {
+    "publicationDate": {
       "description": "Publication date in ISO format",
       "format": "date",
       "title": "Publication Date",
@@ -139,7 +139,7 @@
       "title": "Keywords",
       "type": "array"
     },
-    "mesh_headings": {
+    "meshHeadings": {
       "description": "MeSH (Medical Subject Headings) terms from PubMed or curation",
       "items": {
         "type": "string"
@@ -147,7 +147,7 @@
       "title": "Mesh Headings",
       "type": "array"
     },
-    "cited_by": {
+    "citedBy": {
       "description": "PMIDs of citing publications",
       "items": {
         "type": "string"
@@ -158,10 +158,9 @@
   },
   "required": [
     "scope",
-    "xrefs",
     "title",
     "authors",
-    "publication_date"
+    "publicationDate"
   ],
   "title": "Publication",
   "type": "object"

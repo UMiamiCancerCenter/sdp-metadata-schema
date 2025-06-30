@@ -29,7 +29,7 @@ class Xrefs(CustomBaseModel):
 
 class Publication(CustomBaseModel):
     scope: Scope = Field(..., description="Scope of visibility or usage for this publication")
-    xrefs: Xrefs | SkipJsonSchema[None] = Field(..., title="Cross-references")
+    xrefs: Xrefs | SkipJsonSchema[None] = Field(default=None, title="Cross-references")
     title: str = Field(..., description="Full title of the publication")
     authors: list[Author] = Field(..., description="List of authors")
     journal: str | SkipJsonSchema[None] = Field(None, description="Name of journal or venue")
