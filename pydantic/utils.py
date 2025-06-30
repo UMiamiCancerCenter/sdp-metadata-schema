@@ -8,6 +8,7 @@ from pydantic_core import CoreSchema, core_schema
 
 from pydantic import BaseModel, ConfigDict, GetJsonSchemaHandler
 from pydantic._internal._core_utils import CoreSchemaOrField, is_core_schema
+from pydantic.alias_generators import to_camel
 from pydantic.fields import FieldInfo
 from pydantic.json_schema import GenerateJsonSchema
 
@@ -80,8 +81,10 @@ class PyObjectId(ObjectId):
         return {"$oid": {"type": "string"}}
 
 
+def to_title_case(field_name: str, field_info: FieldInfo) -> str:
+    return field_name.replace('_', ' ').title()
 class CustomBaseModel(BaseModel):
-    model_config = ConfigDict(serialize_by_alias=True)
+    model_config = ConfigDict(serialize_by_alias=True, field_title_generator=to_title_case, alias_generator=to_camel)
 
 class MongoDate(datetime):
     @classmethod
@@ -94,5 +97,3 @@ class MongoDate(datetime):
         # Return the Extended JSON representation for dates:
         return {"$date": {"type": "string", "format": "date-time"}}
 
-def to_title_case(field_name: str, field_info: FieldInfo) -> str:
-    return field_name.replace('_', ' ').title()
