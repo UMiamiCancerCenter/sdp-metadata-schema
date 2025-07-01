@@ -1,0 +1,27 @@
+{
+  "version": "0.0.31",
+  "children": [
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "dataset.name",
+          "title": "Dataset Name",
+          "type": "string"
+        },
+        {
+          "field": "dataset.assay",
+          "title": "Assay",
+          "type": "string"
+        },
+        {
+          "field": "name",
+          "title": "Name",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}
