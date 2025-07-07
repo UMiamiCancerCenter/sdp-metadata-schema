@@ -24,6 +24,26 @@
                 }
               },
               {
+                "field": "chembl.drugMechanisms",
+                "title": "Mechanism Of Action",
+                "type": {
+                  "name": "children",
+                  "options": {
+                    "children": [
+                      {
+                        "field": "chembl.drugMechanisms",
+                        "type": {
+                          "name": "arrayWithCommaSeparator",
+                          "options": {
+                            "field": "mechanismOfAction"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              },
+              {
                 "field": "chembl.maxPhaseCurated",
                 "title": "Max Phase",
                 "type": "string"
