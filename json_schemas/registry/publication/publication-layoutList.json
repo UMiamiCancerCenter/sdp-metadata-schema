@@ -1,0 +1,43 @@
+{
+  "version": "0.0.31",
+  "children": [
+    {
+      "field": "list",
+      "type": {
+        "name": "widget",
+        "options": {
+          "name": "List",
+          "props": {
+            "additionalColumns": [
+              {
+                "field": "title",
+                "title": "Title",
+                "type": "string"
+              },
+              {
+                "field": "authors",
+                "title": "Authors",
+                "type": {
+                  "name": "arrayWithCommaSeparator",
+                  "options": {
+                    "field": "name"
+                  }
+                }
+              },
+              {
+                "field": "date",
+                "title": "Date",
+                "type": "date"
+              },
+              {
+                "field": "xrefs.pmid",
+                "title": "Pmid",
+                "type": "string"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
