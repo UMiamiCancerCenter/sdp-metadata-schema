@@ -1,0 +1,32 @@
+{
+  "version": "0.0.31",
+  "children": [
+    {
+      "field": "list",
+      "type": {
+        "name": "widget",
+        "options": {
+          "name": "List",
+          "props": {
+            "additionalColumns": [
+              {
+                "field": "synonyms",
+                "title": "Synonyms",
+                "type": {
+                  "name": "arrayWithCommaSeparator"
+                }
+              },
+              {
+                "field": "associatedGenes",
+                "title": "Associated Genes",
+                "type": {
+                  "name": "arrayWithCommaSeparator"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
