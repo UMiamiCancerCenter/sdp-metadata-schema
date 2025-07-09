@@ -25,8 +25,8 @@
                 }
               },
               {
-                "field": "date",
-                "title": "Date",
+                "field": "publicationDate",
+                "title": "Publication Date",
                 "type": "date"
               },
               {
