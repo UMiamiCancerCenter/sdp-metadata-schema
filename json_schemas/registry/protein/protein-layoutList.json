@@ -1,0 +1,40 @@
+{
+  "version": "0.0.31",
+  "children": [
+    {
+      "field": "list",
+      "type": {
+        "name": "widget",
+        "options": {
+          "name": "List",
+          "props": {
+            "additionalColumns": [
+              {
+                "field": "alternativeNames",
+                "title": "Alternative Names",
+                "type": {
+                  "name": "arrayWithCommaSeparator"
+                }
+              },
+              {
+                "field": "geneSymbol",
+                "title": "Gene Symbol",
+                "type": "string"
+              },
+              {
+                "field": "organism",
+                "title": "Organism",
+                "type": "string"
+              },
+              {
+                "field": "uniprotId",
+                "title": "Uniprot Id",
+                "type": "string"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
