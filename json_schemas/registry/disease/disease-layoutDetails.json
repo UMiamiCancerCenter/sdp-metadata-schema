@@ -1,0 +1,43 @@
+{
+  "version": "0.0.31",
+  "children": [
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "name",
+          "title": "Name",
+          "type": "string"
+        },
+        {
+          "field": "associatedGenes",
+          "title": "Associated Genes",
+          "type": {
+            "name": "arrayWithCommaSeparator"
+          }
+        },
+        {
+          "field": "phenotypes",
+          "title": "Phenotypes",
+          "type": {
+            "name": "arrayWithCommaSeparator"
+          }
+        },
+        {
+          "field": "synonyms",
+          "title": "Synonyms",
+          "type": {
+            "name": "arrayWithCommaSeparator"
+          }
+        },
+        {
+          "field": "definition",
+          "title": "Definition",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}
