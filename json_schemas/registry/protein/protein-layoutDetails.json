@@ -1,0 +1,44 @@
+{
+  "version": "0.0.32",
+  "children": [
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "name",
+          "title": "Name",
+          "type": "string"
+        },
+        {
+          "field": "function",
+          "title": "Function",
+          "type": "string"
+        },
+        {
+          "field": "organism",
+          "title": "Organism",
+          "type": "string"
+        },
+        {
+          "field": "sequence",
+          "title": "Sequence",
+          "type": "string"
+        },
+        {
+          "field": "sequenceLength",
+          "title": "Sequence Length",
+          "type": "number"
+        },
+        {
+          "field": "subcellularLocations",
+          "title": "Subcellular Locations",
+          "type": {
+            "name": "arrayWithCommaSeparator"
+          }
+        }
+      ]
+    }
+  ]
+}
