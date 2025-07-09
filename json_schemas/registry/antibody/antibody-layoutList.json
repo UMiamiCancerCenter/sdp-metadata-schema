@@ -1,0 +1,38 @@
+{
+  "version": "0.0.31",
+  "children": [
+    {
+      "field": "list",
+      "type": {
+        "name": "widget",
+        "options": {
+          "name": "List",
+          "props": {
+            "additionalColumns": [
+              {
+                "field": "antibodySpecies",
+                "title": "Antibody Species",
+                "type": "string"
+              },
+              {
+                "field": "antibodyClonality",
+                "title": "Antibody Clonality",
+                "type": "string"
+              },
+              {
+                "field": "targetProtein",
+                "title": "Target Protein",
+                "type": "string"
+              },
+              {
+                "field": "rrid",
+                "title": "Rrid",
+                "type": "string"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

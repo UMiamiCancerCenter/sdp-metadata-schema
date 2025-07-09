@@ -1,0 +1,47 @@
+{
+  "version": "0.0.31",
+  "children": [
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "name",
+          "title": "Name",
+          "type": "string"
+        },
+        {
+          "field": "targetProtein",
+          "title": "Target Protein",
+          "type": "string"
+        },
+        {
+          "field": "antibodySpecies",
+          "title": "Antibody Species",
+          "type": "string"
+        },
+        {
+          "field": "cloneName",
+          "title": "Clone Name",
+          "type": "string"
+        },
+        {
+          "field": "antibodyProductionSourceOrganism",
+          "title": "Antibody Production Source Organism",
+          "type": "string"
+        },
+        {
+          "field": "antibodyClonality",
+          "title": "Antibody Clonality",
+          "type": "string"
+        },
+        {
+          "field": "antibodyIsotype",
+          "title": "Antibody Isotype",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}
