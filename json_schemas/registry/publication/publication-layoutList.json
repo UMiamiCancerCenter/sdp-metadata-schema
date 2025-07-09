@@ -10,11 +10,6 @@
           "props": {
             "additionalColumns": [
               {
-                "field": "title",
-                "title": "Title",
-                "type": "string"
-              },
-              {
                 "field": "authors",
                 "title": "Authors",
                 "type": {
