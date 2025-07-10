@@ -17,13 +17,6 @@
                 }
               },
               {
-                "field": "chembl.drugMechanismsCurated",
-                "title": "Drug Mechanisms",
-                "type": {
-                  "name": "arrayWithCommaSeparator"
-                }
-              },
-              {
                 "field": "chembl.drugMechanisms",
                 "title": "Mechanism Of Action",
                 "type": {
