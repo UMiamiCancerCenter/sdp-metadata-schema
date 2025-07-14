@@ -87,15 +87,14 @@ class PyObjectId(ObjectId):
 
 def to_title_case(field_name: str, field_info: FieldInfo) -> str:
     return field_name.replace('_', ' ').title()
+  
 class CustomBaseModel(BaseModel):
-
     model_config = ConfigDict(
         alias_generator=to_camel,
         populate_by_name=True,
         serialize_by_alias=True,
         field_title_generator=to_title_case
     )
-
 
 class MongoDate(datetime):
     @classmethod

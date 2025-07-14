@@ -1,0 +1,113 @@
+{
+  "$defs": {
+    "Scope": {
+      "enum": [
+        "public",
+        "private",
+        "shared"
+      ],
+      "title": "Scope",
+      "type": "string"
+    },
+    "Xrefs": {
+      "properties": {
+        "mondo": {
+          "description": "MONDO identifier",
+          "title": "MONDO",
+          "type": "string"
+        },
+        "doid": {
+          "description": "Disease Ontology ID",
+          "title": "Disease Ontology",
+          "type": "string"
+        },
+        "omim": {
+          "description": "OMIM identifier",
+          "title": "OMIM",
+          "type": "string"
+        },
+        "orphanet": {
+          "description": "Orphanet registry ID",
+          "title": "Orphanet",
+          "type": "string"
+        },
+        "icd10": {
+          "description": "ICD\u201110 classification code",
+          "title": "ICD-10",
+          "type": "string"
+        },
+        "umls": {
+          "description": "UMLS Concept Unique Identifier",
+          "title": "UMLS",
+          "type": "string"
+        },
+        "hpo": {
+          "description": "List of HPO IDs associated with this disease",
+          "items": {
+            "type": "string"
+          },
+          "title": "Human Phenotype Ontology",
+          "type": "array"
+        }
+      },
+      "title": "Xrefs",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "name": {
+      "description": "Preferred name of the disease",
+      "title": "Name",
+      "type": "string"
+    },
+    "scope": {
+      "$ref": "#/$defs/Scope",
+      "description": "Scope of visibility or usage for this disease"
+    },
+    "synonyms": {
+      "description": "Alternative names",
+      "items": {
+        "type": "string"
+      },
+      "title": "Synonyms",
+      "type": "array"
+    },
+    "definition": {
+      "description": "Official textual definition",
+      "title": "Definition",
+      "type": "string"
+    },
+    "xrefs": {
+      "$ref": "#/$defs/Xrefs",
+      "description": "Cross-references to major disease ontologies",
+      "title": "Cross-references"
+    },
+    "associatedGenes": {
+      "description": "Symbols for genes or proteins linked to this disease",
+      "items": {
+        "type": "string"
+      },
+      "title": "Associated Genes",
+      "type": "array"
+    },
+    "phenotypes": {
+      "description": "HPO term CURIE list describing observed phenotypes",
+      "items": {
+        "type": "string"
+      },
+      "title": "Phenotypes",
+      "type": "array"
+    },
+    "inheritanceMode": {
+      "description": "Genetic inheritance model (e.g., AD, AR)",
+      "title": "Inheritance Mode",
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "scope"
+  ],
+  "title": "Disease",
+  "type": "object"
+}
