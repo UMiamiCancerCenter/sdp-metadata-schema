@@ -1,5 +1,5 @@
 {
-  "version": "0.0.35",
+  "version": "0.0.31",
   "children": [
     {
       "field": "list",
@@ -10,18 +10,23 @@
           "props": {
             "additionalColumns": [
               {
-                "field": "targetLocus",
-                "title": "Target Locus",
+                "field": "antibodySpecies",
+                "title": "Antibody Species",
                 "type": "string"
               },
               {
-                "field": "targetLocusSpecies",
-                "title": "Target Locus Species",
+                "field": "antibodyClonality",
+                "title": "Antibody Clonality",
                 "type": "string"
               },
               {
-                "field": "targetGeneId",
-                "title": "Target Gene Id",
+                "field": "targetProtein",
+                "title": "Target Protein",
+                "type": "string"
+              },
+              {
+                "field": "rrid",
+                "title": "Rrid",
                 "type": "string"
               }
             ]

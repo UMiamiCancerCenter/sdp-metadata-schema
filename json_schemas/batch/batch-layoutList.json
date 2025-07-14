@@ -10,18 +10,13 @@
           "props": {
             "additionalColumns": [
               {
-                "field": "targetLocus",
-                "title": "Target Locus",
+                "field": "resource",
+                "title": "Resource",
                 "type": "string"
               },
               {
-                "field": "targetLocusSpecies",
-                "title": "Target Locus Species",
-                "type": "string"
-              },
-              {
-                "field": "targetGeneId",
-                "title": "Target Gene Id",
+                "field": "vendorName",
+                "title": "Vendor Name",
                 "type": "string"
               }
             ]
