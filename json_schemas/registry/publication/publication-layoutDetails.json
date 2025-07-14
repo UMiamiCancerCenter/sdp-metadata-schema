@@ -1,0 +1,59 @@
+{
+  "version": "0.0.32",
+  "children": [
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "title",
+          "title": "Title",
+          "type": "string"
+        },
+        {
+          "field": "authors",
+          "title": "Authors",
+          "type": {
+            "name": "arrayWithCommaSeparator",
+            "options": {
+              "field": "name"
+            }
+          }
+        },
+        {
+          "field": "abstract",
+          "title": "Abstract",
+          "type": "string"
+        },
+        {
+          "field": "journal",
+          "title": "Journal",
+          "type": "string"
+        },
+        {
+          "field": "issue",
+          "title": "Issue",
+          "type": "string"
+        },
+        {
+          "field": "pages",
+          "title": "Pages",
+          "type": "string"
+        },
+        {
+          "field": "volume",
+          "title": "Volume",
+          "type": "string"
+        },
+        {
+          "field": "meshHeadings",
+          "title": "Mesh Headings",
+          "type": {
+            "name": "arrayWithCommaSeparator"
+          }
+        }
+      ]
+    }
+  ]
+}

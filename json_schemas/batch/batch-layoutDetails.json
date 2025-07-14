@@ -1,0 +1,173 @@
+{
+  "version": "0.0.35",
+  "children": [
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "name",
+          "title": "Name",
+          "type": "string"
+        },
+        {
+          "field": "description",
+          "title": "Description",
+          "type": "string"
+        },
+        {
+          "field": "batch.smallMoleculeLabBatchLabel",
+          "title": "Lab Batch Label",
+          "type": "string"
+        },
+        {
+          "field": "batch.smallMoleculeSmilesBatch",
+          "title": "Small Molecule Vendor-provided SMILES",
+          "type": "string"
+        },
+        {
+          "field": "batch.smallMoleculeProviderName",
+          "title": "Small Molecule Provider Name",
+          "type": "string"
+        },
+        {
+          "field": "batch.smallMoleculeProviderCatalogId",
+          "title": "Small Molecule Provider Catalog ID",
+          "type": "string"
+        },
+        {
+          "field": "batch.smallMoleculeProviderBatchId",
+          "title": "Small Molecule Vendor-provided SMILES",
+          "type": "string"
+        },
+        {
+          "field": "canonical.smallMoleculeName",
+          "title": "Small Molecule Name",
+          "type": "string"
+        },
+        {
+          "field": "canonical.smallMoleculeAlternativeNames",
+          "title": "Small Molecule Alternative Names",
+          "type": {
+            "name": "arrayWithCommaSeparator"
+          }
+        },
+        {
+          "field": "smallMoleculeLabCanonicalId",
+          "title": "Small Molecule Lab Canonical ID",
+          "type": "string"
+        },
+        {
+          "field": "canonical.smallMoleculeLincsId",
+          "title": "Small Molecule LINCS ID",
+          "type": "string"
+        },
+        {
+          "field": "canonical.smallMoleculePubChemCid",
+          "title": "Small Molecule PubChem CID",
+          "type": "string"
+        },
+        {
+          "field": "canonical.smallMoleculeChebiId",
+          "title": "Small Molecule ChEBI ID",
+          "type": "string"
+        },
+        {
+          "field": "canonical.smallMoleculeSmilesParent",
+          "title": "Small Molecule Canonical SMILES",
+          "type": "string"
+        },
+        {
+          "field": "batch.cellLineLabBatchLabel",
+          "title": "Lab Batch Label",
+          "type": "string"
+        },
+        {
+          "field": "batch.cellLineProviderName",
+          "title": "Cell Line Provider Name",
+          "type": "string"
+        },
+        {
+          "field": "batch.cellLineProviderCatalogId",
+          "title": "Cell Line Provider Catalog ID",
+          "type": "string"
+        },
+        {
+          "field": "batch.cellLineProviderBatchId",
+          "title": "Cell Line Provider Batch ID",
+          "type": "string"
+        },
+        {
+          "field": "canonical.cellLineName",
+          "title": "Cell Line Name",
+          "type": "string"
+        },
+        {
+          "field": "canonical.cellLineAlternativeNames",
+          "title": "Cell Line Alternative Names",
+          "type": {
+            "name": "arrayWithCommaSeparator"
+          }
+        },
+        {
+          "field": "canonical.cellLineAlternativeIds",
+          "title": "Cell Line Alternative IDs",
+          "type": {
+            "name": "arrayWithCommaSeparator"
+          }
+        },
+        {
+          "field": "canonical.cellLineLincsId",
+          "title": "Cell Line LINCS ID",
+          "type": "string"
+        },
+        {
+          "field": "canonical.cellLineTissue",
+          "title": "Tissue of Origin",
+          "type": "string"
+        },
+        {
+          "field": "canonical.cellLineCellType",
+          "title": "Cell Line Cell Type",
+          "type": "string"
+        },
+        {
+          "field": "canonical.cellLineOrgan",
+          "title": "Organ of Origin",
+          "type": "string"
+        },
+        {
+          "field": "canonical.cellLineSpecies",
+          "title": "Species of Origin",
+          "type": "string"
+        },
+        {
+          "field": "canonical.cellLineDisease",
+          "title": "Disease",
+          "type": "string"
+        },
+        {
+          "field": "canonical.cellLineDonorSex",
+          "title": "Cell Line Donor Sex",
+          "type": "string"
+        },
+        {
+          "field": "canonical.cellLineDonorEthnicity",
+          "title": "Cell Line Donor Ethnicity",
+          "type": "string"
+        },
+        {
+          "field": "canonical.cellLineDonorAge",
+          "title": "Cell Line Donor Age",
+          "type": "number"
+        },
+        {
+          "field": "canonical.cellLineGeneticModification",
+          "title": "Cell Line Genetic Modification",
+          "type": "number"
+        }
+      ]
+    }
+  ]
+}

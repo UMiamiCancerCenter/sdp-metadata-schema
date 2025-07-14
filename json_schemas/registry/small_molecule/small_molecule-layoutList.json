@@ -1,5 +1,5 @@
 {
-  "version": "0.0.31",
+  "version": "0.0.35",
   "children": [
     {
       "field": "list",
@@ -17,10 +17,23 @@
                 }
               },
               {
-                "field": "chembl.drugMechanismsCurated",
-                "title": "Alternative Names",
+                "field": "chembl.drugMechanisms",
+                "title": "Mechanism Of Action",
                 "type": {
-                  "name": "arrayWithCommaSeparator"
+                  "name": "children",
+                  "options": {
+                    "children": [
+                      {
+                        "field": "chembl.drugMechanisms",
+                        "type": {
+                          "name": "arrayWithCommaSeparator",
+                          "options": {
+                            "field": "mechanismOfAction"
+                          }
+                        }
+                      }
+                    ]
+                  }
                 }
               },
               {

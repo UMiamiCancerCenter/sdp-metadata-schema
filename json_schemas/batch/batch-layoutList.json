@@ -1,0 +1,28 @@
+{
+  "version": "0.0.35",
+  "children": [
+    {
+      "field": "list",
+      "type": {
+        "name": "widget",
+        "options": {
+          "name": "List",
+          "props": {
+            "additionalColumns": [
+              {
+                "field": "resource",
+                "title": "Resource",
+                "type": "string"
+              },
+              {
+                "field": "vendorName",
+                "title": "Vendor Name",
+                "type": "string"
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

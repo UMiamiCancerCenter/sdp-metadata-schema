@@ -1,0 +1,1577 @@
+[
+  {
+    "name": "Phospho-Histone H3 (Ser10) (D2C8) XP Rabbit mAb (Alexa Fluor 555 Conjugate) #3475",
+    "scope": "public",
+    "lincsId": "LAR-1002",
+    "rrid": "AB_10694639",
+    "cloneName": "D2C8",
+    "targetProtein": "H3 (pS10)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "p21 Waf1/Cip1 (12D1) Rabbit mAb (Alexa Fluor 647 Conjugate) #8587",
+    "scope": "public",
+    "lincsId": "LAR-1003",
+    "rrid": "AB_10892861",
+    "cloneName": "12D1",
+    "targetProtein": "p21",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "p21 Waf1/Cip1 (12D1) Rabbit mAb (Alexa Fluor 647 Conjugate) #8587",
+    "scope": "public",
+    "lincsId": "LAR-1003",
+    "rrid": "AB_10892861",
+    "cloneName": "12D1",
+    "targetProtein": "p21",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Ki-67 (D3B5) Rabbit mAb (Alexa Fluor 488 Conjugate) #11882",
+    "scope": "public",
+    "lincsId": "LAR-1004",
+    "cloneName": "D3B5",
+    "targetProtein": "KI-67",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-Rb (Ser807/811) (D20B12) XP Rabbit mAb (Alexa Fluor 555 Conjugate) #8957",
+    "scope": "public",
+    "lincsId": "LAR-1005",
+    "cloneName": "D20B12",
+    "targetProtein": "Rb (pS807; pS811)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-S6 Ribosomal Protein (Ser235/236) (D57.2.2E) XP Rabbit mAb (Alexa Fluor 647 Conjugate) #4851",
+    "scope": "public",
+    "lincsId": "LAR-1006",
+    "rrid": "AB_916160",
+    "cloneName": "D57.2.2E",
+    "targetProtein": "S6 (pS235; pS236)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-S6 Ribosomal Protein (Ser240/244) (D68F8) XPRabbit mAb (Alexa Fluor 488 Conjugate) #5018",
+    "scope": "public",
+    "lincsId": "LAR-1007",
+    "rrid": "AB_10695861",
+    "cloneName": "D68F8",
+    "targetProtein": "S6 (pS240; pS244)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Goat anti-Rabbit IgG (H+L) Secondary Antibody, Alexa Fluor 488 conjugate",
+    "scope": "public",
+    "lincsId": "LAR-1008",
+    "rrid": "AB_143165",
+    "antibodySpecies": "goat",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "goat",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "EGF Receptor (D38B1) XP Rabbit mAb (Alexa Fluor 488 Conjugate) #5616",
+    "scope": "public",
+    "lincsId": "LAR-1009",
+    "rrid": "AB_10691853",
+    "cloneName": "D38B1",
+    "targetProtein": "EGFR",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "EpCAM (VU1D9) Mouse mAb (Alexa Fluor 488 Conjugate) #5198",
+    "scope": "public",
+    "lincsId": "LAR-1010",
+    "rrid": "AB_10692105",
+    "cloneName": "VU1D9",
+    "targetProtein": "Ep-CAM",
+    "antibodySpecies": "mouse",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG1",
+    "antibodyProductionSourceOrganism": "mouse",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Lamin A/C (4C11) Mouse mAb (Alexa Fluor 488 Conjugate) #8617",
+    "scope": "public",
+    "lincsId": "LAR-1011",
+    "rrid": "AB_10997529",
+    "cloneName": "4C11",
+    "targetProtein": "Lamin-A/C",
+    "antibodySpecies": "mouse",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG2a",
+    "antibodyProductionSourceOrganism": "mouse",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "PCNA (PC10) Mouse mAb (Alexa Fluor 488 Conjugate) #8580",
+    "scope": "public",
+    "lincsId": "LAR-1012",
+    "rrid": "AB_11178664",
+    "cloneName": "PC10",
+    "antibodySpecies": "mouse",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG2a",
+    "antibodyProductionSourceOrganism": "mouse",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-p44/42 MAPK (Erk1/2) (Thr202/Tyr204) (D13.14.4E) XP Rabbit mAb (Alexa Fluor 488 Conjugate) #4344",
+    "scope": "public",
+    "lincsId": "LAR-1013",
+    "rrid": "AB_2139960",
+    "cloneName": "D13.14.4E",
+    "targetProtein": "ERK-1 (pT202; pY204)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Pan-Keratin (C11) Mouse mAb (Alexa Fluor 555 Conjugate) #3478",
+    "scope": "public",
+    "lincsId": "LAR-1014",
+    "rrid": "AB_10829040",
+    "cloneName": "C11",
+    "targetProtein": "K4",
+    "antibodySpecies": "mouse",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG1",
+    "antibodyProductionSourceOrganism": "mouse",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Herceptin",
+    "scope": "public",
+    "lincsId": "LAR-1001",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-Histone H2A.X (Ser139) (20E3) Rabbit mAb (Alexa Fluor 555 Conjugate) #8228",
+    "scope": "public",
+    "lincsId": "LAR-1015",
+    "rrid": "AB_10858874",
+    "cloneName": "20E3",
+    "targetProtein": "H2A.X (pS139)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Sox2 (D6D9) XP Rabbit mAb (Alexa Fluor 555 Conjugate) #517",
+    "scope": "public",
+    "lincsId": "LAR-1016",
+    "rrid": "AB_10828439",
+    "cloneName": "D6D9",
+    "targetProtein": "SOX-2",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "not specified",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "-Actin (13E5) Rabbit mAb (Alexa Fluor 555 Conjugate) #8046",
+    "scope": "public",
+    "lincsId": "LAR-1017",
+    "rrid": "AB_11179208",
+    "cloneName": "13E5",
+    "targetProtein": "Beta-actin",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "-Tubulin (9F3) Rabbit mAb (Alexa Fluor 647 Conjugate) #3624",
+    "scope": "public",
+    "lincsId": "LAR-1018",
+    "rrid": "AB_2210688",
+    "cloneName": "9F3",
+    "targetProtein": "Tubulin beta chain",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-Tyrosine Mouse mAb (P-Tyr-100) (Alexa Fluor 647 Conjugate) #9415",
+    "scope": "public",
+    "lincsId": "LAR-1019",
+    "rrid": "AB_390807",
+    "cloneName": "P-Tyr-100",
+    "antibodySpecies": "mouse",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG1",
+    "antibodyProductionSourceOrganism": "mouse",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-Rb (Ser807/811) (D20B12) XP Rabbit mAb #8516",
+    "scope": "public",
+    "lincsId": "LAR-1020",
+    "rrid": "AB_11178658",
+    "cloneName": "D20B12",
+    "targetProtein": "Rb (pS807; pS811)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-c-Jun (Ser73) (D47G9) XP Rabbit mAb #3270",
+    "scope": "public",
+    "lincsId": "LAR-1021",
+    "rrid": "AB_2129572",
+    "cloneName": "D47G9",
+    "targetProtein": "c-Jun (pS73)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "c-Jun (L70B11) Mouse mAb #2315",
+    "scope": "public",
+    "lincsId": "LAR-1022",
+    "rrid": "AB_10694642",
+    "cloneName": "L70B11",
+    "antibodySpecies": "mouse",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG1",
+    "antibodyProductionSourceOrganism": "mouse",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "p53 Antibody (DO-1): sc-126",
+    "scope": "public",
+    "lincsId": "LAR-1023",
+    "rrid": "AB_628082",
+    "cloneName": "DO-1",
+    "targetProtein": "p53",
+    "antibodySpecies": "mouse",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG2a",
+    "antibodyProductionSourceOrganism": "mouse",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Anti-phospho-Histone H2A.X (Ser139) Antibody, clone JBW301",
+    "scope": "public",
+    "lincsId": "LAR-1024",
+    "rrid": "AB_309864",
+    "cloneName": "JBW301",
+    "targetProtein": "H2A.X (pS139)",
+    "antibodySpecies": "mouse",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG1",
+    "antibodyProductionSourceOrganism": "mouse",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Goat anti-Mouse IgG (H+L) Secondary Antibody, Alexa Fluor 647 conjugate",
+    "scope": "public",
+    "lincsId": "LAR-1025",
+    "rrid": "AB_10564125",
+    "antibodySpecies": "goat",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "goat",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-Aurora A (Thr288)/Aurora B (Thr232)/Aurora C (Thr198) (D13A11) XP Rabbit mAb (Alexa Fluor 555 Conjugate) #13464",
+    "scope": "public",
+    "lincsId": "LAR-1026",
+    "cloneName": "D13A11",
+    "targetProtein": "Aurora kinase B (pT232)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "S6 Ribosomal Protein (54D2) Mouse mAb (Alexa Fluor 555 Conjugate) #6989",
+    "scope": "public",
+    "lincsId": "LAR-1027",
+    "rrid": "AB_10828226",
+    "cloneName": "54D2",
+    "targetProtein": "S6",
+    "antibodySpecies": "mouse",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG1",
+    "antibodyProductionSourceOrganism": "mouse",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "VEGF Receptor 2 (D5B1) Rabbit mAb (Alexa Fluor 555 Conjugate) #12872",
+    "scope": "public",
+    "lincsId": "LAR-1028",
+    "cloneName": "D5B1",
+    "targetProtein": "VEGFR-2",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Cleaved PARP (Asp214) (D64E10) XP Rabbit mAb (Alexa Fluor 555 Conjugate) #6894",
+    "scope": "public",
+    "lincsId": "LAR-1029",
+    "rrid": "AB_10830735",
+    "cloneName": "D64E10",
+    "targetProtein": "PARP-1 (D214-cleaved)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Anti-p27 KIP 1 antibody [Y236] (Alexa Fluor 647) (ab194234)",
+    "scope": "public",
+    "lincsId": "LAR-1030",
+    "cloneName": "Y236",
+    "targetProtein": "p27Kip1",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-Histone H2A.X (Ser139) (20E3) Rabbit mAb (Alexa Fluor 647 Conjugate) #9720",
+    "scope": "public",
+    "lincsId": "LAR-1031",
+    "rrid": "AB_10692910",
+    "cloneName": "20E3",
+    "targetProtein": "H2A.X (pS139)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Akt (pan) (C67E7) Rabbit mAb (Alexa Fluor 647 Conjugate) #5186",
+    "scope": "public",
+    "lincsId": "LAR-1032",
+    "rrid": "AB_10695877",
+    "cloneName": "C67E7",
+    "targetProtein": "AKT1 (mouse)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "mTOR (7C10) Rabbit mAb (Alexa Fluor 647 Conjugate) #5048",
+    "scope": "public",
+    "lincsId": "LAR-1033",
+    "rrid": "AB_10828101",
+    "cloneName": "7C10",
+    "targetProtein": "mTOR",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Vimentin (D21H3) XP Rabbit mAb (Alexa Fluor 647 Conjugate) #9856",
+    "scope": "public",
+    "lincsId": "LAR-1034",
+    "rrid": "AB_10834530",
+    "cloneName": "D21H3",
+    "targetProtein": "Vimentin",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Anti-NF-kB p65 antibody [E379] (Alexa Fluor 647) (ab190589)",
+    "scope": "public",
+    "lincsId": "LAR-1035",
+    "cloneName": "E379",
+    "targetProtein": "NF-kB p65",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "FoxO3a (75D8) Rabbit mAb #2497",
+    "scope": "public",
+    "lincsId": "LAR-1036",
+    "rrid": "AB_836876",
+    "cloneName": "75D8",
+    "targetProtein": "FOXO3a",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "FoxO3a (75D8) Rabbit mAb #2497",
+    "scope": "public",
+    "lincsId": "LAR-1036",
+    "rrid": "AB_836876",
+    "cloneName": "75D8",
+    "targetProtein": "FOXO3a",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Anti-Cyclin D1 antibody [EPR2241] (Alexa Fluor 488) (ab190194)",
+    "scope": "public",
+    "lincsId": "LAR-1037",
+    "cloneName": "EPR2241",
+    "targetProtein": "Cyclin-D1",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Alexa Fluor 488 anti-Bax Antibody",
+    "scope": "public",
+    "lincsId": "LAR-1038",
+    "rrid": "AB_2562171",
+    "cloneName": "2D2",
+    "targetProtein": "BAX",
+    "antibodySpecies": "mouse",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG1",
+    "antibodyProductionSourceOrganism": "mouse",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "E-Cadherin (24E10) Rabbit mAb (Alexa Fluor 488 Conjugate) #3199",
+    "scope": "public",
+    "lincsId": "LAR-1039",
+    "rrid": "AB_10691457",
+    "cloneName": "24E10",
+    "targetProtein": "E-cadherin",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Cdc25A Antibody (DCS-120): sc-56264",
+    "scope": "public",
+    "lincsId": "LAR-1040",
+    "rrid": "AB_1120798",
+    "cloneName": "DCS-120",
+    "antibodySpecies": "mouse",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG2a",
+    "antibodyProductionSourceOrganism": "mouse",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Cdc25C Antibody (H-6): sc-13138",
+    "scope": "public",
+    "lincsId": "LAR-1041",
+    "rrid": "AB_627227",
+    "cloneName": "H-6",
+    "targetProtein": "Cdc25C",
+    "antibodySpecies": "mouse",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG1",
+    "antibodyProductionSourceOrganism": "mouse",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Cdc25C Antibody (H-150): sc-5620",
+    "scope": "public",
+    "lincsId": "LAR-1042",
+    "rrid": "AB_2075275",
+    "targetProtein": "Cdc25C",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "cyclin D1 Antibody (H-295): sc-753",
+    "scope": "public",
+    "lincsId": "LAR-1043",
+    "rrid": "AB_2070433",
+    "targetProtein": "Cyclin-D1",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "cyclin E Antibody (C-19): sc-198",
+    "scope": "public",
+    "lincsId": "LAR-1044",
+    "rrid": "AB_631346",
+    "targetProtein": "Cyclin-E1",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Purified Mouse Anti-p27[Kip1]",
+    "scope": "public",
+    "lincsId": "LAR-1045",
+    "rrid": "AB_397636",
+    "cloneName": "57/Kip1/p27",
+    "targetProtein": "p27Kip1 (mouse)",
+    "antibodySpecies": "mouse",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG1",
+    "antibodyProductionSourceOrganism": "mouse",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-CDK2 (Thr160) Antibody #2561",
+    "scope": "public",
+    "lincsId": "LAR-1046",
+    "rrid": "AB_2078685",
+    "targetProtein": "CDK2 (pT160)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "polyclonal",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "p-Rb Antibody (Ser 807/811): sc-16670",
+    "scope": "public",
+    "lincsId": "LAR-1081",
+    "rrid": "AB_655250",
+    "targetProtein": "Rb (pS807; pS811)",
+    "antibodySpecies": "goat",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "goat",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-GSK-3/ (Ser21/9) Antibody #9331",
+    "scope": "public",
+    "lincsId": "LAR-1047",
+    "targetProtein": "GSK-3 alpha (pS21)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "polyclonal",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-mTOR (Ser2448) Antibody #2971",
+    "scope": "public",
+    "lincsId": "LAR-1048",
+    "rrid": "AB_330970",
+    "targetProtein": "mTOR (pS2448)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "polyclonal",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-Myt1 (Ser83) Antibody #4281",
+    "scope": "public",
+    "lincsId": "LAR-1049",
+    "rrid": "AB_2163832",
+    "targetProtein": "Myt1 (pS83)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "polyclonal",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-p90RSK (Thr359) (D1E9) Rabbit mAb #8753",
+    "scope": "public",
+    "lincsId": "LAR-1050",
+    "cloneName": "D1E9",
+    "targetProtein": "S6K-alpha-3 (pT356)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-p90RSK (Thr573) Antibody #9346",
+    "scope": "public",
+    "lincsId": "LAR-1051",
+    "rrid": "AB_330795",
+    "targetProtein": "S6K-alpha-1 (pT573)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "polyclonal",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-S6 Ribosomal Protein (Ser240/244) (D68F8) XP Rabbit mAb #5364",
+    "scope": "public",
+    "lincsId": "LAR-1052",
+    "rrid": "AB_10698889",
+    "cloneName": "D68F8",
+    "targetProtein": "S6 (pS240; pS244)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-Tuberin/TSC2 (Ser1387) Antibody #5584",
+    "scope": "public",
+    "lincsId": "LAR-1053",
+    "rrid": "AB_10698883",
+    "targetProtein": "Tuberin (pS1387)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "polyclonal",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-Wee1 (Ser642) (D47G5) Rabbit mAb #4910",
+    "scope": "public",
+    "lincsId": "LAR-1054",
+    "rrid": "AB_2215870",
+    "cloneName": "D47G5",
+    "targetProtein": "WEE1hu (pS642)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-p90RSK (Ser380) Antibody #9341",
+    "scope": "public",
+    "lincsId": "LAR-1055",
+    "rrid": "AB_330753",
+    "targetProtein": "S6K-alpha-1 (pS380)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "polyclonal",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Donkey anti-Mouse IgG (H+L) Secondary Antibody, Alexa Fluor 488 conjugate",
+    "scope": "public",
+    "lincsId": "LAR-1056",
+    "rrid": "AB_2535788",
+    "antibodySpecies": "donkey",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "donkey",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "cyclin A Antibody (H-432): sc-751",
+    "scope": "public",
+    "lincsId": "LAR-1057",
+    "rrid": "AB_631329",
+    "targetProtein": "Cyclin-A2",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "p-Rb Antibody (Ser 807/811): sc-16670",
+    "scope": "public",
+    "lincsId": "LAR-1058",
+    "rrid": "AB_655250",
+    "targetProtein": "Rb (pS807; pS811)",
+    "antibodySpecies": "goat",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "goat",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Cyclin B1 (D5C10) XP Rabbit mAb #12231",
+    "scope": "public",
+    "lincsId": "LAR-1059",
+    "cloneName": "D5C10",
+    "targetProtein": "Cyclin-B1",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "FoxM1 (D12D5) XP Rabbit mAb #5436",
+    "scope": "public",
+    "lincsId": "LAR-1060",
+    "rrid": "AB_10692483",
+    "cloneName": "D12D5",
+    "targetProtein": "FoxM1",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-4E-BP1 (Thr37/46) (236B4) Rabbit mAb #2855",
+    "scope": "public",
+    "lincsId": "LAR-1061",
+    "rrid": "AB_560835",
+    "cloneName": "236B4",
+    "targetProtein": "4E-BP1 (pT36; pT45) (mouse)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-cdc2 (Tyr15) (10A11) Rabbit mAb #4539",
+    "scope": "public",
+    "lincsId": "LAR-1062",
+    "rrid": "AB_560955",
+    "cloneName": "10A11",
+    "targetProtein": "CDK1 (pY15)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "CDK2 (phospho Tyr15) antibody [EPR2233Y]",
+    "scope": "public",
+    "lincsId": "LAR-1063",
+    "rrid": "AB_10621567",
+    "cloneName": "EPR2233Y",
+    "targetProtein": "CDK2 (pY15)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-p44/42 MAPK (Erk1/2) (Thr202/Tyr204) (D13.14.4E) XP Rabbit mAb #4370",
+    "scope": "public",
+    "lincsId": "LAR-1064",
+    "rrid": "AB_2297462",
+    "cloneName": "D13.14.4E",
+    "targetProtein": "ERK-1 (pT202; pY204)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "p27 Kip1 (phospho Ser10) antibody [EP233(2)Y]",
+    "scope": "public",
+    "lincsId": "LAR-1065",
+    "rrid": "AB_10621656",
+    "cloneName": "EP233(2)Y",
+    "targetProtein": "p27Kip1 (pS10)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-S6 Ribosomal Protein (Ser235/236) (D57.2.2E) XP Rabbit mAb #4858",
+    "scope": "public",
+    "lincsId": "LAR-1066",
+    "rrid": "AB_916156",
+    "cloneName": "D57.2.2E",
+    "targetProtein": "S6 (pS235; pS236)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "p21 Waf1/Cip1 (12D1) Rabbit mAb #2947",
+    "scope": "public",
+    "lincsId": "LAR-1067",
+    "rrid": "AB_823586",
+    "cloneName": "12D1",
+    "targetProtein": "p21",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "p57 Kip2 Antibody #2557",
+    "scope": "public",
+    "lincsId": "LAR-1068",
+    "rrid": "AB_10693466",
+    "targetProtein": "p57Kip2",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "polyclonal",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "p27 Kip1 (D69C12) XP Rabbit mAb #3686",
+    "scope": "public",
+    "lincsId": "LAR-1069",
+    "rrid": "AB_2077850",
+    "cloneName": "D69C12",
+    "targetProtein": "p27Kip1",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Donkey anti-Rabbit IgG (H+L) Secondary Antibody, Alexa Fluor 647 conjugate",
+    "scope": "public",
+    "lincsId": "LAR-1070",
+    "rrid": "AB_2536183",
+    "antibodySpecies": "donkey",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "donkey",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Donkey anti-Goat IgG (H+L) Secondary Antibody, Alexa Fluor 568 conjugate",
+    "scope": "public",
+    "lincsId": "LAR-1071",
+    "rrid": "AB_2534104",
+    "antibodySpecies": "donkey",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "donkey",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "p-p27 Antibody (Thr 187): sc-16324",
+    "scope": "public",
+    "lincsId": "LAR-1072",
+    "rrid": "AB_670358",
+    "targetProtein": "p27Kip1 (pT187)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-Akt (Ser473) (D9E) XP Rabbit mAb #4060",
+    "scope": "public",
+    "lincsId": "LAR-1073",
+    "rrid": "AB_2315049",
+    "cloneName": "D9E",
+    "targetProtein": "Akt-1 (pS473)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-p57 Kip2 (Thr310) Antibody #2558",
+    "scope": "public",
+    "lincsId": "LAR-1074",
+    "rrid": "AB_2244745",
+    "targetProtein": "p57Kip2 (pT310)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "polyclonal",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Survivin (71G4B7) Rabbit mAb #2808",
+    "scope": "public",
+    "lincsId": "LAR-1075",
+    "rrid": "AB_10691694",
+    "cloneName": "71G4B7",
+    "targetProtein": "Survivin",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "p90 RSK1 (phospho Ser380) antibody [E239]",
+    "scope": "public",
+    "lincsId": "LAR-1076",
+    "rrid": "AB_10619104",
+    "cloneName": "E239",
+    "targetProtein": "S6K-alpha-1 (pS380)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Herceptin; rhuMAb HER2",
+    "scope": "public",
+    "lincsId": "LAR-1077",
+    "cloneName": "huMAb4D5-8",
+    "targetProtein": "erbB-2",
+    "antibodySpecies": "human",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG1",
+    "antibodyProductionSourceOrganism": "Chinese Hamster Ovary cells",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Omnitag; Perjeta",
+    "scope": "public",
+    "lincsId": "LAR-1078",
+    "cloneName": "rhuMAb2C4",
+    "targetProtein": "erbB-2",
+    "antibodySpecies": "human",
+    "antibodyClonality": "monoclonal",
+    "antibodyProductionSourceOrganism": "Chinese Hamster Ovary cells",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Erbitux",
+    "scope": "public",
+    "lincsId": "LAR-1079",
+    "targetProtein": "EGFR",
+    "antibodySpecies": "human",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG1",
+    "antibodyProductionSourceOrganism": "murine myeloma cells",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "c-Jun (60A8) Rabbit mAb #9165",
+    "scope": "public",
+    "lincsId": "LAR-1089",
+    "rrid": "AB_2130165",
+    "cloneName": "60A8",
+    "targetProtein": "c-Jun",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-c-Jun (Ser73) (D47G9) XP Rabbit mAb #3270",
+    "scope": "public",
+    "lincsId": "LAR-1088",
+    "rrid": "AB_2129572",
+    "cloneName": "D47G9",
+    "targetProtein": "c-Jun (pS73)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-p44/42 MAPK (Erk1/2) (Thr202/Tyr204) (D13.14.4E) XP Rabbit mAb #4370",
+    "scope": "public",
+    "lincsId": "LAR-1087",
+    "rrid": "AB_2297462",
+    "cloneName": "D13.14.4E",
+    "targetProtein": "ERK-1 (pT202; pY204)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Donkey anti-Goat IgG (H+L) Secondary Antibody, Alexa Fluor 568 conjugate",
+    "scope": "public",
+    "lincsId": "LAR-1086",
+    "rrid": "AB_2534104",
+    "antibodySpecies": "donkey",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "donkey",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Ki-67 (8D5) Mouse mAb #9449",
+    "scope": "public",
+    "lincsId": "LAR-1085",
+    "cloneName": "8D5",
+    "targetProtein": "KI-67",
+    "antibodySpecies": "mouse",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG1",
+    "antibodyProductionSourceOrganism": "mouse",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Donkey anti-Mouse IgG (H+L) Secondary Antibody, Alexa Fluor 488 conjugate",
+    "scope": "public",
+    "lincsId": "LAR-1084",
+    "rrid": "AB_2535788",
+    "antibodySpecies": "donkey",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "donkey",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "p75NTR (D4B3) XP Rabbit mAb #8238",
+    "scope": "public",
+    "lincsId": "LAR-1083",
+    "rrid": "AB_10839265",
+    "cloneName": "D4B3",
+    "targetProtein": "NGFR",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Donkey anti-Rabbit IgG (H+L) Secondary Antibody, Alexa Fluor 647 conjugate",
+    "scope": "public",
+    "lincsId": "LAR-1082",
+    "rrid": "AB_2536183",
+    "antibodySpecies": "donkey",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "donkey",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Phospho-S6 Ribosomal Protein (Ser240/244) (D68F8) XP Rabbit mAb #5364",
+    "scope": "public",
+    "lincsId": "LAR-1080",
+    "rrid": "AB_10698889",
+    "cloneName": "D68F8",
+    "targetProtein": "S6 (pS240; pS244)",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Goat anti-Mouse IgG (H+L) Secondary Antibody, Alexa Fluor 647 conjugate",
+    "scope": "public",
+    "lincsId": "LAR-1025",
+    "rrid": "AB_10564125",
+    "antibodySpecies": "goat",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "goat",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "RPA32/RPA2 (4E4) Rat mAb #2208",
+    "scope": "public",
+    "lincsId": "LAR-1090",
+    "rrid": "AB_2238543",
+    "cloneName": "4E4",
+    "targetProtein": "RP-A p32",
+    "antibodySpecies": "rat",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG1",
+    "antibodyProductionSourceOrganism": "rat",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Anti-E2F1 antibody [EPR3818(3)] (Alexa Fluor 555) (ab208078)",
+    "scope": "public",
+    "lincsId": "LAR-1091",
+    "cloneName": "EPR3818(3)",
+    "targetProtein": "E2F-1",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Anti-FOXO1A antibody [EP927Y] (Alexa Fluor 555) (ab207244)",
+    "scope": "public",
+    "lincsId": "LAR-1092",
+    "cloneName": "EP927Y",
+    "targetProtein": "FOXO1a",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Anti-c-Myc antibody [Y69] (Alexa Fluor 555) (ab201780)",
+    "scope": "public",
+    "lincsId": "LAR-1093",
+    "cloneName": "Y69",
+    "targetProtein": "c-Myc",
+    "antibodySpecies": "rabbit",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Alexa Fluor 647 anti-H2A.X Phospho (Ser139) Antibody",
+    "scope": "public",
+    "lincsId": "LAR-1094",
+    "antibodySpecies": "mouse",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG1, kappa",
+    "antibodyProductionSourceOrganism": "mouse",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Anti-Human Cyclin E eFluor 660",
+    "scope": "public",
+    "lincsId": "LAR-1095",
+    "rrid": "AB_2574350",
+    "cloneName": "HE12",
+    "targetProtein": "Cyclin-E1",
+    "antibodySpecies": "mouse",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG1, kappa",
+    "antibodyProductionSourceOrganism": "mouse",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Goat anti-Rat IgG (H+L) Cross-Adsorbed Secondary Antibody, Alexa Fluor 555",
+    "scope": "public",
+    "lincsId": "LAR-1096",
+    "rrid": "AB_2535855",
+    "antibodySpecies": "goat",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "goat",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Goat anti-Rabbit IgG (H+L) Highly Cross-Adsorbed Secondary Antibody, Alexa Fluor 488",
+    "scope": "public",
+    "lincsId": "LAR-1097",
+    "rrid": "AB_2576217",
+    "antibodySpecies": "goat",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "goat",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Unnamed",
+    "scope": "public",
+    "lincsId": "LAR-1098",
+    "cloneName": "RCK108",
+    "targetProtein": "KRT19",
+    "antibodySpecies": "Human",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG1_kappa_chain",
+    "antibodyProductionSourceOrganism": "Mouse",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Unnamed",
+    "scope": "public",
+    "lincsId": "LAR-1099",
+    "cloneName": "Poly19055",
+    "targetProtein": "KRT5",
+    "antibodySpecies": "Mouse",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "Rabbit",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Unnamed",
+    "scope": "public",
+    "lincsId": "LAR-1100",
+    "antibodySpecies": "not_yet_specified",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "Donkey",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Unnamed",
+    "scope": "public",
+    "lincsId": "LAR-1101",
+    "antibodySpecies": "not_yet_specified",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "Donkey",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Unnamed",
+    "scope": "public",
+    "lincsId": "LAR-1102",
+    "cloneName": "LL002",
+    "targetProtein": "KRT14",
+    "antibodySpecies": "Mouse",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG3",
+    "antibodyProductionSourceOrganism": "Mouse",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Unnamed",
+    "scope": "public",
+    "lincsId": "LAR-1103",
+    "cloneName": "RCK108",
+    "targetProtein": "KRT19",
+    "antibodySpecies": "not_yet_specified",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG1_kappa_chain",
+    "antibodyProductionSourceOrganism": "Mouse",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Unnamed",
+    "scope": "public",
+    "lincsId": "LAR-1104",
+    "antibodySpecies": "not_yet_specified",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG1",
+    "antibodyProductionSourceOrganism": "Goat",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Unnamed",
+    "scope": "public",
+    "lincsId": "LAR-1105",
+    "antibodySpecies": "not_yet_specified",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG3",
+    "antibodyProductionSourceOrganism": "Goat",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Unnamed",
+    "scope": "public",
+    "lincsId": "LAR-1106",
+    "cloneName": "not_yet_specified",
+    "targetProtein": "not_available",
+    "antibodySpecies": "not_yet_specified",
+    "antibodyClonality": "not_yet_specified",
+    "antibodyIsotype": "not_yet_specified",
+    "antibodyProductionSourceOrganism": "not_available",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Unnamed",
+    "scope": "public",
+    "lincsId": "LAR-1107",
+    "cloneName": "38F3",
+    "targetProtein": "FBL",
+    "antibodySpecies": "yeast",
+    "antibodyClonality": "monoclonal",
+    "antibodyIsotype": "IgG1",
+    "antibodyProductionSourceOrganism": "Mouse",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Unnamed",
+    "scope": "public",
+    "lincsId": "LAR-1108",
+    "antibodySpecies": "not_yet_specified",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "Donkey",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  },
+  {
+    "name": "Unnamed",
+    "scope": "public",
+    "lincsId": "LAR-1109",
+    "antibodySpecies": "not_yet_specified",
+    "antibodyClonality": "polyclonal",
+    "antibodyIsotype": "IgG",
+    "antibodyProductionSourceOrganism": "Donkey",
+    "createdAt": {
+      "$date": "2025-06-30T05:57:06Z"
+    }
+  }
+]
