@@ -27,8 +27,8 @@
     },
     "ModelSystem": {
       "properties": {
-        "name": {
-          "title": "Name",
+        "type": {
+          "title": "Type",
           "type": "string"
         },
         "items": {
@@ -113,6 +113,7 @@
           "type": "string"
         },
         "description": {
+          "title": "Description",
           "type": "string"
         },
         "sampleId": {
@@ -140,6 +141,7 @@
           "type": "string"
         },
         "description": {
+          "title": "Description",
           "type": "string"
         },
         "samples": {
