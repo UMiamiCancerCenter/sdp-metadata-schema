@@ -281,7 +281,7 @@
                 {
                   "field": "Value",
                   "title": "Value",
-                  "type": "string"
+                  "type": "number"
                 },
                 {
                   "field": "Units",
