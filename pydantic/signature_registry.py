@@ -30,7 +30,7 @@ class ModelSystemItem(CustomBaseModel):
 
 class ModelSystem(CustomBaseModel):
 
-    name: str | SkipJsonSchema[None] = Field(default=None, title="Name")
+    type: str | SkipJsonSchema[None] = Field(default=None, title="Type")
     items: list[ModelSystemItem] | SkipJsonSchema[None] = Field(default=None, title="Model System Items")
 
 class Sample(CustomBaseModel):
