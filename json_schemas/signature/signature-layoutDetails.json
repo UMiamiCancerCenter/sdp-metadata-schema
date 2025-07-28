@@ -80,7 +80,7 @@
                   "type": "string"
                 },
                 {
-                  "field": "names",
+                  "field": "items",
                   "title": "Names",
                   "type": {
                     "name": "arrayWithCommaSeparator"
