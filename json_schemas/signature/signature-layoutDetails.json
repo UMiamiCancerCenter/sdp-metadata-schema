@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.4",
   "children": [
     {
       "size": {
@@ -268,11 +268,6 @@
             "options": {
               "title": "Data Points",
               "columns": [
-                {
-                  "field": "Source",
-                  "title": "Source",
-                  "type": "string"
-                },
                 {
                   "field": "Endpoint",
                   "title": "Endpoint",
