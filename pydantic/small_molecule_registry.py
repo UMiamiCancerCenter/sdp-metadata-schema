@@ -289,7 +289,7 @@ class SmallMolecule(CustomBaseModel):
     clinicaltrials: list[CtStudy] | SkipJsonSchema[None] = Field(default=None, title="Clinical Trials")
     pharmgkb: PharmgkbBlock | SkipJsonSchema[None] = Field(default=None, title="PharmGKB")
 
-    model_config = {"title": "Small Molecule Registry", "description": "Molecules with a low molecular weight (generally < 900 daltons) used to perturb the experimental system, often binding to specific biological targets.","json_schema_extra": {"version": "0.1.5"}}
+    model_config = {"title": "Small Molecule Registry", "description": "Molecules with a low molecular weight (generally < 900 daltons) used to perturb the experimental system, often binding to specific biological targets.","json_schema_extra": {"version": "0.1.6"}}
 
 if __name__ == "__main__":
     json_schema=SmallMolecule.model_json_schema(schema_generator=GenerateJsonSchemaWithoutDefaultTitles)

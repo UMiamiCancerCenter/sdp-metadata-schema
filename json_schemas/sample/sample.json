@@ -664,6 +664,9 @@
           },
           {
             "$ref": "#/$defs/tetExpressionSystem"
+          },
+          {
+            "$ref": "#/$defs/cellLine"
           }
         ]
       },
@@ -677,5 +680,5 @@
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.1.5"
+  "version": "0.1.6"
 }
