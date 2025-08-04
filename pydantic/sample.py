@@ -363,6 +363,37 @@ class cellLine(BaseModel):
                                  description="If the cell line came from a diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the origin tissue or cells were not diseased.",
                                  default="")
 
+class cellLinePerturbagen(BaseModel):
+
+    model_config = ConfigDict(title="Cell Line", 
+                              description="Immortalized (naturally or engineered), genetically uniform tissue cells able to reproduce indefinitely in standard culture conditions."
+                              )
+    role: str = Field(default="Perturbagen",
+                                            json_schema_extra={"const": "Perturbagen",
+                                           "format": "hidden"})
+    entity: str = Field(default="Cell Line", 
+                                            json_schema_extra={"const": "Cell Line",
+                                                                "format": "hidden",
+                                                                })
+    
+    cellLineId: str = Field(default="", json_schema_extra={"format": "hidden"})
+
+    cellLineName: str = Field(title="Name", 
+                              description="The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'."
+                              )
+    cellLineLabBatchLabel: str = Field(title="Lab Batch Label", 
+                                       description="Lab-specific ID for the  batch of cells used in the experiment.", default="")
+    cellLineLabBatchId: str = Field(default="", description="A MongoDB ObjectId string", json_schema_extra={"format": "hidden"})
+    cellLineTissue: str = Field(title="Tissue of Origin", 
+                                description="Tissue from which the cell line was derived, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'."
+                                )
+    cellLineOrgan: str = Field(title="Organ of Origin", 
+                               description="Organ from which the cell line was derived, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.",default="")
+    cellLineSpecies: str = Field(title="Species of Origin", 
+                                  description="Species from which the cell line was derived, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.")
+    cellLineDisease: str = Field(title="Disease", 
+                                 description="If the cell line came from a diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the origin tissue or cells were not diseased.",
+                                 default="")
 
 
 # class wastewater(BaseModel):
@@ -523,7 +554,7 @@ class sample(BaseModel):
         # antibody,
         protein,
         tetExpressionSystem,
-        cellLine
+        cellLinePerturbagen
         # infectiousAgent
             ] 
         ] = Field(default="", title="Perturbations")
