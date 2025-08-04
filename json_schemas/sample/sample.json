@@ -62,6 +62,68 @@
       "title": "Cell Line",
       "type": "object"
     },
+    "cellLinePerturbagen": {
+      "properties": {
+        "role": {
+          "const": "Perturbagen",
+          "default": "Perturbagen",
+          "format": "hidden",
+          "type": "string"
+        },
+        "entity": {
+          "const": "Cell Line",
+          "default": "Cell Line",
+          "format": "hidden",
+          "type": "string"
+        },
+        "cellLineId": {
+          "format": "hidden",
+          "type": "string"
+        },
+        "cellLineName": {
+          "description": "The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'.",
+          "title": "Name",
+          "type": "string"
+        },
+        "cellLineLabBatchLabel": {
+          "description": "Lab-specific ID for the  batch of cells used in the experiment.",
+          "title": "Lab Batch Label",
+          "type": "string"
+        },
+        "cellLineLabBatchId": {
+          "description": "A MongoDB ObjectId string",
+          "format": "hidden",
+          "type": "string"
+        },
+        "cellLineTissue": {
+          "description": "Tissue from which the cell line was derived, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'.",
+          "title": "Tissue of Origin",
+          "type": "string"
+        },
+        "cellLineOrgan": {
+          "description": "Organ from which the cell line was derived, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.",
+          "title": "Organ of Origin",
+          "type": "string"
+        },
+        "cellLineSpecies": {
+          "description": "Species from which the cell line was derived, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
+          "title": "Species of Origin",
+          "type": "string"
+        },
+        "cellLineDisease": {
+          "description": "If the cell line came from a diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the origin tissue or cells were not diseased.",
+          "title": "Disease",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cellLineName",
+        "cellLineTissue",
+        "cellLineSpecies"
+      ],
+      "title": "Cell Line",
+      "type": "object"
+    },
     "crisprKnockout": {
       "properties": {
         "role": {
@@ -666,7 +728,7 @@
             "$ref": "#/$defs/tetExpressionSystem"
           },
           {
-            "$ref": "#/$defs/cellLine"
+            "$ref": "#/$defs/cellLinePerturbagen"
           }
         ]
       },
