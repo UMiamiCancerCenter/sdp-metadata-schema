@@ -1,5 +1,5 @@
 {
-  "version": "0.1.4",
+  "version": "0.1.5",
   "children": [
     {
       "field": "list",
@@ -12,6 +12,11 @@
               {
                 "field": "typeOfGene",
                 "title": "Type Of Gene",
+                "type": "string"
+              },
+              {
+                "field": "species",
+                "title": "Species",
                 "type": "string"
               }
             ],
