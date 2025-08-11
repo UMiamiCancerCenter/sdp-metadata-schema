@@ -2,29 +2,40 @@
   "version": "0.1.8",
   "children": [
     {
-      "title": "Lincs",
+      "title": "General Information",
       "size": {
         "xs": 6
       },
       "children": [
         {
-          "field": "lincs.inchiKeyParent",
-          "title": "INCHIKEY",
+          "field": "name",
+          "title": "Name",
           "type": "string"
         },
         {
-          "field": "lincs.alternativeNames",
-          "title": "Alternative Names",
-          "type": {
-            "name": "arrayWithCommaSeparator"
-          }
+          "field": "scope",
+          "title": "Scope",
+          "type": "string"
         },
         {
-          "field": "lincs.alternativeIds",
-          "title": "Alternative Ids",
-          "type": {
-            "name": "arrayWithCommaSeparator"
-          }
+          "field": "chembl.moleculeChemblId",
+          "title": "ChEMBL ID",
+          "type": "string"
+        },
+        {
+          "field": "chembl.prefName",
+          "title": "Preferred Name",
+          "type": "string"
+        },
+        {
+          "field": "lincs.id",
+          "title": "LINCS ID",
+          "type": "string"
+        },
+        {
+          "field": "lincs.name",
+          "title": "LINCS Name",
+          "type": "string"
         }
       ]
     },
@@ -45,42 +56,48 @@
       ]
     },
     {
-      "title": "Content",
+      "title": "LINCS Details",
       "size": {
-        "xs": 6
+        "xs": 12
       },
       "children": [
         {
-          "field": "content.name",
-          "title": "Name",
+          "field": "lincs.inchiKeyParent",
+          "title": "InChI Key Parent",
           "type": "string"
         },
         {
-          "field": "content.inchiCanonical",
-          "title": "INCHI",
+          "field": "lincs.inchiParent",
+          "title": "InChI Parent",
           "type": "string"
         },
         {
-          "field": "content.smilesCanonical",
-          "title": "Smiles",
-          "type": "string"
-        }
-      ]
-    },
-    {
-      "title": "Unichem",
-      "size": {
-        "xs": 6
-      },
-      "children": [
-        {
-          "field": "unichem.chembl",
-          "title": "CHEMBLID",
+          "field": "lincs.smilesParent",
+          "title": "SMILES Parent",
           "type": "string"
         },
         {
-          "field": "unichem.pubchem",
+          "field": "lincs.alternativeNames",
+          "title": "Alternative Names",
+          "type": {
+            "name": "arrayWithCommaSeparator"
+          }
+        },
+        {
+          "field": "lincs.alternativeIds",
+          "title": "Alternative IDs",
+          "type": {
+            "name": "arrayWithCommaSeparator"
+          }
+        },
+        {
+          "field": "lincs.pubchemCid",
           "title": "PubChem CID",
+          "type": "number"
+        },
+        {
+          "field": "lincs.chebiId",
+          "title": "ChEBI ID",
           "type": {
             "name": "arrayWithCommaSeparator"
           }
@@ -88,15 +105,113 @@
       ]
     },
     {
-      "title": "Chembl",
+      "title": "ChEMBL Details",
       "size": {
-        "xs": 6
+        "xs": 12
       },
       "children": [
         {
-          "field": "chembl.moleculeType",
-          "title": "MOLECULE_TYPE",
+          "field": "chembl.maxPhase",
+          "title": "Max Phase",
+          "type": "number"
+        },
+        {
+          "field": "chembl.maxPhaseCurated",
+          "title": "Max Phase Description",
           "type": "string"
+        },
+        {
+          "field": "chembl.firstApproval",
+          "title": "First Approval",
+          "type": "number"
+        },
+        {
+          "field": "chembl.chebiParId",
+          "title": "ChEBI Parent ID",
+          "type": "string"
+        },
+        {
+          "field": "chembl.oral",
+          "title": "Oral",
+          "type": "boolean"
+        },
+        {
+          "field": "chembl.parenteral",
+          "title": "Parenteral",
+          "type": "boolean"
+        },
+        {
+          "field": "chembl.withdrawnFlag",
+          "title": "Withdrawn",
+          "type": "boolean"
+        },
+        {
+          "field": "chembl.withdrawnReason",
+          "title": "Withdrawn Reason",
+          "type": "string"
+        },
+        {
+          "field": "chembl.blackBoxWarning",
+          "title": "Black Box Warning",
+          "type": "boolean"
+        },
+        {
+          "field": "chembl.smiles",
+          "title": "SMILES",
+          "type": "string"
+        },
+        {
+          "field": "chembl.inchi",
+          "title": "InChI",
+          "type": "string"
+        },
+        {
+          "field": "chembl.inchiKey",
+          "title": "InChI Key",
+          "type": "string"
+        },
+        {
+          "field": "chembl.moleculeStructures.standardInchiKey",
+          "title": "Standard InChI Key",
+          "type": "string"
+        },
+        {
+          "field": "chembl.moleculeStructures.canonicalSmiles",
+          "title": "Canonical SMILES",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "title": "ChEMBL - Molecule Properties",
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "chembl.moleculeProperties.fullMwt",
+          "title": "Full Mwt",
+          "type": "number"
+        },
+        {
+          "field": "chembl.moleculeProperties.hba",
+          "title": "H-Bond Acceptors",
+          "type": "number"
+        },
+        {
+          "field": "chembl.moleculeProperties.hbd",
+          "title": "H-Bond Donors",
+          "type": "number"
+        },
+        {
+          "field": "chembl.moleculeProperties.acdLogp",
+          "title": "ACD LogP",
+          "type": "number"
+        },
+        {
+          "field": "chembl.moleculeProperties.qedWeighted",
+          "title": "QED Weighted",
+          "type": "number"
         }
       ]
     },
@@ -114,7 +229,7 @@
               "columns": [
                 {
                   "field": "cid",
-                  "title": "PubChem CID",
+                  "title": "CID",
                   "type": "number"
                 },
                 {
@@ -124,12 +239,22 @@
                 },
                 {
                   "field": "inchi",
-                  "title": "INCHI",
+                  "title": "InChI",
+                  "type": "string"
+                },
+                {
+                  "field": "inchikey",
+                  "title": "InChI Key",
                   "type": "string"
                 },
                 {
                   "field": "smiles.canonical",
-                  "title": "Smiles",
+                  "title": "Canonical SMILES",
+                  "type": "string"
+                },
+                {
+                  "field": "iupac.systematic",
+                  "title": "IUPAC Name",
                   "type": "string"
                 }
               ]
@@ -144,50 +269,262 @@
       },
       "children": [
         {
-          "field": "unichem",
+          "field": "chembl.moleculeSynonyms",
           "type": {
             "name": "datagrid",
             "options": {
-              "title": "External Links",
-              "castObjectToOneElementArray": true,
+              "title": "ChEMBL - Molecule Synonyms",
               "columns": [
                 {
-                  "field": "chebi",
-                  "title": "ChEBI",
-                  "type": {
-                    "name": "arrayWithCommaSeparator"
-                  }
+                  "field": "moleculeSynonym",
+                  "title": "Synonym",
+                  "type": "string"
                 },
                 {
-                  "field": "chembl",
-                  "title": "ChEMBL",
-                  "type": {
-                    "name": "arrayWithCommaSeparator"
-                  }
+                  "field": "synType",
+                  "title": "Type",
+                  "type": "string"
                 },
                 {
-                  "field": "lincs",
-                  "title": "LINCS",
-                  "type": {
-                    "name": "arrayWithCommaSeparator"
-                  }
-                },
-                {
-                  "field": "pubchem",
-                  "title": "PubChem",
-                  "type": {
-                    "name": "arrayWithCommaSeparator"
-                  }
-                },
-                {
-                  "field": "drugbank",
-                  "title": "DrugBank",
-                  "type": {
+                  "field": "synonyms",
+                  "title": "Synonyms",
+                   "type": {
                     "name": "arrayWithCommaSeparator"
                   }
                 }
               ]
             }
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "chembl.drugIndications",
+          "type": {
+            "name": "datagrid",
+            "options": {
+              "title": "ChEMBL - Drug Indications",
+              "columns": [
+                {
+                  "field": "efoTerm",
+                  "title": "EFO Term",
+                  "type": "string"
+                },
+                {
+                  "field": "efoId",
+                  "title": "EFO ID",
+                  "type": "string"
+                },
+                {
+                  "field": "meshHeading",
+                  "title": "MeSH Heading",
+                  "type": "string"
+                },
+                {
+                  "field": "maxPhaseForInd",
+                  "title": "Max Phase",
+                  "type": "number"
+                },
+                {
+                  "field": "firstApproval",
+                  "title": "First Approval",
+                  "type": "number"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "chembl.drugMechanisms",
+          "type": {
+            "name": "datagrid",
+            "options": {
+              "title": "ChEMBL - Drug Mechanisms",
+              "columns": [
+                {
+                  "field": "mechanismOfAction",
+                  "title": "Mechanism of Action",
+                  "type": "string"
+                },
+                {
+                  "field": "actionType",
+                  "title": "Action Type",
+                  "type": "string"
+                },
+                {
+                  "field": "targetName",
+                  "title": "Target Name",
+                  "type": "string"
+                },
+                {
+                  "field": "targetType",
+                  "title": "Target Type",
+                  "type": "string"
+                },
+                {
+                  "field": "targetOrganism",
+                  "title": "Target Organism",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "chembl.bioactivities",
+          "type": {
+            "name": "datagrid",
+            "options": {
+              "title": "ChEMBL - Bioactivities",
+              "columns": [
+                {
+                  "field": "targetPrefName",
+                  "title": "Target",
+                  "type": "string"
+                },
+                {
+                  "field": "standardType",
+                  "title": "Type",
+                  "type": "string"
+                },
+                {
+                  "field": "standardRelation",
+                  "title": "Relation",
+                  "type": "string"
+                },
+                {
+                  "field": "standardValue",
+                  "title": "Value",
+                  "type": "number"
+                },
+                {
+                  "field": "standardUnits",
+                  "title": "Units",
+                  "type": "string"
+                },
+                {
+                  "field": "targetOrganism",
+                  "title": "Organism",
+                  "type": "string"
+                },
+                {
+                  "field": "activityComment",
+                  "title": "Comment",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+     {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "chembl.xrefs",
+          "type": {
+            "name": "datagrid",
+            "options": {
+              "title": "ChEMBL - Cross-references",
+              "columns": [
+                {
+                  "field": "xrefSrcDb",
+                  "title": "Source DB",
+                  "type": "string"
+                },
+                {
+                  "field": "xrefName",
+                  "title": "Name",
+                  "type": "string"
+                },
+                {
+                  "field": "xrefId",
+                  "title": "ID",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "size": {
+        "xs": 6
+      },
+      "children": [
+        {
+          "field": "unichem",
+          "type": {
+            "name": "datagrid",
+            "options": {
+              "title": "UniChem - External Links",
+              "castObjectToOneElementArray": true,
+              "columns": [
+                {
+                  "field": "chebi",
+                  "title": "ChEBI",
+                  "type": { "name": "arrayWithCommaSeparator" }
+                },
+                {
+                  "field": "chembl",
+                  "title": "ChEMBL",
+                  "type": { "name": "arrayWithCommaSeparator" }
+                },
+                {
+                  "field": "lincs",
+                  "title": "LINCS",
+                  "type": { "name": "arrayWithCommaSeparator" }
+                },
+                {
+                  "field": "pubchem",
+                  "title": "PubChem",
+                  "type": { "name": "arrayWithCommaSeparator" }
+                },
+                {
+                  "field": "drugbank",
+                  "title": "DrugBank",
+                  "type": { "name": "arrayWithCommaSeparator" }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "title": "PharmGKB",
+       "size": {
+        "xs": 6
+      },
+      "children": [
+        {
+          "field": "pharmgkb.genericNames",
+          "title": "Generic Names",
+          "type": {
+            "name": "arrayWithCommaSeparator"
           }
         }
       ]
