@@ -230,16 +230,43 @@ class expressionVector(BaseModel):
 #     rnaiDuration: str = Field(title="Duration")
 #     rnaiConcentration: str = Field(title="Concentration")
 
-# class antibody(BaseModel):
+class antibody(BaseModel):
 
-#     model_config = ConfigDict(title="Antibody")
-    
-#     entity: str = Field(default="Antibody", 
-#                                          json_schema_extra={"const": "Antibody",
-#                                                             "format": "hidden"})
-#     antibodyName: str = Field(title="Antibody Name")
-#     antibodyDuration: str = Field(title="Duration")
-#     antibodyConcentration: str = Field(title="Concentration")
+    model_config = ConfigDict(title="Antibody")
+
+    role: str = Field(default="Perturbagen", 
+                        json_schema_extra={"const": "Perturbagen",
+                                           "format": "hidden"})
+
+    entity: str = Field(default="Antibody", json_schema_extra={"const": "Antibody", "format": "hidden"})
+
+    name: str = Field(..., description="Antibody name according to the vendor or provider", title="Name")
+    antibodyLabBatchLabel: str = Field(title="Lab Batch Label", description="Lab-specific ID for the batch of antibody used in the experiment.", default="")
+    antibodySource: str = Field(default="", description="Source of the antibody (e.g. vendor name, or lab where produced)", title="Source")
+    antibodyCatalogNumber: str = Field(default="", description="Vendor catalog number of the antibody.", title="Catalog Number")
+    antibodyLotNumber: str = Field(default="", description="Vendor lot number of the antibody.", title="Lot Number")
+    cloneName: str  = Field(default="", description="Monoclonal clone name or ID", title="Clone Name")
+    antibodyType: Literal["Natural", "Engineered"] = Field(default="", description="Natural or engineered", title="Type")
+    targetProtein: str = Field(default="", description="Nominal protein target (UniProt name)", title="Protein Target")
+    nonProteinTarget: str = Field(default="", title="Non-protein Target", description="Name of the nominal target if not a protein")
+    target_organism: str = Field(default="", description="Organism of the antibody target (NCBI Taxon)", title="Target Organism")
+    immunogen: str = Field(default="", description="Description of the immunogen/entity used to generate the antibody", title="Immunogen")
+    immunogenSequence: str = Field(default="", description="Complete amino acid sequence of the immunogen", title="Immunogen Sequence")
+    antibodySpecies: str = Field(..., description="Organism or species the antibody was derived from", title="Antibody Species")
+    antibodyClonality: Literal["Monoclonal", "Polyclonal"] = Field(default="", description="Monoclonal or polyclonal", title="Clonality")
+    antibodyIsotype: str = Field(default="", description="Isotype of the Fc domain (e.g., IgG)", title="Isotype")
+    antibodyProductionSourceOrganism: str = Field(..., description="Organism or cell type used to produce the antibody", title="Production Source Organism")
+    antibodyProductionDetails: str = Field(default="", description="Details about antibody production method", title="Production Details")
+    antibodyLabeling: str = Field(default="", description="Fluor or enzyme conjugated to the antibody", title="Labeling")
+    antibodyLabelingDetails: str = Field(default="", description="Details about the labeling/conjugation protocol", title="Labeling Details")
+    antibodyConcentration: float = Field(default="", title="Concentration", 
+                                              description="Concentration of antibody that the model system was exposed to.")
+    antibodyConcentrationUnits: str = Field(default="", title="Concentration Units", 
+                                                 description="Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Experimental Factor Ontology (EFO) or the Units of Measurement Ontology (UO) and must be a child term of 'concentration unit'.")
+    antibodyDuration: float = Field(default="", title="Duration", description="Amount of time the model system was exposed to the antibody.")
+    antibodyDurationUnits: str = Field(default="", title="Duration Units",
+                                             description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.")
+
 
 class protein(BaseModel):
     
@@ -619,7 +646,7 @@ class tissue(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.1.12"
+                        "version": "0.1.13"
             })
     
     name: str = Field(title='Sample Name', 
@@ -641,7 +668,7 @@ class sample(BaseModel):
         smallMolecule,
         crisprKnockout,
         # rnai,
-        # antibody,
+        antibody,
         protein,
         tetExpressionSystem,
         expressionVector,

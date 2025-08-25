@@ -1,5 +1,151 @@
 {
   "$defs": {
+    "antibody": {
+      "properties": {
+        "role": {
+          "const": "Perturbagen",
+          "default": "Perturbagen",
+          "format": "hidden",
+          "type": "string"
+        },
+        "entity": {
+          "const": "Antibody",
+          "default": "Antibody",
+          "format": "hidden",
+          "type": "string"
+        },
+        "name": {
+          "description": "Antibody name according to the vendor or provider",
+          "title": "Name",
+          "type": "string"
+        },
+        "antibodyLabBatchLabel": {
+          "description": "Lab-specific ID for the batch of antibody used in the experiment.",
+          "title": "Lab Batch Label",
+          "type": "string"
+        },
+        "antibodySource": {
+          "description": "Source of the antibody (e.g. vendor name, or lab where produced)",
+          "title": "Source",
+          "type": "string"
+        },
+        "antibodyCatalogNumber": {
+          "description": "Vendor catalog number of the antibody.",
+          "title": "Catalog Number",
+          "type": "string"
+        },
+        "antibodyLotNumber": {
+          "description": "Vendor lot number of the antibody.",
+          "title": "Lot Number",
+          "type": "string"
+        },
+        "cloneName": {
+          "description": "Monoclonal clone name or ID",
+          "title": "Clone Name",
+          "type": "string"
+        },
+        "antibodyType": {
+          "description": "Natural or engineered",
+          "enum": [
+            "Natural",
+            "Engineered"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "targetProtein": {
+          "description": "Nominal protein target (UniProt name)",
+          "title": "Protein Target",
+          "type": "string"
+        },
+        "nonProteinTarget": {
+          "description": "Name of the nominal target if not a protein",
+          "title": "Non-protein Target",
+          "type": "string"
+        },
+        "target_organism": {
+          "description": "Organism of the antibody target (NCBI Taxon)",
+          "title": "Target Organism",
+          "type": "string"
+        },
+        "immunogen": {
+          "description": "Description of the immunogen/entity used to generate the antibody",
+          "title": "Immunogen",
+          "type": "string"
+        },
+        "immunogenSequence": {
+          "description": "Complete amino acid sequence of the immunogen",
+          "title": "Immunogen Sequence",
+          "type": "string"
+        },
+        "antibodySpecies": {
+          "description": "Organism or species the antibody was derived from",
+          "title": "Antibody Species",
+          "type": "string"
+        },
+        "antibodyClonality": {
+          "description": "Monoclonal or polyclonal",
+          "enum": [
+            "Monoclonal",
+            "Polyclonal"
+          ],
+          "title": "Clonality",
+          "type": "string"
+        },
+        "antibodyIsotype": {
+          "description": "Isotype of the Fc domain (e.g., IgG)",
+          "title": "Isotype",
+          "type": "string"
+        },
+        "antibodyProductionSourceOrganism": {
+          "description": "Organism or cell type used to produce the antibody",
+          "title": "Production Source Organism",
+          "type": "string"
+        },
+        "antibodyProductionDetails": {
+          "description": "Details about antibody production method",
+          "title": "Production Details",
+          "type": "string"
+        },
+        "antibodyLabeling": {
+          "description": "Fluor or enzyme conjugated to the antibody",
+          "title": "Labeling",
+          "type": "string"
+        },
+        "antibodyLabelingDetails": {
+          "description": "Details about the labeling/conjugation protocol",
+          "title": "Labeling Details",
+          "type": "string"
+        },
+        "antibodyConcentration": {
+          "description": "Concentration of antibody that the model system was exposed to.",
+          "title": "Concentration",
+          "type": "number"
+        },
+        "antibodyConcentrationUnits": {
+          "description": "Concentration units of exposure (e.g. nanomolar, micromolar, millimolar). Name of unit must be chosen from the Experimental Factor Ontology (EFO) or the Units of Measurement Ontology (UO) and must be a child term of 'concentration unit'.",
+          "title": "Concentration Units",
+          "type": "string"
+        },
+        "antibodyDuration": {
+          "description": "Amount of time the model system was exposed to the antibody.",
+          "title": "Duration",
+          "type": "number"
+        },
+        "antibodyDurationUnits": {
+          "description": "Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.",
+          "title": "Duration Units",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "antibodySpecies",
+        "antibodyProductionSourceOrganism"
+      ],
+      "title": "Antibody",
+      "type": "object"
+    },
     "cellLine": {
       "properties": {
         "role": {
@@ -845,6 +991,9 @@
             "$ref": "#/$defs/crisprKnockout"
           },
           {
+            "$ref": "#/$defs/antibody"
+          },
+          {
             "$ref": "#/$defs/protein"
           },
           {
@@ -868,5 +1017,5 @@
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.1.12"
+  "version": "0.1.13"
 }
