@@ -346,7 +346,7 @@
           "description": "The antibiotic resistance marker for plasmid amplification in bacteria (e.g., E. coli).",
           "type": "string"
         },
-        "protein_tags": {
+        "proteinTags": {
           "description": "A list of epitope or fluorescent tags fused to the gene insert (e.g., 'N-terminal FLAG-tag').",
           "items": {
             "type": "string"

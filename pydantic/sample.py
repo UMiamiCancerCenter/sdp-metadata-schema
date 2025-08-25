@@ -189,7 +189,7 @@ class expressionVector(BaseModel):
         default="",
         description="The antibiotic resistance marker for plasmid amplification in bacteria (e.g., E. coli)."
     )
-    protein_tags: List[str] = Field(
+    proteinTags: List[str] = Field(
         default="",
         description="A list of epitope or fluorescent tags fused to the gene insert (e.g., 'N-terminal FLAG-tag')."
     )
