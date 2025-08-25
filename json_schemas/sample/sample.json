@@ -283,6 +283,7 @@
         },
         "vectorName": {
           "description": "A unique name or identifier for this specific vector in your inventory.",
+          "title": "Name",
           "type": "string"
         },
         "vectorLabBatchLabel": {
@@ -298,6 +299,7 @@
             "Adenovirus",
             "AAV"
           ],
+          "title": "Vector Type",
           "type": "string"
         },
         "regulationType": {
@@ -306,10 +308,12 @@
             "Constitutive",
             "Inducible"
           ],
+          "title": "Regulation Type",
           "type": "string"
         },
         "inductionAgent": {
           "description": "The agent (molecular, photonic, or other) used to induce expression in an inducible expression vector.",
+          "title": "Induction Agent",
           "type": "string"
         },
         "deliveryMethod": {
@@ -320,30 +324,37 @@
             "Calcium Phosphate Precipitation",
             "Viral Transduction"
           ],
+          "title": "Delivery Method",
           "type": "string"
         },
         "vectorBackbone": {
           "description": "The name of the original, empty plasmid used as the base for this construct.",
+          "title": "Vector Backbone",
           "type": "string"
         },
         "promoter": {
           "description": "The specific constitutive promoter driving the expression of the gene insert.",
+          "title": "Promoter",
           "type": "string"
         },
         "geneInsert": {
           "description": "The name of the gene or coding sequence (CDS) cloned into the vector for overexpression.",
+          "title": "Inserted Gene",
           "type": "string"
         },
         "geneInsertSpecies": {
           "description": "The species of the gene or coding sequence (CDS) cloned into the vector for overexpression.",
+          "title": "Species of Inserted Gene",
           "type": "string"
         },
         "mammalianSelection": {
           "description": "The antibiotic resistance marker for selecting stably transfected mammalian cells.",
+          "title": "Mammalian Selection Marker",
           "type": "string"
         },
         "bacterialSelection": {
           "description": "The antibiotic resistance marker for plasmid amplification in bacteria (e.g., E. coli).",
+          "title": "Bacterial Selection Marker",
           "type": "string"
         },
         "proteinTags": {
@@ -351,18 +362,22 @@
           "items": {
             "type": "string"
           },
+          "title": "Protein Tags",
           "type": "array"
         },
         "source": {
           "description": "The vendor, collaborator, or lab where the vector was obtained.",
+          "title": "Source",
           "type": "string"
         },
         "referenceId": {
           "description": "The catalog number or plasmid ID from the source, if applicable.",
+          "title": "Reference ID",
           "type": "string"
         },
         "vectorMapSequencePath": {
           "description": "A file path or URL to the annotated plasmid map and/or its full DNA sequence.",
+          "title": "Vector Map Sequence Path",
           "type": "string"
         }
       },
@@ -853,5 +868,5 @@
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.1.11"
+  "version": "0.1.12"
 }

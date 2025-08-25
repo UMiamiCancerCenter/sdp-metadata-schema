@@ -152,58 +152,71 @@ class expressionVector(BaseModel):
     
     vectorName: str = Field(
         ...,
-        description="A unique name or identifier for this specific vector in your inventory."
+        description="A unique name or identifier for this specific vector in your inventory.",
+        title="Name"
     )
     vectorLabBatchLabel: str = Field(title="Lab Batch Label", description="Lab-specific ID for the batch of constitutive vector used in the experiment.", default="")
     vectorType: VectorType = Field(
         ...,
-        description="The fundamental type of the vector."
+        description="The fundamental type of the vector.",
+        title="Vector Type"
     )
-    regulationType: RegulationType = Field(..., description="Defines the control mechanism for gene expression from the vector. 'Constitutive' indicates that expression is continuous and unregulated, while 'Inducible' signifies that expression is activated or repressed by a specific external stimulus, such as a small molecule or hormone.")
-    inductionAgent: str = Field(default="", description="The agent (molecular, photonic, or other) used to induce expression in an inducible expression vector.")
+    regulationType: RegulationType = Field(..., description="Defines the control mechanism for gene expression from the vector. 'Constitutive' indicates that expression is continuous and unregulated, while 'Inducible' signifies that expression is activated or repressed by a specific external stimulus, such as a small molecule or hormone.", title="Regulation Type")
+    inductionAgent: str = Field(default="", description="The agent (molecular, photonic, or other) used to induce expression in an inducible expression vector.", title="Induction Agent")
     deliveryMethod: DeliveryMethod = Field(
         ...,
-        description="The method used to introduce the vector into the host cells."
+        description="The method used to introduce the vector into the host cells.",
+        title="Delivery Method"
     )
     vectorBackbone: str = Field(
         default="",
-        description="The name of the original, empty plasmid used as the base for this construct."
+        description="The name of the original, empty plasmid used as the base for this construct.",
+        title="Vector Backbone"
     )
     promoter: str = Field(
         default="",
-        description="The specific constitutive promoter driving the expression of the gene insert."
+        description="The specific constitutive promoter driving the expression of the gene insert.",
+        title="Promoter"
     )
     geneInsert: str = Field(
         default="",
-        description="The name of the gene or coding sequence (CDS) cloned into the vector for overexpression."
+        description="The name of the gene or coding sequence (CDS) cloned into the vector for overexpression.",
+        title="Inserted Gene"
     )
     geneInsertSpecies: str = Field(
         default="",
-        description="The species of the gene or coding sequence (CDS) cloned into the vector for overexpression."
+        description="The species of the gene or coding sequence (CDS) cloned into the vector for overexpression.",
+        title="Species of Inserted Gene"
     )
     mammalianSelection: str = Field(
         default="",
-        description="The antibiotic resistance marker for selecting stably transfected mammalian cells."
+        description="The antibiotic resistance marker for selecting stably transfected mammalian cells.",
+        title="Mammalian Selection Marker"
     )
     bacterialSelection: str = Field(
         default="",
-        description="The antibiotic resistance marker for plasmid amplification in bacteria (e.g., E. coli)."
+        description="The antibiotic resistance marker for plasmid amplification in bacteria (e.g., E. coli).",
+        title="Bacterial Selection Marker"
     )
     proteinTags: List[str] = Field(
         default="",
-        description="A list of epitope or fluorescent tags fused to the gene insert (e.g., 'N-terminal FLAG-tag')."
+        description="A list of epitope or fluorescent tags fused to the gene insert (e.g., 'N-terminal FLAG-tag').",
+        title="Protein Tags"
     )
     source: str = Field(
         default="",
-        description="The vendor, collaborator, or lab where the vector was obtained."
+        description="The vendor, collaborator, or lab where the vector was obtained.",
+        title="Source"
     )
     referenceId: str = Field(
         default="",
-        description="The catalog number or plasmid ID from the source, if applicable."
+        description="The catalog number or plasmid ID from the source, if applicable.",
+        title="Reference ID"
     )
     vectorMapSequencePath: str = Field(
         default="",
-        description="A file path or URL to the annotated plasmid map and/or its full DNA sequence."
+        description="A file path or URL to the annotated plasmid map and/or its full DNA sequence.",
+        title="Vector Map Sequence Path"
     )
 
 # class rnai(BaseModel):
@@ -606,7 +619,7 @@ class tissue(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.1.11"
+                        "version": "0.1.12"
             })
     
     name: str = Field(title='Sample Name', 
