@@ -2,7 +2,7 @@
 
 import json
 from datetime import date
-from typing import Union, List
+from typing import Union, List, Literal
 from enum import Enum
 
 from pydantic import BaseModel, Field
@@ -128,6 +128,83 @@ class crisprKnockout(BaseModel):
     crisprKnockoutDurationUnits: str = Field(default="", title="Duration Units",
                                              description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.")
     # crisprKnockoutConcentration: str = Field(title="Concentration")
+
+VectorType = Literal["Plasmid", "Lentivirus", "Adenovirus", "AAV"]
+DeliveryMethod = Literal[
+    "Lipid-based Transfection", 
+    "Electroporation", 
+    "Calcium Phosphate Precipitation", 
+    "Viral Transduction"
+]
+RegulationType = Literal[
+    "Constitutive",
+    "Inducible"
+]
+class expressionVector(BaseModel):
+
+    model_config = ConfigDict(title="Expression Vector")
+
+    role: str = Field(default="Perturbagen", 
+                        json_schema_extra={"const": "Perturbagen",
+                                           "format": "hidden"})
+
+    entity: str = Field(default="Expression Vector", json_schema_extra={"const": "Expression Vector", "format": "hidden"})
+    
+    vectorName: str = Field(
+        ...,
+        description="A unique name or identifier for this specific vector in your inventory."
+    )
+    vectorLabBatchLabel: str = Field(title="Lab Batch Label", description="Lab-specific ID for the batch of constitutive vector used in the experiment.", default="")
+    vectorType: VectorType = Field(
+        ...,
+        description="The fundamental type of the vector."
+    )
+    regulationType: RegulationType = Field(..., description="Defines the control mechanism for gene expression from the vector. 'Constitutive' indicates that expression is continuous and unregulated, while 'Inducible' signifies that expression is activated or repressed by a specific external stimulus, such as a small molecule or hormone.")
+    inductionAgent: str = Field(default="", description="The agent (molecular, photonic, or other) used to induce expression in an inducible expression vector.")
+    deliveryMethod: DeliveryMethod = Field(
+        ...,
+        description="The method used to introduce the vector into the host cells."
+    )
+    vectorBackbone: str = Field(
+        default="",
+        description="The name of the original, empty plasmid used as the base for this construct."
+    )
+    promoter: str = Field(
+        default="",
+        description="The specific constitutive promoter driving the expression of the gene insert."
+    )
+    geneInsert: str = Field(
+        default="",
+        description="The name of the gene or coding sequence (CDS) cloned into the vector for overexpression."
+    )
+    geneInsertSpecies: str = Field(
+        default="",
+        description="The species of the gene or coding sequence (CDS) cloned into the vector for overexpression."
+    )
+    mammalianSelection: str = Field(
+        default="",
+        description="The antibiotic resistance marker for selecting stably transfected mammalian cells."
+    )
+    bacterialSelection: str = Field(
+        default="",
+        description="The antibiotic resistance marker for plasmid amplification in bacteria (e.g., E. coli)."
+    )
+    protein_tags: List[str] = Field(
+        default="",
+        description="A list of epitope or fluorescent tags fused to the gene insert (e.g., 'N-terminal FLAG-tag')."
+    )
+    source: str = Field(
+        default="",
+        description="The vendor, collaborator, or lab where the vector was obtained."
+    )
+    referenceId: str = Field(
+        default="",
+        description="The catalog number or plasmid ID from the source, if applicable."
+    )
+    vectorMapSequencePath: str = Field(
+        default="",
+        description="A file path or URL to the annotated plasmid map and/or its full DNA sequence."
+    )
 
 # class rnai(BaseModel):
 
@@ -529,7 +606,7 @@ class tissue(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.1.9"
+                        "version": "0.1.10"
             })
     
     name: str = Field(title='Sample Name', 
@@ -554,6 +631,7 @@ class sample(BaseModel):
         # antibody,
         protein,
         tetExpressionSystem,
+        expressionVector,
         cellLinePerturbagen
         # infectiousAgent
             ] 

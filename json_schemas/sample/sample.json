@@ -267,6 +267,114 @@
       "title": "Patient/Donor Information",
       "type": "object"
     },
+    "expressionVector": {
+      "properties": {
+        "role": {
+          "const": "Perturbagen",
+          "default": "Perturbagen",
+          "format": "hidden",
+          "type": "string"
+        },
+        "entity": {
+          "const": "Expression Vector",
+          "default": "Expression Vector",
+          "format": "hidden",
+          "type": "string"
+        },
+        "vectorName": {
+          "description": "A unique name or identifier for this specific vector in your inventory.",
+          "type": "string"
+        },
+        "vectorLabBatchLabel": {
+          "description": "Lab-specific ID for the batch of constitutive vector used in the experiment.",
+          "title": "Lab Batch Label",
+          "type": "string"
+        },
+        "vectorType": {
+          "description": "The fundamental type of the vector.",
+          "enum": [
+            "Plasmid",
+            "Lentivirus",
+            "Adenovirus",
+            "AAV"
+          ],
+          "type": "string"
+        },
+        "regulationType": {
+          "description": "Defines the control mechanism for gene expression from the vector. 'Constitutive' indicates that expression is continuous and unregulated, while 'Inducible' signifies that expression is activated or repressed by a specific external stimulus, such as a small molecule or hormone.",
+          "enum": [
+            "Constitutive",
+            "Inducible"
+          ],
+          "type": "string"
+        },
+        "inductionAgent": {
+          "description": "The agent (molecular, photonic, or other) used to induce expression in an inducible expression vector.",
+          "type": "string"
+        },
+        "deliveryMethod": {
+          "description": "The method used to introduce the vector into the host cells.",
+          "enum": [
+            "Lipid-based Transfection",
+            "Electroporation",
+            "Calcium Phosphate Precipitation",
+            "Viral Transduction"
+          ],
+          "type": "string"
+        },
+        "vectorBackbone": {
+          "description": "The name of the original, empty plasmid used as the base for this construct.",
+          "type": "string"
+        },
+        "promoter": {
+          "description": "The specific constitutive promoter driving the expression of the gene insert.",
+          "type": "string"
+        },
+        "geneInsert": {
+          "description": "The name of the gene or coding sequence (CDS) cloned into the vector for overexpression.",
+          "type": "string"
+        },
+        "geneInsertSpecies": {
+          "description": "The species of the gene or coding sequence (CDS) cloned into the vector for overexpression.",
+          "type": "string"
+        },
+        "mammalianSelection": {
+          "description": "The antibiotic resistance marker for selecting stably transfected mammalian cells.",
+          "type": "string"
+        },
+        "bacterialSelection": {
+          "description": "The antibiotic resistance marker for plasmid amplification in bacteria (e.g., E. coli).",
+          "type": "string"
+        },
+        "protein_tags": {
+          "description": "A list of epitope or fluorescent tags fused to the gene insert (e.g., 'N-terminal FLAG-tag').",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "source": {
+          "description": "The vendor, collaborator, or lab where the vector was obtained.",
+          "type": "string"
+        },
+        "referenceId": {
+          "description": "The catalog number or plasmid ID from the source, if applicable.",
+          "type": "string"
+        },
+        "vectorMapSequencePath": {
+          "description": "A file path or URL to the annotated plasmid map and/or its full DNA sequence.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "vectorName",
+        "vectorType",
+        "regulationType",
+        "deliveryMethod"
+      ],
+      "title": "Expression Vector",
+      "type": "object"
+    },
     "primaryCell": {
       "properties": {
         "role": {
@@ -728,6 +836,9 @@
             "$ref": "#/$defs/tetExpressionSystem"
           },
           {
+            "$ref": "#/$defs/expressionVector"
+          },
+          {
             "$ref": "#/$defs/cellLinePerturbagen"
           }
         ]
@@ -742,5 +853,5 @@
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.1.9"
+  "version": "0.1.10"
 }
