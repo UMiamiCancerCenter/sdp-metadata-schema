@@ -249,7 +249,7 @@ class antibody(BaseModel):
     antibodyType: Literal["Natural", "Engineered"] = Field(default="", description="Natural or engineered", title="Type")
     targetProtein: str = Field(default="", description="Nominal protein target (UniProt name)", title="Protein Target")
     nonProteinTarget: str = Field(default="", title="Non-protein Target", description="Name of the nominal target if not a protein")
-    target_organism: str = Field(default="", description="Organism of the antibody target (NCBI Taxon)", title="Target Organism")
+    targetOrganism: str = Field(default="", description="Organism of the antibody target (NCBI Taxon)", title="Target Organism")
     immunogen: str = Field(default="", description="Description of the immunogen/entity used to generate the antibody", title="Immunogen")
     immunogenSequence: str = Field(default="", description="Complete amino acid sequence of the immunogen", title="Immunogen Sequence")
     antibodySpecies: str = Field(..., description="Organism or species the antibody was derived from", title="Antibody Species")

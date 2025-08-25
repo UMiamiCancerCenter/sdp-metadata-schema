@@ -63,7 +63,7 @@
           "title": "Non-protein Target",
           "type": "string"
         },
-        "target_organism": {
+        "targetOrganism": {
           "description": "Organism of the antibody target (NCBI Taxon)",
           "title": "Target Organism",
           "type": "string"
