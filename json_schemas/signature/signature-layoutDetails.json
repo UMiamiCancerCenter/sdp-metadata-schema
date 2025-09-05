@@ -255,39 +255,6 @@
           }
         }
       ]
-    },
-    {
-      "size": {
-        "xs": 12
-      },
-      "children": [
-        {
-          "field": "data",
-          "type": {
-            "name": "datagrid",
-            "options": {
-              "title": "Data Points",
-              "columns": [
-                {
-                  "field": "Endpoint",
-                  "title": "Endpoint",
-                  "type": "string"
-                },
-                {
-                  "field": "Value",
-                  "title": "Value",
-                  "type": "number"
-                },
-                {
-                  "field": "Units",
-                  "title": "Units",
-                  "type": "string"
-                }
-              ]
-            }
-          }
-        }
-      ]
     }
   ]
 }
