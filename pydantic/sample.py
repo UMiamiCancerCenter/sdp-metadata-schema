@@ -129,7 +129,7 @@ class crisprKnockout(BaseModel):
                                              description="Time units of exposure (e.g. second, minute, hour). Name of unit must be chosen from the Units of Measurement Ontology (UO) and must be a child term of 'time unit'.")
     # crisprKnockoutConcentration: str = Field(title="Concentration")
 
-VectorType = Literal["Plasmid", "Lentivirus", "Adenovirus", "AAV"]
+VectorType = Literal["Plasmid", "Lentivirus", "Adenovirus", "Retrovirus", "AAV"]
 DeliveryMethod = Literal[
     "Lipid-based Transfection", 
     "Electroporation", 
@@ -646,7 +646,7 @@ class tissue(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.1.13"
+                        "version": "0.1.16"
             })
     
     name: str = Field(title='Sample Name', 
