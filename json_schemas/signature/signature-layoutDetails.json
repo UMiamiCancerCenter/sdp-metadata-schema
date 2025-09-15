@@ -255,6 +255,44 @@
           }
         }
       ]
+    },
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "data",
+          "type": {
+            "name": "datagrid",
+            "options": {
+              "title": "Data Points",
+              "columns": [
+                {
+                  "field": "endpoint",
+                  "title": "Endpoint",
+                  "type": "string"
+                },
+                {
+                  "field": "value",
+                  "title": "Value",
+                  "type": "number"
+                },
+                {
+                  "field": "units",
+                  "title": "Units",
+                  "type": "string"
+                },
+                                {
+                  "field": "sourceDataset",
+                  "title": "Source Dataset",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
     }
   ]
 }
