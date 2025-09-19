@@ -193,11 +193,8 @@
                         {
                           "field": "perturbationId",
                           "title": "Perturbation Id",
-                          "type": "string",
-                          "widget": "LinkWidget",
-                          "options": {
-                            "baseUrl": "https://lincsproject.org/LINCS/entities/",
-                            "placeholder": "Enter perturbation ID"
+                          "type": {
+                            "name": "link"
                           }
                         },
                         {
