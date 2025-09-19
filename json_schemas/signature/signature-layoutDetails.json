@@ -193,7 +193,12 @@
                         {
                           "field": "perturbationId",
                           "title": "Perturbation Id",
-                          "type": "string"
+                          "type": "string",
+                          "widget": "LinkWidget",
+                          "options": {
+                            "baseUrl": "https://lincsproject.org/LINCS/entities/",
+                            "placeholder": "Enter perturbation ID"
+                          }
                         },
                         {
                           "field": "concentration",
@@ -283,7 +288,7 @@
                   "title": "Units",
                   "type": "string"
                 },
-                                {
+                {
                   "field": "sourceDataset",
                   "title": "Source Dataset",
                   "type": "string"
