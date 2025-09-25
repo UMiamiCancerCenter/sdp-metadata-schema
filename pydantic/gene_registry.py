@@ -48,7 +48,7 @@ class ReactomeEntry(CustomBaseModel):
 class WikipediaStub(CustomBaseModel):
     url_stub: str | SkipJsonSchema[None] = Field(default=None, title="URL Stub", alias="urlStub")
 class Gene(CustomBaseModel):
-    model_config = ConfigDict(title="Gene Registry", json_schema_extra={"version": "0.1.18"})
+    model_config = ConfigDict(title="Gene Registry", json_schema_extra={"version": "0.1.19"})
 
     name: str = Field(title="Name")
     scope: Scope = Field(default=Scope.PRIVATE, title="Scope")

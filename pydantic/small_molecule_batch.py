@@ -71,7 +71,7 @@ class SmallMolecule(BaseModel):
 
     model_config = ConfigDict(title="Small Molecule Batch", 
                               description="Molecules with a low molecular weight (generally < 900 daltons) used to perturb the experimental system, often binding to specific biological targets.", arbitrary_types_allowed=True, json_schema_extra={
-                        "version": "0.1.18"})
+                        "version": "0.1.19"})
 
     name: str = Field(title="Small Molecule Batch Name", 
                                    description="Name for the batch of small molecule used in the experiment.")
