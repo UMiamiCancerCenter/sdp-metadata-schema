@@ -31,16 +31,10 @@
         "cellLineName": {
           "description": "The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'.",
           "graphRestriction": {
-            "classes": [
-              "CLO:0000019"
-            ],
+            "classes": ["CLO:0000019"],
             "includeSelf": true,
-            "ontologies": [
-              "obo:clo"
-            ],
-            "queryFields": [
-              "label"
-            ]
+            "ontologies": ["obo:clo"],
+            "queryFields": ["label"]
           },
           "title": "Cell Line Name",
           "type": "string"
@@ -75,20 +69,10 @@
         "cellLineTissue": {
           "description": "Tissue from which the cell line was derived, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'.",
           "graphRestriction": {
-            "classes": [
-              "NCIT:C12801",
-              "BTO:0000000",
-              "UBERON:0000479"
-            ],
+            "classes": ["NCIT:C12801", "BTO:0000000", "UBERON:0000479"],
             "includeSelf": true,
-            "ontologies": [
-              "obo:ncit",
-              "obo:bto",
-              "obo:uberon"
-            ],
-            "queryFields": [
-              "label"
-            ]
+            "ontologies": ["obo:ncit", "obo:bto", "obo:uberon"],
+            "queryFields": ["label"]
           },
           "title": "Tissue of Origin",
           "type": "string"
@@ -101,20 +85,10 @@
         "cellLineOrgan": {
           "description": "Organ from which the cell line was derived, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.",
           "graphRestriction": {
-            "classes": [
-              "NCIT:C13018",
-              "FMA:67498",
-              "UBERON:0000062"
-            ],
+            "classes": ["NCIT:C13018", "FMA:67498", "UBERON:0000062"],
             "includeSelf": true,
-            "ontologies": [
-              "obo:ncit",
-              "obo:fma",
-              "obo:uberon"
-            ],
-            "queryFields": [
-              "label"
-            ]
+            "ontologies": ["obo:ncit", "obo:fma", "obo:uberon"],
+            "queryFields": ["label"]
           },
           "title": "Organ of Origin",
           "type": "string"
@@ -122,16 +96,10 @@
         "cellLineSpecies": {
           "description": "Species from which the cell line was derived, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
           "graphRestriction": {
-            "classes": [
-              "NCBITaxon:131567"
-            ],
+            "classes": ["NCBITaxon:131567"],
             "includeSelf": true,
-            "ontologies": [
-              "obo:ncbitaxon"
-            ],
-            "queryFields": [
-              "label"
-            ]
+            "ontologies": ["obo:ncbitaxon"],
+            "queryFields": ["label"]
           },
           "title": "Species of Origin",
           "type": "string"
@@ -139,16 +107,10 @@
         "cellLineDisease": {
           "description": "If the cell line came from a diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the origin tissue or cells were not diseased.",
           "graphRestriction": {
-            "classes": [
-              "DOID:4"
-            ],
+            "classes": ["DOID:4"],
             "includeSelf": true,
-            "ontologies": [
-              "obo:doid"
-            ],
-            "queryFields": [
-              "label"
-            ]
+            "ontologies": ["obo:doid"],
+            "queryFields": ["label"]
           },
           "title": "Disease",
           "type": "string"
@@ -169,7 +131,7 @@
           "type": "number"
         },
         "cellLineGeneticModification": {
-          "description": "This field specifies any stable constructs as well as any genetic modifications (mutations, translocations) introduced into this cell line (e.g. H2B-mCherry integrated at the AAVS1 Safe Harbor locus). Details of the procedures used to generate this line (e.g. CRISPR/Cas9-mediated transformation) should be described and appropriate citations provided in the Production Details field.",
+          "description": "This field specifies any stable constructs as well as any genetic modifications (mutations, translocations) introduced into this cell line (e.g. H2B-mCherry integrated at the AAVS1 Safe Harbor locus). Details of the procedures used to generate this line (e.g. CRISPR/Cas9-mediated transformation) should be described and appropriate citations provided in the Production Details field",
           "title": "Cell Line Genetic Modification",
           "type": "string"
         }
@@ -226,9 +188,7 @@
       ]
     }
   },
-  "required": [
-    "name"
-  ],
+  "required": ["name"],
   "title": "Cell Line Batch",
   "type": "object",
   "version": "0.1.20"
