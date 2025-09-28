@@ -1,0 +1,13 @@
+{
+  "canonical": {
+    "smallMoleculeName": {
+      "ui:widget": "CompoundWidget",
+      "ui:options": {
+        "update": {
+          "id": "smallMoleculeLabCanonicalId",
+          "name": "smallMoleculeName"
+        }
+      }
+    }
+  }
+}
