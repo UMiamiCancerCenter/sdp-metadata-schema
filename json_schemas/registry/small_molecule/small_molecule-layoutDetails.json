@@ -1,5 +1,5 @@
 {
-  "version": "0.1.19",
+  "version": "0.1.20",
   "children": [
     {
       "title": "General Information",
@@ -288,7 +288,7 @@
                 {
                   "field": "synonyms",
                   "title": "Synonyms",
-                   "type": {
+                  "type": {
                     "name": "arrayWithCommaSeparator"
                   }
                 }
@@ -437,7 +437,7 @@
         }
       ]
     },
-     {
+    {
       "size": {
         "xs": 12
       },
@@ -486,27 +486,37 @@
                 {
                   "field": "chebi",
                   "title": "ChEBI",
-                  "type": { "name": "arrayWithCommaSeparator" }
+                  "type": {
+                    "name": "arrayWithCommaSeparator"
+                  }
                 },
                 {
                   "field": "chembl",
                   "title": "ChEMBL",
-                  "type": { "name": "arrayWithCommaSeparator" }
+                  "type": {
+                    "name": "arrayWithCommaSeparator"
+                  }
                 },
                 {
                   "field": "lincs",
                   "title": "LINCS",
-                  "type": { "name": "arrayWithCommaSeparator" }
+                  "type": {
+                    "name": "arrayWithCommaSeparator"
+                  }
                 },
                 {
                   "field": "pubchem",
                   "title": "PubChem",
-                  "type": { "name": "arrayWithCommaSeparator" }
+                  "type": {
+                    "name": "arrayWithCommaSeparator"
+                  }
                 },
                 {
                   "field": "drugbank",
                   "title": "DrugBank",
-                  "type": { "name": "arrayWithCommaSeparator" }
+                  "type": {
+                    "name": "arrayWithCommaSeparator"
+                  }
                 }
               ]
             }
@@ -516,7 +526,7 @@
     },
     {
       "title": "PharmGKB",
-       "size": {
+      "size": {
         "xs": 6
       },
       "children": [
