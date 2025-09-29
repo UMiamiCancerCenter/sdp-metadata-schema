@@ -1,7 +1,7 @@
 {
   "canonical": {
     "cellLineName": {
-      "ui:widget": "CelllineWidget",
+      "ui:widget": "CellLineBatchWidget",
       "ui:options": {
         "update": {
           "id": "cellLineLabCanonicalId",
