@@ -44,141 +44,10 @@
           },
           "title": "Cell Line Name",
           "type": "string"
-        },
-        "cellLineAlternativeNames": {
-          "description": "Other relevant names/aliases",
-          "items": {
-            "type": "string"
-          },
-          "title": "Cell Line Alternative Names",
-          "type": "array"
-        },
-        "cellLineLabCanonicalId": {
-          "description": "Lab-specific ID for the cell line",
-          "format": "hidden",
-          "title": "Cell Line Lab Canonical ID",
-          "type": "string"
-        },
-        "cellLineLincsId": {
-          "description": "Unique LINCS internal identifier",
-          "title": "Cell Line LINCS ID",
-          "type": "string"
-        },
-        "cellLineAlternativeIds": {
-          "description": "This field specifies the CLO, if available, or other common ID for the cell line or, if derived from another line, the CLO or other ID for the parent cell line. The parent cell line ID must be propagated to all cell lines derived from that parent line unless a distinct CLO has been assigned to the derived line.",
-          "items": {
-            "type": "string"
-          },
-          "title": "Cell Line Alternative IDs",
-          "type": "array"
-        },
-        "cellLineTissue": {
-          "description": "Tissue from which the cell line was derived, with name chosen from NCI Thesaurus, Brenda Tissue Ontology, or UBERON. Must be a child term of 'Tissue (NCIT)', 'tissues, cell types, and enzyme sources (BTO), or tissue (UBERON)'.",
-          "graphRestriction": {
-            "classes": [
-              "NCIT:C12801",
-              "BTO:0000000",
-              "UBERON:0000479"
-            ],
-            "includeSelf": true,
-            "ontologies": [
-              "obo:ncit",
-              "obo:bto",
-              "obo:uberon"
-            ],
-            "queryFields": [
-              "label"
-            ]
-          },
-          "title": "Tissue of Origin",
-          "type": "string"
-        },
-        "cellLineCellType": {
-          "description": "Cell type from which the cell line was derived, described using a controlled vocabulary.",
-          "title": "Cell Line Cell Type",
-          "type": "string"
-        },
-        "cellLineOrgan": {
-          "description": "Organ from which the cell line was derived, with name chosen from NCI Thesaurus, UBERON, or FMA. Must be a child term of 'organ'.",
-          "graphRestriction": {
-            "classes": [
-              "NCIT:C13018",
-              "FMA:67498",
-              "UBERON:0000062"
-            ],
-            "includeSelf": true,
-            "ontologies": [
-              "obo:ncit",
-              "obo:fma",
-              "obo:uberon"
-            ],
-            "queryFields": [
-              "label"
-            ]
-          },
-          "title": "Organ of Origin",
-          "type": "string"
-        },
-        "cellLineSpecies": {
-          "description": "Species from which the cell line was derived, with name chosen from the NCBI Taxonomy. Must be a child term of 'cellular organisms'.",
-          "graphRestriction": {
-            "classes": [
-              "NCBITaxon:131567"
-            ],
-            "includeSelf": true,
-            "ontologies": [
-              "obo:ncbitaxon"
-            ],
-            "queryFields": [
-              "label"
-            ]
-          },
-          "title": "Species of Origin",
-          "type": "string"
-        },
-        "cellLineDisease": {
-          "description": "If the cell line came from a diseased tissue, the disease name must be taken from the Disease Ontology. Must be a child term of 'disease'. Leave blank if the origin tissue or cells were not diseased.",
-          "graphRestriction": {
-            "classes": [
-              "DOID:4"
-            ],
-            "includeSelf": true,
-            "ontologies": [
-              "obo:doid"
-            ],
-            "queryFields": [
-              "label"
-            ]
-          },
-          "title": "Disease",
-          "type": "string"
-        },
-        "cellLineDonorSex": {
-          "description": "The sex of the organism from which the cell line was obtained",
-          "title": "Cell Line Donor Sex",
-          "type": "string"
-        },
-        "cellLineDonorEthnicity": {
-          "description": "If the cell line was obtained from a human, the ethnicity of the donor",
-          "title": "Cell Line Donor Ethnicity",
-          "type": "string"
-        },
-        "cellLineDonorAge": {
-          "description": "The age in years of the organism from which the cell line was obtained",
-          "title": "Cell Line Donor Age",
-          "type": "number"
-        },
-        "cellLineGeneticModification": {
-          "description": "This field specifies any stable constructs as well as any genetic modifications (mutations, translocations) introduced into this cell line (e.g. H2B-mCherry integrated at the AAVS1 Safe Harbor locus). Details of the procedures used to generate this line (e.g. CRISPR/Cas9-mediated transformation) should be described and appropriate citations provided in the Production Details field",
-          "title": "Cell Line Genetic Modification",
-          "type": "string"
         }
       },
       "required": [
-        "cellLineName",
-        "cellLineTissue",
-        "cellLineCellType",
-        "cellLineSpecies"
+        "cellLineName"
       ],
       "title": "Cell Line Canonical Fields",
       "type": "object"
@@ -231,5 +100,5 @@
   ],
   "title": "Cell Line Batch",
   "type": "object",
-  "version": "0.1.24"
+  "version": "0.1.25"
 }
