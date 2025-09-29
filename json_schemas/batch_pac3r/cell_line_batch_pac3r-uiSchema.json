@@ -1,11 +1,11 @@
 {
   "canonical": {
-    "smallMoleculeName": {
-      "ui:widget": "CompoundWidget",
+    "cellLineName": {
+      "ui:widget": "CelllineWidget",
       "ui:options": {
         "update": {
-          "id": "smallMoleculeLabCanonicalId",
-          "name": "smallMoleculeName"
+          "id": "cellLineLabCanonicalId",
+          "name": "cellLineName"
         }
       }
     }
