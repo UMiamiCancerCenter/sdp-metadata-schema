@@ -7,6 +7,11 @@
       },
       "children": [
         {
+          "field": "name",
+          "title": "Name",
+          "type": "string"
+        },
+        {
           "field": "labBatchLabel",
           "title": "Lab Batch Label",
           "type": "string"
@@ -42,6 +47,11 @@
               }
             }
           }
+        },
+        {
+          "field": "description",
+          "title": "Description",
+          "type": "string"
         }
       ]
     }
