@@ -1,11 +1,16 @@
 {
-  "version": "0.1.29",
+  "version": "0.1.30",
   "children": [
     {
       "size": {
         "xs": 12
       },
       "children": [
+        {
+          "field": "name",
+          "title": "Name",
+          "type": "string"
+        },
         {
           "field": "labBatchLabel",
           "title": "Lab Batch Label",
@@ -42,6 +47,11 @@
               }
             }
           }
+        },
+        {
+          "field": "description",
+          "title": "Description",
+          "type": "string"
         }
       ]
     }
