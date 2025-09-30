@@ -10,29 +10,19 @@
           "props": {
             "additionalColumns": [
               {
-                "field": "cellosaurusAccession",
-                "title": "Cellosaurus Accession",
+                "field": "labBatchLabel",
+                "title": "Lab Batch Label",
                 "type": "string"
               },
               {
-                "field": "disease",
-                "title": "Disease",
-                "type": {
-                  "name": "arrayWithCommaSeparator",
-                  "options": {
-                    "field": "label"
-                  }
-                }
+                "field": "providerName",
+                "title": "Provider Name",
+                "type": "string"
               },
               {
-                "field": "species",
-                "title": "Species",
-                "type": {
-                  "name": "arrayWithCommaSeparator",
-                  "options": {
-                    "field": "label"
-                  }
-                }
+                "field": "cellLineName",
+                "title": "Cell Line Name",
+                "type": "string"
               }
             ],
             "expandableRow": {
@@ -43,8 +33,8 @@
                   },
                   "children": [
                     {
-                      "field": "sex",
-                      "title": "Sex",
+                      "field": "description",
+                      "title": "Description",
                       "type": "string"
                     }
                   ]
