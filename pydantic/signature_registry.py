@@ -5,6 +5,7 @@ from utils import (
     CustomBaseModel,
     GenerateJsonSchemaWithoutDefaultTitles,
     PerturbationType,
+    PyObjectId,
     Scope,
     SignatureType,
     delete_empty_default,
@@ -49,7 +50,7 @@ class SampleGroup(CustomBaseModel):
 
 class Analytes(CustomBaseModel):
     type: str | SkipJsonSchema[None]= Field(default=None, title="Type")
-    items: tuple[str, ...] | str | SkipJsonSchema[None] = Field(default=None, title="Analyte(s)", description="List of analyte names, or a single ObjectId string pointing to the list.")
+    items: tuple[str | PyObjectId, ...] | str | SkipJsonSchema[None] = Field(default=None, title="Analyte(s)", description="List of analyte names, or a single ObjectId string pointing to the list.")
 
 class Signature(CustomBaseModel):
     model_config = ConfigDict(title="Signature", json_schema_extra={"version": "0.1.19"})

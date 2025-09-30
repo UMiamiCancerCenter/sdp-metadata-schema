@@ -30,11 +30,17 @@ class ModelSystemType(str, Enum):
     PRIMARY_CELL = "Primary Cell"
     TUMOR = "Tumor"
     TISSUE = "Tissue"
+    DIFFERENTIATED_CELL = "Differentiated Cell"
+    EMBRYONIC_STEM_CELL = "Embryonic Stem Cell"
+    PROTEIN = "Protein"
+    UNKNOWN = "Unknown"
 
 class SignatureType(str, Enum):
     TCS = "Transcriptional Consensus Signature"
     DGE = "Differential Gene Expression"
     FUSION = "Fusion Signature"
+    LEVEL5 = "LINCS Level 5 Signature"
+    DOSERESPONSE = "Dose Response Curve"
 
 def to_title_case(field_name: str, field_info: FieldInfo) -> str:
     return field_name.replace('_', ' ').title()

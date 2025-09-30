@@ -10,7 +10,16 @@
           "anyOf": [
             {
               "items": {
-                "type": "string"
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "$oid": {
+                      "type": "string"
+                    }
+                  }
+                ]
               },
               "type": "array"
             },
@@ -182,7 +191,9 @@
       "enum": [
         "Transcriptional Consensus Signature",
         "Differential Gene Expression",
-        "Fusion Signature"
+        "Fusion Signature",
+        "LINCS Level 5 Signature",
+        "Dose Response Curve"
       ],
       "title": "SignatureType",
       "type": "string"
@@ -269,5 +280,5 @@
   ],
   "title": "Signature",
   "type": "object",
-  "version": "0.1.25"
+  "version": "0.1.19"
 }
