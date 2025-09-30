@@ -1,5 +1,5 @@
 {
-  "version": "0.1.26",
+  "version": "0.1.27",
   "children": [
     {
       "size": {
@@ -30,7 +30,17 @@
           "field": "cellLineName",
           "title": "Cell Line Name",
           "type": {
-            "name": "link"
+            "name": "internal-link",
+            "options": {
+              "title": {
+                "use": "cellLineName"
+              },
+              "url": "appCellLinesById",
+              "parameter": {
+                "key": "id",
+                "value": "canonicalCellLineId"
+              }
+            }
           }
         }
       ]
