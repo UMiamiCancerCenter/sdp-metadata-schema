@@ -64,18 +64,12 @@
       "title": "Description",
       "type": "string"
     },
-    "batchType": {
-      "const": "Cell Line",
-      "default": "Cell Line",
-      "format": "hidden",
-      "type": "string"
-    },
     "scope": {
       "default": "private",
       "format": "hidden",
       "type": "string"
     },
-    "cellLineId": {
+    "canonicalCellLineId": {
       "description": "A MongoDB ObjectId string",
       "format": "hidden",
       "type": "string"
@@ -100,5 +94,5 @@
   ],
   "title": "Cell Line Batch",
   "type": "object",
-  "version": "0.1.31"
+  "version": "0.1.32"
 }
