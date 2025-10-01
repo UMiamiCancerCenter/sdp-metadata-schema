@@ -31,24 +31,16 @@
         "cellLineName": {
           "description": "The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'.",
           "graphRestriction": {
-            "classes": [
-              "CLO:0000019"
-            ],
+            "classes": ["CLO:0000019"],
             "includeSelf": true,
-            "ontologies": [
-              "obo:clo"
-            ],
-            "queryFields": [
-              "label"
-            ]
+            "ontologies": ["obo:clo"],
+            "queryFields": ["label"]
           },
           "title": "Cell Line Name",
           "type": "string"
         }
       },
-      "required": [
-        "cellLineName"
-      ],
+      "required": ["cellLineName"],
       "title": "Cell Line Canonical Fields",
       "type": "object"
     }
@@ -64,18 +56,12 @@
       "title": "Description",
       "type": "string"
     },
-    "batchType": {
-      "const": "Cell Line",
-      "default": "Cell Line",
-      "format": "hidden",
-      "type": "string"
-    },
     "scope": {
       "default": "private",
       "format": "hidden",
       "type": "string"
     },
-    "cellLineId": {
+    "canonicalCellLineId": {
       "description": "A MongoDB ObjectId string",
       "format": "hidden",
       "type": "string"
@@ -95,9 +81,7 @@
       ]
     }
   },
-  "required": [
-    "name"
-  ],
+  "required": ["name"],
   "title": "Cell Line Batch",
   "type": "object",
   "version": "0.1.31"
