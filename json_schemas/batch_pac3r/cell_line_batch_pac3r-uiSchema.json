@@ -4,7 +4,7 @@
       "ui:widget": "CellLineBatchWidget",
       "ui:options": {
         "update": {
-          "id": "cellLineLabCanonicalId",
+          "id": "canonicalCellLineId",
           "name": "cellLineName"
         }
       }

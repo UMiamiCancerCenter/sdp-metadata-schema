@@ -2,8 +2,8 @@ import json
 from pathlib import Path
 
 
-CURRENT_VERSION = "0.1.29"
-NEW_VERSION = "0.1.30"
+CURRENT_VERSION = "0.1.30"
+NEW_VERSION = "0.1.31"
 
 SCHEMA_DIR = Path("json_schemas")
 
