@@ -61,8 +61,11 @@
       "type": "string"
     }
   },
-  "required": ["name", "cellLineName"],
+  "required": [
+    "name",
+    "cellLineName"
+  ],
   "title": "Cell Line Batch",
   "type": "object",
-  "version": "0.1.32"
+  "version": "0.1.33"
 }
