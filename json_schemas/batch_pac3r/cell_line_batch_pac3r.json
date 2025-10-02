@@ -25,32 +25,6 @@
       },
       "title": "Cell Line Batch Fields",
       "type": "object"
-    },
-    "CellLineCanonical": {
-      "properties": {
-        "cellLineName": {
-          "description": "The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'.",
-          "graphRestriction": {
-            "classes": [
-              "CLO:0000019"
-            ],
-            "includeSelf": true,
-            "ontologies": [
-              "obo:clo"
-            ],
-            "queryFields": [
-              "label"
-            ]
-          },
-          "title": "Cell Line Name",
-          "type": "string"
-        }
-      },
-      "required": [
-        "cellLineName"
-      ],
-      "title": "Cell Line Canonical Fields",
-      "type": "object"
     }
   },
   "properties": {
@@ -81,17 +55,13 @@
         }
       ]
     },
-    "canonical": {
-      "allOf": [
-        {
-          "$ref": "#/$defs/CellLineCanonical"
-        }
-      ]
+    "cellLineName": {
+      "description": "The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'.",
+      "title": "Cell Line Name",
+      "type": "string"
     }
   },
-  "required": [
-    "name"
-  ],
+  "required": ["name", "cellLineName"],
   "title": "Cell Line Batch",
   "type": "object",
   "version": "0.1.32"
