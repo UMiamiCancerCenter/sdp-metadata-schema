@@ -1,32 +1,4 @@
 {
-  "$defs": {
-    "CellLineBatch": {
-      "properties": {
-        "cellLineLabBatchLabel": {
-          "description": "Lab-specific ID for the batch of cells used in the experiment",
-          "title": "Lab Batch Label",
-          "type": "string"
-        },
-        "cellLineProviderName": {
-          "description": "Vendor or lab that supplied the cell line.",
-          "title": "Cell Line Provider Name",
-          "type": "string"
-        },
-        "cellLineProviderCatalogId": {
-          "description": "ID or catalogue number assigned by the vendor or provider to the cell line",
-          "title": "Cell Line Provider Catalog ID",
-          "type": "string"
-        },
-        "cellLineProviderBatchId": {
-          "description": "Batch number or lot number assigned to the cells supplied by the vendor or provider",
-          "title": "Cell Line Provider Batch ID",
-          "type": "string"
-        }
-      },
-      "title": "Cell Line Batch Fields",
-      "type": "object"
-    }
-  },
   "properties": {
     "name": {
       "description": "Name for the batch of cells used in the experiment.",
@@ -48,12 +20,25 @@
       "format": "hidden",
       "type": "string"
     },
-    "batch": {
-      "allOf": [
-        {
-          "$ref": "#/$defs/CellLineBatch"
-        }
-      ]
+    "labBatchLabel": {
+      "description": "Lab-specific ID for the batch of cells used in the experiment",
+      "title": "Lab Batch Label",
+      "type": "string"
+    },
+    "providerName": {
+      "description": "Vendor or lab that supplied the cell line.",
+      "title": "Provider Name",
+      "type": "string"
+    },
+    "providerCatalogId": {
+      "description": "ID or catalogue number assigned by the vendor or provider to the cell line",
+      "title": "Provider Catalog ID",
+      "type": "string"
+    },
+    "providerBatchId": {
+      "description": "Batch number or lot number assigned to the cells supplied by the vendor or provider",
+      "title": "Provider Batch ID",
+      "type": "string"
     },
     "cellLineName": {
       "description": "The cell line name as found in the Cell Line Ontology. Must be a child term of 'immortal cell line cell'.",
@@ -61,10 +46,7 @@
       "type": "string"
     }
   },
-  "required": [
-    "name",
-    "cellLineName"
-  ],
+  "required": ["name", "cellLineName", "labBatchLabel"],
   "title": "Cell Line Batch",
   "type": "object",
   "version": "0.1.34"
