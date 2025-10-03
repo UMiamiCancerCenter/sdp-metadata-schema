@@ -1,12 +1,10 @@
 {
-  "canonical": {
-    "cellLineName": {
-      "ui:widget": "CellLineBatchWidget",
-      "ui:options": {
-        "update": {
-          "id": "canonicalCellLineId",
-          "name": "cellLineName"
-        }
+  "cellLineName": {
+    "ui:widget": "CellLineBatchWidget",
+    "ui:options": {
+      "update": {
+        "id": "canonicalCellLineId",
+        "name": "cellLineName"
       }
     }
   }
