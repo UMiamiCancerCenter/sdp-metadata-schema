@@ -23,6 +23,36 @@
                 "field": "experimentalSystem.entity",
                 "title": "Entity",
                 "type": "string"
+              },
+              {
+                "field": "experimentalSystem.cellLineName",
+                "title": "Name",
+                "type": "string"
+              },
+              {
+                "field": "experimentalSystem.cellLineLabBatchLabel",
+                "title": "Lab Batch Label",
+                "type": "string"
+              },
+              {
+                "field": "experimentalSystem.cellLineTissue",
+                "title": "Tissue of Origin",
+                "type": "string"
+              },
+              {
+                "field": "experimentalSystem.cellLineOrgan",
+                "title": "Organ of Origin",
+                "type": "string"
+              },
+              {
+                "field": "experimentalSystem.cellLineSpecies",
+                "title": "Species of Origin",
+                "type": "string"
+              },
+              {
+                "field": "experimentalSystem.cellLineDisease",
+                "title": "Disease",
+                "type": "string"
               }
             ],
             "expandableRow": {
