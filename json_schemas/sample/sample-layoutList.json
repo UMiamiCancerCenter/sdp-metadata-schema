@@ -1,0 +1,49 @@
+{
+  "version": "0.1.35",
+  "children": [
+    {
+      "field": "list",
+      "type": {
+        "name": "widget",
+        "options": {
+          "name": "List",
+          "props": {
+            "additionalColumns": [
+              {
+                "field": "name",
+                "title": "Name",
+                "type": "string"
+              },
+              {
+                "field": "experimentalSystem.role",
+                "title": "Role",
+                "type": "string"
+              },
+              {
+                "field": "experimentalSystem.entity",
+                "title": "Entity",
+                "type": "string"
+              }
+            ],
+            "expandableRow": {
+              "children": [
+                {
+                  "size": {
+                    "xs": 12
+                  },
+                  "children": [
+                    {
+                      "field": "description",
+                      "title": "Description",
+                      "type": "string"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}
