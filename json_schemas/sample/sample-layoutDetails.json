@@ -1,0 +1,619 @@
+{
+  "children": [
+    {
+      "size": {
+        "xs": 12
+      },
+      "children": [
+        {
+          "field": "experimentalSystem.role",
+          "title": "Role",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.entity",
+          "title": "Entity",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.cellLineName",
+          "title": "CellLine Name",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.cellLineLabBatchLabel",
+          "title": "Lab Batch Label",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.cellLineTissue",
+          "title": "Tissue of Origin",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.cellLineOrgan",
+          "title": "Organ of Origin",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.cellLineSpecies",
+          "title": "Species of Origin",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.cellLineDisease",
+          "title": "Disease",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.primaryCellName",
+          "title": "Name",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.primaryCellLabBatchLabel",
+          "title": "Lab Batch Label",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.primaryCellTissue",
+          "title": "Tissue of Origin",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.primaryCellOrgan",
+          "title": "Organ of Origin",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.primaryCellDisease",
+          "title": "Disease",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.primaryCellDonorInformation.species",
+          "title": "Species",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.primaryCellDonorInformation.gender",
+          "title": "Gender",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.primaryCellDonorInformation.primaryRace",
+          "title": "Primary Race",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.primaryCellDonorInformation.strain",
+          "title": "Strain",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.primaryCellDonorInformation.ethnicity",
+          "title": "Ethnicity",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.primaryCellDonorInformation.dateOfBirth",
+          "title": "Date Of Birth",
+          "type": "date"
+        },
+        {
+          "field": "experimentalSystem.primaryCellDonorInformation.age",
+          "title": "Age",
+          "type": "number"
+        },
+        {
+          "field": "experimentalSystem.primaryCellDonorInformation.ageUnits",
+          "title": "Age Units",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.primaryCellDonorInformation.ageGroup",
+          "title": "Age Group",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.primaryCellDonorInformation.intervalDeath",
+          "title": "Interval Death",
+          "type": "number"
+        },
+        {
+          "field": "experimentalSystem.primaryCellDonorInformation.tobaccoSmokingHistory",
+          "title": "Tobacco Smoking History",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.primaryCellDonorInformation.tobaccoSmokingStatus",
+          "title": "Tobacco Smoking Status",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.primaryCellDonorInformation.icd10Code",
+          "title": "ICD10 Code",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.primaryCellDonorInformation.icd10Description",
+          "title": "ICD10 Description",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.primaryCellDonorInformation.pathologicDiagnosis",
+          "title": "Pathologic Diagnosis",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.tumorType",
+          "title": "Tumor Type",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.resectionSite",
+          "title": "Resection Site",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.tumorSpecimenOrigin",
+          "title": "Specimen Origin",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.tumorSampleType",
+          "title": "Sample Type",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.tumorOrgan",
+          "title": "Organ of Origin",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.tumorTissue",
+          "title": "Tissue of Origin",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.tumorCellType",
+          "title": "Cell Type of Origin",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.tumorPrimaryDiseaseSite",
+          "title": "Primary Disease Site",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.tissueType",
+          "title": "Tissue Type",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.tissueOrgan",
+          "title": "Organ of Origin",
+          "type": "string"
+        },
+        {
+          "field": "experimentalSystem.tissueDisease",
+          "title": "Disease",
+          "type": "string"
+        },
+        {
+          "field": "perturbation",
+          "title": "Perturbations",
+          "type": {
+            "name": "datagrid",
+            "options": {
+              "title": "Perturbations",
+              "columns": [
+                {
+                  "field": "role",
+                  "title": "Role",
+                  "type": "string"
+                },
+                {
+                  "field": "entity",
+                  "title": "Entity",
+                  "type": "string"
+                }
+              ],
+              "expandableRow": [
+                {
+                  "size": {
+                    "xs": 12
+                  },
+                  "children": [
+                    {
+                      "field": "smallMoleculeName",
+                      "title": "Small Molecule Name",
+                      "type": "string"
+                    },
+                    {
+                      "field": "smallMoleculeLabBatchLabel",
+                      "title": "Lab Batch Label",
+                      "type": "string"
+                    },
+                    {
+                      "field": "smallMoleculeConcentration",
+                      "title": "Concentration",
+                      "type": "number"
+                    },
+                    {
+                      "field": "smallMoleculeConcentrationUnits",
+                      "title": "Concentration Units",
+                      "type": "string"
+                    },
+                    {
+                      "field": "smallMoleculeDuration",
+                      "title": "Duration",
+                      "type": "number"
+                    },
+                    {
+                      "field": "smallMoleculeDurationUnits",
+                      "title": "Duration Units",
+                      "type": "string"
+                    },
+                    {
+                      "field": "crisprKnockoutName",
+                      "title": "Crispr Knockout Name",
+                      "type": "string"
+                    },
+                    {
+                      "field": "crisprKnockoutLabBatchLabel",
+                      "title": "Lab Batch Label",
+                      "type": "string"
+                    },
+                    {
+                      "field": "crisprKnockoutTargetGeneSymbol",
+                      "title": "Target Gene Symbol",
+                      "type": "string"
+                    },
+                    {
+                      "field": "crisprKnockoutTargetGeneId",
+                      "title": "NCBI Entrez ID for Target Gene",
+                      "type": "string"
+                    },
+                    {
+                      "field": "crisprKnockoutTargetGeneSpecies",
+                      "title": "Target Gene Species",
+                      "type": "string"
+                    },
+                    {
+                      "field": "crisprKnockoutDuration",
+                      "title": "Duration",
+                      "type": "number"
+                    },
+                    {
+                      "field": "crisprKnockoutDurationUnits",
+                      "title": "Duration Units",
+                      "type": "string"
+                    },
+                    {
+                      "field": "antibodyLabBatchLabel",
+                      "title": "Lab Batch Label",
+                      "type": "string"
+                    },
+                    {
+                      "field": "antibodySource",
+                      "title": "Source",
+                      "type": "string"
+                    },
+                    {
+                      "field": "antibodyCatalogNumber",
+                      "title": "Catalog Number",
+                      "type": "string"
+                    },
+                    {
+                      "field": "antibodyLotNumber",
+                      "title": "Lot Number",
+                      "type": "string"
+                    },
+                    {
+                      "field": "cloneName",
+                      "title": "Clone Name",
+                      "type": "string"
+                    },
+                    {
+                      "field": "antibodyType",
+                      "title": "Type",
+                      "type": "string"
+                    },
+                    {
+                      "field": "targetProtein",
+                      "title": "Protein Target",
+                      "type": "string"
+                    },
+                    {
+                      "field": "nonProteinTarget",
+                      "title": "Non-protein Target",
+                      "type": "string"
+                    },
+                    {
+                      "field": "targetOrganism",
+                      "title": "Target Organism",
+                      "type": "string"
+                    },
+                    {
+                      "field": "immunogen",
+                      "title": "Immunogen",
+                      "type": "string"
+                    },
+                    {
+                      "field": "immunogenSequence",
+                      "title": "Immunogen Sequence",
+                      "type": "string"
+                    },
+                    {
+                      "field": "antibodySpecies",
+                      "title": "Antibody Species",
+                      "type": "string"
+                    },
+                    {
+                      "field": "antibodyClonality",
+                      "title": "Clonality",
+                      "type": "string"
+                    },
+                    {
+                      "field": "antibodyIsotype",
+                      "title": "Isotype",
+                      "type": "string"
+                    },
+                    {
+                      "field": "antibodyProductionSourceOrganism",
+                      "title": "Production Source Organism",
+                      "type": "string"
+                    },
+                    {
+                      "field": "antibodyProductionDetails",
+                      "title": "Production Details",
+                      "type": "string"
+                    },
+                    {
+                      "field": "antibodyLabeling",
+                      "title": "Labeling",
+                      "type": "string"
+                    },
+                    {
+                      "field": "antibodyLabelingDetails",
+                      "title": "Labeling Details",
+                      "type": "string"
+                    },
+                    {
+                      "field": "antibodyConcentration",
+                      "title": "Concentration",
+                      "type": "number"
+                    },
+                    {
+                      "field": "antibodyConcentrationUnits",
+                      "title": "Concentration Units",
+                      "type": "string"
+                    },
+                    {
+                      "field": "antibodyDuration",
+                      "title": "Duration",
+                      "type": "number"
+                    },
+                    {
+                      "field": "antibodyDurationUnits",
+                      "title": "Duration Units",
+                      "type": "string"
+                    },
+                    {
+                      "field": "proteinName",
+                      "title": "Protein Name",
+                      "type": "string"
+                    },
+                    {
+                      "field": "proteinLabBatchLabel",
+                      "title": "Lab Batch Label",
+                      "type": "string"
+                    },
+                    {
+                      "field": "proteinUniProtId",
+                      "title": "UniProt ID",
+                      "type": "string"
+                    },
+                    {
+                      "field": "proteinConcentration",
+                      "title": "Concentration",
+                      "type": "number"
+                    },
+                    {
+                      "field": "proteinConcentrationUnits",
+                      "title": "Concentration Units",
+                      "type": "string"
+                    },
+                    {
+                      "field": "proteinDuration",
+                      "title": "Duration",
+                      "type": "number"
+                    },
+                    {
+                      "field": "proteinDurationUnits",
+                      "title": "Duration Units",
+                      "type": "string"
+                    },
+                    {
+                      "field": "transactivatorVectorName",
+                      "title": "Transactivator Vector Name",
+                      "type": "string"
+                    },
+                    {
+                      "field": "transactivatorType",
+                      "title": "Transactivator Type",
+                      "type": "string"
+                    },
+                    {
+                      "field": "transactivatorProteinName",
+                      "title": "Transactivator Protein Name",
+                      "type": "string"
+                    },
+                    {
+                      "field": "transactivatorVectorLabBatchLabel",
+                      "title": "Transactivator Vector Lab Batch Label",
+                      "type": "string"
+                    },
+                    {
+                      "field": "responseVectorName",
+                      "title": "Response Vector Name",
+                      "type": "string"
+                    },
+                    {
+                      "field": "responseVectorGeneOfInterest",
+                      "title": "Response Vector Gene of Interest",
+                      "type": "string"
+                    },
+                    {
+                      "field": "responseVectorReporterGene",
+                      "title": "Response Vector Reporter Gene",
+                      "type": "string"
+                    },
+                    {
+                      "field": "responseVectorPromoter",
+                      "title": "Response Vector Promoter",
+                      "type": "string"
+                    },
+                    {
+                      "field": "responseVectorLabBatchLabel",
+                      "title": "Response Vector Lab Batch Label",
+                      "type": "string"
+                    },
+                    {
+                      "field": "tetLabName",
+                      "title": "Lab Name",
+                      "type": "string"
+                    },
+                    {
+                      "field": "doxLabBatchLabel",
+                      "title": "Doxycycline Lab Batch Label",
+                      "type": "string"
+                    },
+                    {
+                      "field": "doxConcentration",
+                      "title": "Doxycycline Concentration",
+                      "type": "number"
+                    },
+                    {
+                      "field": "doxConcentrationUnits",
+                      "title": "Doxycycline Concentration Units",
+                      "type": "string"
+                    },
+                    {
+                      "field": "doxDuration",
+                      "title": "Doxycycline Incubation Time",
+                      "type": "number"
+                    },
+                    {
+                      "field": "doxDurationUnits",
+                      "title": "Doxycycline Incubation Time Units",
+                      "type": "string"
+                    },
+                    {
+                      "field": "doxVehicle",
+                      "title": "Doxycycline Vehicle",
+                      "type": "string"
+                    },
+                    {
+                      "field": "transfectionTransductionMethod",
+                      "title": "Transduction Method",
+                      "type": "string"
+                    },
+                    {
+                      "field": "transfectionTransductionReagent",
+                      "title": "Transduction Reagent",
+                      "type": "string"
+                    },
+                    {
+                      "field": "vectorName",
+                      "title": "Vector Name",
+                      "type": "string"
+                    },
+                    {
+                      "field": "vectorLabBatchLabel",
+                      "title": "Lab Batch Label",
+                      "type": "string"
+                    },
+                    {
+                      "field": "vectorType",
+                      "title": "Vector Type",
+                      "type": "string"
+                    },
+                    {
+                      "field": "regulationType",
+                      "title": "Regulation Type",
+                      "type": "string"
+                    },
+                    {
+                      "field": "inductionAgent",
+                      "title": "Induction Agent",
+                      "type": "string"
+                    },
+                    {
+                      "field": "deliveryMethod",
+                      "title": "Delivery Method",
+                      "type": "string"
+                    },
+                    {
+                      "field": "vectorBackbone",
+                      "title": "Vector Backbone",
+                      "type": "string"
+                    },
+                    {
+                      "field": "promoter",
+                      "title": "Promoter",
+                      "type": "string"
+                    },
+                    {
+                      "field": "geneInsert",
+                      "title": "Inserted Gene",
+                      "type": "string"
+                    },
+                    {
+                      "field": "geneInsertSpecies",
+                      "title": "Species of Inserted Gene",
+                      "type": "string"
+                    },
+                    {
+                      "field": "mammalianSelection",
+                      "title": "Mammalian Selection Marker",
+                      "type": "string"
+                    },
+                    {
+                      "field": "bacterialSelection",
+                      "title": "Bacterial Selection Marker",
+                      "type": "string"
+                    },
+                    {
+                      "field": "proteinTags",
+                      "title": "Protein Tags",
+                      "type": {
+                        "name": "arrayWithCommaSeparator"
+                      }
+                    },
+                    {
+                      "field": "source",
+                      "title": "Source",
+                      "type": "string"
+                    },
+                    {
+                      "field": "referenceId",
+                      "title": "Reference ID",
+                      "type": "string"
+                    },
+                    {
+                      "field": "vectorMapSequencePath",
+                      "title": "Vector Map Sequence Path",
+                      "type": "string"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
