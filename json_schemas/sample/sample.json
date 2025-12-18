@@ -206,7 +206,10 @@
         "cellLineSpecies"
       ],
       "title": "Cell Line",
-      "type": "object"
+      "type": "object",
+      "x-context-only": [
+        "Cell Line"
+      ]
     },
     "cellLinePerturbagen": {
       "properties": {
@@ -587,7 +590,10 @@
         "primaryCellTissue"
       ],
       "title": "Primary Cells",
-      "type": "object"
+      "type": "object",
+      "x-context-only": [
+        "Primary Cell"
+      ]
     },
     "protein": {
       "properties": {
@@ -875,7 +881,10 @@
         "tissueType"
       ],
       "title": "Tissue",
-      "type": "object"
+      "type": "object",
+      "x-context-only": [
+        "Tissue"
+      ]
     },
     "tumorSample": {
       "properties": {
@@ -941,7 +950,10 @@
         "tumorType"
       ],
       "title": "Tumor Sample",
-      "type": "object"
+      "type": "object",
+      "x-context-only": [
+        "Tumor Sample"
+      ]
     },
     "tumorSampleTypeEnum": {
       "enum": [
@@ -1018,5 +1030,5 @@
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.1.39"
+  "version": "0.1.40"
 }

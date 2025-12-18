@@ -385,7 +385,7 @@ class protein(BaseModel):
 
 class primaryCell(BaseModel):
 
-    model_config = ConfigDict(title="Primary Cells", description="Cells obtained from homogeneous tissue, such as a singular organ or organ sub-structure, and maintained in culture temporarily for experimental purposes.  Only viable for a limited time after isolation.")
+    model_config = ConfigDict(title="Primary Cells", description="Cells obtained from homogeneous tissue, such as a singular organ or organ sub-structure, and maintained in culture temporarily for experimental purposes.  Only viable for a limited time after isolation.", json_schema_extra={"x-context-only": ["Primary Cell"]})
 
     role: str = Field(default="Model System", 
                         json_schema_extra={"const": "Model System",
@@ -451,7 +451,7 @@ class primaryCell(BaseModel):
 class cellLine(BaseModel):
 
     model_config = ConfigDict(title="Cell Line", 
-                              description="Immortalized (naturally or engineered), genetically uniform tissue cells able to reproduce indefinitely in standard culture conditions."
+                              description="Immortalized (naturally or engineered), genetically uniform tissue cells able to reproduce indefinitely in standard culture conditions.", json_schema_extra={"x-context-only": ["Cell Line"]}
                               )
     role: str = Field(default="Model System",
                                             json_schema_extra={"const": "Model System",
@@ -596,7 +596,7 @@ class tetExpressionSystem(BaseModel):
     transfectionTransductionReagent: str = Field(default="", title="Transfection/Transduction Reagent", description="Specific transfection reagent or virus used (e.g. lipofectamine, lentivirus, adenovirus.")
 
 class tumorSample(BaseModel):
-    model_config = ConfigDict(title="Tumor Sample")
+    model_config = ConfigDict(title="Tumor Sample", json_schema_extra={"x-context-only": ["Tumor Sample"]})
 
     role: str = Field(default="Model System",
                                             json_schema_extra={"const": "Model System",
@@ -625,7 +625,7 @@ class tumorSample(BaseModel):
     tumorSampleDonorInformation: donorInformation = Field(default="", title="Donor Information", description="Information about the human or non-human donor from which the sample material was taken.")
 
 class tissue(BaseModel):
-    model_config = ConfigDict(title="Tissue")
+    model_config = ConfigDict(title="Tissue", json_schema_extra={"x-context-only": ["Tissue"]})
 
     role: str = Field(default="Model System",
                                             json_schema_extra={"const": "Model System",
@@ -646,7 +646,7 @@ class tissue(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.1.19"
+                        "version": "0.1.40"
             })
     
     name: str = Field(title='Sample Name', 
