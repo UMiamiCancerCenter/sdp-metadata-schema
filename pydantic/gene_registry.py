@@ -20,9 +20,9 @@ class GoEntry(CustomBaseModel):
     term: str | SkipJsonSchema[None] = Field(default=None, title="Term")
 
 class GO(CustomBaseModel):
-    BP: list[GoEntry] | SkipJsonSchema[None] = Field(default=None, title="Biological Process")
-    CC: list[GoEntry] | SkipJsonSchema[None] = Field(default=None, title="Cellular Component")
-    MF: list[GoEntry] | SkipJsonSchema[None] = Field(default=None, title="Molecular Function")
+    BP: list[GoEntry] | SkipJsonSchema[None] = Field(default=None, title="Biological Process", alias="BP")
+    CC: list[GoEntry] | SkipJsonSchema[None] = Field(default=None, title="Cellular Component", alias="CC")
+    MF: list[GoEntry] | SkipJsonSchema[None] = Field(default=None, title="Molecular Function", alias="MF")
 
 class LinkedTrait(CustomBaseModel):
     label: str | SkipJsonSchema[None] = Field(default=None, title="Label")
@@ -54,7 +54,7 @@ class Gene(CustomBaseModel):
     scope: Scope = Field(default=Scope.PRIVATE, title="Scope")
     summary: str | SkipJsonSchema[None] = Field(default=None, title="Summary")
     alias: list[str] | SkipJsonSchema[None] = Field(default=None, title="Aliases")
-    HGNC: str | SkipJsonSchema[None] = Field(default=None)
+    HGNC: str | SkipJsonSchema[None] = Field(default=None, alias="HGNC")
     symbol: str | SkipJsonSchema[None] = Field(default=None, title="Gene Symbol")
     map_location: str | SkipJsonSchema[None] = Field(default=None, title="Map Location", alias="mapLocation")
     entrez_gene: str | SkipJsonSchema[None] = Field(default=None, title="Entrez Gene ID", alias="entrezGene")

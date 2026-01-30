@@ -35,12 +35,14 @@
           "items": {
             "$ref": "#/$defs/AdverseEvent"
           },
+          "title": "Serious Events",
           "type": "array"
         },
         "otherEvents": {
           "items": {
             "$ref": "#/$defs/AdverseEvent"
           },
+          "title": "Other Events",
           "type": "array"
         }
       },
@@ -397,11 +399,11 @@
     },
     "EnrollmentInfo": {
       "properties": {
-        "enrollmentCount": {
+        "count": {
           "title": "Count",
           "type": "integer"
         },
-        "enrollmentType": {
+        "type": {
           "title": "Type",
           "type": "string"
         }
@@ -862,11 +864,8 @@
     "TargetComponent": {
       "properties": {
         "accession": {
-          "items": {
-            "type": "string"
-          },
           "title": "Accession",
-          "type": "array"
+          "type": "string"
         }
       },
       "title": "TargetComponent",
@@ -980,5 +979,5 @@
   ],
   "title": "Small Molecule Registry",
   "type": "object",
-  "version": "0.1.40"
+  "version": "0.1.19"
 }

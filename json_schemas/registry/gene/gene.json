@@ -173,6 +173,7 @@
       "type": "array"
     },
     "HGNC": {
+      "title": "Hgnc",
       "type": "string"
     },
     "symbol": {
@@ -246,5 +247,5 @@
   ],
   "title": "Gene Registry",
   "type": "object",
-  "version": "0.1.40"
+  "version": "0.1.19"
 }

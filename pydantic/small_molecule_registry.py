@@ -1,25 +1,16 @@
 import json
-import re
 
 from utils import (
+    CustomBaseModel,
     GenerateJsonSchemaWithoutDefaultTitles,
     Scope,
     delete_empty_default,
-    to_title_case,
 )
 
-from pydantic import (
-    BaseModel,
-    Field,
-)
+from pydantic import Field
 from pydantic.json_schema import SkipJsonSchema
 
 
-def to_camel(s: str) -> str:
-    return re.sub(r"_([a-z])", lambda m: m.group(1).upper(), s)
-
-class CustomBaseModel(BaseModel):
-    model_config = {"alias_generator": to_camel, "populate_by_name": True, "serialize_by_alias": True, "field_title_generator": to_title_case}
 class UniChem(CustomBaseModel):
 
     chebi:    list[str] | SkipJsonSchema[None] = Field(default=None, title="ChEBI")
@@ -159,8 +150,8 @@ class Chembl(CustomBaseModel):
     bioactivities: list[Bioactivity] | SkipJsonSchema[None] = None
 
 class EnrollmentInfo(CustomBaseModel):
-    count: int | SkipJsonSchema[None] = Field(alias="enrollmentCount", default=None)
-    type: str | SkipJsonSchema[None] = Field(alias="enrollmentType", default=None)
+    count: int | SkipJsonSchema[None] = Field(default=None)
+    type: str | SkipJsonSchema[None] = Field(default=None)
 
 class IdentificationModule(CustomBaseModel):
 
@@ -260,7 +251,7 @@ class AdverseEvent(CustomBaseModel):
     assessment_type: str | SkipJsonSchema[None] = None
     stats: list[EventStat] | SkipJsonSchema[None] = None
 
-class AdverseEventsModule(BaseModel):
+class AdverseEventsModule(CustomBaseModel):
     serious_events: list[AdverseEvent] | SkipJsonSchema[None] = Field(alias="seriousEvents", default=None)
     other_events: list[AdverseEvent] | SkipJsonSchema[None] = Field(alias="otherEvents", default=None)
 

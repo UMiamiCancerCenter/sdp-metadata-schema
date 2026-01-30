@@ -1,4 +1,3 @@
-import re
 from collections.abc import Callable, Iterator
 from datetime import datetime
 from enum import Enum
@@ -43,7 +42,7 @@ class SignatureType(str, Enum):
     DOSERESPONSE = "Dose Response Curve"
 
 def to_title_case(field_name: str, field_info: FieldInfo) -> str:
-    return field_name.replace('_', ' ').title()
+    return field_name.replace("_", " ").title()
 
 def delete_empty_default(schema):
     for key in list(schema):
@@ -90,10 +89,6 @@ class PyObjectId(ObjectId):
     def __get_pydantic_json_schema__(cls, core_schema: CoreSchema, handler: GetJsonSchemaHandler) -> dict[str, Any]:
         return {"$oid": {"type": "string"}}
 
-
-def to_title_case(field_name: str, field_info: FieldInfo) -> str:
-    return field_name.replace('_', ' ').title()
-  
 class CustomBaseModel(BaseModel):
     model_config = ConfigDict(
         alias_generator=to_camel,
