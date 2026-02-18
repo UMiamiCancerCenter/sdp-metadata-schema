@@ -26,6 +26,7 @@ class Disease(CustomBaseModel):
 
     name: str = Field(..., description="Preferred name of the disease")
     scope: Scope = Field(..., description="Scope of visibility or usage for this disease")
+    species: str = Field(..., description="Species or organism in which the disease manifests")
     synonyms: list[str] | SkipJsonSchema[None] = Field(None, description="Alternative names")
     definition: str | SkipJsonSchema[None] = Field(None, description="Official textual definition")
     xrefs: Xrefs | SkipJsonSchema[None] = Field(None, description="Cross-references to major disease ontologies", title="Cross-references")

@@ -64,6 +64,11 @@
       "$ref": "#/$defs/Scope",
       "description": "Scope of visibility or usage for this disease"
     },
+    "species": {
+      "description": "Species or organism in which the disease manifests",
+      "title": "Species",
+      "type": "string"
+    },
     "synonyms": {
       "description": "Alternative names",
       "items": {
@@ -106,7 +111,8 @@
   },
   "required": [
     "name",
-    "scope"
+    "scope",
+    "species"
   ],
   "title": "Disease",
   "type": "object"
