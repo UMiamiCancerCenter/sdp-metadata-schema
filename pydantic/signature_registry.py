@@ -57,6 +57,7 @@ class Signature(CustomBaseModel):
 
     name: str = Field(title="Name")
     scope: Scope = Field(default=Scope.PRIVATE, title="Scope", alias="scope")
+    external_id: str | SkipJsonSchema[None] = Field(default=None, title="External ID", description="ID used for identification of associated data in an external database.",alias="externalId")
     signature_type: SignatureType = Field(title="Signature Type", alias="signatureType")
     description: str | SkipJsonSchema[None] = Field(default=None, title="Description")
     source: str | SkipJsonSchema[None] = Field(default=None, title="Source")

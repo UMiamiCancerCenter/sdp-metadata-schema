@@ -208,6 +208,11 @@
       "$ref": "#/$defs/Scope",
       "default": "private"
     },
+    "externalId": {
+      "description": "ID used for identification of associated data in an external database.",
+      "title": "External ID",
+      "type": "string"
+    },
     "signatureType": {
       "$ref": "#/$defs/SignatureType",
       "title": "Signature Type"
