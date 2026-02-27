@@ -1,5 +1,5 @@
 {
-  "version": "0.1.43",
+  "version": "0.1.44",
   "children": [
     {
       "size": {
@@ -198,7 +198,7 @@
                         {
                           "field": "concentration",
                           "title": "Concentration",
-                          "type": "string"
+                          "type": "number"
                         },
                         {
                           "field": "concentrationUnits",
@@ -208,7 +208,7 @@
                         {
                           "field": "duration",
                           "title": "Duration",
-                          "type": "string"
+                          "type": "number"
                         },
                         {
                           "field": "durationUnits",

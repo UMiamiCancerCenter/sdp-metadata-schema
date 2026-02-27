@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 CURRENT_VERSION = "0.1.37"
-NEW_VERSION = "0.1.43"
+NEW_VERSION = "0.1.44"
 
 SCHEMA_DIR = Path("json_schemas")
 
