@@ -44,7 +44,7 @@
         "type": "string",
         "enum": [
           "Cell Line",
-          "Primary Cells",
+          "Primary Cell",
           "Tumor Sample",
           "Tissue"
         ]

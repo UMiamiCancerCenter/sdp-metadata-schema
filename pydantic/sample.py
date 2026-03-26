@@ -385,13 +385,13 @@ class protein(BaseModel):
 
 class primaryCell(BaseModel):
 
-    model_config = ConfigDict(title="Primary Cells", description="Cells obtained from homogeneous tissue, such as a singular organ or organ sub-structure, and maintained in culture temporarily for experimental purposes.  Only viable for a limited time after isolation.", json_schema_extra={"x-context-only": ["Primary Cell"]})
+    model_config = ConfigDict(title="Primary Cell", description="Cells obtained from homogeneous tissue, such as a singular organ or organ sub-structure, and maintained in culture temporarily for experimental purposes.  Only viable for a limited time after isolation.", json_schema_extra={"x-context-only": ["Primary Cell"]})
 
     role: str = Field(default="Model System", 
                         json_schema_extra={"const": "Model System",
                                            "format": "hidden"})
-    entity: str = Field(default="Primary Cells", 
-                        json_schema_extra={"const": "Primary Cells",
+    entity: str = Field(default="Primary Cell", 
+                        json_schema_extra={"const": "Primary Cell",
                                            "format": "hidden"})
     primaryCellName: str = Field(title="Name", description="Name of the type of cells, with the name chosen from the Cell Ontology (CL). Must be a child term of 'cell'.")
 

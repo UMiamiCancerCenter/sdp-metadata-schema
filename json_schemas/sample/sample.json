@@ -549,8 +549,8 @@
           "type": "string"
         },
         "entity": {
-          "const": "Primary Cells",
-          "default": "Primary Cells",
+          "const": "Primary Cell",
+          "default": "Primary Cell",
           "format": "hidden",
           "type": "string"
         },
@@ -589,7 +589,7 @@
         "primaryCellName",
         "primaryCellTissue"
       ],
-      "title": "Primary Cells",
+      "title": "Primary Cell",
       "type": "object",
       "x-context-only": [
         "Primary Cell"
