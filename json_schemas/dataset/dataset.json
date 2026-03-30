@@ -43,7 +43,8 @@
         "scMultiome ATAC+RNAseq",
         "MethylationEPIC",
         "ChIP-seq",
-        "miRNA-seq"
+        "miRNA-seq",
+        "L1000"
       ]
     },
     "experimentalSystems": {
