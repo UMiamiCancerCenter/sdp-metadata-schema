@@ -13,6 +13,11 @@
       "title": "Dataset Description",
       "description": "Please include a description or any other helpful comments or annotations for the dataset."
     },
+    "link": {
+      "type": "string",
+      "title": "Link",
+      "description": "Link to external dataset resources."
+    },
     "labName": {
       "type": "string",
       "title": "Lab Name",
