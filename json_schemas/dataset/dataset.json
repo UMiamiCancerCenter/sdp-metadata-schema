@@ -34,7 +34,16 @@
         "scRNA-seq",
         "DNA-seq",
         "ATAC-seq",
-        "CNV"
+        "scRNA-seq+VDJ",
+        "scVDJ",
+        "CNV",
+        "Ribo-seq",
+        "BS-seq",
+        "oxBS-seq",
+        "scMultiome ATAC+RNAseq",
+        "MethylationEPIC",
+        "ChIP-seq",
+        "miRNA-seq"
       ]
     },
     "experimentalSystems": {
