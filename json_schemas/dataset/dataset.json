@@ -33,7 +33,8 @@
         "RNA-seq",
         "scRNA-seq",
         "DNA-seq",
-        "ATAC-seq"
+        "ATAC-seq",
+        "CNV"
       ]
     },
     "experimentalSystems": {
