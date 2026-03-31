@@ -55,7 +55,7 @@ class donorInformation(BaseModel):
 
     dateOfBirth: date = Field(default="", title="Date of Birth", description="The date of the donor's birth.")
 
-    age: int = Field(default="", title="Age", description="The donor's age at the time of collection of the sample. Age units will be specified in the next field.")
+    age: float = Field(default="", title="Age", description="The donor's age at the time of collection of the sample. Age units will be specified in the next field.")
 
     ageUnits: str = Field(default="", title="Age Units", description="The units of time in which the age is recorded.")
 
@@ -646,7 +646,7 @@ class tissue(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.1.49"
+                        "version": "0.1.50"
             })
     
     name: str = Field(title='Sample Name', 

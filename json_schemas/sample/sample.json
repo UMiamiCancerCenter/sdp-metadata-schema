@@ -367,7 +367,7 @@
         "age": {
           "description": "The donor's age at the time of collection of the sample. Age units will be specified in the next field.",
           "title": "Age",
-          "type": "integer"
+          "type": "number"
         },
         "ageUnits": {
           "description": "The units of time in which the age is recorded.",
@@ -1030,5 +1030,5 @@
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.1.49"
+  "version": "0.1.50"
 }
