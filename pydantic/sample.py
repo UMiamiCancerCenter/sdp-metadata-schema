@@ -643,10 +643,48 @@ class tissue(BaseModel):
 
     tissueDonorInformation: donorInformation = Field(default="", title="Donor Information", description="Information about the human or non-human donor from which the sample material was taken.")
 
+class differentiatedCell(BaseModel):
+    model_config = ConfigDict(title="Differentiated Cell", json_schema_extra={"x-context-only": ["Differentiated Cell"]})
+
+    role: str = Field(default="Model System",
+                                            json_schema_extra={"const": "Model System",
+                                           "format": "hidden"})
+    entity: str = Field(default="Differentiated Cell", 
+                                            json_schema_extra={"const": "Differentiated Cell",
+                                                                "format": "hidden",
+                                                                })
+    
+    differentiatedCellName: str = Field(title="Name", description="Name of the type of cells.")
+
+class embryonicStemCell(BaseModel):
+    model_config = ConfigDict(title="Embryonic Stem Cell", json_schema_extra={"x-context-only": ["Embryonic Stem Cell"]})
+
+    role: str = Field(default="Model System",
+                                            json_schema_extra={"const": "Model System",
+                                           "format": "hidden"})
+    entity: str = Field(default="Embryonic Stem Cell", 
+                                            json_schema_extra={"const": "Embryonic Stem Cell",
+                                                                "format": "hidden",
+                                                                })
+    
+    embryonicStemCellName: str = Field(title="Name", description="Name of the type of cells.")
+class ipsc(BaseModel):
+    model_config = ConfigDict(title="iPSC", json_schema_extra={"x-context-only": ["iPSC"]})
+
+    role: str = Field(default="Model System",
+                                            json_schema_extra={"const": "Model System",
+                                           "format": "hidden"})
+    entity: str = Field(default="iPSC", 
+                                            json_schema_extra={"const": "iPSC",
+                                                                "format": "hidden",
+                                                                })
+    
+    ipscName: str = Field(title="Name", description="Name of the type of cells.")
+
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.1.51"
+                        "version": "0.1.52"
             })
     
     name: str = Field(title='Sample Name', 
@@ -657,9 +695,10 @@ class sample(BaseModel):
             cellLine,
             primaryCell,
             tumorSample,
-            # differentiatedCells,
-            # ipsc,
-            tissue
+            differentiatedCell,
+            ipsc,
+            tissue,
+            embryonicStemCell
             # patientSample
             ]] = Field(title="Model System")
     perturbation: List[Union[
