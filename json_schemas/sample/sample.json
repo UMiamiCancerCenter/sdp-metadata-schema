@@ -977,22 +977,24 @@
       "type": "string"
     },
     "experimentalSystem": {
-      "anyOf": [
-        {
-          "$ref": "#/$defs/cellLine"
-        },
-        {
-          "$ref": "#/$defs/primaryCell"
-        },
-        {
-          "$ref": "#/$defs/tumorSample"
-        },
-        {
-          "$ref": "#/$defs/tissue"
-        }
-      ],
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/cellLine"
+          },
+          {
+            "$ref": "#/$defs/primaryCell"
+          },
+          {
+            "$ref": "#/$defs/tumorSample"
+          },
+          {
+            "$ref": "#/$defs/tissue"
+          }
+        ]
+      },
       "title": "Model System",
-      "type": "object"
+      "type": "array"
     },
     "perturbation": {
       "items": {
@@ -1030,5 +1032,5 @@
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.1.50"
+  "version": "0.1.51"
 }

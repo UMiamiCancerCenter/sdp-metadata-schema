@@ -646,14 +646,14 @@ class tissue(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.1.50"
+                        "version": "0.1.51"
             })
     
     name: str = Field(title='Sample Name', 
                       description="Please provide a unique name for the sample.")
     description: str = Field(default="", title="Sample Description", 
                              description="Please include a description or any other helpful comments or annotations for the sample.")
-    experimentalSystem: Union[
+    experimentalSystem: list[Union[
             cellLine,
             primaryCell,
             tumorSample,
@@ -661,9 +661,7 @@ class sample(BaseModel):
             # ipsc,
             tissue
             # patientSample
-            ] = Field(title="Model System", json_schema_extra={
-                                  "type": "object"
-                            })
+            ]] = Field(title="Model System")
     perturbation: List[Union[
         smallMolecule,
         crisprKnockout,
