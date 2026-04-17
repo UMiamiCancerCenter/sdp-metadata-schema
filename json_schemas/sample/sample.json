@@ -331,35 +331,6 @@
       "title": "CRISPR Knockout",
       "type": "object"
     },
-    "differentiatedCell": {
-      "properties": {
-        "role": {
-          "const": "Model System",
-          "default": "Model System",
-          "format": "hidden",
-          "type": "string"
-        },
-        "entity": {
-          "const": "Differentiated Cell",
-          "default": "Differentiated Cell",
-          "format": "hidden",
-          "type": "string"
-        },
-        "differentiatedCellName": {
-          "description": "Name of the type of cells.",
-          "title": "Name",
-          "type": "string"
-        }
-      },
-      "required": [
-        "differentiatedCellName"
-      ],
-      "title": "Differentiated Cell",
-      "type": "object",
-      "x-context-only": [
-        "Differentiated Cell"
-      ]
-    },
     "donorInformation": {
       "properties": {
         "species": {
@@ -444,35 +415,6 @@
       ],
       "title": "Patient/Donor Information",
       "type": "object"
-    },
-    "embryonicStemCell": {
-      "properties": {
-        "role": {
-          "const": "Model System",
-          "default": "Model System",
-          "format": "hidden",
-          "type": "string"
-        },
-        "entity": {
-          "const": "Embryonic Stem Cell",
-          "default": "Embryonic Stem Cell",
-          "format": "hidden",
-          "type": "string"
-        },
-        "embryonicStemCellName": {
-          "description": "Name of the type of cells.",
-          "title": "Name",
-          "type": "string"
-        }
-      },
-      "required": [
-        "embryonicStemCellName"
-      ],
-      "title": "Embryonic Stem Cell",
-      "type": "object",
-      "x-context-only": [
-        "Embryonic Stem Cell"
-      ]
     },
     "expressionVector": {
       "properties": {
@@ -597,35 +539,6 @@
       ],
       "title": "Expression Vector",
       "type": "object"
-    },
-    "ipsc": {
-      "properties": {
-        "role": {
-          "const": "Model System",
-          "default": "Model System",
-          "format": "hidden",
-          "type": "string"
-        },
-        "entity": {
-          "const": "iPSC",
-          "default": "iPSC",
-          "format": "hidden",
-          "type": "string"
-        },
-        "ipscName": {
-          "description": "Name of the type of cells.",
-          "title": "Name",
-          "type": "string"
-        }
-      },
-      "required": [
-        "ipscName"
-      ],
-      "title": "iPSC",
-      "type": "object",
-      "x-context-only": [
-        "iPSC"
-      ]
     },
     "primaryCell": {
       "properties": {
@@ -1064,35 +977,23 @@
       "type": "string"
     },
     "experimentalSystem": {
-      "items": {
-        "anyOf": [
-          {
-            "$ref": "#/$defs/cellLine"
-          },
-          {
-            "$ref": "#/$defs/primaryCell"
-          },
-          {
-            "$ref": "#/$defs/tumorSample"
-          },
-          {
-            "$ref": "#/$defs/differentiatedCell"
-          },
-          {
-            "$ref": "#/$defs/ipsc"
-          },
-          {
-            "$ref": "#/$defs/tissue"
-          },
-          {
-            "$ref": "#/$defs/embryonicStemCell"
-          }
-        ]
-      },
-      "title": "Model System",
-      "type": "array"
+      "anyOf": [
+        {
+          "$ref": "#/$defs/cellLine"
+        },
+        {
+          "$ref": "#/$defs/primaryCell"
+        },
+        {
+          "$ref": "#/$defs/tumorSample"
+        },
+        {
+          "$ref": "#/$defs/tissue"
+        }
+      ],
+      "title": "Model System"
     },
-    "perturbation": {
+    "perturbations": {
       "items": {
         "anyOf": [
           {
@@ -1128,5 +1029,5 @@
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.1.52"
+  "version": "0.1.53"
 }

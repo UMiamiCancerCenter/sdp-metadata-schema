@@ -684,24 +684,24 @@ class ipsc(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.1.52"
+                        "version": "0.1.53"
             })
     
     name: str = Field(title='Sample Name', 
                       description="Please provide a unique name for the sample.")
     description: str = Field(default="", title="Sample Description", 
                              description="Please include a description or any other helpful comments or annotations for the sample.")
-    experimentalSystem: list[Union[
+    experimentalSystem: Union[
             cellLine,
             primaryCell,
             tumorSample,
-            differentiatedCell,
-            ipsc,
-            tissue,
-            embryonicStemCell
+            # differentiatedCell,
+            # ipsc,
+            tissue
+            # embryonicStemCell
             # patientSample
-            ]] = Field(title="Model System")
-    perturbation: List[Union[
+            ] = Field(title="Model System")
+    perturbations: List[Union[
         smallMolecule,
         crisprKnockout,
         # rnai,
