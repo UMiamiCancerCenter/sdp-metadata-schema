@@ -991,7 +991,8 @@
           "$ref": "#/$defs/tissue"
         }
       ],
-      "title": "Model System"
+      "title": "Model System",
+      "type": "object"
     },
     "perturbations": {
       "items": {
@@ -1029,5 +1030,5 @@
   ],
   "title": "Sample",
   "type": "object",
-  "version": "0.1.53"
+  "version": "0.1.54"
 }
