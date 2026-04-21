@@ -684,7 +684,7 @@ class ipsc(BaseModel):
 class sample(BaseModel):
 
     model_config = ConfigDict(title="Sample", json_schema_extra={
-                        "version": "0.1.54"
+                        "version": "0.1.55"
             })
     
     name: str = Field(title='Sample Name', 

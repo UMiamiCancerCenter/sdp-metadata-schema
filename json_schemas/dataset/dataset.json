@@ -1,6 +1,6 @@
 {
   "title": "Dataset",
-  "version": "0.1.54",
+  "version": "0.1.55",
   "type": "object",
   "properties": {
     "name": {
