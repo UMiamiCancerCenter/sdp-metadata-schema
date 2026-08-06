@@ -6,7 +6,7 @@
     "name": {
       "type": "string",
       "title": "Dataset Name",
-      "description": "Please provide a unique name for the dataset."
+      "description": "Please provide name for the dataset."
     },
     "description": {
       "type": "string",

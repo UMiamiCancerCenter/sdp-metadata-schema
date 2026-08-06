@@ -431,7 +431,7 @@
           "type": "string"
         },
         "vectorName": {
-          "description": "A unique name or identifier for this specific vector in your inventory.",
+          "description": "Name or identifier for this specific vector in your inventory.",
           "title": "Name",
           "type": "string"
         },
@@ -967,7 +967,7 @@
   },
   "properties": {
     "name": {
-      "description": "Please provide a unique name for the sample.",
+      "description": "Please provide name for the sample.",
       "title": "Sample Name",
       "type": "string"
     },
